@@ -280,6 +280,25 @@ def extract_zones(text):
             for z in sorted(ranges)]
 
 
+DOLL_RE = re.compile(r'^dollParts(Array|Cores|Cores2)\s*=\s*(\[.*\]);$')
+
+
+def extract_doll(text):
+    """How a character is assembled from art.
+
+    The battle screen builds each character by attaching, for every doll part,
+    the export named `<gender>_<partCore2>_<look>` -- so "M_WEAPON_CROWBAR".
+    dollPartsArray names the 15 parts, dollPartsCores maps each to an
+    equipment slot, and dollPartsCores2 gives the name used in the export.
+    """
+    out = {}
+    for raw in text.splitlines():
+        m = DOLL_RE.match(raw.strip())
+        if m:
+            out['dollParts' + m.group(1)] = parse_value(m.group(2))
+    return out
+
+
 def extract_talents(text):
     """The talent tree: loadTalents() in frame 61 builds one 28-node tree,
     ignoring its class parameter in this build."""
@@ -412,6 +431,8 @@ def main():
 
     data_as = os.path.join(args.scripts_dir, 'frame_62', 'DoAction.as')
     lang_as = os.path.join(args.scripts_dir, 'frame_61', 'DoAction.as')
+    doll_as = os.path.join(args.scripts_dir, 'DefineSprite_1503', 'frame_1',
+                           'DoAction.as')
     for p in (data_as, lang_as):
         if not os.path.exists(p):
             sys.exit('missing %s -- is this an ffdec script export of SONNY1.swf?' % p)
@@ -421,6 +442,10 @@ def main():
     lang = langs.get(args.lang, {})
     talents, start_skills = extract_talents(lang_text)
     zones = extract_zones(lang_text)
+    doll = {}
+    if os.path.exists(doll_as):
+        doll = extract_doll(open(doll_as, encoding='utf-8',
+                                 errors='replace').read())
     text = open(data_as, encoding='utf-8', errors='replace').read()
     moves, units, items, buffs = extract_tables(text)
     battles = extract_battles(text)
@@ -506,7 +531,8 @@ def main():
     for name, payload in (('lang', langs), ('abilities', abilities),
                           ('units', unit_list), ('items', item_list),
                           ('buffs', buff_list), ('talents', talent_payload),
-                          ('battles', battle_list), ('zones', zone_list)):
+                          ('battles', battle_list), ('zones', zone_list),
+                          ('doll', doll)):
         path = os.path.join(args.out, name + '.json')
         with open(path, 'w', encoding='utf-8') as fh:
             json.dump(payload, fh, indent=1, ensure_ascii=False)
@@ -525,6 +551,7 @@ def main():
           % (len(battle_list), battle_list[0]['id'] if battle_list else '-',
              battle_list[-1]['id'] if battle_list else '-'))
     print('zones     : %d' % len(zone_list))
+    print('doll      : %d part lists' % len(doll))
     for name, path in written:
         print('  wrote %-10s %s' % (name, path))
 

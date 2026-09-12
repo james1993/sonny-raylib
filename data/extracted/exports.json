@@ -1,0 +1,3514 @@
+{
+ "exports": {
+  "BOOM1": 399,
+  "BOOM2": 815,
+  "BOOM3": 802,
+  "BOOM_DARK": 338,
+  "BOOM_HEAL": 339,
+  "BOOM_HEAL2": 337,
+  "BOOM_POWERUP": 332,
+  "BOOM_RED": 336,
+  "BOOM_SHIELD": 335,
+  "BOOM_SLASH": 329,
+  "BOOM_SLASH2": 313,
+  "BOOM_SLASH2RED": 312,
+  "BOOM_SLASHBLUE": 325,
+  "BOOM_SLASHGREEN": 328,
+  "BOOM_SLASHORANGE": 326,
+  "BOOM_SLASHRED": 327,
+  "BOOM_SPARK": 902,
+  "BOOM_SPARKBLUE": 299,
+  "BaronDie": 62,
+  "BaronHit1": 84,
+  "BaronHit2": 77,
+  "BaronHit3": 69,
+  "BattleMusic1loopable": 8,
+  "BattleMusic2loopable": 7,
+  "BossBattleloopable": 5,
+  "Click2putdown": 74,
+  "Click3pickup": 66,
+  "Die1": 31,
+  "DuxDie": 52,
+  "DuxHit1": 47,
+  "DuxHit2": 43,
+  "DuxHit3": 38,
+  "ElectricHit": 56,
+  "Explode": 51,
+  "F_SARM_SIX": 201,
+  "F_SARM_THREE": 659,
+  "F_SCHEST_SIX": 199,
+  "F_SCHEST_THREE": 657,
+  "F_SFOOT_SIX": 197,
+  "F_SFOOT_THREE": 655,
+  "F_SHAND_SIX": 195,
+  "F_SHAND_THREE": 653,
+  "F_SHEAD_SIX": 193,
+  "F_SHEAD_THREE": 651,
+  "F_SLEG2_SIX": 191,
+  "F_SLEG2_THREE": 649,
+  "Forcefield": 46,
+  "GaliantDie": 30,
+  "GaliantHit1": 28,
+  "GaliantHit2": 25,
+  "GaliantHit3": 22,
+  "Gamemusic002": 3,
+  "GhostDie": 17,
+  "GhostHit1": 15,
+  "GhostHit2": 13,
+  "GhostHit3": 11,
+  "HAIR_BART": 464,
+  "HAIR_FIVE": 623,
+  "HAIR_FOUR": 203,
+  "HAIR_ONE": 468,
+  "HAIR_SIX": 189,
+  "HAIR_THREE": 187,
+  "HAIR_TWO": 466,
+  "Healing": 42,
+  "Hit2": 37,
+  "Hit3": 33,
+  "Hit4": 29,
+  "Hit5": 27,
+  "IceShatter": 24,
+  "KRIN.SHADOWSHOCK": 820,
+  "Krin.Electrobolt": 888,
+  "Krin.Electrobolt2": 887,
+  "Krin.Firebolt": 885,
+  "Krin.Iceball": 886,
+  "Krin.Iceblade": 884,
+  "Krin.Icebolt": 876,
+  "Krin.Magicball": 882,
+  "Krin.Magicbolt": 883,
+  "Krin.Poisonbolt": 879,
+  "KrinBuffShower": 801,
+  "KrinTrail": 146,
+  "LifeBarSmoother": 92,
+  "LifeBarSmoother2": 93,
+  "LouisDie": 57,
+  "MODEL1": 940,
+  "MODEL2": 400,
+  "M_ARM_FINAL1": 280,
+  "M_ARM_FINAL2": 267,
+  "M_ARM_FINAL3": 254,
+  "M_ARM_FINAL4": 241,
+  "M_ARM_GER": 723,
+  "M_ARM_JEANS": 567,
+  "M_ARM_KNIGHT": 367,
+  "M_ARM_MEDIC": 738,
+  "M_ARM_NINJA": 918,
+  "M_ARM_ROCKSTAR": 412,
+  "M_ARM_SAMURAI": 621,
+  "M_ARM_SAMURAI2": 608,
+  "M_ARM_SAMURAI3": 173,
+  "M_ARM_SHAMAN1": 422,
+  "M_ARM_SHAMAN2": 418,
+  "M_ARM_SHAMAN3": 415,
+  "M_ARM_SHAMAN4": 185,
+  "M_ARM_SHIRT": 563,
+  "M_ARM_SINJID": 595,
+  "M_ARM_SURVIVOR": 353,
+  "M_ARM_USA1": 766,
+  "M_ARM_USA2": 752,
+  "M_ARM_USA3": 711,
+  "M_ARM_USA4": 697,
+  "M_ARM_USA5": 448,
+  "M_CHEST_FINAL1": 279,
+  "M_CHEST_FINAL2": 266,
+  "M_CHEST_FINAL3": 253,
+  "M_CHEST_FINAL4": 239,
+  "M_CHEST_GER": 721,
+  "M_CHEST_KNIGHT": 365,
+  "M_CHEST_MEDIC": 736,
+  "M_CHEST_NINJA": 908,
+  "M_CHEST_ROCKSTAR": 410,
+  "M_CHEST_SAMURAI": 620,
+  "M_CHEST_SAMURAI2": 607,
+  "M_CHEST_SAMURAI3": 171,
+  "M_CHEST_SHAMAN1": 547,
+  "M_CHEST_SHAMAN2": 543,
+  "M_CHEST_SHAMAN3": 545,
+  "M_CHEST_SHAMAN4": 183,
+  "M_CHEST_SHIRT": 565,
+  "M_CHEST_SINJID": 593,
+  "M_CHEST_SURVIVOR": 351,
+  "M_CHEST_USA1": 764,
+  "M_CHEST_USA2": 750,
+  "M_CHEST_USA3": 709,
+  "M_CHEST_USA4": 695,
+  "M_CHEST_USA5": 446,
+  "M_FOOT_FINAL1": 277,
+  "M_FOOT_FINAL2": 264,
+  "M_FOOT_FINAL3": 251,
+  "M_FOOT_FINAL4": 237,
+  "M_FOOT_GER": 719,
+  "M_FOOT_JEANS": 470,
+  "M_FOOT_KNIGHT": 363,
+  "M_FOOT_MEDIC": 733,
+  "M_FOOT_NAVY": 474,
+  "M_FOOT_NINJA": 912,
+  "M_FOOT_ROCKSTAR": 408,
+  "M_FOOT_SAMURAI": 618,
+  "M_FOOT_SAMURAI2": 605,
+  "M_FOOT_SAMURAI3": 169,
+  "M_FOOT_SHAMAN1": 421,
+  "M_FOOT_SINJID": 591,
+  "M_FOOT_SURVIVOR": 349,
+  "M_FOOT_USA1": 762,
+  "M_FOOT_USA2": 748,
+  "M_FOOT_USA3": 707,
+  "M_FOOT_USA4": 693,
+  "M_FOOT_USA5": 444,
+  "M_HAND_ENGINEERINGGLOVES": 478,
+  "M_HAND_FINAL1": 275,
+  "M_HAND_FINAL2": 262,
+  "M_HAND_FINAL3": 249,
+  "M_HAND_FINAL4": 235,
+  "M_HAND_GER": 717,
+  "M_HAND_KNIGHT": 361,
+  "M_HAND_MEDIC": 731,
+  "M_HAND_NINJA": 916,
+  "M_HAND_ROCKSTAR": 406,
+  "M_HAND_SAMURAI": 616,
+  "M_HAND_SAMURAI2": 603,
+  "M_HAND_SAMURAI3": 167,
+  "M_HAND_SHAMAN1": 541,
+  "M_HAND_SHAMAN2": 537,
+  "M_HAND_SHAMAN3": 539,
+  "M_HAND_SHAMAN4": 181,
+  "M_HAND_SINJID": 589,
+  "M_HAND_SURVIVOR": 347,
+  "M_HAND_USA1": 760,
+  "M_HAND_USA2": 746,
+  "M_HAND_USA3": 705,
+  "M_HAND_USA4": 691,
+  "M_HAND_USA5": 442,
+  "M_HEAD_FINAL1": 271,
+  "M_HEAD_FINAL2": 258,
+  "M_HEAD_FINAL3": 245,
+  "M_HEAD_FINAL4": 231,
+  "M_HEAD_GER": 713,
+  "M_HEAD_KNIGHT": 359,
+  "M_HEAD_MEDIC": 727,
+  "M_HEAD_NINJA": 906,
+  "M_HEAD_ROCKSTAR": 404,
+  "M_HEAD_SAMURAI": 612,
+  "M_HEAD_SAMURAI2": 599,
+  "M_HEAD_SAMURAI3": 163,
+  "M_HEAD_SHAMAN1": 553,
+  "M_HEAD_SHAMAN2": 549,
+  "M_HEAD_SHAMAN3": 551,
+  "M_HEAD_SHAMAN4": 179,
+  "M_HEAD_SINJID": 587,
+  "M_HEAD_SURVIVOR": 345,
+  "M_HEAD_USA1": 754,
+  "M_HEAD_USA2": 742,
+  "M_HEAD_USA3": 701,
+  "M_HEAD_USA4": 687,
+  "M_HEAD_USA5": 438,
+  "M_LEG2_FINAL1": 273,
+  "M_LEG2_FINAL2": 260,
+  "M_LEG2_FINAL3": 247,
+  "M_LEG2_FINAL4": 233,
+  "M_LEG2_GER": 715,
+  "M_LEG2_JEANS": 569,
+  "M_LEG2_KNIGHT": 357,
+  "M_LEG2_MEDIC": 729,
+  "M_LEG2_NAVY": 472,
+  "M_LEG2_NINJA": 910,
+  "M_LEG2_ROCKSTAR": 403,
+  "M_LEG2_SAMURAI": 614,
+  "M_LEG2_SAMURAI2": 601,
+  "M_LEG2_SAMURAI3": 165,
+  "M_LEG2_SHAMAN1": 535,
+  "M_LEG2_SHAMAN2": 531,
+  "M_LEG2_SHAMAN3": 533,
+  "M_LEG2_SHAMAN4": 177,
+  "M_LEG2_SINJID": 585,
+  "M_LEG2_SURVIVOR": 343,
+  "M_LEG2_USA1": 759,
+  "M_LEG2_USA2": 744,
+  "M_LEG2_USA3": 703,
+  "M_LEG2_USA4": 689,
+  "M_LEG2_USA5": 440,
+  "M_SARM_FIVE": 215,
+  "M_SARM_FOUR": 227,
+  "M_SARM_GHOST": 158,
+  "M_SARM_MAN": 581,
+  "M_SARM_MAN2": 460,
+  "M_SARM_MAN3": 434,
+  "M_SARM_METABII": 778,
+  "M_SARM_ONE": 901,
+  "M_SARM_TWO": 671,
+  "M_SARM_ZOMBIE": 683,
+  "M_SARM_ZOMBIE1": 647,
+  "M_SARM_ZOMBIE2": 635,
+  "M_SCHEST_FIVE": 213,
+  "M_SCHEST_FOUR": 225,
+  "M_SCHEST_GHOST": 156,
+  "M_SCHEST_MAN": 579,
+  "M_SCHEST_MAN2": 458,
+  "M_SCHEST_MAN3": 432,
+  "M_SCHEST_METABII": 776,
+  "M_SCHEST_ONE": 899,
+  "M_SCHEST_TWO": 669,
+  "M_SCHEST_ZOMBIE": 681,
+  "M_SCHEST_ZOMBIE1": 645,
+  "M_SCHEST_ZOMBIE2": 633,
+  "M_SFOOT_FIVE": 211,
+  "M_SFOOT_FOUR": 223,
+  "M_SFOOT_GHOST": 154,
+  "M_SFOOT_MAN": 577,
+  "M_SFOOT_MAN2": 456,
+  "M_SFOOT_MAN3": 430,
+  "M_SFOOT_METABII": 774,
+  "M_SFOOT_ONE": 897,
+  "M_SFOOT_TWO": 667,
+  "M_SFOOT_ZOMBIE": 679,
+  "M_SFOOT_ZOMBIE1": 643,
+  "M_SFOOT_ZOMBIE2": 631,
+  "M_SHAND_FIVE": 209,
+  "M_SHAND_FOUR": 221,
+  "M_SHAND_GHOST": 152,
+  "M_SHAND_MAN": 575,
+  "M_SHAND_MAN2": 454,
+  "M_SHAND_MAN3": 428,
+  "M_SHAND_METABII": 772,
+  "M_SHAND_ONE": 895,
+  "M_SHAND_TWO": 665,
+  "M_SHAND_ZOMBIE": 677,
+  "M_SHAND_ZOMBIE1": 641,
+  "M_SHAND_ZOMBIE2": 629,
+  "M_SHEAD_FIVE": 207,
+  "M_SHEAD_FOUR": 219,
+  "M_SHEAD_GHOST": 150,
+  "M_SHEAD_MAN": 573,
+  "M_SHEAD_MAN2": 452,
+  "M_SHEAD_MAN3": 426,
+  "M_SHEAD_METABII": 770,
+  "M_SHEAD_ONE": 893,
+  "M_SHEAD_TWO": 663,
+  "M_SHEAD_USA1": 756,
+  "M_SHEAD_ZOMBIE": 675,
+  "M_SHEAD_ZOMBIE1": 639,
+  "M_SHEAD_ZOMBIE2": 627,
+  "M_SHOULDER_FINAL1": 269,
+  "M_SHOULDER_FINAL2": 256,
+  "M_SHOULDER_FINAL3": 243,
+  "M_SHOULDER_FINAL4": 229,
+  "M_SHOULDER_KNIGHT": 355,
+  "M_SHOULDER_MEDIC": 725,
+  "M_SHOULDER_NINJA": 904,
+  "M_SHOULDER_ROCKSTAR": 401,
+  "M_SHOULDER_SAMURAI": 610,
+  "M_SHOULDER_SAMURAI2": 597,
+  "M_SHOULDER_SAMURAI3": 161,
+  "M_SHOULDER_SHAMAN1": 420,
+  "M_SHOULDER_SHAMAN2": 417,
+  "M_SHOULDER_SHAMAN3": 414,
+  "M_SHOULDER_SHAMAN4": 175,
+  "M_SHOULDER_SINJID": 583,
+  "M_SHOULDER_SURVIVOR": 341,
+  "M_SHOULDER_USA1": 757,
+  "M_SHOULDER_USA2": 740,
+  "M_SHOULDER_USA3": 699,
+  "M_SHOULDER_USA4": 685,
+  "M_SHOULDER_USA5": 436,
+  "M_SLEG2_FIVE": 205,
+  "M_SLEG2_FOUR": 217,
+  "M_SLEG2_GHOST": 148,
+  "M_SLEG2_MAN": 571,
+  "M_SLEG2_MAN2": 450,
+  "M_SLEG2_MAN3": 424,
+  "M_SLEG2_METABII": 768,
+  "M_SLEG2_ONE": 891,
+  "M_SLEG2_TWO": 661,
+  "M_SLEG2_ZOMBIE": 673,
+  "M_SLEG2_ZOMBIE1": 637,
+  "M_SLEG2_ZOMBIE2": 625,
+  "M_SSHOULDER_ONE": 889,
+  "M_WEAPON_BROAD": 521,
+  "M_WEAPON_CLUB": 502,
+  "M_WEAPON_CROWBAR": 555,
+  "M_WEAPON_FIREAXE": 557,
+  "M_WEAPON_KATANA": 914,
+  "M_WEAPON_M4": 561,
+  "M_WEAPON_MOON": 525,
+  "M_WEAPON_PALADINSWORD": 504,
+  "M_WEAPON_PIPE": 559,
+  "M_WEAPON_SHAMANKNIFE": 512,
+  "M_WEAPON_SHAMANMAGIC": 508,
+  "M_WEAPON_SHAMANMED": 510,
+  "M_WEAPON_SHAMANSWORD": 506,
+  "M_WEAPON_SHANK": 523,
+  "M_WEAPON_SHIELD2": 517,
+  "M_WEAPON_SPELLMACE": 519,
+  "M_WEAPON_SPELLSTAFF": 515,
+  "M_WEAPON_STICK": 476,
+  "M_WEAPON_SWATSWORD": 529,
+  "M_WEAPON_SWIFT": 527,
+  "M_WEAPON_SWORD1": 462,
+  "M_WEAPON_UBER1": 500,
+  "M_WEAPON_UBER10": 490,
+  "M_WEAPON_UBER11": 498,
+  "M_WEAPON_UBER2": 480,
+  "M_WEAPON_UBER3": 496,
+  "M_WEAPON_UBER4": 494,
+  "M_WEAPON_UBER5": 482,
+  "M_WEAPON_UBER6": 486,
+  "M_WEAPON_UBER7": 484,
+  "M_WEAPON_UBER8": 488,
+  "M_WEAPON_UBER9": 492,
+  "MagicCast": 21,
+  "MagicHit": 19,
+  "MagicMiss": 16,
+  "NumberFixer": 102,
+  "NumberSetter": 143,
+  "PoisonHit": 14,
+  "PowerupDefense": 12,
+  "PowerupOffense": 10,
+  "ShamanDie": 2,
+  "ShamanHit1": 6,
+  "ShamanHit2": 4,
+  "SonnyDie": 83,
+  "SonnyHit1": 76,
+  "SonnyHit2": 61,
+  "SonnyHit3": 68,
+  "Swing": 9,
+  "ZPCIHit1": 39,
+  "ZPCIHit2": 34,
+  "ZombieDie": 70,
+  "ZombieHit1": 85,
+  "ZombieHit2": 78,
+  "__Packages.com.gskinner.utils.SWFBridgeAS2": 1728,
+  "__Packages.mx.events.EventDispatcher": 1729,
+  "dog": 89,
+  "menumusic": 1,
+  "talenter": 871,
+  "v2_1": 87,
+  "v2_2": 80,
+  "v2_3": 72,
+  "v2_4": 64,
+  "v2_5": 59,
+  "v2_6": 54,
+  "v2_7": 49,
+  "v2_8": 44,
+  "v3_1": 88,
+  "v3_10": 81,
+  "v3_11": 73,
+  "v3_12": 65,
+  "v3_13": 60,
+  "v3_14": 55,
+  "v3_15": 50,
+  "v3_16": 45,
+  "v3_17": 41,
+  "v3_2": 36,
+  "v3_3": 32,
+  "v3_4": 40,
+  "v3_5": 26,
+  "v3_6": 23,
+  "v3_7": 20,
+  "v3_8": 18,
+  "v3_9": 35,
+  "v_1": 82,
+  "v_10": 48,
+  "v_2": 75,
+  "v_3": 67,
+  "v_4": 86,
+  "v_5": 79,
+  "v_6": 71,
+  "v_7": 63,
+  "v_8": 58,
+  "v_9": 53
+ },
+ "sprite_ids": [
+  89,
+  91,
+  92,
+  93,
+  94,
+  97,
+  99,
+  101,
+  102,
+  105,
+  109,
+  113,
+  117,
+  121,
+  125,
+  129,
+  133,
+  137,
+  141,
+  143,
+  145,
+  146,
+  148,
+  150,
+  152,
+  154,
+  156,
+  158,
+  161,
+  163,
+  165,
+  167,
+  169,
+  171,
+  173,
+  175,
+  177,
+  179,
+  181,
+  183,
+  185,
+  187,
+  189,
+  191,
+  193,
+  195,
+  197,
+  199,
+  201,
+  203,
+  205,
+  207,
+  209,
+  211,
+  213,
+  215,
+  217,
+  219,
+  221,
+  223,
+  225,
+  227,
+  229,
+  231,
+  233,
+  235,
+  237,
+  239,
+  241,
+  243,
+  245,
+  247,
+  249,
+  251,
+  253,
+  254,
+  256,
+  258,
+  260,
+  262,
+  264,
+  266,
+  267,
+  269,
+  271,
+  273,
+  275,
+  277,
+  279,
+  280,
+  298,
+  299,
+  311,
+  312,
+  313,
+  324,
+  325,
+  326,
+  327,
+  328,
+  329,
+  331,
+  332,
+  334,
+  335,
+  336,
+  337,
+  338,
+  339,
+  341,
+  343,
+  345,
+  347,
+  349,
+  351,
+  353,
+  355,
+  357,
+  359,
+  361,
+  363,
+  365,
+  367,
+  369,
+  372,
+  373,
+  383,
+  390,
+  394,
+  395,
+  398,
+  399,
+  400,
+  401,
+  403,
+  404,
+  406,
+  408,
+  410,
+  412,
+  414,
+  415,
+  417,
+  418,
+  420,
+  421,
+  422,
+  424,
+  426,
+  428,
+  430,
+  432,
+  434,
+  436,
+  438,
+  440,
+  442,
+  444,
+  446,
+  448,
+  450,
+  452,
+  454,
+  456,
+  458,
+  460,
+  462,
+  464,
+  466,
+  468,
+  470,
+  472,
+  474,
+  476,
+  478,
+  480,
+  482,
+  484,
+  486,
+  488,
+  490,
+  492,
+  494,
+  496,
+  498,
+  500,
+  502,
+  504,
+  506,
+  508,
+  510,
+  512,
+  515,
+  517,
+  519,
+  521,
+  523,
+  525,
+  527,
+  529,
+  531,
+  533,
+  535,
+  537,
+  539,
+  541,
+  543,
+  545,
+  547,
+  549,
+  551,
+  553,
+  555,
+  557,
+  559,
+  561,
+  563,
+  565,
+  567,
+  569,
+  571,
+  573,
+  575,
+  577,
+  579,
+  581,
+  583,
+  585,
+  587,
+  589,
+  591,
+  593,
+  595,
+  597,
+  599,
+  601,
+  603,
+  605,
+  607,
+  608,
+  610,
+  612,
+  614,
+  616,
+  618,
+  620,
+  621,
+  623,
+  625,
+  627,
+  629,
+  631,
+  633,
+  635,
+  637,
+  639,
+  641,
+  643,
+  645,
+  647,
+  649,
+  651,
+  653,
+  655,
+  657,
+  659,
+  661,
+  663,
+  665,
+  667,
+  669,
+  671,
+  673,
+  675,
+  677,
+  679,
+  681,
+  683,
+  685,
+  687,
+  689,
+  691,
+  693,
+  695,
+  697,
+  699,
+  701,
+  703,
+  705,
+  707,
+  709,
+  711,
+  713,
+  715,
+  717,
+  719,
+  721,
+  723,
+  725,
+  727,
+  729,
+  731,
+  733,
+  736,
+  738,
+  740,
+  742,
+  744,
+  746,
+  748,
+  750,
+  752,
+  754,
+  756,
+  757,
+  759,
+  760,
+  762,
+  764,
+  766,
+  768,
+  770,
+  772,
+  774,
+  776,
+  778,
+  780,
+  798,
+  801,
+  802,
+  804,
+  806,
+  808,
+  810,
+  812,
+  814,
+  815,
+  819,
+  820,
+  822,
+  826,
+  828,
+  866,
+  871,
+  875,
+  876,
+  878,
+  879,
+  881,
+  882,
+  883,
+  884,
+  885,
+  886,
+  887,
+  888,
+  889,
+  891,
+  893,
+  895,
+  897,
+  899,
+  901,
+  902,
+  904,
+  906,
+  908,
+  910,
+  912,
+  914,
+  916,
+  918,
+  919,
+  920,
+  921,
+  922,
+  923,
+  924,
+  925,
+  926,
+  928,
+  929,
+  930,
+  932,
+  934,
+  936,
+  938,
+  939,
+  940,
+  943,
+  944,
+  1728,
+  1729,
+  949,
+  951,
+  954,
+  956,
+  957,
+  959,
+  968,
+  970,
+  972,
+  973,
+  974,
+  975,
+  1092,
+  1093,
+  1096,
+  1101,
+  1103,
+  1139,
+  1141,
+  1142,
+  1198,
+  1201,
+  1202,
+  1207,
+  1237,
+  1241,
+  1248,
+  1261,
+  1262,
+  1269,
+  1271,
+  1273,
+  1275,
+  1277,
+  1280,
+  1282,
+  1312,
+  1314,
+  1317,
+  1318,
+  1335,
+  1336,
+  1338,
+  1339,
+  1344,
+  1355,
+  1359,
+  1363,
+  1367,
+  1382,
+  1390,
+  1394,
+  1398,
+  1403,
+  1406,
+  1415,
+  1417,
+  1424,
+  1425,
+  1426,
+  1442,
+  1444,
+  1461,
+  1462,
+  1466,
+  1468,
+  1476,
+  1503,
+  1506,
+  1507,
+  1510,
+  1513,
+  1516,
+  1531,
+  1534,
+  1536,
+  1537,
+  1540,
+  1542,
+  1549,
+  1552,
+  1553,
+  1559,
+  1560,
+  1561,
+  1562,
+  1563,
+  1564,
+  1567,
+  1568,
+  1569,
+  1571,
+  1584,
+  1585,
+  1587,
+  1590,
+  1593,
+  1594,
+  1595,
+  1596,
+  1606,
+  1608,
+  1609,
+  1610,
+  1632,
+  1634,
+  1637,
+  1639,
+  1640,
+  1642,
+  1657,
+  1659,
+  1664,
+  1676,
+  1682,
+  1685,
+  1688,
+  1695,
+  1699,
+  1703,
+  1704,
+  1710,
+  1719,
+  1722,
+  1725,
+  1726
+ ],
+ "sound_ids": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35,
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45,
+  46,
+  47,
+  48,
+  49,
+  50,
+  51,
+  52,
+  53,
+  54,
+  55,
+  56,
+  57,
+  58,
+  59,
+  60,
+  61,
+  62,
+  63,
+  64,
+  65,
+  66,
+  67,
+  68,
+  69,
+  70,
+  71,
+  72,
+  73,
+  74,
+  75,
+  76,
+  77,
+  78,
+  79,
+  80,
+  81,
+  82,
+  83,
+  84,
+  85,
+  86,
+  87,
+  88
+ ],
+ "root_frame_labels": {
+  "YES_LOCK": 5,
+  "NO_LOCK": 18,
+  "soundExport": 60,
+  "resetHere": 61,
+  "mainMenu": 66,
+  "subMenu": 76,
+  "nameMenu": 84,
+  "dataMenu": 94,
+  "classMenu": 104,
+  "optionsMenu": 113,
+  "gameOverMenu": 124,
+  "endMenu": 136,
+  "designMenu": 144,
+  "IntroSeq": 160,
+  "Navigation": 175,
+  "LOADBATTLESCENE": 196,
+  "KRINBATTLESCENE": 212,
+  "winCombat": 213,
+  "loseCombat": 224,
+  "drawCombat": 235,
+  "CS_INTRO": 247,
+  "CS_BRIDGE": 278,
+  "CS_OUTRO": 304,
+  "overMap": 329
+ },
+ "sprite_frame_labels": {
+  "92": {
+   "healSmooth": 36,
+   "dead": 75
+  },
+  "93": {
+   "healSmooth": 36
+  },
+  "102": {
+   "normal": 1,
+   "critical": 69,
+   "miss": 131,
+   "shield": 183
+  },
+  "143": {
+   "One": 1,
+   "Two": 5,
+   "Three": 9,
+   "Four": 13,
+   "Five": 17,
+   "Six": 21,
+   "Seven": 25,
+   "Eight": 29,
+   "Nine": 33,
+   "Zero": 37
+  },
+  "400": {
+   "stand": 1,
+   "cast": 30,
+   "dead": 57
+  },
+  "798": {
+   "BLACKOUT": 8,
+   "SHATTER1": 8,
+   "POISON": 8,
+   "FATE": 9,
+   "SHATTER2": 17,
+   "SHATTER3": 18,
+   "SHATTER": 19,
+   "BURNS": 21,
+   "REGENSHAMAN": 29,
+   "REGENFOC": 29,
+   "REGEN": 29,
+   "DARKREGEN": 30,
+   "IRONSKIN1": 37,
+   "IRONSKIN2": 45,
+   "IRONSKIN3": 46,
+   "IRONSKIN4": 47,
+   "IRONSKIN5": 48,
+   "BURNING": 49,
+   "POWERUP": 49,
+   "RAGE1": 49,
+   "DOCTOR": 51,
+   "RAGE2": 55,
+   "RAGE3": 56,
+   "FIRESHOCK": 57,
+   "STUN1": 57,
+   "VOID1": 63,
+   "POISONZOMBIE": 63,
+   "WOUND1": 63,
+   "IGNITE": 66,
+   "DECAY": 70,
+   "VOIDMOB": 76,
+   "VOID2": 77,
+   "VOID3": 78,
+   "VOID4": 79,
+   "WOUND2": 79,
+   "VOID5": 80,
+   "WOUND3": 80,
+   "COLDSOUL": 81,
+   "CRIPPLE1": 81,
+   "CRIPPLE2": 89,
+   "CRIPPLE3": 90,
+   "CRIPPLE4": 91,
+   "CRIPPLE5": 92,
+   "FATALFLAW": 93,
+   "MAGICWOUND": 93,
+   "SUNDER1": 93,
+   "SUNDER2": 101,
+   "SUNDER3": 102,
+   "SUNDER4": 103,
+   "SUNDER5": 104,
+   "SUPRESSION": 105,
+   "WASHED": 117,
+   "BLOCK1": 117,
+   "BLOCK2": 124,
+   "BLOCK3": 125,
+   "SUBVERSION": 126,
+   "SPEEDUP": 135,
+   "INTERVENTION1": 148,
+   "INTERVENTION2": 161,
+   "INTERVENTION3": 162,
+   "INTERVENTION4": 163,
+   "INTERVENTION5": 164,
+   "INTERVENTION6": 165,
+   "INTERVENTION7": 166,
+   "INTERVENTION8": 167,
+   "INTERVENTION9": 168,
+   "INTERVENTION10": 169
+  },
+  "866": {
+   "None": 1,
+   "Empty": 7,
+   "Frost Bolt": 15,
+   "REGEN": 24,
+   "Healing Light": 31,
+   "Strike": 41,
+   "Blessing of Light": 46,
+   "Smash": 59,
+   "Wound": 65,
+   "Break": 71,
+   "Disrupt": 77,
+   "Ironskin": 84,
+   "Cell Reformation": 91,
+   "Rage": 104,
+   "Heroic Motivation": 109,
+   "Block": 122,
+   "Cripple": 127,
+   "Blood Strike": 133,
+   "Blood Focus": 143,
+   "Master Strike": 152,
+   "Coup De Grace": 162,
+   "Flame Strike": 174,
+   "Sunder": 184,
+   "SOLIDITY": 191,
+   "ENDURANCE": 199,
+   "BRUTALITY": 210,
+   "REGENERATION": 220,
+   "Suppression": 232,
+   "Quick Strike": 243,
+   "Magic Bolt": 253,
+   "Electro Bolt": 262,
+   "Intervention": 271,
+   "Flame Blast": 282,
+   "Shatter Bolt": 292,
+   "Void": 302,
+   "Re-Energize": 306,
+   "Subversion": 316,
+   "Empty2": 334
+  },
+  "940": {
+   "stand": 1,
+   "run": 46,
+   "attack1": 78,
+   "attack2": 93,
+   "runback": 108,
+   "cast": 129,
+   "stun": 160,
+   "stun2": 204,
+   "outofstun": 244,
+   "hit": 260,
+   "dead": 277
+  },
+  "1092": {
+   "Nichts": 1,
+   "None": 1,
+   "Nike Head Wear": 34,
+   "A Sword": 47,
+   "Levo Jeans": 60,
+   "A Broken Pipe": 69,
+   "Fire Axe": 80,
+   "Crow Bar": 87,
+   "Proverse All Stars": 95,
+   "Engineering Gloves": 109,
+   "Navy Boots": 123,
+   "White T-Shirt": 132,
+   "Helm": 144,
+   "Helm of Peril": 144,
+   "Ghostly Mask": 145,
+   "Hunter's Helm": 146,
+   "ZPCI Med-Wear A": 147,
+   "Crown of Frozen Shadows": 148,
+   "Striker's Mask": 149,
+   "Breaker's Mask": 150,
+   "Dead Peacock": 151,
+   "Knight's Helm": 152,
+   "Survivor's Helm": 153,
+   "Destroyer's Helm": 154,
+   "Guardian's Helm": 155,
+   "Assassin's Helm": 156,
+   "Gunslinger's Helm": 157,
+   "Paladin's Helm": 158,
+   "BODY": 170,
+   "Armor of the Fallen": 170,
+   "Assasin's Tunic": 171,
+   "Hunter's Armor": 172,
+   "ZPCI Med-Wear B": 173,
+   "Armor of the Teacher": 174,
+   "Striker's Armor": 175,
+   "Breaker's Armor": 176,
+   "Mender's Armor": 177,
+   "Knight's Armor": 178,
+   "Survivor's Armor": 179,
+   "Destroyer's Armor": 180,
+   "Guardian's Armor": 181,
+   "Assassin's Armor": 182,
+   "Gunslinger's Armor": 183,
+   "Paladin's Armor": 184,
+   "GLOVES": 195,
+   "Handguards of Destiny": 195,
+   "Handwraps of Caution": 196,
+   "Hunter's Handguards": 197,
+   "ZPCI Med-Wear C": 198,
+   "Grand Master's Gloves": 199,
+   "Striker's Gloves": 200,
+   "Breaker's Gloves": 201,
+   "Mender's Gloves": 202,
+   "Knight's Gloves": 203,
+   "Survivor's Gloves": 204,
+   "Destroyer's Gloves": 205,
+   "Guardian's Gloves": 206,
+   "Assassin's Gloves": 207,
+   "Gunslinger's Gloves": 208,
+   "Gloves": 209,
+   "Paladin's Gloves": 210,
+   "LEGS": 218,
+   "Cold Steel Leggings": 218,
+   "Shadow Legwraps": 219,
+   "Hunter's Legplates": 220,
+   "ZPCI Med-Wear D": 221,
+   "Legplates of Icy Doom": 222,
+   "Striker's Leggings": 223,
+   "Breaker's Pantyhose": 224,
+   "Mender's Leggings": 225,
+   "Knight's Leggings": 226,
+   "Survivor's Leggings": 227,
+   "Destroyer's Leggings": 228,
+   "Guardian's Leggings": 229,
+   "Assassin's Leggings": 230,
+   "Gunslinger's Leggings": 231,
+   "Paladin's Leggings": 232,
+   "FEET": 240,
+   "Deep Sea Greaves": 240,
+   "Boots of Stealth": 241,
+   "Hunter's Boots": 242,
+   "ZPCI Med-Wear E": 243,
+   "Footguard of the Shore": 244,
+   "Striker's Flip-Flops": 245,
+   "Breaker's Boots": 246,
+   "Mender's Boots": 247,
+   "Knight's Boots": 248,
+   "Survivor's Boots": 249,
+   "Destroyer's Boots": 250,
+   "Guardian's Boots": 251,
+   "Assassin's Boots": 252,
+   "Gunslinger's Boots": 253,
+   "Paladin's Boots": 254,
+   "WEAPON": 262,
+   "M7-V Rifle": 262,
+   "ZPCI Blade": 263,
+   "Swift Blade": 264,
+   "Icy Katana": 265,
+   "Pulse Rifle": 266,
+   "Moon-Struck Horrors": 267,
+   "Bloody Dagger": 268,
+   "Bloody Blade": 268,
+   "Steel Slicer": 269,
+   "Ivory Mace": 270,
+   "Ivory Shield": 271,
+   "Nature's Fury": 272,
+   "Tribal Dagger": 273,
+   "Tribal Blade": 273,
+   "Mender's Axe": 274,
+   "Breaker's Axe": 275,
+   "Cannibal's Hunger": 276,
+   "Blade of Light": 277,
+   "Stone Club": 278,
+   "Destruction": 279,
+   "Reckoning": 280,
+   "The Grand Rifle": 281,
+   "Judgement": 282,
+   "Frost Lantern": 283,
+   "Power Lantern": 284,
+   "Magic Lantern": 285,
+   "Torment": 286,
+   "Balance": 287,
+   "Eternity": 288,
+   "Murder": 289,
+   "Assassination": 289,
+   "Convoy Package": 296,
+   "Zombie Fingers": 297,
+   "ZPCI Dog Tag": 298,
+   "Broken Totem": 299,
+   "Tool": 300,
+   "Champion's Trophy": 301,
+   "Ghost Medallion": 302
+  },
+  "1142": {
+   "none": 1,
+   "GO": 4,
+   "GO2": 7,
+   "GO3": 10,
+   "GO4": 13,
+   "GO5": 16,
+   "GO7": 17
+  },
+  "1201": {
+   "SEA": 1
+  },
+  "1237": {
+   "WHITE_NOVEMBER": 1,
+   "KOJIS_REST": 16,
+   "PLAINS": 31,
+   "HEW": 46
+  },
+  "1312": {
+   "Veradux": 1,
+   "Scarlett": 2,
+   "Ludwig": 3,
+   "Wolfgang": 4,
+   "Rockstar": 4,
+   "Amber": 5,
+   "Sonny": 6,
+   "mainPlayer": 6,
+   "Louis the Blind": 23,
+   "Information": 40,
+   "Elite Medic": 55,
+   "ZPCI Medic": 55,
+   "ZPCI Elite": 69,
+   "ZPCI Captain": 69,
+   "ZPCI Sniper": 70,
+   "ZPCI Hunter": 71,
+   "Galiant the Paladin": 72,
+   "Frost Zombie": 88,
+   "Zombie Ambassador": 89,
+   "Baron Brixius": 90,
+   "Shaman of Blades": 102,
+   "Dokebi the Striker": 102,
+   "Shaman of Death": 103,
+   "Vendetta the Breaker": 103,
+   "Argalla the Mender": 104,
+   "Ghost Assassin": 113,
+   "Ghost Samurai": 114,
+   "Sensei Ishiguro": 115
+  },
+  "1344": {
+   "level": 2
+  },
+  "1426": {
+   "Dreadnaught": 1
+  },
+  "1444": {
+   "dead": 8
+  },
+  "1476": {
+   "stable": 1,
+   "level": 7,
+   "part1": 12,
+   "part2": 56,
+   "part3": 107,
+   "part4": 151
+  },
+  "1503": {
+   "inventory": 1,
+   "normal": 2,
+   "win": 9,
+   "shop": 16,
+   "skills": 25,
+   "data": 32,
+   "options": 39,
+   "hide": 46
+  },
+  "1507": {
+   "GO": 2
+  },
+  "1553": {
+   "DAY": 1,
+   "DAY2": 6,
+   "SEA": 13,
+   "NIGHT": 26
+  },
+  "1559": {
+   "WHITE NOVEMBER": 9,
+   "SHORE": 23,
+   "PLAINS": 30,
+   "PLAINS2": 40
+  },
+  "1560": {
+   "KrinShakestopHere": 1,
+   "KrinShakeplayHere": 3
+  },
+  "1561": {
+   "KrinZoomStop": 1,
+   "KrinZoomGo": 2,
+   "KrinZoomPlay": 3,
+   "KrinZoomPause": 5
+  },
+  "1564": {
+   "none": 1,
+   "hit": 2,
+   "heal": 17
+  },
+  "1584": {
+   "second": 2,
+   "third": 9
+  },
+  "1595": {
+   "friend": 1,
+   "enemy": 12
+  }
+ },
+ "label_index": {
+  "A Broken Pipe": [
+   [
+    1092,
+    69
+   ]
+  ],
+  "A Sword": [
+   [
+    1092,
+    47
+   ]
+  ],
+  "Amber": [
+   [
+    1312,
+    5
+   ]
+  ],
+  "Argalla the Mender": [
+   [
+    1312,
+    104
+   ]
+  ],
+  "Armor of the Fallen": [
+   [
+    1092,
+    170
+   ]
+  ],
+  "Armor of the Teacher": [
+   [
+    1092,
+    174
+   ]
+  ],
+  "Assasin's Tunic": [
+   [
+    1092,
+    171
+   ]
+  ],
+  "Assassin's Armor": [
+   [
+    1092,
+    182
+   ]
+  ],
+  "Assassin's Boots": [
+   [
+    1092,
+    252
+   ]
+  ],
+  "Assassin's Gloves": [
+   [
+    1092,
+    207
+   ]
+  ],
+  "Assassin's Helm": [
+   [
+    1092,
+    156
+   ]
+  ],
+  "Assassin's Leggings": [
+   [
+    1092,
+    230
+   ]
+  ],
+  "Assassination": [
+   [
+    1092,
+    289
+   ]
+  ],
+  "BLACKOUT": [
+   [
+    798,
+    8
+   ]
+  ],
+  "BLOCK1": [
+   [
+    798,
+    117
+   ]
+  ],
+  "BLOCK2": [
+   [
+    798,
+    124
+   ]
+  ],
+  "BLOCK3": [
+   [
+    798,
+    125
+   ]
+  ],
+  "BODY": [
+   [
+    1092,
+    170
+   ]
+  ],
+  "BRUTALITY": [
+   [
+    866,
+    210
+   ]
+  ],
+  "BURNING": [
+   [
+    798,
+    49
+   ]
+  ],
+  "BURNS": [
+   [
+    798,
+    21
+   ]
+  ],
+  "Balance": [
+   [
+    1092,
+    287
+   ]
+  ],
+  "Baron Brixius": [
+   [
+    1312,
+    90
+   ]
+  ],
+  "Blade of Light": [
+   [
+    1092,
+    277
+   ]
+  ],
+  "Blessing of Light": [
+   [
+    866,
+    46
+   ]
+  ],
+  "Block": [
+   [
+    866,
+    122
+   ]
+  ],
+  "Blood Focus": [
+   [
+    866,
+    143
+   ]
+  ],
+  "Blood Strike": [
+   [
+    866,
+    133
+   ]
+  ],
+  "Bloody Blade": [
+   [
+    1092,
+    268
+   ]
+  ],
+  "Bloody Dagger": [
+   [
+    1092,
+    268
+   ]
+  ],
+  "Boots of Stealth": [
+   [
+    1092,
+    241
+   ]
+  ],
+  "Break": [
+   [
+    866,
+    71
+   ]
+  ],
+  "Breaker's Armor": [
+   [
+    1092,
+    176
+   ]
+  ],
+  "Breaker's Axe": [
+   [
+    1092,
+    275
+   ]
+  ],
+  "Breaker's Boots": [
+   [
+    1092,
+    246
+   ]
+  ],
+  "Breaker's Gloves": [
+   [
+    1092,
+    201
+   ]
+  ],
+  "Breaker's Mask": [
+   [
+    1092,
+    150
+   ]
+  ],
+  "Breaker's Pantyhose": [
+   [
+    1092,
+    224
+   ]
+  ],
+  "Broken Totem": [
+   [
+    1092,
+    299
+   ]
+  ],
+  "COLDSOUL": [
+   [
+    798,
+    81
+   ]
+  ],
+  "CRIPPLE1": [
+   [
+    798,
+    81
+   ]
+  ],
+  "CRIPPLE2": [
+   [
+    798,
+    89
+   ]
+  ],
+  "CRIPPLE3": [
+   [
+    798,
+    90
+   ]
+  ],
+  "CRIPPLE4": [
+   [
+    798,
+    91
+   ]
+  ],
+  "CRIPPLE5": [
+   [
+    798,
+    92
+   ]
+  ],
+  "Cannibal's Hunger": [
+   [
+    1092,
+    276
+   ]
+  ],
+  "Cell Reformation": [
+   [
+    866,
+    91
+   ]
+  ],
+  "Champion's Trophy": [
+   [
+    1092,
+    301
+   ]
+  ],
+  "Cold Steel Leggings": [
+   [
+    1092,
+    218
+   ]
+  ],
+  "Convoy Package": [
+   [
+    1092,
+    296
+   ]
+  ],
+  "Coup De Grace": [
+   [
+    866,
+    162
+   ]
+  ],
+  "Cripple": [
+   [
+    866,
+    127
+   ]
+  ],
+  "Crow Bar": [
+   [
+    1092,
+    87
+   ]
+  ],
+  "Crown of Frozen Shadows": [
+   [
+    1092,
+    148
+   ]
+  ],
+  "DARKREGEN": [
+   [
+    798,
+    30
+   ]
+  ],
+  "DAY": [
+   [
+    1553,
+    1
+   ]
+  ],
+  "DAY2": [
+   [
+    1553,
+    6
+   ]
+  ],
+  "DECAY": [
+   [
+    798,
+    70
+   ]
+  ],
+  "DOCTOR": [
+   [
+    798,
+    51
+   ]
+  ],
+  "Dead Peacock": [
+   [
+    1092,
+    151
+   ]
+  ],
+  "Deep Sea Greaves": [
+   [
+    1092,
+    240
+   ]
+  ],
+  "Destroyer's Armor": [
+   [
+    1092,
+    180
+   ]
+  ],
+  "Destroyer's Boots": [
+   [
+    1092,
+    250
+   ]
+  ],
+  "Destroyer's Gloves": [
+   [
+    1092,
+    205
+   ]
+  ],
+  "Destroyer's Helm": [
+   [
+    1092,
+    154
+   ]
+  ],
+  "Destroyer's Leggings": [
+   [
+    1092,
+    228
+   ]
+  ],
+  "Destruction": [
+   [
+    1092,
+    279
+   ]
+  ],
+  "Disrupt": [
+   [
+    866,
+    77
+   ]
+  ],
+  "Dokebi the Striker": [
+   [
+    1312,
+    102
+   ]
+  ],
+  "Dreadnaught": [
+   [
+    1426,
+    1
+   ]
+  ],
+  "ENDURANCE": [
+   [
+    866,
+    199
+   ]
+  ],
+  "Eight": [
+   [
+    143,
+    29
+   ]
+  ],
+  "Electro Bolt": [
+   [
+    866,
+    262
+   ]
+  ],
+  "Elite Medic": [
+   [
+    1312,
+    55
+   ]
+  ],
+  "Empty": [
+   [
+    866,
+    7
+   ]
+  ],
+  "Empty2": [
+   [
+    866,
+    334
+   ]
+  ],
+  "Engineering Gloves": [
+   [
+    1092,
+    109
+   ]
+  ],
+  "Eternity": [
+   [
+    1092,
+    288
+   ]
+  ],
+  "FATALFLAW": [
+   [
+    798,
+    93
+   ]
+  ],
+  "FATE": [
+   [
+    798,
+    9
+   ]
+  ],
+  "FEET": [
+   [
+    1092,
+    240
+   ]
+  ],
+  "FIRESHOCK": [
+   [
+    798,
+    57
+   ]
+  ],
+  "Fire Axe": [
+   [
+    1092,
+    80
+   ]
+  ],
+  "Five": [
+   [
+    143,
+    17
+   ]
+  ],
+  "Flame Blast": [
+   [
+    866,
+    282
+   ]
+  ],
+  "Flame Strike": [
+   [
+    866,
+    174
+   ]
+  ],
+  "Footguard of the Shore": [
+   [
+    1092,
+    244
+   ]
+  ],
+  "Four": [
+   [
+    143,
+    13
+   ]
+  ],
+  "Frost Bolt": [
+   [
+    866,
+    15
+   ]
+  ],
+  "Frost Lantern": [
+   [
+    1092,
+    283
+   ]
+  ],
+  "Frost Zombie": [
+   [
+    1312,
+    88
+   ]
+  ],
+  "GLOVES": [
+   [
+    1092,
+    195
+   ]
+  ],
+  "GO": [
+   [
+    1142,
+    4
+   ],
+   [
+    1507,
+    2
+   ]
+  ],
+  "GO2": [
+   [
+    1142,
+    7
+   ]
+  ],
+  "GO3": [
+   [
+    1142,
+    10
+   ]
+  ],
+  "GO4": [
+   [
+    1142,
+    13
+   ]
+  ],
+  "GO5": [
+   [
+    1142,
+    16
+   ]
+  ],
+  "GO7": [
+   [
+    1142,
+    17
+   ]
+  ],
+  "Galiant the Paladin": [
+   [
+    1312,
+    72
+   ]
+  ],
+  "Ghost Assassin": [
+   [
+    1312,
+    113
+   ]
+  ],
+  "Ghost Medallion": [
+   [
+    1092,
+    302
+   ]
+  ],
+  "Ghost Samurai": [
+   [
+    1312,
+    114
+   ]
+  ],
+  "Ghostly Mask": [
+   [
+    1092,
+    145
+   ]
+  ],
+  "Gloves": [
+   [
+    1092,
+    209
+   ]
+  ],
+  "Grand Master's Gloves": [
+   [
+    1092,
+    199
+   ]
+  ],
+  "Guardian's Armor": [
+   [
+    1092,
+    181
+   ]
+  ],
+  "Guardian's Boots": [
+   [
+    1092,
+    251
+   ]
+  ],
+  "Guardian's Gloves": [
+   [
+    1092,
+    206
+   ]
+  ],
+  "Guardian's Helm": [
+   [
+    1092,
+    155
+   ]
+  ],
+  "Guardian's Leggings": [
+   [
+    1092,
+    229
+   ]
+  ],
+  "Gunslinger's Armor": [
+   [
+    1092,
+    183
+   ]
+  ],
+  "Gunslinger's Boots": [
+   [
+    1092,
+    253
+   ]
+  ],
+  "Gunslinger's Gloves": [
+   [
+    1092,
+    208
+   ]
+  ],
+  "Gunslinger's Helm": [
+   [
+    1092,
+    157
+   ]
+  ],
+  "Gunslinger's Leggings": [
+   [
+    1092,
+    231
+   ]
+  ],
+  "HEW": [
+   [
+    1237,
+    46
+   ]
+  ],
+  "Handguards of Destiny": [
+   [
+    1092,
+    195
+   ]
+  ],
+  "Handwraps of Caution": [
+   [
+    1092,
+    196
+   ]
+  ],
+  "Healing Light": [
+   [
+    866,
+    31
+   ]
+  ],
+  "Helm": [
+   [
+    1092,
+    144
+   ]
+  ],
+  "Helm of Peril": [
+   [
+    1092,
+    144
+   ]
+  ],
+  "Heroic Motivation": [
+   [
+    866,
+    109
+   ]
+  ],
+  "Hunter's Armor": [
+   [
+    1092,
+    172
+   ]
+  ],
+  "Hunter's Boots": [
+   [
+    1092,
+    242
+   ]
+  ],
+  "Hunter's Handguards": [
+   [
+    1092,
+    197
+   ]
+  ],
+  "Hunter's Helm": [
+   [
+    1092,
+    146
+   ]
+  ],
+  "Hunter's Legplates": [
+   [
+    1092,
+    220
+   ]
+  ],
+  "IGNITE": [
+   [
+    798,
+    66
+   ]
+  ],
+  "INTERVENTION1": [
+   [
+    798,
+    148
+   ]
+  ],
+  "INTERVENTION10": [
+   [
+    798,
+    169
+   ]
+  ],
+  "INTERVENTION2": [
+   [
+    798,
+    161
+   ]
+  ],
+  "INTERVENTION3": [
+   [
+    798,
+    162
+   ]
+  ],
+  "INTERVENTION4": [
+   [
+    798,
+    163
+   ]
+  ],
+  "INTERVENTION5": [
+   [
+    798,
+    164
+   ]
+  ],
+  "INTERVENTION6": [
+   [
+    798,
+    165
+   ]
+  ],
+  "INTERVENTION7": [
+   [
+    798,
+    166
+   ]
+  ],
+  "INTERVENTION8": [
+   [
+    798,
+    167
+   ]
+  ],
+  "INTERVENTION9": [
+   [
+    798,
+    168
+   ]
+  ],
+  "IRONSKIN1": [
+   [
+    798,
+    37
+   ]
+  ],
+  "IRONSKIN2": [
+   [
+    798,
+    45
+   ]
+  ],
+  "IRONSKIN3": [
+   [
+    798,
+    46
+   ]
+  ],
+  "IRONSKIN4": [
+   [
+    798,
+    47
+   ]
+  ],
+  "IRONSKIN5": [
+   [
+    798,
+    48
+   ]
+  ],
+  "Icy Katana": [
+   [
+    1092,
+    265
+   ]
+  ],
+  "Information": [
+   [
+    1312,
+    40
+   ]
+  ],
+  "Intervention": [
+   [
+    866,
+    271
+   ]
+  ],
+  "Ironskin": [
+   [
+    866,
+    84
+   ]
+  ],
+  "Ivory Mace": [
+   [
+    1092,
+    270
+   ]
+  ],
+  "Ivory Shield": [
+   [
+    1092,
+    271
+   ]
+  ],
+  "Judgement": [
+   [
+    1092,
+    282
+   ]
+  ],
+  "KOJIS_REST": [
+   [
+    1237,
+    16
+   ]
+  ],
+  "Knight's Armor": [
+   [
+    1092,
+    178
+   ]
+  ],
+  "Knight's Boots": [
+   [
+    1092,
+    248
+   ]
+  ],
+  "Knight's Gloves": [
+   [
+    1092,
+    203
+   ]
+  ],
+  "Knight's Helm": [
+   [
+    1092,
+    152
+   ]
+  ],
+  "Knight's Leggings": [
+   [
+    1092,
+    226
+   ]
+  ],
+  "KrinShakeplayHere": [
+   [
+    1560,
+    3
+   ]
+  ],
+  "KrinShakestopHere": [
+   [
+    1560,
+    1
+   ]
+  ],
+  "KrinZoomGo": [
+   [
+    1561,
+    2
+   ]
+  ],
+  "KrinZoomPause": [
+   [
+    1561,
+    5
+   ]
+  ],
+  "KrinZoomPlay": [
+   [
+    1561,
+    3
+   ]
+  ],
+  "KrinZoomStop": [
+   [
+    1561,
+    1
+   ]
+  ],
+  "LEGS": [
+   [
+    1092,
+    218
+   ]
+  ],
+  "Legplates of Icy Doom": [
+   [
+    1092,
+    222
+   ]
+  ],
+  "Levo Jeans": [
+   [
+    1092,
+    60
+   ]
+  ],
+  "Louis the Blind": [
+   [
+    1312,
+    23
+   ]
+  ],
+  "Ludwig": [
+   [
+    1312,
+    3
+   ]
+  ],
+  "M7-V Rifle": [
+   [
+    1092,
+    262
+   ]
+  ],
+  "MAGICWOUND": [
+   [
+    798,
+    93
+   ]
+  ],
+  "Magic Bolt": [
+   [
+    866,
+    253
+   ]
+  ],
+  "Magic Lantern": [
+   [
+    1092,
+    285
+   ]
+  ],
+  "Master Strike": [
+   [
+    866,
+    152
+   ]
+  ],
+  "Mender's Armor": [
+   [
+    1092,
+    177
+   ]
+  ],
+  "Mender's Axe": [
+   [
+    1092,
+    274
+   ]
+  ],
+  "Mender's Boots": [
+   [
+    1092,
+    247
+   ]
+  ],
+  "Mender's Gloves": [
+   [
+    1092,
+    202
+   ]
+  ],
+  "Mender's Leggings": [
+   [
+    1092,
+    225
+   ]
+  ],
+  "Moon-Struck Horrors": [
+   [
+    1092,
+    267
+   ]
+  ],
+  "Murder": [
+   [
+    1092,
+    289
+   ]
+  ],
+  "NIGHT": [
+   [
+    1553,
+    26
+   ]
+  ],
+  "Nature's Fury": [
+   [
+    1092,
+    272
+   ]
+  ],
+  "Navy Boots": [
+   [
+    1092,
+    123
+   ]
+  ],
+  "Nichts": [
+   [
+    1092,
+    1
+   ]
+  ],
+  "Nike Head Wear": [
+   [
+    1092,
+    34
+   ]
+  ],
+  "Nine": [
+   [
+    143,
+    33
+   ]
+  ],
+  "None": [
+   [
+    866,
+    1
+   ],
+   [
+    1092,
+    1
+   ]
+  ],
+  "One": [
+   [
+    143,
+    1
+   ]
+  ],
+  "PLAINS": [
+   [
+    1237,
+    31
+   ],
+   [
+    1559,
+    30
+   ]
+  ],
+  "PLAINS2": [
+   [
+    1559,
+    40
+   ]
+  ],
+  "POISON": [
+   [
+    798,
+    8
+   ]
+  ],
+  "POISONZOMBIE": [
+   [
+    798,
+    63
+   ]
+  ],
+  "POWERUP": [
+   [
+    798,
+    49
+   ]
+  ],
+  "Paladin's Armor": [
+   [
+    1092,
+    184
+   ]
+  ],
+  "Paladin's Boots": [
+   [
+    1092,
+    254
+   ]
+  ],
+  "Paladin's Gloves": [
+   [
+    1092,
+    210
+   ]
+  ],
+  "Paladin's Helm": [
+   [
+    1092,
+    158
+   ]
+  ],
+  "Paladin's Leggings": [
+   [
+    1092,
+    232
+   ]
+  ],
+  "Power Lantern": [
+   [
+    1092,
+    284
+   ]
+  ],
+  "Proverse All Stars": [
+   [
+    1092,
+    95
+   ]
+  ],
+  "Pulse Rifle": [
+   [
+    1092,
+    266
+   ]
+  ],
+  "Quick Strike": [
+   [
+    866,
+    243
+   ]
+  ],
+  "RAGE1": [
+   [
+    798,
+    49
+   ]
+  ],
+  "RAGE2": [
+   [
+    798,
+    55
+   ]
+  ],
+  "RAGE3": [
+   [
+    798,
+    56
+   ]
+  ],
+  "REGEN": [
+   [
+    798,
+    29
+   ],
+   [
+    866,
+    24
+   ]
+  ],
+  "REGENERATION": [
+   [
+    866,
+    220
+   ]
+  ],
+  "REGENFOC": [
+   [
+    798,
+    29
+   ]
+  ],
+  "REGENSHAMAN": [
+   [
+    798,
+    29
+   ]
+  ],
+  "Rage": [
+   [
+    866,
+    104
+   ]
+  ],
+  "Re-Energize": [
+   [
+    866,
+    306
+   ]
+  ],
+  "Reckoning": [
+   [
+    1092,
+    280
+   ]
+  ],
+  "Rockstar": [
+   [
+    1312,
+    4
+   ]
+  ],
+  "SEA": [
+   [
+    1201,
+    1
+   ],
+   [
+    1553,
+    13
+   ]
+  ],
+  "SHATTER": [
+   [
+    798,
+    19
+   ]
+  ],
+  "SHATTER1": [
+   [
+    798,
+    8
+   ]
+  ],
+  "SHATTER2": [
+   [
+    798,
+    17
+   ]
+  ],
+  "SHATTER3": [
+   [
+    798,
+    18
+   ]
+  ],
+  "SHORE": [
+   [
+    1559,
+    23
+   ]
+  ],
+  "SOLIDITY": [
+   [
+    866,
+    191
+   ]
+  ],
+  "SPEEDUP": [
+   [
+    798,
+    135
+   ]
+  ],
+  "STUN1": [
+   [
+    798,
+    57
+   ]
+  ],
+  "SUBVERSION": [
+   [
+    798,
+    126
+   ]
+  ],
+  "SUNDER1": [
+   [
+    798,
+    93
+   ]
+  ],
+  "SUNDER2": [
+   [
+    798,
+    101
+   ]
+  ],
+  "SUNDER3": [
+   [
+    798,
+    102
+   ]
+  ],
+  "SUNDER4": [
+   [
+    798,
+    103
+   ]
+  ],
+  "SUNDER5": [
+   [
+    798,
+    104
+   ]
+  ],
+  "SUPRESSION": [
+   [
+    798,
+    105
+   ]
+  ],
+  "Scarlett": [
+   [
+    1312,
+    2
+   ]
+  ],
+  "Sensei Ishiguro": [
+   [
+    1312,
+    115
+   ]
+  ],
+  "Seven": [
+   [
+    143,
+    25
+   ]
+  ],
+  "Shadow Legwraps": [
+   [
+    1092,
+    219
+   ]
+  ],
+  "Shaman of Blades": [
+   [
+    1312,
+    102
+   ]
+  ],
+  "Shaman of Death": [
+   [
+    1312,
+    103
+   ]
+  ],
+  "Shatter Bolt": [
+   [
+    866,
+    292
+   ]
+  ],
+  "Six": [
+   [
+    143,
+    21
+   ]
+  ],
+  "Smash": [
+   [
+    866,
+    59
+   ]
+  ],
+  "Sonny": [
+   [
+    1312,
+    6
+   ]
+  ],
+  "Steel Slicer": [
+   [
+    1092,
+    269
+   ]
+  ],
+  "Stone Club": [
+   [
+    1092,
+    278
+   ]
+  ],
+  "Strike": [
+   [
+    866,
+    41
+   ]
+  ],
+  "Striker's Armor": [
+   [
+    1092,
+    175
+   ]
+  ],
+  "Striker's Flip-Flops": [
+   [
+    1092,
+    245
+   ]
+  ],
+  "Striker's Gloves": [
+   [
+    1092,
+    200
+   ]
+  ],
+  "Striker's Leggings": [
+   [
+    1092,
+    223
+   ]
+  ],
+  "Striker's Mask": [
+   [
+    1092,
+    149
+   ]
+  ],
+  "Subversion": [
+   [
+    866,
+    316
+   ]
+  ],
+  "Sunder": [
+   [
+    866,
+    184
+   ]
+  ],
+  "Suppression": [
+   [
+    866,
+    232
+   ]
+  ],
+  "Survivor's Armor": [
+   [
+    1092,
+    179
+   ]
+  ],
+  "Survivor's Boots": [
+   [
+    1092,
+    249
+   ]
+  ],
+  "Survivor's Gloves": [
+   [
+    1092,
+    204
+   ]
+  ],
+  "Survivor's Helm": [
+   [
+    1092,
+    153
+   ]
+  ],
+  "Survivor's Leggings": [
+   [
+    1092,
+    227
+   ]
+  ],
+  "Swift Blade": [
+   [
+    1092,
+    264
+   ]
+  ],
+  "The Grand Rifle": [
+   [
+    1092,
+    281
+   ]
+  ],
+  "Three": [
+   [
+    143,
+    9
+   ]
+  ],
+  "Tool": [
+   [
+    1092,
+    300
+   ]
+  ],
+  "Torment": [
+   [
+    1092,
+    286
+   ]
+  ],
+  "Tribal Blade": [
+   [
+    1092,
+    273
+   ]
+  ],
+  "Tribal Dagger": [
+   [
+    1092,
+    273
+   ]
+  ],
+  "Two": [
+   [
+    143,
+    5
+   ]
+  ],
+  "VOID1": [
+   [
+    798,
+    63
+   ]
+  ],
+  "VOID2": [
+   [
+    798,
+    77
+   ]
+  ],
+  "VOID3": [
+   [
+    798,
+    78
+   ]
+  ],
+  "VOID4": [
+   [
+    798,
+    79
+   ]
+  ],
+  "VOID5": [
+   [
+    798,
+    80
+   ]
+  ],
+  "VOIDMOB": [
+   [
+    798,
+    76
+   ]
+  ],
+  "Vendetta the Breaker": [
+   [
+    1312,
+    103
+   ]
+  ],
+  "Veradux": [
+   [
+    1312,
+    1
+   ]
+  ],
+  "Void": [
+   [
+    866,
+    302
+   ]
+  ],
+  "WASHED": [
+   [
+    798,
+    117
+   ]
+  ],
+  "WEAPON": [
+   [
+    1092,
+    262
+   ]
+  ],
+  "WHITE NOVEMBER": [
+   [
+    1559,
+    9
+   ]
+  ],
+  "WHITE_NOVEMBER": [
+   [
+    1237,
+    1
+   ]
+  ],
+  "WOUND1": [
+   [
+    798,
+    63
+   ]
+  ],
+  "WOUND2": [
+   [
+    798,
+    79
+   ]
+  ],
+  "WOUND3": [
+   [
+    798,
+    80
+   ]
+  ],
+  "White T-Shirt": [
+   [
+    1092,
+    132
+   ]
+  ],
+  "Wolfgang": [
+   [
+    1312,
+    4
+   ]
+  ],
+  "Wound": [
+   [
+    866,
+    65
+   ]
+  ],
+  "ZPCI Blade": [
+   [
+    1092,
+    263
+   ]
+  ],
+  "ZPCI Captain": [
+   [
+    1312,
+    69
+   ]
+  ],
+  "ZPCI Dog Tag": [
+   [
+    1092,
+    298
+   ]
+  ],
+  "ZPCI Elite": [
+   [
+    1312,
+    69
+   ]
+  ],
+  "ZPCI Hunter": [
+   [
+    1312,
+    71
+   ]
+  ],
+  "ZPCI Med-Wear A": [
+   [
+    1092,
+    147
+   ]
+  ],
+  "ZPCI Med-Wear B": [
+   [
+    1092,
+    173
+   ]
+  ],
+  "ZPCI Med-Wear C": [
+   [
+    1092,
+    198
+   ]
+  ],
+  "ZPCI Med-Wear D": [
+   [
+    1092,
+    221
+   ]
+  ],
+  "ZPCI Med-Wear E": [
+   [
+    1092,
+    243
+   ]
+  ],
+  "ZPCI Medic": [
+   [
+    1312,
+    55
+   ]
+  ],
+  "ZPCI Sniper": [
+   [
+    1312,
+    70
+   ]
+  ],
+  "Zero": [
+   [
+    143,
+    37
+   ]
+  ],
+  "Zombie Ambassador": [
+   [
+    1312,
+    89
+   ]
+  ],
+  "Zombie Fingers": [
+   [
+    1092,
+    297
+   ]
+  ],
+  "attack1": [
+   [
+    940,
+    78
+   ]
+  ],
+  "attack2": [
+   [
+    940,
+    93
+   ]
+  ],
+  "cast": [
+   [
+    400,
+    30
+   ],
+   [
+    940,
+    129
+   ]
+  ],
+  "critical": [
+   [
+    102,
+    69
+   ]
+  ],
+  "data": [
+   [
+    1503,
+    32
+   ]
+  ],
+  "dead": [
+   [
+    92,
+    75
+   ],
+   [
+    400,
+    57
+   ],
+   [
+    940,
+    277
+   ],
+   [
+    1444,
+    8
+   ]
+  ],
+  "enemy": [
+   [
+    1595,
+    12
+   ]
+  ],
+  "friend": [
+   [
+    1595,
+    1
+   ]
+  ],
+  "heal": [
+   [
+    1564,
+    17
+   ]
+  ],
+  "healSmooth": [
+   [
+    92,
+    36
+   ],
+   [
+    93,
+    36
+   ]
+  ],
+  "hide": [
+   [
+    1503,
+    46
+   ]
+  ],
+  "hit": [
+   [
+    940,
+    260
+   ],
+   [
+    1564,
+    2
+   ]
+  ],
+  "inventory": [
+   [
+    1503,
+    1
+   ]
+  ],
+  "level": [
+   [
+    1344,
+    2
+   ],
+   [
+    1476,
+    7
+   ]
+  ],
+  "mainPlayer": [
+   [
+    1312,
+    6
+   ]
+  ],
+  "miss": [
+   [
+    102,
+    131
+   ]
+  ],
+  "none": [
+   [
+    1142,
+    1
+   ],
+   [
+    1564,
+    1
+   ]
+  ],
+  "normal": [
+   [
+    102,
+    1
+   ],
+   [
+    1503,
+    2
+   ]
+  ],
+  "options": [
+   [
+    1503,
+    39
+   ]
+  ],
+  "outofstun": [
+   [
+    940,
+    244
+   ]
+  ],
+  "part1": [
+   [
+    1476,
+    12
+   ]
+  ],
+  "part2": [
+   [
+    1476,
+    56
+   ]
+  ],
+  "part3": [
+   [
+    1476,
+    107
+   ]
+  ],
+  "part4": [
+   [
+    1476,
+    151
+   ]
+  ],
+  "run": [
+   [
+    940,
+    46
+   ]
+  ],
+  "runback": [
+   [
+    940,
+    108
+   ]
+  ],
+  "second": [
+   [
+    1584,
+    2
+   ]
+  ],
+  "shield": [
+   [
+    102,
+    183
+   ]
+  ],
+  "shop": [
+   [
+    1503,
+    16
+   ]
+  ],
+  "skills": [
+   [
+    1503,
+    25
+   ]
+  ],
+  "stable": [
+   [
+    1476,
+    1
+   ]
+  ],
+  "stand": [
+   [
+    400,
+    1
+   ],
+   [
+    940,
+    1
+   ]
+  ],
+  "stun": [
+   [
+    940,
+    160
+   ]
+  ],
+  "stun2": [
+   [
+    940,
+    204
+   ]
+  ],
+  "third": [
+   [
+    1584,
+    9
+   ]
+  ],
+  "win": [
+   [
+    1503,
+    9
+   ]
+  ]
+ }
+}

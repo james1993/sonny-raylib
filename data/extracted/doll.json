@@ -1,0 +1,53 @@
+{
+ "dollPartsArray": [
+  "head",
+  "chest",
+  "arm1",
+  "arm2",
+  "hand1",
+  "hand2",
+  "leg1",
+  "leg2",
+  "leg3",
+  "leg4",
+  "foot1",
+  "foot2",
+  "weapon1",
+  "weapon2",
+  "shoulder"
+ ],
+ "dollPartsCores": [
+  0,
+  1,
+  1,
+  1,
+  2,
+  2,
+  3,
+  3,
+  4,
+  4,
+  4,
+  4,
+  5,
+  6,
+  1
+ ],
+ "dollPartsCores2": [
+  "HEAD",
+  "CHEST",
+  "ARM",
+  "ARM",
+  "HAND",
+  "HAND",
+  "ARM",
+  "ARM",
+  "LEG2",
+  "LEG2",
+  "FOOT",
+  "FOOT",
+  "WEAPON",
+  "WEAPON",
+  "SHOULDER"
+ ]
+}

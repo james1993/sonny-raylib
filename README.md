@@ -66,15 +66,39 @@ kept for your own use -- not redistributed. If this repo is ever made public,
 that content has to come out of the history first (`git filter-repo`), not just
 out of the tree.
 
-### A note on Sonny 1's art
+### How the art is named, and how it gets here
 
-Almost none of it is bitmaps: the SWF carries 3 lossless images totalling 27 KB
-against 356 `DefineShape` and 519 `DefineSprite` tags, so the characters, UI and
-effects are vector art. Audio is the reverse -- 88 sounds, 8.7 MB, most of the
-file. Extraction therefore has a real choice to make: rasterize the shapes to
-PNG atlases (simple, plain raylib textures, loses crisp scaling), or export SVG
-and rasterize at load (faithful to the original's scaling, needs a vector
-rasterizer in the build). First pass takes the atlas route at 2x stage size.
+Almost none of it is bitmaps: 3 lossless images totalling 27 KB against 356
+`DefineShape` and 519 `DefineSprite` tags. Audio is the reverse -- 88 sounds,
+8.5 MB, most of the file.
+
+The engine asks for art three different ways, and all three have to be
+resolved before a single sprite can be drawn:
+
+1. **By export name.** `attachMovie("BOOM_SLASHORANGE")`, and the character
+   doll, whose part names are built at runtime as `<gender>_<part>_<look>` --
+   so an item with `looks = "CROWBAR"` becomes the export `M_WEAPON_CROWBAR`.
+   `tools/swf_exports.py` reads the SWF's ExportAssets table for these (418
+   names).
+2. **By frame label inside a sprite.** `gotoAndStop("Blood Focus")` for an
+   ability icon, `gotoAndStop(ZoneBG)` for a backdrop. These labels are not in
+   ExportAssets; the same tool walks each `DefineSprite` body pairing
+   `FrameLabel` with `ShowFrame` to recover them (332 labels across 26
+   sprites).
+3. **By animation state.** The model's own frame labels -- `stand`, `run`,
+   `attack1`, `attack2`, `cast`, `stun`, `hit`, `dead` -- are what an ability's
+   `anim` field selects. Their frame ranges land in the asset manifest.
+
+`tools/extract_assets.sh` runs the decompiler over your SWF for the full dump
+(~200 MB, gitignored), then `tools/build_assets.py` resolves every name the
+engine can ask for and keeps just those frames: 786 files, 8 MB, with a
+manifest. Three groups are expected to resolve to nothing, and the tool says so
+rather than reporting a failure: enemy ability icons (they never reach the
+player's bar, and the original has no art for them), the permanent
+passive-talent buffs (the original's own `gotoAndStop("REGENERATION1")` finds
+no such frame and silently leaves the icon as it was), and the deliberate
+gender x part x look cross-product for the doll, of which 197 combinations
+actually exist.
 
 ## What has been verified from the original
 
