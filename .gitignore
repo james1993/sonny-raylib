@@ -1,0 +1,5 @@
+build/
+*.png
+# Extracted game content stays local -- never committed.
+assets/
+data/extracted/
