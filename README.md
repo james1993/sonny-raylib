@@ -36,8 +36,8 @@ setting up the same fight in the real game and comparing the log move by move.
 
 ## Layout
 
-    src/core/       pure C, no raylib: combat state machine, RNG, stats, buffs
-    src/platform/   raylib: window, fixed-stage render target, input, drawing
+    src/core/       pure C, no raylib: combat, character, campaign, saves
+    src/platform/   raylib: window, fixed-stage render target, screens, audio
     data/extracted/ ability/unit/item/buff tables and all text, as JSON
     tools/          extraction and inspection utilities
     tests/          headless tests of core behaviour
@@ -186,8 +186,11 @@ Two details worth knowing, both reproduced rather than cleaned up:
 - [x] The ability tree (28 nodes, ranks, level gates, prerequisites, passives)
 - [x] Campaign data: 50 battle rosters, 4 zones, item drops, battle dialogue
 - [x] Progression: battle setup from a roster, rewards, advancement
-- [ ] Shops, the inventory screen and the world map
-- [ ] Save data (the original uses a Flash shared object)
+- [x] The zone hub, with the original's own menu
+- [x] Ability tree, inventory and shop screens; the victory and rewards screen
+- [x] Save data (a text file rather than the original's Flash shared object)
+- [ ] The world map screen
+- [ ] Battle dialogue (89 speeches extracted, not yet shown)
 - [x] Asset pipeline: names resolved, art and audio extracted, manifest
 - [x] Real backdrops and ability icons on screen
 - [x] The character doll: per-part transforms out of the model's display list,

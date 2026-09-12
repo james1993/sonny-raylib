@@ -1,0 +1,97 @@
+/* The running game: which screen is up, the campaign behind it, and the
+ * per-battle state the battle screen needs.
+ *
+ * Screens mirror the original's own menu, which the zone hub lists as Next
+ * Battle, Item Store, Inventory, Abilities, Save Game, Options, Quit and World
+ * Map (SYSTEM[13..28] in the language table).
+ */
+#ifndef SONNY_GAME_H
+#define SONNY_GAME_H
+
+#include "raylib.h"
+#include "../core/campaign.h"
+#include "../core/save.h"
+
+#define STAGE_W   800
+#define STAGE_H   575
+#define STAGE_FPS 30
+
+#define PLAYER_SLOT   1
+#define ABILITY_SLOTS 8
+#define LOG_LINES     6
+#define RESOLVE_FRAMES 14
+
+typedef enum {
+    SCREEN_ZONE = 0,
+    SCREEN_BATTLE,
+    SCREEN_VICTORY,
+    SCREEN_TALENTS,
+    SCREEN_INVENTORY,
+    SCREEN_SHOP
+} Screen;
+
+typedef struct {
+    Screen    screen;
+    Campaign  campaign;
+
+    /* Battle state. */
+    Battle           battle;
+    const BattleDef *def;
+    int32_t   ability_ids[ABILITY_SLOTS];
+    int32_t   selected;
+    int32_t   hovered_unit;
+    int32_t   queued;
+    int32_t   resolve_timer;
+    int32_t   anim_tick;
+    MoveEvent last;
+    int32_t   has_last;
+    const char *effect;
+    int32_t   effect_slot;
+    int32_t   effect_tick;
+    char      log[LOG_LINES][128];
+    int32_t   log_count;
+
+    /* Rewards from the battle just won. */
+    BattleRewards rewards;
+    int32_t   dropped[SONNY_MAX_DROPPED];
+    int32_t   dropped_count;
+    int32_t   taken[SONNY_MAX_DROPPED];
+
+    /* Menu/screen interaction. */
+    int32_t   hovered_item;
+    int32_t   selected_item;
+    char      notice[128];
+    int32_t   notice_timer;
+
+    Rng       rng;
+    uint64_t  seed;
+} Game;
+
+/* Shared helpers. */
+void game_log(Game *g, const char *fmt, ...);
+void game_notice(Game *g, const char *fmt, ...);
+Vector2 stage_mouse(void);
+int hit(Rectangle r, Vector2 p);
+void draw_panel(Rectangle r, const char *title);
+int draw_button(Rectangle r, const char *label, Vector2 mouse, int enabled);
+
+/* Screens. */
+void screen_zone_update(Game *g, Vector2 mouse);
+void screen_zone_draw(Game *g, Vector2 mouse);
+void screen_talents_update(Game *g, Vector2 mouse);
+void screen_talents_draw(Game *g, Vector2 mouse);
+void screen_inventory_update(Game *g, Vector2 mouse);
+void screen_inventory_draw(Game *g, Vector2 mouse);
+void screen_shop_update(Game *g, Vector2 mouse);
+void screen_shop_draw(Game *g, Vector2 mouse);
+void screen_victory_update(Game *g, Vector2 mouse);
+void screen_victory_draw(Game *g, Vector2 mouse);
+
+void battle_screen_start(Game *g, int32_t battle_id);
+void battle_screen_update(Game *g, Vector2 mouse, int headless);
+void battle_screen_draw(Game *g);
+
+/* Where the player's save lives. */
+#define SONNY_SAVE_PATH "sonny-save.txt"
+
+#endif

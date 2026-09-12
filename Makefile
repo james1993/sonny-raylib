@@ -4,7 +4,8 @@ RAYLIB_LIBS = -lraylib -lm -lpthread -ldl -lrt -lX11
 
 CORE_SRC = src/core/formula.c src/core/rng.c src/core/unit.c \
            src/core/buffs.c src/core/battle.c src/core/character.c \
-           src/core/campaign.c src/gen/gamedata.c
+           src/core/campaign.c src/core/save.c \
+           src/gen/gamedata.c
 BUILD    = build
 
 .PHONY: all game test simulate vectors data clean
@@ -16,7 +17,9 @@ $(BUILD):
 
 game: $(BUILD)
 	$(CC) $(CFLAGS) -o $(BUILD)/sonny src/platform/main.c \
-	    src/platform/assets.c src/platform/audio.c src/gen/assets_gen.c \
+	    src/platform/assets.c src/platform/audio.c src/platform/ui.c \
+	    src/platform/screens.c src/platform/screen_battle.c \
+	    src/gen/assets_gen.c \
 	    $(CORE_SRC) $(RAYLIB_LIBS)
 
 simulate: $(BUILD)
@@ -31,6 +34,7 @@ test: $(BUILD)
 	$(CC) $(CFLAGS) -Werror -o $(BUILD)/test_character tests/test_character.c $(CORE_SRC) -lm
 	$(CC) $(CFLAGS) -Werror -o $(BUILD)/test_talents tests/test_talents.c $(CORE_SRC) -lm
 	$(CC) $(CFLAGS) -Werror -o $(BUILD)/test_campaign tests/test_campaign.c $(CORE_SRC) -lm
+	$(CC) $(CFLAGS) -Werror -o $(BUILD)/test_save tests/test_save.c $(CORE_SRC) -lm
 	$(BUILD)/test_formula tests/vectors_formula.txt
 	$(BUILD)/test_rng
 	$(BUILD)/test_buffs tests/vectors_buffs.txt
@@ -39,6 +43,7 @@ test: $(BUILD)
 	$(BUILD)/test_character tests/vectors_character.txt
 	$(BUILD)/test_talents
 	$(BUILD)/test_campaign
+	$(BUILD)/test_save
 
 # Regenerate the C data tables from the extracted JSON.
 data:

@@ -51,6 +51,14 @@ typedef struct {
     AbilityCoefs coefs;
 } AbilityDef;
 
+/* One of the game's named text arrays (SYSTEM, MENU, VICTORY, ZONES, ...).
+   Looked up by name and index so call sites read like the original's. */
+typedef struct {
+    const char        *name;
+    const char *const *values;
+    int32_t            count;
+} LangArray;
+
 #define SONNY_MAX_PREREQ 4
 #define SONNY_BATTLE_SLOTS 5     /* players[0..4] fill slots 2..6 */
 #define SONNY_MAX_DROPS 8
@@ -178,6 +186,11 @@ extern const TalentDef SONNY_TALENTS[];
 extern const int SONNY_TALENT_COUNT;
 extern const int32_t SONNY_START_SKILL1;
 extern const int32_t SONNY_START_SKILL2;
+extern const LangArray SONNY_LANG[];
+extern const int SONNY_LANG_COUNT;
+/* Text by array name and index; "" when absent, never NULL. */
+const char *lang_text(const char *array, int32_t index);
+
 extern const BattleDef SONNY_BATTLES[];
 extern const int SONNY_BATTLE_COUNT;
 extern const ZoneDef SONNY_ZONES[];

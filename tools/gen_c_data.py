@@ -219,6 +219,26 @@ def gen_units(units):
 MAX_DROPS, MAX_RARE, MAX_TRAINING = 8, 24, 16
 
 
+def gen_lang(langs, language='ENGLISH'):
+    """The display text, as the game's own named arrays."""
+    table = langs.get(language) or {}
+    lines = []
+    for array in sorted(table):
+        values = table[array]
+        lines.append('static const char *const LANG_%s[] = { %s };'
+                     % (array, ', '.join(c_string(v if v is not None else '')
+                                         for v in values)))
+    lines.append('')
+    lines.append('const LangArray SONNY_LANG[] = {')
+    for array in sorted(table):
+        lines.append('    { %s, LANG_%s, %d },'
+                     % (c_string(array), array, len(table[array])))
+    lines.append('};')
+    lines.append('const int SONNY_LANG_COUNT = '
+                 '(int)(sizeof(SONNY_LANG) / sizeof(SONNY_LANG[0]));')
+    return '\n'.join(lines)
+
+
 def gen_battles(battles):
     lines = ['const BattleDef SONNY_BATTLES[] = {']
     for b in battles:
@@ -404,6 +424,14 @@ typedef struct {
     AbilityCoefs coefs;
 } AbilityDef;
 
+/* One of the game's named text arrays (SYSTEM, MENU, VICTORY, ZONES, ...).
+   Looked up by name and index so call sites read like the original's. */
+typedef struct {
+    const char        *name;
+    const char *const *values;
+    int32_t            count;
+} LangArray;
+
 #define SONNY_MAX_PREREQ 4
 #define SONNY_BATTLE_SLOTS 5     /* players[0..4] fill slots 2..6 */
 #define SONNY_MAX_DROPS 8
@@ -531,6 +559,11 @@ extern const TalentDef SONNY_TALENTS[];
 extern const int SONNY_TALENT_COUNT;
 extern const int32_t SONNY_START_SKILL1;
 extern const int32_t SONNY_START_SKILL2;
+extern const LangArray SONNY_LANG[];
+extern const int SONNY_LANG_COUNT;
+/* Text by array name and index; "" when absent, never NULL. */
+const char *lang_text(const char *array, int32_t index);
+
 extern const BattleDef SONNY_BATTLES[];
 extern const int SONNY_BATTLE_COUNT;
 extern const ZoneDef SONNY_ZONES[];
@@ -596,6 +629,20 @@ const BattleDef *battle_def_by_id(int32_t id)
     return NULL;
 }
 
+const char *lang_text(const char *array, int32_t index)
+{
+    if (!array)
+        return "";
+    for (int i = 0; i < SONNY_LANG_COUNT; i++) {
+        if (strcmp(SONNY_LANG[i].name, array) != 0)
+            continue;
+        if (index < 0 || index >= SONNY_LANG[i].count)
+            return "";
+        return SONNY_LANG[i].values[index] ? SONNY_LANG[i].values[index] : "";
+    }
+    return "";
+}
+
 const ZoneDef *zone_of_battle(int32_t battle_id)
 {
     for (int i = 0; i < SONNY_ZONE_COUNT; i++)
@@ -635,7 +682,8 @@ def main():
         fh.write(gen_items(load_items()) + '\n\n')
         fh.write(gen_talents(load('talents')) + '\n\n')
         fh.write(gen_battles(load('battles')) + '\n\n')
-        fh.write(gen_zones(load('zones')) + '\n')
+        fh.write(gen_zones(load('zones')) + '\n\n')
+        fh.write(gen_lang(load('lang')) + '\n')
         fh.write(LOOKUPS)
 
     print('abilities %d, buffs %d, units %d, items %d, talents %d, '
