@@ -113,10 +113,76 @@ static int player_turn(const Game *g)
 
 static Rectangle unit_rect(const Battle *b, int32_t slot)
 {
-    int32_t row = b->brains[slot].teamAdder;
-    float x = (b->units[slot].teamSide == 1) ? 40.0f : STAGE_W - 40.0f - 150.0f;
-    float y = 70.0f + row * 92.0f;
-    return (Rectangle){x, y, 150.0f, 82.0f};
+    /* Rows follow the slot's own place on the field: back, middle, front. */
+    int32_t row = (slot <= 2) ? 1 : (slot <= 4) ? 2 : 0;
+    float x = (b->units[slot].teamSide == 1) ? 12.0f : STAGE_W - 12.0f - 148.0f;
+    float y = 64.0f + row * 66.0f;
+    return (Rectangle){x, y, 148.0f, 60.0f};
+}
+
+/* Where a unit's model stands: the original's own stage layout, so position
+   follows the slot -- not the speed order, which only decides who acts when. */
+static Vector2 unit_stage_pos(const Battle *b, int32_t slot)
+{
+    (void)b;
+    const StageSlot *s = stage_slot(slot);
+    if (s)
+        return (Vector2){s->x, s->y};
+    return (Vector2){STAGE_W / 2.0f, STAGE_H / 2.0f};
+}
+
+/* Which animation a unit is playing, from its state and what is resolving. */
+static const char *unit_animation(const Game *g, int32_t slot, int *loop)
+{
+    const Battle *b = &g->battle;
+    const Unit *u = &b->units[slot];
+
+    *loop = 1;
+    if (!u->active)
+        return (*loop = 0, "dead");
+    if (u->STUN > 0)
+        return "stun";
+
+    if (b->phase == PHASE_RESOLVE && g->has_last) {
+        if (g->last.caster == slot && g->last.moveID != 0) {
+            *loop = 0;
+            const AbilityDef *a = ability_by_id(g->last.moveID);
+            if (a && a->delivery == DELIVER_MELEE)
+                return "attack1";
+            return "cast";
+        }
+        if (g->last.target == slot && g->last.amount > 0
+            && g->last.kind == KIND_FULL_DAMAGE) {
+            *loop = 0;
+            return "hit";
+        }
+    }
+    return "stand";
+}
+
+static void draw_doll(const Game *g, int32_t slot)
+{
+    const Unit *u = &g->battle.units[slot];
+    if (u->LIFEU == 0)
+        return;
+
+    DollSpec spec;
+    memset(&spec, 0, sizeof(spec));
+    spec.gender = u->model_gender;
+    spec.skin = u->model_skin;
+    spec.hair = u->model_hair;
+    for (int i = 0; i < 7; i++)
+        spec.looks[i] = u->looks[i];
+
+    int loop = 1;
+    const char *animation = unit_animation(g, slot, &loop);
+    int32_t frame = doll_animation_frame(animation, g->anim_tick / 2, loop);
+
+    /* The right-hand team's containers are mirrored in the original. */
+    const StageSlot *s = stage_slot(slot);
+    int flip = s ? s->flip : (u->teamSide == 2);
+    Color tint = u->active ? WHITE : (Color){255, 255, 255, 150};
+    doll_draw(&spec, frame, unit_stage_pos(&g->battle, slot), 1.0f, flip, tint);
 }
 
 static Rectangle ability_rect(int i)
@@ -156,7 +222,7 @@ static void draw_unit(const Game *g, int32_t slot)
                 : is_target ? (Color){120, 200, 255, 255}
                             : (Color){70, 74, 86, 255};
 
-    DrawRectangleRec(r, (Color){38, 42, 52, u->active ? 220 : 110});
+    DrawRectangleRec(r, (Color){20, 22, 28, u->active ? 200 : 120});
     DrawRectangleLinesEx(r, (is_acting || is_target) ? 2.0f : 1.0f, frame);
 
     DrawText(u->name, (int)r.x + 6, (int)r.y + 5, 10,
@@ -254,13 +320,15 @@ static void draw_tooltip(const Game *g)
    that order as the original layers them. */
 static void draw_backdrop(const Game *g)
 {
-    Rectangle full = {0, 0, STAGE_W, STAGE_H};
+    /* The battle screen's own origin, which everything inside it is placed
+       relative to. */
+    Vector2 screen = {400.0f, 294.5f};
     int drew = 0;
 
     if (g->def && g->def->sky_bg[0])
-        drew |= asset_draw_cover(g->def->sky_bg, 1, full, WHITE);
+        drew |= asset_draw_placed(g->def->sky_bg, 1, screen, 1.0f, WHITE);
     if (g->def && g->def->zone_bg[0])
-        drew |= asset_draw_cover(g->def->zone_bg, 1, full, WHITE);
+        drew |= asset_draw_placed(g->def->zone_bg, 1, screen, 1.0f, WHITE);
     if (!drew)
         ClearBackground((Color){24, 26, 32, 255});
 
@@ -284,6 +352,9 @@ static void draw_battle(const Game *g)
     DrawText(TextFormat("Round %d   %s", b->round, state), 22, 38, 10,
              (Color){150, 155, 165, 255});
 
+    /* The models first, then the information panels over them. */
+    for (int32_t slot = 1; slot < SONNY_SLOTS; slot++)
+        draw_doll(g, slot);
     for (int32_t slot = 1; slot < SONNY_SLOTS; slot++)
         draw_unit(g, slot);
 
@@ -457,6 +528,7 @@ int main(int argc, char **argv)
 
     while (!WindowShouldClose()) {
         handle_input(&game);
+        game.anim_tick++;
         if (shot) {
             /* Headless: drive the AI ally and enemies, and pass for Sonny so
                the battle progresses without input. */

@@ -35,6 +35,34 @@ def shape_png(raw, shape_id):
     return path if os.path.exists(path) else None
 
 
+def placed_origin(exports, shape_id, matrix):
+    """Where a placed shape belongs relative to its parent's origin, as
+    [xmin, ymin, xmax, ymax] with the placement matrix applied.
+
+    The exported PNG is trimmed to the shape's bounds and carries a little
+    padding, so the reliable way to place it is to centre it on this box
+    rather than to line up its corner."""
+    bounds = (exports.get('shape_bounds') or {}).get(str(shape_id))
+    if not bounds:
+        return None
+    xmin, ymin, xmax, ymax = bounds
+    if matrix:
+        a, b, c, d, tx, ty = matrix
+        corners = [(a * x + c * y + tx, b * x + d * y + ty)
+                   for x, y in ((xmin, ymin), (xmax, ymin),
+                                (xmin, ymax), (xmax, ymax))]
+        xs = [p[0] for p in corners]
+        ys = [p[1] for p in corners]
+        xmin, xmax = min(xs), max(xs)
+        ymin, ymax = min(ys), max(ys)
+    return [round(xmin, 3), round(ymin, 3), round(xmax, 3), round(ymax, 3)]
+
+
+def shape_origin(exports, shape_id):
+    """A shape's bounds in its own coordinate space."""
+    return placed_origin(exports, shape_id, None)
+
+
 def sprite_dir(raw, sprite_id):
     matches = glob.glob(os.path.join(raw, 'sprite', 'DefineSprite_%d' % sprite_id))
     matches += glob.glob(os.path.join(raw, 'sprite',
@@ -108,12 +136,36 @@ def collect_names(data_dir):
                     looks.add(entry)
         if isinstance(u.get('skinSetter'), str) and u['skinSetter']:
             looks.add(u['skinSetter'])
+    # Each doll part draws two layers: the skin underneath
+    # (<gender>_S<part>_<skin>) and the equipped item over it
+    # (<gender>_<part>_<look>). Weapons always use the M_ form. Hair goes on
+    # the head when nothing is equipped there.
+    skins = set()
+    hairs = set()
+    for u in units:
+        model = u.get('model')
+        if isinstance(model, list):
+            if len(model) > 1 and isinstance(model[1], str) and model[1]:
+                skins.add(model[1])
+            if len(model) > 2 and isinstance(model[2], str) and model[2]:
+                hairs.add(model[2])
+    # The character screen's own skin and hair sets.
+    skins.update(['ONE', 'TWO', 'THREE', 'FOUR', 'FIVE', 'SIX'])
+    hairs.update(['ONE', 'TWO', 'THREE', 'FOUR', 'FIVE', 'SIX', 'BART'])
+
     for gender in ('M', 'F'):
         for part in set(cores2):
             for look in looks:
                 name = '%s_%s_%s' % (gender, part, look)
                 want['doll'].add(name)
                 speculative.add(name)
+            for skin in skins:
+                name = '%s_S%s_%s' % (gender, part, skin)
+                want['doll'].add(name)
+                speculative.add(name)
+    for hair in hairs:
+        want['doll'].add('HAIR_%s' % hair)
+        speculative.add('HAIR_%s' % hair)
 
     # UI pieces the battle screen attaches by name.
     want['ui'].update(['KrinBuffShower', 'MODEL1'])
@@ -142,6 +194,7 @@ def main():
         found = 0
         for name in sorted(names):
             entries = []
+            origin = None
 
             if name in by_name:
                 # A whole exported character: a sprite keeps its frames as an
@@ -154,6 +207,7 @@ def main():
                     png = shape_png(args.raw, cid)
                     if png:
                         entries = [(1, png)]
+                        origin = shape_origin(exports, cid)
             elif name in label_index:
                 # A labelled frame inside a sprite. Prefer the art the frame
                 # actually places: a backdrop or icon frame places one shape,
@@ -166,9 +220,12 @@ def main():
                     placed = entry[2] if len(entry) > 2 else []
                     if len(placed) == 1:
                         one = placed[0]
-                        png = shape_png(args.raw, one)
+                        cid = one['character'] if isinstance(one, dict) else one
+                        matrix = one.get('matrix') if isinstance(one, dict) else None
+                        png = shape_png(args.raw, cid)
                         if png:
                             entries = [(1, png)]
+                            origin = placed_origin(exports, cid, matrix)
                             break
                         frames = frame_files(args.raw, one)[:args.max_frames]
                         if frames:
@@ -198,6 +255,8 @@ def main():
                 stats['copied'] += 1
                 stats['bytes'] += os.path.getsize(dest)
             manifest[name] = {'category': category, 'frames': files}
+            if origin:
+                manifest[name]['bounds'] = origin
             found += 1
         stats['categories'][category] = {'wanted': len(names), 'found': found}
 

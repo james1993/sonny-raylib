@@ -150,6 +150,14 @@ typedef struct {
     int32_t     moves_a_count;
     int32_t     moves_d[SONNY_MAX_TEMPLATE_MOVES];
     int32_t     moves_d_count;
+    /* Appearance. The model array is [base, skin, hair, gender]; equipment
+       holds item ids whose `looks` string dresses each slot; a non-empty
+       skin_setter overrides the first five slots' looks. */
+    const char *model_skin;
+    const char *model_hair;
+    const char *model_gender;
+    int32_t     equipment[7];
+    const char *skin_setter;
 } UnitTemplate;
 
 extern const AbilityDef SONNY_ABILITIES[];

@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "assets.h"
+#include "rlgl.h"
 
 #define ASSET_CACHE_MAX 512
 
@@ -115,10 +116,142 @@ int asset_draw_cover(const char *name, int32_t frame, Rectangle area,
     return draw_scaled(name, frame, area, tint, 1);
 }
 
+int asset_draw_placed(const char *name, int32_t frame, Vector2 parent,
+                      float scale, Color tint)
+{
+    const Texture2D *tex = asset_texture(name, frame);
+    if (!tex)
+        return 0;
+    const AssetEntry *entry = asset_find(name);
+
+    float cx = parent.x;
+    float cy = parent.y;
+    if (entry && entry->has_bounds) {
+        cx += (entry->xmin + entry->xmax) / 2.0f * scale;
+        cy += (entry->ymin + entry->ymax) / 2.0f * scale;
+    }
+
+    /* Drawn at its own size around that centre: the exported PNG is trimmed
+       to the bounds and padded symmetrically, so centring keeps the art at
+       1:1 rather than stretching it to a box that is slightly too small. */
+    float w = tex->width * scale;
+    float h = tex->height * scale;
+    Rectangle src = {0, 0, (float)tex->width, (float)tex->height};
+    Rectangle dest = {cx - w / 2.0f, cy - h / 2.0f, w, h};
+    DrawTexturePro(*tex, src, dest, (Vector2){0, 0}, 0.0f, tint);
+    return 1;
+}
+
 void assets_unload_all(void)
 {
     for (int32_t i = 0; i < cache_count; i++)
         if (cache[i].ok)
             UnloadTexture(cache[i].texture);
     cache_count = 0;
+}
+
+/* ----------------------------------------------------------------- doll */
+
+int32_t doll_animation_frame(const char *animation, int32_t tick, int loop)
+{
+    const AssetAnimation *a = asset_animation(animation);
+    if (!a || a->length <= 0)
+        return 1;
+    if (loop)
+        return a->start + (tick % a->length);
+    int32_t offset = tick < a->length ? tick : a->length - 1;
+    return a->start + offset;
+}
+
+/* Draw one texture under a SWF matrix, so skew and rotation survive rather
+   than being approximated by a rotation angle. */
+static void draw_with_matrix(const Texture2D *tex, const float m[6],
+                             Vector2 origin, float scale, int flip, Color tint)
+{
+    float sign = flip ? -1.0f : 1.0f;
+
+    rlPushMatrix();
+    rlTranslatef(origin.x, origin.y, 0.0f);
+    rlScalef(scale * sign, scale, 1.0f);
+
+    /* SWF: x' = a*x + c*y + tx, y' = b*x + d*y + ty. Column-major 4x4. */
+    float mat[16] = {
+        m[0], m[1], 0.0f, 0.0f,
+        m[2], m[3], 0.0f, 0.0f,
+        0.0f, 0.0f, 1.0f, 0.0f,
+        m[4], m[5], 0.0f, 1.0f,
+    };
+    rlMultMatrixf(mat);
+
+    /* The exported frame is trimmed to its own bounds, so draw it centred on
+       the part's origin rather than at the top-left. */
+    Rectangle src = {0, 0, (float)tex->width, (float)tex->height};
+    Rectangle dest = {-tex->width / 2.0f, -tex->height / 2.0f,
+                      (float)tex->width, (float)tex->height};
+    DrawTexturePro(*tex, src, dest, (Vector2){0, 0}, 0.0f, tint);
+    rlPopMatrix();
+}
+
+static int draw_layer(const char *name, const float m[6], Vector2 origin,
+                      float scale, int flip, Color tint)
+{
+    const Texture2D *tex = asset_texture(name, 1);
+    if (!tex)
+        return 0;
+    draw_with_matrix(tex, m, origin, scale, flip, tint);
+    return 1;
+}
+
+int doll_draw(const DollSpec *spec, int32_t frame, Vector2 origin, float scale,
+              int flip, Color tint)
+{
+    if (!spec || SONNY_DOLL_FRAME_COUNT == 0)
+        return 0;
+
+    if (frame < 1)
+        frame = 1;
+    if (frame > SONNY_DOLL_FRAME_COUNT)
+        frame = SONNY_DOLL_FRAME_COUNT;
+
+    const DollFrame *f = &SONNY_DOLL_FRAMES[frame - 1];
+    const char *gender = (spec->gender && spec->gender[0]) ? spec->gender : "M";
+    int drawn = 0;
+    char name[128];
+
+    for (int32_t i = 0; i < f->count; i++) {
+        const DollPlacement *p = &f->parts[i];
+        const DollPart *part = doll_part(p->part);
+        if (!part)
+            continue;   /* "shadower" and anything else not a dressed part */
+
+        const float m[6] = {p->a, p->b, p->c, p->d, p->tx, p->ty};
+
+        /* Skin underneath. */
+        if (spec->skin && spec->skin[0]) {
+            snprintf(name, sizeof(name), "%s_S%s_%s", gender, part->art,
+                     spec->skin);
+            drawn += draw_layer(name, m, origin, scale, flip, tint);
+        }
+
+        /* Then whatever is equipped in the slot this part belongs to. */
+        const char *look = (part->core >= 0 && part->core < 7)
+                         ? spec->looks[part->core] : NULL;
+        if (look && look[0]) {
+            /* Weapons are attached with the M_ prefix whatever the gender. */
+            int weapon = strcmp(part->art, "WEAPON") == 0;
+            snprintf(name, sizeof(name), "%s_%s_%s", weapon ? "M" : gender,
+                     part->art, look);
+            drawn += draw_layer(name, m, origin, scale, flip, tint);
+        }
+
+        /* Hair sits on the head when the head slot is empty, or for a female
+           model, as the battle screen does. */
+        if (strcmp(p->part, "head") == 0 && spec->hair && spec->hair[0]
+            && (!spec->looks[0] || !spec->looks[0][0]
+                || strcmp(gender, "F") == 0)) {
+            snprintf(name, sizeof(name), "HAIR_%s", spec->hair);
+            drawn += draw_layer(name, m, origin, scale, flip, tint);
+        }
+    }
+    return drawn;
 }

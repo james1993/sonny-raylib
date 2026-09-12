@@ -89,6 +89,27 @@ resolved before a single sprite can be drawn:
    `attack1`, `attack2`, `cast`, `stun`, `hit`, `dead` -- are what an ability's
    `anim` field selects. Their frame ranges land in the asset manifest.
 
+### Placing it where the game places it
+
+Knowing *which* picture to draw is only half of it. Three more things come out
+of the SWF's display list, because nothing else knows them:
+
+- **The doll's per-frame transforms.** The model positions 15 named part
+  instances -- `head`, `chest`, `arm1`, `weapon1` and so on -- and each carries
+  its own matrix on each of 335 frames. `tools/swf_doll.py` walks the timeline
+  the way a player would (place, move, remove, persist across frames) and
+  snapshots every frame. Parts are drawn under those matrices directly, so
+  skew and rotation survive rather than being approximated.
+- **Where each unit stands.** `tools/extract_stage.py` combines the battle
+  screen's placement on the root timeline with the six `player` containers
+  inside it. Position follows the *slot*, not the speed order -- and the
+  right-hand team's containers carry a negative horizontal scale, which is how
+  the original mirrors them to face left.
+- **Where a backdrop's art sits.** Exported PNGs are trimmed to the shape's
+  bounds, so the bounds (from the `DefineShape` header, whose RECT is
+  Xmin/Xmax/Ymin/Ymax -- not Xmin/Ymin/Xmax/Ymax) are what put the picture
+  back where it belongs.
+
 `tools/extract_assets.sh` runs the decompiler over your SWF for the full dump
 (~200 MB, gitignored), then `tools/build_assets.py` resolves every name the
 engine can ask for and keeps just those frames: 786 files, 8 MB, with a
@@ -165,6 +186,7 @@ Two details worth knowing, both reproduced rather than cleaned up:
 - [ ] Save data (the original uses a Flash shared object)
 - [x] Asset pipeline: names resolved, art and audio extracted, manifest
 - [x] Real backdrops and ability icons on screen
-- [ ] The character doll: per-part transforms out of the model's display list
+- [x] The character doll: per-part transforms out of the model's display list,
+      with the original's own stage layout
 - [ ] Audio playback
 - [ ] Pixel-accurate UI layout against reference screenshots

@@ -2795,6 +2795,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 90, .life_boundary2 = 60, .focus_aggression = 40,
         .moves_a = { 8, 68, 5, 69, 38 }, .moves_a_count = 5,
         .moves_d = { 17, 30 }, .moves_d_count = 2,
+        .model_skin = "", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 0, 0 },
+        .skin_setter = "",
     },
     { /* 2 Templar */
         .id = 2, .name = "Templar",
@@ -2808,6 +2811,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 90, .life_boundary2 = 60, .focus_aggression = 40,
         .moves_a = { 42, 81, 57, 69, 508 }, .moves_a_count = 5,
         .moves_d = { 93, 31 }, .moves_d_count = 2,
+        .model_skin = "", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 0, 0 },
+        .skin_setter = "",
     },
     { /* 3 Phantom */
         .id = 3, .name = "Phantom",
@@ -2821,6 +2827,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 90, .life_boundary2 = 60, .focus_aggression = 40,
         .moves_a = { 56, 56, 69, 62, 9, 507 }, .moves_a_count = 6,
         .moves_d = { 51 }, .moves_d_count = 1,
+        .model_skin = "", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 0, 0 },
+        .skin_setter = "",
     },
     { /* 4 Phaser */
         .id = 4, .name = "Phaser",
@@ -2834,6 +2843,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 90, .life_boundary2 = 60, .focus_aggression = 40,
         .moves_a = { 79, 79, 96, 99, 104, 69, 508, 508 }, .moves_a_count = 8,
         .moves_d = { 31 }, .moves_d_count = 1,
+        .model_skin = "", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 0, 0 },
+        .skin_setter = "",
     },
     { /* 5 Templar */
         .id = 5, .name = "Templar",
@@ -2847,6 +2859,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 30, .life_boundary1 = 90, .life_boundary2 = 75, .focus_aggression = 40,
         .moves_a = { 500, 502, 523, 523, 508, 509 }, .moves_a_count = 6,
         .moves_d = { 512, 511 }, .moves_d_count = 2,
+        .model_skin = "", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 0, 0 },
+        .skin_setter = "",
     },
     { /* 6 Metabii */
         .id = 6, .name = "Metabii",
@@ -2860,6 +2875,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 100, .life_boundary1 = 101, .life_boundary2 = 101, .focus_aggression = 100,
         .moves_a = { 500 }, .moves_a_count = 1,
         .moves_d = { 501 }, .moves_d_count = 1,
+        .model_skin = "METABII", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 12, 0 },
+        .skin_setter = "",
     },
     { /* 7 Louis the Blind */
         .id = 7, .name = "Louis the Blind",
@@ -2873,6 +2891,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 90, .life_boundary2 = 60, .focus_aggression = 40,
         .moves_a = { 0 }, .moves_a_count = 1,
         .moves_d = { 0 }, .moves_d_count = 1,
+        .model_skin = "MAN", .model_hair = "BART", .model_gender = "M",
+        .equipment = { 0, 11, 0, 4, 8, 0, 0 },
+        .skin_setter = "",
     },
     { /* 8 Zombie */
         .id = 8, .name = "Zombie",
@@ -2886,6 +2907,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 100, .life_boundary1 = 100, .life_boundary2 = 99, .focus_aggression = 100,
         .moves_a = { 500, 502 }, .moves_a_count = 2,
         .moves_d = { 0 }, .moves_d_count = 1,
+        .model_skin = "ZOMBIE", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 12, 0 },
+        .skin_setter = "",
     },
     { /* 9 ZPCI Assault */
         .id = 9, .name = "ZPCI Assault",
@@ -2899,6 +2923,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 85, .life_boundary2 = 60, .focus_aggression = 100,
         .moves_a = { 500, 503 }, .moves_a_count = 2,
         .moves_d = { 0 }, .moves_d_count = 1,
+        .model_skin = "USA1", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 13, 0 },
+        .skin_setter = "USA1",
     },
     { /* 10 ZPCI Medic */
         .id = 10, .name = "ZPCI Medic",
@@ -2912,6 +2939,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 90, .life_boundary2 = 80, .focus_aggression = 100,
         .moves_a = { 503 }, .moves_a_count = 1,
         .moves_d = { 504 }, .moves_d_count = 1,
+        .model_skin = "USA1", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 13, 0 },
+        .skin_setter = "USA1",
     },
     { /* 11 ZPCI Captain */
         .id = 11, .name = "ZPCI Captain",
@@ -2925,6 +2955,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 85, .life_boundary2 = 60, .focus_aggression = 100,
         .moves_a = { 500, 503, 505 }, .moves_a_count = 3,
         .moves_d = { 0 }, .moves_d_count = 0,
+        .model_skin = "USA3", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 14, 0 },
+        .skin_setter = "USA3",
     },
     { /* 12 Ghost Samurai */
         .id = 12, .name = "Ghost Samurai",
@@ -2938,6 +2971,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 50, .life_boundary2 = 30, .focus_aggression = 25,
         .moves_a = { 500, 506, 524 }, .moves_a_count = 3,
         .moves_d = { 504 }, .moves_d_count = 1,
+        .model_skin = "", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 30, 0 },
+        .skin_setter = "SAMURAI",
     },
     { /* 13 Ghost Assassin */
         .id = 13, .name = "Ghost Assassin",
@@ -2951,6 +2987,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 50, .life_boundary2 = 45, .focus_aggression = 30,
         .moves_a = { 500, 502 }, .moves_a_count = 2,
         .moves_d = { 507 }, .moves_d_count = 1,
+        .model_skin = "", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 33, 0 },
+        .skin_setter = "NINJA",
     },
     { /* 14 Frost Zombie */
         .id = 14, .name = "Frost Zombie",
@@ -2964,6 +3003,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 35, .life_boundary2 = 25, .focus_aggression = 25,
         .moves_a = { 500, 502, 506, 522 }, .moves_a_count = 4,
         .moves_d = { 70 }, .moves_d_count = 1,
+        .model_skin = "ZOMBIE", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 12, 0 },
+        .skin_setter = "",
     },
     { /* 15 Sensei Ishiguro */
         .id = 15, .name = "Sensei Ishiguro",
@@ -2977,6 +3019,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 95, .life_boundary2 = 75, .focus_aggression = 25,
         .moves_a = { 506, 524, 524, 522, 524, 524, 501, 522, 500 }, .moves_a_count = 9,
         .moves_d = { 504 }, .moves_d_count = 1,
+        .model_skin = "", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 32, 0 },
+        .skin_setter = "SAMURAI2",
     },
     { /* 16 ZPCI Hunter */
         .id = 16, .name = "ZPCI Hunter",
@@ -2990,6 +3035,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 85, .life_boundary2 = 60, .focus_aggression = 100,
         .moves_a = { 500, 503, 505 }, .moves_a_count = 3,
         .moves_d = { 504 }, .moves_d_count = 1,
+        .model_skin = "USA3", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 13, 0 },
+        .skin_setter = "USA4",
     },
     { /* 17 GSG9 Assault */
         .id = 17, .name = "GSG9 Assault",
@@ -3003,6 +3051,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 85, .life_boundary2 = 60, .focus_aggression = 25,
         .moves_a = { 500, 503 }, .moves_a_count = 2,
         .moves_d = { 0 }, .moves_d_count = 0,
+        .model_skin = "USA3", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 13, 0 },
+        .skin_setter = "GER",
     },
     { /* 18 Shaman of Death */
         .id = 18, .name = "Shaman of Death",
@@ -3016,6 +3067,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 70, .life_boundary1 = 60, .life_boundary2 = 30, .focus_aggression = 75,
         .moves_a = { 96, 73, 529 }, .moves_a_count = 3,
         .moves_d = { 31 }, .moves_d_count = 1,
+        .model_skin = "MAN2", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 74, 0 },
+        .skin_setter = "SHAMAN3",
     },
     { /* 19 Shaman of Life */
         .id = 19, .name = "Shaman of Life",
@@ -3029,6 +3083,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 30, .life_boundary1 = 85, .life_boundary2 = 75, .focus_aggression = 50,
         .moves_a = { 508, 513, 500 }, .moves_a_count = 3,
         .moves_d = { 504, 514, 515 }, .moves_d_count = 3,
+        .model_skin = "MAN2", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 72, 0 },
+        .skin_setter = "SHAMAN2",
     },
     { /* 20 Shaman of Blades */
         .id = 20, .name = "Shaman of Blades",
@@ -3042,6 +3099,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 75, .life_boundary2 = 40, .focus_aggression = 65,
         .moves_a = { 500, 2, 6, 20 }, .moves_a_count = 4,
         .moves_d = { 533 }, .moves_d_count = 1,
+        .model_skin = "MAN2", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 70, 70 },
+        .skin_setter = "SHAMAN1",
     },
     { /* 21 Rock Golem */
         .id = 21, .name = "Rock Golem",
@@ -3055,6 +3115,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 80, .life_boundary2 = 60, .focus_aggression = 25,
         .moves_a = { 62, 9, 7, 2, 500, 501, 516 }, .moves_a_count = 7,
         .moves_d = { 0 }, .moves_d_count = 0,
+        .model_skin = "MAN3", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 81, 0 },
+        .skin_setter = "",
     },
     { /* 22 Totem */
         .id = 22, .name = "Totem",
@@ -3068,6 +3131,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 95, .life_boundary2 = 75, .focus_aggression = 25,
         .moves_a = { 81, 71 }, .moves_a_count = 2,
         .moves_d = { 31 }, .moves_d_count = 1,
+        .model_skin = "", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 0, 0 },
+        .skin_setter = "",
     },
     { /* 23 Rockstar */
         .id = 23, .name = "Rockstar",
@@ -3081,6 +3147,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 30, .life_boundary2 = 25, .focus_aggression = 25,
         .moves_a = { 62, 9, 7, 2, 500, 501, 38, 516 }, .moves_a_count = 8,
         .moves_d = { 70, 14 }, .moves_d_count = 2,
+        .model_skin = "MAN3", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 81, 0 },
+        .skin_setter = "ROCKSTAR",
     },
     { /* 24 Devourer */
         .id = 24, .name = "Devourer",
@@ -3094,6 +3163,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 80, .life_boundary2 = 60, .focus_aggression = 65,
         .moves_a = { 500, 502 }, .moves_a_count = 2,
         .moves_d = { 0 }, .moves_d_count = 0,
+        .model_skin = "ZOMBIE1", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 81, 0 },
+        .skin_setter = "",
     },
     { /* 25 ZPCI Elite */
         .id = 25, .name = "ZPCI Elite",
@@ -3107,6 +3179,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 80, .life_boundary2 = 60, .focus_aggression = 65,
         .moves_a = { 500, 503, 505 }, .moves_a_count = 3,
         .moves_d = { 504 }, .moves_d_count = 1,
+        .model_skin = "MAN", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 13, 0 },
+        .skin_setter = "USA3",
     },
     { /* 26 Baron Brixius */
         .id = 26, .name = "Baron Brixius",
@@ -3120,6 +3195,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 50, .life_boundary2 = 30, .focus_aggression = 65,
         .moves_a = { 517, 518, 3, 3, 3 }, .moves_a_count = 5,
         .moves_d = { 507 }, .moves_d_count = 1,
+        .model_skin = "ZOMBIE2", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 77, 0 },
+        .skin_setter = "",
     },
     { /* 27 Galiant the Paladin */
         .id = 27, .name = "Galiant the Paladin",
@@ -3133,6 +3211,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 75, .life_boundary2 = 30, .focus_aggression = 65,
         .moves_a = { 500 }, .moves_a_count = 1,
         .moves_d = { 511, 504, 521 }, .moves_d_count = 3,
+        .model_skin = "MAN", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 80, 0 },
+        .skin_setter = "USA5",
     },
     { /* 28 Elite Medic */
         .id = 28, .name = "Elite Medic",
@@ -3146,6 +3227,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 80, .life_boundary2 = 60, .focus_aggression = 65,
         .moves_a = { 500, 502, 503 }, .moves_a_count = 3,
         .moves_d = { 504, 504, 504, 515 }, .moves_d_count = 4,
+        .model_skin = "MAN", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 13, 0 },
+        .skin_setter = "MEDIC",
     },
     { /* 29 ZPCI Sniper */
         .id = 29, .name = "ZPCI Sniper",
@@ -3159,6 +3243,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 80, .life_boundary2 = 60, .focus_aggression = 65,
         .moves_a = { 503, 505, 501 }, .moves_a_count = 3,
         .moves_d = { 0 }, .moves_d_count = 0,
+        .model_skin = "MAN", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 13, 0 },
+        .skin_setter = "USA4",
     },
     { /* 30 Shaman Controller */
         .id = 30, .name = "Shaman Controller",
@@ -3172,6 +3259,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 90, .life_boundary2 = 80, .focus_aggression = 15,
         .moves_a = { 500, 73 }, .moves_a_count = 2,
         .moves_d = { 504, 514, 515 }, .moves_d_count = 3,
+        .model_skin = "MAN2", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 72, 0 },
+        .skin_setter = "SHAMAN1",
     },
     { /* 31 Shaman Survivor */
         .id = 31, .name = "Shaman Survivor",
@@ -3185,6 +3275,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 80, .life_boundary2 = 60, .focus_aggression = 65,
         .moves_a = { 500, 2, 6, 20 }, .moves_a_count = 4,
         .moves_d = { 26, 508 }, .moves_d_count = 2,
+        .model_skin = "MAN2", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 81, 0 },
+        .skin_setter = "SHAMAN3",
     },
     { /* 32 Zombie Ambassador */
         .id = 32, .name = "Zombie Ambassador",
@@ -3198,6 +3291,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 80, .life_boundary2 = 60, .focus_aggression = 65,
         .moves_a = { 500, 502 }, .moves_a_count = 2,
         .moves_d = { 0 }, .moves_d_count = 0,
+        .model_skin = "ZOMBIE1", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 81, 0 },
+        .skin_setter = "",
     },
     { /* 33 Vendetta the Breaker */
         .id = 33, .name = "Vendetta the Breaker",
@@ -3211,6 +3307,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 70, .life_boundary1 = 60, .life_boundary2 = 30, .focus_aggression = 75,
         .moves_a = { 96, 73, 11, 508 }, .moves_a_count = 4,
         .moves_d = { 31 }, .moves_d_count = 1,
+        .model_skin = "MAN2", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 79, 0 },
+        .skin_setter = "SHAMAN3",
     },
     { /* 34 Argalla the Mender */
         .id = 34, .name = "Argalla the Mender",
@@ -3224,6 +3323,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 30, .life_boundary1 = 85, .life_boundary2 = 75, .focus_aggression = 50,
         .moves_a = { 508, 513, 500 }, .moves_a_count = 3,
         .moves_d = { 504, 514, 515 }, .moves_d_count = 3,
+        .model_skin = "MAN2", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 78, 0 },
+        .skin_setter = "SHAMAN2",
     },
     { /* 35 Dokebi the Striker */
         .id = 35, .name = "Dokebi the Striker",
@@ -3237,6 +3339,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 75, .life_boundary2 = 40, .focus_aggression = 65,
         .moves_a = { 500, 2, 6, 20 }, .moves_a_count = 4,
         .moves_d = { 28, 508 }, .moves_d_count = 2,
+        .model_skin = "MAN2", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 76, 76 },
+        .skin_setter = "SHAMAN1",
     },
     { /* 36 Galiant the Paladin */
         .id = 36, .name = "Galiant the Paladin",
@@ -3250,6 +3355,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 50, .life_boundary2 = 40, .focus_aggression = 25,
         .moves_a = { 5, 501, 505, 81, 500, 4, 4, 5 }, .moves_a_count = 8,
         .moves_d = { 520, 521 }, .moves_d_count = 2,
+        .model_skin = "MAN", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 80, 0 },
+        .skin_setter = "USA5",
     },
     { /* 37 Ignition */
         .id = 37, .name = "Ignition",
@@ -3263,6 +3371,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 101, .life_boundary2 = 101, .focus_aggression = 15,
         .moves_a = { 500 }, .moves_a_count = 1,
         .moves_d = { 527, 526, 525 }, .moves_d_count = 3,
+        .model_skin = "MAN2", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 0, 0 },
+        .skin_setter = "SHAMAN4",
     },
     { /* 38 Omen */
         .id = 38, .name = "Omen",
@@ -3276,6 +3387,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 101, .life_boundary2 = 101, .focus_aggression = 15,
         .moves_a = { 69, 68, 8, 502, 9 }, .moves_a_count = 5,
         .moves_d = { 528 }, .moves_d_count = 1,
+        .model_skin = "", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 30, 0 },
+        .skin_setter = "SAMURAI3",
     },
     { /* 39 Doctor Herregods */
         .id = 39, .name = "Doctor Herregods",
@@ -3289,6 +3403,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 0, .life_boundary1 = 99, .life_boundary2 = 99, .focus_aggression = 15,
         .moves_a = { 80, 69, 104 }, .moves_a_count = 3,
         .moves_d = { 530 }, .moves_d_count = 1,
+        .model_skin = "MAN", .model_hair = "BART", .model_gender = "M",
+        .equipment = { 0, 35, 36, 37, 38, 7, 0 },
+        .skin_setter = "",
     },
     { /* 40 Sinjid's Shadow */
         .id = 40, .name = "Sinjid's Shadow",
@@ -3302,6 +3419,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 101, .life_boundary2 = 101, .focus_aggression = 15,
         .moves_a = { 532, 69, 62, 9, 12, 507 }, .moves_a_count = 6,
         .moves_d = { 531 }, .moves_d_count = 1,
+        .model_skin = "", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 33, 33 },
+        .skin_setter = "SINJID",
     },
     { /* 41 Illusion */
         .id = 41, .name = "Illusion",
@@ -3315,6 +3435,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 80, .life_boundary2 = 40, .focus_aggression = 15,
         .moves_a = { 508, 83, 80, 96, 99, 69, 5, 8, 62 }, .moves_a_count = 9,
         .moves_d = { 93, 31 }, .moves_d_count = 2,
+        .model_skin = "GHOST", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 12, 0 },
+        .skin_setter = "",
     },
     { /* 42 Royal Courier */
         .id = 42, .name = "Royal Courier",
@@ -3328,6 +3451,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 60, .life_boundary2 = 40, .focus_aggression = 15,
         .moves_a = { 69, 503, 505 }, .moves_a_count = 3,
         .moves_d = { 504, 70 }, .moves_d_count = 2,
+        .model_skin = "", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 13, 0 },
+        .skin_setter = "USA2",
     },
     { /* 43 Shadow's Shadow */
         .id = 43, .name = "Shadow's Shadow",
@@ -3341,6 +3467,9 @@ const UnitTemplate SONNY_UNITS[] = {
         .aggression = 50, .life_boundary1 = 80, .life_boundary2 = 50, .focus_aggression = 15,
         .moves_a = { 69, 509 }, .moves_a_count = 2,
         .moves_d = { 515, 88 }, .moves_d_count = 2,
+        .model_skin = "", .model_hair = "", .model_gender = "M",
+        .equipment = { 0, 0, 0, 0, 0, 33, 33 },
+        .skin_setter = "SINJID",
     },
 };
 const int SONNY_UNIT_COUNT = (int)(sizeof(SONNY_UNITS) / sizeof(SONNY_UNITS[0]));

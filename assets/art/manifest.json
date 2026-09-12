@@ -10,6 +10,12 @@
    "category": "background",
    "frames": [
     "assets/art/background/DAY2.png"
+   ],
+   "bounds": [
+    -403.25,
+    -183.1,
+    411.2,
+    155.15
    ]
   },
   "NIGHT": {
@@ -28,60 +34,120 @@
    "category": "background",
    "frames": [
     "assets/art/background/PLAINS2.png"
+   ],
+   "bounds": [
+    -570.45,
+    -136.45,
+    535.7,
+    256.95
    ]
   },
   "SEA": {
    "category": "background",
    "frames": [
     "assets/art/background/SEA.png"
+   ],
+   "bounds": [
+    -476.0,
+    -223.6,
+    561.45,
+    390.75
    ]
   },
   "SHORE": {
    "category": "background",
    "frames": [
     "assets/art/background/SHORE.png"
+   ],
+   "bounds": [
+    -523.2,
+    -166.55,
+    523.25,
+    215.05
    ]
   },
   "WHITE NOVEMBER": {
    "category": "background",
    "frames": [
     "assets/art/background/WHITE_NOVEMBER.png"
+   ],
+   "bounds": [
+    -528.5,
+    -118.9,
+    551.45,
+    246.05
    ]
   },
   "BLACKOUT": {
    "category": "buff",
    "frames": [
     "assets/art/buff/BLACKOUT.png"
+   ],
+   "bounds": [
+    -5.95,
+    -10.95,
+    5.95,
+    10.95
    ]
   },
   "BLOCK1": {
    "category": "buff",
    "frames": [
     "assets/art/buff/BLOCK1.png"
+   ],
+   "bounds": [
+    -7.05,
+    -11.6,
+    1.85,
+    7.0
    ]
   },
   "BURNING": {
    "category": "buff",
    "frames": [
     "assets/art/buff/BURNING.png"
+   ],
+   "bounds": [
+    -5.95,
+    -10.95,
+    6.05,
+    10.95
    ]
   },
   "BURNS": {
    "category": "buff",
    "frames": [
     "assets/art/buff/BURNS.png"
+   ],
+   "bounds": [
+    -5.0,
+    -9.3,
+    5.0,
+    10.5
    ]
   },
   "COLDSOUL": {
    "category": "buff",
    "frames": [
     "assets/art/buff/COLDSOUL.png"
+   ],
+   "bounds": [
+    -6.1,
+    -14.35,
+    6.15,
+    2.9
    ]
   },
   "CRIPPLE1": {
    "category": "buff",
    "frames": [
     "assets/art/buff/CRIPPLE1.png"
+   ],
+   "bounds": [
+    -6.1,
+    -14.35,
+    6.15,
+    2.9
    ]
   },
   "CRIPPLE2": {
@@ -118,6 +184,12 @@
    "category": "buff",
    "frames": [
     "assets/art/buff/FATALFLAW.png"
+   ],
+   "bounds": [
+    -5.95,
+    -10.1,
+    5.95,
+    0.7
    ]
   },
   "FATE": {
@@ -130,6 +202,12 @@
    "category": "buff",
    "frames": [
     "assets/art/buff/FIRESHOCK.png"
+   ],
+   "bounds": [
+    -5.95,
+    -10.95,
+    5.95,
+    10.95
    ]
   },
   "IGNITE": {
@@ -142,6 +220,12 @@
    "category": "buff",
    "frames": [
     "assets/art/buff/INTERVENTION1.png"
+   ],
+   "bounds": [
+    -6.4,
+    -10.45,
+    5.85,
+    6.45
    ]
   },
   "INTERVENTION10": {
@@ -202,6 +286,12 @@
    "category": "buff",
    "frames": [
     "assets/art/buff/IRONSKIN1.png"
+   ],
+   "bounds": [
+    -5.95,
+    -10.95,
+    6.05,
+    11.0
    ]
   },
   "IRONSKIN2": {
@@ -232,30 +322,60 @@
    "category": "buff",
    "frames": [
     "assets/art/buff/MAGICWOUND.png"
+   ],
+   "bounds": [
+    -5.95,
+    -10.1,
+    5.95,
+    0.7
    ]
   },
   "POISON": {
    "category": "buff",
    "frames": [
     "assets/art/buff/POISON.png"
+   ],
+   "bounds": [
+    -5.95,
+    -10.95,
+    5.95,
+    10.95
    ]
   },
   "POISONZOMBIE": {
    "category": "buff",
    "frames": [
     "assets/art/buff/POISONZOMBIE.png"
+   ],
+   "bounds": [
+    -5.95,
+    -10.95,
+    5.95,
+    10.95
    ]
   },
   "POWERUP": {
    "category": "buff",
    "frames": [
     "assets/art/buff/POWERUP.png"
+   ],
+   "bounds": [
+    -5.95,
+    -10.95,
+    6.05,
+    10.95
    ]
   },
   "RAGE1": {
    "category": "buff",
    "frames": [
     "assets/art/buff/RAGE1.png"
+   ],
+   "bounds": [
+    -5.95,
+    -10.95,
+    6.05,
+    10.95
    ]
   },
   "RAGE2": {
@@ -274,18 +394,36 @@
    "category": "buff",
    "frames": [
     "assets/art/buff/REGEN.png"
+   ],
+   "bounds": [
+    -5.75,
+    -10.05,
+    6.55,
+    11.0
    ]
   },
   "REGENFOC": {
    "category": "buff",
    "frames": [
     "assets/art/buff/REGENFOC.png"
+   ],
+   "bounds": [
+    -5.75,
+    -10.05,
+    6.55,
+    11.0
    ]
   },
   "REGENSHAMAN": {
    "category": "buff",
    "frames": [
     "assets/art/buff/REGENSHAMAN.png"
+   ],
+   "bounds": [
+    -5.75,
+    -10.05,
+    6.55,
+    11.0
    ]
   },
   "SHATTER": {
@@ -304,24 +442,48 @@
    "category": "buff",
    "frames": [
     "assets/art/buff/SPEEDUP.png"
+   ],
+   "bounds": [
+    -6.15,
+    -9.8,
+    5.85,
+    3.2
    ]
   },
   "STUN1": {
    "category": "buff",
    "frames": [
     "assets/art/buff/STUN1.png"
+   ],
+   "bounds": [
+    -5.95,
+    -10.95,
+    5.95,
+    10.95
    ]
   },
   "SUBVERSION": {
    "category": "buff",
    "frames": [
     "assets/art/buff/SUBVERSION.png"
+   ],
+   "bounds": [
+    -6.05,
+    -10.7,
+    5.7,
+    6.95
    ]
   },
   "SUNDER1": {
    "category": "buff",
    "frames": [
     "assets/art/buff/SUNDER1.png"
+   ],
+   "bounds": [
+    -5.95,
+    -10.1,
+    5.95,
+    0.7
    ]
   },
   "SUNDER2": {
@@ -352,12 +514,24 @@
    "category": "buff",
    "frames": [
     "assets/art/buff/SUPRESSION.png"
+   ],
+   "bounds": [
+    -3.85,
+    -17.35,
+    3.85,
+    17.25
    ]
   },
   "VOID1": {
    "category": "buff",
    "frames": [
     "assets/art/buff/VOID1.png"
+   ],
+   "bounds": [
+    -5.95,
+    -10.95,
+    5.95,
+    10.95
    ]
   },
   "VOID2": {
@@ -394,12 +568,24 @@
    "category": "buff",
    "frames": [
     "assets/art/buff/WASHED.png"
+   ],
+   "bounds": [
+    -7.05,
+    -11.6,
+    1.85,
+    7.0
    ]
   },
   "WOUND1": {
    "category": "buff",
    "frames": [
     "assets/art/buff/WOUND1.png"
+   ],
+   "bounds": [
+    -5.95,
+    -10.95,
+    5.95,
+    10.95
    ]
   },
   "WOUND2": {
@@ -412,6 +598,120 @@
    "category": "buff",
    "frames": [
     "assets/art/buff/WOUND3.png"
+   ]
+  },
+  "F_SARM_SIX": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/F_SARM_SIX.png"
+   ]
+  },
+  "F_SARM_THREE": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/F_SARM_THREE.png"
+   ]
+  },
+  "F_SCHEST_SIX": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/F_SCHEST_SIX.png"
+   ]
+  },
+  "F_SCHEST_THREE": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/F_SCHEST_THREE.png"
+   ]
+  },
+  "F_SFOOT_SIX": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/F_SFOOT_SIX.png"
+   ]
+  },
+  "F_SFOOT_THREE": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/F_SFOOT_THREE.png"
+   ]
+  },
+  "F_SHAND_SIX": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/F_SHAND_SIX.png"
+   ]
+  },
+  "F_SHAND_THREE": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/F_SHAND_THREE.png"
+   ]
+  },
+  "F_SHEAD_SIX": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/F_SHEAD_SIX.png"
+   ]
+  },
+  "F_SHEAD_THREE": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/F_SHEAD_THREE.png"
+   ]
+  },
+  "F_SLEG2_SIX": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/F_SLEG2_SIX.png"
+   ]
+  },
+  "F_SLEG2_THREE": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/F_SLEG2_THREE.png"
+   ]
+  },
+  "HAIR_BART": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/HAIR_BART.png"
+   ]
+  },
+  "HAIR_FIVE": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/HAIR_FIVE.png"
+   ]
+  },
+  "HAIR_FOUR": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/HAIR_FOUR.png"
+   ]
+  },
+  "HAIR_ONE": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/HAIR_ONE.png"
+   ]
+  },
+  "HAIR_SIX": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/HAIR_SIX.png"
+   ]
+  },
+  "HAIR_THREE": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/HAIR_THREE.png"
+   ]
+  },
+  "HAIR_TWO": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/HAIR_TWO.png"
    ]
   },
   "M_ARM_FINAL1": {
@@ -1272,6 +1572,372 @@
     "assets/art/doll/M_LEG2_USA5.png"
    ]
   },
+  "M_SARM_FIVE": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SARM_FIVE.png"
+   ]
+  },
+  "M_SARM_FOUR": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SARM_FOUR.png"
+   ]
+  },
+  "M_SARM_GHOST": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SARM_GHOST.png"
+   ]
+  },
+  "M_SARM_MAN": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SARM_MAN.png"
+   ]
+  },
+  "M_SARM_MAN2": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SARM_MAN2.png"
+   ]
+  },
+  "M_SARM_MAN3": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SARM_MAN3.png"
+   ]
+  },
+  "M_SARM_METABII": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SARM_METABII.png"
+   ]
+  },
+  "M_SARM_ONE": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SARM_ONE.png"
+   ]
+  },
+  "M_SARM_TWO": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SARM_TWO.png"
+   ]
+  },
+  "M_SARM_ZOMBIE": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SARM_ZOMBIE.png"
+   ]
+  },
+  "M_SARM_ZOMBIE1": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SARM_ZOMBIE1.png"
+   ]
+  },
+  "M_SARM_ZOMBIE2": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SARM_ZOMBIE2.png"
+   ]
+  },
+  "M_SCHEST_FIVE": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SCHEST_FIVE.png"
+   ]
+  },
+  "M_SCHEST_FOUR": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SCHEST_FOUR.png"
+   ]
+  },
+  "M_SCHEST_GHOST": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SCHEST_GHOST.png"
+   ]
+  },
+  "M_SCHEST_MAN": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SCHEST_MAN.png"
+   ]
+  },
+  "M_SCHEST_MAN2": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SCHEST_MAN2.png"
+   ]
+  },
+  "M_SCHEST_MAN3": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SCHEST_MAN3.png"
+   ]
+  },
+  "M_SCHEST_METABII": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SCHEST_METABII.png"
+   ]
+  },
+  "M_SCHEST_ONE": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SCHEST_ONE.png"
+   ]
+  },
+  "M_SCHEST_TWO": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SCHEST_TWO.png"
+   ]
+  },
+  "M_SCHEST_ZOMBIE": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SCHEST_ZOMBIE.png"
+   ]
+  },
+  "M_SCHEST_ZOMBIE1": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SCHEST_ZOMBIE1.png"
+   ]
+  },
+  "M_SCHEST_ZOMBIE2": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SCHEST_ZOMBIE2.png"
+   ]
+  },
+  "M_SFOOT_FIVE": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SFOOT_FIVE.png"
+   ]
+  },
+  "M_SFOOT_FOUR": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SFOOT_FOUR.png"
+   ]
+  },
+  "M_SFOOT_GHOST": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SFOOT_GHOST.png"
+   ]
+  },
+  "M_SFOOT_MAN": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SFOOT_MAN.png"
+   ]
+  },
+  "M_SFOOT_MAN2": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SFOOT_MAN2.png"
+   ]
+  },
+  "M_SFOOT_MAN3": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SFOOT_MAN3.png"
+   ]
+  },
+  "M_SFOOT_METABII": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SFOOT_METABII.png"
+   ]
+  },
+  "M_SFOOT_ONE": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SFOOT_ONE.png"
+   ]
+  },
+  "M_SFOOT_TWO": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SFOOT_TWO.png"
+   ]
+  },
+  "M_SFOOT_ZOMBIE": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SFOOT_ZOMBIE.png"
+   ]
+  },
+  "M_SFOOT_ZOMBIE1": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SFOOT_ZOMBIE1.png"
+   ]
+  },
+  "M_SFOOT_ZOMBIE2": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SFOOT_ZOMBIE2.png"
+   ]
+  },
+  "M_SHAND_FIVE": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SHAND_FIVE.png"
+   ]
+  },
+  "M_SHAND_FOUR": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SHAND_FOUR.png"
+   ]
+  },
+  "M_SHAND_GHOST": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SHAND_GHOST.png"
+   ]
+  },
+  "M_SHAND_MAN": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SHAND_MAN.png"
+   ]
+  },
+  "M_SHAND_MAN2": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SHAND_MAN2.png"
+   ]
+  },
+  "M_SHAND_MAN3": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SHAND_MAN3.png"
+   ]
+  },
+  "M_SHAND_METABII": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SHAND_METABII.png"
+   ]
+  },
+  "M_SHAND_ONE": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SHAND_ONE.png"
+   ]
+  },
+  "M_SHAND_TWO": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SHAND_TWO.png"
+   ]
+  },
+  "M_SHAND_ZOMBIE": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SHAND_ZOMBIE.png"
+   ]
+  },
+  "M_SHAND_ZOMBIE1": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SHAND_ZOMBIE1.png"
+   ]
+  },
+  "M_SHAND_ZOMBIE2": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SHAND_ZOMBIE2.png"
+   ]
+  },
+  "M_SHEAD_FIVE": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SHEAD_FIVE.png"
+   ]
+  },
+  "M_SHEAD_FOUR": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SHEAD_FOUR.png"
+   ]
+  },
+  "M_SHEAD_GHOST": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SHEAD_GHOST.png"
+   ]
+  },
+  "M_SHEAD_MAN": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SHEAD_MAN.png"
+   ]
+  },
+  "M_SHEAD_MAN2": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SHEAD_MAN2.png"
+   ]
+  },
+  "M_SHEAD_MAN3": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SHEAD_MAN3.png"
+   ]
+  },
+  "M_SHEAD_METABII": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SHEAD_METABII.png"
+   ]
+  },
+  "M_SHEAD_ONE": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SHEAD_ONE.png"
+   ]
+  },
+  "M_SHEAD_TWO": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SHEAD_TWO.png"
+   ]
+  },
+  "M_SHEAD_USA1": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SHEAD_USA1.png"
+   ]
+  },
+  "M_SHEAD_ZOMBIE": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SHEAD_ZOMBIE.png"
+   ]
+  },
+  "M_SHEAD_ZOMBIE1": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SHEAD_ZOMBIE1.png"
+   ]
+  },
+  "M_SHEAD_ZOMBIE2": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SHEAD_ZOMBIE2.png"
+   ]
+  },
   "M_SHOULDER_FINAL1": {
    "category": "doll",
    "frames": [
@@ -1402,6 +2068,84 @@
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHOULDER_USA5.png"
+   ]
+  },
+  "M_SLEG2_FIVE": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SLEG2_FIVE.png"
+   ]
+  },
+  "M_SLEG2_FOUR": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SLEG2_FOUR.png"
+   ]
+  },
+  "M_SLEG2_GHOST": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SLEG2_GHOST.png"
+   ]
+  },
+  "M_SLEG2_MAN": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SLEG2_MAN.png"
+   ]
+  },
+  "M_SLEG2_MAN2": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SLEG2_MAN2.png"
+   ]
+  },
+  "M_SLEG2_MAN3": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SLEG2_MAN3.png"
+   ]
+  },
+  "M_SLEG2_METABII": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SLEG2_METABII.png"
+   ]
+  },
+  "M_SLEG2_ONE": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SLEG2_ONE.png"
+   ]
+  },
+  "M_SLEG2_TWO": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SLEG2_TWO.png"
+   ]
+  },
+  "M_SLEG2_ZOMBIE": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SLEG2_ZOMBIE.png"
+   ]
+  },
+  "M_SLEG2_ZOMBIE1": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SLEG2_ZOMBIE1.png"
+   ]
+  },
+  "M_SLEG2_ZOMBIE2": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SLEG2_ZOMBIE2.png"
+   ]
+  },
+  "M_SSHOULDER_ONE": {
+   "category": "doll",
+   "frames": [
+    "assets/art/doll/M_SSHOULDER_ONE.png"
    ]
   },
   "M_WEAPON_BROAD": {
@@ -2109,72 +2853,144 @@
    "category": "icon",
    "frames": [
     "assets/art/icon/Blessing_of_Light.png"
+   ],
+   "bounds": [
+    -15.65,
+    -17.1,
+    21.85,
+    17.85
    ]
   },
   "Block": {
    "category": "icon",
    "frames": [
     "assets/art/icon/Block.png"
+   ],
+   "bounds": [
+    -16.35,
+    -13.45,
+    14.4,
+    16.1
    ]
   },
   "Blood Focus": {
    "category": "icon",
    "frames": [
     "assets/art/icon/Blood_Focus.png"
+   ],
+   "bounds": [
+    -12.85,
+    -12.2,
+    13.85,
+    12.8
    ]
   },
   "Blood Strike": {
    "category": "icon",
    "frames": [
     "assets/art/icon/Blood_Strike.png"
+   ],
+   "bounds": [
+    -17.15,
+    -14.55,
+    12.15,
+    12.8
    ]
   },
   "Break": {
    "category": "icon",
    "frames": [
     "assets/art/icon/Break.png"
+   ],
+   "bounds": [
+    -24.15,
+    -10.45,
+    31.65,
+    12.05
    ]
   },
   "Cell Reformation": {
    "category": "icon",
    "frames": [
     "assets/art/icon/Cell_Reformation.png"
+   ],
+   "bounds": [
+    -27.1,
+    -28.7,
+    21.95,
+    18.25
    ]
   },
   "Coup De Grace": {
    "category": "icon",
    "frames": [
     "assets/art/icon/Coup_De_Grace.png"
+   ],
+   "bounds": [
+    -19.7,
+    -20.2,
+    24.9,
+    21.5
    ]
   },
   "Cripple": {
    "category": "icon",
    "frames": [
     "assets/art/icon/Cripple.png"
+   ],
+   "bounds": [
+    -13.0,
+    -12.2,
+    12.15,
+    18.4
    ]
   },
   "Disrupt": {
    "category": "icon",
    "frames": [
     "assets/art/icon/Disrupt.png"
+   ],
+   "bounds": [
+    -12.6,
+    -11.5,
+    12.8,
+    16.0
    ]
   },
   "Electro Bolt": {
    "category": "icon",
    "frames": [
     "assets/art/icon/Electro_Bolt.png"
+   ],
+   "bounds": [
+    -12.85,
+    -15.4,
+    12.15,
+    12.8
    ]
   },
   "Flame Blast": {
    "category": "icon",
    "frames": [
     "assets/art/icon/Flame_Blast.png"
+   ],
+   "bounds": [
+    -12.85,
+    -14.6,
+    12.15,
+    12.8
    ]
   },
   "Flame Strike": {
    "category": "icon",
    "frames": [
     "assets/art/icon/Flame_Strike.png"
+   ],
+   "bounds": [
+    -12.85,
+    -19.9,
+    18.5,
+    14.3
    ]
   },
   "Frost Bolt": {
@@ -2187,36 +3003,72 @@
    "category": "icon",
    "frames": [
     "assets/art/icon/Healing_Light.png"
+   ],
+   "bounds": [
+    -32.5,
+    -13.3,
+    13.9,
+    14.9
    ]
   },
   "Heroic Motivation": {
    "category": "icon",
    "frames": [
     "assets/art/icon/Heroic_Motivation.png"
+   ],
+   "bounds": [
+    -17.7,
+    -12.2,
+    20.7,
+    17.85
    ]
   },
   "Intervention": {
    "category": "icon",
    "frames": [
     "assets/art/icon/Intervention.png"
+   ],
+   "bounds": [
+    -16.35,
+    -13.45,
+    14.4,
+    16.1
    ]
   },
   "Ironskin": {
    "category": "icon",
    "frames": [
     "assets/art/icon/Ironskin.png"
+   ],
+   "bounds": [
+    -19.0,
+    -13.4,
+    12.6,
+    12.25
    ]
   },
   "Magic Bolt": {
    "category": "icon",
    "frames": [
     "assets/art/icon/Magic_Bolt.png"
+   ],
+   "bounds": [
+    -12.85,
+    -15.4,
+    12.15,
+    12.8
    ]
   },
   "Master Strike": {
    "category": "icon",
    "frames": [
     "assets/art/icon/Master_Strike.png"
+   ],
+   "bounds": [
+    -20.4,
+    -15.5,
+    12.15,
+    12.8
    ]
   },
   "None": {
@@ -2229,66 +3081,132 @@
    "category": "icon",
    "frames": [
     "assets/art/icon/Quick_Strike.png"
+   ],
+   "bounds": [
+    -12.85,
+    -15.4,
+    12.15,
+    12.8
    ]
   },
   "Rage": {
    "category": "icon",
    "frames": [
     "assets/art/icon/Rage.png"
+   ],
+   "bounds": [
+    -27.1,
+    -28.7,
+    21.95,
+    18.25
    ]
   },
   "Re-Energize": {
    "category": "icon",
    "frames": [
     "assets/art/icon/Re-Energize.png"
+   ],
+   "bounds": [
+    -12.85,
+    -12.2,
+    12.8,
+    12.8
    ]
   },
   "Shatter Bolt": {
    "category": "icon",
    "frames": [
     "assets/art/icon/Shatter_Bolt.png"
+   ],
+   "bounds": [
+    -16.15,
+    -17.0,
+    12.15,
+    13.7
    ]
   },
   "Smash": {
    "category": "icon",
    "frames": [
     "assets/art/icon/Smash.png"
+   ],
+   "bounds": [
+    -28.7,
+    -26.2,
+    11.75,
+    12.4
    ]
   },
   "Strike": {
    "category": "icon",
    "frames": [
     "assets/art/icon/Strike.png"
+   ],
+   "bounds": [
+    -6.3,
+    -15.3,
+    10.7,
+    15.2
    ]
   },
   "Subversion": {
    "category": "icon",
    "frames": [
     "assets/art/icon/Subversion.png"
+   ],
+   "bounds": [
+    -12.0,
+    -11.25,
+    12.3,
+    11.25
    ]
   },
   "Sunder": {
    "category": "icon",
    "frames": [
     "assets/art/icon/Sunder.png"
+   ],
+   "bounds": [
+    -12.85,
+    -12.2,
+    16.3,
+    23.35
    ]
   },
   "Suppression": {
    "category": "icon",
    "frames": [
     "assets/art/icon/Suppression.png"
+   ],
+   "bounds": [
+    -12.35,
+    -22.6,
+    12.15,
+    22.0
    ]
   },
   "Void": {
    "category": "icon",
    "frames": [
     "assets/art/icon/Void.png"
+   ],
+   "bounds": [
+    -12.85,
+    -15.0,
+    12.55,
+    14.05
    ]
   },
   "Wound": {
    "category": "icon",
    "frames": [
     "assets/art/icon/Wound.png"
+   ],
+   "bounds": [
+    -13.5,
+    -20.75,
+    41.95,
+    11.7
    ]
   },
   "KrinBuffShower": {

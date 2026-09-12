@@ -11,6 +11,11 @@ typedef struct {
     const char        *category;
     const char *const *frames;
     int32_t            frame_count;
+    /* Where this art sits relative to its parent's origin, when known: the
+       shape's bounds with its placement matrix applied. has_bounds is 0 for
+       assets whose position the engine supplies instead. */
+    int32_t            has_bounds;
+    float              xmin, ymin, xmax, ymax;
 } AssetEntry;
 
 /* An animation state of the character model, as its frame labels define it.
@@ -22,12 +27,53 @@ typedef struct {
     int32_t     length;
 } AssetAnimation;
 
+/* One part of the character model on one frame: the instance name and the
+   matrix the model's timeline gives it. Matrices are SWF form --
+   x' = a*x + c*y + tx, y' = b*x + d*y + ty -- with translation in pixels. */
+typedef struct {
+    const char *part;
+    float       a, b, c, d, tx, ty;
+} DollPlacement;
+
+typedef struct {
+    const DollPlacement *parts;
+    int32_t              count;
+} DollFrame;
+
+/* How a doll part maps to equipment: `core` indexes the 7 equipment slots and
+   `art` is the name used in the export ("M_<art>_<look>"). */
+typedef struct {
+    const char *part;
+    int32_t     core;
+    const char *art;
+} DollPart;
+
+/* Where the battle screen stands each unit, in stage coordinates, straight
+   out of the original's own display list. The right-hand team's containers
+   carry a negative horizontal scale, which is how the game mirrors them. */
+typedef struct {
+    int32_t slot;
+    float   x, y;
+    float   scale_x, scale_y;
+    int32_t flip;
+} StageSlot;
+
+extern const StageSlot SONNY_STAGE_SLOTS[];
+extern const int SONNY_STAGE_SLOT_COUNT;
+const StageSlot *stage_slot(int32_t slot);
+
+extern const DollFrame SONNY_DOLL_FRAMES[];
+extern const int SONNY_DOLL_FRAME_COUNT;
+extern const DollPart SONNY_DOLL_PARTS[];
+extern const int SONNY_DOLL_PART_COUNT;
+
 extern const AssetEntry SONNY_ASSETS[];
 extern const int SONNY_ASSET_COUNT;
 extern const AssetAnimation SONNY_ANIMATIONS[];
 extern const int SONNY_ANIMATION_COUNT;
 
 const AssetEntry *asset_find(const char *name);
+const DollPart *doll_part(const char *name);
 const AssetAnimation *asset_animation(const char *name);
 
 #endif

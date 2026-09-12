@@ -1,0 +1,59 @@
+{
+ "screen": {
+  "x": 400.0,
+  "y": 294.5,
+  "character": 1559
+ },
+ "slots": {
+  "1": {
+   "x": 160.9,
+   "y": 297.4,
+   "scale_x": 1.0,
+   "scale_y": 1.0,
+   "flip": false
+  },
+  "2": {
+   "x": 637.9,
+   "y": 297.4,
+   "scale_x": -1.0,
+   "scale_y": 1.0,
+   "flip": true
+  },
+  "3": {
+   "x": 220.9,
+   "y": 371.0,
+   "scale_x": 1.0,
+   "scale_y": 1.0,
+   "flip": false
+  },
+  "4": {
+   "x": 577.9,
+   "y": 371.0,
+   "scale_x": -1.0,
+   "scale_y": 1.0,
+   "flip": true
+  },
+  "5": {
+   "x": 220.9,
+   "y": 218.5,
+   "scale_x": 1.0,
+   "scale_y": 1.0,
+   "flip": false
+  },
+  "6": {
+   "x": 577.9,
+   "y": 218.5,
+   "scale_x": -1.0,
+   "scale_y": 1.0,
+   "flip": true
+  }
+ },
+ "backdrop": {
+  "character": 1554,
+  "x": 400.0,
+  "y": 294.5,
+  "scale_x": 1.0,
+  "scale_y": 1.0,
+  "depth": 1
+ }
+}

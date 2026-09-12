@@ -39,6 +39,31 @@ static void install_brain(Brain *br, const UnitTemplate *t, int32_t ai)
         br->movesD[i] = t->moves_d[i];
 }
 
+/* Fill in how a unit looks: its model, and the appearance string of whatever
+   is in each equipment slot. A skinSetter overrides the first five slots, as
+   krinAddNewUnit does for units that come with their own skin. */
+static void install_looks(Unit *u, const char *gender, const char *skin,
+                          const char *hair, const int32_t equipment[7],
+                          const char *skin_setter)
+{
+    snprintf(u->model_gender, sizeof(u->model_gender), "%s",
+             (gender && gender[0]) ? gender : "M");
+    snprintf(u->model_skin, sizeof(u->model_skin), "%s", skin ? skin : "");
+    snprintf(u->model_hair, sizeof(u->model_hair), "%s", hair ? hair : "");
+
+    int32_t first = 0;
+    if (skin_setter && skin_setter[0]) {
+        for (int32_t i = 0; i < 5; i++)
+            snprintf(u->looks[i], sizeof(u->looks[i]), "%s", skin_setter);
+        first = 5;
+    }
+    for (int32_t i = first; i < 7; i++) {
+        const ItemDef *item = equipment ? item_by_id(equipment[i]) : NULL;
+        snprintf(u->looks[i], sizeof(u->looks[i]), "%s",
+                 (item && item->looks) ? item->looks : "");
+    }
+}
+
 void battle_place_enemy(Battle *b, int32_t slot, const UnitTemplate *t,
                         int32_t level, int32_t ai)
 {
@@ -46,6 +71,8 @@ void battle_place_enemy(Battle *b, int32_t slot, const UnitTemplate *t,
 
     unit_init(u, slot);
     install_brain(&b->brains[slot], t, ai);
+    install_looks(u, t->model_gender, t->model_skin, t->model_hair,
+                  t->equipment, t->skin_setter);
 
     snprintf(u->name, SONNY_NAME_LEN, "%s", t->name);
     u->plevel = level;
@@ -80,6 +107,8 @@ void battle_place_character(Battle *b, int32_t slot, const Character *c,
 
     unit_init(u, slot);
     install_brain(br, c->class_template, ai);
+    /* Sonny's own equipment dresses him; the class template's does not. */
+    install_looks(u, "M", "ONE", "ONE", c->equip, NULL);
 
     /* The character's own bar, not the class template's move list. The
        original only ever drives Sonny from input; giving the AI his bar is a

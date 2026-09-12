@@ -45,16 +45,77 @@ def walk_tags(body, pos, end=None):
             break
 
 
+def read_rect(body, pos):
+    """RECT -> (xmin, xmax, ymin, ymax) in pixels -- the SWF field order."""
+    nbits = body[pos] >> 3
+    total = 5 + 4 * nbits
+    bitpos = pos * 8 + 5
+    values = []
+    for _ in range(4):
+        v = 0
+        for _ in range(nbits):
+            byte = body[bitpos >> 3]
+            v = (v << 1) | ((byte >> (7 - (bitpos & 7))) & 1)
+            bitpos += 1
+        if nbits and (v >> (nbits - 1)) & 1:
+            v -= 1 << nbits
+        values.append(v / 20.0)
+    return values, pos + (total + 7) // 8
+
+
+def read_matrix_offset(body, pos):
+    """MATRIX -> ((a, b, c, d, tx, ty), next position), pixels for tx/ty."""
+    nbits_pos = pos * 8
+    def ub(n):
+        nonlocal nbits_pos
+        v = 0
+        for _ in range(n):
+            byte = body[nbits_pos >> 3]
+            v = (v << 1) | ((byte >> (7 - (nbits_pos & 7))) & 1)
+            nbits_pos += 1
+        return v
+
+    def sb(n):
+        v = ub(n)
+        if n and (v >> (n - 1)) & 1:
+            v -= 1 << n
+        return v
+
+    a = d = 1.0
+    b = c = 0.0
+    if ub(1):
+        n = ub(5)
+        a = sb(n) / 65536.0
+        d = sb(n) / 65536.0
+    if ub(1):
+        n = ub(5)
+        b = sb(n) / 65536.0
+        c = sb(n) / 65536.0
+    n = ub(5)
+    tx = sb(n) / 20.0
+    ty = sb(n) / 20.0
+    return (a, b, c, d, tx, ty), (nbits_pos + 7) // 8
+
+
 def placed_character(body, pos, tag):
-    """The character id a PlaceObject2/3 tag places, if it places one."""
+    """(character id, matrix) for a PlaceObject2/3 that places a character.
+
+    The matrix matters as much as the id: a backdrop's art is positioned by
+    the frame that places it, so without it the picture cannot be put where
+    the game puts it."""
     flags = body[pos]
     p = pos + 1
     if tag == TAG_PLACE_OBJECT3:
         p += 1
     p += 2                      # depth
     if not (flags & 2):         # no character: this is a move, not a place
-        return None
-    return struct.unpack_from('<H', body, p)[0]
+        return None, None
+    cid = struct.unpack_from('<H', body, p)[0]
+    p += 2
+    matrix = None
+    if flags & 4:
+        matrix, _ = read_matrix_offset(body, p)
+    return cid, matrix
 
 
 def sprite_frame_labels(body, pos, length):
@@ -76,9 +137,11 @@ def sprite_frame_labels(body, pos, length):
             label, _ = read_string(body, start)
             pending.append(label)
         elif tag in (TAG_PLACE_OBJECT2, TAG_PLACE_OBJECT3):
-            cid = placed_character(body, start, tag)
+            cid, matrix = placed_character(body, start, tag)
             if cid is not None:
-                frame_places.append(cid)
+                frame_places.append({'character': cid,
+                                     'matrix': ([round(v, 6) for v in matrix]
+                                                if matrix else None)})
         elif tag == TAG_SHOW_FRAME:
             for label in pending:
                 labels[label] = frame
@@ -105,6 +168,7 @@ def main(path):
 
     exports = {}
     root_labels = {}
+    shape_bounds = {}
     sprites, sounds, shapes = [], [], []
     sprite_labels = {}
     sprite_places = {}
@@ -132,7 +196,19 @@ def main(path):
         elif tag == TAG_DEFINE_SOUND and length >= 2:
             sounds.append(struct.unpack_from('<H', body, start)[0])
         elif tag in TAG_DEFINE_SHAPES and length >= 2:
-            shapes.append(struct.unpack_from('<H', body, start)[0])
+            shape_id = struct.unpack_from('<H', body, start)[0]
+            shapes.append(shape_id)
+            # A shape's bounds say where its art sits relative to its own
+            # origin. The decompiler exports PNGs trimmed to these bounds, so
+            # without them a shape cannot be placed where the game places it.
+            try:
+                (xmin, xmax, ymin, ymax), _ = read_rect(body, start + 2)
+                # Stored as (xmin, ymin, xmax, ymax), which is the order
+                # everything downstream wants.
+                shape_bounds[shape_id] = [round(xmin, 3), round(ymin, 3),
+                                          round(xmax, 3), round(ymax, 3)]
+            except (IndexError, struct.error):
+                pass
         elif tag == TAG_FRAME_LABEL and length >= 1:
             label, _ = read_string(body, start)
             pending.append(label)
@@ -160,6 +236,7 @@ def main(path):
         'sprite_ids': sprites,
         'sound_ids': sounds,
         'shape_ids': shapes,
+        'shape_bounds': {str(k): v for k, v in sorted(shape_bounds.items())},
         'root_frame_labels': root_labels,
         'sprite_frame_labels': {str(k): v for k, v in sorted(sprite_labels.items())},
         'label_index': dict(sorted(by_label.items())),

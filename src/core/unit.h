@@ -74,6 +74,13 @@ typedef struct {
     double  IDMG;                    /* flat damage the target takes extra */
     double  IDMG2;                   /* fractional, target */
 
+    /* Appearance, as the battle screen needs it to assemble the doll: the
+       model's gender/skin/hair and the look string of each equipment slot. */
+    char    model_gender[8];
+    char    model_skin[24];
+    char    model_hair[24];
+    char    looks[7][24];
+
     /* Accumulated buff contributions. changeArray is
        [str+, str%, mag+, mag%, spd+, spd%, life+, life%, DMG, DMG2, IDMG,
        IDMG2, ...]; the EP/ED pairs are per-element piercing and defense,

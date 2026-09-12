@@ -181,6 +181,23 @@ def gen_units(units):
                      % (', '.join(str(m) for m in moves_a) or '0', len(moves_a)))
         lines.append('        .moves_d = { %s }, .moves_d_count = %d,'
                      % (', '.join(str(m) for m in moves_d) or '0', len(moves_d)))
+        # Appearance: the model array is [base, skin, hair, gender] and the
+        # equipment array holds item ids whose `looks` dress each slot. A
+        # skinSetter overrides the first five slots.
+        model = u.get('model') or []
+        model = [m if isinstance(m, str) else '' for m in (list(model) + [''] * 4)]
+        equipment = [e if isinstance(e, int) else 0
+                     for e in ((u.get('equipment') or []) + [0] * 7)]
+        skin_setter = u.get('skinSetter')
+        lines.append('        .model_skin = %s, .model_hair = %s, '
+                     '.model_gender = %s,'
+                     % (c_string(model[1]), c_string(model[2]),
+                        c_string(model[3] or 'M')))
+        lines.append('        .equipment = { %s },'
+                     % ', '.join(str(e) for e in equipment[:7]))
+        lines.append('        .skin_setter = %s,'
+                     % c_string(skin_setter if isinstance(skin_setter, str)
+                                else ''))
         lines.append('    },')
     lines.append('};')
     lines.append('const int SONNY_UNIT_COUNT = '
@@ -477,6 +494,14 @@ typedef struct {
     int32_t     moves_a_count;
     int32_t     moves_d[SONNY_MAX_TEMPLATE_MOVES];
     int32_t     moves_d_count;
+    /* Appearance. The model array is [base, skin, hair, gender]; equipment
+       holds item ids whose `looks` string dresses each slot; a non-empty
+       skin_setter overrides the first five slots' looks. */
+    const char *model_skin;
+    const char *model_hair;
+    const char *model_gender;
+    int32_t     equipment[7];
+    const char *skin_setter;
 } UnitTemplate;
 
 extern const AbilityDef SONNY_ABILITIES[];

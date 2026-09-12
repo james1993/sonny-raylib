@@ -25,11 +25,46 @@ int32_t asset_frame_count(const char *name);
 /* Draw an asset centred in `area`, scaled down to fit if needed. Returns 0 if
    there was nothing to draw. */
 int asset_draw_fit(const char *name, int32_t frame, Rectangle area, Color tint);
-/* Draw covering `area`, cropping the overflow -- for backdrops. */
+/* Draw covering `area`, cropping the overflow. */
 int asset_draw_cover(const char *name, int32_t frame, Rectangle area,
                      Color tint);
 
+/* Draw art where the original places it: centred on its recorded bounds,
+   offset from `parent` (the stage position of whatever contains it). Assets
+   with no bounds fall back to being centred on `parent`. */
+int asset_draw_placed(const char *name, int32_t frame, Vector2 parent,
+                      float scale, Color tint);
+
 void assets_unload_all(void);
 int32_t assets_loaded_count(void);
+
+/* ------------------------------------------------------------------- doll */
+
+/* Everything needed to dress a character, in the original's own terms:
+ * `gender` is the model's M/F, `skin` and `hair` come from its model array,
+ * and `looks` holds the appearance string of whatever is in each of the seven
+ * equipment slots (empty for an empty slot).
+ *
+ * Each part draws two layers, as the battle screen attaches them: the skin
+ * (<gender>_S<part>_<skin>) underneath, then the equipped item
+ * (<gender>_<part>_<look>) over it. Weapons always use the M_ form. Hair goes
+ * on the head only when nothing is equipped there, or the model is female.
+ */
+typedef struct {
+    const char *gender;
+    const char *skin;
+    const char *hair;
+    const char *looks[7];
+} DollSpec;
+
+/* Draw one frame of the model. `frame` is 1-based into the model's timeline;
+   `scale` and `flip` place it, with flip mirroring for the right-hand team.
+   Returns the number of part layers actually drawn. */
+int doll_draw(const DollSpec *spec, int32_t frame, Vector2 origin, float scale,
+              int flip, Color tint);
+
+/* Resolve an animation name to a frame in its range, given a tick counter.
+   Non-looping states hold on their last frame. */
+int32_t doll_animation_frame(const char *animation, int32_t tick, int loop);
 
 #endif
