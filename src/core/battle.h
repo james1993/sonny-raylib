@@ -21,6 +21,7 @@
 #define SONNY_BATTLE_H
 
 #include "buffs.h"
+#include "character.h"
 #include "formula.h"
 #include "../gen/gamedata.h"
 
@@ -101,9 +102,21 @@ typedef struct {
 } MoveEvent;
 
 void battle_init(Battle *b, uint64_t seed, int32_t playerNumber);
-/* Put a unit in a slot from a template, at a level. */
-void battle_place(Battle *b, int32_t slot, const UnitTemplate *t, int32_t level,
-                  int32_t ai);
+
+/* Put an enemy (or AI ally) in a slot, built the way krinAddNewUnit does:
+ * stats scale linearly with level and are not rounded, health is the vitality
+ * figure times eight rounded once, and piercing and defense rise by 5 a level
+ * over the template's own values.
+ *
+ * This is deliberately not how the player is built -- see
+ * battle_place_character -- because the original uses two different formulas. */
+void battle_place_enemy(Battle *b, int32_t slot, const UnitTemplate *t,
+                        int32_t level, int32_t ai);
+
+/* Put the player character in a slot, from the stats the character screen
+   derives. Health is that figure times eight, as frame 196 sets it. */
+void battle_place_character(Battle *b, int32_t slot, const Character *c,
+                            const char *name, int32_t ai);
 
 /* TeamSelect + TeamSpeedAdder. */
 void battle_team_select(Battle *b);

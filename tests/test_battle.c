@@ -45,10 +45,10 @@ static void setup(Battle *b, uint64_t seed, int32_t enemy_level)
 {
     battle_init(b, seed, 1);
     /* Slots 1/3/5 are team 1, 2/4/6 are team 2. */
-    battle_place(b, 1, unit_template_by_name("Dreadnaught"), 5, 1);
-    battle_place(b, 3, &SONNY_UNITS[4], 5, 1);   /* the Templar ally */
-    battle_place(b, 2, unit_template_by_name("Zombie"), enemy_level, 1);
-    battle_place(b, 4, unit_template_by_name("ZPCI Assault"), enemy_level, 1);
+    battle_place_enemy(b, 1, unit_template_by_id(1), 5, 1);
+    battle_place_enemy(b, 3, unit_template_by_id(5), 5, 1);  /* the ally */
+    battle_place_enemy(b, 2, unit_template_by_name("Zombie"), enemy_level, 1);
+    battle_place_enemy(b, 4, unit_template_by_name("ZPCI Assault"), enemy_level, 1);
 }
 
 /* Runs a matchup over many seeds and reports how it went. */

@@ -161,17 +161,36 @@ UNIT_PARAMS = ['name', 'vitality', 'vitality_growth', 'strength',
 
 CALL_RE = re.compile(r'^(addNewMove|createNewUnitKrin|createNewItemKrin|'
                      r'addNewBuffKrin)\((.*)\);$')
+# Krin.HealthUP = 5;  Krin.PIU[0] = 12;  Krin.DIU[3] = 12;
+ITEM_STAT_RE = re.compile(r'^Krin\.(HealthUP|StrengthUP|MagicUP|SpeedUP|FocusUP)'
+                          r'\s*=\s*(.+);$')
+ITEM_ELEM_RE = re.compile(r'^Krin\.(PIU|DIU)\[(\d+)\]\s*=\s*(.+);$')
+ITEM_LOOKS_RE = re.compile(r'^gghhjjuu\.(looks|req)\s*=\s*(.+);$')
+CLEAR_RE = re.compile(r'^allClearKrinItem\(\);$')
+
+# createNewItemKrin(a, b, c, d, e, f)
+ITEM_PARAMS = ['icon', 'slot', 'rarity', 'class_req', 'level_req', 'price']
+# statUpdater is [Health, Strength, Magic, Speed, Focus] in that order.
+ITEM_STAT_ORDER = ['HealthUP', 'StrengthUP', 'MagicUP', 'SpeedUP', 'FocusUP']
 PATCH_RE = re.compile(r'^_root\.(hackMove|hackMove2)\[(\d+)\]\s*=\s*(.+);$')
 UNIT_PATCH_RE = re.compile(r'^jesivie\.([A-Za-z0-9_]+)\s*=\s*(.+);$')
 MOVECOUNT_RE = re.compile(r'^MoveCount\s*=\s*(\d+);$')
+
+
+def new_item_stats():
+    return {'stats': {k: 0 for k in ITEM_STAT_ORDER},
+            'PIU': [0] * 8, 'DIU': [0] * 8}
 
 
 def extract_tables(text):
     moves, units, items, buffs = {}, {}, [], {}
     move_count = 0
     unit_count = 0
+    item_count = 0
     cur = None          # ('move'|'buff', key) for hackMove/hackMove2 patches
     cur_unit = None
+    cur_item = None
+    item_stats = new_item_stats()
 
     for raw in text.splitlines():
         line = raw.strip()
@@ -202,7 +221,21 @@ def extract_tables(text):
                     zip(UNIT_PARAMS, args + [None] * (len(UNIT_PARAMS) - len(args))))}
                 cur_unit = unit_count
             elif fn == 'createNewItemKrin':
-                items.append({'id': len(items), 'args': args})
+                # itemKrinIDnow starts at -1 and is pre-incremented, so the
+                # first item is id 0 -- which is also how the language tables
+                # are indexed.
+                items.append({
+                    'id': item_count,
+                    'args': dict(zip(ITEM_PARAMS,
+                                     args + [None] * (len(ITEM_PARAMS) - len(args)))),
+                    # Snapshot of the stat block, exactly as the registrar
+                    # copies Krin.*UP / Krin.PIU / Krin.DIU into the item.
+                    'statUpdater': [item_stats['stats'][k] for k in ITEM_STAT_ORDER],
+                    'statUpdaterP': list(item_stats['PIU']),
+                    'statUpdaterD': list(item_stats['DIU']),
+                })
+                item_count += 1
+                cur_item = len(items) - 1
             elif fn == 'addNewBuffKrin':
                 key = args[0]
                 buffs[key] = {'key': key, 'name': args[1],
@@ -223,6 +256,28 @@ def extract_tables(text):
         m = UNIT_PATCH_RE.match(line)
         if m and cur_unit is not None:
             units[cur_unit][m.group(1)] = parse_value(m.group(2))
+            continue
+
+        m = ITEM_STAT_RE.match(line)
+        if m:
+            item_stats['stats'][m.group(1)] = parse_value(m.group(2))
+            continue
+
+        m = ITEM_ELEM_RE.match(line)
+        if m:
+            which, idx = m.group(1), int(m.group(2))
+            if idx < 8:
+                item_stats[which][idx] = parse_value(m.group(3))
+            continue
+
+        m = ITEM_LOOKS_RE.match(line)
+        if m and cur_item is not None:
+            items[cur_item][m.group(1)] = parse_value(m.group(2))
+            continue
+
+        if CLEAR_RE.match(line):
+            item_stats = new_item_stats()
+            continue
 
     return moves, units, items, buffs
 
@@ -283,8 +338,23 @@ def main():
             'fields': {str(i): resolve(v, lang) for i, v in sorted(b['fields'].items())},
         })
 
-    item_list = [{'id': it['id'], 'args': [resolve(a, lang) for a in it['args']]}
-                 for it in items]
+    itemname = lang.get('ITEMNAME') or []
+    itemsay = lang.get('ITEMSAY') or []
+    item_list = []
+    for it in items:
+        out = {'id': it['id']}
+        out.update({k: resolve(v, lang) for k, v in it['args'].items()})
+        # The registrar takes the display name and tooltip from the language
+        # tables by item id, not from its arguments.
+        out['name'] = itemname[it['id']] if it['id'] < len(itemname) else None
+        out['tooltip'] = itemsay[it['id']] if it['id'] < len(itemsay) else None
+        out['statUpdater'] = it['statUpdater']
+        out['statUpdaterP'] = it['statUpdaterP']
+        out['statUpdaterD'] = it['statUpdaterD']
+        for extra in ('looks', 'req'):
+            if extra in it:
+                out[extra] = resolve(it[extra], lang)
+        item_list.append(out)
 
     os.makedirs(args.out, exist_ok=True)
     written = []

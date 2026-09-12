@@ -20,35 +20,10 @@ void battle_init(Battle *b, uint64_t seed, int32_t playerNumber)
     rng_refill_krs(&b->rng);
 }
 
-void battle_place(Battle *b, int32_t slot, const UnitTemplate *t, int32_t level,
-                  int32_t ai)
+/* Shared tail of both placement paths: the AI's move lists and thresholds. */
+static void install_brain(Brain *br, const UnitTemplate *t, int32_t ai)
 {
-    Unit *u = &b->units[slot];
-    Brain *br = &b->brains[slot];
-
-    unit_init(u, slot);
     memset(br, 0, sizeof(*br));
-
-    snprintf(u->name, SONNY_NAME_LEN, "%s", t->name);
-    u->plevel = level;
-    u->active = 1;
-
-    /* base + growth * level, ceil'd, as frame 196 derives the player's stats
-       and krinAddNewUnit derives an enemy's. Health is the vitality figure
-       times eight. */
-    u->LIFE = ceil(t->life + t->life_growth * level) * 8;
-    u->STRENGTH = ceil(t->strength + t->strength_growth * level);
-    u->MAGIC = ceil(t->magic + t->magic_growth * level);
-    u->SPEED = ceil(t->speed + t->speed_growth * level);
-    for (int32_t e = 0; e < SONNY_ELEMENTS; e++) {
-        u->PER[e] = t->per[e];
-        u->DEF[e] = t->def[e];
-    }
-    u->LIFEU = u->LIFEN = (int32_t)floor(u->LIFE + 0.5);
-    u->FOCUSU = u->FOCUSN = (int32_t)t->focus;
-    unit_apply_changes(u);
-    u->LIFEN = u->LIFEU;
-
     br->AION = ai;
     br->Aggression = t->aggression;
     br->LifeBoundary1 = t->life_boundary1;
@@ -62,6 +37,65 @@ void battle_place(Battle *b, int32_t slot, const UnitTemplate *t, int32_t level,
                                                          : SONNY_AI_MOVES;
     for (int32_t i = 0; i < br->movesD_count; i++)
         br->movesD[i] = t->moves_d[i];
+}
+
+void battle_place_enemy(Battle *b, int32_t slot, const UnitTemplate *t,
+                        int32_t level, int32_t ai)
+{
+    Unit *u = &b->units[slot];
+
+    unit_init(u, slot);
+    install_brain(&b->brains[slot], t, ai);
+
+    snprintf(u->name, SONNY_NAME_LEN, "%s", t->name);
+    u->plevel = level;
+    u->active = 1;
+
+    /* krinAddNewUnit: linear in level, no rounding of the three stats. */
+    u->STRENGTH = t->strength + level * t->strength_growth;
+    u->MAGIC = t->magic + level * t->magic_growth;
+    u->SPEED = t->speed + level * t->speed_growth;
+    u->LIFE = floor((t->life + level * t->life_growth) * 8 + 0.5);
+    for (int32_t e = 0; e < SONNY_ELEMENTS; e++) {
+        u->PER[e] = t->per[e] + level * 5;
+        u->DEF[e] = t->def[e] + level * 5;
+    }
+    u->LIFEU = u->LIFEN = (int32_t)u->LIFE;
+    u->FOCUSU = u->FOCUSN = (int32_t)t->focus;
+    u->STRENGTHU = u->STRENGTH;
+    u->MAGICU = u->MAGIC;
+    u->SPEEDU = u->SPEED;
+    for (int32_t e = 0; e < SONNY_ELEMENTS; e++) {
+        u->PERU[e] = u->PER[e];
+        u->DEFU[e] = u->DEF[e];
+    }
+}
+
+void battle_place_character(Battle *b, int32_t slot, const Character *c,
+                            const char *name, int32_t ai)
+{
+    Unit *u = &b->units[slot];
+    DerivedStats d = character_derive(c);
+
+    unit_init(u, slot);
+    install_brain(&b->brains[slot], c->class_template, ai);
+
+    snprintf(u->name, SONNY_NAME_LEN, "%s",
+             name ? name : c->class_template->name);
+    u->plevel = c->level;
+    u->active = 1;
+
+    u->STRENGTH = u->STRENGTHU = d.strength;
+    u->MAGIC = u->MAGICU = d.magic;
+    u->SPEED = u->SPEEDU = d.speed;
+    /* frame 196: LIFEU = Math.round(LIFE = Krin.LIFE * 8) */
+    u->LIFE = d.life * 8;
+    u->LIFEU = u->LIFEN = (int32_t)floor(u->LIFE + 0.5);
+    u->FOCUSU = u->FOCUSN = (int32_t)d.focus;
+    for (int32_t e = 0; e < SONNY_ELEMENTS; e++) {
+        u->PER[e] = u->PERU[e] = d.per[e];
+        u->DEF[e] = u->DEFU[e] = d.def[e];
+    }
 }
 
 /* -------------------------------------------------------------- turn order */

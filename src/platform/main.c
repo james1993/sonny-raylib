@@ -25,7 +25,8 @@
 #define RESOLVE_FRAMES 14   /* frames each resolved move stays on screen */
 
 typedef struct {
-    Battle  battle;
+    Battle    battle;
+    Character player;
     int32_t ability_ids[ABILITY_SLOTS];
     int32_t selected;          /* ability slot, -1 = none */
     int32_t hovered_unit;
@@ -59,15 +60,22 @@ static void game_init(Game *g, uint64_t seed)
     Battle *b = &g->battle;
 
     battle_init(b, seed, PLAYER_SLOT);
+
+    /* Sonny: a level 5 Dreadnaught with the starting stat bonus the original
+       hands out (Krin.StatSets0 = [0,5,0,3,0]) and four points spent. */
+    g->player.class_template = unit_template_by_id(1);
+    g->player.level = 5;
+    g->player.spent[1] = 5 + 2;
+    g->player.spent[3] = 3 + 2;
+
     /* Sonny is human-driven; his ally and the enemies run the game's AI. */
-    battle_place(b, PLAYER_SLOT, unit_template_by_name("Dreadnaught"), 5, 0);
-    snprintf(b->units[PLAYER_SLOT].name, SONNY_NAME_LEN, "Sonny");
-    battle_place(b, 3, &SONNY_UNITS[4], 5, 1);
-    battle_place(b, 2, unit_template_by_name("Zombie"), 4, 1);
-    battle_place(b, 4, unit_template_by_name("ZPCI Assault"), 4, 1);
+    battle_place_character(b, PLAYER_SLOT, &g->player, "Sonny", 0);
+    battle_place_enemy(b, 3, unit_template_by_id(5), 5, 1);
+    battle_place_enemy(b, 2, unit_template_by_name("Zombie"), 4, 1);
+    battle_place_enemy(b, 4, unit_template_by_name("ZPCI Assault"), 4, 1);
 
     /* The player's bar holds the class's own move list. */
-    const UnitTemplate *t = unit_template_by_name("Dreadnaught");
+    const UnitTemplate *t = g->player.class_template;
     for (int i = 0; i < ABILITY_SLOTS; i++)
         g->ability_ids[i] = (i < t->moves_a_count) ? t->moves_a[i] : 0;
 

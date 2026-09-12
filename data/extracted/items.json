@@ -1,1388 +1,4906 @@
 [
  {
   "id": 0,
-  "args": [
-   "None",
+  "icon": "None",
+  "slot": 0,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 0,
+  "price": 50,
+  "name": "None",
+  "tooltip": "This slot is empty.",
+  "statUpdater": [
    0,
-   "Common",
    0,
    0,
-   50
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
   ]
  },
  {
   "id": 1,
-  "args": [
-   "Tool",
+  "icon": "Tool",
+  "slot": 0,
+  "rarity": "Uncommon",
+  "class_req": -1,
+  "level_req": 0,
+  "price": 60,
+  "name": "Tool",
+  "tooltip": "A tool to pick your nose.",
+  "statUpdater": [
    0,
-   "Uncommon",
-   -1,
    0,
-   60
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
   ]
  },
  {
   "id": 2,
-  "args": [
-   "Sword",
-   2,
-   "Rare",
+  "icon": "Sword",
+  "slot": 2,
+  "rarity": "Rare",
+  "class_req": 0,
+  "level_req": 1,
+  "price": 50,
+  "name": "Nike Head Wear",
+  "tooltip": "Can't go out without this awesome hat.",
+  "statUpdater": [
+   5,
+   5,
+   4,
+   3,
+   0
+  ],
+  "statUpdaterP": [
+   12,
    0,
-   1,
-   50
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   9,
+   0,
+   0,
+   12,
+   0,
+   0,
+   0,
+   0
   ]
  },
  {
   "id": 3,
-  "args": [
-   "Mace",
-   7,
-   "Uncommon",
+  "icon": "Mace",
+  "slot": 7,
+  "rarity": "Uncommon",
+  "class_req": 0,
+  "level_req": 1,
+  "price": 50,
+  "name": "A Sword",
+  "tooltip": "Can you think of a weapon more generic?",
+  "statUpdater": [
+   4,
+   8,
    0,
-   1,
-   50
-  ]
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   6,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   3,
+   0,
+   0,
+   3,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SWORD1"
  },
  {
   "id": 4,
-  "args": [
-   "Jeans",
-   5,
-   "Common",
+  "icon": "Jeans",
+  "slot": 5,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 1,
+  "price": 7,
+  "name": "Levo Jeans",
+  "tooltip": "These jeans are a little bit tight.",
+  "statUpdater": [
    0,
    1,
-   7
-  ]
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "JEANS"
  },
  {
   "id": 5,
-  "args": [
-   "Broken Pipe",
-   7,
-   "Common",
+  "icon": "Broken Pipe",
+  "slot": 7,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 1,
+  "price": 10,
+  "name": "A Broken Pipe",
+  "tooltip": "The first weapon you laid your hands on.",
+  "statUpdater": [
    0,
-   1,
-   10
-  ]
+   2,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "PIPE"
  },
  {
   "id": 6,
-  "args": [
-   "Fire Axe",
-   7,
-   "Common",
+  "icon": "Fire Axe",
+  "slot": 7,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 1,
+  "price": 40,
+  "name": "Fire Axe",
+  "tooltip": "'Use in the case of an emergency.'",
+  "statUpdater": [
    0,
-   1,
-   40
-  ]
+   6,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "FIREAXE"
  },
  {
   "id": 7,
-  "args": [
-   "Crow Bar",
-   7,
-   "Common",
+  "icon": "Crow Bar",
+  "slot": 7,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 1,
+  "price": 30,
+  "name": "Crow Bar",
+  "tooltip": "This is more than just a weapon... It is the symbol of a hero.",
+  "statUpdater": [
    0,
-   1,
-   30
-  ]
+   4,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "CROWBAR"
  },
  {
   "id": 8,
-  "args": [
-   "Converse All Stars",
-   6,
-   "Common",
+  "icon": "Converse All Stars",
+  "slot": 6,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 1,
+  "price": 9,
+  "name": "Proverse All Stars",
+  "tooltip": "Yes, they're still in fashion.",
+  "statUpdater": [
+   0,
+   0,
    0,
    1,
-   9
-  ]
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "JEANS"
  },
  {
   "id": 9,
-  "args": [
-   "Engineering Gloves",
-   4,
-   "Common",
+  "icon": "Engineering Gloves",
+  "slot": 4,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 1,
+  "price": 12,
+  "name": "Engineering Gloves",
+  "tooltip": "They're a little bit dirty, but provide a firm grip.",
+  "statUpdater": [
    0,
    1,
-   12
-  ]
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "ENGINEERINGGLOVES"
  },
  {
   "id": 10,
-  "args": [
-   "Navy Boots",
-   6,
-   "Common",
+  "icon": "Navy Boots",
+  "slot": 6,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 1,
+  "price": 12,
+  "name": "Navy Boots",
+  "tooltip": 0,
+  "statUpdater": [
    0,
    1,
-   12
-  ]
+   0,
+   1,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "NAVY"
  },
  {
   "id": 11,
-  "args": [
-   "White T-Shirt",
-   3,
-   "Common",
-   0,
+  "icon": "White T-Shirt",
+  "slot": 3,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 1,
+  "price": 12,
+  "name": "White T-Shirt",
+  "tooltip": "100% Cotton.",
+  "statUpdater": [
    1,
-   12
-  ]
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SHIRT"
  },
  {
   "id": 12,
-  "args": [
-   "Stick",
-   7,
-   "Common",
+  "icon": "Stick",
+  "slot": 7,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 1,
+  "price": 12,
+  "name": null,
+  "tooltip": null,
+  "statUpdater": [
    0,
-   1,
-   12
-  ]
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "STICK"
  },
  {
   "id": 13,
-  "args": [
-   "M4",
-   7,
-   "Uncommon",
+  "icon": "M4",
+  "slot": 7,
+  "rarity": "Uncommon",
+  "class_req": 0,
+  "level_req": 3,
+  "price": 50,
+  "name": "M7-V Rifle",
+  "tooltip": "Standard Issue Z.P.C.I. Weapon.",
+  "statUpdater": [
    0,
    3,
-   50
-  ]
+   11,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   5,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "M4"
  },
  {
   "id": 14,
-  "args": [
-   "Swat Sword",
-   7,
-   "Uncommon",
+  "icon": "Swat Sword",
+  "slot": 7,
+  "rarity": "Uncommon",
+  "class_req": 0,
+  "level_req": 3,
+  "price": 50,
+  "name": "ZPCI Blade",
+  "tooltip": "Written on the hilt: 'Property of Zombie Pest Control Inc.'",
+  "statUpdater": [
    0,
+   11,
    3,
-   50
-  ]
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   5,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SWATSWORD"
  },
  {
   "id": 15,
-  "args": [
-   "Helmet of Peril",
+  "icon": "Helmet of Peril",
+  "slot": 2,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 4,
+  "price": 63,
+  "name": "Helm of Peril",
+  "tooltip": 0,
+  "statUpdater": [
+   3,
+   1,
    2,
-   "Common",
    0,
-   4,
-   63
-  ]
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   16,
+   0,
+   0,
+   0,
+   8,
+   0
+  ],
+  "looks": "SAMURAI"
  },
  {
   "id": 16,
-  "args": [
-   "Handguards of Destiny",
-   4,
-   "Common",
+  "icon": "Handguards of Destiny",
+  "slot": 4,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 4,
+  "price": 43,
+  "name": "Handguards of Destiny",
+  "tooltip": 0,
+  "statUpdater": [
+   3,
+   2,
+   1,
    0,
-   4,
-   43
-  ]
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   8,
+   0,
+   0,
+   0,
+   16,
+   0
+  ],
+  "looks": "SAMURAI"
  },
  {
   "id": 17,
-  "args": [
-   "Armor of the Fallen",
+  "icon": "Armor of the Fallen",
+  "slot": 3,
+  "rarity": "Uncommon",
+  "class_req": 0,
+  "level_req": 4,
+  "price": 109,
+  "name": "Armor of the Fallen",
+  "tooltip": 0,
+  "statUpdater": [
    3,
-   "Uncommon",
+   2,
+   2,
    0,
-   4,
-   109
-  ]
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   20,
+   0,
+   0,
+   0,
+   20,
+   0
+  ],
+  "looks": "SAMURAI"
  },
  {
   "id": 18,
-  "args": [
-   "Ornate Leggings",
-   5,
-   "Common",
+  "icon": "Ornate Leggings",
+  "slot": 5,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 4,
+  "price": 63,
+  "name": "Cold Steel Leggings",
+  "tooltip": 0,
+  "statUpdater": [
+   3,
+   1,
+   2,
    0,
-   4,
-   63
-  ]
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   16,
+   0,
+   0,
+   0,
+   8,
+   0
+  ],
+  "looks": "SAMURAI"
  },
  {
   "id": 19,
-  "args": [
-   "Dark Steel Boots",
-   6,
-   "Common",
+  "icon": "Dark Steel Boots",
+  "slot": 6,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 4,
+  "price": 42,
+  "name": "Deep Sea Greaves",
+  "tooltip": 0,
+  "statUpdater": [
+   3,
+   1,
+   2,
    0,
-   4,
-   42
-  ]
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   8,
+   0,
+   0,
+   0,
+   16,
+   0
+  ],
+  "looks": "SAMURAI"
  },
  {
   "id": 20,
-  "args": [
-   "Ghostly Mask",
+  "icon": "Ghostly Mask",
+  "slot": 2,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 4,
+  "price": 42,
+  "name": "Ghostly Mask",
+  "tooltip": 0,
+  "statUpdater": [
+   0,
    2,
-   "Common",
    0,
    4,
-   42
-  ]
+   0
+  ],
+  "statUpdaterP": [
+   4,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "NINJA"
  },
  {
   "id": 21,
-  "args": [
-   "Assasin's Tunic",
+  "icon": "Assasin's Tunic",
+  "slot": 3,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 4,
+  "price": 102,
+  "name": "Assasin's Tunic",
+  "tooltip": 0,
+  "statUpdater": [
+   0,
    3,
-   "Common",
    0,
    4,
-   102
-  ]
+   0
+  ],
+  "statUpdaterP": [
+   7,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "NINJA"
  },
  {
   "id": 22,
-  "args": [
-   "Shadow Leggings",
-   5,
-   "Common",
+  "icon": "Shadow Leggings",
+  "slot": 5,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 4,
+  "price": 63,
+  "name": "Shadow Legwraps",
+  "tooltip": 0,
+  "statUpdater": [
+   0,
+   2,
    0,
    4,
-   63
-  ]
+   0
+  ],
+  "statUpdaterP": [
+   4,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "NINJA"
  },
  {
   "id": 23,
-  "args": [
-   "Stealth Strider Boots",
-   6,
-   "Common",
+  "icon": "Stealth Strider Boots",
+  "slot": 6,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 4,
+  "price": 42,
+  "name": "Boots of Stealth",
+  "tooltip": 0,
+  "statUpdater": [
+   0,
+   2,
    0,
    4,
-   42
-  ]
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   4,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "NINJA"
  },
  {
   "id": 24,
-  "args": [
-   "Reflex Gloves",
-   4,
-   "Common",
+  "icon": "Reflex Gloves",
+  "slot": 4,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 4,
+  "price": 42,
+  "name": "Handwraps of Caution",
+  "tooltip": 0,
+  "statUpdater": [
+   0,
+   2,
    0,
    4,
-   42
-  ]
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   4,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "NINJA"
  },
  {
   "id": 25,
-  "args": [
-   "Hunter's Helm",
+  "icon": "Hunter's Helm",
+  "slot": 2,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 4,
+  "price": 63,
+  "name": "Hunter's Helm",
+  "tooltip": 0,
+  "statUpdater": [
    2,
-   "Common",
+   1,
+   2,
+   2,
+   0
+  ],
+  "statUpdaterP": [
    0,
-   4,
-   63
-  ]
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "USA4"
  },
  {
   "id": 26,
-  "args": [
-   "Hunter's Handguards",
-   4,
-   "Common",
+  "icon": "Hunter's Handguards",
+  "slot": 4,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 4,
+  "price": 42,
+  "name": "Hunter's Handguards",
+  "tooltip": 0,
+  "statUpdater": [
+   2,
+   1,
+   3,
+   1,
+   0
+  ],
+  "statUpdaterP": [
    0,
-   4,
-   42
-  ]
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "USA4"
  },
  {
   "id": 27,
-  "args": [
-   "Hunter's Leggings",
-   5,
-   "Common",
+  "icon": "Hunter's Leggings",
+  "slot": 5,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 4,
+  "price": 109,
+  "name": "Hunter's Legplates",
+  "tooltip": 0,
+  "statUpdater": [
+   1,
+   1,
+   3,
+   2,
+   0
+  ],
+  "statUpdaterP": [
    0,
-   4,
-   109
-  ]
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "USA4"
  },
  {
   "id": 28,
-  "args": [
-   "Hunter's Body Armor",
-   3,
-   "Uncommon",
-   0,
+  "icon": "Hunter's Body Armor",
+  "slot": 3,
+  "rarity": "Uncommon",
+  "class_req": 0,
+  "level_req": 4,
+  "price": 109,
+  "name": "Hunter's Armor",
+  "tooltip": 0,
+  "statUpdater": [
+   2,
+   2,
    4,
-   109
-  ]
+   3,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "USA4"
  },
  {
   "id": 29,
-  "args": [
-   "Hunter's Boots",
-   6,
-   "Common",
+  "icon": "Hunter's Boots",
+  "slot": 6,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 4,
+  "price": 42,
+  "name": "Hunter's Boots",
+  "tooltip": 0,
+  "statUpdater": [
+   2,
+   2,
+   3,
+   1,
+   0
+  ],
+  "statUpdaterP": [
    0,
-   4,
-   42
-  ]
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "USA4"
  },
  {
   "id": 30,
-  "args": [
-   "Ghostly Katana",
-   7,
-   "Common",
+  "icon": "Ghostly Katana",
+  "slot": 7,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 5,
+  "price": 109,
+  "name": "Icy Katana",
+  "tooltip": 0,
+  "statUpdater": [
    0,
-   5,
-   109
-  ]
+   12,
+   0,
+   2,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "KATANA"
  },
  {
   "id": 31,
-  "args": [
-   "Pulse Rifle",
-   7,
-   "Common",
+  "icon": "Pulse Rifle",
+  "slot": 7,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 5,
+  "price": 109,
+  "name": "Pulse Rifle",
+  "tooltip": 0,
+  "statUpdater": [
    0,
-   5,
-   109
-  ]
+   0,
+   12,
+   2,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "M4"
  },
  {
   "id": 32,
-  "args": [
-   "Blade of Moon-Struck Horrors",
-   7,
-   "Rare",
+  "icon": "Blade of Moon-Struck Horrors",
+  "slot": 7,
+  "rarity": "Rare",
+  "class_req": 0,
+  "level_req": 7,
+  "price": 150,
+  "name": "Moon-Struck Horrors",
+  "tooltip": "You can hear tormented screams...",
+  "statUpdater": [
    0,
-   7,
-   150
-  ]
+   15,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   38,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "MOON"
  },
  {
   "id": 33,
-  "args": [
-   "Swift Blade",
-   8,
-   "Common",
-   3,
-   5,
-   109
-  ]
+  "icon": "Swift Blade",
+  "slot": 8,
+  "rarity": "Common",
+  "class_req": 3,
+  "level_req": 5,
+  "price": 109,
+  "name": "Swift Blade",
+  "tooltip": 0,
+  "statUpdater": [
+   0,
+   4,
+   0,
+   4,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SWIFT"
  },
  {
   "id": 34,
-  "args": [
-   "ZPCI Med-Head",
-   2,
-   "Uncommon",
-   5,
-   5,
-   40
-  ]
+  "icon": "ZPCI Med-Head",
+  "slot": 2,
+  "rarity": "Uncommon",
+  "class_req": 5,
+  "level_req": 5,
+  "price": 40,
+  "name": "ZPCI Med-Wear A",
+  "tooltip": 0,
+  "statUpdater": [
+   4,
+   4,
+   4,
+   4,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   15,
+   15,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "MEDIC"
  },
  {
   "id": 35,
-  "args": [
-   "ZPCI Med-Chest",
-   3,
-   "Uncommon",
-   5,
-   5,
-   40
-  ]
+  "icon": "ZPCI Med-Chest",
+  "slot": 3,
+  "rarity": "Uncommon",
+  "class_req": 5,
+  "level_req": 5,
+  "price": 40,
+  "name": "ZPCI Med-Wear B",
+  "tooltip": 0,
+  "statUpdater": [
+   4,
+   4,
+   4,
+   4,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   15,
+   15,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "MEDIC"
  },
  {
   "id": 36,
-  "args": [
-   "ZPCI Med-Gloves",
+  "icon": "ZPCI Med-Gloves",
+  "slot": 4,
+  "rarity": "Uncommon",
+  "class_req": 5,
+  "level_req": 5,
+  "price": 40,
+  "name": "ZPCI Med-Wear C",
+  "tooltip": 0,
+  "statUpdater": [
    4,
-   "Uncommon",
-   5,
-   5,
-   40
-  ]
+   4,
+   4,
+   4,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   15,
+   15,
+   0,
+   0
+  ],
+  "looks": "MEDIC"
  },
  {
   "id": 37,
-  "args": [
-   "ZPCI Med-Legs",
-   5,
-   "Uncommon",
-   5,
-   5,
-   40
-  ]
+  "icon": "ZPCI Med-Legs",
+  "slot": 5,
+  "rarity": "Uncommon",
+  "class_req": 5,
+  "level_req": 5,
+  "price": 40,
+  "name": "ZPCI Med-Wear D",
+  "tooltip": 0,
+  "statUpdater": [
+   4,
+   4,
+   4,
+   4,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   15,
+   15
+  ],
+  "looks": "MEDIC"
  },
  {
   "id": 38,
-  "args": [
-   "ZPCI Med-Feet",
-   6,
-   "Uncommon",
-   5,
-   5,
-   40
-  ]
+  "icon": "ZPCI Med-Feet",
+  "slot": 6,
+  "rarity": "Uncommon",
+  "class_req": 5,
+  "level_req": 5,
+  "price": 40,
+  "name": "ZPCI Med-Wear E",
+  "tooltip": 0,
+  "statUpdater": [
+   4,
+   4,
+   4,
+   4,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   15,
+   15,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "MEDIC"
  },
  {
   "id": 39,
-  "args": [
-   "Sensei-Head",
+  "icon": "Sensei-Head",
+  "slot": 2,
+  "rarity": "Rare",
+  "class_req": 0,
+  "level_req": 5,
+  "price": 80,
+  "name": "Crown of Frozen Shadows",
+  "tooltip": 0,
+  "statUpdater": [
    2,
-   "Rare",
+   3,
+   3,
+   3,
+   0
+  ],
+  "statUpdaterP": [
    0,
-   5,
-   80
-  ]
+   13,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   13,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SAMURAI2"
  },
  {
   "id": 40,
-  "args": [
-   "Sensei-Chest",
+  "icon": "Sensei-Chest",
+  "slot": 3,
+  "rarity": "Rare",
+  "class_req": 0,
+  "level_req": 5,
+  "price": 80,
+  "name": "Armor of the Teacher",
+  "tooltip": 0,
+  "statUpdater": [
+   2,
    3,
-   "Rare",
+   2,
+   3,
+   0
+  ],
+  "statUpdaterP": [
    0,
-   5,
-   80
-  ]
+   13,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   13,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SAMURAI2"
  },
  {
   "id": 41,
-  "args": [
-   "Sensei-Gloves",
-   4,
-   "Rare",
+  "icon": "Sensei-Gloves",
+  "slot": 4,
+  "rarity": "Rare",
+  "class_req": 0,
+  "level_req": 5,
+  "price": 80,
+  "name": "Grand Master's Gloves",
+  "tooltip": 0,
+  "statUpdater": [
+   2,
+   2,
+   3,
+   3,
+   0
+  ],
+  "statUpdaterP": [
    0,
-   5,
-   80
-  ]
+   13,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   13,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SAMURAI2"
  },
  {
   "id": 42,
-  "args": [
-   "Sensei-Legs",
-   5,
-   "Rare",
+  "icon": "Sensei-Legs",
+  "slot": 5,
+  "rarity": "Rare",
+  "class_req": 0,
+  "level_req": 5,
+  "price": 80,
+  "name": "Legplates of Icy Doom",
+  "tooltip": 0,
+  "statUpdater": [
+   4,
+   4,
+   3,
+   2,
+   0
+  ],
+  "statUpdaterP": [
    0,
-   5,
-   80
-  ]
+   13,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   13,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SAMURAI2"
  },
  {
   "id": 43,
-  "args": [
-   "Sensei-Feet",
-   6,
-   "Rare",
+  "icon": "Sensei-Feet",
+  "slot": 6,
+  "rarity": "Rare",
+  "class_req": 0,
+  "level_req": 5,
+  "price": 80,
+  "name": "Footguard of the Shore",
+  "tooltip": 0,
+  "statUpdater": [
+   2,
+   2,
+   3,
+   3,
+   0
+  ],
+  "statUpdaterP": [
    0,
-   5,
-   80
-  ]
+   13,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   13,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SAMURAI2"
  },
  {
   "id": 44,
-  "args": [
-   "Melee-Shammy-Head",
-   2,
-   "Common",
+  "icon": "Melee-Shammy-Head",
+  "slot": 2,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 10,
+  "price": 512,
+  "name": "Striker's Mask",
+  "tooltip": 0,
+  "statUpdater": [
+   0,
+   4,
    0,
    10,
-   512
-  ]
+   0
+  ],
+  "statUpdaterP": [
+   28,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SHAMAN1"
  },
  {
   "id": 45,
-  "args": [
-   "Melee-Shammy-Body",
-   3,
-   "Common",
+  "icon": "Melee-Shammy-Body",
+  "slot": 3,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 10,
+  "price": 512,
+  "name": "Striker's Armor",
+  "tooltip": 0,
+  "statUpdater": [
+   6,
+   6,
    0,
-   10,
-   512
-  ]
+   6,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SHAMAN1"
  },
  {
   "id": 46,
-  "args": [
-   "Melee-Shammy-Hands",
-   4,
-   "Common",
+  "icon": "Melee-Shammy-Hands",
+  "slot": 4,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 8,
+  "price": 240,
+  "name": "Striker's Gloves",
+  "tooltip": 0,
+  "statUpdater": [
    0,
-   8,
-   240
-  ]
+   9,
+   0,
+   10,
+   0
+  ],
+  "statUpdaterP": [
+   28,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SHAMAN1"
  },
  {
   "id": 47,
-  "args": [
-   "Melee-Shammy-Legs",
-   5,
-   "Common",
+  "icon": "Melee-Shammy-Legs",
+  "slot": 5,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 8,
+  "price": 512,
+  "name": "Striker's Leggings",
+  "tooltip": 0,
+  "statUpdater": [
+   4,
+   2,
    0,
-   8,
-   512
-  ]
+   9,
+   0
+  ],
+  "statUpdaterP": [
+   22,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SHAMAN1"
  },
  {
   "id": 48,
-  "args": [
-   "Melee-Shammy-Feet",
-   6,
-   "Common",
+  "icon": "Melee-Shammy-Feet",
+  "slot": 6,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 8,
+  "price": 240,
+  "name": "Striker's Flip-Flops",
+  "tooltip": "Don't slip!",
+  "statUpdater": [
    0,
-   8,
-   240
-  ]
+   4,
+   0,
+   11,
+   0
+  ],
+  "statUpdaterP": [
+   12,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SHAMAN1"
  },
  {
   "id": 49,
-  "args": [
-   "Magic-Shammy-Head",
-   2,
-   "Common",
+  "icon": "Magic-Shammy-Head",
+  "slot": 2,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 10,
+  "price": 512,
+  "name": "Breaker's Mask",
+  "tooltip": 0,
+  "statUpdater": [
    0,
-   10,
-   512
-  ]
+   0,
+   9,
+   0,
+   20
+  ],
+  "statUpdaterP": [
+   0,
+   27,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SHAMAN3"
  },
  {
   "id": 50,
-  "args": [
-   "Magic-Shammy-Body",
-   3,
-   "Common",
+  "icon": "Magic-Shammy-Body",
+  "slot": 3,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 10,
+  "price": 512,
+  "name": "Breaker's Armor",
+  "tooltip": 0,
+  "statUpdater": [
    0,
-   10,
-   512
-  ]
+   0,
+   9,
+   0,
+   20
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   27,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SHAMAN3"
  },
  {
   "id": 51,
-  "args": [
-   "Magic-Shammy-Hands",
-   4,
-   "Common",
+  "icon": "Magic-Shammy-Hands",
+  "slot": 4,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 8,
+  "price": 240,
+  "name": "Breaker's Gloves",
+  "tooltip": 0,
+  "statUpdater": [
    0,
-   8,
-   240
-  ]
+   0,
+   10,
+   0,
+   20
+  ],
+  "statUpdaterP": [
+   0,
+   13,
+   13,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SHAMAN3"
  },
  {
   "id": 52,
-  "args": [
-   "Magic-Shammy-Leg",
-   5,
-   "Common",
+  "icon": "Magic-Shammy-Leg",
+  "slot": 5,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 8,
+  "price": 512,
+  "name": "Breaker's Pantyhose",
+  "tooltip": "Sexy, but deadly.",
+  "statUpdater": [
    0,
-   8,
-   512
-  ]
+   0,
+   9,
+   0,
+   20
+  ],
+  "statUpdaterP": [
+   0,
+   32,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SHAMAN3"
  },
  {
   "id": 53,
-  "args": [
-   "Magic-Shammy-Feet",
-   6,
-   "Common",
+  "icon": "Magic-Shammy-Feet",
+  "slot": 6,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 8,
+  "price": 240,
+  "name": "Breaker's Boots",
+  "tooltip": 0,
+  "statUpdater": [
    0,
-   8,
-   240
-  ]
+   0,
+   9,
+   0,
+   20
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   32,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SHAMAN3"
  },
  {
   "id": 54,
-  "args": [
-   "Heal-Shammy-Head",
-   2,
-   "Common",
+  "icon": "Heal-Shammy-Head",
+  "slot": 2,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 10,
+  "price": 512,
+  "name": "Dead Peacock",
+  "tooltip": "At least it's still pretty.",
+  "statUpdater": [
+   9,
+   4,
+   5,
    0,
-   10,
-   512
-  ]
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   17,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SHAMAN2"
  },
  {
   "id": 55,
-  "args": [
-   "Heal-Shammy-Body",
-   3,
-   "Common",
+  "icon": "Heal-Shammy-Body",
+  "slot": 3,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 10,
+  "price": 512,
+  "name": "Mender's Armor",
+  "tooltip": 0,
+  "statUpdater": [
+   7,
+   4,
+   5,
    0,
-   10,
-   512
-  ]
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   17,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SHAMAN2"
  },
  {
   "id": 56,
-  "args": [
-   "Heal-Shammy-Hands",
+  "icon": "Heal-Shammy-Hands",
+  "slot": 4,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 8,
+  "price": 240,
+  "name": "Mender's Gloves",
+  "tooltip": 0,
+  "statUpdater": [
+   9,
    4,
-   "Common",
+   6,
    0,
-   8,
-   240
-  ]
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SHAMAN2"
  },
  {
   "id": 57,
-  "args": [
-   "Heal-Shammy-Leg",
+  "icon": "Heal-Shammy-Leg",
+  "slot": 5,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 8,
+  "price": 512,
+  "name": "Mender's Leggings",
+  "tooltip": 0,
+  "statUpdater": [
    5,
-   "Common",
+   4,
+   5,
    0,
-   8,
-   512
-  ]
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   9,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SHAMAN2"
  },
  {
   "id": 58,
-  "args": [
-   "Heal-Shammy-Feet",
-   6,
-   "Common",
-   0,
+  "icon": "Heal-Shammy-Feet",
+  "slot": 6,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 8,
+  "price": 240,
+  "name": "Mender's Boots",
+  "tooltip": 0,
+  "statUpdater": [
    8,
-   240
-  ]
+   5,
+   4,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   17,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SHAMAN2"
  },
  {
   "id": 59,
-  "args": [
-   "Knight-Head",
-   2,
-   "Common",
-   1,
-   10,
-   512
-  ]
+  "icon": "Knight-Head",
+  "slot": 2,
+  "rarity": "Common",
+  "class_req": 1,
+  "level_req": 10,
+  "price": 512,
+  "name": "Knight's Helm",
+  "tooltip": 0,
+  "statUpdater": [
+   7,
+   9,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   7,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SURVIVOR"
  },
  {
   "id": 60,
-  "args": [
-   "Knight-Body",
-   3,
-   "Common",
-   1,
-   10,
-   512
-  ]
+  "icon": "Knight-Body",
+  "slot": 3,
+  "rarity": "Common",
+  "class_req": 1,
+  "level_req": 10,
+  "price": 512,
+  "name": "Knight's Armor",
+  "tooltip": 0,
+  "statUpdater": [
+   5,
+   11,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   7,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SURVIVOR"
  },
  {
   "id": 61,
-  "args": [
-   "Knight-Hands",
-   4,
-   "Common",
-   1,
+  "icon": "Knight-Hands",
+  "slot": 4,
+  "rarity": "Common",
+  "class_req": 1,
+  "level_req": 8,
+  "price": 240,
+  "name": "Knight's Gloves",
+  "tooltip": 0,
+  "statUpdater": [
    8,
-   240
-  ]
+   7,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   7,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SURVIVOR"
  },
  {
   "id": 62,
-  "args": [
-   "Knight-Leg",
-   5,
-   "Common",
-   1,
-   8,
-   512
-  ]
+  "icon": "Knight-Leg",
+  "slot": 5,
+  "rarity": "Common",
+  "class_req": 1,
+  "level_req": 8,
+  "price": 512,
+  "name": "Knight's Leggings",
+  "tooltip": 0,
+  "statUpdater": [
+   4,
+   12,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   13,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SURVIVOR"
  },
  {
   "id": 63,
-  "args": [
-   "Knight-Feet",
-   6,
-   "Common",
-   1,
+  "icon": "Knight-Feet",
+  "slot": 6,
+  "rarity": "Common",
+  "class_req": 1,
+  "level_req": 8,
+  "price": 240,
+  "name": "Knight's Boots",
+  "tooltip": 0,
+  "statUpdater": [
+   9,
    8,
-   240
-  ]
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   13,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SURVIVOR"
  },
  {
   "id": 64,
-  "args": [
-   "Survivor-Head",
-   2,
-   "Common",
+  "icon": "Survivor-Head",
+  "slot": 2,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 7,
+  "price": 99,
+  "name": "Survivor's Helm",
+  "tooltip": 0,
+  "statUpdater": [
+   5,
    0,
-   7,
-   99
-  ]
+   0,
+   2,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   46,
+   0,
+   0,
+   0,
+   0,
+   46,
+   0,
+   0
+  ],
+  "looks": "KNIGHT"
  },
  {
   "id": 65,
-  "args": [
-   "Survivor-Body",
-   3,
-   "Common",
+  "icon": "Survivor-Body",
+  "slot": 3,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 7,
+  "price": 99,
+  "name": "Survivor's Armor",
+  "tooltip": 0,
+  "statUpdater": [
+   5,
    0,
-   7,
-   99
-  ]
+   0,
+   2,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   46,
+   0,
+   0,
+   0,
+   0,
+   46,
+   0,
+   0
+  ],
+  "looks": "KNIGHT"
  },
  {
   "id": 66,
-  "args": [
-   "Survivor-Hands",
+  "icon": "Survivor-Hands",
+  "slot": 4,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 7,
+  "price": 99,
+  "name": "Survivor's Gloves",
+  "tooltip": 0,
+  "statUpdater": [
    4,
-   "Common",
    0,
-   7,
-   99
-  ]
+   0,
+   3,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   46,
+   0,
+   0,
+   0,
+   0,
+   46,
+   0,
+   0
+  ],
+  "looks": "KNIGHT"
  },
  {
   "id": 67,
-  "args": [
-   "Survivor-Leg",
-   5,
-   "Common",
+  "icon": "Survivor-Leg",
+  "slot": 5,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 7,
+  "price": 99,
+  "name": "Survivor's Leggings",
+  "tooltip": 0,
+  "statUpdater": [
+   4,
    0,
-   7,
-   99
-  ]
+   0,
+   3,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   46,
+   0,
+   0,
+   0,
+   0,
+   46,
+   0,
+   0
+  ],
+  "looks": "KNIGHT"
  },
  {
   "id": 68,
-  "args": [
-   "Survivor-Feet",
-   6,
-   "Common",
+  "icon": "Survivor-Feet",
+  "slot": 6,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 7,
+  "price": 99,
+  "name": "Survivor's Boots",
+  "tooltip": 0,
+  "statUpdater": [
+   4,
    0,
-   7,
-   99
-  ]
+   0,
+   3,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   46,
+   0,
+   0,
+   0,
+   0,
+   46,
+   0,
+   0
+  ],
+  "looks": "KNIGHT"
  },
  {
   "id": 69,
-  "args": [
-   "Vendor-Shank",
-   7,
-   "Common",
+  "icon": "Vendor-Shank",
+  "slot": 7,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 7,
+  "price": 512,
+  "name": "Bloody Blade",
+  "tooltip": 0,
+  "statUpdater": [
    0,
-   7,
-   512
-  ]
+   0,
+   0,
+   11,
+   0
+  ],
+  "statUpdaterP": [
+   50,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SHANK"
  },
  {
   "id": 70,
-  "args": [
-   "Vendor-Shank2",
-   8,
-   "Common",
-   3,
-   7,
-   512
-  ]
+  "icon": "Vendor-Shank2",
+  "slot": 8,
+  "rarity": "Common",
+  "class_req": 3,
+  "level_req": 7,
+  "price": 512,
+  "name": "Bloody Dagger",
+  "tooltip": 0,
+  "statUpdater": [
+   0,
+   0,
+   0,
+   11,
+   0
+  ],
+  "statUpdaterP": [
+   50,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SHANK"
  },
  {
   "id": 71,
-  "args": [
-   "Vendor-Sword",
-   7,
-   "Common",
-   1,
-   7,
-   1024
-  ]
+  "icon": "Vendor-Sword",
+  "slot": 7,
+  "rarity": "Common",
+  "class_req": 1,
+  "level_req": 7,
+  "price": 1024,
+  "name": "Steel Slicer",
+  "tooltip": 0,
+  "statUpdater": [
+   12,
+   18,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "BROAD"
  },
  {
   "id": 72,
-  "args": [
-   "Vendor-Mace",
-   7,
-   "Common",
+  "icon": "Vendor-Mace",
+  "slot": 7,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 7,
+  "price": 512,
+  "name": "Ivory Mace",
+  "tooltip": 0,
+  "statUpdater": [
    0,
-   7,
-   512
-  ]
+   8,
+   8,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   50,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SPELLMACE"
  },
  {
   "id": 73,
-  "args": [
-   "Vendor-Shield",
-   8,
-   "Common",
-   2,
-   7,
-   512
-  ]
+  "icon": "Vendor-Shield",
+  "slot": 8,
+  "rarity": "Common",
+  "class_req": 2,
+  "level_req": 7,
+  "price": 512,
+  "name": "Ivory Shield",
+  "tooltip": 0,
+  "statUpdater": [
+   10,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   40,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SHIELD2"
  },
  {
   "id": 74,
-  "args": [
-   "Vendor-Staff",
-   7,
-   "Common",
+  "icon": "Vendor-Staff",
+  "slot": 7,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 7,
+  "price": 1024,
+  "name": "Nature's Fury",
+  "tooltip": 0,
+  "statUpdater": [
    0,
-   7,
-   1024
-  ]
+   0,
+   16,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   25,
+   0,
+   25,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SPELLSTAFF"
  },
  {
   "id": 75,
-  "args": [
-   "Vendor-Shank",
-   7,
-   "Common",
+  "icon": "Vendor-Shank",
+  "slot": 7,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 8,
+  "price": 512,
+  "name": "Tribal Blade",
+  "tooltip": 0,
+  "statUpdater": [
    0,
-   8,
-   512
-  ]
+   0,
+   0,
+   15,
+   0
+  ],
+  "statUpdaterP": [
+   60,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SHAMANKNIFE"
  },
  {
   "id": 76,
-  "args": [
-   "Vendor-Shank2",
-   8,
-   "Common",
-   3,
-   8,
-   512
-  ]
+  "icon": "Vendor-Shank2",
+  "slot": 8,
+  "rarity": "Common",
+  "class_req": 3,
+  "level_req": 8,
+  "price": 512,
+  "name": "Tribal Dagger",
+  "tooltip": 0,
+  "statUpdater": [
+   0,
+   0,
+   0,
+   15,
+   0
+  ],
+  "statUpdaterP": [
+   60,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SHAMANKNIFE"
  },
  {
   "id": 77,
-  "args": [
-   "Vendor-Sword",
-   7,
-   "Common",
-   1,
-   8,
-   1024
-  ]
+  "icon": "Vendor-Sword",
+  "slot": 7,
+  "rarity": "Common",
+  "class_req": 1,
+  "level_req": 8,
+  "price": 1024,
+  "name": "Cannibal's Hunger",
+  "tooltip": 0,
+  "statUpdater": [
+   16,
+   18,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SHAMANSWORD"
  },
  {
   "id": 78,
-  "args": [
-   "Vendor-Mace",
-   7,
-   "Common",
+  "icon": "Vendor-Mace",
+  "slot": 7,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 8,
+  "price": 512,
+  "name": "Mender's Axe",
+  "tooltip": 0,
+  "statUpdater": [
    0,
-   8,
-   512
-  ]
+   12,
+   12,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   60,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SHAMANMED"
  },
  {
   "id": 79,
-  "args": [
-   "Vendor-Staff",
-   7,
-   "Common",
+  "icon": "Vendor-Staff",
+  "slot": 7,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 8,
+  "price": 1024,
+  "name": "Breaker's Axe",
+  "tooltip": 0,
+  "statUpdater": [
    0,
-   8,
-   1024
-  ]
+   0,
+   24,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   35,
+   0,
+   35,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "SHAMANMAGIC"
  },
  {
   "id": 80,
-  "args": [
-   "Galiant's Sword",
-   7,
-   "Common",
+  "icon": "Galiant's Sword",
+  "slot": 7,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 12,
+  "price": 1024,
+  "name": "Blade of Light",
+  "tooltip": 0,
+  "statUpdater": [
+   16,
+   16,
+   16,
+   16,
+   0
+  ],
+  "statUpdaterP": [
+   25,
    0,
-   12,
-   1024
-  ]
+   0,
+   0,
+   25,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "PALADINSWORD"
  },
  {
   "id": 81,
-  "args": [
-   "Stone Club",
-   7,
-   "Common",
+  "icon": "Stone Club",
+  "slot": 7,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 10,
+  "price": 200,
+  "name": "Stone Club",
+  "tooltip": "Too heavy to be any useful.",
+  "statUpdater": [
    0,
-   10,
-   200
-  ]
+   2,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "CLUB"
  },
  {
   "id": 82,
-  "args": [
-   "Warrior 2H",
-   7,
-   "Common",
-   1,
-   10,
-   4000
-  ]
+  "icon": "Warrior 2H",
+  "slot": 7,
+  "rarity": "Common",
+  "class_req": 1,
+  "level_req": 10,
+  "price": 4000,
+  "name": "Destruction",
+  "tooltip": 0,
+  "statUpdater": [
+   30,
+   50,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   20,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "UBER1"
  },
  {
   "id": 83,
-  "args": [
-   "Guardian 2H",
-   7,
-   "Common",
+  "icon": "Guardian 2H",
+  "slot": 7,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 10,
+  "price": 2000,
+  "name": "Reckoning",
+  "tooltip": 0,
+  "statUpdater": [
+   15,
+   25,
    0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
    10,
-   2000
-  ]
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "UBER11"
  },
  {
   "id": 84,
-  "args": [
-   "1H Magic",
-   7,
-   "Common",
+  "icon": "1H Magic",
+  "slot": 7,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 10,
+  "price": 2000,
+  "name": "The Grand Rifle",
+  "tooltip": 0,
+  "statUpdater": [
    0,
-   10,
-   2000
-  ]
+   0,
+   50,
+   0,
+   50
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   50,
+   0,
+   50,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "UBER3"
  },
  {
   "id": 85,
-  "args": [
-   "1H Magic (Guardian)",
-   7,
-   "Common",
+  "icon": "1H Magic (Guardian)",
+  "slot": 7,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 10,
+  "price": 2000,
+  "name": "Judgement",
+  "tooltip": 0,
+  "statUpdater": [
+   30,
+   30,
+   50,
    0,
-   10,
-   2000
-  ]
+   0
+  ],
+  "statUpdaterP": [
+   25,
+   0,
+   0,
+   0,
+   25,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "UBER4"
  },
  {
   "id": 86,
-  "args": [
-   "1H Lantern",
-   8,
-   "Common",
-   4,
-   10,
-   2000
-  ]
+  "icon": "1H Lantern",
+  "slot": 8,
+  "rarity": "Common",
+  "class_req": 4,
+  "level_req": 10,
+  "price": 2000,
+  "name": "Frost Lantern",
+  "tooltip": 0,
+  "statUpdater": [
+   0,
+   0,
+   0,
+   0,
+   50
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   300,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "UBER9"
  },
  {
   "id": 87,
-  "args": [
-   "1H Lantern2",
-   8,
-   "Common",
-   4,
-   10,
-   2000
-  ]
+  "icon": "1H Lantern2",
+  "slot": 8,
+  "rarity": "Common",
+  "class_req": 4,
+  "level_req": 10,
+  "price": 2000,
+  "name": "Power Lantern",
+  "tooltip": 0,
+  "statUpdater": [
+   0,
+   0,
+   40,
+   0,
+   30
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "UBER10"
  },
  {
   "id": 88,
-  "args": [
-   "1H Latern3",
-   8,
-   "Common",
-   4,
-   10,
-   2000
-  ]
+  "icon": "1H Latern3",
+  "slot": 8,
+  "rarity": "Common",
+  "class_req": 4,
+  "level_req": 10,
+  "price": 2000,
+  "name": "Magic Lantern",
+  "tooltip": 0,
+  "statUpdater": [
+   0,
+   0,
+   0,
+   0,
+   50
+  ],
+  "statUpdaterP": [
+   0,
+   100,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "UBER8"
  },
  {
   "id": 89,
-  "args": [
-   "1H Shield",
-   8,
-   "Common",
-   2,
-   10,
-   2000
-  ]
+  "icon": "1H Shield",
+  "slot": 8,
+  "rarity": "Common",
+  "class_req": 2,
+  "level_req": 10,
+  "price": 2000,
+  "name": "Torment",
+  "tooltip": 0,
+  "statUpdater": [
+   0,
+   25,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   50,
+   0,
+   0,
+   0,
+   50,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "UBER6"
  },
  {
   "id": 90,
-  "args": [
-   "1H Shield2",
-   8,
-   "Common",
-   2,
-   10,
-   2000
-  ]
+  "icon": "1H Shield2",
+  "slot": 8,
+  "rarity": "Common",
+  "class_req": 2,
+  "level_req": 10,
+  "price": 2000,
+  "name": "Balance",
+  "tooltip": 0,
+  "statUpdater": [
+   30,
+   15,
+   15,
+   0,
+   20
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "UBER7"
  },
  {
   "id": 91,
-  "args": [
-   "1H Shield3",
-   8,
-   "Common",
-   2,
-   10,
-   2000
-  ]
+  "icon": "1H Shield3",
+  "slot": 8,
+  "rarity": "Common",
+  "class_req": 2,
+  "level_req": 10,
+  "price": 2000,
+  "name": "Eternity",
+  "tooltip": 0,
+  "statUpdater": [
+   65,
+   0,
+   0,
+   0,
+   50
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "UBER5"
  },
  {
   "id": 92,
-  "args": [
-   "Assasin Weapon",
-   7,
-   "Common",
+  "icon": "Assasin Weapon",
+  "slot": 7,
+  "rarity": "Common",
+  "class_req": 0,
+  "level_req": 10,
+  "price": 2000,
+  "name": "Assassination",
+  "tooltip": 0,
+  "statUpdater": [
    0,
    10,
-   2000
-  ]
+   0,
+   30,
+   0
+  ],
+  "statUpdaterP": [
+   50,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "UBER2"
  },
  {
   "id": 93,
-  "args": [
-   "Assasin Weapon 2",
-   8,
-   "Common",
-   3,
+  "icon": "Assasin Weapon 2",
+  "slot": 8,
+  "rarity": "Common",
+  "class_req": 3,
+  "level_req": 10,
+  "price": 2000,
+  "name": "Murder",
+  "tooltip": 0,
+  "statUpdater": [
+   0,
    10,
-   2000
-  ]
+   0,
+   30,
+   0
+  ],
+  "statUpdaterP": [
+   50,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "UBER2"
  },
  {
   "id": 94,
-  "args": [
-   "Warrior-Head",
-   2,
-   "Rare",
-   1,
-   10,
-   2000
-  ]
+  "icon": "Warrior-Head",
+  "slot": 2,
+  "rarity": "Rare",
+  "class_req": 1,
+  "level_req": 10,
+  "price": 2000,
+  "name": "Destroyer's Helm",
+  "tooltip": 0,
+  "statUpdater": [
+   20,
+   20,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   20,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "FINAL1"
  },
  {
   "id": 95,
-  "args": [
-   "Warrior-Body",
-   3,
-   "Rare",
-   1,
-   10,
-   2000
-  ]
+  "icon": "Warrior-Body",
+  "slot": 3,
+  "rarity": "Rare",
+  "class_req": 1,
+  "level_req": 10,
+  "price": 2000,
+  "name": "Destroyer's Armor",
+  "tooltip": 0,
+  "statUpdater": [
+   20,
+   20,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   20,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "FINAL1"
  },
  {
   "id": 96,
-  "args": [
-   "Warrior-Hands",
-   4,
-   "Rare",
-   1,
-   10,
-   2000
-  ]
+  "icon": "Warrior-Hands",
+  "slot": 4,
+  "rarity": "Rare",
+  "class_req": 1,
+  "level_req": 10,
+  "price": 2000,
+  "name": "Destroyer's Gloves",
+  "tooltip": 0,
+  "statUpdater": [
+   20,
+   20,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   20,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "FINAL1"
  },
  {
   "id": 97,
-  "args": [
-   "Warrior-Leg",
-   5,
-   "Rare",
-   1,
-   10,
-   2000
-  ]
+  "icon": "Warrior-Leg",
+  "slot": 5,
+  "rarity": "Rare",
+  "class_req": 1,
+  "level_req": 10,
+  "price": 2000,
+  "name": "Destroyer's Leggings",
+  "tooltip": 0,
+  "statUpdater": [
+   20,
+   20,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   20,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "FINAL1"
  },
  {
   "id": 98,
-  "args": [
-   "Warrior-Feet",
-   6,
-   "Rare",
-   1,
-   10,
-   2000
-  ]
+  "icon": "Warrior-Feet",
+  "slot": 6,
+  "rarity": "Rare",
+  "class_req": 1,
+  "level_req": 10,
+  "price": 2000,
+  "name": "Destroyer's Boots",
+  "tooltip": 0,
+  "statUpdater": [
+   20,
+   20,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   20,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "FINAL1"
  },
  {
   "id": 99,
-  "args": [
-   "Guardian-Head",
-   2,
-   "Rare",
-   2,
-   10,
-   2000
-  ]
+  "icon": "Guardian-Head",
+  "slot": 2,
+  "rarity": "Rare",
+  "class_req": 2,
+  "level_req": 10,
+  "price": 2000,
+  "name": "Guardian's Helm",
+  "tooltip": 0,
+  "statUpdater": [
+   24,
+   14,
+   14,
+   0,
+   10
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   20,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "FINAL4"
  },
  {
   "id": 100,
-  "args": [
-   "Guardian-Body",
-   3,
-   "Rare",
-   2,
-   10,
-   2000
-  ]
+  "icon": "Guardian-Body",
+  "slot": 3,
+  "rarity": "Rare",
+  "class_req": 2,
+  "level_req": 10,
+  "price": 2000,
+  "name": "Guardian's Armor",
+  "tooltip": 0,
+  "statUpdater": [
+   24,
+   14,
+   14,
+   0,
+   10
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   20,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "FINAL4"
  },
  {
   "id": 101,
-  "args": [
-   "Guardian-Hands",
-   4,
-   "Rare",
-   2,
-   10,
-   2000
-  ]
+  "icon": "Guardian-Hands",
+  "slot": 4,
+  "rarity": "Rare",
+  "class_req": 2,
+  "level_req": 10,
+  "price": 2000,
+  "name": "Guardian's Gloves",
+  "tooltip": 0,
+  "statUpdater": [
+   24,
+   14,
+   14,
+   0,
+   10
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   20,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "FINAL4"
  },
  {
   "id": 102,
-  "args": [
-   "Guardian-Leg",
-   5,
-   "Rare",
-   2,
-   10,
-   2000
-  ]
+  "icon": "Guardian-Leg",
+  "slot": 5,
+  "rarity": "Rare",
+  "class_req": 2,
+  "level_req": 10,
+  "price": 2000,
+  "name": "Guardian's Leggings",
+  "tooltip": 0,
+  "statUpdater": [
+   24,
+   14,
+   14,
+   0,
+   10
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   20,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "FINAL4"
  },
  {
   "id": 103,
-  "args": [
-   "Guardian-Feet",
-   6,
-   "Rare",
-   2,
-   10,
-   2000
-  ]
+  "icon": "Guardian-Feet",
+  "slot": 6,
+  "rarity": "Rare",
+  "class_req": 2,
+  "level_req": 10,
+  "price": 2000,
+  "name": "Guardian's Boots",
+  "tooltip": 0,
+  "statUpdater": [
+   24,
+   14,
+   14,
+   0,
+   10
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   20,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "FINAL4"
  },
  {
   "id": 104,
-  "args": [
-   "Assassin-Head",
-   2,
-   "Rare",
-   3,
-   10,
-   2000
-  ]
+  "icon": "Assassin-Head",
+  "slot": 2,
+  "rarity": "Rare",
+  "class_req": 3,
+  "level_req": 10,
+  "price": 2000,
+  "name": "Assassin's Helm",
+  "tooltip": 0,
+  "statUpdater": [
+   4,
+   5,
+   0,
+   20,
+   0
+  ],
+  "statUpdaterP": [
+   50,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "FINAL3"
  },
  {
   "id": 105,
-  "args": [
-   "Assassin-Body",
-   3,
-   "Rare",
-   3,
-   10,
-   2000
-  ]
+  "icon": "Assassin-Body",
+  "slot": 3,
+  "rarity": "Rare",
+  "class_req": 3,
+  "level_req": 10,
+  "price": 2000,
+  "name": "Assassin's Armor",
+  "tooltip": 0,
+  "statUpdater": [
+   4,
+   5,
+   0,
+   20,
+   0
+  ],
+  "statUpdaterP": [
+   50,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "FINAL3"
  },
  {
   "id": 106,
-  "args": [
-   "Assassin-Hands",
+  "icon": "Assassin-Hands",
+  "slot": 4,
+  "rarity": "Rare",
+  "class_req": 3,
+  "level_req": 10,
+  "price": 2000,
+  "name": "Assassin's Gloves",
+  "tooltip": 0,
+  "statUpdater": [
    4,
-   "Rare",
-   3,
-   10,
-   2000
-  ]
+   5,
+   0,
+   20,
+   0
+  ],
+  "statUpdaterP": [
+   50,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "FINAL3"
  },
  {
   "id": 107,
-  "args": [
-   "Assassin-Leg",
+  "icon": "Assassin-Leg",
+  "slot": 5,
+  "rarity": "Rare",
+  "class_req": 3,
+  "level_req": 10,
+  "price": 2000,
+  "name": "Assassin's Leggings",
+  "tooltip": 0,
+  "statUpdater": [
+   4,
    5,
-   "Rare",
-   3,
-   10,
-   2000
-  ]
+   0,
+   20,
+   0
+  ],
+  "statUpdaterP": [
+   50,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "FINAL3"
  },
  {
   "id": 108,
-  "args": [
-   "Assassin-Feet",
-   6,
-   "Rare",
-   3,
-   10,
-   2000
-  ]
+  "icon": "Assassin-Feet",
+  "slot": 6,
+  "rarity": "Rare",
+  "class_req": 3,
+  "level_req": 10,
+  "price": 2000,
+  "name": "Assassin's Boots",
+  "tooltip": 0,
+  "statUpdater": [
+   4,
+   5,
+   0,
+   20,
+   0
+  ],
+  "statUpdaterP": [
+   50,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "FINAL3"
  },
  {
   "id": 109,
-  "args": [
-   "Gunslinger-Head",
-   2,
-   "Rare",
+  "icon": "Gunslinger-Head",
+  "slot": 2,
+  "rarity": "Rare",
+  "class_req": 4,
+  "level_req": 10,
+  "price": 2000,
+  "name": "Gunslinger's Helm",
+  "tooltip": 0,
+  "statUpdater": [
    4,
-   10,
-   2000
-  ]
+   0,
+   26,
+   0,
+   24
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "FINAL2"
  },
  {
   "id": 110,
-  "args": [
-   "Gunslinger-Body",
-   3,
-   "Rare",
+  "icon": "Gunslinger-Body",
+  "slot": 3,
+  "rarity": "Rare",
+  "class_req": 4,
+  "level_req": 10,
+  "price": 2000,
+  "name": "Gunslinger's Armor",
+  "tooltip": 0,
+  "statUpdater": [
    4,
-   10,
-   2000
-  ]
+   0,
+   26,
+   0,
+   24
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "FINAL2"
  },
  {
   "id": 111,
-  "args": [
-   "Gunslinger-Hands",
+  "icon": "Gunslinger-Hands",
+  "slot": 4,
+  "rarity": "Rare",
+  "class_req": 4,
+  "level_req": 10,
+  "price": 2000,
+  "name": "Gunslinger's Gloves",
+  "tooltip": 0,
+  "statUpdater": [
    4,
-   "Rare",
-   4,
-   10,
-   2000
-  ]
+   0,
+   26,
+   0,
+   24
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "FINAL2"
  },
  {
   "id": 112,
-  "args": [
-   "Gunslinger-Leg",
-   5,
-   "Rare",
+  "icon": "Gunslinger-Leg",
+  "slot": 5,
+  "rarity": "Rare",
+  "class_req": 4,
+  "level_req": 10,
+  "price": 2000,
+  "name": "Gunslinger's Leggings",
+  "tooltip": 0,
+  "statUpdater": [
    4,
-   10,
-   2000
-  ]
+   0,
+   26,
+   0,
+   24
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "FINAL2"
  },
  {
   "id": 113,
-  "args": [
-   "Gunslinger-Feet",
-   6,
-   "Rare",
+  "icon": "Gunslinger-Feet",
+  "slot": 6,
+  "rarity": "Rare",
+  "class_req": 4,
+  "level_req": 10,
+  "price": 2000,
+  "name": "Gunslinger's Boots",
+  "tooltip": 0,
+  "statUpdater": [
    4,
-   10,
-   2000
-  ]
+   0,
+   26,
+   0,
+   24
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "FINAL2"
  },
  {
   "id": 114,
-  "args": [
-   "Convoy Package",
+  "icon": "Convoy Package",
+  "slot": 0,
+  "rarity": "Rare",
+  "class_req": -1,
+  "level_req": 0,
+  "price": 8000,
+  "name": "Convoy Package",
+  "tooltip": "This thing must be worth a lot.",
+  "statUpdater": [
    0,
-   "Rare",
-   -1,
    0,
-   8000
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
   ]
  },
  {
   "id": 115,
-  "args": [
-   "Zombie Fingers",
+  "icon": "Zombie Fingers",
+  "slot": 0,
+  "rarity": "Common",
+  "class_req": -1,
+  "level_req": 0,
+  "price": 15,
+  "name": "Zombie Fingers",
+  "tooltip": "Better than fish fingers.",
+  "statUpdater": [
    0,
-   "Common",
-   -1,
    0,
-   15
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
   ]
  },
  {
   "id": 116,
-  "args": [
-   "ZPCI Dog-Tag",
+  "icon": "ZPCI Dog-Tag",
+  "slot": 0,
+  "rarity": "Common",
+  "class_req": -1,
+  "level_req": 0,
+  "price": 20,
+  "name": "ZPCI Dog Tag",
+  "tooltip": "Pulled off the neck of a ZPCI soldier.",
+  "statUpdater": [
    0,
-   "Common",
-   -1,
    0,
-   20
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
   ]
  },
  {
   "id": 117,
-  "args": [
-   "Broken Totem",
+  "icon": "Broken Totem",
+  "slot": 0,
+  "rarity": "Common",
+  "class_req": -1,
+  "level_req": 0,
+  "price": 50,
+  "name": "Broken Totem",
+  "tooltip": "It would make some fine fire wood.",
+  "statUpdater": [
    0,
-   "Common",
-   -1,
    0,
-   50
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
   ]
  },
  {
   "id": 118,
-  "args": [
-   "Tool",
+  "icon": "Tool",
+  "slot": 0,
+  "rarity": "Common",
+  "class_req": -1,
+  "level_req": 0,
+  "price": 20,
+  "name": "Tool",
+  "tooltip": "A tool to pick your nose.",
+  "statUpdater": [
    0,
-   "Common",
-   -1,
    0,
-   20
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
   ]
  },
  {
   "id": 119,
-  "args": [
-   "Champion's Trophy",
+  "icon": "Champion's Trophy",
+  "slot": 0,
+  "rarity": "Rare",
+  "class_req": -1,
+  "level_req": 0,
+  "price": 16000,
+  "name": "Champion's Trophy",
+  "tooltip": "Awarded to you for killing a major boss.",
+  "statUpdater": [
    0,
-   "Rare",
-   -1,
    0,
-   16000
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
   ]
  },
  {
   "id": 120,
-  "args": [
-   "Ghost Medallion",
+  "icon": "Ghost Medallion",
+  "slot": 0,
+  "rarity": "Uncommon",
+  "class_req": -1,
+  "level_req": 0,
+  "price": 2000,
+  "name": "Ghost Medallion",
+  "tooltip": "It looks pretty.",
+  "statUpdater": [
    0,
-   "Uncommon",
-   -1,
    0,
-   2000
+   0,
+   0,
+   0
+  ],
+  "statUpdaterP": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
   ]
  },
  {
   "id": 121,
-  "args": [
-   "Paladin-Head",
-   2,
-   "Rare",
+  "icon": "Paladin-Head",
+  "slot": 2,
+  "rarity": "Rare",
+  "class_req": 0,
+  "level_req": 10,
+  "price": 300,
+  "name": "Paladin's Helm",
+  "tooltip": 0,
+  "statUpdater": [
+   12,
+   8,
+   12,
+   8,
+   15
+  ],
+  "statUpdaterP": [
    0,
-   10,
-   300
-  ]
+   0,
+   0,
+   0,
+   15,
+   0,
+   0,
+   600
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "USA5"
  },
  {
   "id": 122,
-  "args": [
-   "Paladin-Body",
-   3,
-   "Rare",
+  "icon": "Paladin-Body",
+  "slot": 3,
+  "rarity": "Rare",
+  "class_req": 0,
+  "level_req": 10,
+  "price": 300,
+  "name": "Paladin's Armor",
+  "tooltip": 0,
+  "statUpdater": [
+   12,
+   8,
+   12,
+   8,
+   15
+  ],
+  "statUpdaterP": [
    0,
-   10,
-   300
-  ]
+   0,
+   0,
+   0,
+   15,
+   0,
+   0,
+   600
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "USA5"
  },
  {
   "id": 123,
-  "args": [
-   "Paladin-Hands",
-   4,
-   "Rare",
+  "icon": "Paladin-Hands",
+  "slot": 4,
+  "rarity": "Rare",
+  "class_req": 0,
+  "level_req": 10,
+  "price": 300,
+  "name": "Paladin's Gloves",
+  "tooltip": 0,
+  "statUpdater": [
+   12,
+   8,
+   12,
+   8,
+   15
+  ],
+  "statUpdaterP": [
    0,
-   10,
-   300
-  ]
+   0,
+   0,
+   0,
+   15,
+   0,
+   0,
+   600
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "USA5"
  },
  {
   "id": 124,
-  "args": [
-   "Paladin-Leg",
-   5,
-   "Rare",
+  "icon": "Paladin-Leg",
+  "slot": 5,
+  "rarity": "Rare",
+  "class_req": 0,
+  "level_req": 10,
+  "price": 300,
+  "name": "Paladin's Leggings",
+  "tooltip": 0,
+  "statUpdater": [
+   12,
+   8,
+   12,
+   8,
+   15
+  ],
+  "statUpdaterP": [
    0,
-   10,
-   300
-  ]
+   0,
+   0,
+   0,
+   15,
+   0,
+   0,
+   600
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "USA5"
  },
  {
   "id": 125,
-  "args": [
-   "Paladin-Feet",
-   6,
-   "Rare",
+  "icon": "Paladin-Feet",
+  "slot": 6,
+  "rarity": "Rare",
+  "class_req": 0,
+  "level_req": 10,
+  "price": 300,
+  "name": "Paladin's Boots",
+  "tooltip": 0,
+  "statUpdater": [
+   12,
+   8,
+   12,
+   8,
+   15
+  ],
+  "statUpdaterP": [
    0,
-   10,
-   300
-  ]
+   0,
+   0,
+   0,
+   15,
+   0,
+   0,
+   600
+  ],
+  "statUpdaterD": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "looks": "USA5"
  }
 ]

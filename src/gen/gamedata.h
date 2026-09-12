@@ -49,6 +49,24 @@ typedef struct {
     AbilityCoefs coefs;
 } AbilityDef;
 
+/* An equippable item. statUpdater is [Health, Strength, Magic, Speed, Focus];
+   per/def are the per-element piercing and defense bonuses. */
+typedef struct {
+    int32_t     id;
+    const char *name;
+    const char *icon;
+    const char *looks;
+    int32_t     slot;        /* 0 = not equipment; otherwise ITEMSS[slot-2] */
+    const char *rarity;
+    int32_t     class_req;
+    int32_t     level_req;
+    int32_t     price;
+    double      stat[5];
+    double      per[SONNY_ELEMENTS];
+    double      def[SONNY_ELEMENTS];
+    const char *tooltip;
+} ItemDef;
+
 typedef struct {
     int32_t     id;
     const char *name;
@@ -76,9 +94,18 @@ extern const BuffDef SONNY_BUFFS[];
 extern const int SONNY_BUFF_COUNT;
 extern const UnitTemplate SONNY_UNITS[];
 extern const int SONNY_UNIT_COUNT;
+extern const ItemDef SONNY_ITEMS[];
+extern const int SONNY_ITEM_COUNT;
 
-/* Lookups by the original's own ids/keys. NULL when absent. */
+/* Lookups by the original's own ids/keys. NULL when absent.
+ *
+ * Prefer ids: two template names repeat ("Templar" is both the player class
+ * and the ally, "Galiant the Paladin" appears twice), and the original selects
+ * a class by id -- Krin.ClassStats[0] = Krin.Class + 1, so classes are
+ * templates 1..4. unit_template_by_name returns the first match. */
 const AbilityDef *ability_by_id(int32_t id);
+const UnitTemplate *unit_template_by_id(int32_t id);
 const UnitTemplate *unit_template_by_name(const char *name);
+const ItemDef *item_by_id(int32_t id);
 
 #endif

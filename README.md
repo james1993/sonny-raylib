@@ -94,6 +94,13 @@ game's own structure, with the author's function names intact:
 | Battle setup | `createNewBattle`, `krinAddNewUnit` |
 | All display text (EN + DE) | `KrinLang`, frame 61 |
 
+Two things the port keeps deliberately separate, because the original does:
+the **player** derives stats as `StatSets[i] + ceil(classBase + growth * level)`
+over a piercing/defense baseline of `25 + 5 * level`, while an **enemy** uses
+`base + level * growth` with no rounding and `template + 5 * level` for
+piercing and defense. Using one formula for both is wrong in both directions --
+and badly wrong at high levels, where enemy defense scaling dominates.
+
 Stats are Vitality, Strength, Magic, Speed, Focus, Piercing, Defense, Health;
 the eight damage elements are Physical, Magic, Ice, Fire, Lightning, Earth,
 Shadow and Poison, and piercing/defense are tracked per element. Player classes
@@ -120,7 +127,10 @@ Two details worth knowing, both reproduced rather than cleaned up:
 - [x] `Heal` and `Focus` move kinds
 - [ ] Shields/reflect on the remaining executeMove paths (`REFLECT` is tracked
       but nothing reads it yet)
-- [ ] Items and equipment (`createNewItemKrin`, the 126 extracted items)
-- [ ] Level-ups, XP (`expWorkOut`) and the ability trees
+- [x] Items and equipment (126 items, with their stat and per-element bonuses)
+- [x] The character stat pipeline: class growth, spent points, equipment
+- [x] XP (`expWorkOut`), the enemy rating, level-ups and euro rewards
+- [ ] The ability trees (`moveMatrix`, `skillAdderMatrix`, tiers and
+      prerequisites)
 - [ ] Zones, stages, shops, the world map and save data
 - [ ] Art, audio and pixel-accurate UI layout

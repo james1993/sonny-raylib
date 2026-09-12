@@ -42,12 +42,32 @@ int main(int argc, char **argv)
 
     Battle b;
     battle_init(&b, seed, 1);
-    battle_place(&b, 1, unit_template_by_name("Dreadnaught"), plevel, 1);
-    battle_place(&b, 3, &SONNY_UNITS[4], plevel, 1);
-    battle_place(&b, 2, unit_template_by_name("Zombie"), elevel, 1);
-    battle_place(&b, 4, unit_template_by_name("ZPCI Assault"), elevel, 1);
+
+    /* Sonny goes in through the character path -- the player's stats come off
+       the character screen, not the enemy scaling formula. The starting stat
+       bonus is the original's Krin.StatSets0 = [0,5,0,3,0]. */
+    Character sonny;
+    memset(&sonny, 0, sizeof(sonny));
+    sonny.class_template = unit_template_by_id(1);
+    sonny.level = plevel;
+    sonny.spent[1] = 5;
+    sonny.spent[3] = 3;
+    battle_place_character(&b, 1, &sonny, "Sonny", 1);
+
+    battle_place_enemy(&b, 3, unit_template_by_id(5), plevel, 1);
+    battle_place_enemy(&b, 2, unit_template_by_name("Zombie"), elevel, 1);
+    battle_place_enemy(&b, 4, unit_template_by_name("ZPCI Assault"), elevel, 1);
 
     printf("seed %llu\n", (unsigned long long)seed);
+    {
+        int32_t levels[2] = {elevel, elevel};
+        double rating = rewards_enemy_rating(levels, 2);
+        Rng money_rng;
+        rng_seed(&money_rng, seed);
+        printf("enemy rating %.3f -> %.2f%% of a level, %d euros on a win\n",
+               rating, character_xp_gain(rating, plevel),
+               rewards_money(rating, &money_rng));
+    }
     print_roster(&b);
 
     battle_team_select(&b);
