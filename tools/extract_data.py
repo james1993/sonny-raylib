@@ -141,10 +141,10 @@ def resolve(value, lang):
 # Names below are the ones confirmed by how the engine reads each slot
 # (frame_62 executeMove/AImoveAdder and the frame_212 combat driver);
 # unconfirmed slots keep their raw index so nothing is mislabelled.
-MOVE_PARAMS = ['icon', 'a2', 'a3', 'a4', 'focus_cost', 'health_cost',
-               'cooldown', 'a8', 'anim_speed', 'delivery', 'color', 'anim',
-               'model', 'damage_kind', 'a15', 'health_cost_pct', 'name_id',
-               'sound']
+MOVE_PARAMS = ['icon', 'target_self', 'target_enemy', 'target_ally',
+               'focus_cost', 'health_cost', 'cooldown', 'a8', 'anim_speed',
+               'delivery', 'color', 'anim', 'model', 'damage_kind', 'a15',
+               'health_cost_pct', 'name_id', 'sound']
 
 # Verified against executeMove()/perScript() in frame_62.
 MOVEB_FIELDS = {

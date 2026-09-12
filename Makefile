@@ -3,10 +3,10 @@ CFLAGS  ?= -std=c99 -Wall -Wextra -O2
 RAYLIB_LIBS = -lraylib -lm -lpthread -ldl -lrt -lX11
 
 CORE_SRC = src/core/formula.c src/core/rng.c src/core/unit.c \
-           src/core/buffs.c
+           src/core/buffs.c src/core/battle.c src/gen/gamedata.c
 BUILD    = build
 
-.PHONY: all game test vectors clean
+.PHONY: all game test simulate vectors data clean
 
 all: game test
 
@@ -16,18 +16,30 @@ $(BUILD):
 game: $(BUILD)
 	$(CC) $(CFLAGS) -o $(BUILD)/sonny src/platform/main.c $(CORE_SRC) $(RAYLIB_LIBS)
 
+simulate: $(BUILD)
+	$(CC) $(CFLAGS) -o $(BUILD)/simulate tools/simulate.c $(CORE_SRC) -lm
+
 test: $(BUILD)
 	$(CC) $(CFLAGS) -Werror -o $(BUILD)/test_formula tests/test_formula.c $(CORE_SRC) -lm
 	$(CC) $(CFLAGS) -Werror -o $(BUILD)/test_rng tests/test_rng.c src/core/rng.c -lm
 	$(CC) $(CFLAGS) -Werror -o $(BUILD)/test_buffs tests/test_buffs.c $(CORE_SRC) -lm
+	$(CC) $(CFLAGS) -Werror -o $(BUILD)/test_heal tests/test_heal.c $(CORE_SRC) -lm
+	$(CC) $(CFLAGS) -Werror -o $(BUILD)/test_battle tests/test_battle.c $(CORE_SRC) -lm
 	$(BUILD)/test_formula tests/vectors_formula.txt
 	$(BUILD)/test_rng
 	$(BUILD)/test_buffs tests/vectors_buffs.txt
+	$(BUILD)/test_heal tests/vectors_heal.txt
+	$(BUILD)/test_battle
+
+# Regenerate the C data tables from the extracted JSON.
+data:
+	python3 tools/gen_c_data.py
 
 # Regenerate the differential vectors from the reference transcription.
 vectors:
 	python3 tools/ref_formula.py > tests/vectors_formula.txt
 	python3 tools/ref_buffs.py > tests/vectors_buffs.txt
+	python3 tools/ref_formula.py --heal > tests/vectors_heal.txt
 
 clean:
 	rm -rf $(BUILD)

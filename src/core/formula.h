@@ -50,6 +50,21 @@ int formula_pierce_check(Rng *rng, double PERCALK, double DEFCALK,
 DamageResult formula_full_damage(Rng *rng, const Unit *caster, const Unit *target,
                                  const AbilityCoefs *a);
 
+/* The "Heal" branch of executeMove. The damage formula is reused without the
+ * attacker's flat bonus or the target's incoming-damage bonus, the pierce check
+ * runs against a fixed defense of 25, and a pierced heal is worth 1.5x. A heal
+ * that lands on a unit whose SSWITCH is set becomes damage instead. */
+DamageResult formula_heal(Rng *rng, const Unit *caster, const Unit *target,
+                          const AbilityCoefs *a);
+
+/* Applies a heal result as executeMove does: healing capped at max health, or
+ * damage when the target's SSWITCH is set. Returns health gained (negative
+ * when the heal was flipped into damage). */
+int32_t formula_apply_heal(Unit *target, int32_t amount);
+
+/* The "Focus" branch: the ability's flat damage slot is focus granted. */
+int32_t formula_apply_focus(Unit *target, const AbilityCoefs *a);
+
 /* Applies a damage result to the target the way executeMove does: shields
    absorb first, SSWITCH turns the remainder into healing, and death zeroes
    focus. Returns the health actually lost (negative when healed). */

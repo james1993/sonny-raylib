@@ -55,6 +55,67 @@ DamageResult formula_full_damage(Rng *rng, const Unit *caster, const Unit *targe
     return r;
 }
 
+DamageResult formula_heal(Rng *rng, const Unit *caster, const Unit *target,
+                          const AbilityCoefs *a)
+{
+    DamageResult r;
+    /* The heal branch never reads the target: its pierce check is against a
+       fixed 25 rather than the target's defense, and the attacker's flat
+       bonuses are left out. The parameter stays for call-site symmetry. */
+    (void)target;
+    r.PERCALK = formula_percalk(caster, a->element);
+    r.DEFCALK = 25;
+
+    r.raw = (caster->STRENGTHU + a->strength_add) * a->strength_coef
+          + (caster->MAGICU + a->magic_add) * a->magic_coef
+          + (caster->SPEEDU + a->speed_add) * a->speed_coef
+          + caster->FOCUSN * a->focus_coef
+          + a->flat_damage;
+
+    r.pierced = formula_pierce_check(rng, r.PERCALK, r.DEFCALK, a, &r.roll);
+    r.mitigation = r.pierced ? 1.5 : 1.0;
+
+    double final = ceil(r.raw * a->damage_coef * r.mitigation);
+    /* Unlike damage, a heal has no floor of 1. */
+    if (final <= 0)
+        final = 0;
+    r.damage = (int32_t)final;
+    return r;
+}
+
+int32_t formula_apply_heal(Unit *target, int32_t amount)
+{
+    if (amount <= 0)
+        return 0;
+
+    int32_t before = target->LIFEN;
+    if (target->SSWITCH == 0) {
+        target->LIFEN += amount;
+        if (target->LIFEN > target->LIFEU)
+            target->LIFEN = target->LIFEU;
+    } else {
+        /* Shields do not apply here; the original subtracts directly. */
+        target->LIFEN -= amount;
+        if (target->LIFEN <= 0) {
+            target->LIFEN = 0;
+            target->FOCUSN = 0;
+            target->active = 0;
+        }
+    }
+    return target->LIFEN - before;
+}
+
+int32_t formula_apply_focus(Unit *target, const AbilityCoefs *a)
+{
+    int32_t before = target->FOCUSN;
+    target->FOCUSN += (int32_t)a->flat_damage;
+    if (target->FOCUSN > target->FOCUSU)
+        target->FOCUSN = target->FOCUSU;
+    if (target->FOCUSN < 0)
+        target->FOCUSN = 0;
+    return target->FOCUSN - before;
+}
+
 int32_t formula_apply_damage(Unit *target, int32_t damage, int32_t *absorbed_out)
 {
     int32_t absorbed = 0;
