@@ -3,2367 +3,2367 @@
   "DAY": {
    "category": "background",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/background/DAY.png"
+    "assets/art/background/DAY.png"
    ]
   },
   "DAY2": {
    "category": "background",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/background/DAY2.png"
+    "assets/art/background/DAY2.png"
    ]
   },
   "NIGHT": {
    "category": "background",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/background/NIGHT.png"
+    "assets/art/background/NIGHT.png"
    ]
   },
   "PLAINS": {
    "category": "background",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/background/PLAINS.png"
+    "assets/art/background/PLAINS.png"
    ]
   },
   "PLAINS2": {
    "category": "background",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/background/PLAINS2.png"
+    "assets/art/background/PLAINS2.png"
    ]
   },
   "SEA": {
    "category": "background",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/background/SEA.png"
+    "assets/art/background/SEA.png"
    ]
   },
   "SHORE": {
    "category": "background",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/background/SHORE.png"
+    "assets/art/background/SHORE.png"
    ]
   },
   "WHITE NOVEMBER": {
    "category": "background",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/background/WHITE_NOVEMBER.png"
+    "assets/art/background/WHITE_NOVEMBER.png"
    ]
   },
   "BLACKOUT": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/BLACKOUT.png"
+    "assets/art/buff/BLACKOUT.png"
    ]
   },
   "BLOCK1": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/BLOCK1.png"
+    "assets/art/buff/BLOCK1.png"
    ]
   },
   "BURNING": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/BURNING.png"
+    "assets/art/buff/BURNING.png"
    ]
   },
   "BURNS": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/BURNS.png"
+    "assets/art/buff/BURNS.png"
    ]
   },
   "COLDSOUL": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/COLDSOUL.png"
+    "assets/art/buff/COLDSOUL.png"
    ]
   },
   "CRIPPLE1": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/CRIPPLE1.png"
+    "assets/art/buff/CRIPPLE1.png"
    ]
   },
   "CRIPPLE2": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/CRIPPLE2.png"
+    "assets/art/buff/CRIPPLE2.png"
    ]
   },
   "CRIPPLE3": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/CRIPPLE3.png"
+    "assets/art/buff/CRIPPLE3.png"
    ]
   },
   "DARKREGEN": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/DARKREGEN.png"
+    "assets/art/buff/DARKREGEN.png"
    ]
   },
   "DECAY": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/DECAY.png"
+    "assets/art/buff/DECAY.png"
    ]
   },
   "DOCTOR": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/DOCTOR.png"
+    "assets/art/buff/DOCTOR.png"
    ]
   },
   "FATALFLAW": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/FATALFLAW.png"
+    "assets/art/buff/FATALFLAW.png"
    ]
   },
   "FATE": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/FATE.png"
+    "assets/art/buff/FATE.png"
    ]
   },
   "FIRESHOCK": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/FIRESHOCK.png"
+    "assets/art/buff/FIRESHOCK.png"
    ]
   },
   "IGNITE": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/IGNITE.png"
+    "assets/art/buff/IGNITE.png"
    ]
   },
   "INTERVENTION1": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/INTERVENTION1.png"
+    "assets/art/buff/INTERVENTION1.png"
    ]
   },
   "INTERVENTION10": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/INTERVENTION10.png"
+    "assets/art/buff/INTERVENTION10.png"
    ]
   },
   "INTERVENTION2": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/INTERVENTION2.png"
+    "assets/art/buff/INTERVENTION2.png"
    ]
   },
   "INTERVENTION3": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/INTERVENTION3.png"
+    "assets/art/buff/INTERVENTION3.png"
    ]
   },
   "INTERVENTION4": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/INTERVENTION4.png"
+    "assets/art/buff/INTERVENTION4.png"
    ]
   },
   "INTERVENTION5": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/INTERVENTION5.png"
+    "assets/art/buff/INTERVENTION5.png"
    ]
   },
   "INTERVENTION6": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/INTERVENTION6.png"
+    "assets/art/buff/INTERVENTION6.png"
    ]
   },
   "INTERVENTION7": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/INTERVENTION7.png"
+    "assets/art/buff/INTERVENTION7.png"
    ]
   },
   "INTERVENTION8": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/INTERVENTION8.png"
+    "assets/art/buff/INTERVENTION8.png"
    ]
   },
   "INTERVENTION9": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/INTERVENTION9.png"
+    "assets/art/buff/INTERVENTION9.png"
    ]
   },
   "IRONSKIN1": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/IRONSKIN1.png"
+    "assets/art/buff/IRONSKIN1.png"
    ]
   },
   "IRONSKIN2": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/IRONSKIN2.png"
+    "assets/art/buff/IRONSKIN2.png"
    ]
   },
   "IRONSKIN3": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/IRONSKIN3.png"
+    "assets/art/buff/IRONSKIN3.png"
    ]
   },
   "IRONSKIN4": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/IRONSKIN4.png"
+    "assets/art/buff/IRONSKIN4.png"
    ]
   },
   "IRONSKIN5": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/IRONSKIN5.png"
+    "assets/art/buff/IRONSKIN5.png"
    ]
   },
   "MAGICWOUND": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/MAGICWOUND.png"
+    "assets/art/buff/MAGICWOUND.png"
    ]
   },
   "POISON": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/POISON.png"
+    "assets/art/buff/POISON.png"
    ]
   },
   "POISONZOMBIE": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/POISONZOMBIE.png"
+    "assets/art/buff/POISONZOMBIE.png"
    ]
   },
   "POWERUP": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/POWERUP.png"
+    "assets/art/buff/POWERUP.png"
    ]
   },
   "RAGE1": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/RAGE1.png"
+    "assets/art/buff/RAGE1.png"
    ]
   },
   "RAGE2": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/RAGE2.png"
+    "assets/art/buff/RAGE2.png"
    ]
   },
   "RAGE3": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/RAGE3.png"
+    "assets/art/buff/RAGE3.png"
    ]
   },
   "REGEN": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/REGEN.png"
+    "assets/art/buff/REGEN.png"
    ]
   },
   "REGENFOC": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/REGENFOC.png"
+    "assets/art/buff/REGENFOC.png"
    ]
   },
   "REGENSHAMAN": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/REGENSHAMAN.png"
+    "assets/art/buff/REGENSHAMAN.png"
    ]
   },
   "SHATTER": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/SHATTER.png"
+    "assets/art/buff/SHATTER.png"
    ]
   },
   "SHATTER2": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/SHATTER2.png"
+    "assets/art/buff/SHATTER2.png"
    ]
   },
   "SPEEDUP": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/SPEEDUP.png"
+    "assets/art/buff/SPEEDUP.png"
    ]
   },
   "STUN1": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/STUN1.png"
+    "assets/art/buff/STUN1.png"
    ]
   },
   "SUBVERSION": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/SUBVERSION.png"
+    "assets/art/buff/SUBVERSION.png"
    ]
   },
   "SUNDER1": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/SUNDER1.png"
+    "assets/art/buff/SUNDER1.png"
    ]
   },
   "SUNDER2": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/SUNDER2.png"
+    "assets/art/buff/SUNDER2.png"
    ]
   },
   "SUNDER3": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/SUNDER3.png"
+    "assets/art/buff/SUNDER3.png"
    ]
   },
   "SUNDER4": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/SUNDER4.png"
+    "assets/art/buff/SUNDER4.png"
    ]
   },
   "SUNDER5": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/SUNDER5.png"
+    "assets/art/buff/SUNDER5.png"
    ]
   },
   "SUPRESSION": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/SUPRESSION.png"
+    "assets/art/buff/SUPRESSION.png"
    ]
   },
   "VOID1": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/VOID1.png"
+    "assets/art/buff/VOID1.png"
    ]
   },
   "VOID2": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/VOID2.png"
+    "assets/art/buff/VOID2.png"
    ]
   },
   "VOID3": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/VOID3.png"
+    "assets/art/buff/VOID3.png"
    ]
   },
   "VOID4": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/VOID4.png"
+    "assets/art/buff/VOID4.png"
    ]
   },
   "VOID5": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/VOID5.png"
+    "assets/art/buff/VOID5.png"
    ]
   },
   "VOIDMOB": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/VOIDMOB.png"
+    "assets/art/buff/VOIDMOB.png"
    ]
   },
   "WASHED": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/WASHED.png"
+    "assets/art/buff/WASHED.png"
    ]
   },
   "WOUND1": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/WOUND1.png"
+    "assets/art/buff/WOUND1.png"
    ]
   },
   "WOUND2": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/WOUND2.png"
+    "assets/art/buff/WOUND2.png"
    ]
   },
   "WOUND3": {
    "category": "buff",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/buff/WOUND3.png"
+    "assets/art/buff/WOUND3.png"
    ]
   },
   "M_ARM_FINAL1": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_ARM_FINAL1.png"
+    "assets/art/doll/M_ARM_FINAL1.png"
    ]
   },
   "M_ARM_FINAL2": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_ARM_FINAL2.png"
+    "assets/art/doll/M_ARM_FINAL2.png"
    ]
   },
   "M_ARM_FINAL3": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_ARM_FINAL3.png"
+    "assets/art/doll/M_ARM_FINAL3.png"
    ]
   },
   "M_ARM_FINAL4": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_ARM_FINAL4.png"
+    "assets/art/doll/M_ARM_FINAL4.png"
    ]
   },
   "M_ARM_GER": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_ARM_GER.png"
+    "assets/art/doll/M_ARM_GER.png"
    ]
   },
   "M_ARM_JEANS": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_ARM_JEANS.png"
+    "assets/art/doll/M_ARM_JEANS.png"
    ]
   },
   "M_ARM_KNIGHT": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_ARM_KNIGHT.png"
+    "assets/art/doll/M_ARM_KNIGHT.png"
    ]
   },
   "M_ARM_MEDIC": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_ARM_MEDIC.png"
+    "assets/art/doll/M_ARM_MEDIC.png"
    ]
   },
   "M_ARM_NINJA": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_ARM_NINJA.png"
+    "assets/art/doll/M_ARM_NINJA.png"
    ]
   },
   "M_ARM_ROCKSTAR": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_ARM_ROCKSTAR.png"
+    "assets/art/doll/M_ARM_ROCKSTAR.png"
    ]
   },
   "M_ARM_SAMURAI": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_ARM_SAMURAI.png"
+    "assets/art/doll/M_ARM_SAMURAI.png"
    ]
   },
   "M_ARM_SAMURAI2": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_ARM_SAMURAI2.png"
+    "assets/art/doll/M_ARM_SAMURAI2.png"
    ]
   },
   "M_ARM_SAMURAI3": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_ARM_SAMURAI3.png"
+    "assets/art/doll/M_ARM_SAMURAI3.png"
    ]
   },
   "M_ARM_SHAMAN1": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_ARM_SHAMAN1.png"
+    "assets/art/doll/M_ARM_SHAMAN1.png"
    ]
   },
   "M_ARM_SHAMAN2": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_ARM_SHAMAN2.png"
+    "assets/art/doll/M_ARM_SHAMAN2.png"
    ]
   },
   "M_ARM_SHAMAN3": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_ARM_SHAMAN3.png"
+    "assets/art/doll/M_ARM_SHAMAN3.png"
    ]
   },
   "M_ARM_SHAMAN4": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_ARM_SHAMAN4.png"
+    "assets/art/doll/M_ARM_SHAMAN4.png"
    ]
   },
   "M_ARM_SHIRT": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_ARM_SHIRT.png"
+    "assets/art/doll/M_ARM_SHIRT.png"
    ]
   },
   "M_ARM_SINJID": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_ARM_SINJID.png"
+    "assets/art/doll/M_ARM_SINJID.png"
    ]
   },
   "M_ARM_SURVIVOR": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_ARM_SURVIVOR.png"
+    "assets/art/doll/M_ARM_SURVIVOR.png"
    ]
   },
   "M_ARM_USA1": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_ARM_USA1.png"
+    "assets/art/doll/M_ARM_USA1.png"
    ]
   },
   "M_ARM_USA2": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_ARM_USA2.png"
+    "assets/art/doll/M_ARM_USA2.png"
    ]
   },
   "M_ARM_USA3": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_ARM_USA3.png"
+    "assets/art/doll/M_ARM_USA3.png"
    ]
   },
   "M_ARM_USA4": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_ARM_USA4.png"
+    "assets/art/doll/M_ARM_USA4.png"
    ]
   },
   "M_ARM_USA5": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_ARM_USA5.png"
+    "assets/art/doll/M_ARM_USA5.png"
    ]
   },
   "M_CHEST_FINAL1": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_CHEST_FINAL1.png"
+    "assets/art/doll/M_CHEST_FINAL1.png"
    ]
   },
   "M_CHEST_FINAL2": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_CHEST_FINAL2.png"
+    "assets/art/doll/M_CHEST_FINAL2.png"
    ]
   },
   "M_CHEST_FINAL3": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_CHEST_FINAL3.png"
+    "assets/art/doll/M_CHEST_FINAL3.png"
    ]
   },
   "M_CHEST_FINAL4": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_CHEST_FINAL4.png"
+    "assets/art/doll/M_CHEST_FINAL4.png"
    ]
   },
   "M_CHEST_GER": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_CHEST_GER.png"
+    "assets/art/doll/M_CHEST_GER.png"
    ]
   },
   "M_CHEST_KNIGHT": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_CHEST_KNIGHT.png"
+    "assets/art/doll/M_CHEST_KNIGHT.png"
    ]
   },
   "M_CHEST_MEDIC": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_CHEST_MEDIC.png"
+    "assets/art/doll/M_CHEST_MEDIC.png"
    ]
   },
   "M_CHEST_NINJA": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_CHEST_NINJA.png"
+    "assets/art/doll/M_CHEST_NINJA.png"
    ]
   },
   "M_CHEST_ROCKSTAR": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_CHEST_ROCKSTAR.png"
+    "assets/art/doll/M_CHEST_ROCKSTAR.png"
    ]
   },
   "M_CHEST_SAMURAI": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_CHEST_SAMURAI.png"
+    "assets/art/doll/M_CHEST_SAMURAI.png"
    ]
   },
   "M_CHEST_SAMURAI2": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_CHEST_SAMURAI2.png"
+    "assets/art/doll/M_CHEST_SAMURAI2.png"
    ]
   },
   "M_CHEST_SAMURAI3": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_CHEST_SAMURAI3.png"
+    "assets/art/doll/M_CHEST_SAMURAI3.png"
    ]
   },
   "M_CHEST_SHAMAN1": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_CHEST_SHAMAN1.png"
+    "assets/art/doll/M_CHEST_SHAMAN1.png"
    ]
   },
   "M_CHEST_SHAMAN2": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_CHEST_SHAMAN2.png"
+    "assets/art/doll/M_CHEST_SHAMAN2.png"
    ]
   },
   "M_CHEST_SHAMAN3": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_CHEST_SHAMAN3.png"
+    "assets/art/doll/M_CHEST_SHAMAN3.png"
    ]
   },
   "M_CHEST_SHAMAN4": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_CHEST_SHAMAN4.png"
+    "assets/art/doll/M_CHEST_SHAMAN4.png"
    ]
   },
   "M_CHEST_SHIRT": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_CHEST_SHIRT.png"
+    "assets/art/doll/M_CHEST_SHIRT.png"
    ]
   },
   "M_CHEST_SINJID": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_CHEST_SINJID.png"
+    "assets/art/doll/M_CHEST_SINJID.png"
    ]
   },
   "M_CHEST_SURVIVOR": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_CHEST_SURVIVOR.png"
+    "assets/art/doll/M_CHEST_SURVIVOR.png"
    ]
   },
   "M_CHEST_USA1": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_CHEST_USA1.png"
+    "assets/art/doll/M_CHEST_USA1.png"
    ]
   },
   "M_CHEST_USA2": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_CHEST_USA2.png"
+    "assets/art/doll/M_CHEST_USA2.png"
    ]
   },
   "M_CHEST_USA3": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_CHEST_USA3.png"
+    "assets/art/doll/M_CHEST_USA3.png"
    ]
   },
   "M_CHEST_USA4": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_CHEST_USA4.png"
+    "assets/art/doll/M_CHEST_USA4.png"
    ]
   },
   "M_CHEST_USA5": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_CHEST_USA5.png"
+    "assets/art/doll/M_CHEST_USA5.png"
    ]
   },
   "M_FOOT_FINAL1": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_FOOT_FINAL1.png"
+    "assets/art/doll/M_FOOT_FINAL1.png"
    ]
   },
   "M_FOOT_FINAL2": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_FOOT_FINAL2.png"
+    "assets/art/doll/M_FOOT_FINAL2.png"
    ]
   },
   "M_FOOT_FINAL3": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_FOOT_FINAL3.png"
+    "assets/art/doll/M_FOOT_FINAL3.png"
    ]
   },
   "M_FOOT_FINAL4": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_FOOT_FINAL4.png"
+    "assets/art/doll/M_FOOT_FINAL4.png"
    ]
   },
   "M_FOOT_GER": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_FOOT_GER.png"
+    "assets/art/doll/M_FOOT_GER.png"
    ]
   },
   "M_FOOT_JEANS": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_FOOT_JEANS.png"
+    "assets/art/doll/M_FOOT_JEANS.png"
    ]
   },
   "M_FOOT_KNIGHT": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_FOOT_KNIGHT.png"
+    "assets/art/doll/M_FOOT_KNIGHT.png"
    ]
   },
   "M_FOOT_MEDIC": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_FOOT_MEDIC.png"
+    "assets/art/doll/M_FOOT_MEDIC.png"
    ]
   },
   "M_FOOT_NAVY": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_FOOT_NAVY.png"
+    "assets/art/doll/M_FOOT_NAVY.png"
    ]
   },
   "M_FOOT_NINJA": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_FOOT_NINJA.png"
+    "assets/art/doll/M_FOOT_NINJA.png"
    ]
   },
   "M_FOOT_ROCKSTAR": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_FOOT_ROCKSTAR.png"
+    "assets/art/doll/M_FOOT_ROCKSTAR.png"
    ]
   },
   "M_FOOT_SAMURAI": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_FOOT_SAMURAI.png"
+    "assets/art/doll/M_FOOT_SAMURAI.png"
    ]
   },
   "M_FOOT_SAMURAI2": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_FOOT_SAMURAI2.png"
+    "assets/art/doll/M_FOOT_SAMURAI2.png"
    ]
   },
   "M_FOOT_SAMURAI3": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_FOOT_SAMURAI3.png"
+    "assets/art/doll/M_FOOT_SAMURAI3.png"
    ]
   },
   "M_FOOT_SHAMAN1": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_FOOT_SHAMAN1.png"
+    "assets/art/doll/M_FOOT_SHAMAN1.png"
    ]
   },
   "M_FOOT_SINJID": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_FOOT_SINJID.png"
+    "assets/art/doll/M_FOOT_SINJID.png"
    ]
   },
   "M_FOOT_SURVIVOR": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_FOOT_SURVIVOR.png"
+    "assets/art/doll/M_FOOT_SURVIVOR.png"
    ]
   },
   "M_FOOT_USA1": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_FOOT_USA1.png"
+    "assets/art/doll/M_FOOT_USA1.png"
    ]
   },
   "M_FOOT_USA2": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_FOOT_USA2.png"
+    "assets/art/doll/M_FOOT_USA2.png"
    ]
   },
   "M_FOOT_USA3": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_FOOT_USA3.png"
+    "assets/art/doll/M_FOOT_USA3.png"
    ]
   },
   "M_FOOT_USA4": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_FOOT_USA4.png"
+    "assets/art/doll/M_FOOT_USA4.png"
    ]
   },
   "M_FOOT_USA5": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_FOOT_USA5.png"
+    "assets/art/doll/M_FOOT_USA5.png"
    ]
   },
   "M_HAND_ENGINEERINGGLOVES": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HAND_ENGINEERINGGLOVES.png"
+    "assets/art/doll/M_HAND_ENGINEERINGGLOVES.png"
    ]
   },
   "M_HAND_FINAL1": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HAND_FINAL1.png"
+    "assets/art/doll/M_HAND_FINAL1.png"
    ]
   },
   "M_HAND_FINAL2": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HAND_FINAL2.png"
+    "assets/art/doll/M_HAND_FINAL2.png"
    ]
   },
   "M_HAND_FINAL3": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HAND_FINAL3.png"
+    "assets/art/doll/M_HAND_FINAL3.png"
    ]
   },
   "M_HAND_FINAL4": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HAND_FINAL4.png"
+    "assets/art/doll/M_HAND_FINAL4.png"
    ]
   },
   "M_HAND_GER": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HAND_GER.png"
+    "assets/art/doll/M_HAND_GER.png"
    ]
   },
   "M_HAND_KNIGHT": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HAND_KNIGHT.png"
+    "assets/art/doll/M_HAND_KNIGHT.png"
    ]
   },
   "M_HAND_MEDIC": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HAND_MEDIC.png"
+    "assets/art/doll/M_HAND_MEDIC.png"
    ]
   },
   "M_HAND_NINJA": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HAND_NINJA.png"
+    "assets/art/doll/M_HAND_NINJA.png"
    ]
   },
   "M_HAND_ROCKSTAR": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HAND_ROCKSTAR.png"
+    "assets/art/doll/M_HAND_ROCKSTAR.png"
    ]
   },
   "M_HAND_SAMURAI": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HAND_SAMURAI.png"
+    "assets/art/doll/M_HAND_SAMURAI.png"
    ]
   },
   "M_HAND_SAMURAI2": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HAND_SAMURAI2.png"
+    "assets/art/doll/M_HAND_SAMURAI2.png"
    ]
   },
   "M_HAND_SAMURAI3": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HAND_SAMURAI3.png"
+    "assets/art/doll/M_HAND_SAMURAI3.png"
    ]
   },
   "M_HAND_SHAMAN1": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HAND_SHAMAN1.png"
+    "assets/art/doll/M_HAND_SHAMAN1.png"
    ]
   },
   "M_HAND_SHAMAN2": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HAND_SHAMAN2.png"
+    "assets/art/doll/M_HAND_SHAMAN2.png"
    ]
   },
   "M_HAND_SHAMAN3": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HAND_SHAMAN3.png"
+    "assets/art/doll/M_HAND_SHAMAN3.png"
    ]
   },
   "M_HAND_SHAMAN4": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HAND_SHAMAN4.png"
+    "assets/art/doll/M_HAND_SHAMAN4.png"
    ]
   },
   "M_HAND_SINJID": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HAND_SINJID.png"
+    "assets/art/doll/M_HAND_SINJID.png"
    ]
   },
   "M_HAND_SURVIVOR": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HAND_SURVIVOR.png"
+    "assets/art/doll/M_HAND_SURVIVOR.png"
    ]
   },
   "M_HAND_USA1": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HAND_USA1.png"
+    "assets/art/doll/M_HAND_USA1.png"
    ]
   },
   "M_HAND_USA2": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HAND_USA2.png"
+    "assets/art/doll/M_HAND_USA2.png"
    ]
   },
   "M_HAND_USA3": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HAND_USA3.png"
+    "assets/art/doll/M_HAND_USA3.png"
    ]
   },
   "M_HAND_USA4": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HAND_USA4.png"
+    "assets/art/doll/M_HAND_USA4.png"
    ]
   },
   "M_HAND_USA5": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HAND_USA5.png"
+    "assets/art/doll/M_HAND_USA5.png"
    ]
   },
   "M_HEAD_FINAL1": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HEAD_FINAL1.png"
+    "assets/art/doll/M_HEAD_FINAL1.png"
    ]
   },
   "M_HEAD_FINAL2": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HEAD_FINAL2.png"
+    "assets/art/doll/M_HEAD_FINAL2.png"
    ]
   },
   "M_HEAD_FINAL3": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HEAD_FINAL3.png"
+    "assets/art/doll/M_HEAD_FINAL3.png"
    ]
   },
   "M_HEAD_FINAL4": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HEAD_FINAL4.png"
+    "assets/art/doll/M_HEAD_FINAL4.png"
    ]
   },
   "M_HEAD_GER": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HEAD_GER.png"
+    "assets/art/doll/M_HEAD_GER.png"
    ]
   },
   "M_HEAD_KNIGHT": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HEAD_KNIGHT.png"
+    "assets/art/doll/M_HEAD_KNIGHT.png"
    ]
   },
   "M_HEAD_MEDIC": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HEAD_MEDIC.png"
+    "assets/art/doll/M_HEAD_MEDIC.png"
    ]
   },
   "M_HEAD_NINJA": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HEAD_NINJA.png"
+    "assets/art/doll/M_HEAD_NINJA.png"
    ]
   },
   "M_HEAD_ROCKSTAR": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HEAD_ROCKSTAR.png"
+    "assets/art/doll/M_HEAD_ROCKSTAR.png"
    ]
   },
   "M_HEAD_SAMURAI": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HEAD_SAMURAI.png"
+    "assets/art/doll/M_HEAD_SAMURAI.png"
    ]
   },
   "M_HEAD_SAMURAI2": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HEAD_SAMURAI2.png"
+    "assets/art/doll/M_HEAD_SAMURAI2.png"
    ]
   },
   "M_HEAD_SAMURAI3": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HEAD_SAMURAI3.png"
+    "assets/art/doll/M_HEAD_SAMURAI3.png"
    ]
   },
   "M_HEAD_SHAMAN1": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HEAD_SHAMAN1.png"
+    "assets/art/doll/M_HEAD_SHAMAN1.png"
    ]
   },
   "M_HEAD_SHAMAN2": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HEAD_SHAMAN2.png"
+    "assets/art/doll/M_HEAD_SHAMAN2.png"
    ]
   },
   "M_HEAD_SHAMAN3": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HEAD_SHAMAN3.png"
+    "assets/art/doll/M_HEAD_SHAMAN3.png"
    ]
   },
   "M_HEAD_SHAMAN4": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HEAD_SHAMAN4.png"
+    "assets/art/doll/M_HEAD_SHAMAN4.png"
    ]
   },
   "M_HEAD_SINJID": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HEAD_SINJID.png"
+    "assets/art/doll/M_HEAD_SINJID.png"
    ]
   },
   "M_HEAD_SURVIVOR": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HEAD_SURVIVOR.png"
+    "assets/art/doll/M_HEAD_SURVIVOR.png"
    ]
   },
   "M_HEAD_USA1": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HEAD_USA1.png"
+    "assets/art/doll/M_HEAD_USA1.png"
    ]
   },
   "M_HEAD_USA2": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HEAD_USA2.png"
+    "assets/art/doll/M_HEAD_USA2.png"
    ]
   },
   "M_HEAD_USA3": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HEAD_USA3.png"
+    "assets/art/doll/M_HEAD_USA3.png"
    ]
   },
   "M_HEAD_USA4": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HEAD_USA4.png"
+    "assets/art/doll/M_HEAD_USA4.png"
    ]
   },
   "M_HEAD_USA5": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_HEAD_USA5.png"
+    "assets/art/doll/M_HEAD_USA5.png"
    ]
   },
   "M_LEG2_FINAL1": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_LEG2_FINAL1.png"
+    "assets/art/doll/M_LEG2_FINAL1.png"
    ]
   },
   "M_LEG2_FINAL2": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_LEG2_FINAL2.png"
+    "assets/art/doll/M_LEG2_FINAL2.png"
    ]
   },
   "M_LEG2_FINAL3": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_LEG2_FINAL3.png"
+    "assets/art/doll/M_LEG2_FINAL3.png"
    ]
   },
   "M_LEG2_FINAL4": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_LEG2_FINAL4.png"
+    "assets/art/doll/M_LEG2_FINAL4.png"
    ]
   },
   "M_LEG2_GER": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_LEG2_GER.png"
+    "assets/art/doll/M_LEG2_GER.png"
    ]
   },
   "M_LEG2_JEANS": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_LEG2_JEANS.png"
+    "assets/art/doll/M_LEG2_JEANS.png"
    ]
   },
   "M_LEG2_KNIGHT": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_LEG2_KNIGHT.png"
+    "assets/art/doll/M_LEG2_KNIGHT.png"
    ]
   },
   "M_LEG2_MEDIC": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_LEG2_MEDIC.png"
+    "assets/art/doll/M_LEG2_MEDIC.png"
    ]
   },
   "M_LEG2_NAVY": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_LEG2_NAVY.png"
+    "assets/art/doll/M_LEG2_NAVY.png"
    ]
   },
   "M_LEG2_NINJA": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_LEG2_NINJA.png"
+    "assets/art/doll/M_LEG2_NINJA.png"
    ]
   },
   "M_LEG2_ROCKSTAR": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_LEG2_ROCKSTAR.png"
+    "assets/art/doll/M_LEG2_ROCKSTAR.png"
    ]
   },
   "M_LEG2_SAMURAI": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_LEG2_SAMURAI.png"
+    "assets/art/doll/M_LEG2_SAMURAI.png"
    ]
   },
   "M_LEG2_SAMURAI2": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_LEG2_SAMURAI2.png"
+    "assets/art/doll/M_LEG2_SAMURAI2.png"
    ]
   },
   "M_LEG2_SAMURAI3": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_LEG2_SAMURAI3.png"
+    "assets/art/doll/M_LEG2_SAMURAI3.png"
    ]
   },
   "M_LEG2_SHAMAN1": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_LEG2_SHAMAN1.png"
+    "assets/art/doll/M_LEG2_SHAMAN1.png"
    ]
   },
   "M_LEG2_SHAMAN2": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_LEG2_SHAMAN2.png"
+    "assets/art/doll/M_LEG2_SHAMAN2.png"
    ]
   },
   "M_LEG2_SHAMAN3": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_LEG2_SHAMAN3.png"
+    "assets/art/doll/M_LEG2_SHAMAN3.png"
    ]
   },
   "M_LEG2_SHAMAN4": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_LEG2_SHAMAN4.png"
+    "assets/art/doll/M_LEG2_SHAMAN4.png"
    ]
   },
   "M_LEG2_SINJID": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_LEG2_SINJID.png"
+    "assets/art/doll/M_LEG2_SINJID.png"
    ]
   },
   "M_LEG2_SURVIVOR": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_LEG2_SURVIVOR.png"
+    "assets/art/doll/M_LEG2_SURVIVOR.png"
    ]
   },
   "M_LEG2_USA1": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_LEG2_USA1.png"
+    "assets/art/doll/M_LEG2_USA1.png"
    ]
   },
   "M_LEG2_USA2": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_LEG2_USA2.png"
+    "assets/art/doll/M_LEG2_USA2.png"
    ]
   },
   "M_LEG2_USA3": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_LEG2_USA3.png"
+    "assets/art/doll/M_LEG2_USA3.png"
    ]
   },
   "M_LEG2_USA4": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_LEG2_USA4.png"
+    "assets/art/doll/M_LEG2_USA4.png"
    ]
   },
   "M_LEG2_USA5": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_LEG2_USA5.png"
+    "assets/art/doll/M_LEG2_USA5.png"
    ]
   },
   "M_SHOULDER_FINAL1": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_SHOULDER_FINAL1.png"
+    "assets/art/doll/M_SHOULDER_FINAL1.png"
    ]
   },
   "M_SHOULDER_FINAL2": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_SHOULDER_FINAL2.png"
+    "assets/art/doll/M_SHOULDER_FINAL2.png"
    ]
   },
   "M_SHOULDER_FINAL3": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_SHOULDER_FINAL3.png"
+    "assets/art/doll/M_SHOULDER_FINAL3.png"
    ]
   },
   "M_SHOULDER_FINAL4": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_SHOULDER_FINAL4.png"
+    "assets/art/doll/M_SHOULDER_FINAL4.png"
    ]
   },
   "M_SHOULDER_KNIGHT": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_SHOULDER_KNIGHT.png"
+    "assets/art/doll/M_SHOULDER_KNIGHT.png"
    ]
   },
   "M_SHOULDER_MEDIC": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_SHOULDER_MEDIC.png"
+    "assets/art/doll/M_SHOULDER_MEDIC.png"
    ]
   },
   "M_SHOULDER_NINJA": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_SHOULDER_NINJA.png"
+    "assets/art/doll/M_SHOULDER_NINJA.png"
    ]
   },
   "M_SHOULDER_ROCKSTAR": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_SHOULDER_ROCKSTAR.png"
+    "assets/art/doll/M_SHOULDER_ROCKSTAR.png"
    ]
   },
   "M_SHOULDER_SAMURAI": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_SHOULDER_SAMURAI.png"
+    "assets/art/doll/M_SHOULDER_SAMURAI.png"
    ]
   },
   "M_SHOULDER_SAMURAI2": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_SHOULDER_SAMURAI2.png"
+    "assets/art/doll/M_SHOULDER_SAMURAI2.png"
    ]
   },
   "M_SHOULDER_SAMURAI3": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_SHOULDER_SAMURAI3.png"
+    "assets/art/doll/M_SHOULDER_SAMURAI3.png"
    ]
   },
   "M_SHOULDER_SHAMAN1": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_SHOULDER_SHAMAN1.png"
+    "assets/art/doll/M_SHOULDER_SHAMAN1.png"
    ]
   },
   "M_SHOULDER_SHAMAN2": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_SHOULDER_SHAMAN2.png"
+    "assets/art/doll/M_SHOULDER_SHAMAN2.png"
    ]
   },
   "M_SHOULDER_SHAMAN3": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_SHOULDER_SHAMAN3.png"
+    "assets/art/doll/M_SHOULDER_SHAMAN3.png"
    ]
   },
   "M_SHOULDER_SHAMAN4": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_SHOULDER_SHAMAN4.png"
+    "assets/art/doll/M_SHOULDER_SHAMAN4.png"
    ]
   },
   "M_SHOULDER_SINJID": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_SHOULDER_SINJID.png"
+    "assets/art/doll/M_SHOULDER_SINJID.png"
    ]
   },
   "M_SHOULDER_SURVIVOR": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_SHOULDER_SURVIVOR.png"
+    "assets/art/doll/M_SHOULDER_SURVIVOR.png"
    ]
   },
   "M_SHOULDER_USA1": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_SHOULDER_USA1.png"
+    "assets/art/doll/M_SHOULDER_USA1.png"
    ]
   },
   "M_SHOULDER_USA2": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_SHOULDER_USA2.png"
+    "assets/art/doll/M_SHOULDER_USA2.png"
    ]
   },
   "M_SHOULDER_USA3": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_SHOULDER_USA3.png"
+    "assets/art/doll/M_SHOULDER_USA3.png"
    ]
   },
   "M_SHOULDER_USA4": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_SHOULDER_USA4.png"
+    "assets/art/doll/M_SHOULDER_USA4.png"
    ]
   },
   "M_SHOULDER_USA5": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_SHOULDER_USA5.png"
+    "assets/art/doll/M_SHOULDER_USA5.png"
    ]
   },
   "M_WEAPON_BROAD": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_BROAD.png"
+    "assets/art/doll/M_WEAPON_BROAD.png"
    ]
   },
   "M_WEAPON_CLUB": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_CLUB.png"
+    "assets/art/doll/M_WEAPON_CLUB.png"
    ]
   },
   "M_WEAPON_CROWBAR": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_CROWBAR.png"
+    "assets/art/doll/M_WEAPON_CROWBAR.png"
    ]
   },
   "M_WEAPON_FIREAXE": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_FIREAXE.png"
+    "assets/art/doll/M_WEAPON_FIREAXE.png"
    ]
   },
   "M_WEAPON_KATANA": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_KATANA.png"
+    "assets/art/doll/M_WEAPON_KATANA.png"
    ]
   },
   "M_WEAPON_M4": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_M4.png"
+    "assets/art/doll/M_WEAPON_M4.png"
    ]
   },
   "M_WEAPON_MOON": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_MOON.png"
+    "assets/art/doll/M_WEAPON_MOON.png"
    ]
   },
   "M_WEAPON_PALADINSWORD": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_PALADINSWORD.png"
+    "assets/art/doll/M_WEAPON_PALADINSWORD.png"
    ]
   },
   "M_WEAPON_PIPE": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_PIPE.png"
+    "assets/art/doll/M_WEAPON_PIPE.png"
    ]
   },
   "M_WEAPON_SHAMANKNIFE": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_SHAMANKNIFE.png"
+    "assets/art/doll/M_WEAPON_SHAMANKNIFE.png"
    ]
   },
   "M_WEAPON_SHAMANMAGIC": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_SHAMANMAGIC.png"
+    "assets/art/doll/M_WEAPON_SHAMANMAGIC.png"
    ]
   },
   "M_WEAPON_SHAMANMED": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_SHAMANMED.png"
+    "assets/art/doll/M_WEAPON_SHAMANMED.png"
    ]
   },
   "M_WEAPON_SHAMANSWORD": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_SHAMANSWORD.png"
+    "assets/art/doll/M_WEAPON_SHAMANSWORD.png"
    ]
   },
   "M_WEAPON_SHANK": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_SHANK.png"
+    "assets/art/doll/M_WEAPON_SHANK.png"
    ]
   },
   "M_WEAPON_SHIELD2": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_SHIELD2.png"
+    "assets/art/doll/M_WEAPON_SHIELD2.png"
    ]
   },
   "M_WEAPON_SPELLMACE": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_SPELLMACE.png"
+    "assets/art/doll/M_WEAPON_SPELLMACE.png"
    ]
   },
   "M_WEAPON_SPELLSTAFF": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_SPELLSTAFF.png"
+    "assets/art/doll/M_WEAPON_SPELLSTAFF.png"
    ]
   },
   "M_WEAPON_STICK": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_STICK.png"
+    "assets/art/doll/M_WEAPON_STICK.png"
    ]
   },
   "M_WEAPON_SWATSWORD": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_SWATSWORD.png"
+    "assets/art/doll/M_WEAPON_SWATSWORD.png"
    ]
   },
   "M_WEAPON_SWIFT": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_SWIFT.png"
+    "assets/art/doll/M_WEAPON_SWIFT.png"
    ]
   },
   "M_WEAPON_SWORD1": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_SWORD1.png"
+    "assets/art/doll/M_WEAPON_SWORD1.png"
    ]
   },
   "M_WEAPON_UBER1": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_UBER1.png"
+    "assets/art/doll/M_WEAPON_UBER1.png"
    ]
   },
   "M_WEAPON_UBER10": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_UBER10.png"
+    "assets/art/doll/M_WEAPON_UBER10.png"
    ]
   },
   "M_WEAPON_UBER11": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_UBER11.png"
+    "assets/art/doll/M_WEAPON_UBER11.png"
    ]
   },
   "M_WEAPON_UBER2": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_UBER2.png"
+    "assets/art/doll/M_WEAPON_UBER2.png"
    ]
   },
   "M_WEAPON_UBER3": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_UBER3.png"
+    "assets/art/doll/M_WEAPON_UBER3.png"
    ]
   },
   "M_WEAPON_UBER4": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_UBER4.png"
+    "assets/art/doll/M_WEAPON_UBER4.png"
    ]
   },
   "M_WEAPON_UBER5": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_UBER5.png"
+    "assets/art/doll/M_WEAPON_UBER5.png"
    ]
   },
   "M_WEAPON_UBER6": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_UBER6.png"
+    "assets/art/doll/M_WEAPON_UBER6.png"
    ]
   },
   "M_WEAPON_UBER7": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_UBER7.png"
+    "assets/art/doll/M_WEAPON_UBER7.png"
    ]
   },
   "M_WEAPON_UBER8": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_UBER8.png"
+    "assets/art/doll/M_WEAPON_UBER8.png"
    ]
   },
   "M_WEAPON_UBER9": {
    "category": "doll",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/doll/M_WEAPON_UBER9.png"
+    "assets/art/doll/M_WEAPON_UBER9.png"
    ]
   },
   "BOOM1": {
    "category": "effect",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_1.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_2.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_3.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_4.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_5.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_6.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_7.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_8.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_9.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_10.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_11.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_12.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_13.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_14.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_15.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_16.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_17.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_18.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_19.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_20.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_21.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_22.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_23.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_24.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_25.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_26.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_27.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_28.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_29.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_30.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_31.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_32.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_33.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_34.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_35.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM1_36.png"
+    "assets/art/effect/BOOM1_1.png",
+    "assets/art/effect/BOOM1_2.png",
+    "assets/art/effect/BOOM1_3.png",
+    "assets/art/effect/BOOM1_4.png",
+    "assets/art/effect/BOOM1_5.png",
+    "assets/art/effect/BOOM1_6.png",
+    "assets/art/effect/BOOM1_7.png",
+    "assets/art/effect/BOOM1_8.png",
+    "assets/art/effect/BOOM1_9.png",
+    "assets/art/effect/BOOM1_10.png",
+    "assets/art/effect/BOOM1_11.png",
+    "assets/art/effect/BOOM1_12.png",
+    "assets/art/effect/BOOM1_13.png",
+    "assets/art/effect/BOOM1_14.png",
+    "assets/art/effect/BOOM1_15.png",
+    "assets/art/effect/BOOM1_16.png",
+    "assets/art/effect/BOOM1_17.png",
+    "assets/art/effect/BOOM1_18.png",
+    "assets/art/effect/BOOM1_19.png",
+    "assets/art/effect/BOOM1_20.png",
+    "assets/art/effect/BOOM1_21.png",
+    "assets/art/effect/BOOM1_22.png",
+    "assets/art/effect/BOOM1_23.png",
+    "assets/art/effect/BOOM1_24.png",
+    "assets/art/effect/BOOM1_25.png",
+    "assets/art/effect/BOOM1_26.png",
+    "assets/art/effect/BOOM1_27.png",
+    "assets/art/effect/BOOM1_28.png",
+    "assets/art/effect/BOOM1_29.png",
+    "assets/art/effect/BOOM1_30.png",
+    "assets/art/effect/BOOM1_31.png",
+    "assets/art/effect/BOOM1_32.png",
+    "assets/art/effect/BOOM1_33.png",
+    "assets/art/effect/BOOM1_34.png",
+    "assets/art/effect/BOOM1_35.png",
+    "assets/art/effect/BOOM1_36.png"
    ]
   },
   "BOOM2": {
    "category": "effect",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_1.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_2.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_3.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_4.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_5.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_6.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_7.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_8.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_9.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_10.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_11.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_12.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_13.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_14.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_15.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_16.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_17.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_18.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_19.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_20.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_21.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_22.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_23.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_24.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_25.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_26.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_27.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_28.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_29.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_30.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_31.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_32.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_33.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_34.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_35.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM2_36.png"
+    "assets/art/effect/BOOM2_1.png",
+    "assets/art/effect/BOOM2_2.png",
+    "assets/art/effect/BOOM2_3.png",
+    "assets/art/effect/BOOM2_4.png",
+    "assets/art/effect/BOOM2_5.png",
+    "assets/art/effect/BOOM2_6.png",
+    "assets/art/effect/BOOM2_7.png",
+    "assets/art/effect/BOOM2_8.png",
+    "assets/art/effect/BOOM2_9.png",
+    "assets/art/effect/BOOM2_10.png",
+    "assets/art/effect/BOOM2_11.png",
+    "assets/art/effect/BOOM2_12.png",
+    "assets/art/effect/BOOM2_13.png",
+    "assets/art/effect/BOOM2_14.png",
+    "assets/art/effect/BOOM2_15.png",
+    "assets/art/effect/BOOM2_16.png",
+    "assets/art/effect/BOOM2_17.png",
+    "assets/art/effect/BOOM2_18.png",
+    "assets/art/effect/BOOM2_19.png",
+    "assets/art/effect/BOOM2_20.png",
+    "assets/art/effect/BOOM2_21.png",
+    "assets/art/effect/BOOM2_22.png",
+    "assets/art/effect/BOOM2_23.png",
+    "assets/art/effect/BOOM2_24.png",
+    "assets/art/effect/BOOM2_25.png",
+    "assets/art/effect/BOOM2_26.png",
+    "assets/art/effect/BOOM2_27.png",
+    "assets/art/effect/BOOM2_28.png",
+    "assets/art/effect/BOOM2_29.png",
+    "assets/art/effect/BOOM2_30.png",
+    "assets/art/effect/BOOM2_31.png",
+    "assets/art/effect/BOOM2_32.png",
+    "assets/art/effect/BOOM2_33.png",
+    "assets/art/effect/BOOM2_34.png",
+    "assets/art/effect/BOOM2_35.png",
+    "assets/art/effect/BOOM2_36.png"
    ]
   },
   "BOOM3": {
    "category": "effect",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM3_1.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM3_2.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM3_3.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM3_4.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM3_5.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM3_6.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM3_7.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM3_8.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM3_9.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM3_10.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM3_11.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM3_12.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM3_13.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM3_14.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM3_15.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM3_16.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM3_17.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM3_18.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM3_19.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM3_20.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM3_21.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM3_22.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM3_23.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM3_24.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM3_25.png"
+    "assets/art/effect/BOOM3_1.png",
+    "assets/art/effect/BOOM3_2.png",
+    "assets/art/effect/BOOM3_3.png",
+    "assets/art/effect/BOOM3_4.png",
+    "assets/art/effect/BOOM3_5.png",
+    "assets/art/effect/BOOM3_6.png",
+    "assets/art/effect/BOOM3_7.png",
+    "assets/art/effect/BOOM3_8.png",
+    "assets/art/effect/BOOM3_9.png",
+    "assets/art/effect/BOOM3_10.png",
+    "assets/art/effect/BOOM3_11.png",
+    "assets/art/effect/BOOM3_12.png",
+    "assets/art/effect/BOOM3_13.png",
+    "assets/art/effect/BOOM3_14.png",
+    "assets/art/effect/BOOM3_15.png",
+    "assets/art/effect/BOOM3_16.png",
+    "assets/art/effect/BOOM3_17.png",
+    "assets/art/effect/BOOM3_18.png",
+    "assets/art/effect/BOOM3_19.png",
+    "assets/art/effect/BOOM3_20.png",
+    "assets/art/effect/BOOM3_21.png",
+    "assets/art/effect/BOOM3_22.png",
+    "assets/art/effect/BOOM3_23.png",
+    "assets/art/effect/BOOM3_24.png",
+    "assets/art/effect/BOOM3_25.png"
    ]
   },
   "BOOM_DARK": {
    "category": "effect",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_DARK_1.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_DARK_2.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_DARK_3.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_DARK_4.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_DARK_5.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_DARK_6.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_DARK_7.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_DARK_8.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_DARK_9.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_DARK_10.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_DARK_11.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_DARK_12.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_DARK_13.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_DARK_14.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_DARK_15.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_DARK_16.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_DARK_17.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_DARK_18.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_DARK_19.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_DARK_20.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_DARK_21.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_DARK_22.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_DARK_23.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_DARK_24.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_DARK_25.png"
+    "assets/art/effect/BOOM_DARK_1.png",
+    "assets/art/effect/BOOM_DARK_2.png",
+    "assets/art/effect/BOOM_DARK_3.png",
+    "assets/art/effect/BOOM_DARK_4.png",
+    "assets/art/effect/BOOM_DARK_5.png",
+    "assets/art/effect/BOOM_DARK_6.png",
+    "assets/art/effect/BOOM_DARK_7.png",
+    "assets/art/effect/BOOM_DARK_8.png",
+    "assets/art/effect/BOOM_DARK_9.png",
+    "assets/art/effect/BOOM_DARK_10.png",
+    "assets/art/effect/BOOM_DARK_11.png",
+    "assets/art/effect/BOOM_DARK_12.png",
+    "assets/art/effect/BOOM_DARK_13.png",
+    "assets/art/effect/BOOM_DARK_14.png",
+    "assets/art/effect/BOOM_DARK_15.png",
+    "assets/art/effect/BOOM_DARK_16.png",
+    "assets/art/effect/BOOM_DARK_17.png",
+    "assets/art/effect/BOOM_DARK_18.png",
+    "assets/art/effect/BOOM_DARK_19.png",
+    "assets/art/effect/BOOM_DARK_20.png",
+    "assets/art/effect/BOOM_DARK_21.png",
+    "assets/art/effect/BOOM_DARK_22.png",
+    "assets/art/effect/BOOM_DARK_23.png",
+    "assets/art/effect/BOOM_DARK_24.png",
+    "assets/art/effect/BOOM_DARK_25.png"
    ]
   },
   "BOOM_HEAL": {
    "category": "effect",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL_1.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL_2.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL_3.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL_4.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL_5.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL_6.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL_7.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL_8.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL_9.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL_10.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL_11.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL_12.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL_13.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL_14.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL_15.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL_16.png"
+    "assets/art/effect/BOOM_HEAL_1.png",
+    "assets/art/effect/BOOM_HEAL_2.png",
+    "assets/art/effect/BOOM_HEAL_3.png",
+    "assets/art/effect/BOOM_HEAL_4.png",
+    "assets/art/effect/BOOM_HEAL_5.png",
+    "assets/art/effect/BOOM_HEAL_6.png",
+    "assets/art/effect/BOOM_HEAL_7.png",
+    "assets/art/effect/BOOM_HEAL_8.png",
+    "assets/art/effect/BOOM_HEAL_9.png",
+    "assets/art/effect/BOOM_HEAL_10.png",
+    "assets/art/effect/BOOM_HEAL_11.png",
+    "assets/art/effect/BOOM_HEAL_12.png",
+    "assets/art/effect/BOOM_HEAL_13.png",
+    "assets/art/effect/BOOM_HEAL_14.png",
+    "assets/art/effect/BOOM_HEAL_15.png",
+    "assets/art/effect/BOOM_HEAL_16.png"
    ]
   },
   "BOOM_HEAL2": {
    "category": "effect",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL2_1.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL2_2.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL2_3.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL2_4.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL2_5.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL2_6.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL2_7.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL2_8.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL2_9.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL2_10.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL2_11.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL2_12.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL2_13.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL2_14.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL2_15.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL2_16.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL2_17.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL2_18.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL2_19.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL2_20.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL2_21.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL2_22.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL2_23.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL2_24.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_HEAL2_25.png"
+    "assets/art/effect/BOOM_HEAL2_1.png",
+    "assets/art/effect/BOOM_HEAL2_2.png",
+    "assets/art/effect/BOOM_HEAL2_3.png",
+    "assets/art/effect/BOOM_HEAL2_4.png",
+    "assets/art/effect/BOOM_HEAL2_5.png",
+    "assets/art/effect/BOOM_HEAL2_6.png",
+    "assets/art/effect/BOOM_HEAL2_7.png",
+    "assets/art/effect/BOOM_HEAL2_8.png",
+    "assets/art/effect/BOOM_HEAL2_9.png",
+    "assets/art/effect/BOOM_HEAL2_10.png",
+    "assets/art/effect/BOOM_HEAL2_11.png",
+    "assets/art/effect/BOOM_HEAL2_12.png",
+    "assets/art/effect/BOOM_HEAL2_13.png",
+    "assets/art/effect/BOOM_HEAL2_14.png",
+    "assets/art/effect/BOOM_HEAL2_15.png",
+    "assets/art/effect/BOOM_HEAL2_16.png",
+    "assets/art/effect/BOOM_HEAL2_17.png",
+    "assets/art/effect/BOOM_HEAL2_18.png",
+    "assets/art/effect/BOOM_HEAL2_19.png",
+    "assets/art/effect/BOOM_HEAL2_20.png",
+    "assets/art/effect/BOOM_HEAL2_21.png",
+    "assets/art/effect/BOOM_HEAL2_22.png",
+    "assets/art/effect/BOOM_HEAL2_23.png",
+    "assets/art/effect/BOOM_HEAL2_24.png",
+    "assets/art/effect/BOOM_HEAL2_25.png"
    ]
   },
   "BOOM_POWERUP": {
    "category": "effect",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_POWERUP_1.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_POWERUP_2.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_POWERUP_3.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_POWERUP_4.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_POWERUP_5.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_POWERUP_6.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_POWERUP_7.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_POWERUP_8.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_POWERUP_9.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_POWERUP_10.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_POWERUP_11.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_POWERUP_12.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_POWERUP_13.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_POWERUP_14.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_POWERUP_15.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_POWERUP_16.png"
+    "assets/art/effect/BOOM_POWERUP_1.png",
+    "assets/art/effect/BOOM_POWERUP_2.png",
+    "assets/art/effect/BOOM_POWERUP_3.png",
+    "assets/art/effect/BOOM_POWERUP_4.png",
+    "assets/art/effect/BOOM_POWERUP_5.png",
+    "assets/art/effect/BOOM_POWERUP_6.png",
+    "assets/art/effect/BOOM_POWERUP_7.png",
+    "assets/art/effect/BOOM_POWERUP_8.png",
+    "assets/art/effect/BOOM_POWERUP_9.png",
+    "assets/art/effect/BOOM_POWERUP_10.png",
+    "assets/art/effect/BOOM_POWERUP_11.png",
+    "assets/art/effect/BOOM_POWERUP_12.png",
+    "assets/art/effect/BOOM_POWERUP_13.png",
+    "assets/art/effect/BOOM_POWERUP_14.png",
+    "assets/art/effect/BOOM_POWERUP_15.png",
+    "assets/art/effect/BOOM_POWERUP_16.png"
    ]
   },
   "BOOM_RED": {
    "category": "effect",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_RED_1.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_RED_2.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_RED_3.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_RED_4.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_RED_5.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_RED_6.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_RED_7.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_RED_8.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_RED_9.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_RED_10.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_RED_11.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_RED_12.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_RED_13.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_RED_14.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_RED_15.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_RED_16.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_RED_17.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_RED_18.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_RED_19.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_RED_20.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_RED_21.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_RED_22.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_RED_23.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_RED_24.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_RED_25.png"
+    "assets/art/effect/BOOM_RED_1.png",
+    "assets/art/effect/BOOM_RED_2.png",
+    "assets/art/effect/BOOM_RED_3.png",
+    "assets/art/effect/BOOM_RED_4.png",
+    "assets/art/effect/BOOM_RED_5.png",
+    "assets/art/effect/BOOM_RED_6.png",
+    "assets/art/effect/BOOM_RED_7.png",
+    "assets/art/effect/BOOM_RED_8.png",
+    "assets/art/effect/BOOM_RED_9.png",
+    "assets/art/effect/BOOM_RED_10.png",
+    "assets/art/effect/BOOM_RED_11.png",
+    "assets/art/effect/BOOM_RED_12.png",
+    "assets/art/effect/BOOM_RED_13.png",
+    "assets/art/effect/BOOM_RED_14.png",
+    "assets/art/effect/BOOM_RED_15.png",
+    "assets/art/effect/BOOM_RED_16.png",
+    "assets/art/effect/BOOM_RED_17.png",
+    "assets/art/effect/BOOM_RED_18.png",
+    "assets/art/effect/BOOM_RED_19.png",
+    "assets/art/effect/BOOM_RED_20.png",
+    "assets/art/effect/BOOM_RED_21.png",
+    "assets/art/effect/BOOM_RED_22.png",
+    "assets/art/effect/BOOM_RED_23.png",
+    "assets/art/effect/BOOM_RED_24.png",
+    "assets/art/effect/BOOM_RED_25.png"
    ]
   },
   "BOOM_SHIELD": {
    "category": "effect",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SHIELD_1.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SHIELD_2.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SHIELD_3.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SHIELD_4.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SHIELD_5.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SHIELD_6.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SHIELD_7.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SHIELD_8.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SHIELD_9.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SHIELD_10.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SHIELD_11.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SHIELD_12.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SHIELD_13.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SHIELD_14.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SHIELD_15.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SHIELD_16.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SHIELD_17.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SHIELD_18.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SHIELD_19.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SHIELD_20.png"
+    "assets/art/effect/BOOM_SHIELD_1.png",
+    "assets/art/effect/BOOM_SHIELD_2.png",
+    "assets/art/effect/BOOM_SHIELD_3.png",
+    "assets/art/effect/BOOM_SHIELD_4.png",
+    "assets/art/effect/BOOM_SHIELD_5.png",
+    "assets/art/effect/BOOM_SHIELD_6.png",
+    "assets/art/effect/BOOM_SHIELD_7.png",
+    "assets/art/effect/BOOM_SHIELD_8.png",
+    "assets/art/effect/BOOM_SHIELD_9.png",
+    "assets/art/effect/BOOM_SHIELD_10.png",
+    "assets/art/effect/BOOM_SHIELD_11.png",
+    "assets/art/effect/BOOM_SHIELD_12.png",
+    "assets/art/effect/BOOM_SHIELD_13.png",
+    "assets/art/effect/BOOM_SHIELD_14.png",
+    "assets/art/effect/BOOM_SHIELD_15.png",
+    "assets/art/effect/BOOM_SHIELD_16.png",
+    "assets/art/effect/BOOM_SHIELD_17.png",
+    "assets/art/effect/BOOM_SHIELD_18.png",
+    "assets/art/effect/BOOM_SHIELD_19.png",
+    "assets/art/effect/BOOM_SHIELD_20.png"
    ]
   },
   "BOOM_SLASH": {
    "category": "effect",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH_1.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH_2.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH_3.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH_4.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH_5.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH_6.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH_7.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH_8.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH_9.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH_10.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH_11.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH_12.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH_13.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH_14.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH_15.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH_16.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH_17.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH_18.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH_19.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH_20.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH_21.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH_22.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH_23.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH_24.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH_25.png"
+    "assets/art/effect/BOOM_SLASH_1.png",
+    "assets/art/effect/BOOM_SLASH_2.png",
+    "assets/art/effect/BOOM_SLASH_3.png",
+    "assets/art/effect/BOOM_SLASH_4.png",
+    "assets/art/effect/BOOM_SLASH_5.png",
+    "assets/art/effect/BOOM_SLASH_6.png",
+    "assets/art/effect/BOOM_SLASH_7.png",
+    "assets/art/effect/BOOM_SLASH_8.png",
+    "assets/art/effect/BOOM_SLASH_9.png",
+    "assets/art/effect/BOOM_SLASH_10.png",
+    "assets/art/effect/BOOM_SLASH_11.png",
+    "assets/art/effect/BOOM_SLASH_12.png",
+    "assets/art/effect/BOOM_SLASH_13.png",
+    "assets/art/effect/BOOM_SLASH_14.png",
+    "assets/art/effect/BOOM_SLASH_15.png",
+    "assets/art/effect/BOOM_SLASH_16.png",
+    "assets/art/effect/BOOM_SLASH_17.png",
+    "assets/art/effect/BOOM_SLASH_18.png",
+    "assets/art/effect/BOOM_SLASH_19.png",
+    "assets/art/effect/BOOM_SLASH_20.png",
+    "assets/art/effect/BOOM_SLASH_21.png",
+    "assets/art/effect/BOOM_SLASH_22.png",
+    "assets/art/effect/BOOM_SLASH_23.png",
+    "assets/art/effect/BOOM_SLASH_24.png",
+    "assets/art/effect/BOOM_SLASH_25.png"
    ]
   },
   "BOOM_SLASH2": {
    "category": "effect",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH2_1.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH2_2.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH2_3.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH2_4.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH2_5.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH2_6.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH2_7.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH2_8.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH2_9.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH2_10.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH2_11.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH2_12.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH2_13.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH2_14.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH2_15.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH2_16.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH2_17.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH2_18.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH2_19.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH2_20.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH2_21.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH2_22.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH2_23.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH2_24.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASH2_25.png"
+    "assets/art/effect/BOOM_SLASH2_1.png",
+    "assets/art/effect/BOOM_SLASH2_2.png",
+    "assets/art/effect/BOOM_SLASH2_3.png",
+    "assets/art/effect/BOOM_SLASH2_4.png",
+    "assets/art/effect/BOOM_SLASH2_5.png",
+    "assets/art/effect/BOOM_SLASH2_6.png",
+    "assets/art/effect/BOOM_SLASH2_7.png",
+    "assets/art/effect/BOOM_SLASH2_8.png",
+    "assets/art/effect/BOOM_SLASH2_9.png",
+    "assets/art/effect/BOOM_SLASH2_10.png",
+    "assets/art/effect/BOOM_SLASH2_11.png",
+    "assets/art/effect/BOOM_SLASH2_12.png",
+    "assets/art/effect/BOOM_SLASH2_13.png",
+    "assets/art/effect/BOOM_SLASH2_14.png",
+    "assets/art/effect/BOOM_SLASH2_15.png",
+    "assets/art/effect/BOOM_SLASH2_16.png",
+    "assets/art/effect/BOOM_SLASH2_17.png",
+    "assets/art/effect/BOOM_SLASH2_18.png",
+    "assets/art/effect/BOOM_SLASH2_19.png",
+    "assets/art/effect/BOOM_SLASH2_20.png",
+    "assets/art/effect/BOOM_SLASH2_21.png",
+    "assets/art/effect/BOOM_SLASH2_22.png",
+    "assets/art/effect/BOOM_SLASH2_23.png",
+    "assets/art/effect/BOOM_SLASH2_24.png",
+    "assets/art/effect/BOOM_SLASH2_25.png"
    ]
   },
   "BOOM_SLASHBLUE": {
    "category": "effect",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHBLUE_1.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHBLUE_2.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHBLUE_3.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHBLUE_4.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHBLUE_5.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHBLUE_6.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHBLUE_7.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHBLUE_8.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHBLUE_9.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHBLUE_10.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHBLUE_11.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHBLUE_12.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHBLUE_13.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHBLUE_14.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHBLUE_15.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHBLUE_16.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHBLUE_17.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHBLUE_18.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHBLUE_19.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHBLUE_20.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHBLUE_21.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHBLUE_22.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHBLUE_23.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHBLUE_24.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHBLUE_25.png"
+    "assets/art/effect/BOOM_SLASHBLUE_1.png",
+    "assets/art/effect/BOOM_SLASHBLUE_2.png",
+    "assets/art/effect/BOOM_SLASHBLUE_3.png",
+    "assets/art/effect/BOOM_SLASHBLUE_4.png",
+    "assets/art/effect/BOOM_SLASHBLUE_5.png",
+    "assets/art/effect/BOOM_SLASHBLUE_6.png",
+    "assets/art/effect/BOOM_SLASHBLUE_7.png",
+    "assets/art/effect/BOOM_SLASHBLUE_8.png",
+    "assets/art/effect/BOOM_SLASHBLUE_9.png",
+    "assets/art/effect/BOOM_SLASHBLUE_10.png",
+    "assets/art/effect/BOOM_SLASHBLUE_11.png",
+    "assets/art/effect/BOOM_SLASHBLUE_12.png",
+    "assets/art/effect/BOOM_SLASHBLUE_13.png",
+    "assets/art/effect/BOOM_SLASHBLUE_14.png",
+    "assets/art/effect/BOOM_SLASHBLUE_15.png",
+    "assets/art/effect/BOOM_SLASHBLUE_16.png",
+    "assets/art/effect/BOOM_SLASHBLUE_17.png",
+    "assets/art/effect/BOOM_SLASHBLUE_18.png",
+    "assets/art/effect/BOOM_SLASHBLUE_19.png",
+    "assets/art/effect/BOOM_SLASHBLUE_20.png",
+    "assets/art/effect/BOOM_SLASHBLUE_21.png",
+    "assets/art/effect/BOOM_SLASHBLUE_22.png",
+    "assets/art/effect/BOOM_SLASHBLUE_23.png",
+    "assets/art/effect/BOOM_SLASHBLUE_24.png",
+    "assets/art/effect/BOOM_SLASHBLUE_25.png"
    ]
   },
   "BOOM_SLASHGREEN": {
    "category": "effect",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHGREEN_1.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHGREEN_2.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHGREEN_3.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHGREEN_4.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHGREEN_5.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHGREEN_6.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHGREEN_7.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHGREEN_8.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHGREEN_9.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHGREEN_10.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHGREEN_11.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHGREEN_12.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHGREEN_13.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHGREEN_14.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHGREEN_15.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHGREEN_16.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHGREEN_17.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHGREEN_18.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHGREEN_19.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHGREEN_20.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHGREEN_21.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHGREEN_22.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHGREEN_23.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHGREEN_24.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHGREEN_25.png"
+    "assets/art/effect/BOOM_SLASHGREEN_1.png",
+    "assets/art/effect/BOOM_SLASHGREEN_2.png",
+    "assets/art/effect/BOOM_SLASHGREEN_3.png",
+    "assets/art/effect/BOOM_SLASHGREEN_4.png",
+    "assets/art/effect/BOOM_SLASHGREEN_5.png",
+    "assets/art/effect/BOOM_SLASHGREEN_6.png",
+    "assets/art/effect/BOOM_SLASHGREEN_7.png",
+    "assets/art/effect/BOOM_SLASHGREEN_8.png",
+    "assets/art/effect/BOOM_SLASHGREEN_9.png",
+    "assets/art/effect/BOOM_SLASHGREEN_10.png",
+    "assets/art/effect/BOOM_SLASHGREEN_11.png",
+    "assets/art/effect/BOOM_SLASHGREEN_12.png",
+    "assets/art/effect/BOOM_SLASHGREEN_13.png",
+    "assets/art/effect/BOOM_SLASHGREEN_14.png",
+    "assets/art/effect/BOOM_SLASHGREEN_15.png",
+    "assets/art/effect/BOOM_SLASHGREEN_16.png",
+    "assets/art/effect/BOOM_SLASHGREEN_17.png",
+    "assets/art/effect/BOOM_SLASHGREEN_18.png",
+    "assets/art/effect/BOOM_SLASHGREEN_19.png",
+    "assets/art/effect/BOOM_SLASHGREEN_20.png",
+    "assets/art/effect/BOOM_SLASHGREEN_21.png",
+    "assets/art/effect/BOOM_SLASHGREEN_22.png",
+    "assets/art/effect/BOOM_SLASHGREEN_23.png",
+    "assets/art/effect/BOOM_SLASHGREEN_24.png",
+    "assets/art/effect/BOOM_SLASHGREEN_25.png"
    ]
   },
   "BOOM_SLASHORANGE": {
    "category": "effect",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHORANGE_1.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHORANGE_2.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHORANGE_3.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHORANGE_4.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHORANGE_5.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHORANGE_6.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHORANGE_7.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHORANGE_8.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHORANGE_9.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHORANGE_10.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHORANGE_11.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHORANGE_12.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHORANGE_13.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHORANGE_14.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHORANGE_15.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHORANGE_16.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHORANGE_17.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHORANGE_18.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHORANGE_19.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHORANGE_20.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHORANGE_21.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHORANGE_22.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHORANGE_23.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHORANGE_24.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHORANGE_25.png"
+    "assets/art/effect/BOOM_SLASHORANGE_1.png",
+    "assets/art/effect/BOOM_SLASHORANGE_2.png",
+    "assets/art/effect/BOOM_SLASHORANGE_3.png",
+    "assets/art/effect/BOOM_SLASHORANGE_4.png",
+    "assets/art/effect/BOOM_SLASHORANGE_5.png",
+    "assets/art/effect/BOOM_SLASHORANGE_6.png",
+    "assets/art/effect/BOOM_SLASHORANGE_7.png",
+    "assets/art/effect/BOOM_SLASHORANGE_8.png",
+    "assets/art/effect/BOOM_SLASHORANGE_9.png",
+    "assets/art/effect/BOOM_SLASHORANGE_10.png",
+    "assets/art/effect/BOOM_SLASHORANGE_11.png",
+    "assets/art/effect/BOOM_SLASHORANGE_12.png",
+    "assets/art/effect/BOOM_SLASHORANGE_13.png",
+    "assets/art/effect/BOOM_SLASHORANGE_14.png",
+    "assets/art/effect/BOOM_SLASHORANGE_15.png",
+    "assets/art/effect/BOOM_SLASHORANGE_16.png",
+    "assets/art/effect/BOOM_SLASHORANGE_17.png",
+    "assets/art/effect/BOOM_SLASHORANGE_18.png",
+    "assets/art/effect/BOOM_SLASHORANGE_19.png",
+    "assets/art/effect/BOOM_SLASHORANGE_20.png",
+    "assets/art/effect/BOOM_SLASHORANGE_21.png",
+    "assets/art/effect/BOOM_SLASHORANGE_22.png",
+    "assets/art/effect/BOOM_SLASHORANGE_23.png",
+    "assets/art/effect/BOOM_SLASHORANGE_24.png",
+    "assets/art/effect/BOOM_SLASHORANGE_25.png"
    ]
   },
   "BOOM_SLASHRED": {
    "category": "effect",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHRED_1.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHRED_2.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHRED_3.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHRED_4.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHRED_5.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHRED_6.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHRED_7.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHRED_8.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHRED_9.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHRED_10.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHRED_11.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHRED_12.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHRED_13.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHRED_14.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHRED_15.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHRED_16.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHRED_17.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHRED_18.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHRED_19.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHRED_20.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHRED_21.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHRED_22.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHRED_23.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHRED_24.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SLASHRED_25.png"
+    "assets/art/effect/BOOM_SLASHRED_1.png",
+    "assets/art/effect/BOOM_SLASHRED_2.png",
+    "assets/art/effect/BOOM_SLASHRED_3.png",
+    "assets/art/effect/BOOM_SLASHRED_4.png",
+    "assets/art/effect/BOOM_SLASHRED_5.png",
+    "assets/art/effect/BOOM_SLASHRED_6.png",
+    "assets/art/effect/BOOM_SLASHRED_7.png",
+    "assets/art/effect/BOOM_SLASHRED_8.png",
+    "assets/art/effect/BOOM_SLASHRED_9.png",
+    "assets/art/effect/BOOM_SLASHRED_10.png",
+    "assets/art/effect/BOOM_SLASHRED_11.png",
+    "assets/art/effect/BOOM_SLASHRED_12.png",
+    "assets/art/effect/BOOM_SLASHRED_13.png",
+    "assets/art/effect/BOOM_SLASHRED_14.png",
+    "assets/art/effect/BOOM_SLASHRED_15.png",
+    "assets/art/effect/BOOM_SLASHRED_16.png",
+    "assets/art/effect/BOOM_SLASHRED_17.png",
+    "assets/art/effect/BOOM_SLASHRED_18.png",
+    "assets/art/effect/BOOM_SLASHRED_19.png",
+    "assets/art/effect/BOOM_SLASHRED_20.png",
+    "assets/art/effect/BOOM_SLASHRED_21.png",
+    "assets/art/effect/BOOM_SLASHRED_22.png",
+    "assets/art/effect/BOOM_SLASHRED_23.png",
+    "assets/art/effect/BOOM_SLASHRED_24.png",
+    "assets/art/effect/BOOM_SLASHRED_25.png"
    ]
   },
   "BOOM_SPARK": {
    "category": "effect",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARK_1.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARK_2.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARK_3.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARK_4.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARK_5.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARK_6.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARK_7.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARK_8.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARK_9.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARK_10.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARK_11.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARK_12.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARK_13.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARK_14.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARK_15.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARK_16.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARK_17.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARK_18.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARK_19.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARK_20.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARK_21.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARK_22.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARK_23.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARK_24.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARK_25.png"
+    "assets/art/effect/BOOM_SPARK_1.png",
+    "assets/art/effect/BOOM_SPARK_2.png",
+    "assets/art/effect/BOOM_SPARK_3.png",
+    "assets/art/effect/BOOM_SPARK_4.png",
+    "assets/art/effect/BOOM_SPARK_5.png",
+    "assets/art/effect/BOOM_SPARK_6.png",
+    "assets/art/effect/BOOM_SPARK_7.png",
+    "assets/art/effect/BOOM_SPARK_8.png",
+    "assets/art/effect/BOOM_SPARK_9.png",
+    "assets/art/effect/BOOM_SPARK_10.png",
+    "assets/art/effect/BOOM_SPARK_11.png",
+    "assets/art/effect/BOOM_SPARK_12.png",
+    "assets/art/effect/BOOM_SPARK_13.png",
+    "assets/art/effect/BOOM_SPARK_14.png",
+    "assets/art/effect/BOOM_SPARK_15.png",
+    "assets/art/effect/BOOM_SPARK_16.png",
+    "assets/art/effect/BOOM_SPARK_17.png",
+    "assets/art/effect/BOOM_SPARK_18.png",
+    "assets/art/effect/BOOM_SPARK_19.png",
+    "assets/art/effect/BOOM_SPARK_20.png",
+    "assets/art/effect/BOOM_SPARK_21.png",
+    "assets/art/effect/BOOM_SPARK_22.png",
+    "assets/art/effect/BOOM_SPARK_23.png",
+    "assets/art/effect/BOOM_SPARK_24.png",
+    "assets/art/effect/BOOM_SPARK_25.png"
    ]
   },
   "BOOM_SPARKBLUE": {
    "category": "effect",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARKBLUE_1.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARKBLUE_2.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARKBLUE_3.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARKBLUE_4.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARKBLUE_5.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARKBLUE_6.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARKBLUE_7.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARKBLUE_8.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARKBLUE_9.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARKBLUE_10.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARKBLUE_11.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARKBLUE_12.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARKBLUE_13.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARKBLUE_14.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARKBLUE_15.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARKBLUE_16.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARKBLUE_17.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARKBLUE_18.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARKBLUE_19.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARKBLUE_20.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARKBLUE_21.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARKBLUE_22.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARKBLUE_23.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARKBLUE_24.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/effect/BOOM_SPARKBLUE_25.png"
+    "assets/art/effect/BOOM_SPARKBLUE_1.png",
+    "assets/art/effect/BOOM_SPARKBLUE_2.png",
+    "assets/art/effect/BOOM_SPARKBLUE_3.png",
+    "assets/art/effect/BOOM_SPARKBLUE_4.png",
+    "assets/art/effect/BOOM_SPARKBLUE_5.png",
+    "assets/art/effect/BOOM_SPARKBLUE_6.png",
+    "assets/art/effect/BOOM_SPARKBLUE_7.png",
+    "assets/art/effect/BOOM_SPARKBLUE_8.png",
+    "assets/art/effect/BOOM_SPARKBLUE_9.png",
+    "assets/art/effect/BOOM_SPARKBLUE_10.png",
+    "assets/art/effect/BOOM_SPARKBLUE_11.png",
+    "assets/art/effect/BOOM_SPARKBLUE_12.png",
+    "assets/art/effect/BOOM_SPARKBLUE_13.png",
+    "assets/art/effect/BOOM_SPARKBLUE_14.png",
+    "assets/art/effect/BOOM_SPARKBLUE_15.png",
+    "assets/art/effect/BOOM_SPARKBLUE_16.png",
+    "assets/art/effect/BOOM_SPARKBLUE_17.png",
+    "assets/art/effect/BOOM_SPARKBLUE_18.png",
+    "assets/art/effect/BOOM_SPARKBLUE_19.png",
+    "assets/art/effect/BOOM_SPARKBLUE_20.png",
+    "assets/art/effect/BOOM_SPARKBLUE_21.png",
+    "assets/art/effect/BOOM_SPARKBLUE_22.png",
+    "assets/art/effect/BOOM_SPARKBLUE_23.png",
+    "assets/art/effect/BOOM_SPARKBLUE_24.png",
+    "assets/art/effect/BOOM_SPARKBLUE_25.png"
    ]
   },
   "Blessing of Light": {
    "category": "icon",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/icon/Blessing_of_Light.png"
+    "assets/art/icon/Blessing_of_Light.png"
    ]
   },
   "Block": {
    "category": "icon",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/icon/Block.png"
+    "assets/art/icon/Block.png"
    ]
   },
   "Blood Focus": {
    "category": "icon",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/icon/Blood_Focus.png"
+    "assets/art/icon/Blood_Focus.png"
    ]
   },
   "Blood Strike": {
    "category": "icon",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/icon/Blood_Strike.png"
+    "assets/art/icon/Blood_Strike.png"
    ]
   },
   "Break": {
    "category": "icon",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/icon/Break.png"
+    "assets/art/icon/Break.png"
    ]
   },
   "Cell Reformation": {
    "category": "icon",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/icon/Cell_Reformation.png"
+    "assets/art/icon/Cell_Reformation.png"
    ]
   },
   "Coup De Grace": {
    "category": "icon",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/icon/Coup_De_Grace.png"
+    "assets/art/icon/Coup_De_Grace.png"
    ]
   },
   "Cripple": {
    "category": "icon",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/icon/Cripple.png"
+    "assets/art/icon/Cripple.png"
    ]
   },
   "Disrupt": {
    "category": "icon",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/icon/Disrupt.png"
+    "assets/art/icon/Disrupt.png"
    ]
   },
   "Electro Bolt": {
    "category": "icon",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/icon/Electro_Bolt.png"
+    "assets/art/icon/Electro_Bolt.png"
    ]
   },
   "Flame Blast": {
    "category": "icon",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/icon/Flame_Blast.png"
+    "assets/art/icon/Flame_Blast.png"
    ]
   },
   "Flame Strike": {
    "category": "icon",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/icon/Flame_Strike.png"
+    "assets/art/icon/Flame_Strike.png"
    ]
   },
   "Frost Bolt": {
    "category": "icon",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/icon/Frost_Bolt.png"
+    "assets/art/icon/Frost_Bolt.png"
    ]
   },
   "Healing Light": {
    "category": "icon",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/icon/Healing_Light.png"
+    "assets/art/icon/Healing_Light.png"
    ]
   },
   "Heroic Motivation": {
    "category": "icon",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/icon/Heroic_Motivation.png"
+    "assets/art/icon/Heroic_Motivation.png"
    ]
   },
   "Intervention": {
    "category": "icon",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/icon/Intervention.png"
+    "assets/art/icon/Intervention.png"
    ]
   },
   "Ironskin": {
    "category": "icon",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/icon/Ironskin.png"
+    "assets/art/icon/Ironskin.png"
    ]
   },
   "Magic Bolt": {
    "category": "icon",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/icon/Magic_Bolt.png"
+    "assets/art/icon/Magic_Bolt.png"
    ]
   },
   "Master Strike": {
    "category": "icon",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/icon/Master_Strike.png"
+    "assets/art/icon/Master_Strike.png"
    ]
   },
   "None": {
    "category": "icon",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/icon/None.png"
+    "assets/art/icon/None.png"
    ]
   },
   "Quick Strike": {
    "category": "icon",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/icon/Quick_Strike.png"
+    "assets/art/icon/Quick_Strike.png"
    ]
   },
   "Rage": {
    "category": "icon",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/icon/Rage.png"
+    "assets/art/icon/Rage.png"
    ]
   },
   "Re-Energize": {
    "category": "icon",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/icon/Re-Energize.png"
+    "assets/art/icon/Re-Energize.png"
    ]
   },
   "Shatter Bolt": {
    "category": "icon",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/icon/Shatter_Bolt.png"
+    "assets/art/icon/Shatter_Bolt.png"
    ]
   },
   "Smash": {
    "category": "icon",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/icon/Smash.png"
+    "assets/art/icon/Smash.png"
    ]
   },
   "Strike": {
    "category": "icon",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/icon/Strike.png"
+    "assets/art/icon/Strike.png"
    ]
   },
   "Subversion": {
    "category": "icon",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/icon/Subversion.png"
+    "assets/art/icon/Subversion.png"
    ]
   },
   "Sunder": {
    "category": "icon",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/icon/Sunder.png"
+    "assets/art/icon/Sunder.png"
    ]
   },
   "Suppression": {
    "category": "icon",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/icon/Suppression.png"
+    "assets/art/icon/Suppression.png"
    ]
   },
   "Void": {
    "category": "icon",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/icon/Void.png"
+    "assets/art/icon/Void.png"
    ]
   },
   "Wound": {
    "category": "icon",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/icon/Wound.png"
+    "assets/art/icon/Wound.png"
    ]
   },
   "KrinBuffShower": {
    "category": "ui",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/KrinBuffShower.png"
+    "assets/art/ui/KrinBuffShower.png"
    ]
   },
   "MODEL1": {
    "category": "ui",
    "frames": [
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_1.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_2.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_3.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_4.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_5.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_6.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_7.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_8.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_9.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_10.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_11.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_12.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_13.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_14.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_15.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_16.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_17.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_18.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_19.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_20.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_21.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_22.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_23.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_24.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_25.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_26.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_27.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_28.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_29.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_30.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_31.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_32.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_33.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_34.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_35.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_36.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_37.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_38.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_39.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_40.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_41.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_42.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_43.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_44.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_45.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_46.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_47.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_48.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_49.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_50.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_51.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_52.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_53.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_54.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_55.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_56.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_57.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_58.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_59.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_60.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_61.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_62.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_63.png",
-    "../../../tmp/claude-0/-home-user-NES-Emulator/f353965b-461a-5d9a-b044-06b64e40881d/scratchpad/art/ui/MODEL1_64.png"
+    "assets/art/ui/MODEL1_1.png",
+    "assets/art/ui/MODEL1_2.png",
+    "assets/art/ui/MODEL1_3.png",
+    "assets/art/ui/MODEL1_4.png",
+    "assets/art/ui/MODEL1_5.png",
+    "assets/art/ui/MODEL1_6.png",
+    "assets/art/ui/MODEL1_7.png",
+    "assets/art/ui/MODEL1_8.png",
+    "assets/art/ui/MODEL1_9.png",
+    "assets/art/ui/MODEL1_10.png",
+    "assets/art/ui/MODEL1_11.png",
+    "assets/art/ui/MODEL1_12.png",
+    "assets/art/ui/MODEL1_13.png",
+    "assets/art/ui/MODEL1_14.png",
+    "assets/art/ui/MODEL1_15.png",
+    "assets/art/ui/MODEL1_16.png",
+    "assets/art/ui/MODEL1_17.png",
+    "assets/art/ui/MODEL1_18.png",
+    "assets/art/ui/MODEL1_19.png",
+    "assets/art/ui/MODEL1_20.png",
+    "assets/art/ui/MODEL1_21.png",
+    "assets/art/ui/MODEL1_22.png",
+    "assets/art/ui/MODEL1_23.png",
+    "assets/art/ui/MODEL1_24.png",
+    "assets/art/ui/MODEL1_25.png",
+    "assets/art/ui/MODEL1_26.png",
+    "assets/art/ui/MODEL1_27.png",
+    "assets/art/ui/MODEL1_28.png",
+    "assets/art/ui/MODEL1_29.png",
+    "assets/art/ui/MODEL1_30.png",
+    "assets/art/ui/MODEL1_31.png",
+    "assets/art/ui/MODEL1_32.png",
+    "assets/art/ui/MODEL1_33.png",
+    "assets/art/ui/MODEL1_34.png",
+    "assets/art/ui/MODEL1_35.png",
+    "assets/art/ui/MODEL1_36.png",
+    "assets/art/ui/MODEL1_37.png",
+    "assets/art/ui/MODEL1_38.png",
+    "assets/art/ui/MODEL1_39.png",
+    "assets/art/ui/MODEL1_40.png",
+    "assets/art/ui/MODEL1_41.png",
+    "assets/art/ui/MODEL1_42.png",
+    "assets/art/ui/MODEL1_43.png",
+    "assets/art/ui/MODEL1_44.png",
+    "assets/art/ui/MODEL1_45.png",
+    "assets/art/ui/MODEL1_46.png",
+    "assets/art/ui/MODEL1_47.png",
+    "assets/art/ui/MODEL1_48.png",
+    "assets/art/ui/MODEL1_49.png",
+    "assets/art/ui/MODEL1_50.png",
+    "assets/art/ui/MODEL1_51.png",
+    "assets/art/ui/MODEL1_52.png",
+    "assets/art/ui/MODEL1_53.png",
+    "assets/art/ui/MODEL1_54.png",
+    "assets/art/ui/MODEL1_55.png",
+    "assets/art/ui/MODEL1_56.png",
+    "assets/art/ui/MODEL1_57.png",
+    "assets/art/ui/MODEL1_58.png",
+    "assets/art/ui/MODEL1_59.png",
+    "assets/art/ui/MODEL1_60.png",
+    "assets/art/ui/MODEL1_61.png",
+    "assets/art/ui/MODEL1_62.png",
+    "assets/art/ui/MODEL1_63.png",
+    "assets/art/ui/MODEL1_64.png"
    ]
   }
  },

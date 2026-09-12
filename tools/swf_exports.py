@@ -18,6 +18,9 @@ from swfinfo import read_swf   # noqa: E402
 
 TAG_END = 0
 TAG_SHOW_FRAME = 1
+TAG_PLACE_OBJECT2 = 26
+TAG_PLACE_OBJECT3 = 70
+TAG_DEFINE_SHAPES = (2, 22, 32, 83)
 TAG_DEFINE_SOUND = 14
 TAG_DEFINE_SPRITE = 39
 TAG_FRAME_LABEL = 43
@@ -42,6 +45,18 @@ def walk_tags(body, pos, end=None):
             break
 
 
+def placed_character(body, pos, tag):
+    """The character id a PlaceObject2/3 tag places, if it places one."""
+    flags = body[pos]
+    p = pos + 1
+    if tag == TAG_PLACE_OBJECT3:
+        p += 1
+    p += 2                      # depth
+    if not (flags & 2):         # no character: this is a move, not a place
+        return None
+    return struct.unpack_from('<H', body, p)[0]
+
+
 def sprite_frame_labels(body, pos, length):
     """Label -> frame number inside one DefineSprite.
 
@@ -52,18 +67,27 @@ def sprite_frame_labels(body, pos, length):
     decompiler names exported files.
     """
     labels = {}
+    places = {}
     frame = 1
     pending = []
+    frame_places = []
     for tag, start, tag_len in walk_tags(body, pos + 4, pos + length):
         if tag == TAG_FRAME_LABEL:
             label, _ = read_string(body, start)
             pending.append(label)
+        elif tag in (TAG_PLACE_OBJECT2, TAG_PLACE_OBJECT3):
+            cid = placed_character(body, start, tag)
+            if cid is not None:
+                frame_places.append(cid)
         elif tag == TAG_SHOW_FRAME:
             for label in pending:
                 labels[label] = frame
+            if frame_places:
+                places[frame] = frame_places
             pending = []
+            frame_places = []
             frame += 1
-    return labels
+    return labels, places
 
 
 def read_string(body, pos):
@@ -81,8 +105,9 @@ def main(path):
 
     exports = {}
     root_labels = {}
-    sprites, sounds = [], []
+    sprites, sounds, shapes = [], [], []
     sprite_labels = {}
+    sprite_places = {}
     root_frame = 1
     pending = []
 
@@ -100,11 +125,14 @@ def main(path):
         elif tag == TAG_DEFINE_SPRITE and length >= 4:
             sprite_id = struct.unpack_from('<H', body, start)[0]
             sprites.append(sprite_id)
-            labels = sprite_frame_labels(body, start, length)
+            labels, places = sprite_frame_labels(body, start, length)
             if labels:
                 sprite_labels[sprite_id] = labels
+                sprite_places[sprite_id] = places
         elif tag == TAG_DEFINE_SOUND and length >= 2:
             sounds.append(struct.unpack_from('<H', body, start)[0])
+        elif tag in TAG_DEFINE_SHAPES and length >= 2:
+            shapes.append(struct.unpack_from('<H', body, start)[0])
         elif tag == TAG_FRAME_LABEL and length >= 1:
             label, _ = read_string(body, start)
             pending.append(label)
@@ -114,17 +142,24 @@ def main(path):
             pending = []
             root_frame += 1
 
-    # A flat label -> [(sprite id, frame)] index, since the same label (an
-    # equipment look, an ability icon) appears in several sprites.
+    # A flat label -> [(sprite id, frame, [characters placed on that frame])]
+    # index. The same label (an equipment look, an ability icon) appears in
+    # several sprites, and the characters a labelled frame places matter: a
+    # backdrop frame places one big shape, and that shape on its own is the
+    # art -- rendering the containing frame instead also picks up whatever
+    # persists from earlier frames, which for the battle screen means
+    # design-time unit placeholders the game overwrites at runtime.
     by_label = {}
     for sprite_id, labels in sprite_labels.items():
         for label, frame in labels.items():
-            by_label.setdefault(label, []).append([sprite_id, frame])
+            placed = (sprite_places.get(sprite_id) or {}).get(frame, [])
+            by_label.setdefault(label, []).append([sprite_id, frame, placed])
 
     out = {
         'exports': dict(sorted(exports.items())),
         'sprite_ids': sprites,
         'sound_ids': sounds,
+        'shape_ids': shapes,
         'root_frame_labels': root_labels,
         'sprite_frame_labels': {str(k): v for k, v in sorted(sprite_labels.items())},
         'label_index': dict(sorted(by_label.items())),

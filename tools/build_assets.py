@@ -30,6 +30,11 @@ def load(name, data_dir):
         return json.load(fh)
 
 
+def shape_png(raw, shape_id):
+    path = os.path.join(raw, 'shape_png', '%d.png' % shape_id)
+    return path if os.path.exists(path) else None
+
+
 def sprite_dir(raw, sprite_id):
     matches = glob.glob(os.path.join(raw, 'sprite', 'DefineSprite_%d' % sprite_id))
     matches += glob.glob(os.path.join(raw, 'sprite',
@@ -139,15 +144,41 @@ def main():
             entries = []
 
             if name in by_name:
-                # A whole exported sprite: keep its frames as an animation.
-                frames = frame_files(args.raw, by_name[name])[:args.max_frames]
-                entries = [(f, p) for f, p in frames]
+                # A whole exported character: a sprite keeps its frames as an
+                # animation, a shape is a single picture.
+                cid = by_name[name]
+                frames = frame_files(args.raw, cid)[:args.max_frames]
+                if frames:
+                    entries = [(f, p) for f, p in frames]
+                else:
+                    png = shape_png(args.raw, cid)
+                    if png:
+                        entries = [(1, png)]
             elif name in label_index:
-                # A labelled frame inside a sprite: one still.
-                sprite_id, frame = label_index[name][0]
-                for f, p in frame_files(args.raw, sprite_id):
-                    if f == frame:
-                        entries = [(1, p)]
+                # A labelled frame inside a sprite. Prefer the art the frame
+                # actually places: a backdrop or icon frame places one shape,
+                # and that shape alone is the picture. Rendering the enclosing
+                # frame instead also catches whatever persisted from earlier
+                # frames -- on the battle screen, the design-time unit
+                # placeholders the game overwrites at runtime.
+                for entry in label_index[name]:
+                    sprite_id, frame = entry[0], entry[1]
+                    placed = entry[2] if len(entry) > 2 else []
+                    if len(placed) == 1:
+                        one = placed[0]
+                        png = shape_png(args.raw, one)
+                        if png:
+                            entries = [(1, png)]
+                            break
+                        frames = frame_files(args.raw, one)[:args.max_frames]
+                        if frames:
+                            entries = list(frames)
+                            break
+                    for f, p in frame_files(args.raw, sprite_id):
+                        if f == frame:
+                            entries = [(1, p)]
+                            break
+                    if entries:
                         break
 
             if not entries:

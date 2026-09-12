@@ -13,7 +13,8 @@
 #include <stdarg.h>
 #include <string.h>
 #include "raylib.h"
-#include "../core/battle.h"
+#include "assets.h"
+#include "../core/campaign.h"
 
 #define STAGE_W   800
 #define STAGE_H   575
@@ -27,6 +28,8 @@
 typedef struct {
     Battle    battle;
     Character player;
+    const BattleDef *def;      /* the roster this fight came from */
+    int32_t   anim_tick;
     int32_t ability_ids[ABILITY_SLOTS];
     int32_t selected;          /* ability slot, -1 = none */
     int32_t hovered_unit;
@@ -59,30 +62,38 @@ static void game_init(Game *g, uint64_t seed)
     memset(g, 0, sizeof(*g));
     Battle *b = &g->battle;
 
-    battle_init(b, seed, PLAYER_SLOT);
-
-    /* Sonny: a level 5 Dreadnaught with the starting stat bonus the original
-       hands out (Krin.StatSets0 = [0,5,0,3,0]) and four points spent. */
-    g->player.class_template = unit_template_by_id(1);
+    /* Sonny: a level 5 Dreadnaught who has spent his talent points. */
+    character_new(&g->player, 1);
     g->player.level = 5;
-    g->player.spent[1] = 5 + 2;
-    g->player.spent[3] = 3 + 2;
+    int progress = 1;
+    while (progress && character_unspent_skill_points(&g->player) > 0) {
+        progress = 0;
+        for (int32_t node = 0; node < SONNY_TALENT_COUNT; node++) {
+            if (character_unspent_skill_points(&g->player) <= 0)
+                break;
+            if (character_can_learn(&g->player, node) == TALENT_OK) {
+                character_learn(&g->player, node);
+                progress = 1;
+            }
+        }
+    }
 
-    /* Sonny is human-driven; his ally and the enemies run the game's AI. */
-    battle_place_character(b, PLAYER_SLOT, &g->player, "Sonny", 0);
-    battle_place_enemy(b, 3, unit_template_by_id(5), 5, 1);
-    battle_place_enemy(b, 2, unit_template_by_name("Zombie"), 4, 1);
-    battle_place_enemy(b, 4, unit_template_by_name("ZPCI Assault"), 4, 1);
+    /* The bar holds what he knows, as Krin.moveMatrix2 does. */
+    int32_t known[SONNY_TALENT_MAX + 2];
+    int32_t n = character_known_abilities(&g->player, known,
+                                         SONNY_TALENT_MAX + 2);
+    for (int i = 0; i < ABILITY_SLOTS; i++) {
+        g->ability_ids[i] = (i < n) ? known[i] : 0;
+        if (i < SONNY_MOVE_SLOTS)
+            g->player.move_matrix[i] = g->ability_ids[i];
+    }
 
-    /* The player's bar holds the class's own move list. */
-    const UnitTemplate *t = g->player.class_template;
-    for (int i = 0; i < ABILITY_SLOTS; i++)
-        g->ability_ids[i] = (i < t->moves_a_count) ? t->moves_a[i] : 0;
-
-    battle_team_select(b);
-    b->PrevTeam = b->TeamMove;
-    for (int32_t i = 1; i < SONNY_SLOTS; i++)
-        battle_queue(b, i, i, 0, 0);
+    /* Zone 1's second progress battle: a real roster from the campaign. */
+    Campaign campaign;
+    campaign_new(&campaign, 1);
+    campaign.player = g->player;
+    g->def = battle_def_by_id(3);
+    campaign_setup_battle(&campaign, g->def, b, seed);
 
     g->selected = -1;
     g->hovered_unit = -1;
@@ -145,7 +156,7 @@ static void draw_unit(const Game *g, int32_t slot)
                 : is_target ? (Color){120, 200, 255, 255}
                             : (Color){70, 74, 86, 255};
 
-    DrawRectangleRec(r, (Color){38, 42, 52, u->active ? 255 : 110});
+    DrawRectangleRec(r, (Color){38, 42, 52, u->active ? 220 : 110});
     DrawRectangleLinesEx(r, (is_acting || is_target) ? 2.0f : 1.0f, frame);
 
     DrawText(u->name, (int)r.x + 6, (int)r.y + 5, 10,
@@ -165,11 +176,18 @@ static void draw_unit(const Game *g, int32_t slot)
             continue;
         const BuffDef *def = buff_find(SONNY_BUFFS, SONNY_BUFF_COUNT,
                                        u->BUFFARRAYK[i].buffId);
-        Color c = def && def->change[1] < 0 ? (Color){175, 80, 80, 255}
-                                            : (Color){110, 165, 110, 255};
-        DrawRectangle((int)r.x + 6 + shown * 18, (int)r.y + 52, 16, 14, c);
-        DrawText(TextFormat("%d", u->BUFFARRAYK[i].CD),
-                 (int)r.x + 9 + shown * 18, (int)r.y + 54, 10, RAYWHITE);
+        Rectangle box = {r.x + 6 + shown * 18, r.y + 52, 16, 14};
+        /* Buff icons are named by the buff key. The permanent passive buffs
+           have no icon frame in the original either, so those fall back to a
+           coloured block. */
+        if (!asset_draw_fit(u->BUFFARRAYK[i].buffId, 1, box, WHITE)) {
+            Color c = def && def->change[1] < 0 ? (Color){175, 80, 80, 255}
+                                                : (Color){110, 165, 110, 255};
+            DrawRectangleRec(box, c);
+        }
+        if (u->BUFFARRAYK[i].CD > 0)
+            DrawText(TextFormat("%d", u->BUFFARRAYK[i].CD),
+                     (int)box.x + 3, (int)box.y + 2, 10, RAYWHITE);
         shown++;
     }
     if (u->SHIELD > 0)
@@ -190,19 +208,28 @@ static void draw_ability_bar(const Game *g)
             && g->battle.units[PLAYER_SLOT].FOCUSN >= a->focus_cost;
 
         DrawRectangleRec(slot, (Color){44, 48, 58, 255});
+        if (!usable) {
+            DrawRectangleLinesEx(slot, 1.0f, (Color){80, 84, 96, 255});
+            continue;
+        }
+
+        Color text = affordable ? RAYWHITE : (Color){130, 100, 100, 255};
+        Color tint = affordable ? WHITE : (Color){150, 120, 120, 255};
+        /* The real icon, by the name the ability itself carries. */
+        Rectangle inner = {slot.x + 2, slot.y + 2, slot.width - 4,
+                           slot.height - 4};
+        if (!asset_draw_fit(a->icon, 1, inner, tint)) {
+            const char *label = (a->name && a->name[0]) ? a->name : a->icon;
+            DrawText(label, (int)slot.x + 4, (int)slot.y + 18, 10, text);
+        }
         DrawRectangleLinesEx(slot, g->selected == i ? 2.0f : 1.0f,
                              g->selected == i ? (Color){235, 200, 90, 255}
                                               : (Color){80, 84, 96, 255});
-        if (!usable)
-            continue;
-
-        Color text = affordable ? RAYWHITE : (Color){130, 100, 100, 255};
-        const char *label = (a->name && a->name[0]) ? a->name : a->icon;
-        DrawText(TextFormat("%d", i + 1), (int)slot.x + 4, (int)slot.y + 3, 10,
-                 (Color){150, 155, 165, 255});
-        DrawText(label, (int)slot.x + 4, (int)slot.y + 18, 10, text);
-        DrawText(TextFormat("%d fp", a->focus_cost), (int)slot.x + 4,
-                 (int)slot.y + 42, 10, (Color){120, 160, 210, 255});
+        DrawText(TextFormat("%d", i + 1), (int)slot.x + 3, (int)slot.y + 2, 10,
+                 (Color){235, 235, 245, 255});
+        DrawText(TextFormat("%d", a->focus_cost),
+                 (int)(slot.x + slot.width - 12), (int)slot.y + 2, 10,
+                 (Color){150, 200, 255, 255});
     }
 }
 
@@ -223,11 +250,31 @@ static void draw_tooltip(const Game *g)
              (Color){200, 205, 215, 255});
 }
 
+/* The battle backdrop: the roster names a sky and a zone graphic, drawn in
+   that order as the original layers them. */
+static void draw_backdrop(const Game *g)
+{
+    Rectangle full = {0, 0, STAGE_W, STAGE_H};
+    int drew = 0;
+
+    if (g->def && g->def->sky_bg[0])
+        drew |= asset_draw_cover(g->def->sky_bg, 1, full, WHITE);
+    if (g->def && g->def->zone_bg[0])
+        drew |= asset_draw_cover(g->def->zone_bg, 1, full, WHITE);
+    if (!drew)
+        ClearBackground((Color){24, 26, 32, 255});
+
+    /* Keep the text and panels legible over the art. */
+    DrawRectangle(0, 0, STAGE_W, 60, (Color){12, 13, 17, 190});
+    DrawRectangle(0, STAGE_H - 120, STAGE_W, 120, (Color){12, 13, 17, 190});
+}
+
 static void draw_battle(const Game *g)
 {
     const Battle *b = &g->battle;
 
     ClearBackground((Color){24, 26, 32, 255});
+    draw_backdrop(g);
     DrawText("SONNY", 22, 12, 22, (Color){210, 215, 225, 255});
 
     const char *state = b->phase == PHASE_OVER
@@ -394,10 +441,11 @@ int main(int argc, char **argv)
     uint64_t seed = (argc > 1) ? strtoull(argv[1], NULL, 10) : 20260912;
 
     Game game;
-    game_init(&game, seed);
 
     SetTraceLogLevel(LOG_WARNING);
     InitWindow(STAGE_W, STAGE_H, "Sonny");
+    assets_set_root(getenv("SONNY_ASSETS") ? getenv("SONNY_ASSETS") : ".");
+    game_init(&game, seed);
     SetTargetFPS(STAGE_FPS);
     RenderTexture2D stage = LoadRenderTexture(STAGE_W, STAGE_H);
     SetTextureFilter(stage.texture, TEXTURE_FILTER_POINT);
@@ -441,6 +489,7 @@ int main(int argc, char **argv)
         }
     }
 
+    assets_unload_all();
     UnloadRenderTexture(stage);
     CloseWindow();
     return 0;

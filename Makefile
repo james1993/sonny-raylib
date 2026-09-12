@@ -15,7 +15,8 @@ $(BUILD):
 	@mkdir -p $(BUILD)
 
 game: $(BUILD)
-	$(CC) $(CFLAGS) -o $(BUILD)/sonny src/platform/main.c $(CORE_SRC) $(RAYLIB_LIBS)
+	$(CC) $(CFLAGS) -o $(BUILD)/sonny src/platform/main.c \
+	    src/platform/assets.c src/gen/assets_gen.c $(CORE_SRC) $(RAYLIB_LIBS)
 
 simulate: $(BUILD)
 	$(CC) $(CFLAGS) -o $(BUILD)/simulate tools/simulate.c $(CORE_SRC) -lm
@@ -41,6 +42,7 @@ test: $(BUILD)
 # Regenerate the C data tables from the extracted JSON.
 data:
 	python3 tools/gen_c_data.py
+	python3 tools/gen_asset_manifest.py
 
 # Regenerate the differential vectors from the reference transcription.
 vectors:

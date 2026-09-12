@@ -163,4 +163,8 @@ Two details worth knowing, both reproduced rather than cleaned up:
 - [x] Progression: battle setup from a roster, rewards, advancement
 - [ ] Shops, the inventory screen and the world map
 - [ ] Save data (the original uses a Flash shared object)
-- [ ] Art, audio and pixel-accurate UI layout
+- [x] Asset pipeline: names resolved, art and audio extracted, manifest
+- [x] Real backdrops and ability icons on screen
+- [ ] The character doll: per-part transforms out of the model's display list
+- [ ] Audio playback
+- [ ] Pixel-accurate UI layout against reference screenshots
