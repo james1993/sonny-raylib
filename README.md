@@ -19,7 +19,7 @@ every number in it is a placeholder until real game data is extracted.
 
     src/core/       pure C, no raylib: combat state machine, RNG, stats, buffs
     src/platform/   raylib: window, fixed-stage render target, input, drawing
-    data/           ability/enemy/zone tables (JSON) — the source of truth
+    data/extracted/ ability/unit/item/buff tables and all text, as JSON
     tools/          extraction and inspection utilities
     tests/          headless tests of core behaviour
 
@@ -39,11 +39,23 @@ captive-runtime app, so the game itself is a `.swf` sitting next to the launcher
 2. The ActionScript holds the ability definitions, damage formulas, level-up
    curves and enemy AI scripts. Those get transcribed into `data/*.json` and
    implemented in `src/core`.
-3. Art and audio are extracted from the same `.swf` **locally** into `assets/`,
-   which is gitignored. No original content is committed to this repository.
+3. Art and audio are extracted from the same `.swf` into `assets/`.
 
-Game mechanics and numbers are reimplemented; original art, audio and text are
-not redistributed here. Point the build at your own copy's assets.
+This repository is **private**, so the extracted content lives here alongside
+the code and a clean clone builds and runs. It is content from a game you own,
+kept for your own use -- not redistributed. If this repo is ever made public,
+that content has to come out of the history first (`git filter-repo`), not just
+out of the tree.
+
+### A note on Sonny 1's art
+
+Almost none of it is bitmaps: the SWF carries 3 lossless images totalling 27 KB
+against 356 `DefineShape` and 519 `DefineSprite` tags, so the characters, UI and
+effects are vector art. Audio is the reverse -- 88 sounds, 8.7 MB, most of the
+file. Extraction therefore has a real choice to make: rasterize the shapes to
+PNG atlases (simple, plain raylib textures, loses crisp scaling), or export SVG
+and rasterize at load (faithful to the original's scaling, needs a vector
+rasterizer in the build). First pass takes the atlas route at 2x stage size.
 
 ## What has been verified from the original
 

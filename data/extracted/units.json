@@ -1,0 +1,2839 @@
+[
+ {
+  "name": "Dreadnaught",
+  "vitality": 19,
+  "vitality_growth": 2.5,
+  "strength": 15,
+  "strength_growth": 1.5,
+  "magic": 0,
+  "magic_growth": 0,
+  "speed": 10,
+  "speed_growth": 1.2,
+  "focus": 100,
+  "id": 1,
+  "movesA": [
+   8,
+   68,
+   5,
+   69,
+   38
+  ],
+  "movesD": [
+   17,
+   30
+  ],
+  "agressionArray": [
+   50,
+   90,
+   60,
+   40
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ]
+ },
+ {
+  "name": "Templar",
+  "vitality": 23,
+  "vitality_growth": 4.200000000000002,
+  "strength": 12,
+  "strength_growth": 1.2,
+  "magic": 8,
+  "magic_growth": 0.8,
+  "speed": 8,
+  "speed_growth": 1,
+  "focus": 100,
+  "id": 2,
+  "movesA": [
+   42,
+   81,
+   57,
+   69,
+   508
+  ],
+  "movesD": [
+   93,
+   31
+  ],
+  "agressionArray": [
+   50,
+   90,
+   60,
+   40
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ]
+ },
+ {
+  "name": "Phantom",
+  "vitality": 12,
+  "vitality_growth": 1,
+  "strength": 14,
+  "strength_growth": 1.4000000000000001,
+  "magic": 0,
+  "magic_growth": 0,
+  "speed": 16,
+  "speed_growth": 1.6,
+  "focus": 100,
+  "id": 3,
+  "movesA": [
+   56,
+   56,
+   69,
+   62,
+   9,
+   507
+  ],
+  "movesD": [
+   51
+  ],
+  "agressionArray": [
+   50,
+   90,
+   60,
+   40
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ]
+ },
+ {
+  "name": "Phaser",
+  "vitality": 11,
+  "vitality_growth": 0.9000000000000002,
+  "strength": 0,
+  "strength_growth": 0,
+  "magic": 19,
+  "magic_growth": 1.9000000000000001,
+  "speed": 12,
+  "speed_growth": 1.4000000000000001,
+  "focus": 100,
+  "id": 4,
+  "movesA": [
+   79,
+   79,
+   96,
+   99,
+   104,
+   69,
+   508,
+   508
+  ],
+  "movesD": [
+   31
+  ],
+  "agressionArray": [
+   50,
+   90,
+   60,
+   40
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ]
+ },
+ {
+  "name": "Templar",
+  "vitality": 12,
+  "vitality_growth": 1.45,
+  "strength": 14,
+  "strength_growth": 2.2,
+  "magic": 8,
+  "magic_growth": 1.0500000000000005,
+  "speed": 8,
+  "speed_growth": 1.0500000000000005,
+  "focus": 100,
+  "id": 5,
+  "movesA": [
+   500,
+   502,
+   523,
+   523,
+   508,
+   509
+  ],
+  "movesD": [
+   512,
+   511
+  ],
+  "agressionArray": [
+   30,
+   90,
+   75,
+   40
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "voiceHit": [
+   "DuxHit1",
+   "DuxHit2",
+   "DuxHit3"
+  ],
+  "voiceDie": "DuxDie"
+ },
+ {
+  "name": "Metabii",
+  "vitality": 5,
+  "vitality_growth": 1,
+  "strength": 6,
+  "strength_growth": 1.4000000000000001,
+  "magic": 6,
+  "magic_growth": 1.4000000000000001,
+  "speed": 6,
+  "speed_growth": 1.3000000000000005,
+  "focus": 100,
+  "id": 6,
+  "movesA": [
+   500
+  ],
+  "movesD": [
+   501
+  ],
+  "agressionArray": [
+   100,
+   101,
+   101,
+   100
+  ],
+  "model": [
+   "MODEL1",
+   "METABII",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   12,
+   0
+  ],
+  "voiceHit": [
+   "ZombieHit1",
+   "ZombieHit2",
+   "ZombieHit1"
+  ],
+  "voiceDie": "ZombieDie"
+ },
+ {
+  "name": "Louis the Blind",
+  "vitality": 0.1,
+  "vitality_growth": 1,
+  "strength": 8,
+  "strength_growth": 0.5,
+  "magic": 8,
+  "magic_growth": 0.5,
+  "speed": 0,
+  "speed_growth": 10,
+  "focus": 100,
+  "id": 7,
+  "movesA": [
+   0
+  ],
+  "movesD": [
+   0
+  ],
+  "agressionArray": [
+   50,
+   90,
+   60,
+   40
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "model": [
+   "MODEL1",
+   "MAN",
+   "BART",
+   "M"
+  ],
+  "equipment": [
+   0,
+   11,
+   0,
+   4,
+   8,
+   0,
+   0
+  ],
+  "voiceHit": [
+   "ZombieHit1",
+   "ZombieHit2",
+   "ZombieHit1"
+  ],
+  "voiceDie": "LouisDie"
+ },
+ {
+  "name": "Zombie",
+  "vitality": 6,
+  "vitality_growth": 1.7,
+  "strength": 9,
+  "strength_growth": 1.7,
+  "magic": 6,
+  "magic_growth": 1.7,
+  "speed": 3,
+  "speed_growth": 1,
+  "focus": 100,
+  "id": 8,
+  "movesA": [
+   500,
+   502
+  ],
+  "movesD": [
+   0
+  ],
+  "agressionArray": [
+   100,
+   100,
+   99,
+   100
+  ],
+  "model": [
+   "MODEL1",
+   "ZOMBIE",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   12,
+   0
+  ],
+  "voiceHit": [
+   "ZombieHit1",
+   "ZombieHit2",
+   "ZombieHit1"
+  ],
+  "voiceDie": "ZombieDie"
+ },
+ {
+  "name": "ZPCI Assault",
+  "vitality": 7,
+  "vitality_growth": 1,
+  "strength": 2,
+  "strength_growth": 1,
+  "magic": 2,
+  "magic_growth": 1,
+  "speed": 7,
+  "speed_growth": 1,
+  "focus": 100,
+  "id": 9,
+  "movesA": [
+   500,
+   503
+  ],
+  "movesD": [
+   0
+  ],
+  "agressionArray": [
+   50,
+   85,
+   60,
+   100
+  ],
+  "model": [
+   "MODEL1",
+   "USA1",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   13,
+   0
+  ],
+  "skinSetter": "USA1",
+  "voiceHit": [
+   "ZPCIHit1",
+   "ZPCIHit2",
+   "ZPCIHit1"
+  ],
+  "voiceDie": "Die1"
+ },
+ {
+  "name": "ZPCI Medic",
+  "vitality": 7,
+  "vitality_growth": 1,
+  "strength": 1,
+  "strength_growth": 1,
+  "magic": 1,
+  "magic_growth": 1,
+  "speed": 7,
+  "speed_growth": 1,
+  "focus": 150,
+  "id": 10,
+  "movesA": [
+   503
+  ],
+  "movesD": [
+   504
+  ],
+  "agressionArray": [
+   50,
+   90,
+   80,
+   100
+  ],
+  "model": [
+   "MODEL1",
+   "USA1",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   13,
+   0
+  ],
+  "skinSetter": "USA1",
+  "voiceHit": [
+   "ZPCIHit1",
+   "ZPCIHit2",
+   "ZPCIHit1"
+  ],
+  "voiceDie": "Die1"
+ },
+ {
+  "name": "ZPCI Captain",
+  "vitality": 9,
+  "vitality_growth": 1,
+  "strength": 1,
+  "strength_growth": 1,
+  "magic": 1,
+  "magic_growth": 1,
+  "speed": 7,
+  "speed_growth": 1,
+  "focus": 100,
+  "id": 11,
+  "movesA": [
+   500,
+   503,
+   505
+  ],
+  "movesD": [],
+  "agressionArray": [
+   50,
+   85,
+   60,
+   100
+  ],
+  "model": [
+   "MODEL1",
+   "USA3",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   14,
+   0
+  ],
+  "skinSetter": "USA3",
+  "voiceHit": [
+   "ZPCIHit1",
+   "ZPCIHit2",
+   "ZPCIHit1"
+  ],
+  "voiceDie": "Die1"
+ },
+ {
+  "name": "Ghost Samurai",
+  "vitality": 30,
+  "vitality_growth": 2,
+  "strength": 12,
+  "strength_growth": 2,
+  "magic": 12,
+  "magic_growth": 2,
+  "speed": 8,
+  "speed_growth": 1.5,
+  "focus": 130,
+  "id": 12,
+  "movesA": [
+   500,
+   506,
+   524
+  ],
+  "movesD": [
+   504
+  ],
+  "agressionArray": [
+   50,
+   50,
+   30,
+   25
+  ],
+  "model": [
+   "MODEL1",
+   "",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   30,
+   0
+  ],
+  "skinSetter": "SAMURAI",
+  "voiceHit": [
+   "GhostHit1",
+   "GhostHit2",
+   "GhostHit3"
+  ],
+  "voiceDie": "GhostDie"
+ },
+ {
+  "name": "Ghost Assassin",
+  "vitality": 5,
+  "vitality_growth": 4,
+  "strength": 12,
+  "strength_growth": 3,
+  "magic": 12,
+  "magic_growth": 3,
+  "speed": 20,
+  "speed_growth": 6,
+  "focus": 60,
+  "id": 13,
+  "movesA": [
+   500,
+   502
+  ],
+  "movesD": [
+   507
+  ],
+  "agressionArray": [
+   50,
+   50,
+   45,
+   30
+  ],
+  "model": [
+   "MODEL1",
+   "",
+   "",
+   "M"
+  ],
+  "PER": [
+   75,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   33,
+   0
+  ],
+  "skinSetter": "NINJA",
+  "voiceHit": [
+   "GhostHit1",
+   "GhostHit2",
+   "GhostHit3"
+  ],
+  "voiceDie": "GhostDie"
+ },
+ {
+  "name": "Frost Zombie",
+  "vitality": 15,
+  "vitality_growth": 0.9000000000000002,
+  "strength": 15,
+  "strength_growth": 0.9000000000000002,
+  "magic": 15,
+  "magic_growth": 0.9000000000000002,
+  "speed": 15,
+  "speed_growth": 0.9000000000000002,
+  "focus": 100,
+  "id": 14,
+  "movesA": [
+   500,
+   502,
+   506,
+   522
+  ],
+  "movesD": [
+   70
+  ],
+  "agressionArray": [
+   50,
+   35,
+   25,
+   25
+  ],
+  "model": [
+   "MODEL1",
+   "ZOMBIE",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   12,
+   0
+  ],
+  "voiceHit": [
+   "ZombieHit1",
+   "ZombieHit2",
+   "ZombieHit1"
+  ],
+  "voiceDie": "ZombieDie"
+ },
+ {
+  "name": "Sensei Ishiguro",
+  "vitality": 100,
+  "vitality_growth": 4,
+  "strength": 35,
+  "strength_growth": 4.5,
+  "magic": 35,
+  "magic_growth": 4.5,
+  "speed": 15,
+  "speed_growth": 2,
+  "focus": 350,
+  "id": 15,
+  "movesA": [
+   506,
+   524,
+   524,
+   522,
+   524,
+   524,
+   501,
+   522,
+   500
+  ],
+  "movesD": [
+   504
+  ],
+  "agressionArray": [
+   50,
+   95,
+   75,
+   25
+  ],
+  "model": [
+   "MODEL1",
+   "",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   32,
+   0
+  ],
+  "skinSetter": "SAMURAI2",
+  "voiceHit": [
+   "GhostHit1",
+   "GhostHit2",
+   "GhostHit3"
+  ],
+  "voiceDie": "GhostDie"
+ },
+ {
+  "name": "ZPCI Hunter",
+  "vitality": 15,
+  "vitality_growth": 1.8000000000000005,
+  "strength": 15,
+  "strength_growth": 1.8000000000000005,
+  "magic": 15,
+  "magic_growth": 1.8000000000000005,
+  "speed": 15,
+  "speed_growth": 1.8000000000000005,
+  "focus": 120,
+  "id": 16,
+  "movesA": [
+   500,
+   503,
+   505
+  ],
+  "movesD": [
+   504
+  ],
+  "agressionArray": [
+   50,
+   85,
+   60,
+   100
+  ],
+  "model": [
+   "MODEL1",
+   "USA3",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   13,
+   0
+  ],
+  "skinSetter": "USA4",
+  "voiceHit": [
+   "ZPCIHit1",
+   "ZPCIHit2",
+   "ZPCIHit1"
+  ],
+  "voiceDie": "Die1"
+ },
+ {
+  "name": "GSG9 Assault",
+  "vitality": 8,
+  "vitality_growth": 1.2,
+  "strength": 8,
+  "strength_growth": 1.2,
+  "magic": 8,
+  "magic_growth": 1.2,
+  "speed": 8,
+  "speed_growth": 1.2,
+  "focus": 70,
+  "id": 17,
+  "movesA": [
+   500,
+   503
+  ],
+  "movesD": [],
+  "agressionArray": [
+   50,
+   85,
+   60,
+   25
+  ],
+  "model": [
+   "MODEL1",
+   "USA3",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   13,
+   0
+  ],
+  "skinSetter": "GER",
+  "voiceHit": [
+   "ZPCIHit1",
+   "ZPCIHit2",
+   "ZPCIHit1"
+  ],
+  "voiceDie": "Die1"
+ },
+ {
+  "name": "Shaman of Death",
+  "vitality": 21,
+  "vitality_growth": 5,
+  "strength": 3,
+  "strength_growth": 1,
+  "magic": 18,
+  "magic_growth": 10,
+  "speed": 10,
+  "speed_growth": 4,
+  "focus": 180,
+  "id": 18,
+  "movesA": [
+   96,
+   73,
+   529
+  ],
+  "movesD": [
+   31
+  ],
+  "agressionArray": [
+   70,
+   60,
+   30,
+   75
+  ],
+  "model": [
+   "MODEL1",
+   "MAN2",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   74,
+   0
+  ],
+  "skinSetter": "SHAMAN3",
+  "voiceHit": [
+   "ShamanHit1",
+   "ShamanHit2",
+   "ShamanHit1"
+  ],
+  "voiceDie": "ShamanDie"
+ },
+ {
+  "name": "Shaman of Life",
+  "vitality": 20,
+  "vitality_growth": 7,
+  "strength": 7,
+  "strength_growth": 3,
+  "magic": 16,
+  "magic_growth": 7,
+  "speed": 10,
+  "speed_growth": 4,
+  "focus": 200,
+  "id": 19,
+  "movesA": [
+   508,
+   513,
+   500
+  ],
+  "movesD": [
+   504,
+   514,
+   515
+  ],
+  "agressionArray": [
+   30,
+   85,
+   75,
+   50
+  ],
+  "model": [
+   "MODEL1",
+   "MAN2",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   72,
+   0
+  ],
+  "skinSetter": "SHAMAN2",
+  "voiceHit": [
+   "ShamanHit1",
+   "ShamanHit2",
+   "ShamanHit1"
+  ],
+  "voiceDie": "ShamanDie"
+ },
+ {
+  "name": "Shaman of Blades",
+  "vitality": 41,
+  "vitality_growth": 8,
+  "strength": 20,
+  "strength_growth": 12,
+  "magic": 7,
+  "magic_growth": 3,
+  "speed": 12,
+  "speed_growth": 5,
+  "focus": 160,
+  "id": 20,
+  "movesA": [
+   500,
+   2,
+   6,
+   20
+  ],
+  "movesD": [
+   533
+  ],
+  "agressionArray": [
+   50,
+   75,
+   40,
+   65
+  ],
+  "model": [
+   "MODEL1",
+   "MAN2",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   70,
+   70
+  ],
+  "skinSetter": "SHAMAN1",
+  "voiceHit": [
+   "ShamanHit1",
+   "ShamanHit2",
+   "ShamanHit1"
+  ],
+  "voiceDie": "ShamanDie"
+ },
+ {
+  "name": "Rock Golem",
+  "vitality": 42,
+  "vitality_growth": 9,
+  "strength": 17,
+  "strength_growth": 12,
+  "magic": 0,
+  "magic_growth": 0,
+  "speed": 10,
+  "speed_growth": 3,
+  "focus": 100,
+  "id": 21,
+  "movesA": [
+   62,
+   9,
+   7,
+   2,
+   500,
+   501,
+   516
+  ],
+  "movesD": [],
+  "agressionArray": [
+   50,
+   80,
+   60,
+   25
+  ],
+  "model": [
+   "MODEL1",
+   "MAN3",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   81,
+   0
+  ]
+ },
+ {
+  "name": "Totem",
+  "vitality": 10,
+  "vitality_growth": 3,
+  "strength": 10,
+  "strength_growth": 4,
+  "magic": 10,
+  "magic_growth": 4,
+  "speed": 10,
+  "speed_growth": 4,
+  "focus": 300,
+  "id": 22,
+  "movesA": [
+   81,
+   71
+  ],
+  "movesD": [
+   31
+  ],
+  "agressionArray": [
+   50,
+   95,
+   75,
+   25
+  ],
+  "model": [
+   "MODEL2",
+   "",
+   "",
+   ""
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ]
+ },
+ {
+  "name": "Rockstar",
+  "vitality": 70,
+  "vitality_growth": 10,
+  "strength": 30,
+  "strength_growth": 15,
+  "magic": 0,
+  "magic_growth": 0,
+  "speed": 10,
+  "speed_growth": 4,
+  "focus": 250,
+  "id": 23,
+  "movesA": [
+   62,
+   9,
+   7,
+   2,
+   500,
+   501,
+   38,
+   516
+  ],
+  "movesD": [
+   70,
+   14
+  ],
+  "agressionArray": [
+   50,
+   30,
+   25,
+   25
+  ],
+  "model": [
+   "MODEL1",
+   "MAN3",
+   "",
+   "M"
+  ],
+  "PER": [
+   75,
+   25,
+   25,
+   25,
+   25,
+   75,
+   25,
+   25
+  ],
+  "DEF": [
+   70,
+   70,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   81,
+   0
+  ],
+  "skinSetter": "ROCKSTAR"
+ },
+ {
+  "name": "Devourer",
+  "vitality": 20,
+  "vitality_growth": 8,
+  "strength": 15,
+  "strength_growth": 6,
+  "magic": 0,
+  "magic_growth": 0,
+  "speed": 10,
+  "speed_growth": 3,
+  "focus": 100,
+  "id": 24,
+  "movesA": [
+   500,
+   502
+  ],
+  "movesD": [],
+  "agressionArray": [
+   50,
+   80,
+   60,
+   65
+  ],
+  "model": [
+   "MODEL1",
+   "ZOMBIE1",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   81,
+   0
+  ],
+  "voiceHit": [
+   "ZombieHit1",
+   "ZombieHit2",
+   "ZombieHit1"
+  ],
+  "voiceDie": "ZombieDie"
+ },
+ {
+  "name": "ZPCI Elite",
+  "vitality": 75,
+  "vitality_growth": 8,
+  "strength": 13,
+  "strength_growth": 6,
+  "magic": 13,
+  "magic_growth": 6,
+  "speed": 13,
+  "speed_growth": 6,
+  "focus": 100,
+  "id": 25,
+  "movesA": [
+   500,
+   503,
+   505
+  ],
+  "movesD": [
+   504
+  ],
+  "agressionArray": [
+   50,
+   80,
+   60,
+   65
+  ],
+  "model": [
+   "MODEL1",
+   "MAN",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   13,
+   0
+  ],
+  "skinSetter": "USA3",
+  "voiceHit": [
+   "ZPCIHit1",
+   "ZPCIHit2",
+   "ZPCIHit1"
+  ],
+  "voiceDie": "Die1"
+ },
+ {
+  "name": "Baron Brixius",
+  "vitality": 4000,
+  "vitality_growth": 10,
+  "strength": 30,
+  "strength_growth": 6,
+  "magic": 30,
+  "magic_growth": 6,
+  "speed": 15,
+  "speed_growth": 6,
+  "focus": 350,
+  "id": 26,
+  "movesA": [
+   517,
+   518,
+   3,
+   3,
+   3
+  ],
+  "movesD": [
+   507
+  ],
+  "agressionArray": [
+   50,
+   50,
+   30,
+   65
+  ],
+  "model": [
+   "MODEL1",
+   "ZOMBIE2",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   77,
+   0
+  ],
+  "voiceHit": [
+   "BaronHit1",
+   "BaronHit2",
+   "BaronHit3"
+  ],
+  "voiceDie": "BaronDie"
+ },
+ {
+  "name": "Galiant the Paladin",
+  "vitality": 50,
+  "vitality_growth": 3,
+  "strength": 20,
+  "strength_growth": 4,
+  "magic": 20,
+  "magic_growth": 4,
+  "speed": 15,
+  "speed_growth": 6,
+  "focus": 200,
+  "id": 27,
+  "movesA": [
+   500
+  ],
+  "movesD": [
+   511,
+   504,
+   521
+  ],
+  "agressionArray": [
+   50,
+   75,
+   30,
+   65
+  ],
+  "model": [
+   "MODEL1",
+   "MAN",
+   "",
+   "M"
+  ],
+  "PER": [
+   9000,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   80,
+   0
+  ],
+  "skinSetter": "USA5",
+  "voiceHit": [
+   "GaliantHit1",
+   "GaliantHit2",
+   "GaliantHit3"
+  ],
+  "voiceDie": "GaliantDie"
+ },
+ {
+  "name": "Elite Medic",
+  "vitality": 20,
+  "vitality_growth": 8,
+  "strength": 7,
+  "strength_growth": 6,
+  "magic": 7,
+  "magic_growth": 6,
+  "speed": 10,
+  "speed_growth": 3,
+  "focus": 100,
+  "id": 28,
+  "movesA": [
+   500,
+   502,
+   503
+  ],
+  "movesD": [
+   504,
+   504,
+   504,
+   515
+  ],
+  "agressionArray": [
+   50,
+   80,
+   60,
+   65
+  ],
+  "model": [
+   "MODEL1",
+   "MAN",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   13,
+   0
+  ],
+  "skinSetter": "MEDIC",
+  "voiceHit": [
+   "ZPCIHit1",
+   "ZPCIHit2",
+   "ZPCIHit1"
+  ],
+  "voiceDie": "Die1"
+ },
+ {
+  "name": "ZPCI Sniper",
+  "vitality": 15,
+  "vitality_growth": 6,
+  "strength": 10,
+  "strength_growth": 8,
+  "magic": 10,
+  "magic_growth": 8,
+  "speed": 10,
+  "speed_growth": 3,
+  "focus": 100,
+  "id": 29,
+  "movesA": [
+   503,
+   505,
+   501
+  ],
+  "movesD": [],
+  "agressionArray": [
+   50,
+   80,
+   60,
+   65
+  ],
+  "model": [
+   "MODEL1",
+   "MAN",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   13,
+   0
+  ],
+  "skinSetter": "USA4",
+  "voiceHit": [
+   "ZPCIHit1",
+   "ZPCIHit2",
+   "ZPCIHit1"
+  ],
+  "voiceDie": "Die1"
+ },
+ {
+  "name": "Shaman Controller",
+  "vitality": 20,
+  "vitality_growth": 8,
+  "strength": 15,
+  "strength_growth": 6,
+  "magic": 15,
+  "magic_growth": 6,
+  "speed": 10,
+  "speed_growth": 3,
+  "focus": 100,
+  "id": 30,
+  "movesA": [
+   500,
+   73
+  ],
+  "movesD": [
+   504,
+   514,
+   515
+  ],
+  "agressionArray": [
+   50,
+   90,
+   80,
+   15
+  ],
+  "model": [
+   "MODEL1",
+   "MAN2",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   72,
+   0
+  ],
+  "skinSetter": "SHAMAN1",
+  "voiceHit": [
+   "ShamanHit1",
+   "ShamanHit2",
+   "ShamanHit1"
+  ],
+  "voiceDie": "ShamanDie"
+ },
+ {
+  "name": "Shaman Survivor",
+  "vitality": 20,
+  "vitality_growth": 8,
+  "strength": 15,
+  "strength_growth": 6,
+  "magic": 0,
+  "magic_growth": 0,
+  "speed": 10,
+  "speed_growth": 3,
+  "focus": 100,
+  "id": 31,
+  "movesA": [
+   500,
+   2,
+   6,
+   20
+  ],
+  "movesD": [
+   26,
+   508
+  ],
+  "agressionArray": [
+   50,
+   80,
+   60,
+   65
+  ],
+  "model": [
+   "MODEL1",
+   "MAN2",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   81,
+   0
+  ],
+  "skinSetter": "SHAMAN3",
+  "voiceHit": [
+   "ShamanHit1",
+   "ShamanHit2",
+   "ShamanHit1"
+  ],
+  "voiceDie": "ShamanDie"
+ },
+ {
+  "name": "Zombie Ambassador",
+  "vitality": 20,
+  "vitality_growth": 8,
+  "strength": 15,
+  "strength_growth": 6,
+  "magic": 0,
+  "magic_growth": 0,
+  "speed": 10,
+  "speed_growth": 3,
+  "focus": 100,
+  "id": 32,
+  "movesA": [
+   500,
+   502
+  ],
+  "movesD": [],
+  "agressionArray": [
+   50,
+   80,
+   60,
+   65
+  ],
+  "model": [
+   "MODEL1",
+   "ZOMBIE1",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   81,
+   0
+  ],
+  "voiceHit": [
+   "ZombieHit1",
+   "ZombieHit2",
+   "ZombieHit1"
+  ],
+  "voiceDie": "ZombieDie"
+ },
+ {
+  "name": "Vendetta the Breaker",
+  "vitality": 14,
+  "vitality_growth": 3,
+  "strength": 5,
+  "strength_growth": 2,
+  "magic": 17,
+  "magic_growth": 9,
+  "speed": 10,
+  "speed_growth": 4,
+  "focus": 200,
+  "id": 33,
+  "movesA": [
+   96,
+   73,
+   11,
+   508
+  ],
+  "movesD": [
+   31
+  ],
+  "agressionArray": [
+   70,
+   60,
+   30,
+   75
+  ],
+  "model": [
+   "MODEL1",
+   "MAN2",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   79,
+   0
+  ],
+  "skinSetter": "SHAMAN3",
+  "voiceHit": [
+   "ShamanHit1",
+   "ShamanHit2",
+   "ShamanHit1"
+  ],
+  "voiceDie": "ShamanDie"
+ },
+ {
+  "name": "Argalla the Mender",
+  "vitality": 20,
+  "vitality_growth": 6,
+  "strength": 7,
+  "strength_growth": 3,
+  "magic": 13,
+  "magic_growth": 5,
+  "speed": 10,
+  "speed_growth": 4,
+  "focus": 200,
+  "id": 34,
+  "movesA": [
+   508,
+   513,
+   500
+  ],
+  "movesD": [
+   504,
+   514,
+   515
+  ],
+  "agressionArray": [
+   30,
+   85,
+   75,
+   50
+  ],
+  "model": [
+   "MODEL1",
+   "MAN2",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   78,
+   0
+  ],
+  "skinSetter": "SHAMAN2",
+  "voiceHit": [
+   "ShamanHit1",
+   "ShamanHit2",
+   "ShamanHit1"
+  ],
+  "voiceDie": "ShamanDie"
+ },
+ {
+  "name": "Dokebi the Striker",
+  "vitality": 45,
+  "vitality_growth": 8,
+  "strength": 13,
+  "strength_growth": 10,
+  "magic": 7,
+  "magic_growth": 3,
+  "speed": 12,
+  "speed_growth": 5,
+  "focus": 100,
+  "id": 35,
+  "movesA": [
+   500,
+   2,
+   6,
+   20
+  ],
+  "movesD": [
+   28,
+   508
+  ],
+  "agressionArray": [
+   50,
+   75,
+   40,
+   65
+  ],
+  "model": [
+   "MODEL1",
+   "MAN2",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   76,
+   76
+  ],
+  "skinSetter": "SHAMAN1",
+  "voiceHit": [
+   "ShamanHit1",
+   "ShamanHit2",
+   "ShamanHit1"
+  ],
+  "voiceDie": "ShamanDie"
+ },
+ {
+  "name": "Galiant the Paladin",
+  "vitality": 150,
+  "vitality_growth": 8,
+  "strength": 15,
+  "strength_growth": 6,
+  "magic": 15,
+  "magic_growth": 6,
+  "speed": 10,
+  "speed_growth": 3,
+  "focus": 4000,
+  "id": 36,
+  "movesA": [
+   5,
+   501,
+   505,
+   81,
+   500,
+   4,
+   4,
+   5
+  ],
+  "movesD": [
+   520,
+   521
+  ],
+  "agressionArray": [
+   50,
+   50,
+   40,
+   25
+  ],
+  "model": [
+   "MODEL1",
+   "MAN",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   80,
+   0
+  ],
+  "skinSetter": "USA5",
+  "voiceHit": [
+   "GaliantHit1",
+   "GaliantHit2",
+   "GaliantHit3"
+  ],
+  "voiceDie": "GaliantDie"
+ },
+ {
+  "name": "Ignition",
+  "vitality": 1100,
+  "vitality_growth": 0,
+  "strength": 100,
+  "strength_growth": 0,
+  "magic": 230,
+  "magic_growth": 0,
+  "speed": 120,
+  "speed_growth": 0,
+  "focus": 450,
+  "id": 37,
+  "movesA": [
+   500
+  ],
+  "movesD": [
+   527,
+   526,
+   525
+  ],
+  "agressionArray": [
+   50,
+   101,
+   101,
+   15
+  ],
+  "model": [
+   "MODEL1",
+   "MAN2",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "skinSetter": "SHAMAN4"
+ },
+ {
+  "name": "Omen",
+  "vitality": 40000,
+  "vitality_growth": 0,
+  "strength": 200,
+  "strength_growth": 0,
+  "magic": 50,
+  "magic_growth": 0,
+  "speed": 120,
+  "speed_growth": 0,
+  "focus": 500,
+  "id": 38,
+  "movesA": [
+   69,
+   68,
+   8,
+   502,
+   9
+  ],
+  "movesD": [
+   528
+  ],
+  "agressionArray": [
+   50,
+   101,
+   101,
+   15
+  ],
+  "model": [
+   "MODEL1",
+   "",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   30,
+   0
+  ],
+  "skinSetter": "SAMURAI3"
+ },
+ {
+  "name": "Doctor Herregods",
+  "vitality": 125000,
+  "vitality_growth": 0,
+  "strength": 275,
+  "strength_growth": 0,
+  "magic": 150,
+  "magic_growth": 0,
+  "speed": 70,
+  "speed_growth": 0,
+  "focus": 400,
+  "id": 39,
+  "movesA": [
+   80,
+   69,
+   104
+  ],
+  "movesD": [
+   530
+  ],
+  "agressionArray": [
+   0,
+   99.00001000007614,
+   99,
+   15
+  ],
+  "model": [
+   "MODEL1",
+   "MAN",
+   "BART",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   35,
+   36,
+   37,
+   38,
+   7,
+   0
+  ]
+ },
+ {
+  "name": "Sinjid's Shadow",
+  "vitality": 3500,
+  "vitality_growth": 0,
+  "strength": 180,
+  "strength_growth": 0,
+  "magic": 180,
+  "magic_growth": 0,
+  "speed": 210,
+  "speed_growth": 0,
+  "focus": 100,
+  "id": 40,
+  "movesA": [
+   532,
+   69,
+   62,
+   9,
+   12,
+   507
+  ],
+  "movesD": [
+   531
+  ],
+  "agressionArray": [
+   50,
+   101,
+   101,
+   15
+  ],
+  "model": [
+   "MODEL1",
+   "",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   33,
+   33
+  ],
+  "skinSetter": "SINJID"
+ },
+ {
+  "name": "Illusion",
+  "vitality": 30,
+  "vitality_growth": 4,
+  "strength": 10,
+  "strength_growth": 3,
+  "magic": 10,
+  "magic_growth": 3,
+  "speed": 10,
+  "speed_growth": 1.5,
+  "focus": 250,
+  "id": 41,
+  "movesA": [
+   508,
+   83,
+   80,
+   96,
+   99,
+   69,
+   5,
+   8,
+   62
+  ],
+  "movesD": [
+   93,
+   31
+  ],
+  "agressionArray": [
+   50,
+   80,
+   40,
+   15
+  ],
+  "model": [
+   "MODEL1",
+   "GHOST",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   12,
+   0
+  ]
+ },
+ {
+  "name": "Royal Courier",
+  "vitality": 100,
+  "vitality_growth": 5,
+  "strength": 20,
+  "strength_growth": 5,
+  "magic": 20,
+  "magic_growth": 5,
+  "speed": 20,
+  "speed_growth": 3,
+  "focus": 100,
+  "id": 42,
+  "movesA": [
+   69,
+   503,
+   505
+  ],
+  "movesD": [
+   504,
+   70
+  ],
+  "agressionArray": [
+   50,
+   60,
+   40,
+   15
+  ],
+  "model": [
+   "MODEL1",
+   "",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   13,
+   0
+  ],
+  "skinSetter": "USA2"
+ },
+ {
+  "name": "Shadow's Shadow",
+  "vitality": 200,
+  "vitality_growth": 4,
+  "strength": 5,
+  "strength_growth": 4,
+  "magic": 5,
+  "magic_growth": 4,
+  "speed": 5,
+  "speed_growth": 4,
+  "focus": 100,
+  "id": 43,
+  "movesA": [
+   69,
+   509
+  ],
+  "movesD": [
+   515,
+   88
+  ],
+  "agressionArray": [
+   50,
+   80,
+   50,
+   15
+  ],
+  "model": [
+   "MODEL1",
+   "",
+   "",
+   "M"
+  ],
+  "PER": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "DEF": [
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25,
+   25
+  ],
+  "equipment": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   33,
+   33
+  ],
+  "skinSetter": "SINJID"
+ }
+]
