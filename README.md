@@ -105,10 +105,14 @@ of the SWF's display list, because nothing else knows them:
   inside it. Position follows the *slot*, not the speed order -- and the
   right-hand team's containers carry a negative horizontal scale, which is how
   the original mirrors them to face left.
-- **Where a backdrop's art sits.** Exported PNGs are trimmed to the shape's
-  bounds, so the bounds (from the `DefineShape` header, whose RECT is
-  Xmin/Xmax/Ymin/Ymax -- not Xmin/Ymin/Xmax/Ymax) are what put the picture
-  back where it belongs.
+- **Where any piece of art sits inside its exported image.** Exports are
+  trimmed and padded, so the image's top-left is not the art's origin. Every
+  export has an SVG sibling whose root transform records exactly that offset,
+  and the asset builder stores it per frame. Drawing an image with its
+  top-left at `target - offset` is what puts a backdrop, an impact graphic or
+  a doll part exactly where the game puts it. (The `DefineShape` bounds say
+  the same thing for shapes -- and that RECT is Xmin/Xmax/Ymin/Ymax, not
+  Xmin/Ymin/Xmax/Ymax, which cost an afternoon.)
 
 `tools/extract_assets.sh` runs the decompiler over your SWF for the full dump
 (~200 MB, gitignored), then `tools/build_assets.py` resolves every name the
@@ -188,5 +192,6 @@ Two details worth knowing, both reproduced rather than cleaned up:
 - [x] Real backdrops and ability icons on screen
 - [x] The character doll: per-part transforms out of the model's display list,
       with the original's own stage layout
-- [ ] Audio playback
+- [x] Audio: ability sounds, per-unit hit grunts and death cries, battle music
+- [x] Impact graphics played at the target
 - [ ] Pixel-accurate UI layout against reference screenshots

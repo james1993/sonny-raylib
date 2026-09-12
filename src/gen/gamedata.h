@@ -45,6 +45,8 @@ typedef struct {
     MoveKind     kind;
     Delivery     delivery;
     const char  *buff;       /* "" when the move applies none */
+    const char  *sound;      /* effect sound, played on impact */
+    const char  *model;      /* impact/projectile graphic (BOOM_*) */
     const char  *tooltip;
     AbilityCoefs coefs;
 } AbilityDef;
@@ -158,6 +160,9 @@ typedef struct {
     const char *model_gender;
     int32_t     equipment[7];
     const char *skin_setter;
+    /* Hit grunts (the game picks one of three at random) and the death cry. */
+    const char *voice_hit[3];
+    const char *voice_die;
 } UnitTemplate;
 
 extern const AbilityDef SONNY_ABILITIES[];

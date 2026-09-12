@@ -19,7 +19,15 @@ import argparse
 import glob
 import json
 import os
+import re
 import shutil
+
+# The root <g> of an exported SVG carries the offset from the sprite's own
+# origin to the top-left of the exported canvas. Without it a sprite can only
+# be centred by guesswork, and effects land beside their target.
+SVG_ROOT_TRANSFORM = re.compile(
+    r'<g transform="matrix\(([-0-9.eE]+), *([-0-9.eE]+), *([-0-9.eE]+), *'
+    r'([-0-9.eE]+), *([-0-9.eE]+), *([-0-9.eE]+)\)"')
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -28,6 +36,32 @@ ROOT = os.path.dirname(HERE)
 def load(name, data_dir):
     with open(os.path.join(data_dir, name + '.json'), encoding='utf-8') as fh:
         return json.load(fh)
+
+
+def frame_offset(png_path, raw):
+    """(tx, ty): where the art's own origin sits inside its exported canvas.
+
+    Both sprite frames and shapes get exported alongside an SVG whose root
+    transform records exactly this, which is the only reliable way to line the
+    trimmed and padded PNG back up with the coordinate the game draws at."""
+    if os.sep + 'shape_png' + os.sep in png_path:
+        svg = png_path.replace(os.sep + 'shape_png' + os.sep,
+                               os.sep + 'shape' + os.sep)
+    else:
+        svg = png_path.replace(os.sep + 'sprite' + os.sep,
+                               os.sep + 'sprite_svg' + os.sep)
+    svg = os.path.splitext(svg)[0] + '.svg'
+    if not os.path.exists(svg):
+        return None
+    try:
+        with open(svg, encoding='utf-8', errors='replace') as fh:
+            head = fh.read(4096)
+    except OSError:
+        return None
+    m = SVG_ROOT_TRANSFORM.search(head)
+    if not m:
+        return None
+    return [round(float(m.group(5)), 3), round(float(m.group(6)), 3)]
 
 
 def shape_png(raw, shape_id):
@@ -63,6 +97,19 @@ def shape_origin(exports, shape_id):
     return placed_origin(exports, shape_id, None)
 
 
+def sound_file(raw, exports, name):
+    """The decompiler names sound files "<id>_<export name>", so the export
+    table is what connects a sound the engine asks for to a file."""
+    cid = (exports.get('exports') or {}).get(name)
+    if cid is None:
+        return None
+    for ext in ('mp3', 'wav'):
+        path = os.path.join(raw, 'sound', '%d_%s.%s' % (cid, name, ext))
+        if os.path.exists(path):
+            return path
+    return None
+
+
 def sprite_dir(raw, sprite_id):
     matches = glob.glob(os.path.join(raw, 'sprite', 'DefineSprite_%d' % sprite_id))
     matches += glob.glob(os.path.join(raw, 'sprite',
@@ -92,7 +139,7 @@ def collect_names(data_dir):
     doll = load('doll', data_dir)
 
     want = {'icon': set(), 'effect': set(), 'background': set(),
-            'doll': set(), 'buff': set(), 'ui': set()}
+            'doll': set(), 'buff': set(), 'ui': set(), 'sound': set()}
     speculative = set()
     # Expected to have no art: enemy ability icons (never on the player's
     # bar), permanent passive-talent buffs, and the doll cross-product below,
@@ -109,6 +156,8 @@ def collect_names(data_dir):
         # what get played. See the animations block in the manifest.
         if a.get('model'):
             want['effect'].add(a['model'])
+        if a.get('sound'):
+            want['sound'].add(a['sound'])
     for b in buffs:
         want['buff'].add(b['key'])
         # Permanent buffs (duration -1) are the passive talents. The icon
@@ -136,6 +185,18 @@ def collect_names(data_dir):
                     looks.add(entry)
         if isinstance(u.get('skinSetter'), str) and u['skinSetter']:
             looks.add(u['skinSetter'])
+        # Each unit's own hit grunts and death cry.
+        for voice in (u.get('voiceHit') or []):
+            if isinstance(voice, str) and voice:
+                want['sound'].add(voice)
+        if isinstance(u.get('voiceDie'), str) and u['voiceDie']:
+            want['sound'].add(u['voiceDie'])
+
+    # The battle screen's own effect sounds, played by name.
+    want['sound'].update(['Swing', 'MagicCast', 'Forcefield', 'Click2putdown',
+                          'Click3pickup'])
+    # Music tracks, which the original cycles through during battle.
+    want['sound'].update(['BattleMusic1loopable', 'BattleMusic2loopable'])
     # Each doll part draws two layers: the skin underneath
     # (<gender>_S<part>_<skin>) and the equipped item over it
     # (<gender>_<part>_<look>). Weapons always use the M_ form. Hair goes on
@@ -196,7 +257,11 @@ def main():
             entries = []
             origin = None
 
-            if name in by_name:
+            if category == 'sound':
+                path = sound_file(args.raw, exports, name)
+                if path:
+                    entries = [(1, path)]
+            elif name in by_name:
                 # A whole exported character: a sprite keeps its frames as an
                 # animation, a shape is a single picture.
                 cid = by_name[name]
@@ -248,8 +313,9 @@ def main():
             os.makedirs(dest_dir, exist_ok=True)
             files = []
             for index, (_, src) in enumerate(entries, start=1):
-                dest = os.path.join(dest_dir, '%s_%d.png' % (safe, index)
-                                    if len(entries) > 1 else '%s.png' % safe)
+                ext = os.path.splitext(src)[1] or '.png'
+                dest = os.path.join(dest_dir, '%s_%d%s' % (safe, index, ext)
+                                    if len(entries) > 1 else '%s%s' % (safe, ext))
                 shutil.copyfile(src, dest)
                 files.append(os.path.relpath(dest, ROOT))
                 stats['copied'] += 1
@@ -257,6 +323,11 @@ def main():
             manifest[name] = {'category': category, 'frames': files}
             if origin:
                 manifest[name]['bounds'] = origin
+            if category != 'sound':
+                offsets = [frame_offset(src, args.raw)
+                           for _, src in entries]
+                if any(o is not None for o in offsets):
+                    manifest[name]['offsets'] = [o or [0, 0] for o in offsets]
             found += 1
         stats['categories'][category] = {'wanted': len(names), 'found': found}
 

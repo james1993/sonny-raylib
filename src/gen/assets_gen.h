@@ -6,10 +6,19 @@
 
 /* One named asset: a still has a single frame, an animation has several, in
    order. Paths are relative to the repository root. */
+/* Where a frame's own origin sits inside its exported image. Drawing the
+   image with its top-left at (target - offset) puts the art exactly where the
+   game draws it; without this, trimmed and padded exports land beside their
+   mark. */
+typedef struct {
+    float x, y;
+} AssetOffset;
+
 typedef struct {
     const char        *name;
     const char        *category;
     const char *const *frames;
+    const AssetOffset *offsets;   /* NULL when unknown */
     int32_t            frame_count;
     /* Where this art sits relative to its parent's origin, when known: the
        shape's bounds with its placement matrix applied. has_bounds is 0 for

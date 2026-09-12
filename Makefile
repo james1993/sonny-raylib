@@ -16,7 +16,8 @@ $(BUILD):
 
 game: $(BUILD)
 	$(CC) $(CFLAGS) -o $(BUILD)/sonny src/platform/main.c \
-	    src/platform/assets.c src/gen/assets_gen.c $(CORE_SRC) $(RAYLIB_LIBS)
+	    src/platform/assets.c src/platform/audio.c src/gen/assets_gen.c \
+	    $(CORE_SRC) $(RAYLIB_LIBS)
 
 simulate: $(BUILD)
 	$(CC) $(CFLAGS) -o $(BUILD)/simulate tools/simulate.c $(CORE_SRC) -lm

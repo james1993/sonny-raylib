@@ -96,7 +96,9 @@ def gen_abilities(abilities):
                         'DELIVER_MISSILE' if delivery == 'Missile' else
                         'DELIVER_SHOCK' if delivery == 'Shock' else
                         'DELIVER_NONE'))
-        lines.append('        .buff = %s,' % c_string(buff_key))
+        lines.append('        .buff = %s, .sound = %s, .model = %s,'
+                     % (c_string(buff_key), c_string(a.get('sound') or ''),
+                        c_string(a.get('model') or '')))
         lines.append('        .tooltip = %s,' % c_string(c.get('tooltip') or ''))
         lines.append('        .coefs = { .element = %d, .strength_add = %s, '
                      '.strength_coef = %s,'
@@ -198,6 +200,13 @@ def gen_units(units):
         lines.append('        .skin_setter = %s,'
                      % c_string(skin_setter if isinstance(skin_setter, str)
                                 else ''))
+        voices = [v for v in (u.get('voiceHit') or []) if isinstance(v, str)]
+        voices = (voices + [''] * 3)[:3]
+        lines.append('        .voice_hit = { %s },'
+                     % ', '.join(c_string(v) for v in voices))
+        lines.append('        .voice_die = %s,'
+                     % c_string(u.get('voiceDie') if isinstance(
+                         u.get('voiceDie'), str) else ''))
         lines.append('    },')
     lines.append('};')
     lines.append('const int SONNY_UNIT_COUNT = '
@@ -389,6 +398,8 @@ typedef struct {
     MoveKind     kind;
     Delivery     delivery;
     const char  *buff;       /* "" when the move applies none */
+    const char  *sound;      /* effect sound, played on impact */
+    const char  *model;      /* impact/projectile graphic (BOOM_*) */
     const char  *tooltip;
     AbilityCoefs coefs;
 } AbilityDef;
@@ -502,6 +513,9 @@ typedef struct {
     const char *model_gender;
     int32_t     equipment[7];
     const char *skin_setter;
+    /* Hit grunts (the game picks one of three at random) and the death cry. */
+    const char *voice_hit[3];
+    const char *voice_die;
 } UnitTemplate;
 
 extern const AbilityDef SONNY_ABILITIES[];

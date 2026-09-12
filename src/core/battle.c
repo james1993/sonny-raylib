@@ -44,8 +44,16 @@ static void install_brain(Brain *br, const UnitTemplate *t, int32_t ai)
    krinAddNewUnit does for units that come with their own skin. */
 static void install_looks(Unit *u, const char *gender, const char *skin,
                           const char *hair, const int32_t equipment[7],
-                          const char *skin_setter)
+                          const char *skin_setter, const UnitTemplate *t)
 {
+    if (t) {
+        for (int32_t i = 0; i < 3; i++)
+            snprintf(u->voice_hit[i], sizeof(u->voice_hit[i]), "%s",
+                     t->voice_hit[i] ? t->voice_hit[i] : "");
+        snprintf(u->voice_die, sizeof(u->voice_die), "%s",
+                 t->voice_die ? t->voice_die : "");
+    }
+
     snprintf(u->model_gender, sizeof(u->model_gender), "%s",
              (gender && gender[0]) ? gender : "M");
     snprintf(u->model_skin, sizeof(u->model_skin), "%s", skin ? skin : "");
@@ -72,7 +80,7 @@ void battle_place_enemy(Battle *b, int32_t slot, const UnitTemplate *t,
     unit_init(u, slot);
     install_brain(&b->brains[slot], t, ai);
     install_looks(u, t->model_gender, t->model_skin, t->model_hair,
-                  t->equipment, t->skin_setter);
+                  t->equipment, t->skin_setter, t);
 
     snprintf(u->name, SONNY_NAME_LEN, "%s", t->name);
     u->plevel = level;
@@ -108,7 +116,12 @@ void battle_place_character(Battle *b, int32_t slot, const Character *c,
     unit_init(u, slot);
     install_brain(br, c->class_template, ai);
     /* Sonny's own equipment dresses him; the class template's does not. */
-    install_looks(u, "M", "ONE", "ONE", c->equip, NULL);
+    install_looks(u, "M", "ONE", "ONE", c->equip, NULL, NULL);
+    /* Sonny's own voice set, as frame 196 assigns it. */
+    snprintf(u->voice_hit[0], sizeof(u->voice_hit[0]), "SonnyHit1");
+    snprintf(u->voice_hit[1], sizeof(u->voice_hit[1]), "SonnyHit2");
+    snprintf(u->voice_hit[2], sizeof(u->voice_hit[2]), "SonnyHit3");
+    snprintf(u->voice_die, sizeof(u->voice_die), "SonnyDie");
 
     /* The character's own bar, not the class template's move list. The
        original only ever drives Sonny from input; giving the AI his bar is a

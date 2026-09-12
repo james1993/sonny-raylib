@@ -71,6 +71,19 @@ const Texture2D *asset_texture(const char *name, int32_t frame)
     return slot->ok ? &slot->texture : NULL;
 }
 
+/* Where a frame's own origin sits inside its exported image. */
+static Vector2 frame_offset(const char *name, int32_t frame)
+{
+    const AssetEntry *entry = asset_find(name);
+    if (!entry || !entry->offsets || entry->frame_count == 0)
+        return (Vector2){0, 0};
+    if (frame < 1)
+        frame = 1;
+    if (frame > entry->frame_count)
+        frame = ((frame - 1) % entry->frame_count) + 1;
+    return (Vector2){entry->offsets[frame - 1].x, entry->offsets[frame - 1].y};
+}
+
 static int draw_scaled(const char *name, int32_t frame, Rectangle area,
                        Color tint, int cover)
 {
@@ -122,22 +135,15 @@ int asset_draw_placed(const char *name, int32_t frame, Vector2 parent,
     const Texture2D *tex = asset_texture(name, frame);
     if (!tex)
         return 0;
-    const AssetEntry *entry = asset_find(name);
+    /* The frame's recorded offset says where its own origin sits inside the
+       image, so this puts that origin exactly on `parent`. */
+    Vector2 offset = frame_offset(name, frame);
 
-    float cx = parent.x;
-    float cy = parent.y;
-    if (entry && entry->has_bounds) {
-        cx += (entry->xmin + entry->xmax) / 2.0f * scale;
-        cy += (entry->ymin + entry->ymax) / 2.0f * scale;
-    }
-
-    /* Drawn at its own size around that centre: the exported PNG is trimmed
-       to the bounds and padded symmetrically, so centring keeps the art at
-       1:1 rather than stretching it to a box that is slightly too small. */
     float w = tex->width * scale;
     float h = tex->height * scale;
     Rectangle src = {0, 0, (float)tex->width, (float)tex->height};
-    Rectangle dest = {cx - w / 2.0f, cy - h / 2.0f, w, h};
+    Rectangle dest = {parent.x - offset.x * scale,
+                      parent.y - offset.y * scale, w, h};
     DrawTexturePro(*tex, src, dest, (Vector2){0, 0}, 0.0f, tint);
     return 1;
 }
@@ -166,7 +172,8 @@ int32_t doll_animation_frame(const char *animation, int32_t tick, int loop)
 /* Draw one texture under a SWF matrix, so skew and rotation survive rather
    than being approximated by a rotation angle. */
 static void draw_with_matrix(const Texture2D *tex, const float m[6],
-                             Vector2 origin, float scale, int flip, Color tint)
+                             Vector2 origin, float scale, int flip,
+                             Vector2 offset, Color tint)
 {
     float sign = flip ? -1.0f : 1.0f;
 
@@ -183,10 +190,11 @@ static void draw_with_matrix(const Texture2D *tex, const float m[6],
     };
     rlMultMatrixf(mat);
 
-    /* The exported frame is trimmed to its own bounds, so draw it centred on
-       the part's origin rather than at the top-left. */
+    /* The exported image is trimmed and padded, and its SVG sibling records
+       where the art's own origin sits inside it. Putting the top-left at
+       -offset lines the two coordinate systems back up exactly. */
     Rectangle src = {0, 0, (float)tex->width, (float)tex->height};
-    Rectangle dest = {-tex->width / 2.0f, -tex->height / 2.0f,
+    Rectangle dest = {-offset.x, -offset.y,
                       (float)tex->width, (float)tex->height};
     DrawTexturePro(*tex, src, dest, (Vector2){0, 0}, 0.0f, tint);
     rlPopMatrix();
@@ -198,7 +206,7 @@ static int draw_layer(const char *name, const float m[6], Vector2 origin,
     const Texture2D *tex = asset_texture(name, 1);
     if (!tex)
         return 0;
-    draw_with_matrix(tex, m, origin, scale, flip, tint);
+    draw_with_matrix(tex, m, origin, scale, flip, frame_offset(name, 1), tint);
     return 1;
 }
 

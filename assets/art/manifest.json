@@ -4,6 +4,12 @@
    "category": "background",
    "frames": [
     "assets/art/background/DAY.png"
+   ],
+   "offsets": [
+    [
+     403.25,
+     183.1
+    ]
    ]
   },
   "DAY2": {
@@ -16,18 +22,36 @@
     -183.1,
     411.2,
     155.15
+   ],
+   "offsets": [
+    [
+     403.25,
+     183.1
+    ]
    ]
   },
   "NIGHT": {
    "category": "background",
    "frames": [
     "assets/art/background/NIGHT.png"
+   ],
+   "offsets": [
+    [
+     403.25,
+     183.1
+    ]
    ]
   },
   "PLAINS": {
    "category": "background",
    "frames": [
     "assets/art/background/PLAINS.png"
+   ],
+   "offsets": [
+    [
+     476.3,
+     260.95
+    ]
    ]
   },
   "PLAINS2": {
@@ -40,6 +64,12 @@
     -136.45,
     535.7,
     256.95
+   ],
+   "offsets": [
+    [
+     570.45,
+     136.45
+    ]
    ]
   },
   "SEA": {
@@ -52,6 +82,12 @@
     -223.6,
     561.45,
     390.75
+   ],
+   "offsets": [
+    [
+     476.0,
+     223.6
+    ]
    ]
   },
   "SHORE": {
@@ -64,6 +100,12 @@
     -166.55,
     523.25,
     215.05
+   ],
+   "offsets": [
+    [
+     523.2,
+     166.55
+    ]
    ]
   },
   "WHITE NOVEMBER": {
@@ -76,6 +118,12 @@
     -118.9,
     551.45,
     246.05
+   ],
+   "offsets": [
+    [
+     528.5,
+     118.9
+    ]
    ]
   },
   "BLACKOUT": {
@@ -88,6 +136,12 @@
     -10.95,
     5.95,
     10.95
+   ],
+   "offsets": [
+    [
+     5.95,
+     10.95
+    ]
    ]
   },
   "BLOCK1": {
@@ -100,6 +154,12 @@
     -11.6,
     1.85,
     7.0
+   ],
+   "offsets": [
+    [
+     7.05,
+     11.6
+    ]
    ]
   },
   "BURNING": {
@@ -112,6 +172,12 @@
     -10.95,
     6.05,
     10.95
+   ],
+   "offsets": [
+    [
+     5.95,
+     10.95
+    ]
    ]
   },
   "BURNS": {
@@ -124,6 +190,12 @@
     -9.3,
     5.0,
     10.5
+   ],
+   "offsets": [
+    [
+     5.0,
+     9.3
+    ]
    ]
   },
   "COLDSOUL": {
@@ -136,6 +208,12 @@
     -14.35,
     6.15,
     2.9
+   ],
+   "offsets": [
+    [
+     6.1,
+     14.35
+    ]
    ]
   },
   "CRIPPLE1": {
@@ -148,36 +226,72 @@
     -14.35,
     6.15,
     2.9
+   ],
+   "offsets": [
+    [
+     6.1,
+     14.35
+    ]
    ]
   },
   "CRIPPLE2": {
    "category": "buff",
    "frames": [
     "assets/art/buff/CRIPPLE2.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "CRIPPLE3": {
    "category": "buff",
    "frames": [
     "assets/art/buff/CRIPPLE3.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "DARKREGEN": {
    "category": "buff",
    "frames": [
     "assets/art/buff/DARKREGEN.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "DECAY": {
    "category": "buff",
    "frames": [
     "assets/art/buff/DECAY.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "DOCTOR": {
    "category": "buff",
    "frames": [
     "assets/art/buff/DOCTOR.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "FATALFLAW": {
@@ -190,12 +304,24 @@
     -10.1,
     5.95,
     0.7
+   ],
+   "offsets": [
+    [
+     5.95,
+     10.1
+    ]
    ]
   },
   "FATE": {
    "category": "buff",
    "frames": [
     "assets/art/buff/FATE.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "FIRESHOCK": {
@@ -208,12 +334,24 @@
     -10.95,
     5.95,
     10.95
+   ],
+   "offsets": [
+    [
+     5.95,
+     10.95
+    ]
    ]
   },
   "IGNITE": {
    "category": "buff",
    "frames": [
     "assets/art/buff/IGNITE.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "INTERVENTION1": {
@@ -226,60 +364,120 @@
     -10.45,
     5.85,
     6.45
+   ],
+   "offsets": [
+    [
+     6.4,
+     10.45
+    ]
    ]
   },
   "INTERVENTION10": {
    "category": "buff",
    "frames": [
     "assets/art/buff/INTERVENTION10.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "INTERVENTION2": {
    "category": "buff",
    "frames": [
     "assets/art/buff/INTERVENTION2.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "INTERVENTION3": {
    "category": "buff",
    "frames": [
     "assets/art/buff/INTERVENTION3.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "INTERVENTION4": {
    "category": "buff",
    "frames": [
     "assets/art/buff/INTERVENTION4.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "INTERVENTION5": {
    "category": "buff",
    "frames": [
     "assets/art/buff/INTERVENTION5.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "INTERVENTION6": {
    "category": "buff",
    "frames": [
     "assets/art/buff/INTERVENTION6.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "INTERVENTION7": {
    "category": "buff",
    "frames": [
     "assets/art/buff/INTERVENTION7.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "INTERVENTION8": {
    "category": "buff",
    "frames": [
     "assets/art/buff/INTERVENTION8.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "INTERVENTION9": {
    "category": "buff",
    "frames": [
     "assets/art/buff/INTERVENTION9.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "IRONSKIN1": {
@@ -292,30 +490,60 @@
     -10.95,
     6.05,
     11.0
+   ],
+   "offsets": [
+    [
+     5.95,
+     10.95
+    ]
    ]
   },
   "IRONSKIN2": {
    "category": "buff",
    "frames": [
     "assets/art/buff/IRONSKIN2.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "IRONSKIN3": {
    "category": "buff",
    "frames": [
     "assets/art/buff/IRONSKIN3.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "IRONSKIN4": {
    "category": "buff",
    "frames": [
     "assets/art/buff/IRONSKIN4.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "IRONSKIN5": {
    "category": "buff",
    "frames": [
     "assets/art/buff/IRONSKIN5.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "MAGICWOUND": {
@@ -328,6 +556,12 @@
     -10.1,
     5.95,
     0.7
+   ],
+   "offsets": [
+    [
+     5.95,
+     10.1
+    ]
    ]
   },
   "POISON": {
@@ -340,6 +574,12 @@
     -10.95,
     5.95,
     10.95
+   ],
+   "offsets": [
+    [
+     5.95,
+     10.95
+    ]
    ]
   },
   "POISONZOMBIE": {
@@ -352,6 +592,12 @@
     -10.95,
     5.95,
     10.95
+   ],
+   "offsets": [
+    [
+     5.95,
+     10.95
+    ]
    ]
   },
   "POWERUP": {
@@ -364,6 +610,12 @@
     -10.95,
     6.05,
     10.95
+   ],
+   "offsets": [
+    [
+     5.95,
+     10.95
+    ]
    ]
   },
   "RAGE1": {
@@ -376,18 +628,36 @@
     -10.95,
     6.05,
     10.95
+   ],
+   "offsets": [
+    [
+     5.95,
+     10.95
+    ]
    ]
   },
   "RAGE2": {
    "category": "buff",
    "frames": [
     "assets/art/buff/RAGE2.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "RAGE3": {
    "category": "buff",
    "frames": [
     "assets/art/buff/RAGE3.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "REGEN": {
@@ -400,6 +670,12 @@
     -10.05,
     6.55,
     11.0
+   ],
+   "offsets": [
+    [
+     5.75,
+     10.05
+    ]
    ]
   },
   "REGENFOC": {
@@ -412,6 +688,12 @@
     -10.05,
     6.55,
     11.0
+   ],
+   "offsets": [
+    [
+     5.75,
+     10.05
+    ]
    ]
   },
   "REGENSHAMAN": {
@@ -424,18 +706,36 @@
     -10.05,
     6.55,
     11.0
+   ],
+   "offsets": [
+    [
+     5.75,
+     10.05
+    ]
    ]
   },
   "SHATTER": {
    "category": "buff",
    "frames": [
     "assets/art/buff/SHATTER.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "SHATTER2": {
    "category": "buff",
    "frames": [
     "assets/art/buff/SHATTER2.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "SPEEDUP": {
@@ -448,6 +748,12 @@
     -9.8,
     5.85,
     3.2
+   ],
+   "offsets": [
+    [
+     6.15,
+     9.8
+    ]
    ]
   },
   "STUN1": {
@@ -460,6 +766,12 @@
     -10.95,
     5.95,
     10.95
+   ],
+   "offsets": [
+    [
+     5.95,
+     10.95
+    ]
    ]
   },
   "SUBVERSION": {
@@ -472,6 +784,12 @@
     -10.7,
     5.7,
     6.95
+   ],
+   "offsets": [
+    [
+     6.05,
+     10.7
+    ]
    ]
   },
   "SUNDER1": {
@@ -484,30 +802,60 @@
     -10.1,
     5.95,
     0.7
+   ],
+   "offsets": [
+    [
+     5.95,
+     10.1
+    ]
    ]
   },
   "SUNDER2": {
    "category": "buff",
    "frames": [
     "assets/art/buff/SUNDER2.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "SUNDER3": {
    "category": "buff",
    "frames": [
     "assets/art/buff/SUNDER3.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "SUNDER4": {
    "category": "buff",
    "frames": [
     "assets/art/buff/SUNDER4.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "SUNDER5": {
    "category": "buff",
    "frames": [
     "assets/art/buff/SUNDER5.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "SUPRESSION": {
@@ -520,6 +868,12 @@
     -17.35,
     3.85,
     17.25
+   ],
+   "offsets": [
+    [
+     3.85,
+     17.35
+    ]
    ]
   },
   "VOID1": {
@@ -532,36 +886,72 @@
     -10.95,
     5.95,
     10.95
+   ],
+   "offsets": [
+    [
+     5.95,
+     10.95
+    ]
    ]
   },
   "VOID2": {
    "category": "buff",
    "frames": [
     "assets/art/buff/VOID2.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "VOID3": {
    "category": "buff",
    "frames": [
     "assets/art/buff/VOID3.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "VOID4": {
    "category": "buff",
    "frames": [
     "assets/art/buff/VOID4.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "VOID5": {
    "category": "buff",
    "frames": [
     "assets/art/buff/VOID5.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "VOIDMOB": {
    "category": "buff",
    "frames": [
     "assets/art/buff/VOIDMOB.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "WASHED": {
@@ -574,6 +964,12 @@
     -11.6,
     1.85,
     7.0
+   ],
+   "offsets": [
+    [
+     7.05,
+     11.6
+    ]
    ]
   },
   "WOUND1": {
@@ -586,1758 +982,3516 @@
     -10.95,
     5.95,
     10.95
+   ],
+   "offsets": [
+    [
+     5.95,
+     10.95
+    ]
    ]
   },
   "WOUND2": {
    "category": "buff",
    "frames": [
     "assets/art/buff/WOUND2.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "WOUND3": {
    "category": "buff",
    "frames": [
     "assets/art/buff/WOUND3.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     17.35
+    ]
    ]
   },
   "F_SARM_SIX": {
    "category": "doll",
    "frames": [
     "assets/art/doll/F_SARM_SIX.png"
+   ],
+   "offsets": [
+    [
+     2.15,
+     8.7
+    ]
    ]
   },
   "F_SARM_THREE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/F_SARM_THREE.png"
+   ],
+   "offsets": [
+    [
+     2.15,
+     8.7
+    ]
    ]
   },
   "F_SCHEST_SIX": {
    "category": "doll",
    "frames": [
     "assets/art/doll/F_SCHEST_SIX.png"
+   ],
+   "offsets": [
+    [
+     8.65,
+     17.7
+    ]
    ]
   },
   "F_SCHEST_THREE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/F_SCHEST_THREE.png"
+   ],
+   "offsets": [
+    [
+     8.65,
+     16.4
+    ]
    ]
   },
   "F_SFOOT_SIX": {
    "category": "doll",
    "frames": [
     "assets/art/doll/F_SFOOT_SIX.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "F_SFOOT_THREE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/F_SFOOT_THREE.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "F_SHAND_SIX": {
    "category": "doll",
    "frames": [
     "assets/art/doll/F_SHAND_SIX.png"
+   ],
+   "offsets": [
+    [
+     2.7,
+     9.15
+    ]
    ]
   },
   "F_SHAND_THREE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/F_SHAND_THREE.png"
+   ],
+   "offsets": [
+    [
+     2.7,
+     9.15
+    ]
    ]
   },
   "F_SHEAD_SIX": {
    "category": "doll",
    "frames": [
     "assets/art/doll/F_SHEAD_SIX.png"
+   ],
+   "offsets": [
+    [
+     2.25,
+     6.25
+    ]
    ]
   },
   "F_SHEAD_THREE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/F_SHEAD_THREE.png"
+   ],
+   "offsets": [
+    [
+     2.55,
+     6.7
+    ]
    ]
   },
   "F_SLEG2_SIX": {
    "category": "doll",
    "frames": [
     "assets/art/doll/F_SLEG2_SIX.png"
+   ],
+   "offsets": [
+    [
+     3.6,
+     15.2
+    ]
    ]
   },
   "F_SLEG2_THREE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/F_SLEG2_THREE.png"
+   ],
+   "offsets": [
+    [
+     3.6,
+     15.2
+    ]
    ]
   },
   "HAIR_BART": {
    "category": "doll",
    "frames": [
     "assets/art/doll/HAIR_BART.png"
+   ],
+   "offsets": [
+    [
+     2.9,
+     7.65
+    ]
    ]
   },
   "HAIR_FIVE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/HAIR_FIVE.png"
+   ],
+   "offsets": [
+    [
+     15.95,
+     11.8
+    ]
    ]
   },
   "HAIR_FOUR": {
    "category": "doll",
    "frames": [
     "assets/art/doll/HAIR_FOUR.png"
+   ],
+   "offsets": [
+    [
+     6.15,
+     12.9
+    ]
    ]
   },
   "HAIR_ONE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/HAIR_ONE.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     8.85
+    ]
    ]
   },
   "HAIR_SIX": {
    "category": "doll",
    "frames": [
     "assets/art/doll/HAIR_SIX.png"
+   ],
+   "offsets": [
+    [
+     15.95,
+     11.8
+    ]
    ]
   },
   "HAIR_THREE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/HAIR_THREE.png"
+   ],
+   "offsets": [
+    [
+     8.3,
+     9.65
+    ]
    ]
   },
   "HAIR_TWO": {
    "category": "doll",
    "frames": [
     "assets/art/doll/HAIR_TWO.png"
+   ],
+   "offsets": [
+    [
+     5.15,
+     9.45
+    ]
    ]
   },
   "M_ARM_FINAL1": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_ARM_FINAL1.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
    ]
   },
   "M_ARM_FINAL2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_ARM_FINAL2.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
    ]
   },
   "M_ARM_FINAL3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_ARM_FINAL3.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
    ]
   },
   "M_ARM_FINAL4": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_ARM_FINAL4.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
    ]
   },
   "M_ARM_GER": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_ARM_GER.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
    ]
   },
   "M_ARM_JEANS": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_ARM_JEANS.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
    ]
   },
   "M_ARM_KNIGHT": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_ARM_KNIGHT.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
    ]
   },
   "M_ARM_MEDIC": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_ARM_MEDIC.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
    ]
   },
   "M_ARM_NINJA": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_ARM_NINJA.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
    ]
   },
   "M_ARM_ROCKSTAR": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_ARM_ROCKSTAR.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
    ]
   },
   "M_ARM_SAMURAI": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_ARM_SAMURAI.png"
+   ],
+   "offsets": [
+    [
+     6.8,
+     9.7
+    ]
    ]
   },
   "M_ARM_SAMURAI2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_ARM_SAMURAI2.png"
+   ],
+   "offsets": [
+    [
+     6.8,
+     9.7
+    ]
    ]
   },
   "M_ARM_SAMURAI3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_ARM_SAMURAI3.png"
+   ],
+   "offsets": [
+    [
+     6.8,
+     9.7
+    ]
    ]
   },
   "M_ARM_SHAMAN1": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_ARM_SHAMAN1.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
    ]
   },
   "M_ARM_SHAMAN2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_ARM_SHAMAN2.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
    ]
   },
   "M_ARM_SHAMAN3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_ARM_SHAMAN3.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
    ]
   },
   "M_ARM_SHAMAN4": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_ARM_SHAMAN4.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
    ]
   },
   "M_ARM_SHIRT": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_ARM_SHIRT.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
    ]
   },
   "M_ARM_SINJID": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_ARM_SINJID.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
    ]
   },
   "M_ARM_SURVIVOR": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_ARM_SURVIVOR.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
    ]
   },
   "M_ARM_USA1": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_ARM_USA1.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
    ]
   },
   "M_ARM_USA2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_ARM_USA2.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
    ]
   },
   "M_ARM_USA3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_ARM_USA3.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
    ]
   },
   "M_ARM_USA4": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_ARM_USA4.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
    ]
   },
   "M_ARM_USA5": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_ARM_USA5.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
    ]
   },
   "M_CHEST_FINAL1": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_CHEST_FINAL1.png"
+   ],
+   "offsets": [
+    [
+     9.9,
+     17.9
+    ]
    ]
   },
   "M_CHEST_FINAL2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_CHEST_FINAL2.png"
+   ],
+   "offsets": [
+    [
+     9.9,
+     17.9
+    ]
    ]
   },
   "M_CHEST_FINAL3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_CHEST_FINAL3.png"
+   ],
+   "offsets": [
+    [
+     9.9,
+     17.9
+    ]
    ]
   },
   "M_CHEST_FINAL4": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_CHEST_FINAL4.png"
+   ],
+   "offsets": [
+    [
+     9.9,
+     17.9
+    ]
    ]
   },
   "M_CHEST_GER": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_CHEST_GER.png"
+   ],
+   "offsets": [
+    [
+     9.9,
+     16.4
+    ]
    ]
   },
   "M_CHEST_KNIGHT": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_CHEST_KNIGHT.png"
+   ],
+   "offsets": [
+    [
+     9.9,
+     16.4
+    ]
    ]
   },
   "M_CHEST_MEDIC": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_CHEST_MEDIC.png"
+   ],
+   "offsets": [
+    [
+     9.9,
+     20.8
+    ]
    ]
   },
   "M_CHEST_NINJA": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_CHEST_NINJA.png"
+   ],
+   "offsets": [
+    [
+     9.9,
+     16.4
+    ]
    ]
   },
   "M_CHEST_ROCKSTAR": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_CHEST_ROCKSTAR.png"
+   ],
+   "offsets": [
+    [
+     11.3,
+     17.75
+    ]
    ]
   },
   "M_CHEST_SAMURAI": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_CHEST_SAMURAI.png"
+   ],
+   "offsets": [
+    [
+     17.8,
+     17.85
+    ]
    ]
   },
   "M_CHEST_SAMURAI2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_CHEST_SAMURAI2.png"
+   ],
+   "offsets": [
+    [
+     17.8,
+     23.65
+    ]
    ]
   },
   "M_CHEST_SAMURAI3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_CHEST_SAMURAI3.png"
+   ],
+   "offsets": [
+    [
+     17.8,
+     23.65
+    ]
    ]
   },
   "M_CHEST_SHAMAN1": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_CHEST_SHAMAN1.png"
+   ],
+   "offsets": [
+    [
+     9.3,
+     21.1
+    ]
    ]
   },
   "M_CHEST_SHAMAN2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_CHEST_SHAMAN2.png"
+   ],
+   "offsets": [
+    [
+     9.3,
+     21.1
+    ]
    ]
   },
   "M_CHEST_SHAMAN3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_CHEST_SHAMAN3.png"
+   ],
+   "offsets": [
+    [
+     9.3,
+     21.1
+    ]
    ]
   },
   "M_CHEST_SHAMAN4": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_CHEST_SHAMAN4.png"
+   ],
+   "offsets": [
+    [
+     9.3,
+     21.1
+    ]
    ]
   },
   "M_CHEST_SHIRT": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_CHEST_SHIRT.png"
+   ],
+   "offsets": [
+    [
+     9.9,
+     16.4
+    ]
    ]
   },
   "M_CHEST_SINJID": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_CHEST_SINJID.png"
+   ],
+   "offsets": [
+    [
+     9.9,
+     16.4
+    ]
    ]
   },
   "M_CHEST_SURVIVOR": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_CHEST_SURVIVOR.png"
+   ],
+   "offsets": [
+    [
+     9.9,
+     16.4
+    ]
    ]
   },
   "M_CHEST_USA1": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_CHEST_USA1.png"
+   ],
+   "offsets": [
+    [
+     9.9,
+     16.4
+    ]
    ]
   },
   "M_CHEST_USA2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_CHEST_USA2.png"
+   ],
+   "offsets": [
+    [
+     9.9,
+     17.9
+    ]
    ]
   },
   "M_CHEST_USA3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_CHEST_USA3.png"
+   ],
+   "offsets": [
+    [
+     9.9,
+     17.9
+    ]
    ]
   },
   "M_CHEST_USA4": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_CHEST_USA4.png"
+   ],
+   "offsets": [
+    [
+     9.9,
+     17.9
+    ]
    ]
   },
   "M_CHEST_USA5": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_CHEST_USA5.png"
+   ],
+   "offsets": [
+    [
+     9.9,
+     17.9
+    ]
    ]
   },
   "M_FOOT_FINAL1": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_FOOT_FINAL1.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_FOOT_FINAL2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_FOOT_FINAL2.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_FOOT_FINAL3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_FOOT_FINAL3.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_FOOT_FINAL4": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_FOOT_FINAL4.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_FOOT_GER": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_FOOT_GER.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_FOOT_JEANS": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_FOOT_JEANS.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_FOOT_KNIGHT": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_FOOT_KNIGHT.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_FOOT_MEDIC": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_FOOT_MEDIC.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_FOOT_NAVY": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_FOOT_NAVY.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_FOOT_NINJA": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_FOOT_NINJA.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_FOOT_ROCKSTAR": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_FOOT_ROCKSTAR.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_FOOT_SAMURAI": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_FOOT_SAMURAI.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_FOOT_SAMURAI2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_FOOT_SAMURAI2.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_FOOT_SAMURAI3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_FOOT_SAMURAI3.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_FOOT_SHAMAN1": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_FOOT_SHAMAN1.png"
+   ],
+   "offsets": [
+    [
+     0.0,
+     0.0
+    ]
    ]
   },
   "M_FOOT_SINJID": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_FOOT_SINJID.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_FOOT_SURVIVOR": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_FOOT_SURVIVOR.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_FOOT_USA1": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_FOOT_USA1.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_FOOT_USA2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_FOOT_USA2.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_FOOT_USA3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_FOOT_USA3.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_FOOT_USA4": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_FOOT_USA4.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_FOOT_USA5": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_FOOT_USA5.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_HAND_ENGINEERINGGLOVES": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HAND_ENGINEERINGGLOVES.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     2.45
+    ]
    ]
   },
   "M_HAND_FINAL1": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HAND_FINAL1.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.15
+    ]
    ]
   },
   "M_HAND_FINAL2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HAND_FINAL2.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.15
+    ]
    ]
   },
   "M_HAND_FINAL3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HAND_FINAL3.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.15
+    ]
    ]
   },
   "M_HAND_FINAL4": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HAND_FINAL4.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.15
+    ]
    ]
   },
   "M_HAND_GER": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HAND_GER.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.15
+    ]
    ]
   },
   "M_HAND_KNIGHT": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HAND_KNIGHT.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.15
+    ]
    ]
   },
   "M_HAND_MEDIC": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HAND_MEDIC.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.15
+    ]
    ]
   },
   "M_HAND_NINJA": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HAND_NINJA.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.15
+    ]
    ]
   },
   "M_HAND_ROCKSTAR": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HAND_ROCKSTAR.png"
+   ],
+   "offsets": [
+    [
+     5.75,
+     9.95
+    ]
    ]
   },
   "M_HAND_SAMURAI": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HAND_SAMURAI.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     2.45
+    ]
    ]
   },
   "M_HAND_SAMURAI2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HAND_SAMURAI2.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     2.45
+    ]
    ]
   },
   "M_HAND_SAMURAI3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HAND_SAMURAI3.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     2.45
+    ]
    ]
   },
   "M_HAND_SHAMAN1": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HAND_SHAMAN1.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     8.95
+    ]
    ]
   },
   "M_HAND_SHAMAN2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HAND_SHAMAN2.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     8.95
+    ]
    ]
   },
   "M_HAND_SHAMAN3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HAND_SHAMAN3.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     8.95
+    ]
    ]
   },
   "M_HAND_SHAMAN4": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HAND_SHAMAN4.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     8.95
+    ]
    ]
   },
   "M_HAND_SINJID": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HAND_SINJID.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.15
+    ]
    ]
   },
   "M_HAND_SURVIVOR": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HAND_SURVIVOR.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.15
+    ]
    ]
   },
   "M_HAND_USA1": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HAND_USA1.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.15
+    ]
    ]
   },
   "M_HAND_USA2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HAND_USA2.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.15
+    ]
    ]
   },
   "M_HAND_USA3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HAND_USA3.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.15
+    ]
    ]
   },
   "M_HAND_USA4": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HAND_USA4.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.15
+    ]
    ]
   },
   "M_HAND_USA5": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HAND_USA5.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.15
+    ]
    ]
   },
   "M_HEAD_FINAL1": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HEAD_FINAL1.png"
+   ],
+   "offsets": [
+    [
+     10.4,
+     13.5
+    ]
    ]
   },
   "M_HEAD_FINAL2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HEAD_FINAL2.png"
+   ],
+   "offsets": [
+    [
+     10.4,
+     13.5
+    ]
    ]
   },
   "M_HEAD_FINAL3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HEAD_FINAL3.png"
+   ],
+   "offsets": [
+    [
+     10.4,
+     13.5
+    ]
    ]
   },
   "M_HEAD_FINAL4": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HEAD_FINAL4.png"
+   ],
+   "offsets": [
+    [
+     10.4,
+     13.5
+    ]
    ]
   },
   "M_HEAD_GER": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HEAD_GER.png"
+   ],
+   "offsets": [
+    [
+     3.85,
+     8.35
+    ]
    ]
   },
   "M_HEAD_KNIGHT": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HEAD_KNIGHT.png"
+   ],
+   "offsets": [
+    [
+     2.55,
+     6.7
+    ]
    ]
   },
   "M_HEAD_MEDIC": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HEAD_MEDIC.png"
+   ],
+   "offsets": [
+    [
+     10.45,
+     13.65
+    ]
    ]
   },
   "M_HEAD_NINJA": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HEAD_NINJA.png"
+   ],
+   "offsets": [
+    [
+     2.55,
+     6.7
+    ]
    ]
   },
   "M_HEAD_ROCKSTAR": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HEAD_ROCKSTAR.png"
+   ],
+   "offsets": [
+    [
+     6.15,
+     12.9
+    ]
    ]
   },
   "M_HEAD_SAMURAI": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HEAD_SAMURAI.png"
+   ],
+   "offsets": [
+    [
+     9.5,
+     28.05
+    ]
    ]
   },
   "M_HEAD_SAMURAI2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HEAD_SAMURAI2.png"
+   ],
+   "offsets": [
+    [
+     9.5,
+     28.05
+    ]
    ]
   },
   "M_HEAD_SAMURAI3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HEAD_SAMURAI3.png"
+   ],
+   "offsets": [
+    [
+     9.5,
+     28.05
+    ]
    ]
   },
   "M_HEAD_SHAMAN1": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HEAD_SHAMAN1.png"
+   ],
+   "offsets": [
+    [
+     6.0,
+     30.35
+    ]
    ]
   },
   "M_HEAD_SHAMAN2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HEAD_SHAMAN2.png"
+   ],
+   "offsets": [
+    [
+     6.0,
+     30.35
+    ]
    ]
   },
   "M_HEAD_SHAMAN3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HEAD_SHAMAN3.png"
+   ],
+   "offsets": [
+    [
+     6.0,
+     30.35
+    ]
    ]
   },
   "M_HEAD_SHAMAN4": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HEAD_SHAMAN4.png"
+   ],
+   "offsets": [
+    [
+     6.0,
+     30.35
+    ]
    ]
   },
   "M_HEAD_SINJID": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HEAD_SINJID.png"
+   ],
+   "offsets": [
+    [
+     5.3,
+     7.2
+    ]
    ]
   },
   "M_HEAD_SURVIVOR": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HEAD_SURVIVOR.png"
+   ],
+   "offsets": [
+    [
+     2.55,
+     6.7
+    ]
    ]
   },
   "M_HEAD_USA1": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HEAD_USA1.png"
+   ],
+   "offsets": [
+    [
+     2.55,
+     2.8
+    ]
    ]
   },
   "M_HEAD_USA2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HEAD_USA2.png"
+   ],
+   "offsets": [
+    [
+     10.4,
+     13.5
+    ]
    ]
   },
   "M_HEAD_USA3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HEAD_USA3.png"
+   ],
+   "offsets": [
+    [
+     10.4,
+     13.5
+    ]
    ]
   },
   "M_HEAD_USA4": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HEAD_USA4.png"
+   ],
+   "offsets": [
+    [
+     10.4,
+     13.5
+    ]
    ]
   },
   "M_HEAD_USA5": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_HEAD_USA5.png"
+   ],
+   "offsets": [
+    [
+     10.4,
+     13.5
+    ]
    ]
   },
   "M_LEG2_FINAL1": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_LEG2_FINAL1.png"
+   ],
+   "offsets": [
+    [
+     15.95,
+     15.2
+    ]
    ]
   },
   "M_LEG2_FINAL2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_LEG2_FINAL2.png"
+   ],
+   "offsets": [
+    [
+     15.95,
+     15.2
+    ]
    ]
   },
   "M_LEG2_FINAL3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_LEG2_FINAL3.png"
+   ],
+   "offsets": [
+    [
+     15.95,
+     15.2
+    ]
    ]
   },
   "M_LEG2_FINAL4": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_LEG2_FINAL4.png"
+   ],
+   "offsets": [
+    [
+     15.95,
+     15.2
+    ]
    ]
   },
   "M_LEG2_GER": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_LEG2_GER.png"
+   ],
+   "offsets": [
+    [
+     4.6,
+     15.2
+    ]
    ]
   },
   "M_LEG2_JEANS": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_LEG2_JEANS.png"
+   ],
+   "offsets": [
+    [
+     4.6,
+     15.2
+    ]
    ]
   },
   "M_LEG2_KNIGHT": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_LEG2_KNIGHT.png"
+   ],
+   "offsets": [
+    [
+     4.6,
+     15.2
+    ]
    ]
   },
   "M_LEG2_MEDIC": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_LEG2_MEDIC.png"
+   ],
+   "offsets": [
+    [
+     15.0,
+     15.2
+    ]
    ]
   },
   "M_LEG2_NAVY": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_LEG2_NAVY.png"
+   ],
+   "offsets": [
+    [
+     4.6,
+     15.2
+    ]
    ]
   },
   "M_LEG2_NINJA": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_LEG2_NINJA.png"
+   ],
+   "offsets": [
+    [
+     4.6,
+     15.2
+    ]
    ]
   },
   "M_LEG2_ROCKSTAR": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_LEG2_ROCKSTAR.png"
+   ],
+   "offsets": [
+    [
+     7.9,
+     15.2
+    ]
    ]
   },
   "M_LEG2_SAMURAI": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_LEG2_SAMURAI.png"
+   ],
+   "offsets": [
+    [
+     6.2,
+     8.65
+    ]
    ]
   },
   "M_LEG2_SAMURAI2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_LEG2_SAMURAI2.png"
+   ],
+   "offsets": [
+    [
+     15.8,
+     20.05
+    ]
    ]
   },
   "M_LEG2_SAMURAI3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_LEG2_SAMURAI3.png"
+   ],
+   "offsets": [
+    [
+     15.8,
+     20.05
+    ]
    ]
   },
   "M_LEG2_SHAMAN1": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_LEG2_SHAMAN1.png"
+   ],
+   "offsets": [
+    [
+     5.45,
+     10.4
+    ]
    ]
   },
   "M_LEG2_SHAMAN2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_LEG2_SHAMAN2.png"
+   ],
+   "offsets": [
+    [
+     5.45,
+     10.4
+    ]
    ]
   },
   "M_LEG2_SHAMAN3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_LEG2_SHAMAN3.png"
+   ],
+   "offsets": [
+    [
+     5.45,
+     10.4
+    ]
    ]
   },
   "M_LEG2_SHAMAN4": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_LEG2_SHAMAN4.png"
+   ],
+   "offsets": [
+    [
+     5.45,
+     10.4
+    ]
    ]
   },
   "M_LEG2_SINJID": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_LEG2_SINJID.png"
+   ],
+   "offsets": [
+    [
+     4.6,
+     15.2
+    ]
    ]
   },
   "M_LEG2_SURVIVOR": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_LEG2_SURVIVOR.png"
+   ],
+   "offsets": [
+    [
+     4.6,
+     15.2
+    ]
    ]
   },
   "M_LEG2_USA1": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_LEG2_USA1.png"
+   ],
+   "offsets": [
+    [
+     4.6,
+     15.2
+    ]
    ]
   },
   "M_LEG2_USA2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_LEG2_USA2.png"
+   ],
+   "offsets": [
+    [
+     15.95,
+     15.2
+    ]
    ]
   },
   "M_LEG2_USA3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_LEG2_USA3.png"
+   ],
+   "offsets": [
+    [
+     15.95,
+     15.2
+    ]
    ]
   },
   "M_LEG2_USA4": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_LEG2_USA4.png"
+   ],
+   "offsets": [
+    [
+     15.95,
+     15.2
+    ]
    ]
   },
   "M_LEG2_USA5": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_LEG2_USA5.png"
+   ],
+   "offsets": [
+    [
+     15.95,
+     15.2
+    ]
    ]
   },
   "M_SARM_FIVE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SARM_FIVE.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
    ]
   },
   "M_SARM_FOUR": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SARM_FOUR.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
    ]
   },
   "M_SARM_GHOST": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SARM_GHOST.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
    ]
   },
   "M_SARM_MAN": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SARM_MAN.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
    ]
   },
   "M_SARM_MAN2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SARM_MAN2.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
    ]
   },
   "M_SARM_MAN3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SARM_MAN3.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
    ]
   },
   "M_SARM_METABII": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SARM_METABII.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
    ]
   },
   "M_SARM_ONE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SARM_ONE.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
    ]
   },
   "M_SARM_TWO": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SARM_TWO.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
    ]
   },
   "M_SARM_ZOMBIE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SARM_ZOMBIE.png"
+   ],
+   "offsets": [
+    [
+     3.8,
+     9.8
+    ]
    ]
   },
   "M_SARM_ZOMBIE1": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SARM_ZOMBIE1.png"
+   ],
+   "offsets": [
+    [
+     3.8,
+     9.8
+    ]
    ]
   },
   "M_SARM_ZOMBIE2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SARM_ZOMBIE2.png"
+   ],
+   "offsets": [
+    [
+     3.8,
+     9.8
+    ]
    ]
   },
   "M_SCHEST_FIVE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SCHEST_FIVE.png"
+   ],
+   "offsets": [
+    [
+     9.9,
+     16.4
+    ]
    ]
   },
   "M_SCHEST_FOUR": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SCHEST_FOUR.png"
+   ],
+   "offsets": [
+    [
+     9.9,
+     16.4
+    ]
    ]
   },
   "M_SCHEST_GHOST": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SCHEST_GHOST.png"
+   ],
+   "offsets": [
+    [
+     9.9,
+     16.4
+    ]
    ]
   },
   "M_SCHEST_MAN": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SCHEST_MAN.png"
+   ],
+   "offsets": [
+    [
+     9.9,
+     16.4
+    ]
    ]
   },
   "M_SCHEST_MAN2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SCHEST_MAN2.png"
+   ],
+   "offsets": [
+    [
+     9.9,
+     16.4
+    ]
    ]
   },
   "M_SCHEST_MAN3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SCHEST_MAN3.png"
+   ],
+   "offsets": [
+    [
+     9.9,
+     16.4
+    ]
    ]
   },
   "M_SCHEST_METABII": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SCHEST_METABII.png"
+   ],
+   "offsets": [
+    [
+     9.9,
+     16.4
+    ]
    ]
   },
   "M_SCHEST_ONE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SCHEST_ONE.png"
+   ],
+   "offsets": [
+    [
+     9.9,
+     16.4
+    ]
    ]
   },
   "M_SCHEST_TWO": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SCHEST_TWO.png"
+   ],
+   "offsets": [
+    [
+     9.9,
+     16.4
+    ]
    ]
   },
   "M_SCHEST_ZOMBIE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SCHEST_ZOMBIE.png"
+   ],
+   "offsets": [
+    [
+     9.9,
+     16.4
+    ]
    ]
   },
   "M_SCHEST_ZOMBIE1": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SCHEST_ZOMBIE1.png"
+   ],
+   "offsets": [
+    [
+     9.9,
+     16.4
+    ]
    ]
   },
   "M_SCHEST_ZOMBIE2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SCHEST_ZOMBIE2.png"
+   ],
+   "offsets": [
+    [
+     48.45,
+     37.2
+    ]
    ]
   },
   "M_SFOOT_FIVE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SFOOT_FIVE.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_SFOOT_FOUR": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SFOOT_FOUR.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_SFOOT_GHOST": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SFOOT_GHOST.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_SFOOT_MAN": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SFOOT_MAN.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_SFOOT_MAN2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SFOOT_MAN2.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_SFOOT_MAN3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SFOOT_MAN3.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_SFOOT_METABII": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SFOOT_METABII.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_SFOOT_ONE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SFOOT_ONE.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_SFOOT_TWO": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SFOOT_TWO.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_SFOOT_ZOMBIE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SFOOT_ZOMBIE.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_SFOOT_ZOMBIE1": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SFOOT_ZOMBIE1.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_SFOOT_ZOMBIE2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SFOOT_ZOMBIE2.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
    ]
   },
   "M_SHAND_FIVE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHAND_FIVE.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.15
+    ]
    ]
   },
   "M_SHAND_FOUR": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHAND_FOUR.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.15
+    ]
    ]
   },
   "M_SHAND_GHOST": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHAND_GHOST.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.15
+    ]
    ]
   },
   "M_SHAND_MAN": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHAND_MAN.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.15
+    ]
    ]
   },
   "M_SHAND_MAN2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHAND_MAN2.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.15
+    ]
    ]
   },
   "M_SHAND_MAN3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHAND_MAN3.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.15
+    ]
    ]
   },
   "M_SHAND_METABII": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHAND_METABII.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.15
+    ]
    ]
   },
   "M_SHAND_ONE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHAND_ONE.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.15
+    ]
    ]
   },
   "M_SHAND_TWO": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHAND_TWO.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.15
+    ]
    ]
   },
   "M_SHAND_ZOMBIE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHAND_ZOMBIE.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.15
+    ]
    ]
   },
   "M_SHAND_ZOMBIE1": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHAND_ZOMBIE1.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.15
+    ]
    ]
   },
   "M_SHAND_ZOMBIE2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHAND_ZOMBIE2.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.15
+    ]
    ]
   },
   "M_SHEAD_FIVE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHEAD_FIVE.png"
+   ],
+   "offsets": [
+    [
+     2.55,
+     6.7
+    ]
    ]
   },
   "M_SHEAD_FOUR": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHEAD_FOUR.png"
+   ],
+   "offsets": [
+    [
+     2.55,
+     6.7
+    ]
    ]
   },
   "M_SHEAD_GHOST": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHEAD_GHOST.png"
+   ],
+   "offsets": [
+    [
+     2.55,
+     6.7
+    ]
    ]
   },
   "M_SHEAD_MAN": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHEAD_MAN.png"
+   ],
+   "offsets": [
+    [
+     2.55,
+     6.7
+    ]
    ]
   },
   "M_SHEAD_MAN2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHEAD_MAN2.png"
+   ],
+   "offsets": [
+    [
+     2.55,
+     6.7
+    ]
    ]
   },
   "M_SHEAD_MAN3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHEAD_MAN3.png"
+   ],
+   "offsets": [
+    [
+     2.55,
+     6.7
+    ]
    ]
   },
   "M_SHEAD_METABII": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHEAD_METABII.png"
+   ],
+   "offsets": [
+    [
+     2.55,
+     6.7
+    ]
    ]
   },
   "M_SHEAD_ONE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHEAD_ONE.png"
+   ],
+   "offsets": [
+    [
+     2.55,
+     6.7
+    ]
    ]
   },
   "M_SHEAD_TWO": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHEAD_TWO.png"
+   ],
+   "offsets": [
+    [
+     2.55,
+     6.7
+    ]
    ]
   },
   "M_SHEAD_USA1": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHEAD_USA1.png"
+   ],
+   "offsets": [
+    [
+     3.15,
+     8.15
+    ]
    ]
   },
   "M_SHEAD_ZOMBIE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHEAD_ZOMBIE.png"
+   ],
+   "offsets": [
+    [
+     2.55,
+     6.7
+    ]
    ]
   },
   "M_SHEAD_ZOMBIE1": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHEAD_ZOMBIE1.png"
+   ],
+   "offsets": [
+    [
+     2.55,
+     6.7
+    ]
    ]
   },
   "M_SHEAD_ZOMBIE2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHEAD_ZOMBIE2.png"
+   ],
+   "offsets": [
+    [
+     2.55,
+     6.7
+    ]
    ]
   },
   "M_SHOULDER_FINAL1": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHOULDER_FINAL1.png"
+   ],
+   "offsets": [
+    [
+     19.55,
+     9.2
+    ]
    ]
   },
   "M_SHOULDER_FINAL2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHOULDER_FINAL2.png"
+   ],
+   "offsets": [
+    [
+     19.55,
+     9.2
+    ]
    ]
   },
   "M_SHOULDER_FINAL3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHOULDER_FINAL3.png"
+   ],
+   "offsets": [
+    [
+     19.55,
+     9.2
+    ]
    ]
   },
   "M_SHOULDER_FINAL4": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHOULDER_FINAL4.png"
+   ],
+   "offsets": [
+    [
+     19.55,
+     9.2
+    ]
    ]
   },
   "M_SHOULDER_KNIGHT": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHOULDER_KNIGHT.png"
+   ],
+   "offsets": [
+    [
+     4.0,
+     4.25
+    ]
    ]
   },
   "M_SHOULDER_MEDIC": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHOULDER_MEDIC.png"
+   ],
+   "offsets": [
+    [
+     24.15,
+     20.2
+    ]
    ]
   },
   "M_SHOULDER_NINJA": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHOULDER_NINJA.png"
+   ],
+   "offsets": [
+    [
+     4.0,
+     4.25
+    ]
    ]
   },
   "M_SHOULDER_ROCKSTAR": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHOULDER_ROCKSTAR.png"
+   ],
+   "offsets": [
+    [
+     0.0,
+     0.0
+    ]
    ]
   },
   "M_SHOULDER_SAMURAI": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHOULDER_SAMURAI.png"
+   ],
+   "offsets": [
+    [
+     17.9,
+     7.0
+    ]
    ]
   },
   "M_SHOULDER_SAMURAI2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHOULDER_SAMURAI2.png"
+   ],
+   "offsets": [
+    [
+     27.9,
+     26.05
+    ]
    ]
   },
   "M_SHOULDER_SAMURAI3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHOULDER_SAMURAI3.png"
+   ],
+   "offsets": [
+    [
+     27.9,
+     26.05
+    ]
    ]
   },
   "M_SHOULDER_SHAMAN1": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHOULDER_SHAMAN1.png"
+   ],
+   "offsets": [
+    [
+     18.65,
+     17.8
+    ]
    ]
   },
   "M_SHOULDER_SHAMAN2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHOULDER_SHAMAN2.png"
+   ],
+   "offsets": [
+    [
+     18.65,
+     17.8
+    ]
    ]
   },
   "M_SHOULDER_SHAMAN3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHOULDER_SHAMAN3.png"
+   ],
+   "offsets": [
+    [
+     18.65,
+     17.8
+    ]
    ]
   },
   "M_SHOULDER_SHAMAN4": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHOULDER_SHAMAN4.png"
+   ],
+   "offsets": [
+    [
+     18.65,
+     17.8
+    ]
    ]
   },
   "M_SHOULDER_SINJID": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHOULDER_SINJID.png"
+   ],
+   "offsets": [
+    [
+     4.0,
+     4.25
+    ]
    ]
   },
   "M_SHOULDER_SURVIVOR": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHOULDER_SURVIVOR.png"
+   ],
+   "offsets": [
+    [
+     4.0,
+     4.25
+    ]
    ]
   },
   "M_SHOULDER_USA1": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHOULDER_USA1.png"
+   ],
+   "offsets": [
+    [
+     0.0,
+     0.0
+    ]
    ]
   },
   "M_SHOULDER_USA2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHOULDER_USA2.png"
+   ],
+   "offsets": [
+    [
+     19.55,
+     9.2
+    ]
    ]
   },
   "M_SHOULDER_USA3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHOULDER_USA3.png"
+   ],
+   "offsets": [
+    [
+     19.55,
+     9.2
+    ]
    ]
   },
   "M_SHOULDER_USA4": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHOULDER_USA4.png"
+   ],
+   "offsets": [
+    [
+     19.55,
+     9.2
+    ]
    ]
   },
   "M_SHOULDER_USA5": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SHOULDER_USA5.png"
+   ],
+   "offsets": [
+    [
+     19.55,
+     9.2
+    ]
    ]
   },
   "M_SLEG2_FIVE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SLEG2_FIVE.png"
+   ],
+   "offsets": [
+    [
+     4.6,
+     15.2
+    ]
    ]
   },
   "M_SLEG2_FOUR": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SLEG2_FOUR.png"
+   ],
+   "offsets": [
+    [
+     4.6,
+     15.2
+    ]
    ]
   },
   "M_SLEG2_GHOST": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SLEG2_GHOST.png"
+   ],
+   "offsets": [
+    [
+     4.6,
+     15.2
+    ]
    ]
   },
   "M_SLEG2_MAN": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SLEG2_MAN.png"
+   ],
+   "offsets": [
+    [
+     4.6,
+     15.2
+    ]
    ]
   },
   "M_SLEG2_MAN2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SLEG2_MAN2.png"
+   ],
+   "offsets": [
+    [
+     4.6,
+     15.2
+    ]
    ]
   },
   "M_SLEG2_MAN3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SLEG2_MAN3.png"
+   ],
+   "offsets": [
+    [
+     4.6,
+     15.2
+    ]
    ]
   },
   "M_SLEG2_METABII": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SLEG2_METABII.png"
+   ],
+   "offsets": [
+    [
+     4.6,
+     15.2
+    ]
    ]
   },
   "M_SLEG2_ONE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SLEG2_ONE.png"
+   ],
+   "offsets": [
+    [
+     4.6,
+     15.2
+    ]
    ]
   },
   "M_SLEG2_TWO": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SLEG2_TWO.png"
+   ],
+   "offsets": [
+    [
+     4.6,
+     15.2
+    ]
    ]
   },
   "M_SLEG2_ZOMBIE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SLEG2_ZOMBIE.png"
+   ],
+   "offsets": [
+    [
+     4.6,
+     15.2
+    ]
    ]
   },
   "M_SLEG2_ZOMBIE1": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SLEG2_ZOMBIE1.png"
+   ],
+   "offsets": [
+    [
+     4.6,
+     15.2
+    ]
    ]
   },
   "M_SLEG2_ZOMBIE2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SLEG2_ZOMBIE2.png"
+   ],
+   "offsets": [
+    [
+     4.6,
+     15.2
+    ]
    ]
   },
   "M_SSHOULDER_ONE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_SSHOULDER_ONE.png"
+   ],
+   "offsets": [
+    [
+     0.0,
+     0.0
+    ]
    ]
   },
   "M_WEAPON_BROAD": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_BROAD.png"
+   ],
+   "offsets": [
+    [
+     15.95,
+     48.55
+    ]
    ]
   },
   "M_WEAPON_CLUB": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_CLUB.png"
+   ],
+   "offsets": [
+    [
+     2.65,
+     23.15
+    ]
    ]
   },
   "M_WEAPON_CROWBAR": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_CROWBAR.png"
+   ],
+   "offsets": [
+    [
+     1.35,
+     17.4
+    ]
    ]
   },
   "M_WEAPON_FIREAXE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_FIREAXE.png"
+   ],
+   "offsets": [
+    [
+     2.2,
+     20.65
+    ]
    ]
   },
   "M_WEAPON_KATANA": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_KATANA.png"
+   ],
+   "offsets": [
+    [
+     3.75,
+     41.15
+    ]
    ]
   },
   "M_WEAPON_M4": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_M4.png"
+   ],
+   "offsets": [
+    [
+     15.6,
+     56.2
+    ]
    ]
   },
   "M_WEAPON_MOON": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_MOON.png"
+   ],
+   "offsets": [
+    [
+     10.2,
+     57.9
+    ]
    ]
   },
   "M_WEAPON_PALADINSWORD": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_PALADINSWORD.png"
+   ],
+   "offsets": [
+    [
+     18.9,
+     89.65
+    ]
    ]
   },
   "M_WEAPON_PIPE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_PIPE.png"
+   ],
+   "offsets": [
+    [
+     5.3,
+     27.5
+    ]
    ]
   },
   "M_WEAPON_SHAMANKNIFE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_SHAMANKNIFE.png"
+   ],
+   "offsets": [
+    [
+     8.35,
+     31.0
+    ]
    ]
   },
   "M_WEAPON_SHAMANMAGIC": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_SHAMANMAGIC.png"
+   ],
+   "offsets": [
+    [
+     13.3,
+     30.8
+    ]
    ]
   },
   "M_WEAPON_SHAMANMED": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_SHAMANMED.png"
+   ],
+   "offsets": [
+    [
+     13.3,
+     30.8
+    ]
    ]
   },
   "M_WEAPON_SHAMANSWORD": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_SHAMANSWORD.png"
+   ],
+   "offsets": [
+    [
+     8.8,
+     57.5
+    ]
    ]
   },
   "M_WEAPON_SHANK": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_SHANK.png"
+   ],
+   "offsets": [
+    [
+     13.8,
+     39.35
+    ]
    ]
   },
   "M_WEAPON_SHIELD2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_SHIELD2.png"
+   ],
+   "offsets": [
+    [
+     17.95,
+     10.3
+    ]
    ]
   },
   "M_WEAPON_SPELLMACE": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_SPELLMACE.png"
+   ],
+   "offsets": [
+    [
+     14.4,
+     39.3
+    ]
    ]
   },
   "M_WEAPON_SPELLSTAFF": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_SPELLSTAFF.png"
+   ],
+   "offsets": [
+    [
+     13.15,
+     49.8
+    ]
    ]
   },
   "M_WEAPON_STICK": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_STICK.png"
+   ],
+   "offsets": [
+    [
+     2.65,
+     23.15
+    ]
    ]
   },
   "M_WEAPON_SWATSWORD": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_SWATSWORD.png"
+   ],
+   "offsets": [
+    [
+     7.05,
+     48.0
+    ]
    ]
   },
   "M_WEAPON_SWIFT": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_SWIFT.png"
+   ],
+   "offsets": [
+    [
+     2.6,
+     36.95
+    ]
    ]
   },
   "M_WEAPON_SWORD1": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_SWORD1.png"
+   ],
+   "offsets": [
+    [
+     4.35,
+     35.15
+    ]
    ]
   },
   "M_WEAPON_UBER1": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_UBER1.png"
+   ],
+   "offsets": [
+    [
+     40.8,
+     65.45
+    ]
    ]
   },
   "M_WEAPON_UBER10": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_UBER10.png"
+   ],
+   "offsets": [
+    [
+     14.4,
+     39.3
+    ]
    ]
   },
   "M_WEAPON_UBER11": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_UBER11.png"
+   ],
+   "offsets": [
+    [
+     12.95,
+     36.85
+    ]
    ]
   },
   "M_WEAPON_UBER2": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_UBER2.png"
+   ],
+   "offsets": [
+    [
+     12.95,
+     36.85
+    ]
    ]
   },
   "M_WEAPON_UBER3": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_UBER3.png"
+   ],
+   "offsets": [
+    [
+     15.6,
+     56.2
+    ]
    ]
   },
   "M_WEAPON_UBER4": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_UBER4.png"
+   ],
+   "offsets": [
+    [
+     15.6,
+     56.2
+    ]
    ]
   },
   "M_WEAPON_UBER5": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_UBER5.png"
+   ],
+   "offsets": [
+    [
+     17.95,
+     10.3
+    ]
    ]
   },
   "M_WEAPON_UBER6": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_UBER6.png"
+   ],
+   "offsets": [
+    [
+     17.95,
+     10.3
+    ]
    ]
   },
   "M_WEAPON_UBER7": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_UBER7.png"
+   ],
+   "offsets": [
+    [
+     17.95,
+     10.3
+    ]
    ]
   },
   "M_WEAPON_UBER8": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_UBER8.png"
+   ],
+   "offsets": [
+    [
+     14.4,
+     39.3
+    ]
    ]
   },
   "M_WEAPON_UBER9": {
    "category": "doll",
    "frames": [
     "assets/art/doll/M_WEAPON_UBER9.png"
+   ],
+   "offsets": [
+    [
+     14.4,
+     39.3
+    ]
    ]
   },
   "BOOM1": {
@@ -2379,6 +4533,152 @@
     "assets/art/effect/BOOM1_34.png",
     "assets/art/effect/BOOM1_35.png",
     "assets/art/effect/BOOM1_36.png"
+   ],
+   "offsets": [
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ],
+    [
+     279.15,
+     63.45
+    ]
    ]
   },
   "BOOM2": {
@@ -2420,6 +4720,152 @@
     "assets/art/effect/BOOM2_34.png",
     "assets/art/effect/BOOM2_35.png",
     "assets/art/effect/BOOM2_36.png"
+   ],
+   "offsets": [
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ],
+    [
+     172.2,
+     88.8
+    ]
    ]
   },
   "BOOM3": {
@@ -2450,6 +4896,108 @@
     "assets/art/effect/BOOM3_23.png",
     "assets/art/effect/BOOM3_24.png",
     "assets/art/effect/BOOM3_25.png"
+   ],
+   "offsets": [
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ]
    ]
   },
   "BOOM_DARK": {
@@ -2480,6 +5028,108 @@
     "assets/art/effect/BOOM_DARK_23.png",
     "assets/art/effect/BOOM_DARK_24.png",
     "assets/art/effect/BOOM_DARK_25.png"
+   ],
+   "offsets": [
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ]
    ]
   },
   "BOOM_HEAL": {
@@ -2501,6 +5151,72 @@
     "assets/art/effect/BOOM_HEAL_14.png",
     "assets/art/effect/BOOM_HEAL_15.png",
     "assets/art/effect/BOOM_HEAL_16.png"
+   ],
+   "offsets": [
+    [
+     50.0,
+     50.0
+    ],
+    [
+     50.0,
+     50.0
+    ],
+    [
+     50.0,
+     50.0
+    ],
+    [
+     50.0,
+     50.0
+    ],
+    [
+     50.0,
+     50.0
+    ],
+    [
+     50.0,
+     50.0
+    ],
+    [
+     50.0,
+     50.0
+    ],
+    [
+     50.0,
+     50.0
+    ],
+    [
+     50.0,
+     50.0
+    ],
+    [
+     50.0,
+     50.0
+    ],
+    [
+     50.0,
+     50.0
+    ],
+    [
+     50.0,
+     50.0
+    ],
+    [
+     50.0,
+     50.0
+    ],
+    [
+     50.0,
+     50.0
+    ],
+    [
+     50.0,
+     50.0
+    ],
+    [
+     50.0,
+     50.0
+    ]
    ]
   },
   "BOOM_HEAL2": {
@@ -2531,6 +5247,108 @@
     "assets/art/effect/BOOM_HEAL2_23.png",
     "assets/art/effect/BOOM_HEAL2_24.png",
     "assets/art/effect/BOOM_HEAL2_25.png"
+   ],
+   "offsets": [
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ]
    ]
   },
   "BOOM_POWERUP": {
@@ -2552,6 +5370,72 @@
     "assets/art/effect/BOOM_POWERUP_14.png",
     "assets/art/effect/BOOM_POWERUP_15.png",
     "assets/art/effect/BOOM_POWERUP_16.png"
+   ],
+   "offsets": [
+    [
+     50.0,
+     50.0
+    ],
+    [
+     50.0,
+     50.0
+    ],
+    [
+     50.0,
+     50.0
+    ],
+    [
+     50.0,
+     50.0
+    ],
+    [
+     50.0,
+     50.0
+    ],
+    [
+     50.0,
+     50.0
+    ],
+    [
+     50.0,
+     50.0
+    ],
+    [
+     50.0,
+     50.0
+    ],
+    [
+     50.0,
+     50.0
+    ],
+    [
+     50.0,
+     50.0
+    ],
+    [
+     50.0,
+     50.0
+    ],
+    [
+     50.0,
+     50.0
+    ],
+    [
+     50.0,
+     50.0
+    ],
+    [
+     50.0,
+     50.0
+    ],
+    [
+     50.0,
+     50.0
+    ],
+    [
+     50.0,
+     50.0
+    ]
    ]
   },
   "BOOM_RED": {
@@ -2582,6 +5466,108 @@
     "assets/art/effect/BOOM_RED_23.png",
     "assets/art/effect/BOOM_RED_24.png",
     "assets/art/effect/BOOM_RED_25.png"
+   ],
+   "offsets": [
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ]
    ]
   },
   "BOOM_SHIELD": {
@@ -2607,6 +5593,88 @@
     "assets/art/effect/BOOM_SHIELD_18.png",
     "assets/art/effect/BOOM_SHIELD_19.png",
     "assets/art/effect/BOOM_SHIELD_20.png"
+   ],
+   "offsets": [
+    [
+     85.5,
+     89.0
+    ],
+    [
+     85.5,
+     89.0
+    ],
+    [
+     85.5,
+     89.0
+    ],
+    [
+     85.5,
+     89.0
+    ],
+    [
+     85.5,
+     89.0
+    ],
+    [
+     85.5,
+     89.0
+    ],
+    [
+     85.5,
+     89.0
+    ],
+    [
+     85.5,
+     89.0
+    ],
+    [
+     85.5,
+     89.0
+    ],
+    [
+     85.5,
+     89.0
+    ],
+    [
+     85.5,
+     89.0
+    ],
+    [
+     85.5,
+     89.0
+    ],
+    [
+     85.5,
+     89.0
+    ],
+    [
+     85.5,
+     89.0
+    ],
+    [
+     85.5,
+     89.0
+    ],
+    [
+     85.5,
+     89.0
+    ],
+    [
+     85.5,
+     89.0
+    ],
+    [
+     85.5,
+     89.0
+    ],
+    [
+     85.5,
+     89.0
+    ],
+    [
+     85.5,
+     89.0
+    ]
    ]
   },
   "BOOM_SLASH": {
@@ -2637,6 +5705,108 @@
     "assets/art/effect/BOOM_SLASH_23.png",
     "assets/art/effect/BOOM_SLASH_24.png",
     "assets/art/effect/BOOM_SLASH_25.png"
+   ],
+   "offsets": [
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ]
    ]
   },
   "BOOM_SLASH2": {
@@ -2667,6 +5837,108 @@
     "assets/art/effect/BOOM_SLASH2_23.png",
     "assets/art/effect/BOOM_SLASH2_24.png",
     "assets/art/effect/BOOM_SLASH2_25.png"
+   ],
+   "offsets": [
+    [
+     105.55,
+     97.25
+    ],
+    [
+     105.55,
+     97.25
+    ],
+    [
+     105.55,
+     97.25
+    ],
+    [
+     105.55,
+     97.25
+    ],
+    [
+     105.55,
+     97.25
+    ],
+    [
+     105.55,
+     97.25
+    ],
+    [
+     105.55,
+     97.25
+    ],
+    [
+     105.55,
+     97.25
+    ],
+    [
+     105.55,
+     97.25
+    ],
+    [
+     105.55,
+     97.25
+    ],
+    [
+     105.55,
+     97.25
+    ],
+    [
+     105.55,
+     97.25
+    ],
+    [
+     105.55,
+     97.25
+    ],
+    [
+     105.55,
+     97.25
+    ],
+    [
+     105.55,
+     97.25
+    ],
+    [
+     105.55,
+     97.25
+    ],
+    [
+     105.55,
+     97.25
+    ],
+    [
+     105.55,
+     97.25
+    ],
+    [
+     105.55,
+     97.25
+    ],
+    [
+     105.55,
+     97.25
+    ],
+    [
+     105.55,
+     97.25
+    ],
+    [
+     105.55,
+     97.25
+    ],
+    [
+     105.55,
+     97.25
+    ],
+    [
+     105.55,
+     97.25
+    ],
+    [
+     105.55,
+     97.25
+    ]
    ]
   },
   "BOOM_SLASHBLUE": {
@@ -2697,6 +5969,108 @@
     "assets/art/effect/BOOM_SLASHBLUE_23.png",
     "assets/art/effect/BOOM_SLASHBLUE_24.png",
     "assets/art/effect/BOOM_SLASHBLUE_25.png"
+   ],
+   "offsets": [
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ]
    ]
   },
   "BOOM_SLASHGREEN": {
@@ -2727,6 +6101,108 @@
     "assets/art/effect/BOOM_SLASHGREEN_23.png",
     "assets/art/effect/BOOM_SLASHGREEN_24.png",
     "assets/art/effect/BOOM_SLASHGREEN_25.png"
+   ],
+   "offsets": [
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ]
    ]
   },
   "BOOM_SLASHORANGE": {
@@ -2757,6 +6233,108 @@
     "assets/art/effect/BOOM_SLASHORANGE_23.png",
     "assets/art/effect/BOOM_SLASHORANGE_24.png",
     "assets/art/effect/BOOM_SLASHORANGE_25.png"
+   ],
+   "offsets": [
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ]
    ]
   },
   "BOOM_SLASHRED": {
@@ -2787,6 +6365,108 @@
     "assets/art/effect/BOOM_SLASHRED_23.png",
     "assets/art/effect/BOOM_SLASHRED_24.png",
     "assets/art/effect/BOOM_SLASHRED_25.png"
+   ],
+   "offsets": [
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ],
+    [
+     127.1,
+     93.5
+    ]
    ]
   },
   "BOOM_SPARK": {
@@ -2817,6 +6497,108 @@
     "assets/art/effect/BOOM_SPARK_23.png",
     "assets/art/effect/BOOM_SPARK_24.png",
     "assets/art/effect/BOOM_SPARK_25.png"
+   ],
+   "offsets": [
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ]
    ]
   },
   "BOOM_SPARKBLUE": {
@@ -2847,6 +6629,108 @@
     "assets/art/effect/BOOM_SPARKBLUE_23.png",
     "assets/art/effect/BOOM_SPARKBLUE_24.png",
     "assets/art/effect/BOOM_SPARKBLUE_25.png"
+   ],
+   "offsets": [
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ],
+    [
+     82.75,
+     69.9
+    ]
    ]
   },
   "Blessing of Light": {
@@ -2859,6 +6743,12 @@
     -17.1,
     21.85,
     17.85
+   ],
+   "offsets": [
+    [
+     15.65,
+     17.1
+    ]
    ]
   },
   "Block": {
@@ -2871,6 +6761,12 @@
     -13.45,
     14.4,
     16.1
+   ],
+   "offsets": [
+    [
+     16.35,
+     13.45
+    ]
    ]
   },
   "Blood Focus": {
@@ -2883,6 +6779,12 @@
     -12.2,
     13.85,
     12.8
+   ],
+   "offsets": [
+    [
+     12.85,
+     12.2
+    ]
    ]
   },
   "Blood Strike": {
@@ -2895,6 +6797,12 @@
     -14.55,
     12.15,
     12.8
+   ],
+   "offsets": [
+    [
+     17.15,
+     14.55
+    ]
    ]
   },
   "Break": {
@@ -2907,6 +6815,12 @@
     -10.45,
     31.65,
     12.05
+   ],
+   "offsets": [
+    [
+     24.15,
+     10.45
+    ]
    ]
   },
   "Cell Reformation": {
@@ -2919,6 +6833,12 @@
     -28.7,
     21.95,
     18.25
+   ],
+   "offsets": [
+    [
+     27.1,
+     28.7
+    ]
    ]
   },
   "Coup De Grace": {
@@ -2931,6 +6851,12 @@
     -20.2,
     24.9,
     21.5
+   ],
+   "offsets": [
+    [
+     19.7,
+     20.2
+    ]
    ]
   },
   "Cripple": {
@@ -2943,6 +6869,12 @@
     -12.2,
     12.15,
     18.4
+   ],
+   "offsets": [
+    [
+     13.0,
+     12.2
+    ]
    ]
   },
   "Disrupt": {
@@ -2955,6 +6887,12 @@
     -11.5,
     12.8,
     16.0
+   ],
+   "offsets": [
+    [
+     12.6,
+     11.5
+    ]
    ]
   },
   "Electro Bolt": {
@@ -2967,6 +6905,12 @@
     -15.4,
     12.15,
     12.8
+   ],
+   "offsets": [
+    [
+     12.85,
+     15.4
+    ]
    ]
   },
   "Flame Blast": {
@@ -2979,6 +6923,12 @@
     -14.6,
     12.15,
     12.8
+   ],
+   "offsets": [
+    [
+     12.85,
+     14.6
+    ]
    ]
   },
   "Flame Strike": {
@@ -2991,12 +6941,24 @@
     -19.9,
     18.5,
     14.3
+   ],
+   "offsets": [
+    [
+     12.85,
+     19.9
+    ]
    ]
   },
   "Frost Bolt": {
    "category": "icon",
    "frames": [
     "assets/art/icon/Frost_Bolt.png"
+   ],
+   "offsets": [
+    [
+     32.5,
+     28.7
+    ]
    ]
   },
   "Healing Light": {
@@ -3009,6 +6971,12 @@
     -13.3,
     13.9,
     14.9
+   ],
+   "offsets": [
+    [
+     32.5,
+     13.3
+    ]
    ]
   },
   "Heroic Motivation": {
@@ -3021,6 +6989,12 @@
     -12.2,
     20.7,
     17.85
+   ],
+   "offsets": [
+    [
+     17.7,
+     12.2
+    ]
    ]
   },
   "Intervention": {
@@ -3033,6 +7007,12 @@
     -13.45,
     14.4,
     16.1
+   ],
+   "offsets": [
+    [
+     16.35,
+     13.45
+    ]
    ]
   },
   "Ironskin": {
@@ -3045,6 +7025,12 @@
     -13.4,
     12.6,
     12.25
+   ],
+   "offsets": [
+    [
+     19.0,
+     13.4
+    ]
    ]
   },
   "Magic Bolt": {
@@ -3057,6 +7043,12 @@
     -15.4,
     12.15,
     12.8
+   ],
+   "offsets": [
+    [
+     12.85,
+     15.4
+    ]
    ]
   },
   "Master Strike": {
@@ -3069,12 +7061,24 @@
     -15.5,
     12.15,
     12.8
+   ],
+   "offsets": [
+    [
+     20.4,
+     15.5
+    ]
    ]
   },
   "None": {
    "category": "icon",
    "frames": [
     "assets/art/icon/None.png"
+   ],
+   "offsets": [
+    [
+     32.5,
+     28.7
+    ]
    ]
   },
   "Quick Strike": {
@@ -3087,6 +7091,12 @@
     -15.4,
     12.15,
     12.8
+   ],
+   "offsets": [
+    [
+     12.85,
+     15.4
+    ]
    ]
   },
   "Rage": {
@@ -3099,6 +7109,12 @@
     -28.7,
     21.95,
     18.25
+   ],
+   "offsets": [
+    [
+     27.1,
+     28.7
+    ]
    ]
   },
   "Re-Energize": {
@@ -3111,6 +7127,12 @@
     -12.2,
     12.8,
     12.8
+   ],
+   "offsets": [
+    [
+     12.85,
+     12.2
+    ]
    ]
   },
   "Shatter Bolt": {
@@ -3123,6 +7145,12 @@
     -17.0,
     12.15,
     13.7
+   ],
+   "offsets": [
+    [
+     16.15,
+     17.0
+    ]
    ]
   },
   "Smash": {
@@ -3135,6 +7163,12 @@
     -26.2,
     11.75,
     12.4
+   ],
+   "offsets": [
+    [
+     28.7,
+     26.2
+    ]
    ]
   },
   "Strike": {
@@ -3147,6 +7181,12 @@
     -15.3,
     10.7,
     15.2
+   ],
+   "offsets": [
+    [
+     6.3,
+     15.3
+    ]
    ]
   },
   "Subversion": {
@@ -3159,6 +7199,12 @@
     -11.25,
     12.3,
     11.25
+   ],
+   "offsets": [
+    [
+     12.0,
+     11.25
+    ]
    ]
   },
   "Sunder": {
@@ -3171,6 +7217,12 @@
     -12.2,
     16.3,
     23.35
+   ],
+   "offsets": [
+    [
+     12.85,
+     12.2
+    ]
    ]
   },
   "Suppression": {
@@ -3183,6 +7235,12 @@
     -22.6,
     12.15,
     22.0
+   ],
+   "offsets": [
+    [
+     12.35,
+     22.6
+    ]
    ]
   },
   "Void": {
@@ -3195,6 +7253,12 @@
     -15.0,
     12.55,
     14.05
+   ],
+   "offsets": [
+    [
+     12.85,
+     15.0
+    ]
    ]
   },
   "Wound": {
@@ -3207,12 +7271,288 @@
     -20.75,
     41.95,
     11.7
+   ],
+   "offsets": [
+    [
+     13.5,
+     20.75
+    ]
+   ]
+  },
+  "BaronDie": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/BaronDie.mp3"
+   ]
+  },
+  "BaronHit1": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/BaronHit1.mp3"
+   ]
+  },
+  "BaronHit2": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/BaronHit2.mp3"
+   ]
+  },
+  "BaronHit3": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/BaronHit3.mp3"
+   ]
+  },
+  "BattleMusic1loopable": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/BattleMusic1loopable.mp3"
+   ]
+  },
+  "BattleMusic2loopable": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/BattleMusic2loopable.mp3"
+   ]
+  },
+  "Click2putdown": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/Click2putdown.mp3"
+   ]
+  },
+  "Click3pickup": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/Click3pickup.mp3"
+   ]
+  },
+  "Die1": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/Die1.mp3"
+   ]
+  },
+  "DuxDie": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/DuxDie.mp3"
+   ]
+  },
+  "DuxHit1": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/DuxHit1.mp3"
+   ]
+  },
+  "DuxHit2": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/DuxHit2.mp3"
+   ]
+  },
+  "DuxHit3": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/DuxHit3.mp3"
+   ]
+  },
+  "ElectricHit": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/ElectricHit.mp3"
+   ]
+  },
+  "Explode": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/Explode.mp3"
+   ]
+  },
+  "Forcefield": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/Forcefield.mp3"
+   ]
+  },
+  "GaliantDie": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/GaliantDie.mp3"
+   ]
+  },
+  "GaliantHit1": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/GaliantHit1.mp3"
+   ]
+  },
+  "GaliantHit2": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/GaliantHit2.mp3"
+   ]
+  },
+  "GaliantHit3": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/GaliantHit3.mp3"
+   ]
+  },
+  "GhostDie": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/GhostDie.mp3"
+   ]
+  },
+  "GhostHit1": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/GhostHit1.mp3"
+   ]
+  },
+  "GhostHit2": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/GhostHit2.mp3"
+   ]
+  },
+  "GhostHit3": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/GhostHit3.mp3"
+   ]
+  },
+  "Healing": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/Healing.mp3"
+   ]
+  },
+  "Hit2": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/Hit2.mp3"
+   ]
+  },
+  "Hit3": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/Hit3.mp3"
+   ]
+  },
+  "Hit4": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/Hit4.mp3"
+   ]
+  },
+  "Hit5": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/Hit5.mp3"
+   ]
+  },
+  "IceShatter": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/IceShatter.mp3"
+   ]
+  },
+  "LouisDie": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/LouisDie.mp3"
+   ]
+  },
+  "MagicCast": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/MagicCast.mp3"
+   ]
+  },
+  "PoisonHit": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/PoisonHit.mp3"
+   ]
+  },
+  "PowerupDefense": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/PowerupDefense.mp3"
+   ]
+  },
+  "PowerupOffense": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/PowerupOffense.mp3"
+   ]
+  },
+  "ShamanDie": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/ShamanDie.mp3"
+   ]
+  },
+  "ShamanHit1": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/ShamanHit1.mp3"
+   ]
+  },
+  "ShamanHit2": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/ShamanHit2.mp3"
+   ]
+  },
+  "Swing": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/Swing.mp3"
+   ]
+  },
+  "ZPCIHit1": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/ZPCIHit1.mp3"
+   ]
+  },
+  "ZPCIHit2": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/ZPCIHit2.mp3"
+   ]
+  },
+  "ZombieDie": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/ZombieDie.mp3"
+   ]
+  },
+  "ZombieHit1": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/ZombieHit1.mp3"
+   ]
+  },
+  "ZombieHit2": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/ZombieHit2.mp3"
    ]
   },
   "KrinBuffShower": {
    "category": "ui",
    "frames": [
     "assets/art/ui/KrinBuffShower.png"
+   ],
+   "offsets": [
+    [
+     8.0,
+     17.35
+    ]
    ]
   },
   "MODEL1": {
@@ -3282,6 +7622,264 @@
     "assets/art/ui/MODEL1_62.png",
     "assets/art/ui/MODEL1_63.png",
     "assets/art/ui/MODEL1_64.png"
+   ],
+   "offsets": [
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ],
+    [
+     46.2,
+     83.65
+    ]
    ]
   }
  },

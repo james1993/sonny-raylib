@@ -14,6 +14,7 @@
 #include <string.h>
 #include "raylib.h"
 #include "assets.h"
+#include "audio.h"
 #include "../core/campaign.h"
 
 #define STAGE_W   800
@@ -39,6 +40,10 @@ typedef struct {
     int32_t log_count;
     MoveEvent last;
     int32_t  has_last;
+    /* The impact graphic playing at the target, and how long it has left. */
+    const char *effect;
+    int32_t     effect_slot;
+    int32_t     effect_tick;
 } Game;
 
 static void logf_line(Game *g, const char *fmt, ...)
@@ -158,6 +163,19 @@ static const char *unit_animation(const Game *g, int32_t slot, int *loop)
         }
     }
     return "stand";
+}
+
+/* The impact graphic an ability names, played at the unit it landed on. */
+static void draw_effect(const Game *g)
+{
+    if (!g->effect || g->effect_slot <= 0)
+        return;
+    int32_t frames = asset_frame_count(g->effect);
+    if (frames <= 0 || g->effect_tick >= frames)
+        return;
+
+    Vector2 pos = unit_stage_pos(&g->battle, g->effect_slot);
+    asset_draw_placed(g->effect, g->effect_tick + 1, pos, 1.0f, WHITE);
 }
 
 static void draw_doll(const Game *g, int32_t slot)
@@ -357,6 +375,7 @@ static void draw_battle(const Game *g)
         draw_doll(g, slot);
     for (int32_t slot = 1; slot < SONNY_SLOTS; slot++)
         draw_unit(g, slot);
+    draw_effect(g);
 
     draw_ability_bar(g);
     draw_tooltip(g);
@@ -384,6 +403,39 @@ static int32_t unit_at(const Game *g, Vector2 p)
             return slot;
     }
     return -1;
+}
+
+/* What a resolved move sounds and looks like: the ability's own effect sound
+   and impact graphic, then the target's hit grunt or death cry. */
+static void present(Game *g, const MoveEvent *e)
+{
+    const Battle *b = &g->battle;
+    const AbilityDef *a = ability_by_id(e->moveID);
+
+    g->effect = NULL;
+    g->effect_slot = 0;
+    g->effect_tick = 0;
+
+    if (!a || e->moveID == 0 || e->missed)
+        return;
+
+    if (a->sound && a->sound[0])
+        audio_play(a->sound);
+    if (a->model && a->model[0] && asset_frame_count(a->model) > 0) {
+        g->effect = a->model;
+        g->effect_slot = e->target;
+    }
+
+    const Unit *target = &b->units[e->target];
+    if (e->target_died) {
+        if (target->voice_die[0])
+            audio_play(target->voice_die);
+    } else if (e->kind == KIND_FULL_DAMAGE && e->amount > 0) {
+        /* The original picks one of three at random. */
+        int32_t pick = GetRandomValue(0, 2);
+        if (target->voice_hit[pick][0])
+            audio_play(target->voice_hit[pick]);
+    }
 }
 
 static void describe(Game *g, const MoveEvent *e)
@@ -500,6 +552,7 @@ static void advance(Game *g)
             g->last = e;
             g->has_last = 1;
             describe(g, &e);
+            present(g, &e);
             g->resolve_timer = RESOLVE_FRAMES;
         } else if (b->phase != PHASE_OVER) {
             battle_end_phase(b);
@@ -516,7 +569,12 @@ int main(int argc, char **argv)
     SetTraceLogLevel(LOG_WARNING);
     InitWindow(STAGE_W, STAGE_H, "Sonny");
     assets_set_root(getenv("SONNY_ASSETS") ? getenv("SONNY_ASSETS") : ".");
+    /* SONNY_SILENT keeps headless runs from opening an audio device. */
+    if (!getenv("SONNY_SILENT"))
+        audio_init();
     game_init(&game, seed);
+    if (audio_ready())
+        audio_music("BattleMusic1loopable");
     SetTargetFPS(STAGE_FPS);
     RenderTexture2D stage = LoadRenderTexture(STAGE_W, STAGE_H);
     SetTextureFilter(stage.texture, TEXTURE_FILTER_POINT);
@@ -529,14 +587,17 @@ int main(int argc, char **argv)
     while (!WindowShouldClose()) {
         handle_input(&game);
         game.anim_tick++;
+        if (game.effect)
+            game.effect_tick++;
+        audio_update();
         if (shot) {
-            /* Headless: drive the AI ally and enemies, and pass for Sonny so
-               the battle progresses without input. */
+            /* Headless: pass for Sonny so the battle progresses without
+               input. Resolution keeps its normal pacing, so effects and
+               animations get their frames. */
             if (player_turn(&game) && !game.queued) {
                 battle_queue(&game.battle, PLAYER_SLOT, PLAYER_SLOT, 0, 0);
                 game.queued = 1;
             }
-            game.resolve_timer = 0;
         }
         advance(&game);
 
@@ -561,6 +622,7 @@ int main(int argc, char **argv)
         }
     }
 
+    audio_shutdown();
     assets_unload_all();
     UnloadRenderTexture(stage);
     CloseWindow();

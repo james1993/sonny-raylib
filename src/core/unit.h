@@ -80,6 +80,8 @@ typedef struct {
     char    model_skin[24];
     char    model_hair[24];
     char    looks[7][24];
+    char    voice_hit[3][24];
+    char    voice_die[24];
 
     /* Accumulated buff contributions. changeArray is
        [str+, str%, mag+, mag%, spd+, spd%, life+, life%, DMG, DMG2, IDMG,

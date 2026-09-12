@@ -1,0 +1,160 @@
+#include <stdio.h>
+#include <string.h>
+#include "audio.h"
+#include "assets.h"
+#include "raylib.h"
+
+#define AUDIO_CACHE_MAX 128
+/* my_sound1..my_sound3 in the original. */
+#define EFFECT_CHANNELS 3
+
+typedef struct {
+    const char *name;
+    Sound       sound;
+    int32_t     ok;
+} CachedSound;
+
+static CachedSound cache[AUDIO_CACHE_MAX];
+static int32_t cache_count;
+static Sound channels[EFFECT_CHANNELS];
+static int32_t channel_used[EFFECT_CHANNELS];
+static int32_t channel_next;
+static int32_t ready;
+
+static Music music;
+static int32_t music_playing;
+static char music_name[64];
+
+void audio_init(void)
+{
+    if (ready)
+        return;
+    InitAudioDevice();
+    ready = IsAudioDeviceReady();
+}
+
+int audio_ready(void)
+{
+    return ready;
+}
+
+int32_t audio_loaded_count(void)
+{
+    int32_t n = 0;
+    for (int32_t i = 0; i < cache_count; i++)
+        if (cache[i].ok)
+            n++;
+    return n;
+}
+
+static const Sound *load_sound(const char *name)
+{
+    const AssetEntry *entry = asset_find(name);
+    if (!entry || entry->frame_count == 0)
+        return NULL;
+
+    for (int32_t i = 0; i < cache_count; i++)
+        if (cache[i].name == entry->name)
+            return cache[i].ok ? &cache[i].sound : NULL;
+    if (cache_count >= AUDIO_CACHE_MAX)
+        return NULL;
+
+    CachedSound *slot = &cache[cache_count++];
+    slot->name = entry->name;
+    slot->ok = 0;
+
+    char path[1024];
+    snprintf(path, sizeof(path), "%s", entry->frames[0]);
+    if (FileExists(path)) {
+        slot->sound = LoadSound(path);
+        slot->ok = (slot->sound.frameCount > 0);
+    }
+    return slot->ok ? &slot->sound : NULL;
+}
+
+void audio_play(const char *name)
+{
+    if (!ready || !name || !name[0])
+        return;
+    const Sound *sound = load_sound(name);
+    if (!sound)
+        return;
+
+    /* Take the next channel in the rotation, stopping whatever it held. */
+    int32_t channel = channel_next;
+    channel_next = (channel_next + 1) % EFFECT_CHANNELS;
+
+    if (channel_used[channel]) {
+        StopSound(channels[channel]);
+        UnloadSoundAlias(channels[channel]);
+    }
+    channels[channel] = LoadSoundAlias(*sound);
+    channel_used[channel] = 1;
+    PlaySound(channels[channel]);
+}
+
+void audio_music(const char *name)
+{
+    if (!ready)
+        return;
+    if (!name || !name[0]) {
+        if (music_playing) {
+            StopMusicStream(music);
+            UnloadMusicStream(music);
+            music_playing = 0;
+            music_name[0] = 0;
+        }
+        return;
+    }
+    if (music_playing && strcmp(music_name, name) == 0)
+        return;
+
+    const AssetEntry *entry = asset_find(name);
+    if (!entry || entry->frame_count == 0)
+        return;
+    if (!FileExists(entry->frames[0]))
+        return;
+
+    if (music_playing) {
+        StopMusicStream(music);
+        UnloadMusicStream(music);
+        music_playing = 0;
+    }
+    music = LoadMusicStream(entry->frames[0]);
+    if (music.frameCount == 0)
+        return;
+    music.looping = true;
+    SetMusicVolume(music, 0.45f);
+    PlayMusicStream(music);
+    music_playing = 1;
+    snprintf(music_name, sizeof(music_name), "%s", name);
+}
+
+void audio_update(void)
+{
+    if (ready && music_playing)
+        UpdateMusicStream(music);
+}
+
+void audio_shutdown(void)
+{
+    if (!ready)
+        return;
+    for (int32_t i = 0; i < EFFECT_CHANNELS; i++)
+        if (channel_used[i]) {
+            StopSound(channels[i]);
+            UnloadSoundAlias(channels[i]);
+            channel_used[i] = 0;
+        }
+    if (music_playing) {
+        StopMusicStream(music);
+        UnloadMusicStream(music);
+        music_playing = 0;
+    }
+    for (int32_t i = 0; i < cache_count; i++)
+        if (cache[i].ok)
+            UnloadSound(cache[i].sound);
+    cache_count = 0;
+    CloseAudioDevice();
+    ready = 0;
+}
