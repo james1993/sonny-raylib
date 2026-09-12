@@ -1,114 +1,114 @@
 /* raylib front end.
  *
- * The original is a Flash game with a fixed stage size, so everything is drawn
- * into a render texture at that logical resolution and then scaled with
- * integer-friendly letterboxing. That keeps layout work 1:1 with reference
- * screenshots from the original -- the whole point of a replica.
+ * The original is a Flash game with a fixed 800x575 stage at 30 fps (read out
+ * of SONNY1.swf's header), so everything is drawn into a render texture at
+ * that logical size and scaled with letterboxing. Layout work is then 1:1 with
+ * reference screenshots from the original.
  *
- * STAGE_W/STAGE_H/STAGE_FPS below are placeholders until they are read out of
- * the game's SWF header (which stores exactly these three values).
+ * Art and audio are not in yet: this draws the real battle -- real abilities,
+ * real enemies, real numbers -- with placeholder graphics.
  */
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdarg.h>
 #include <string.h>
 #include "raylib.h"
-#include "../core/formula.h"
+#include "../core/battle.h"
 
-/* Verified from SONNY1.swf's header. */
 #define STAGE_W   800
 #define STAGE_H   575
 #define STAGE_FPS 30
 
-#define MAX_UNITS 8
+#define PLAYER_SLOT   1
+#define ABILITY_SLOTS 8
+#define LOG_LINES     6
+#define RESOLVE_FRAMES 14   /* frames each resolved move stays on screen */
 
 typedef struct {
-    Unit    units[MAX_UNITS];
-    int32_t unit_count;
-    int32_t active;             /* whose turn it is */
-    int32_t round;
-    int     selected_ability;
-    Rng     rng;
+    Battle  battle;
+    int32_t ability_ids[ABILITY_SLOTS];
+    int32_t selected;          /* ability slot, -1 = none */
+    int32_t hovered_unit;
+    int32_t queued;            /* the human has declared this phase */
+    int32_t resolve_timer;
+    char    log[LOG_LINES][128];
+    int32_t log_count;
+    MoveEvent last;
+    int32_t  has_last;
 } Game;
 
-static int32_t roster_add(Game *g, const char *name, int32_t side, int32_t level,
-                          int32_t life, int32_t focus, double str, double mag,
-                          double spd, double per, double def)
+static void logf_line(Game *g, const char *fmt, ...)
 {
-    int32_t i = g->unit_count++;
-    Unit *u = &g->units[i];
-    memset(u, 0, sizeof(*u));
-    snprintf(u->name, SONNY_NAME_LEN, "%s", name);
-    u->playerID = i + 1;
-    u->teamSide = side;
-    u->plevel = level;
-    u->active = 1;
-    u->LIFEU = u->LIFEN = life;
-    u->FOCUSU = u->FOCUSN = focus;
-    u->STRENGTHU = str;
-    u->MAGICU = mag;
-    u->SPEEDU = spd;
-    for (int e = 0; e < SONNY_ELEMENTS; e++) {
-        u->PERU[e] = per;
-        u->DEFU[e] = def;
+    va_list args;
+    char line[128];
+    va_start(args, fmt);
+    vsnprintf(line, sizeof(line), fmt, args);
+    va_end(args);
+
+    if (g->log_count == LOG_LINES) {
+        for (int i = 0; i < LOG_LINES - 1; i++)
+            memcpy(g->log[i], g->log[i + 1], sizeof(g->log[0]));
+        g->log_count--;
     }
-    return i;
+    snprintf(g->log[g->log_count++], sizeof(g->log[0]), "%s", line);
 }
 
-/* Placeholder roster: real units come from the extracted unit table. */
-static void game_init(Game *g)
+static void game_init(Game *g, uint64_t seed)
 {
     memset(g, 0, sizeof(*g));
-    rng_seed(&g->rng, 20260912);
-    rng_refill_krs(&g->rng);
-    roster_add(g, "Sonny", 0, 5, 120, 100, 24, 4, 16, 25, 25);
-    roster_add(g, "Louis", 0, 5, 100, 100, 12, 8, 12, 25, 25);
-    roster_add(g, "Zombie", 1, 4, 90, 100, 18, 4, 10, 25, 25);
-    roster_add(g, "ZPCI Assault", 1, 4, 95, 100, 14, 2, 9, 25, 25);
-    g->round = 1;
-    g->active = 0;
-    g->selected_ability = -1;
+    Battle *b = &g->battle;
+
+    battle_init(b, seed, PLAYER_SLOT);
+    /* Sonny is human-driven; his ally and the enemies run the game's AI. */
+    battle_place(b, PLAYER_SLOT, unit_template_by_name("Dreadnaught"), 5, 0);
+    snprintf(b->units[PLAYER_SLOT].name, SONNY_NAME_LEN, "Sonny");
+    battle_place(b, 3, &SONNY_UNITS[4], 5, 1);
+    battle_place(b, 2, unit_template_by_name("Zombie"), 4, 1);
+    battle_place(b, 4, unit_template_by_name("ZPCI Assault"), 4, 1);
+
+    /* The player's bar holds the class's own move list. */
+    const UnitTemplate *t = unit_template_by_name("Dreadnaught");
+    for (int i = 0; i < ABILITY_SLOTS; i++)
+        g->ability_ids[i] = (i < t->moves_a_count) ? t->moves_a[i] : 0;
+
+    battle_team_select(b);
+    b->PrevTeam = b->TeamMove;
+    for (int32_t i = 1; i < SONNY_SLOTS; i++)
+        battle_queue(b, i, i, 0, 0);
+
+    g->selected = -1;
+    g->hovered_unit = -1;
+    logf_line(g, "Battle begins. Team %d is faster and acts first.",
+              b->TeamMove);
 }
 
-/* Fires the placeholder basic attack at the first living enemy, so the damage
-   math can be exercised from the running build. */
-static void game_attack(Game *g)
+static int player_turn(const Game *g)
 {
-    Unit *caster = &g->units[g->active];
-    for (int32_t i = 0; i < g->unit_count; i++) {
-        Unit *t = &g->units[i];
-        if (t->teamSide == caster->teamSide || !t->active)
-            continue;
-        AbilityCoefs a;
-        memset(&a, 0, sizeof(a));
-        a.element = ELEM_PHYSICAL;
-        a.strength_coef = 1.0;
-        a.hit_coef = 1.0;
-        a.damage_coef = 1.0;
-        DamageResult d = formula_full_damage(&g->rng, caster, t, &a);
-        formula_apply_damage(t, d.damage, NULL);
-        break;
-    }
-    do {
-        g->active = (g->active + 1) % g->unit_count;
-        if (g->active == 0)
-            g->round++;
-    } while (!g->units[g->active].active);
+    const Battle *b = &g->battle;
+    return b->phase == PHASE_DECLARE
+        && b->units[PLAYER_SLOT].active
+        && b->units[PLAYER_SLOT].teamSide == b->TeamMoveNow;
 }
 
-static Rectangle unit_rect(const Game *g, int32_t i)
+/* ------------------------------------------------------------------ layout */
+
+static Rectangle unit_rect(const Battle *b, int32_t slot)
 {
-    int slot = 0;
-    for (int32_t j = 0; j < i; j++)
-        if (g->units[j].teamSide == g->units[i].teamSide)
-            slot++;
-    float x = (g->units[i].teamSide == 0) ? 70.0f : STAGE_W - 70.0f - 120.0f;
-    float y = 100.0f + slot * 115.0f;
-    return (Rectangle){x, y, 120.0f, 100.0f};
+    int32_t row = b->brains[slot].teamAdder;
+    float x = (b->units[slot].teamSide == 1) ? 40.0f : STAGE_W - 40.0f - 150.0f;
+    float y = 70.0f + row * 92.0f;
+    return (Rectangle){x, y, 150.0f, 82.0f};
 }
 
-static void draw_bar(Rectangle r, int32_t cur, int32_t max, Color fill, const char *label)
+static Rectangle ability_rect(int i)
 {
-    DrawRectangleRec(r, (Color){20, 20, 24, 255});
+    return (Rectangle){22.0f + i * 62.0f, STAGE_H - 104.0f, 56.0f, 56.0f};
+}
+
+static void draw_bar(Rectangle r, int32_t cur, int32_t max, Color fill,
+                     const char *label)
+{
+    DrawRectangleRec(r, (Color){18, 18, 22, 255});
     if (max > 0 && cur > 0) {
         Rectangle f = r;
         f.width = r.width * ((float)cur / (float)max);
@@ -117,71 +117,300 @@ static void draw_bar(Rectangle r, int32_t cur, int32_t max, Color fill, const ch
         DrawRectangleRec(f, fill);
     }
     DrawRectangleLinesEx(r, 1.0f, (Color){90, 90, 100, 255});
-    DrawText(TextFormat("%s %d/%d", label, cur, max), (int)r.x + 3, (int)r.y + 1, 10, RAYWHITE);
+    DrawText(TextFormat("%s %d/%d", label, cur, max), (int)r.x + 4,
+             (int)r.y + 1, 10, RAYWHITE);
+}
+
+static void draw_unit(const Game *g, int32_t slot)
+{
+    const Battle *b = &g->battle;
+    const Unit *u = &b->units[slot];
+    if (u->LIFEU == 0)
+        return;
+
+    Rectangle r = unit_rect(b, slot);
+    int is_acting = (b->phase == PHASE_RESOLVE && g->has_last
+                     && g->last.caster == slot);
+    int is_target = (g->hovered_unit == slot);
+
+    Color frame = is_acting ? (Color){235, 200, 90, 255}
+                : is_target ? (Color){120, 200, 255, 255}
+                            : (Color){70, 74, 86, 255};
+
+    DrawRectangleRec(r, (Color){38, 42, 52, u->active ? 255 : 110});
+    DrawRectangleLinesEx(r, (is_acting || is_target) ? 2.0f : 1.0f, frame);
+
+    DrawText(u->name, (int)r.x + 6, (int)r.y + 5, 10,
+             u->active ? RAYWHITE : GRAY);
+    DrawText(TextFormat("Lv%d", u->plevel), (int)r.x + (int)r.width - 32,
+             (int)r.y + 5, 10, (Color){150, 155, 165, 255});
+
+    draw_bar((Rectangle){r.x + 6, r.y + 20, r.width - 12, 12}, u->LIFEN,
+             u->LIFEU, (Color){170, 55, 60, 255}, "HP");
+    draw_bar((Rectangle){r.x + 6, r.y + 35, r.width - 12, 12}, u->FOCUSN,
+             u->FOCUSU, (Color){60, 105, 180, 255}, "FP");
+
+    /* Active buffs, with their remaining turns. */
+    int shown = 0;
+    for (int32_t i = 0; i < SONNY_MAX_BUFFS && shown < 8; i++) {
+        if (u->BUFFARRAYK[i].CD == 0)
+            continue;
+        const BuffDef *def = buff_find(SONNY_BUFFS, SONNY_BUFF_COUNT,
+                                       u->BUFFARRAYK[i].buffId);
+        Color c = def && def->change[1] < 0 ? (Color){175, 80, 80, 255}
+                                            : (Color){110, 165, 110, 255};
+        DrawRectangle((int)r.x + 6 + shown * 18, (int)r.y + 52, 16, 14, c);
+        DrawText(TextFormat("%d", u->BUFFARRAYK[i].CD),
+                 (int)r.x + 9 + shown * 18, (int)r.y + 54, 10, RAYWHITE);
+        shown++;
+    }
+    if (u->SHIELD > 0)
+        DrawText(TextFormat("shield %d", u->SHIELD), (int)r.x + 6,
+                 (int)r.y + 68, 10, (Color){120, 190, 235, 255});
+    if (u->STUN > 0)
+        DrawText("stunned", (int)r.x + (int)r.width - 48, (int)r.y + 68, 10,
+                 (Color){225, 200, 120, 255});
+}
+
+static void draw_ability_bar(const Game *g)
+{
+    for (int i = 0; i < ABILITY_SLOTS; i++) {
+        Rectangle slot = ability_rect(i);
+        const AbilityDef *a = ability_by_id(g->ability_ids[i]);
+        int usable = a && g->ability_ids[i] != 0;
+        int affordable = usable
+            && g->battle.units[PLAYER_SLOT].FOCUSN >= a->focus_cost;
+
+        DrawRectangleRec(slot, (Color){44, 48, 58, 255});
+        DrawRectangleLinesEx(slot, g->selected == i ? 2.0f : 1.0f,
+                             g->selected == i ? (Color){235, 200, 90, 255}
+                                              : (Color){80, 84, 96, 255});
+        if (!usable)
+            continue;
+
+        Color text = affordable ? RAYWHITE : (Color){130, 100, 100, 255};
+        const char *label = (a->name && a->name[0]) ? a->name : a->icon;
+        DrawText(TextFormat("%d", i + 1), (int)slot.x + 4, (int)slot.y + 3, 10,
+                 (Color){150, 155, 165, 255});
+        DrawText(label, (int)slot.x + 4, (int)slot.y + 18, 10, text);
+        DrawText(TextFormat("%d fp", a->focus_cost), (int)slot.x + 4,
+                 (int)slot.y + 42, 10, (Color){120, 160, 210, 255});
+    }
+}
+
+static void draw_tooltip(const Game *g)
+{
+    if (g->selected < 0)
+        return;
+    const AbilityDef *a = ability_by_id(g->ability_ids[g->selected]);
+    if (!a || !a->tooltip[0])
+        return;
+
+    Rectangle box = {22, STAGE_H - 150, STAGE_W - 44, 40};
+    DrawRectangleRec(box, (Color){28, 30, 38, 240});
+    DrawRectangleLinesEx(box, 1.0f, (Color){80, 84, 96, 255});
+    DrawText((a->name && a->name[0]) ? a->name : a->icon, (int)box.x + 6,
+             (int)box.y + 5, 10, (Color){235, 200, 90, 255});
+    DrawText(a->tooltip, (int)box.x + 6, (int)box.y + 20, 10,
+             (Color){200, 205, 215, 255});
 }
 
 static void draw_battle(const Game *g)
 {
+    const Battle *b = &g->battle;
+
     ClearBackground((Color){24, 26, 32, 255});
-    DrawText("SONNY -- engine shell", 12, 10, 20, (Color){200, 205, 215, 255});
-    DrawText(TextFormat("Round %d   turn: %s   [space] attack", g->round,
-                        g->units[g->active].name),
-             12, 34, 10, (Color){150, 155, 165, 255});
+    DrawText("SONNY", 22, 12, 22, (Color){210, 215, 225, 255});
 
-    for (int32_t i = 0; i < g->unit_count; i++) {
-        const Unit *u = &g->units[i];
-        Rectangle r = unit_rect(g, i);
-        Color frame = (i == g->active) ? (Color){235, 200, 90, 255}
-                                       : (Color){70, 74, 86, 255};
+    const char *state = b->phase == PHASE_OVER
+        ? (b->winCondition == 1 ? "victory"
+           : b->winCondition == 0 ? "defeat" : "draw")
+        : player_turn(g) ? "your move" : "enemy phase";
+    DrawText(TextFormat("Round %d   %s", b->round, state), 22, 38, 10,
+             (Color){150, 155, 165, 255});
 
-        DrawRectangleRec(r, (Color){40, 44, 54, u->active ? 255 : 120});
-        DrawRectangleLinesEx(r, (i == g->active) ? 2.0f : 1.0f, frame);
-        DrawText(u->name, (int)r.x + 5, (int)r.y + 5, 10,
-                 u->active ? RAYWHITE : GRAY);
-        DrawText(TextFormat("Lv %d", u->plevel), (int)r.x + 5, (int)r.y + 74, 10,
-                 (Color){140, 145, 155, 255});
+    for (int32_t slot = 1; slot < SONNY_SLOTS; slot++)
+        draw_unit(g, slot);
 
-        draw_bar((Rectangle){r.x + 5, r.y + 22, r.width - 10, 12}, u->LIFEN,
-                 u->LIFEU, (Color){170, 55, 60, 255}, "HP");
-        draw_bar((Rectangle){r.x + 5, r.y + 38, r.width - 10, 12}, u->FOCUSN,
-                 u->FOCUSU, (Color){60, 105, 180, 255}, "FP");
-        if (u->SHIELD > 0)
-            DrawText(TextFormat("shield %d", u->SHIELD), (int)r.x + 5,
-                     (int)r.y + 56, 10, (Color){120, 170, 220, 255});
+    draw_ability_bar(g);
+    draw_tooltip(g);
+
+    for (int32_t i = 0; i < g->log_count; i++)
+        DrawText(g->log[i], 200, 330 + i * 13, 10,
+                 (Color){160, 165, 175, 255});
+
+    if (player_turn(g)) {
+        const char *hint = (g->selected < 0)
+            ? "pick an ability (1-8 or click), then click a target"
+            : "click a target";
+        DrawText(hint, 22, STAGE_H - 26, 10, (Color){235, 200, 90, 255});
     }
-
-    for (int i = 0; i < 8; i++) {
-        Rectangle slot = {12.0f + i * 56.0f, STAGE_H - 100.0f, 50.0f, 50.0f};
-        DrawRectangleRec(slot, (Color){44, 48, 58, 255});
-        DrawRectangleLinesEx(slot, g->selected_ability == i ? 2.0f : 1.0f,
-                             g->selected_ability == i ? (Color){235, 200, 90, 255}
-                                                      : (Color){80, 84, 96, 255});
-    }
-    DrawText("ability bar (icons + tooltips pending asset extraction)", 12,
-             STAGE_H - 42, 10, (Color){130, 135, 145, 255});
 }
 
-int main(void)
+/* ------------------------------------------------------------------- input */
+
+static int32_t unit_at(const Game *g, Vector2 p)
 {
+    for (int32_t slot = 1; slot < SONNY_SLOTS; slot++) {
+        if (g->battle.units[slot].LIFEU == 0)
+            continue;
+        if (CheckCollisionPointRec(p, unit_rect(&g->battle, slot)))
+            return slot;
+    }
+    return -1;
+}
+
+static void describe(Game *g, const MoveEvent *e)
+{
+    const Battle *b = &g->battle;
+    const AbilityDef *a = ability_by_id(e->moveID);
+    const char *name = (a && a->name && a->name[0]) ? a->name
+                     : (a && a->icon[0]) ? a->icon : "pass";
+
+    /* Empty slots queue a pass every phase; they are not participants. */
+    if (e->caster <= 0 || b->units[e->caster].LIFEU == 0)
+        return;
+    if (e->moveID == 0) {
+        logf_line(g, "%s waits.", b->units[e->caster].name);
+        return;
+    }
+    if (e->missed) {
+        logf_line(g, "%s cannot use %s.", b->units[e->caster].name, name);
+        return;
+    }
+    switch (e->kind) {
+    case KIND_HEAL:
+        logf_line(g, "%s heals %s for %d.%s", b->units[e->caster].name,
+                  b->units[e->target].name, e->amount,
+                  e->pierced ? " (critical)" : "");
+        break;
+    case KIND_FOCUS:
+        logf_line(g, "%s restores %d focus to %s.", b->units[e->caster].name,
+                  e->amount, b->units[e->target].name);
+        break;
+    default:
+        logf_line(g, "%s hits %s with %s for %d.%s", b->units[e->caster].name,
+                  b->units[e->target].name, name, e->amount,
+                  e->pierced ? " (pierced)" : "");
+        break;
+    }
+    if (e->target_died)
+        logf_line(g, "%s falls.", b->units[e->target].name);
+}
+
+static void handle_input(Game *g)
+{
+    Battle *b = &g->battle;
+    Vector2 mouse = GetMousePosition();
+    float scale = (float)GetScreenHeight() / STAGE_H;
+    Vector2 stage = {(mouse.x - (GetScreenWidth() - STAGE_W * scale) / 2) / scale,
+                     mouse.y / scale};
+
+    g->hovered_unit = unit_at(g, stage);
+
+    if (!player_turn(g) || g->queued)
+        return;
+
+    for (int i = 0; i < ABILITY_SLOTS; i++)
+        if (IsKeyPressed(KEY_ONE + i) && g->ability_ids[i] != 0)
+            g->selected = i;
+
+    if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
+        for (int i = 0; i < ABILITY_SLOTS; i++) {
+            if (CheckCollisionPointRec(stage, ability_rect(i))
+                && g->ability_ids[i] != 0) {
+                g->selected = i;
+                return;
+            }
+        }
+        if (g->selected >= 0 && g->hovered_unit > 0) {
+            const AbilityDef *a = ability_by_id(g->ability_ids[g->selected]);
+            Unit *target = &b->units[g->hovered_unit];
+            int enemy = target->teamSide != b->units[PLAYER_SLOT].teamSide;
+
+            /* Respect the ability's own targeting flags. */
+            int ok = target->active
+                  && ((enemy && a->target_enemy)
+                      || (!enemy && (a->target_ally
+                                     || (a->target_self
+                                         && g->hovered_unit == PLAYER_SLOT))));
+            if (ok && b->units[PLAYER_SLOT].FOCUSN >= a->focus_cost) {
+                battle_queue(b, PLAYER_SLOT, g->hovered_unit,
+                             g->ability_ids[g->selected], 0);
+                g->queued = 1;
+                g->selected = -1;
+            }
+        }
+    }
+    if (IsKeyPressed(KEY_SPACE)) {   /* pass */
+        battle_queue(b, PLAYER_SLOT, PLAYER_SLOT, 0, 0);
+        g->queued = 1;
+    }
+}
+
+static void advance(Game *g)
+{
+    Battle *b = &g->battle;
+
+    if (b->phase == PHASE_OVER)
+        return;
+
+    if (b->phase == PHASE_DECLARE) {
+        if (player_turn(g) && !g->queued)
+            return;                 /* waiting on the human */
+        battle_declare_phase(b);
+        g->queued = 0;
+        g->resolve_timer = 0;
+        return;
+    }
+
+    if (b->phase == PHASE_RESOLVE) {
+        if (g->resolve_timer > 0) {
+            g->resolve_timer--;
+            return;
+        }
+        MoveEvent e;
+        if (battle_resolve_step(b, &e)) {
+            g->last = e;
+            g->has_last = 1;
+            describe(g, &e);
+            g->resolve_timer = RESOLVE_FRAMES;
+        } else if (b->phase != PHASE_OVER) {
+            battle_end_phase(b);
+        }
+    }
+}
+
+int main(int argc, char **argv)
+{
+    uint64_t seed = (argc > 1) ? strtoull(argv[1], NULL, 10) : 20260912;
+
     Game game;
-    game_init(&game);
+    game_init(&game, seed);
 
     SetTraceLogLevel(LOG_WARNING);
-    InitWindow(STAGE_W * 2, STAGE_H * 2, "Sonny");
+    InitWindow(STAGE_W, STAGE_H, "Sonny");
     SetTargetFPS(STAGE_FPS);
     RenderTexture2D stage = LoadRenderTexture(STAGE_W, STAGE_H);
     SetTextureFilter(stage.texture, TEXTURE_FILTER_POINT);
 
-    /* One-shot render for headless verification: SONNY_SHOT=path. */
+    /* One-shot render for headless checks: SONNY_SHOT=path, SONNY_STEPS=n. */
     const char *shot = getenv("SONNY_SHOT");
+    int steps = getenv("SONNY_STEPS") ? atoi(getenv("SONNY_STEPS")) : 0;
     int frames = 0;
 
     while (!WindowShouldClose()) {
-        if (IsKeyPressed(KEY_SPACE))
-            game_attack(&game);
-        for (int k = 0; k < 8; k++)
-            if (IsKeyPressed(KEY_ONE + k))
-                game.selected_ability = k;
+        handle_input(&game);
+        if (shot) {
+            /* Headless: drive the AI ally and enemies, and pass for Sonny so
+               the battle progresses without input. */
+            if (player_turn(&game) && !game.queued) {
+                battle_queue(&game.battle, PLAYER_SLOT, PLAYER_SLOT, 0, 0);
+                game.queued = 1;
+            }
+            game.resolve_timer = 0;
+        }
+        advance(&game);
 
         BeginTextureMode(stage);
         draw_battle(&game);
@@ -191,13 +420,14 @@ int main(void)
         float sw = STAGE_W * scale;
         BeginDrawing();
         ClearBackground(BLACK);
-        DrawTexturePro(stage.texture, (Rectangle){0, 0, (float)STAGE_W, -(float)STAGE_H},
+        DrawTexturePro(stage.texture,
+                       (Rectangle){0, 0, (float)STAGE_W, -(float)STAGE_H},
                        (Rectangle){(GetScreenWidth() - sw) / 2.0f, 0, sw,
                                    (float)GetScreenHeight()},
                        (Vector2){0, 0}, 0.0f, WHITE);
         EndDrawing();
 
-        if (shot && ++frames >= 2) {
+        if (shot && ++frames >= (steps > 0 ? steps : 2)) {
             TakeScreenshot(shot);
             break;
         }

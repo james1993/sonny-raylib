@@ -7,13 +7,32 @@ plays out the way it does in the original.
 
 ## Status
 
-Engine shell only. It builds and runs, and the combat core is under test, but
-every number in it is a placeholder until real game data is extracted.
+Combat works end to end on the original's own tables: 142 abilities, 87 buffs,
+43 unit templates, the real damage and healing math, the real turn order, and
+the real enemy AI. Art, audio and progression are not in yet.
 
-- `make test` — headless tests of the combat core (no raylib needed)
-- `make game` — the raylib front end
-- `SONNY_SHOT=out.png ./build/sonny` — render one frame and exit (works under
-  `xvfb-run`, so visuals can be diffed against reference screenshots in CI)
+- `make test` — headless tests, no raylib needed
+- `make game` — the raylib front end (raylib 6.0)
+- `make simulate` — `build/simulate [seed] [player_level] [enemy_level]`
+  prints a move-by-move battle log
+- `make data` — regenerate the C tables from `data/extracted/`
+- `make vectors` — regenerate the differential test vectors
+- `SONNY_SHOT=out.png SONNY_STEPS=60 ./build/sonny` — render a frame and exit
+  (works under `xvfb-run`, so layout can be diffed against reference
+  screenshots)
+
+### How the port is checked
+
+Each pure function is ported statement for statement from the decompiled
+source, then diffed against an independent transcription of that same source
+in `tools/ref_*.py` over generated cases: 400 damage vectors, 300 heal/focus
+vectors, 300 multi-buff tick scenarios. The turn driver is a state machine
+rather than a pure function, so it is checked by properties instead —
+termination, legal unit state, one surviving side, replay determinism from a
+seed, and outcomes that shift with enemy level.
+
+`build/simulate` exists for the check that matters most and is not automated:
+setting up the same fight in the real game and comparing the log move by move.
 
 ## Layout
 
@@ -91,13 +110,17 @@ Two details worth knowing, both reproduced rather than cleaned up:
 
 ### Porting status
 
-- [x] Data extraction: abilities, units, items, buffs, all text → JSON
-- [x] Damage and hit resolution (`executeMove` "Full Damage", `perScript`),
-      verified against an independent transcription on 400 generated cases
+- [x] Data extraction: abilities, units, items, buffs, all text → JSON → C
+- [x] Damage and hit resolution (`executeMove` "Full Damage", `perScript`)
 - [x] The RNG's battle-scoped ring buffer
-- [ ] Buffs: `applyBuffKrin` / `buffTicker` / `applyChangesKrin`
-- [ ] Turn order and the move queue (`krinAddMove`, `MoveArrayFINAL`)
-- [ ] Enemy AI (`AImoveAdder`, aggression thresholds)
-- [ ] Non-damage move kinds (`Heal`, `Focus`, and the rest of `executeMove`)
-- [ ] Level-ups, ability trees, equipment, shops, zones, save data
-- [ ] Art, audio and UI layout
+- [x] Buffs: `applyBuffKrin` / `buffTicker` / `applyChangesKrin`
+- [x] Turn order and the move queue (`TeamSelect`, `krinAddMove`,
+      `MoveArrayFINAL`)
+- [x] Enemy AI (`AImoveAdder`, aggression thresholds, target selection)
+- [x] `Heal` and `Focus` move kinds
+- [ ] Shields/reflect on the remaining executeMove paths (`REFLECT` is tracked
+      but nothing reads it yet)
+- [ ] Items and equipment (`createNewItemKrin`, the 126 extracted items)
+- [ ] Level-ups, XP (`expWorkOut`) and the ability trees
+- [ ] Zones, stages, shops, the world map and save data
+- [ ] Art, audio and pixel-accurate UI layout
