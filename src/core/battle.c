@@ -75,10 +75,22 @@ void battle_place_character(Battle *b, int32_t slot, const Character *c,
                             const char *name, int32_t ai)
 {
     Unit *u = &b->units[slot];
+    Brain *br = &b->brains[slot];
     DerivedStats d = character_derive(c);
 
     unit_init(u, slot);
-    install_brain(&b->brains[slot], c->class_template, ai);
+    install_brain(br, c->class_template, ai);
+
+    /* The character's own bar, not the class template's move list. The
+       original only ever drives Sonny from input; giving the AI his bar is a
+       harness convenience for headless simulation, and leaving the defensive
+       list empty makes that AI always attack (an empty defensive list is what
+       skips the retreat check). */
+    br->movesA_count = 0;
+    br->movesD_count = 0;
+    for (int32_t i = 0; i < SONNY_MOVE_SLOTS; i++)
+        if (c->move_matrix[i] != 0 && br->movesA_count < SONNY_AI_MOVES)
+            br->movesA[br->movesA_count++] = c->move_matrix[i];
 
     snprintf(u->name, SONNY_NAME_LEN, "%s",
              name ? name : c->class_template->name);
@@ -96,6 +108,20 @@ void battle_place_character(Battle *b, int32_t slot, const Character *c,
         u->PER[e] = u->PERU[e] = d.per[e];
         u->DEF[e] = u->DEFU[e] = d.def[e];
     }
+
+    /* Passive talents are applied as buffs at the start of the battle, with
+       the unit as its own caster, then folded in by one applyChangesKrin --
+       exactly the loop at the end of frame 212. */
+    const char *passives[SONNY_TALENT_MAX];
+    int32_t count = character_passive_buffs(c, passives, SONNY_TALENT_MAX);
+    for (int32_t i = 0; i < count; i++) {
+        const BuffDef *def = buff_find(SONNY_BUFFS, SONNY_BUFF_COUNT,
+                                       passives[i]);
+        if (def)
+            buff_apply(u, def, 1, u, 0);
+    }
+    if (count > 0)
+        unit_apply_changes(u);
 }
 
 /* -------------------------------------------------------------- turn order */

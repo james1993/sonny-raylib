@@ -27,12 +27,14 @@ test: $(BUILD)
 	$(CC) $(CFLAGS) -Werror -o $(BUILD)/test_heal tests/test_heal.c $(CORE_SRC) -lm
 	$(CC) $(CFLAGS) -Werror -o $(BUILD)/test_battle tests/test_battle.c $(CORE_SRC) -lm
 	$(CC) $(CFLAGS) -Werror -o $(BUILD)/test_character tests/test_character.c $(CORE_SRC) -lm
+	$(CC) $(CFLAGS) -Werror -o $(BUILD)/test_talents tests/test_talents.c $(CORE_SRC) -lm
 	$(BUILD)/test_formula tests/vectors_formula.txt
 	$(BUILD)/test_rng
 	$(BUILD)/test_buffs tests/vectors_buffs.txt
 	$(BUILD)/test_heal tests/vectors_heal.txt
 	$(BUILD)/test_battle
 	$(BUILD)/test_character tests/vectors_character.txt
+	$(BUILD)/test_talents
 
 # Regenerate the C data tables from the extracted JSON.
 data:

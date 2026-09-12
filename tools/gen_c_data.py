@@ -188,6 +188,37 @@ def gen_units(units):
     return '\n'.join(lines)
 
 
+def gen_talents(talents):
+    nodes = talents['nodes']
+    lines = ['const TalentDef SONNY_TALENTS[] = {']
+    for n in nodes:
+        pre = [p for p in (n.get('PRESKILL') or []) if isinstance(p, int)]
+        # PRESKILL [-1] means "no prerequisite": the original indexes
+        # talentMainArray[-1], gets undefined, and `undefined == 0` is false in
+        # ActionScript, so the check passes. Kept as -1 and skipped explicitly.
+        lines.append('    { /* %d -> ability %s */' % (n['index'], n.get('ID')))
+        lines.append('        .index = %d, .ability_id = %d, .level_min = %d,'
+                     % (n['index'], int(num(n.get('ID'))),
+                        int(num(n.get('LEVELMIN')))))
+        lines.append('        .level_scale = %d, .max_rank = %d, .passive = %d,'
+                     % (int(num(n.get('LEVELSCALE'))), int(num(n.get('TIER'))),
+                        int(num(n.get('CLASSIFY')))))
+        buffname = n.get('BUFFNAME')
+        lines.append('        .buff_name = %s,'
+                     % c_string(buffname if isinstance(buffname, str) else ''))
+        lines.append('        .prereq = { %s }, .prereq_count = %d,'
+                     % (', '.join(str(p) for p in pre) or '-1', len(pre)))
+        lines.append('    },')
+    lines.append('};')
+    lines.append('const int SONNY_TALENT_COUNT = '
+                 '(int)(sizeof(SONNY_TALENTS) / sizeof(SONNY_TALENTS[0]));')
+    lines.append('const int32_t SONNY_START_SKILL1 = %d;'
+                 % int(num(talents.get('startSkill1'))))
+    lines.append('const int32_t SONNY_START_SKILL2 = %d;'
+                 % int(num(talents.get('startSkill2'))))
+    return '\n'.join(lines)
+
+
 def gen_items(items):
     lines = ['const ItemDef SONNY_ITEMS[] = {']
     for it in items:
@@ -266,6 +297,25 @@ typedef struct {
     AbilityCoefs coefs;
 } AbilityDef;
 
+#define SONNY_MAX_PREREQ 4
+
+/* One node of the talent tree (Krin.abilityXer). A node's rank N uses ability
+ * id `ability_id + N - 1`, which is why the ability table holds each move five
+ * times in a row with rising coefficients. A passive node instead contributes
+ * the buff `buff_name` with the rank number appended -- "REGENERATION" + 2
+ * really is the key "REGENERATION2". */
+typedef struct {
+    int32_t     index;
+    int32_t     ability_id;
+    int32_t     level_min;
+    int32_t     level_scale;
+    int32_t     max_rank;        /* TIER */
+    int32_t     passive;         /* CLASSIFY */
+    const char *buff_name;
+    int32_t     prereq[SONNY_MAX_PREREQ];
+    int32_t     prereq_count;
+} TalentDef;
+
 /* An equippable item. statUpdater is [Health, Strength, Magic, Speed, Focus];
    per/def are the per-element piercing and defense bonuses. */
 typedef struct {
@@ -313,6 +363,10 @@ extern const UnitTemplate SONNY_UNITS[];
 extern const int SONNY_UNIT_COUNT;
 extern const ItemDef SONNY_ITEMS[];
 extern const int SONNY_ITEM_COUNT;
+extern const TalentDef SONNY_TALENTS[];
+extern const int SONNY_TALENT_COUNT;
+extern const int32_t SONNY_START_SKILL1;
+extern const int32_t SONNY_START_SKILL2;
 
 /* Lookups by the original's own ids/keys. NULL when absent.
  *
@@ -390,12 +444,13 @@ def main():
         fh.write(gen_abilities(abilities) + '\n\n')
         fh.write(gen_buffs(buffs) + '\n\n')
         fh.write(gen_units(units) + '\n\n')
-        fh.write(gen_items(load_items()) + '\n')
+        fh.write(gen_items(load_items()) + '\n\n')
+        fh.write(gen_talents(load('talents')) + '\n')
         fh.write(LOOKUPS)
 
-    print('abilities %d, buffs %d, units %d, items %d -> %s'
+    print('abilities %d, buffs %d, units %d, items %d, talents %d -> %s'
           % (len(abilities), len(buffs), len(units), len(load_items()),
-             args.out))
+             len(load('talents')['nodes']), args.out))
 
 
 if __name__ == '__main__':

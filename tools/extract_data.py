@@ -175,6 +175,39 @@ ITEM_STAT_ORDER = ['HealthUP', 'StrengthUP', 'MagicUP', 'SpeedUP', 'FocusUP']
 PATCH_RE = re.compile(r'^_root\.(hackMove|hackMove2)\[(\d+)\]\s*=\s*(.+);$')
 UNIT_PATCH_RE = re.compile(r'^jesivie\.([A-Za-z0-9_]+)\s*=\s*(.+);$')
 MOVECOUNT_RE = re.compile(r'^MoveCount\s*=\s*(\d+);$')
+# Krin.abilityXer[0] = {ID:1,LEVELMIN:2,LEVELSCALE:1,TIER:5,PRESKILL:[-1],
+#                       CLASSIFY:0,BUFFNAME:0};
+TALENT_RE = re.compile(r'^Krin\.abilityXer\[(\d+)\]\s*=\s*\{(.*)\};$')
+START_SKILL_RE = re.compile(r'^Krin\.startSkill([12])\s*=\s*(\d+);$')
+
+
+def parse_object(body):
+    """Parse an AS object literal's `key:value` pairs."""
+    out = {}
+    for part in split_args(body):
+        if ':' not in part:
+            continue
+        key, _, value = part.partition(':')
+        out[key.strip()] = parse_value(value.strip())
+    return out
+
+
+def extract_talents(text):
+    """The talent tree: loadTalents() in frame 61 builds one 28-node tree,
+    ignoring its class parameter in this build."""
+    nodes, start = {}, {}
+    for raw in text.splitlines():
+        line = raw.strip()
+        m = TALENT_RE.match(line)
+        if m:
+            node = parse_object(m.group(2))
+            node['index'] = int(m.group(1))
+            nodes[node['index']] = node
+            continue
+        m = START_SKILL_RE.match(line)
+        if m:
+            start['startSkill%s' % m.group(1)] = int(m.group(2))
+    return [nodes[i] for i in sorted(nodes)], start
 
 
 def new_item_stats():
@@ -295,8 +328,10 @@ def main():
         if not os.path.exists(p):
             sys.exit('missing %s -- is this an ffdec script export of SONNY1.swf?' % p)
 
-    langs = extract_lang(open(lang_as, encoding='utf-8', errors='replace').read())
+    lang_text = open(lang_as, encoding='utf-8', errors='replace').read()
+    langs = extract_lang(lang_text)
     lang = langs.get(args.lang, {})
+    talents, start_skills = extract_talents(lang_text)
     text = open(data_as, encoding='utf-8', errors='replace').read()
     moves, units, items, buffs = extract_tables(text)
 
@@ -358,9 +393,13 @@ def main():
 
     os.makedirs(args.out, exist_ok=True)
     written = []
+    talent_payload = {'startSkill1': start_skills.get('startSkill1'),
+                      'startSkill2': start_skills.get('startSkill2'),
+                      'nodes': talents}
+
     for name, payload in (('lang', langs), ('abilities', abilities),
                           ('units', unit_list), ('items', item_list),
-                          ('buffs', buff_list)):
+                          ('buffs', buff_list), ('talents', talent_payload)):
         path = os.path.join(args.out, name + '.json')
         with open(path, 'w', encoding='utf-8') as fh:
             json.dump(payload, fh, indent=1, ensure_ascii=False)
@@ -372,6 +411,9 @@ def main():
     print('units     : %d' % len(unit_list))
     print('items     : %d' % len(item_list))
     print('buffs     : %d' % len(buff_list))
+    print('talents   : %d nodes, start skills %s/%s'
+          % (len(talents), start_skills.get('startSkill1'),
+             start_skills.get('startSkill2')))
     for name, path in written:
         print('  wrote %-10s %s' % (name, path))
 

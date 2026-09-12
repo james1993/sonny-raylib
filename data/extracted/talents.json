@@ -1,0 +1,342 @@
+{
+ "startSkill1": 69,
+ "startSkill2": 70,
+ "nodes": [
+  {
+   "ID": 1,
+   "LEVELMIN": 2,
+   "LEVELSCALE": 1,
+   "TIER": 5,
+   "PRESKILL": [
+    -1
+   ],
+   "CLASSIFY": 0,
+   "BUFFNAME": 0,
+   "index": 0
+  },
+  {
+   "ID": 6,
+   "LEVELMIN": 3,
+   "LEVELSCALE": 1,
+   "TIER": 3,
+   "PRESKILL": [
+    0
+   ],
+   "CLASSIFY": 0,
+   "BUFFNAME": 0,
+   "index": 1
+  },
+  {
+   "ID": 9,
+   "LEVELMIN": 4,
+   "LEVELSCALE": 1,
+   "TIER": 1,
+   "PRESKILL": [
+    1
+   ],
+   "CLASSIFY": 0,
+   "BUFFNAME": 0,
+   "index": 2
+  },
+  {
+   "ID": 10,
+   "LEVELMIN": 3,
+   "LEVELSCALE": 1,
+   "TIER": 3,
+   "PRESKILL": [
+    -1
+   ],
+   "CLASSIFY": 0,
+   "BUFFNAME": 0,
+   "index": 3
+  },
+  {
+   "ID": 13,
+   "LEVELMIN": 3,
+   "LEVELSCALE": 1,
+   "TIER": 5,
+   "PRESKILL": [
+    -1
+   ],
+   "CLASSIFY": 0,
+   "BUFFNAME": 0,
+   "index": 4
+  },
+  {
+   "ID": 18,
+   "LEVELMIN": 5,
+   "LEVELSCALE": 1,
+   "TIER": 5,
+   "PRESKILL": [
+    2
+   ],
+   "CLASSIFY": 0,
+   "BUFFNAME": 0,
+   "index": 5
+  },
+  {
+   "ID": 80,
+   "LEVELMIN": 3,
+   "LEVELSCALE": 1,
+   "TIER": 10,
+   "PRESKILL": [
+    4
+   ],
+   "CLASSIFY": 1,
+   "BUFFNAME": "REGENERATION",
+   "index": 6
+  },
+  {
+   "ID": 26,
+   "LEVELMIN": 4,
+   "LEVELSCALE": 1,
+   "TIER": 5,
+   "PRESKILL": [
+    6
+   ],
+   "CLASSIFY": 0,
+   "BUFFNAME": 0,
+   "index": 7
+  },
+  {
+   "ID": 31,
+   "LEVELMIN": 3,
+   "LEVELSCALE": 1,
+   "TIER": 3,
+   "PRESKILL": [
+    3
+   ],
+   "CLASSIFY": 0,
+   "BUFFNAME": 0,
+   "index": 8
+  },
+  {
+   "ID": 34,
+   "LEVELMIN": 5,
+   "LEVELSCALE": 1,
+   "TIER": 5,
+   "PRESKILL": [
+    -1
+   ],
+   "CLASSIFY": 0,
+   "BUFFNAME": 0,
+   "index": 9
+  },
+  {
+   "ID": 39,
+   "LEVELMIN": 6,
+   "LEVELSCALE": 1,
+   "TIER": 10,
+   "PRESKILL": [
+    9
+   ],
+   "CLASSIFY": 0,
+   "BUFFNAME": 0,
+   "index": 10
+  },
+  {
+   "ID": 49,
+   "LEVELMIN": 4,
+   "LEVELSCALE": 1,
+   "TIER": 3,
+   "PRESKILL": [
+    -1
+   ],
+   "CLASSIFY": 0,
+   "BUFFNAME": 0,
+   "index": 11
+  },
+  {
+   "ID": 52,
+   "LEVELMIN": 7,
+   "LEVELSCALE": 1,
+   "TIER": 5,
+   "PRESKILL": [
+    14
+   ],
+   "CLASSIFY": 0,
+   "BUFFNAME": 0,
+   "index": 12
+  },
+  {
+   "ID": 57,
+   "LEVELMIN": 6,
+   "LEVELSCALE": 1,
+   "TIER": 1,
+   "PRESKILL": [
+    -1
+   ],
+   "CLASSIFY": 0,
+   "BUFFNAME": 0,
+   "index": 13
+  },
+  {
+   "ID": 58,
+   "LEVELMIN": 6,
+   "LEVELSCALE": 1,
+   "TIER": 5,
+   "PRESKILL": [
+    5
+   ],
+   "CLASSIFY": 0,
+   "BUFFNAME": 0,
+   "index": 14
+  },
+  {
+   "ID": 63,
+   "LEVELMIN": 8,
+   "LEVELSCALE": 1,
+   "TIER": 3,
+   "PRESKILL": [
+    12
+   ],
+   "CLASSIFY": 0,
+   "BUFFNAME": 0,
+   "index": 15
+  },
+  {
+   "ID": 66,
+   "LEVELMIN": 7,
+   "LEVELSCALE": 1,
+   "TIER": 3,
+   "PRESKILL": [
+    13
+   ],
+   "CLASSIFY": 0,
+   "BUFFNAME": 0,
+   "index": 16
+  },
+  {
+   "ID": 81,
+   "LEVELMIN": 8,
+   "LEVELSCALE": 1,
+   "TIER": 5,
+   "PRESKILL": [
+    -1
+   ],
+   "CLASSIFY": 1,
+   "BUFFNAME": "BRUTALITY",
+   "index": 17
+  },
+  {
+   "ID": 82,
+   "LEVELMIN": 7,
+   "LEVELSCALE": 1,
+   "TIER": 5,
+   "PRESKILL": [
+    10
+   ],
+   "CLASSIFY": 1,
+   "BUFFNAME": "ENDURANCE",
+   "index": 18
+  },
+  {
+   "ID": 83,
+   "LEVELMIN": 5,
+   "LEVELSCALE": 1,
+   "TIER": 5,
+   "PRESKILL": [
+    7
+   ],
+   "CLASSIFY": 1,
+   "BUFFNAME": "SOLIDITY",
+   "index": 19
+  },
+  {
+   "ID": 71,
+   "LEVELMIN": 2,
+   "LEVELSCALE": 1,
+   "TIER": 10,
+   "PRESKILL": [
+    -1
+   ],
+   "CLASSIFY": 0,
+   "BUFFNAME": 0,
+   "index": 20
+  },
+  {
+   "ID": 81,
+   "LEVELMIN": 3,
+   "LEVELSCALE": 1,
+   "TIER": 3,
+   "PRESKILL": [
+    20
+   ],
+   "CLASSIFY": 0,
+   "BUFFNAME": 0,
+   "index": 21
+  },
+  {
+   "ID": 84,
+   "LEVELMIN": 4,
+   "LEVELSCALE": 1,
+   "TIER": 10,
+   "PRESKILL": [
+    21
+   ],
+   "CLASSIFY": 0,
+   "BUFFNAME": 0,
+   "index": 22
+  },
+  {
+   "ID": 94,
+   "LEVELMIN": 5,
+   "LEVELSCALE": 1,
+   "TIER": 3,
+   "PRESKILL": [
+    -1
+   ],
+   "CLASSIFY": 0,
+   "BUFFNAME": 0,
+   "index": 23
+  },
+  {
+   "ID": 97,
+   "LEVELMIN": 6,
+   "LEVELSCALE": 1,
+   "TIER": 3,
+   "PRESKILL": [
+    23
+   ],
+   "CLASSIFY": 0,
+   "BUFFNAME": 0,
+   "index": 24
+  },
+  {
+   "ID": 100,
+   "LEVELMIN": 7,
+   "LEVELSCALE": 1,
+   "TIER": 5,
+   "PRESKILL": [
+    24
+   ],
+   "CLASSIFY": 0,
+   "BUFFNAME": 0,
+   "index": 25
+  },
+  {
+   "ID": 106,
+   "LEVELMIN": 8,
+   "LEVELSCALE": 1,
+   "TIER": 1,
+   "PRESKILL": [
+    25
+   ],
+   "CLASSIFY": 0,
+   "BUFFNAME": 0,
+   "index": 26
+  },
+  {
+   "ID": 105,
+   "LEVELMIN": 15,
+   "LEVELSCALE": 1,
+   "TIER": 1,
+   "PRESKILL": [
+    25
+   ],
+   "CLASSIFY": 0,
+   "BUFFNAME": 0,
+   "index": 27
+  }
+ ]
+}

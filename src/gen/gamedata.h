@@ -49,6 +49,25 @@ typedef struct {
     AbilityCoefs coefs;
 } AbilityDef;
 
+#define SONNY_MAX_PREREQ 4
+
+/* One node of the talent tree (Krin.abilityXer). A node's rank N uses ability
+ * id `ability_id + N - 1`, which is why the ability table holds each move five
+ * times in a row with rising coefficients. A passive node instead contributes
+ * the buff `buff_name` with the rank number appended -- "REGENERATION" + 2
+ * really is the key "REGENERATION2". */
+typedef struct {
+    int32_t     index;
+    int32_t     ability_id;
+    int32_t     level_min;
+    int32_t     level_scale;
+    int32_t     max_rank;        /* TIER */
+    int32_t     passive;         /* CLASSIFY */
+    const char *buff_name;
+    int32_t     prereq[SONNY_MAX_PREREQ];
+    int32_t     prereq_count;
+} TalentDef;
+
 /* An equippable item. statUpdater is [Health, Strength, Magic, Speed, Focus];
    per/def are the per-element piercing and defense bonuses. */
 typedef struct {
@@ -96,6 +115,10 @@ extern const UnitTemplate SONNY_UNITS[];
 extern const int SONNY_UNIT_COUNT;
 extern const ItemDef SONNY_ITEMS[];
 extern const int SONNY_ITEM_COUNT;
+extern const TalentDef SONNY_TALENTS[];
+extern const int SONNY_TALENT_COUNT;
+extern const int32_t SONNY_START_SKILL1;
+extern const int32_t SONNY_START_SKILL2;
 
 /* Lookups by the original's own ids/keys. NULL when absent.
  *

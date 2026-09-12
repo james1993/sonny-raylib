@@ -1,5 +1,105 @@
 #include <math.h>
+#include <stdio.h>
+#include <string.h>
 #include "character.h"
+
+void character_new(Character *c, int32_t class_id)
+{
+    memset(c, 0, sizeof(*c));
+    c->class_template = unit_template_by_id(class_id);
+    c->level = 1;
+    /* Krin.StatSets0 = [0,5,0,3,0] */
+    c->spent[1] = 5;
+    c->spent[3] = 3;
+    c->move_matrix[0] = SONNY_START_SKILL1;
+    c->move_matrix[1] = SONNY_START_SKILL2;
+}
+
+int32_t character_talent_next_level(const Character *c, int32_t node)
+{
+    if (node < 0 || node >= SONNY_TALENT_COUNT)
+        return 0;
+    const TalentDef *t = &SONNY_TALENTS[node];
+    return t->level_min + t->level_scale * c->rank[node];
+}
+
+int32_t character_unspent_skill_points(const Character *c)
+{
+    return character_skill_points(c) - c->spent_skill_points;
+}
+
+TalentError character_can_learn(const Character *c, int32_t node)
+{
+    if (node < 0 || node >= SONNY_TALENT_COUNT)
+        return TALENT_MISSING_PREREQ;
+    const TalentDef *t = &SONNY_TALENTS[node];
+
+    if (character_unspent_skill_points(c) <= 0)
+        return TALENT_NO_POINTS;
+    if (c->rank[node] == t->max_rank)
+        return TALENT_MAX_RANK;
+    if (c->level < character_talent_next_level(c, node))
+        return TALENT_LEVEL_TOO_LOW;
+    for (int32_t i = 0; i < t->prereq_count; i++) {
+        int32_t p = t->prereq[i];
+        /* -1 encodes "no prerequisite". */
+        if (p < 0 || p >= SONNY_TALENT_MAX)
+            continue;
+        if (c->rank[p] == 0)
+            return TALENT_MISSING_PREREQ;
+    }
+    return TALENT_OK;
+}
+
+TalentError character_learn(Character *c, int32_t node)
+{
+    TalentError err = character_can_learn(c, node);
+    if (err != TALENT_OK)
+        return err;
+
+    const TalentDef *t = &SONNY_TALENTS[node];
+    c->spent_skill_points++;
+    c->rank[node]++;
+
+    if (!t->passive) {
+        int32_t upgraded = t->ability_id + (c->rank[node] - 1);
+        /* A bar slot holding the previous rank follows the upgrade. */
+        for (int32_t i = 0; i < SONNY_MOVE_SLOTS; i++)
+            if (c->move_matrix[i] != 0
+                && c->move_matrix[i] == c->skill_adder[node])
+                c->move_matrix[i] = upgraded;
+        c->skill_adder[node] = upgraded;
+    } else {
+        /* The key is the buff name with the rank appended, so rank 2 of
+           REGENERATION is the buff "REGENERATION2". */
+        snprintf(c->buff_adder[node], SONNY_NAME_LEN, "%s%d", t->buff_name,
+                 c->rank[node]);
+    }
+    return TALENT_OK;
+}
+
+int32_t character_known_abilities(const Character *c, int32_t *out, int32_t max)
+{
+    int32_t n = 0;
+    if (n < max)
+        out[n++] = SONNY_START_SKILL1;
+    if (n < max)
+        out[n++] = SONNY_START_SKILL2;
+    for (int32_t i = 0; i < SONNY_TALENT_MAX && n < max; i++)
+        if (c->skill_adder[i] > 0)
+            out[n++] = c->skill_adder[i];
+    return n;
+}
+
+int32_t character_passive_buffs(const Character *c, const char **out,
+                                int32_t max)
+{
+    int32_t n = 0;
+    for (int32_t i = 0; i < SONNY_TALENT_MAX && n < max; i++)
+        if (c->buff_adder[i][0])
+            out[n++] = c->buff_adder[i];
+    return n;
+}
 
 int32_t character_stat_points(const Character *c)
 {

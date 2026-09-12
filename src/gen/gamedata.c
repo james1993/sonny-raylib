@@ -4483,6 +4483,180 @@ const ItemDef SONNY_ITEMS[] = {
 };
 const int SONNY_ITEM_COUNT = (int)(sizeof(SONNY_ITEMS) / sizeof(SONNY_ITEMS[0]));
 
+const TalentDef SONNY_TALENTS[] = {
+    { /* 0 -> ability 1 */
+        .index = 0, .ability_id = 1, .level_min = 2,
+        .level_scale = 1, .max_rank = 5, .passive = 0,
+        .buff_name = "",
+        .prereq = { -1 }, .prereq_count = 1,
+    },
+    { /* 1 -> ability 6 */
+        .index = 1, .ability_id = 6, .level_min = 3,
+        .level_scale = 1, .max_rank = 3, .passive = 0,
+        .buff_name = "",
+        .prereq = { 0 }, .prereq_count = 1,
+    },
+    { /* 2 -> ability 9 */
+        .index = 2, .ability_id = 9, .level_min = 4,
+        .level_scale = 1, .max_rank = 1, .passive = 0,
+        .buff_name = "",
+        .prereq = { 1 }, .prereq_count = 1,
+    },
+    { /* 3 -> ability 10 */
+        .index = 3, .ability_id = 10, .level_min = 3,
+        .level_scale = 1, .max_rank = 3, .passive = 0,
+        .buff_name = "",
+        .prereq = { -1 }, .prereq_count = 1,
+    },
+    { /* 4 -> ability 13 */
+        .index = 4, .ability_id = 13, .level_min = 3,
+        .level_scale = 1, .max_rank = 5, .passive = 0,
+        .buff_name = "",
+        .prereq = { -1 }, .prereq_count = 1,
+    },
+    { /* 5 -> ability 18 */
+        .index = 5, .ability_id = 18, .level_min = 5,
+        .level_scale = 1, .max_rank = 5, .passive = 0,
+        .buff_name = "",
+        .prereq = { 2 }, .prereq_count = 1,
+    },
+    { /* 6 -> ability 80 */
+        .index = 6, .ability_id = 80, .level_min = 3,
+        .level_scale = 1, .max_rank = 10, .passive = 1,
+        .buff_name = "REGENERATION",
+        .prereq = { 4 }, .prereq_count = 1,
+    },
+    { /* 7 -> ability 26 */
+        .index = 7, .ability_id = 26, .level_min = 4,
+        .level_scale = 1, .max_rank = 5, .passive = 0,
+        .buff_name = "",
+        .prereq = { 6 }, .prereq_count = 1,
+    },
+    { /* 8 -> ability 31 */
+        .index = 8, .ability_id = 31, .level_min = 3,
+        .level_scale = 1, .max_rank = 3, .passive = 0,
+        .buff_name = "",
+        .prereq = { 3 }, .prereq_count = 1,
+    },
+    { /* 9 -> ability 34 */
+        .index = 9, .ability_id = 34, .level_min = 5,
+        .level_scale = 1, .max_rank = 5, .passive = 0,
+        .buff_name = "",
+        .prereq = { -1 }, .prereq_count = 1,
+    },
+    { /* 10 -> ability 39 */
+        .index = 10, .ability_id = 39, .level_min = 6,
+        .level_scale = 1, .max_rank = 10, .passive = 0,
+        .buff_name = "",
+        .prereq = { 9 }, .prereq_count = 1,
+    },
+    { /* 11 -> ability 49 */
+        .index = 11, .ability_id = 49, .level_min = 4,
+        .level_scale = 1, .max_rank = 3, .passive = 0,
+        .buff_name = "",
+        .prereq = { -1 }, .prereq_count = 1,
+    },
+    { /* 12 -> ability 52 */
+        .index = 12, .ability_id = 52, .level_min = 7,
+        .level_scale = 1, .max_rank = 5, .passive = 0,
+        .buff_name = "",
+        .prereq = { 14 }, .prereq_count = 1,
+    },
+    { /* 13 -> ability 57 */
+        .index = 13, .ability_id = 57, .level_min = 6,
+        .level_scale = 1, .max_rank = 1, .passive = 0,
+        .buff_name = "",
+        .prereq = { -1 }, .prereq_count = 1,
+    },
+    { /* 14 -> ability 58 */
+        .index = 14, .ability_id = 58, .level_min = 6,
+        .level_scale = 1, .max_rank = 5, .passive = 0,
+        .buff_name = "",
+        .prereq = { 5 }, .prereq_count = 1,
+    },
+    { /* 15 -> ability 63 */
+        .index = 15, .ability_id = 63, .level_min = 8,
+        .level_scale = 1, .max_rank = 3, .passive = 0,
+        .buff_name = "",
+        .prereq = { 12 }, .prereq_count = 1,
+    },
+    { /* 16 -> ability 66 */
+        .index = 16, .ability_id = 66, .level_min = 7,
+        .level_scale = 1, .max_rank = 3, .passive = 0,
+        .buff_name = "",
+        .prereq = { 13 }, .prereq_count = 1,
+    },
+    { /* 17 -> ability 81 */
+        .index = 17, .ability_id = 81, .level_min = 8,
+        .level_scale = 1, .max_rank = 5, .passive = 1,
+        .buff_name = "BRUTALITY",
+        .prereq = { -1 }, .prereq_count = 1,
+    },
+    { /* 18 -> ability 82 */
+        .index = 18, .ability_id = 82, .level_min = 7,
+        .level_scale = 1, .max_rank = 5, .passive = 1,
+        .buff_name = "ENDURANCE",
+        .prereq = { 10 }, .prereq_count = 1,
+    },
+    { /* 19 -> ability 83 */
+        .index = 19, .ability_id = 83, .level_min = 5,
+        .level_scale = 1, .max_rank = 5, .passive = 1,
+        .buff_name = "SOLIDITY",
+        .prereq = { 7 }, .prereq_count = 1,
+    },
+    { /* 20 -> ability 71 */
+        .index = 20, .ability_id = 71, .level_min = 2,
+        .level_scale = 1, .max_rank = 10, .passive = 0,
+        .buff_name = "",
+        .prereq = { -1 }, .prereq_count = 1,
+    },
+    { /* 21 -> ability 81 */
+        .index = 21, .ability_id = 81, .level_min = 3,
+        .level_scale = 1, .max_rank = 3, .passive = 0,
+        .buff_name = "",
+        .prereq = { 20 }, .prereq_count = 1,
+    },
+    { /* 22 -> ability 84 */
+        .index = 22, .ability_id = 84, .level_min = 4,
+        .level_scale = 1, .max_rank = 10, .passive = 0,
+        .buff_name = "",
+        .prereq = { 21 }, .prereq_count = 1,
+    },
+    { /* 23 -> ability 94 */
+        .index = 23, .ability_id = 94, .level_min = 5,
+        .level_scale = 1, .max_rank = 3, .passive = 0,
+        .buff_name = "",
+        .prereq = { -1 }, .prereq_count = 1,
+    },
+    { /* 24 -> ability 97 */
+        .index = 24, .ability_id = 97, .level_min = 6,
+        .level_scale = 1, .max_rank = 3, .passive = 0,
+        .buff_name = "",
+        .prereq = { 23 }, .prereq_count = 1,
+    },
+    { /* 25 -> ability 100 */
+        .index = 25, .ability_id = 100, .level_min = 7,
+        .level_scale = 1, .max_rank = 5, .passive = 0,
+        .buff_name = "",
+        .prereq = { 24 }, .prereq_count = 1,
+    },
+    { /* 26 -> ability 106 */
+        .index = 26, .ability_id = 106, .level_min = 8,
+        .level_scale = 1, .max_rank = 1, .passive = 0,
+        .buff_name = "",
+        .prereq = { 25 }, .prereq_count = 1,
+    },
+    { /* 27 -> ability 105 */
+        .index = 27, .ability_id = 105, .level_min = 15,
+        .level_scale = 1, .max_rank = 1, .passive = 0,
+        .buff_name = "",
+        .prereq = { 25 }, .prereq_count = 1,
+    },
+};
+const int SONNY_TALENT_COUNT = (int)(sizeof(SONNY_TALENTS) / sizeof(SONNY_TALENTS[0]));
+const int32_t SONNY_START_SKILL1 = 69;
+const int32_t SONNY_START_SKILL2 = 70;
+
 const AbilityDef *ability_by_id(int32_t id)
 {
     for (int i = 0; i < SONNY_ABILITY_COUNT; i++)

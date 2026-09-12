@@ -130,7 +130,6 @@ Two details worth knowing, both reproduced rather than cleaned up:
 - [x] Items and equipment (126 items, with their stat and per-element bonuses)
 - [x] The character stat pipeline: class growth, spent points, equipment
 - [x] XP (`expWorkOut`), the enemy rating, level-ups and euro rewards
-- [ ] The ability trees (`moveMatrix`, `skillAdderMatrix`, tiers and
-      prerequisites)
+- [x] The ability tree (28 nodes, ranks, level gates, prerequisites, passives)
 - [ ] Zones, stages, shops, the world map and save data
 - [ ] Art, audio and pixel-accurate UI layout
