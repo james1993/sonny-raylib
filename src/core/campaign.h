@@ -1,0 +1,63 @@
+/* Campaign progression: zones, the battle roster, and what a fight pays out.
+ *
+ * The original stores each fight as a KBR object and reads it in frame 196
+ * while setting the battle up. players[i] fills slot i + 2 -- a positive value
+ * is an enemy unit template, a negative one picks a party ally, 0 leaves the
+ * slot empty -- and the player is always slot 1. Levels of -1 stand for the
+ * original's "X": match the player's level.
+ *
+ * Progress is a single battle id (Krin.progressLevelOn) that steps forward on
+ * a win; zones are id ranges over it.
+ */
+#ifndef SONNY_CAMPAIGN_H
+#define SONNY_CAMPAIGN_H
+
+#include "battle.h"
+#include "character.h"
+
+#define SONNY_MAX_ALLIES 2
+#define SONNY_MAX_DROPPED 15   /* Krin.dropArray */
+
+typedef struct {
+    Character  player;
+    Character  allies[SONNY_MAX_ALLIES];
+    int32_t    ally_present[SONNY_MAX_ALLIES];
+    int32_t    progress_battle;   /* Krin.progressLevelOn */
+    int32_t    zone;              /* Krin.sectionIn */
+    int32_t    euros;
+    int32_t    inventory[64];
+    int32_t    inventory_count;
+} Campaign;
+
+void campaign_new(Campaign *c, int32_t class_id);
+
+/* Build a battle from a roster definition: the player in slot 1, then each
+   roster entry in slots 2..6. Returns 0 if the definition is unusable. */
+int campaign_setup_battle(const Campaign *c, const BattleDef *def, Battle *out,
+                          uint64_t seed);
+
+/* Roll the battle's drops, as frame 196 does at setup time: each entry drops
+   when its chance beats random(100), then the rare table is sampled
+   rare_dropper times. Writes item ids and returns how many. */
+int32_t campaign_roll_drops(const BattleDef *def, Rng *rng, int32_t *out,
+                            int32_t max);
+
+/* Rewards for winning `def`: the XP percentage and the euros. */
+typedef struct {
+    double  enemy_rating;
+    double  xp_percent;
+    int32_t euros;
+    int32_t leveled;
+} BattleRewards;
+
+BattleRewards campaign_award(Campaign *c, const Battle *b, Rng *rng);
+
+/* Advance past the battle just won (frame 213 increments progressLevelOn). */
+void campaign_advance(Campaign *c);
+
+/* Where the player is in the campaign. */
+const ZoneDef *campaign_zone(const Campaign *c);
+/* Is the campaign finished? The original's ending triggers past battle 38. */
+int campaign_complete(const Campaign *c);
+
+#endif

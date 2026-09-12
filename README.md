@@ -92,6 +92,10 @@ game's own structure, with the author's function names intact:
 | Enemy AI | `AImoveAdder` + each unit's `agressionArray` |
 | XP curve | `expWorkOut` |
 | Battle setup | `createNewBattle`, `krinAddNewUnit` |
+| Talent tree (28 nodes) | `loadTalents`, frame 61 |
+| Battle rosters (50) | `createNewBattle` + `rengi.*`, frame 62 |
+| Zones and training fights | `Krin.progressArray` / `trainingArray` |
+| Item drops | frame 196, rolled at battle START |
 | All display text (EN + DE) | `KrinLang`, frame 61 |
 
 Two things the port keeps deliberately separate, because the original does:
@@ -131,5 +135,8 @@ Two details worth knowing, both reproduced rather than cleaned up:
 - [x] The character stat pipeline: class growth, spent points, equipment
 - [x] XP (`expWorkOut`), the enemy rating, level-ups and euro rewards
 - [x] The ability tree (28 nodes, ranks, level gates, prerequisites, passives)
-- [ ] Zones, stages, shops, the world map and save data
+- [x] Campaign data: 50 battle rosters, 4 zones, item drops, battle dialogue
+- [x] Progression: battle setup from a roster, rewards, advancement
+- [ ] Shops, the inventory screen and the world map
+- [ ] Save data (the original uses a Flash shared object)
 - [ ] Art, audio and pixel-accurate UI layout

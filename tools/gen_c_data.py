@@ -188,6 +188,85 @@ def gen_units(units):
     return '\n'.join(lines)
 
 
+# Keep in step with the #defines in HEADER; the generator refuses to emit data
+# that would overflow them rather than truncating it.
+MAX_DROPS, MAX_RARE, MAX_TRAINING = 8, 24, 16
+
+
+def gen_battles(battles):
+    lines = ['const BattleDef SONNY_BATTLES[] = {']
+    for b in battles:
+        players = (b.get('players') or [0] * 5) + [0] * 5
+        levels_raw = (b.get('playersLevels') or [0] * 5) + [0] * 5
+        # A level of "X" means "same as the player"; stored as -1.
+        levels = []
+        for lv in levels_raw[:5]:
+            if isinstance(lv, str):
+                levels.append(-1)
+            else:
+                levels.append(int(num(lv)))
+        drops = [d for d in (b.get('itemDrops') or []) if isinstance(d, dict)]
+        rare = [r for r in (b.get('itemRare') or []) if isinstance(r, int)]
+        if len(drops) > MAX_DROPS or len(rare) > MAX_RARE:
+            raise SystemExit('battle %d has %d drops and %d rare entries; '
+                             'raise SONNY_MAX_DROPS/SONNY_MAX_RARE'
+                             % (b['id'], len(drops), len(rare)))
+
+        lines.append('    { /* battle %d */' % b['id'])
+        lines.append('        .id = %d,' % b['id'])
+        lines.append('        .players = { %s },'
+                     % ', '.join(str(int(num(p))) for p in players[:5]))
+        lines.append('        .levels = { %s },'
+                     % ', '.join(str(lv) for lv in levels))
+        lines.append('        .absolute_start = %d, .win_date = %d,'
+                     % (int(num(b.get('absoluteStart'))),
+                        int(num(b.get('winDate'), -1))))
+        lines.append('        .win_date_condition = %d, .time_lock = %d,'
+                     % (int(num(b.get('winDateCondition'))),
+                        1 if b.get('timeLock') else 0))
+        lines.append('        .zone_bg = %s, .sky_bg = %s,'
+                     % (c_string(b.get('ZoneBG') or ''),
+                        c_string(b.get('SkyBG') or '')))
+        lines.append('        .drops = { %s }, .drop_count = %d,'
+                     % (', '.join('{ %d, %d }' % (int(num(d.get('ID'))),
+                                                  int(num(d.get('CHANCE'))))
+                                  for d in drops) or '{ 0, 0 }', len(drops)))
+        lines.append('        .rare = { %s }, .rare_count = %d, '
+                     '.rare_dropper = %d,'
+                     % (', '.join(str(r) for r in rare) or '0', len(rare),
+                        int(num(b.get('itemRareDropper')))))
+        lines.append('        .speech_count = %d,' % len(b.get('speeches') or []))
+        lines.append('    },')
+    lines.append('};')
+    lines.append('const int SONNY_BATTLE_COUNT = '
+                 '(int)(sizeof(SONNY_BATTLES) / sizeof(SONNY_BATTLES[0]));')
+    return '\n'.join(lines)
+
+
+def gen_zones(zones):
+    lines = ['const ZoneDef SONNY_ZONES[] = {']
+    for z in zones:
+        training = [t for t in (z.get('training') or []) if isinstance(t, int)]
+        if len(training) > MAX_TRAINING:
+            raise SystemExit('zone %d has %d training battles; raise '
+                             'SONNY_MAX_TRAINING' % (z['zone'], len(training)))
+        lines.append('    { /* zone %d %s */' % (z['zone'], z.get('name') or '?'))
+        lines.append('        .zone = %d, .name = %s, .subtitle = %s,'
+                     % (z['zone'], c_string(z.get('name') or ''),
+                        c_string(z.get('subtitle') or '')))
+        lines.append('        .first_battle = %d, .last_battle = %d,'
+                     % (int(num(z.get('first_battle'))),
+                        int(num(z.get('last_battle')))))
+        lines.append('        .training = { %s }, .training_count = %d,'
+                     % (', '.join(str(t) for t in training) or '0',
+                        len(training)))
+        lines.append('    },')
+    lines.append('};')
+    lines.append('const int SONNY_ZONE_COUNT = '
+                 '(int)(sizeof(SONNY_ZONES) / sizeof(SONNY_ZONES[0]));')
+    return '\n'.join(lines)
+
+
 def gen_talents(talents):
     nodes = talents['nodes']
     lines = ['const TalentDef SONNY_TALENTS[] = {']
@@ -298,6 +377,52 @@ typedef struct {
 } AbilityDef;
 
 #define SONNY_MAX_PREREQ 4
+#define SONNY_BATTLE_SLOTS 5     /* players[0..4] fill slots 2..6 */
+#define SONNY_MAX_DROPS 8
+#define SONNY_MAX_RARE 24
+#define SONNY_MAX_TRAINING 16
+
+typedef struct {
+    int32_t item_id;
+    int32_t chance;          /* drops when CHANCE > random(100) */
+} ItemDrop;
+
+/* One battle's roster (a KBR object).
+ *
+ * players[i] fills slot i + 2: a positive value is an enemy unit template, a
+ * negative one selects a party ally (index players[i] + 2), and 0 leaves the
+ * slot empty. A level of -1 stands for the original's "X", meaning "match the
+ * player's level". Slots are parity teams, so allies land in 3 and 5.
+ *
+ * Drops are rolled when the battle STARTS, not when it is won -- which is
+ * what the original does in frame 196. */
+typedef struct {
+    int32_t     id;
+    int32_t     players[SONNY_BATTLE_SLOTS];
+    int32_t     levels[SONNY_BATTLE_SLOTS];
+    int32_t     absolute_start;   /* forces a team to move first */
+    int32_t     win_date;         /* turn count for a timed objective, -1 none */
+    int32_t     win_date_condition;
+    int32_t     time_lock;
+    const char *zone_bg;
+    const char *sky_bg;
+    ItemDrop    drops[SONNY_MAX_DROPS];
+    int32_t     drop_count;
+    int32_t     rare[SONNY_MAX_RARE];
+    int32_t     rare_count;
+    int32_t     rare_dropper;     /* how many rare picks to make */
+    int32_t     speech_count;     /* dialogue lives in data/extracted */
+} BattleDef;
+
+typedef struct {
+    int32_t     zone;
+    const char *name;
+    const char *subtitle;
+    int32_t     first_battle;
+    int32_t     last_battle;
+    int32_t     training[SONNY_MAX_TRAINING];
+    int32_t     training_count;
+} ZoneDef;
 
 /* One node of the talent tree (Krin.abilityXer). A node's rank N uses ability
  * id `ability_id + N - 1`, which is why the ability table holds each move five
@@ -367,6 +492,10 @@ extern const TalentDef SONNY_TALENTS[];
 extern const int SONNY_TALENT_COUNT;
 extern const int32_t SONNY_START_SKILL1;
 extern const int32_t SONNY_START_SKILL2;
+extern const BattleDef SONNY_BATTLES[];
+extern const int SONNY_BATTLE_COUNT;
+extern const ZoneDef SONNY_ZONES[];
+extern const int SONNY_ZONE_COUNT;
 
 /* Lookups by the original's own ids/keys. NULL when absent.
  *
@@ -378,6 +507,9 @@ const AbilityDef *ability_by_id(int32_t id);
 const UnitTemplate *unit_template_by_id(int32_t id);
 const UnitTemplate *unit_template_by_name(const char *name);
 const ItemDef *item_by_id(int32_t id);
+const BattleDef *battle_def_by_id(int32_t id);
+/* The zone whose battle range contains this id, or NULL. */
+const ZoneDef *zone_of_battle(int32_t battle_id);
 
 #endif
 '''
@@ -416,6 +548,23 @@ const ItemDef *item_by_id(int32_t id)
             return &SONNY_ITEMS[i];
     return NULL;
 }
+
+const BattleDef *battle_def_by_id(int32_t id)
+{
+    for (int i = 0; i < SONNY_BATTLE_COUNT; i++)
+        if (SONNY_BATTLES[i].id == id)
+            return &SONNY_BATTLES[i];
+    return NULL;
+}
+
+const ZoneDef *zone_of_battle(int32_t battle_id)
+{
+    for (int i = 0; i < SONNY_ZONE_COUNT; i++)
+        if (battle_id >= SONNY_ZONES[i].first_battle
+            && battle_id <= SONNY_ZONES[i].last_battle)
+            return &SONNY_ZONES[i];
+    return NULL;
+}
 '''
 
 
@@ -445,12 +594,16 @@ def main():
         fh.write(gen_buffs(buffs) + '\n\n')
         fh.write(gen_units(units) + '\n\n')
         fh.write(gen_items(load_items()) + '\n\n')
-        fh.write(gen_talents(load('talents')) + '\n')
+        fh.write(gen_talents(load('talents')) + '\n\n')
+        fh.write(gen_battles(load('battles')) + '\n\n')
+        fh.write(gen_zones(load('zones')) + '\n')
         fh.write(LOOKUPS)
 
-    print('abilities %d, buffs %d, units %d, items %d, talents %d -> %s'
+    print('abilities %d, buffs %d, units %d, items %d, talents %d, '
+          'battles %d, zones %d -> %s'
           % (len(abilities), len(buffs), len(units), len(load_items()),
-             len(load('talents')['nodes']), args.out))
+             len(load('talents')['nodes']), len(load('battles')),
+             len(load('zones')), args.out))
 
 
 if __name__ == '__main__':

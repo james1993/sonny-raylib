@@ -1,0 +1,57 @@
+[
+ {
+  "zone": 0,
+  "first_battle": 2,
+  "last_battle": 9,
+  "training": [],
+  "name": "White Novemeber",
+  "subtitle": "Research Ship"
+ },
+ {
+  "zone": 1,
+  "first_battle": 10,
+  "last_battle": 19,
+  "training": [
+   1001,
+   1002,
+   1003,
+   1001,
+   1002,
+   1003,
+   1001,
+   1002,
+   1003
+  ],
+  "name": "Ishiguro's Rest",
+  "subtitle": "Ghost Beach"
+ },
+ {
+  "zone": 2,
+  "first_battle": 20,
+  "last_battle": 38,
+  "training": [
+   1004,
+   1005,
+   1006,
+   1007,
+   1004,
+   1005,
+   1006,
+   1007,
+   1004,
+   1005,
+   1006,
+   1007
+  ],
+  "name": "Gadi'Kala",
+  "subtitle": "The Great Plains"
+ },
+ {
+  "zone": 3,
+  "first_battle": 39,
+  "last_battle": 42,
+  "training": [],
+  "name": "The Infinity ",
+  "subtitle": "Valley of Illusions"
+ }
+]

@@ -50,6 +50,52 @@ typedef struct {
 } AbilityDef;
 
 #define SONNY_MAX_PREREQ 4
+#define SONNY_BATTLE_SLOTS 5     /* players[0..4] fill slots 2..6 */
+#define SONNY_MAX_DROPS 8
+#define SONNY_MAX_RARE 24
+#define SONNY_MAX_TRAINING 16
+
+typedef struct {
+    int32_t item_id;
+    int32_t chance;          /* drops when CHANCE > random(100) */
+} ItemDrop;
+
+/* One battle's roster (a KBR object).
+ *
+ * players[i] fills slot i + 2: a positive value is an enemy unit template, a
+ * negative one selects a party ally (index players[i] + 2), and 0 leaves the
+ * slot empty. A level of -1 stands for the original's "X", meaning "match the
+ * player's level". Slots are parity teams, so allies land in 3 and 5.
+ *
+ * Drops are rolled when the battle STARTS, not when it is won -- which is
+ * what the original does in frame 196. */
+typedef struct {
+    int32_t     id;
+    int32_t     players[SONNY_BATTLE_SLOTS];
+    int32_t     levels[SONNY_BATTLE_SLOTS];
+    int32_t     absolute_start;   /* forces a team to move first */
+    int32_t     win_date;         /* turn count for a timed objective, -1 none */
+    int32_t     win_date_condition;
+    int32_t     time_lock;
+    const char *zone_bg;
+    const char *sky_bg;
+    ItemDrop    drops[SONNY_MAX_DROPS];
+    int32_t     drop_count;
+    int32_t     rare[SONNY_MAX_RARE];
+    int32_t     rare_count;
+    int32_t     rare_dropper;     /* how many rare picks to make */
+    int32_t     speech_count;     /* dialogue lives in data/extracted */
+} BattleDef;
+
+typedef struct {
+    int32_t     zone;
+    const char *name;
+    const char *subtitle;
+    int32_t     first_battle;
+    int32_t     last_battle;
+    int32_t     training[SONNY_MAX_TRAINING];
+    int32_t     training_count;
+} ZoneDef;
 
 /* One node of the talent tree (Krin.abilityXer). A node's rank N uses ability
  * id `ability_id + N - 1`, which is why the ability table holds each move five
@@ -119,6 +165,10 @@ extern const TalentDef SONNY_TALENTS[];
 extern const int SONNY_TALENT_COUNT;
 extern const int32_t SONNY_START_SKILL1;
 extern const int32_t SONNY_START_SKILL2;
+extern const BattleDef SONNY_BATTLES[];
+extern const int SONNY_BATTLE_COUNT;
+extern const ZoneDef SONNY_ZONES[];
+extern const int SONNY_ZONE_COUNT;
 
 /* Lookups by the original's own ids/keys. NULL when absent.
  *
@@ -130,5 +180,8 @@ const AbilityDef *ability_by_id(int32_t id);
 const UnitTemplate *unit_template_by_id(int32_t id);
 const UnitTemplate *unit_template_by_name(const char *name);
 const ItemDef *item_by_id(int32_t id);
+const BattleDef *battle_def_by_id(int32_t id);
+/* The zone whose battle range contains this id, or NULL. */
+const ZoneDef *zone_of_battle(int32_t battle_id);
 
 #endif

@@ -1,0 +1,2413 @@
+[
+ {
+  "id": 1,
+  "players": [
+   6,
+   -1,
+   0,
+   -2,
+   0
+  ],
+  "playersLevels": [
+   5,
+   2,
+   3,
+   4,
+   5
+  ],
+  "speeches": [
+   {
+    "player": 5,
+    "turnTime": 5,
+    "turnTime2": 0,
+    "say": "agrgra",
+    "timeToSay": 5,
+    "voiceOver": "v_1"
+   }
+  ],
+  "itemDrops": [
+   {
+    "ID": 2,
+    "CHANCE": 40
+   }
+  ],
+  "itemRare": [
+   2,
+   1
+  ],
+  "itemRareDropper": 1,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0
+ },
+ {
+  "id": 2,
+  "players": [
+   6,
+   0,
+   0,
+   7,
+   0
+  ],
+  "playersLevels": [
+   1,
+   0,
+   0,
+   99,
+   0
+  ],
+  "speeches": [
+   {
+    "player": 5,
+    "turnTime": 0,
+    "turnTime2": 0,
+    "say": "I may be blind, but there's no mistaking that smell. Can you take him out?",
+    "timeToSay": 4.5,
+    "voiceOver": "v_1"
+   },
+   {
+    "player": 1,
+    "turnTime": 0,
+    "turnTime2": 1,
+    "say": "Yes, I...I suppose I can. Ugh...I don't feel too well.",
+    "timeToSay": 5
+   },
+   {
+    "player": 5,
+    "turnTime": 0,
+    "turnTime2": 2,
+    "say": "It will wear off eventually. You need to focus!",
+    "timeToSay": 3.7
+   },
+   {
+    "player": 0,
+    "turnTime": 0,
+    "turnTime2": 3,
+    "say": "Notice the grey 'ring' in the lower middle panel, around the exclamation mark. Wait until it turns blue.",
+    "timeToSay": 6.5
+   },
+   {
+    "player": 0,
+    "turnTime": 0,
+    "turnTime2": 4,
+    "say": "Once the ring is blue, click on the enemy to target him. Your abilities will appear around him.",
+    "timeToSay": 5.5
+   },
+   {
+    "player": 1,
+    "turnTime": 2,
+    "turnTime2": 0,
+    "say": "He doesn't look too happy.",
+    "timeToSay": 1.5,
+    "voiceOver": "v_2"
+   },
+   {
+    "player": 5,
+    "turnTime": 2,
+    "turnTime2": 1,
+    "say": "He's enraged! You'll have to defend yourself! Get ready!",
+    "timeToSay": 3.5
+   },
+   {
+    "player": 0,
+    "turnTime": 2,
+    "turnTime2": 2,
+    "say": "Target yourself instead of the enemy this turn, so you can use your defensive ability.",
+    "timeToSay": 5
+   },
+   {
+    "player": 0,
+    "turnTime": 2,
+    "turnTime2": 3,
+    "say": "To find out more about an ability, hold your mouse over its icon for a couple of seconds.",
+    "timeToSay": 5
+   },
+   {
+    "player": 5,
+    "turnTime": 4,
+    "turnTime2": 0,
+    "say": "Good job, Sonny. Keep going, and stay alert. There will be more of them ahead.",
+    "timeToSay": 5,
+    "voiceOver": "v_3"
+   }
+  ],
+  "itemDrops": [],
+  "itemRare": [],
+  "itemRareDropper": 0,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 1,
+  "ZoneBG": "WHITE NOVEMBER",
+  "SkyBG": "SEA"
+ },
+ {
+  "id": 3,
+  "players": [
+   6,
+   0,
+   0,
+   7,
+   0
+  ],
+  "playersLevels": [
+   2,
+   0,
+   0,
+   99,
+   0
+  ],
+  "speeches": [
+   {
+    "player": 1,
+    "turnTime": 1,
+    "turnTime2": 0,
+    "say": "What are these things, anyway? They look horrid, decayed - and the smell is nauseating!",
+    "timeToSay": 6,
+    "voiceOver": "v_4"
+   },
+   {
+    "player": 5,
+    "turnTime": 1,
+    "turnTime2": 1,
+    "say": "I reckon they used to be the ship's crew...but, not anymore.",
+    "timeToSay": 3
+   },
+   {
+    "player": 1,
+    "turnTime": 1,
+    "turnTime2": 2,
+    "say": "What's happened to them?",
+    "timeToSay": 1.5
+   },
+   {
+    "player": 5,
+    "turnTime": 1,
+    "turnTime2": 3,
+    "say": "It's complicated and we're running out of time! I'll tell you everything when we're off this ship!",
+    "timeToSay": 4.5
+   }
+  ],
+  "itemDrops": [],
+  "itemRare": [],
+  "itemRareDropper": 0,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "WHITE NOVEMBER",
+  "SkyBG": "SEA"
+ },
+ {
+  "id": 4,
+  "players": [
+   6,
+   0,
+   6,
+   7,
+   0
+  ],
+  "playersLevels": [
+   2,
+   0,
+   1,
+   99,
+   0
+  ],
+  "speeches": [
+   {
+    "player": 5,
+    "turnTime": 0,
+    "turnTime2": 0,
+    "say": "You're outnumbered. Don't worry, though! You have the strongest weapon.",
+    "timeToSay": 3,
+    "voiceOver": "v_5"
+   },
+   {
+    "player": 1,
+    "turnTime": 0,
+    "turnTime2": 1,
+    "say": "This pipe?",
+    "timeToSay": 1
+   },
+   {
+    "player": 5,
+    "turnTime": 0,
+    "turnTime2": 2,
+    "say": "No, I'm talking about your brain! Think! Attack the weakest one first, and defend yourself when you can!",
+    "timeToSay": 6
+   }
+  ],
+  "itemDrops": [
+   {
+    "ID": 9,
+    "CHANCE": 100
+   }
+  ],
+  "itemRare": [],
+  "itemRareDropper": 0,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "WHITE NOVEMBER",
+  "SkyBG": "SEA"
+ },
+ {
+  "id": 5,
+  "players": [
+   0,
+   0,
+   8,
+   7,
+   6
+  ],
+  "playersLevels": [
+   0,
+   0,
+   1,
+   99,
+   2
+  ],
+  "speeches": [
+   {
+    "player": 5,
+    "turnTime": 0,
+    "turnTime2": 0,
+    "say": "That green one in front of us is toxic. Watch out for its poison.",
+    "timeToSay": 3.600000000000001,
+    "voiceOver": "v_6"
+   },
+   {
+    "player": 1,
+    "turnTime": 0,
+    "turnTime2": 1,
+    "say": "But, you're blind, how do you even know...?",
+    "timeToSay": 2.4
+   },
+   {
+    "player": 5,
+    "turnTime": 0,
+    "turnTime2": 2,
+    "say": "Don't get all technical on me, Sonny. Just be glad I told you.",
+    "timeToSay": 3.5
+   }
+  ],
+  "itemDrops": [],
+  "itemRare": [],
+  "itemRareDropper": 0,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "WHITE NOVEMBER",
+  "SkyBG": "SEA"
+ },
+ {
+  "id": 6,
+  "players": [
+   8,
+   0,
+   8,
+   7,
+   0
+  ],
+  "playersLevels": [
+   2,
+   0,
+   2,
+   99,
+   0
+  ],
+  "speeches": [],
+  "itemDrops": [],
+  "itemRare": [],
+  "itemRareDropper": 0,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "WHITE NOVEMBER",
+  "SkyBG": "SEA"
+ },
+ {
+  "id": 7,
+  "players": [
+   6,
+   0,
+   8,
+   7,
+   6
+  ],
+  "playersLevels": [
+   2,
+   0,
+   2,
+   99,
+   2
+  ],
+  "speeches": [
+   {
+    "player": 1,
+    "turnTime": 0,
+    "turnTime2": 0,
+    "say": "Hey, I can see the speed boat hangar. It's right up ahead!",
+    "timeToSay": 3,
+    "voiceOver": "v_7"
+   },
+   {
+    "player": 5,
+    "turnTime": 6,
+    "turnTime2": 0,
+    "say": "I think I can hear helicopters, Sonny.. it must be the rescue team!",
+    "timeToSay": 3,
+    "voiceOver": "v_8"
+   }
+  ],
+  "itemDrops": [],
+  "itemRare": [],
+  "itemRareDropper": 0,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "WHITE NOVEMBER",
+  "SkyBG": "SEA"
+ },
+ {
+  "id": 8,
+  "players": [
+   11,
+   0,
+   9,
+   7,
+   10
+  ],
+  "playersLevels": [
+   5,
+   0,
+   5,
+   0,
+   5
+  ],
+  "speeches": [
+   {
+    "player": 5,
+    "turnTime": 0,
+    "turnTime2": 0,
+    "say": "Finally! You're here! I thought we would die on this forsaken ship!",
+    "timeToSay": 3.7,
+    "voiceOver": "v_9"
+   },
+   {
+    "player": 2,
+    "turnTime": 0,
+    "turnTime2": 1,
+    "say": "Take them out, boys. We don't need any witnesses.",
+    "timeToSay": 3
+   },
+   {
+    "player": 5,
+    "turnTime": 0,
+    "turnTime2": 2,
+    "say": "What...?",
+    "timeToSay": 1
+   },
+   {
+    "player": 1,
+    "turnTime": 1,
+    "turnTime2": 0,
+    "say": "Louis! This is NOT a good day to be shooting my friends!",
+    "timeToSay": 4,
+    "voiceOver": "v_10"
+   },
+   {
+    "player": 6,
+    "turnTime": 1,
+    "turnTime2": 1,
+    "say": "Hey, look at that! That one just talked!",
+    "timeToSay": 2.3000000000000003
+   },
+   {
+    "player": 2,
+    "turnTime": 1,
+    "turnTime2": 2,
+    "say": "So what? That 'thing' is no different from the rest of them. Just do your job, soldier!",
+    "timeToSay": 5
+   }
+  ],
+  "itemDrops": [],
+  "itemRare": [
+   13,
+   14
+  ],
+  "itemRareDropper": 1,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 2,
+  "ZoneBG": "WHITE NOVEMBER",
+  "SkyBG": "SEA"
+ },
+ {
+  "id": 9,
+  "players": [
+   14,
+   0,
+   0,
+   0,
+   0
+  ],
+  "playersLevels": [
+   3,
+   0,
+   0,
+   0,
+   0
+  ],
+  "speeches": [
+   {
+    "player": 1,
+    "turnTime": 0,
+    "turnTime2": 0,
+    "say": "Hey Uh... do you know where I can find the nearest pay phone?",
+    "timeToSay": 3.3000000000000003,
+    "voiceOver": "v2_1"
+   },
+   {
+    "player": 2,
+    "turnTime": 0,
+    "turnTime2": 1,
+    "say": "Uruhugh!",
+    "timeToSay": 2
+   },
+   {
+    "player": 1,
+    "turnTime": 0,
+    "turnTime2": 2,
+    "say": "Whoa, take it easy!",
+    "timeToSay": 2
+   }
+  ],
+  "itemDrops": [],
+  "itemRare": [],
+  "itemRareDropper": 0,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "SHORE",
+  "SkyBG": "NIGHT"
+ },
+ {
+  "id": 10,
+  "players": [
+   17,
+   0,
+   17,
+   0,
+   17
+  ],
+  "playersLevels": [
+   4,
+   0,
+   4,
+   0,
+   4
+  ],
+  "speeches": [
+   {
+    "player": 1,
+    "turnTime": 0,
+    "turnTime2": 0,
+    "say": "What did I do to deserve this?",
+    "timeToSay": 3,
+    "voiceOver": "v2_2"
+   }
+  ],
+  "itemDrops": [],
+  "itemRare": [],
+  "itemRareDropper": 0,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "SHORE",
+  "SkyBG": "NIGHT"
+ },
+ {
+  "id": 11,
+  "players": [
+   12,
+   0,
+   0,
+   0,
+   0
+  ],
+  "playersLevels": [
+   4,
+   0,
+   0,
+   0,
+   0
+  ],
+  "speeches": [
+   {
+    "player": 2,
+    "turnTime": 0,
+    "turnTime2": 0,
+    "say": "Leave...horrors...ahead...",
+    "timeToSay": 3,
+    "voiceOver": "v2_3"
+   }
+  ],
+  "itemDrops": [
+   {
+    "ID": 32,
+    "CHANCE": 3
+   }
+  ],
+  "itemRare": [
+   15,
+   17
+  ],
+  "itemRareDropper": 1,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "SHORE",
+  "SkyBG": "NIGHT"
+ },
+ {
+  "id": 12,
+  "players": [
+   13,
+   0,
+   0,
+   0,
+   0
+  ],
+  "playersLevels": [
+   4,
+   0,
+   0,
+   0,
+   0
+  ],
+  "speeches": [
+   {
+    "player": 2,
+    "turnTime": 0,
+    "turnTime2": 0,
+    "say": "You are not welcome here!",
+    "timeToSay": 3,
+    "voiceOver": "v2_4"
+   }
+  ],
+  "itemDrops": [
+   {
+    "ID": 32,
+    "CHANCE": 3
+   },
+   {
+    "ID": 20,
+    "CHANCE": 50
+   },
+   {
+    "ID": 21,
+    "CHANCE": 50
+   }
+  ],
+  "itemRare": [],
+  "itemRareDropper": 0,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "SHORE",
+  "SkyBG": "NIGHT"
+ },
+ {
+  "id": 13,
+  "players": [
+   16,
+   0,
+   17,
+   0,
+   17
+  ],
+  "playersLevels": [
+   5,
+   0,
+   2,
+   0,
+   2
+  ],
+  "speeches": [
+   {
+    "player": 2,
+    "turnTime": 0,
+    "turnTime2": 0,
+    "say": "There's another! Shoot him down.",
+    "timeToSay": 1.7,
+    "voiceOver": "v2_5"
+   },
+   {
+    "player": 1,
+    "turnTime": 0,
+    "turnTime2": 1,
+    "say": "By all means, try!",
+    "timeToSay": 2
+   }
+  ],
+  "itemDrops": [],
+  "itemRare": [
+   25,
+   28
+  ],
+  "itemRareDropper": 1,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "SHORE",
+  "SkyBG": "NIGHT"
+ },
+ {
+  "id": 14,
+  "players": [
+   14,
+   0,
+   14,
+   0,
+   0
+  ],
+  "playersLevels": [
+   5,
+   0,
+   4,
+   0,
+   0
+  ],
+  "speeches": [],
+  "itemDrops": [],
+  "itemRare": [],
+  "itemRareDropper": 0,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "SHORE",
+  "SkyBG": "NIGHT"
+ },
+ {
+  "id": 15,
+  "players": [
+   16,
+   0,
+   16,
+   -2,
+   16
+  ],
+  "playersLevels": [
+   5,
+   0,
+   5,
+   0,
+   5
+  ],
+  "speeches": [
+   {
+    "player": 2,
+    "turnTime": 0,
+    "turnTime2": 0,
+    "say": "There he is! He's wearing the stolen combat suit!",
+    "timeToSay": 2.5,
+    "voiceOver": "v2_6"
+   },
+   {
+    "player": 5,
+    "turnTime": 0,
+    "turnTime2": 1,
+    "say": "HEY! Hey, you! I don't know if you noticed, but I'm slightly outnumbered here! Could you help me out? ",
+    "timeToSay": 5
+   },
+   {
+    "player": 1,
+    "turnTime": 0,
+    "turnTime2": 2,
+    "say": "Can't say I'm too fond of these bastards myself.",
+    "timeToSay": 3
+   },
+   {
+    "player": 4,
+    "turnTime": 0,
+    "turnTime2": 3,
+    "say": "Focus fire! Everyone take the same target!",
+    "timeToSay": 3
+   }
+  ],
+  "itemDrops": [],
+  "itemRare": [
+   25,
+   28
+  ],
+  "itemRareDropper": 1,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "SHORE",
+  "SkyBG": "NIGHT"
+ },
+ {
+  "id": 16,
+  "players": [
+   12,
+   0,
+   13,
+   -2,
+   0
+  ],
+  "playersLevels": [
+   6,
+   0,
+   6,
+   0,
+   0
+  ],
+  "speeches": [
+   {
+    "player": 5,
+    "turnTime": 0,
+    "turnTime2": 0,
+    "say": "Thanks for helping me back there, bud. I'm Veradux.",
+    "timeToSay": 3,
+    "voiceOver": "v2_7"
+   },
+   {
+    "player": 1,
+    "turnTime": 0,
+    "turnTime2": 1,
+    "say": "They call me Sonny. I can't remember my real name.",
+    "timeToSay": 3
+   },
+   {
+    "player": 4,
+    "turnTime": 0,
+    "turnTime2": 2,
+    "say": "The Sensei does not approve of your presence here! We've been sent to kill you!",
+    "timeToSay": 6
+   },
+   {
+    "player": 5,
+    "turnTime": 0,
+    "turnTime2": 3,
+    "say": "I got your back, Sonny! Rip them open! ",
+    "timeToSay": 2.5
+   }
+  ],
+  "itemDrops": [
+   {
+    "ID": 32,
+    "CHANCE": 3
+   },
+   {
+    "ID": 20,
+    "CHANCE": 50
+   },
+   {
+    "ID": 21,
+    "CHANCE": 50
+   }
+  ],
+  "itemRare": [
+   15,
+   17
+  ],
+  "itemRareDropper": 1,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "SHORE",
+  "SkyBG": "NIGHT"
+ },
+ {
+  "id": 17,
+  "players": [
+   12,
+   0,
+   12,
+   -2,
+   12
+  ],
+  "playersLevels": [
+   6,
+   0,
+   6,
+   0,
+   6
+  ],
+  "speeches": [],
+  "itemDrops": [
+   {
+    "ID": 32,
+    "CHANCE": 5
+   }
+  ],
+  "itemRare": [
+   15,
+   17
+  ],
+  "itemRareDropper": 1,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "SHORE",
+  "SkyBG": "NIGHT"
+ },
+ {
+  "id": 18,
+  "players": [
+   15,
+   -1,
+   0,
+   -2,
+   0
+  ],
+  "playersLevels": [
+   7,
+   0,
+   0,
+   0,
+   0
+  ],
+  "speeches": [
+   {
+    "player": 2,
+    "turnTime": 0,
+    "turnTime2": 0,
+    "say": "You tread our sacred grounds. You refuse to leave. For that, I shall break you.",
+    "timeToSay": 8,
+    "voiceOver": "v2_8"
+   }
+  ],
+  "itemDrops": [
+   {
+    "ID": 32,
+    "CHANCE": 5
+   }
+  ],
+  "itemRare": [
+   39,
+   40,
+   41,
+   42,
+   43
+  ],
+  "itemRareDropper": 1,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "SHORE",
+  "SkyBG": "NIGHT"
+ },
+ {
+  "id": 19,
+  "players": [
+   20,
+   0,
+   0,
+   -2,
+   0
+  ],
+  "playersLevels": [
+   7,
+   0,
+   0,
+   0,
+   0
+  ],
+  "speeches": [
+   {
+    "player": 5,
+    "turnTime": 0,
+    "turnTime2": 0,
+    "say": "You're kickin' ass! We make a heck of a team.",
+    "timeToSay": 2.5,
+    "voiceOver": "v3_1"
+   },
+   {
+    "player": 1,
+    "turnTime": 0,
+    "turnTime2": 1,
+    "say": "So. How long do you plan to stick around?",
+    "timeToSay": 2
+   },
+   {
+    "player": 5,
+    "turnTime": 0,
+    "turnTime2": 2,
+    "say": "Uh... Until death do us part!",
+    "timeToSay": 2.3000000000000003
+   },
+   {
+    "player": 1,
+    "turnTime": 0,
+    "turnTime2": 3,
+    "say": "You're hilarious.",
+    "timeToSay": 1.3000000000000005
+   },
+   {
+    "player": 2,
+    "turnTime": 0,
+    "turnTime2": 4,
+    "say": "This is Shaman land! I'll cut you down in the name of my tribe!",
+    "timeToSay": 4
+   }
+  ],
+  "itemDrops": [],
+  "itemRare": [
+   44,
+   45,
+   46,
+   47
+  ],
+  "itemRareDropper": 1,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "PLAINS",
+  "SkyBG": "DAY"
+ },
+ {
+  "id": 20,
+  "players": [
+   30,
+   0,
+   21,
+   -2,
+   0
+  ],
+  "playersLevels": [
+   7,
+   0,
+   7,
+   0,
+   0
+  ],
+  "speeches": [],
+  "itemDrops": [
+   {
+    "ID": 81,
+    "CHANCE": 85
+   }
+  ],
+  "itemRare": [
+   59,
+   60,
+   62,
+   63
+  ],
+  "itemRareDropper": 1,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "PLAINS",
+  "SkyBG": "DAY"
+ },
+ {
+  "id": 21,
+  "players": [
+   24,
+   0,
+   0,
+   -2,
+   0
+  ],
+  "playersLevels": [
+   7,
+   0,
+   0,
+   0,
+   0
+  ],
+  "speeches": [
+   {
+    "player": 1,
+    "turnTime": 0,
+    "turnTime2": 0,
+    "say": "Argh! Something is wrong... My head!",
+    "timeToSay": 4.5,
+    "voiceOver": "v3_2"
+   },
+   {
+    "player": 5,
+    "turnTime": 0,
+    "turnTime2": 1,
+    "say": "You alright Sonny?",
+    "timeToSay": 1.5
+   },
+   {
+    "player": 1,
+    "turnTime": 0,
+    "turnTime2": 2,
+    "say": "Yeah I'll be alright.",
+    "timeToSay": 3
+   }
+  ],
+  "itemDrops": [
+   {
+    "ID": 81,
+    "CHANCE": 85
+   }
+  ],
+  "itemRare": [
+   59,
+   60,
+   62,
+   63,
+   44,
+   45,
+   46,
+   47,
+   55,
+   56,
+   57,
+   58,
+   49,
+   50,
+   51,
+   53
+  ],
+  "itemRareDropper": 1,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "PLAINS",
+  "SkyBG": "DAY"
+ },
+ {
+  "id": 22,
+  "players": [
+   18,
+   0,
+   22,
+   -2,
+   0
+  ],
+  "playersLevels": [
+   8,
+   0,
+   7,
+   0,
+   0
+  ],
+  "speeches": [
+   {
+    "player": 2,
+    "turnTime": 0,
+    "turnTime2": 0,
+    "say": "The 'Council' hunts you, infidels! Back away!",
+    "timeToSay": 3,
+    "voiceOver": "v3_3"
+   }
+  ],
+  "itemDrops": [],
+  "itemRare": [
+   49,
+   50,
+   51,
+   53
+  ],
+  "itemRareDropper": 1,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "PLAINS",
+  "SkyBG": "DAY"
+ },
+ {
+  "id": 23,
+  "players": [
+   21,
+   0,
+   21,
+   -2,
+   0
+  ],
+  "playersLevels": [
+   7,
+   0,
+   6,
+   0,
+   0
+  ],
+  "speeches": [],
+  "itemDrops": [
+   {
+    "ID": 81,
+    "CHANCE": 85
+   }
+  ],
+  "itemRare": [
+   59,
+   60,
+   62,
+   63
+  ],
+  "itemRareDropper": 1,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "PLAINS",
+  "SkyBG": "DAY"
+ },
+ {
+  "id": 24,
+  "players": [
+   23,
+   0,
+   0,
+   -2,
+   0
+  ],
+  "playersLevels": [
+   8,
+   0,
+   0,
+   0,
+   0
+  ],
+  "speeches": [
+   {
+    "player": 2,
+    "turnTime": 0,
+    "turnTime2": 0,
+    "say": "That's about as far as you'll go!",
+    "timeToSay": 3.8000000000000003,
+    "voiceOver": "v3_4"
+   },
+   {
+    "player": 1,
+    "turnTime": 0,
+    "turnTime2": 1,
+    "say": "Ha ha! Nice outfit.",
+    "timeToSay": 1.9000000000000001
+   },
+   {
+    "player": 5,
+    "turnTime": 0,
+    "turnTime2": 2,
+    "say": "It sure looks better than yours!",
+    "timeToSay": 1.7
+   },
+   {
+    "player": 1,
+    "turnTime": 0,
+    "turnTime2": 3,
+    "say": "Hey! Who's side are you on?",
+    "timeToSay": 2
+   }
+  ],
+  "itemDrops": [
+   {
+    "ID": 81,
+    "CHANCE": 85
+   }
+  ],
+  "itemRare": [
+   75,
+   77,
+   78,
+   79
+  ],
+  "itemRareDropper": 1,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "PLAINS",
+  "SkyBG": "DAY"
+ },
+ {
+  "id": 25,
+  "players": [
+   19,
+   0,
+   21,
+   -2,
+   22
+  ],
+  "playersLevels": [
+   8,
+   0,
+   8,
+   0,
+   8
+  ],
+  "speeches": [],
+  "itemDrops": [
+   {
+    "ID": 81,
+    "CHANCE": 85
+   }
+  ],
+  "itemRare": [
+   55,
+   56,
+   57,
+   58
+  ],
+  "itemRareDropper": 1,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "PLAINS",
+  "SkyBG": "DAY"
+ },
+ {
+  "id": 26,
+  "players": [
+   24,
+   0,
+   24,
+   -2,
+   0
+  ],
+  "playersLevels": [
+   8,
+   0,
+   9,
+   0,
+   0
+  ],
+  "speeches": [
+   {
+    "player": 5,
+    "turnTime": 0,
+    "turnTime2": 0,
+    "say": "Sonny... I'm starting to feel it too...",
+    "timeToSay": 4,
+    "voiceOver": "v3_5"
+   },
+   {
+    "player": 1,
+    "turnTime": 0,
+    "turnTime2": 1,
+    "say": "What's happening? Are we dying?",
+    "timeToSay": 3.2
+   },
+   {
+    "player": 5,
+    "turnTime": 0,
+    "turnTime2": 2,
+    "say": "Not physically... But our minds are decaying.",
+    "timeToSay": 4
+   },
+   {
+    "player": 1,
+    "turnTime": 0,
+    "turnTime2": 3,
+    "say": "Oh, brilliant. That doesn't sound painful at all.",
+    "timeToSay": 3
+   }
+  ],
+  "itemDrops": [
+   {
+    "ID": 81,
+    "CHANCE": 85
+   }
+  ],
+  "itemRare": [
+   59,
+   60,
+   62,
+   63,
+   44,
+   45,
+   46,
+   47,
+   55,
+   56,
+   57,
+   58,
+   49,
+   50,
+   51,
+   53
+  ],
+  "itemRareDropper": 1,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "PLAINS",
+  "SkyBG": "DAY"
+ },
+ {
+  "id": 27,
+  "players": [
+   25,
+   0,
+   0,
+   -2,
+   0
+  ],
+  "playersLevels": [
+   11,
+   0,
+   0,
+   0,
+   0
+  ],
+  "speeches": [
+   {
+    "player": 1,
+    "turnTime": 0,
+    "turnTime2": 0,
+    "say": "How did I know we'd find them here as well?",
+    "timeToSay": 2,
+    "voiceOver": "v3_6"
+   }
+  ],
+  "itemDrops": [],
+  "itemRare": [],
+  "itemRareDropper": 0,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "PLAINS",
+  "SkyBG": "DAY"
+ },
+ {
+  "id": 28,
+  "players": [
+   18,
+   0,
+   20,
+   -2,
+   0
+  ],
+  "playersLevels": [
+   9,
+   0,
+   9,
+   0,
+   0
+  ],
+  "speeches": [],
+  "itemDrops": [],
+  "itemRare": [
+   49,
+   50,
+   51,
+   53,
+   44,
+   45,
+   46,
+   47
+  ],
+  "itemRareDropper": 2,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "PLAINS",
+  "SkyBG": "DAY"
+ },
+ {
+  "id": 29,
+  "players": [
+   19,
+   0,
+   20,
+   -2,
+   0
+  ],
+  "playersLevels": [
+   9,
+   0,
+   9,
+   0,
+   0
+  ],
+  "speeches": [
+   {
+    "player": 5,
+    "turnTime": 0,
+    "turnTime2": 0,
+    "say": "Hey, go for the weaker one first, or we'll never get them down.",
+    "timeToSay": 3,
+    "voiceOver": "v3_7"
+   }
+  ],
+  "itemDrops": [
+   {
+    "ID": 81,
+    "CHANCE": 85
+   }
+  ],
+  "itemRare": [
+   44,
+   45,
+   46,
+   47,
+   55,
+   56,
+   57,
+   58
+  ],
+  "itemRareDropper": 2,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "PLAINS",
+  "SkyBG": "DAY"
+ },
+ {
+  "id": 30,
+  "players": [
+   33,
+   0,
+   34,
+   -2,
+   35
+  ],
+  "playersLevels": [
+   10,
+   0,
+   10,
+   0,
+   10
+  ],
+  "speeches": [
+   {
+    "player": 6,
+    "turnTime": 0,
+    "turnTime2": 0,
+    "say": "We, the council, deem you dead!",
+    "timeToSay": 2.4,
+    "voiceOver": "v3_8"
+   },
+   {
+    "player": 4,
+    "turnTime": 0,
+    "turnTime2": 1,
+    "say": "You have trespassed here, and killed our brethren!",
+    "timeToSay": 2.8000000000000003
+   },
+   {
+    "player": 2,
+    "turnTime": 0,
+    "turnTime2": 2,
+    "say": "Your blood will pay for your misdeeds!",
+    "timeToSay": 3.3000000000000003
+   },
+   {
+    "player": 1,
+    "turnTime": 0,
+    "turnTime2": 3,
+    "say": "Haha... Who, us? We wouldn't hurt a fly!",
+    "timeToSay": 3
+   }
+  ],
+  "itemDrops": [],
+  "itemRare": [
+   76,
+   77,
+   78,
+   79
+  ],
+  "itemRareDropper": 1,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "PLAINS",
+  "SkyBG": "DAY"
+ },
+ {
+  "id": 31,
+  "players": [
+   31,
+   0,
+   22,
+   -2,
+   0
+  ],
+  "playersLevels": [
+   10,
+   0,
+   10,
+   0,
+   0
+  ],
+  "speeches": [
+   {
+    "player": 5,
+    "turnTime": 0,
+    "turnTime2": 0,
+    "say": "Well, would you look at that! The last Shaman. How sad. Let's kill it!",
+    "timeToSay": 5,
+    "voiceOver": "v3_9"
+   }
+  ],
+  "itemDrops": [],
+  "itemRare": [],
+  "itemRareDropper": 0,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "PLAINS",
+  "SkyBG": "DAY"
+ },
+ {
+  "id": 32,
+  "players": [
+   24,
+   0,
+   24,
+   -2,
+   24
+  ],
+  "playersLevels": [
+   10,
+   0,
+   10,
+   0,
+   10
+  ],
+  "speeches": [
+   {
+    "player": 1,
+    "turnTime": 0,
+    "turnTime2": 0,
+    "say": "No not these guys again... I can't ... I... Argh!",
+    "timeToSay": 5,
+    "voiceOver": "v3_10"
+   },
+   {
+    "player": 5,
+    "turnTime": 0,
+    "turnTime2": 1,
+    "say": "Someone is playing with our minds... Stay focused!",
+    "timeToSay": 4.5
+   }
+  ],
+  "itemDrops": [
+   {
+    "ID": 81,
+    "CHANCE": 85
+   }
+  ],
+  "itemRare": [
+   59,
+   60,
+   62,
+   63,
+   44,
+   45,
+   46,
+   47,
+   55,
+   56,
+   57,
+   58,
+   49,
+   50,
+   51,
+   53
+  ],
+  "itemRareDropper": 1,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "PLAINS",
+  "SkyBG": "DAY"
+ },
+ {
+  "id": 33,
+  "players": [
+   25,
+   0,
+   25,
+   -2,
+   0
+  ],
+  "playersLevels": [
+   11,
+   0,
+   11,
+   0,
+   0
+  ],
+  "speeches": [],
+  "itemDrops": [],
+  "itemRare": [],
+  "itemRareDropper": 0,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "PLAINS",
+  "SkyBG": "DAY"
+ },
+ {
+  "id": 34,
+  "players": [
+   32,
+   0,
+   0,
+   -2,
+   0
+  ],
+  "playersLevels": [
+   11,
+   0,
+   0,
+   0,
+   0
+  ],
+  "speeches": [
+   {
+    "player": 2,
+    "turnTime": 0,
+    "turnTime2": 0,
+    "say": "The Baron awaits you, children.",
+    "timeToSay": 2.8000000000000003,
+    "voiceOver": "v3_11"
+   },
+   {
+    "player": 5,
+    "turnTime": 0,
+    "turnTime2": 1,
+    "say": "Is he the one behind these mind games?",
+    "timeToSay": 2
+   },
+   {
+    "player": 2,
+    "turnTime": 2,
+    "turnTime2": 0,
+    "say": "He is your new master. You shall obey.",
+    "timeToSay": 3.5,
+    "voiceOver": "v3_12"
+   },
+   {
+    "player": 1,
+    "turnTime": 2,
+    "turnTime2": 1,
+    "say": "Obey THIS, you twat!",
+    "timeToSay": 3
+   }
+  ],
+  "itemDrops": [
+   {
+    "ID": 81,
+    "CHANCE": 85
+   }
+  ],
+  "itemRare": [
+   59,
+   60,
+   62,
+   63,
+   44,
+   45,
+   46,
+   47,
+   55,
+   56,
+   57,
+   58,
+   49,
+   50,
+   51,
+   53
+  ],
+  "itemRareDropper": 1,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "PLAINS",
+  "SkyBG": "DAY"
+ },
+ {
+  "id": 35,
+  "players": [
+   29,
+   0,
+   28,
+   -2,
+   25
+  ],
+  "playersLevels": [
+   11,
+   0,
+   11,
+   0,
+   11
+  ],
+  "speeches": [
+   {
+    "player": 2,
+    "turnTime": 0,
+    "turnTime2": 0,
+    "say": "More Zombies! Let's fry them! We'll meet with the Paladin later.",
+    "timeToSay": 3.2,
+    "voiceOver": "v3_13"
+   },
+   {
+    "player": 4,
+    "turnTime": 0,
+    "turnTime2": 1,
+    "say": "We're wasting time, the Paladin needs our help to take down the Baron!",
+    "timeToSay": 4
+   },
+   {
+    "player": 5,
+    "turnTime": 0,
+    "turnTime2": 2,
+    "say": "Reinforcements? That Baron must be one mean zombie.",
+    "timeToSay": 3
+   }
+  ],
+  "itemDrops": [],
+  "itemRare": [],
+  "itemRareDropper": 0,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "PLAINS",
+  "SkyBG": "DAY"
+ },
+ {
+  "id": 36,
+  "players": [
+   26,
+   27,
+   0,
+   -2,
+   0
+  ],
+  "playersLevels": [
+   12,
+   12,
+   0,
+   0,
+   0
+  ],
+  "speeches": [
+   {
+    "player": 2,
+    "turnTime": 0,
+    "turnTime2": 0,
+    "say": "Welcome to the darkness, my children...become one with me and all beings.",
+    "timeToSay": 10,
+    "voiceOver": "v3_14"
+   },
+   {
+    "player": 3,
+    "turnTime": 0,
+    "turnTime2": 1,
+    "say": "Finally, my reinforcements! It's good to see you're alive and well!",
+    "timeToSay": 4
+   },
+   {
+    "player": 5,
+    "turnTime": 0,
+    "turnTime2": 2,
+    "say": "Just shut up and nod, Sonny. Shut up and nod.",
+    "timeToSay": 4
+   },
+   {
+    "player": 3,
+    "turnTime": 4,
+    "turnTime2": 0,
+    "say": "Wait, wasn't there supposed to be three of you?",
+    "timeToSay": 3,
+    "voiceOver": "v3_15"
+   }
+  ],
+  "itemDrops": [],
+  "itemRare": [
+   75,
+   76,
+   77,
+   78,
+   79
+  ],
+  "itemRareDropper": 1,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "PLAINS",
+  "SkyBG": "DAY"
+ },
+ {
+  "id": 37,
+  "players": [
+   36,
+   -1,
+   0,
+   -2,
+   0
+  ],
+  "playersLevels": [
+   12,
+   0,
+   0,
+   0,
+   0
+  ],
+  "speeches": [
+   {
+    "player": 5,
+    "turnTime": 0,
+    "turnTime2": 0,
+    "say": "The Baron is gone. Let's kill this whoopy superhero and leave!",
+    "timeToSay": 3.5,
+    "voiceOver": "v3_16",
+    "guyShow": "Veradux"
+   },
+   {
+    "player": 1,
+    "turnTime": 0,
+    "turnTime2": 1,
+    "say": "But... why? He helped us-",
+    "timeToSay": 2.5
+   },
+   {
+    "player": 5,
+    "turnTime": 0,
+    "turnTime2": 2,
+    "say": "Sonny. To them, we're vermin...we're monsters.",
+    "timeToSay": 3
+   },
+   {
+    "player": 5,
+    "turnTime": 0,
+    "turnTime2": 3,
+    "say": "Now we can either be alive monsters, or dead monsters. You choose.",
+    "timeToSay": 4
+   },
+   {
+    "player": 2,
+    "turnTime": 1,
+    "turnTime2": 0,
+    "say": "What is this...? You would turn on me?!",
+    "timeToSay": 3,
+    "voiceOver": "v3_17"
+   },
+   {
+    "player": 2,
+    "turnTime": 1,
+    "turnTime2": 1,
+    "say": "You shall pay for this deception!",
+    "timeToSay": 3
+   }
+  ],
+  "itemDrops": [
+   {
+    "ID": 80,
+    "CHANCE": 15
+   }
+  ],
+  "itemRare": [
+   121,
+   122,
+   123,
+   124,
+   125
+  ],
+  "itemRareDropper": 1,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "PLAINS",
+  "SkyBG": "DAY"
+ },
+ {
+  "id": 38,
+  "players": [
+   37,
+   -1,
+   0,
+   -2,
+   0
+  ],
+  "playersLevels": [
+   15,
+   0,
+   0,
+   0,
+   0
+  ],
+  "speeches": [],
+  "itemDrops": [
+   {
+    "ID": 119,
+    "CHANCE": 100
+   }
+  ],
+  "itemRare": [],
+  "itemRareDropper": 0,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "PLAINS2",
+  "SkyBG": "DAY2"
+ },
+ {
+  "id": 39,
+  "players": [
+   38,
+   -1,
+   0,
+   -2,
+   0
+  ],
+  "playersLevels": [
+   19,
+   0,
+   0,
+   0,
+   0
+  ],
+  "speeches": [],
+  "itemDrops": [
+   {
+    "ID": 119,
+    "CHANCE": 100
+   }
+  ],
+  "itemRare": [],
+  "itemRareDropper": 0,
+  "winDate": -1,
+  "timeLock": true,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "PLAINS2",
+  "SkyBG": "DAY2"
+ },
+ {
+  "id": 40,
+  "players": [
+   39,
+   -1,
+   0,
+   -2,
+   0
+  ],
+  "playersLevels": [
+   22,
+   0,
+   0,
+   0,
+   0
+  ],
+  "speeches": [],
+  "itemDrops": [
+   {
+    "ID": 119,
+    "CHANCE": 100
+   }
+  ],
+  "itemRare": [],
+  "itemRareDropper": 0,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "PLAINS2",
+  "SkyBG": "DAY2"
+ },
+ {
+  "id": 41,
+  "players": [
+   40,
+   -1,
+   43,
+   -2,
+   43
+  ],
+  "playersLevels": [
+   25,
+   25,
+   0,
+   25,
+   0
+  ],
+  "speeches": [],
+  "itemDrops": [
+   {
+    "ID": 119,
+    "CHANCE": 100
+   }
+  ],
+  "itemRare": [],
+  "itemRareDropper": 0,
+  "winDate": -1,
+  "timeLock": true,
+  "winDateCondition": 0,
+  "absoluteStart": 1,
+  "ZoneBG": "PLAINS2",
+  "SkyBG": "DAY2"
+ },
+ {
+  "id": 1001,
+  "players": [
+   13,
+   -1,
+   0,
+   -2,
+   0
+  ],
+  "playersLevels": [
+   3,
+   0,
+   0,
+   0,
+   0
+  ],
+  "speeches": [],
+  "itemDrops": [
+   {
+    "ID": 32,
+    "CHANCE": 5
+   },
+   {
+    "ID": 20,
+    "CHANCE": 30
+   },
+   {
+    "ID": 21,
+    "CHANCE": 30
+   }
+  ],
+  "itemRare": [],
+  "itemRareDropper": 0,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "SHORE",
+  "SkyBG": "NIGHT"
+ },
+ {
+  "id": 1002,
+  "players": [
+   12,
+   -1,
+   0,
+   -2,
+   0
+  ],
+  "playersLevels": [
+   3,
+   0,
+   0,
+   0,
+   0
+  ],
+  "speeches": [],
+  "itemDrops": [
+   {
+    "ID": 32,
+    "CHANCE": 5
+   },
+   {
+    "ID": 15,
+    "CHANCE": 30
+   },
+   {
+    "ID": 17,
+    "CHANCE": 30
+   }
+  ],
+  "itemRare": [],
+  "itemRareDropper": 0,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "SHORE",
+  "SkyBG": "NIGHT"
+ },
+ {
+  "id": 1003,
+  "players": [
+   16,
+   -1,
+   0,
+   -2,
+   0
+  ],
+  "playersLevels": [
+   3,
+   0,
+   0,
+   0,
+   0
+  ],
+  "speeches": [],
+  "itemDrops": [
+   {
+    "ID": 32,
+    "CHANCE": 5
+   },
+   {
+    "ID": 25,
+    "CHANCE": 30
+   },
+   {
+    "ID": 28,
+    "CHANCE": 30
+   }
+  ],
+  "itemRare": [],
+  "itemRareDropper": 0,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "SHORE",
+  "SkyBG": "NIGHT"
+ },
+ {
+  "id": 1004,
+  "players": [
+   18,
+   -1,
+   0,
+   -2,
+   0
+  ],
+  "playersLevels": [
+   7,
+   0,
+   0,
+   0,
+   0
+  ],
+  "speeches": [],
+  "itemDrops": [
+   {
+    "ID": 79,
+    "CHANCE": 8
+   }
+  ],
+  "itemRare": [
+   49,
+   50,
+   51,
+   53
+  ],
+  "itemRareDropper": 1,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "PLAINS",
+  "SkyBG": "DAY"
+ },
+ {
+  "id": 1005,
+  "players": [
+   19,
+   -1,
+   0,
+   -2,
+   0
+  ],
+  "playersLevels": [
+   7,
+   0,
+   0,
+   0,
+   0
+  ],
+  "speeches": [],
+  "itemDrops": [
+   {
+    "ID": 78,
+    "CHANCE": 8
+   }
+  ],
+  "itemRare": [
+   55,
+   56,
+   57,
+   58
+  ],
+  "itemRareDropper": 1,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "PLAINS",
+  "SkyBG": "DAY"
+ },
+ {
+  "id": 1006,
+  "players": [
+   20,
+   -1,
+   0,
+   -2,
+   0
+  ],
+  "playersLevels": [
+   7,
+   0,
+   0,
+   0,
+   0
+  ],
+  "speeches": [],
+  "itemDrops": [
+   {
+    "ID": 75,
+    "CHANCE": 8
+   },
+   {
+    "ID": 76,
+    "CHANCE": 8
+   }
+  ],
+  "itemRare": [
+   44,
+   45,
+   46,
+   47
+  ],
+  "itemRareDropper": 1,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "PLAINS",
+  "SkyBG": "DAY"
+ },
+ {
+  "id": 1007,
+  "players": [
+   21,
+   -1,
+   0,
+   -2,
+   0
+  ],
+  "playersLevels": [
+   7,
+   0,
+   0,
+   0,
+   0
+  ],
+  "speeches": [],
+  "itemDrops": [
+   {
+    "ID": 77,
+    "CHANCE": 8
+   }
+  ],
+  "itemRare": [
+   59,
+   60,
+   62,
+   63
+  ],
+  "itemRareDropper": 1,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "PLAINS",
+  "SkyBG": "DAY"
+ },
+ {
+  "id": 1008,
+  "players": [
+   41,
+   -1,
+   41,
+   -2,
+   41
+  ],
+  "playersLevels": [
+   "X",
+   0,
+   "X",
+   0,
+   "X"
+  ],
+  "speeches": [],
+  "itemDrops": [
+   {
+    "ID": 120,
+    "CHANCE": 100
+   }
+  ],
+  "itemRare": [],
+  "itemRareDropper": 0,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "PLAINS2",
+  "SkyBG": "DAY2"
+ },
+ {
+  "id": 1009,
+  "players": [
+   42,
+   -1,
+   0,
+   -2,
+   0
+  ],
+  "playersLevels": [
+   "X",
+   0,
+   0,
+   0,
+   0
+  ],
+  "speeches": [],
+  "itemDrops": [
+   {
+    "ID": 114,
+    "CHANCE": 100
+   }
+  ],
+  "itemRare": [],
+  "itemRareDropper": 0,
+  "winDate": -1,
+  "timeLock": false,
+  "winDateCondition": 0,
+  "absoluteStart": 0,
+  "ZoneBG": "PLAINS2",
+  "SkyBG": "DAY2"
+ }
+]

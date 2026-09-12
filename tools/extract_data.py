@@ -26,6 +26,10 @@ import sys
 NUM_RE = re.compile(r'^-?(?:\d+\.?\d*(?:[eE][-+]?\d+)?|\.\d+)$')
 LANG_RE = re.compile(r'^_root\.KrinLang\[KLangChoosen\]\.([A-Z0-9_]+)\[(\d+)\]$')
 LANG_VAR_RE = re.compile(r'^krinABC(\d)\[(\d+)\]$')
+# Locals that alias a language array: sayBayK = KrinLang[...].BATTLESPEECH
+LANG_ALIAS = {'krinABC1': 'SKILLTIP', 'krinABC2': 'SKILLTIP2',
+              'krinABC3': 'SKILLTIP3', 'sayBayK': 'BATTLESPEECH'}
+LANG_ALIAS_RE = re.compile(r'^([A-Za-z_][A-Za-z0-9_]*)\[(\d+)\]$')
 
 
 def split_args(s):
@@ -87,11 +91,9 @@ def parse_value(tok):
     m = LANG_RE.match(tok)
     if m:
         return {"$lang": [m.group(1), int(m.group(2))]}
-    m = LANG_VAR_RE.match(tok)
-    if m:
-        # krinABC1/2/3 alias SKILLTIP / SKILLTIP2 / SKILLTIP3
-        array = {'1': 'SKILLTIP', '2': 'SKILLTIP2', '3': 'SKILLTIP3'}[m.group(1)]
-        return {"$lang": [array, int(m.group(2))]}
+    m = LANG_ALIAS_RE.match(tok)
+    if m and m.group(1) in LANG_ALIAS:
+        return {"$lang": [LANG_ALIAS[m.group(1)], int(m.group(2))]}
     if '+' in tok:  # concatenation of literals and lang lookups
         return {"$concat": [parse_value(p) for p in tok.split('+')]}
     return {"$expr": tok}
@@ -130,7 +132,10 @@ def resolve(value, lang):
         if "$concat" in value:
             parts = [resolve(p, lang) for p in value["$concat"]]
             return ''.join('' if p is None else str(p) for p in parts)
-        return value
+        if "$expr" in value:
+            return value
+        # A plain object literal (a speech, an item drop): resolve its values.
+        return {k: resolve(v, lang) for k, v in value.items()}
     return value
 
 
@@ -190,6 +195,89 @@ def parse_object(body):
         key, _, value = part.partition(':')
         out[key.strip()] = parse_value(value.strip())
     return out
+
+
+# createNewBattle(); then a run of `rengi.<field> = ...` / `.push(...)` lines.
+BATTLE_NEW_RE = re.compile(r'^createNewBattle\(\);$')
+BATTLE_SET_RE = re.compile(r'^rengi\.([A-Za-z0-9_]+)\s*=\s*(.+);$')
+BATTLE_PUSH_RE = re.compile(r'^rengi\.([A-Za-z0-9_]+)\.push\((.+)\);$')
+BATTLE_ID_RE = re.compile(r'^battleCreationID\s*=\s*(\d+);$')
+ZONE_RANGE_RE = re.compile(r'^Krin\.progressArray\[(\d+)\]\s*=\s*(.+);$')
+ZONE_TRAIN_RE = re.compile(r'^Krin\.trainingArray\[(\d+)\]\s*=\s*(.+);$')
+
+
+def extract_battles(text):
+    """The battle rosters (KBR objects). players[0..4] fill slots 2..6:
+    positive values are enemy templates, negatives reference allies, 0 is an
+    empty slot. A level of "X" means "match the player's level"."""
+    battles, order = {}, []
+    battle_id = 0
+    cur = None
+
+    for raw in text.splitlines():
+        line = raw.strip()
+
+        m = BATTLE_ID_RE.match(line)
+        if m:
+            battle_id = int(m.group(1))
+            continue
+
+        if BATTLE_NEW_RE.match(line):
+            battle_id += 1
+            battles[battle_id] = {
+                'id': battle_id,
+                'players': [0, 1, 0, 2, 0],
+                'playersLevels': [1, 1, 1, 1, 1],
+                'speeches': [], 'itemDrops': [], 'itemRare': [],
+                'itemRareDropper': 0, 'winDate': -1, 'timeLock': False,
+                'winDateCondition': 0, 'absoluteStart': 0,
+            }
+            order.append(battle_id)
+            cur = battle_id
+            continue
+
+        if cur is None:
+            continue
+
+        m = BATTLE_PUSH_RE.match(line)
+        if m:
+            field, value = m.group(1), m.group(2).strip()
+            if value.startswith('{') and value.endswith('}'):
+                entry = parse_object(value[1:-1])
+            else:
+                entry = parse_value(value)
+            battles[cur].setdefault(field, []).append(entry)
+            continue
+
+        m = BATTLE_SET_RE.match(line)
+        if m:
+            field, value = m.group(1), m.group(2).strip()
+            if value in ('new Array()', 'new Object()'):
+                battles[cur][field] = []
+                continue
+            if field == 'speeches' and value.startswith('sortOn'):
+                continue
+            battles[cur][field] = parse_value(value)
+            continue
+
+    return [battles[i] for i in order]
+
+
+def extract_zones(text):
+    ranges, training = {}, {}
+    for raw in text.splitlines():
+        line = raw.strip()
+        m = ZONE_RANGE_RE.match(line)
+        if m:
+            ranges[int(m.group(1))] = parse_value(m.group(2))
+            continue
+        m = ZONE_TRAIN_RE.match(line)
+        if m:
+            training[int(m.group(1))] = parse_value(m.group(2))
+    return [{'zone': z, 'first_battle': ranges[z][0],
+             'last_battle': ranges[z][1],
+             'training': training.get(z, [])}
+            for z in sorted(ranges)]
 
 
 def extract_talents(text):
@@ -332,8 +420,10 @@ def main():
     langs = extract_lang(lang_text)
     lang = langs.get(args.lang, {})
     talents, start_skills = extract_talents(lang_text)
+    zones = extract_zones(lang_text)
     text = open(data_as, encoding='utf-8', errors='replace').read()
     moves, units, items, buffs = extract_tables(text)
+    battles = extract_battles(text)
 
     # Resolve text references and give the verified B-table fields real names.
     abilities = []
@@ -393,13 +483,30 @@ def main():
 
     os.makedirs(args.out, exist_ok=True)
     written = []
+    battle_list = []
+    for b in battles:
+        out = {k: resolve(v, lang) for k, v in b.items()}
+        battle_list.append(out)
+
+    zone_list = []
+    zone_names = lang.get('ZONES') or []
+    zone_subtitles = lang.get('ZONES2') or []
+    for z in zones:
+        out = dict(z)
+        out['name'] = (zone_names[z['zone']]
+                       if z['zone'] < len(zone_names) else None)
+        out['subtitle'] = (zone_subtitles[z['zone']]
+                           if z['zone'] < len(zone_subtitles) else None)
+        zone_list.append(out)
+
     talent_payload = {'startSkill1': start_skills.get('startSkill1'),
                       'startSkill2': start_skills.get('startSkill2'),
                       'nodes': talents}
 
     for name, payload in (('lang', langs), ('abilities', abilities),
                           ('units', unit_list), ('items', item_list),
-                          ('buffs', buff_list), ('talents', talent_payload)):
+                          ('buffs', buff_list), ('talents', talent_payload),
+                          ('battles', battle_list), ('zones', zone_list)):
         path = os.path.join(args.out, name + '.json')
         with open(path, 'w', encoding='utf-8') as fh:
             json.dump(payload, fh, indent=1, ensure_ascii=False)
@@ -414,6 +521,10 @@ def main():
     print('talents   : %d nodes, start skills %s/%s'
           % (len(talents), start_skills.get('startSkill1'),
              start_skills.get('startSkill2')))
+    print('battles   : %d (ids %s..%s)'
+          % (len(battle_list), battle_list[0]['id'] if battle_list else '-',
+             battle_list[-1]['id'] if battle_list else '-'))
+    print('zones     : %d' % len(zone_list))
     for name, path in written:
         print('  wrote %-10s %s' % (name, path))
 
