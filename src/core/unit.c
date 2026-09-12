@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <string.h>
 #include "unit.h"
 
@@ -18,4 +19,19 @@ int element_from_name(const char *name)
         if (strcmp(name, ELEMENT_NAMES[i]) == 0)
             return i;
     return -1;
+}
+
+void unit_init(Unit *u, int32_t playerID)
+{
+    memset(u, 0, sizeof(*u));
+    u->playerID = playerID;
+    /* teamSide from slot parity, as Math.pow(-1,i) < 0 does. */
+    u->teamSide = (playerID % 2) ? 1 : 2;
+    u->plevel = 1;
+    u->active = 0;
+    for (int i = 0; i < SONNY_MAX_BUFFS; i++) {
+        snprintf(u->BUFFARRAYK[i].buffId, SONNY_NAME_LEN, "None");
+        u->BUFFARRAYK[i].CD = 0;
+        u->BUFFARRAYK[i].buffValue = 0;
+    }
 }
