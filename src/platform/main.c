@@ -12,58 +12,98 @@
 #include <stdlib.h>
 #include <string.h>
 #include "raylib.h"
-#include "../core/combat.h"
+#include "../core/formula.h"
 
-#define STAGE_W   700
-#define STAGE_H   500
+/* Verified from SONNY1.swf's header. */
+#define STAGE_W   800
+#define STAGE_H   575
 #define STAGE_FPS 30
 
+#define MAX_UNITS 8
+
 typedef struct {
-    Combat combat;
-    int    selected_ability;
-    int    hovered_unit;
+    Unit    units[MAX_UNITS];
+    int32_t unit_count;
+    int32_t active;             /* whose turn it is */
+    int32_t round;
+    int     selected_ability;
+    Rng     rng;
 } Game;
 
-static int32_t roster_add(Combat *c, const char *name, Side side, int32_t hp,
-                          int32_t spd, int32_t def, int32_t ai)
+static int32_t roster_add(Game *g, const char *name, int32_t side, int32_t level,
+                          int32_t life, int32_t focus, double str, double mag,
+                          double spd, double per, double def)
 {
-    int32_t i = c->unit_count++;
-    Combatant *u = &c->units[i];
+    int32_t i = g->unit_count++;
+    Unit *u = &g->units[i];
     memset(u, 0, sizeof(*u));
     snprintf(u->name, SONNY_NAME_LEN, "%s", name);
-    u->side = side;
-    u->base.hp_max = hp;
-    u->base.speed = spd;
-    u->base.defense = def;
-    u->base.focus_max = 100;
-    u->ai_script_id = ai;
-    u->ability_count = 4;
+    u->playerID = i + 1;
+    u->teamSide = side;
+    u->plevel = level;
+    u->active = 1;
+    u->LIFEU = u->LIFEN = life;
+    u->FOCUSU = u->FOCUSN = focus;
+    u->STRENGTHU = str;
+    u->MAGICU = mag;
+    u->SPEEDU = spd;
+    for (int e = 0; e < SONNY_ELEMENTS; e++) {
+        u->PERU[e] = per;
+        u->DEFU[e] = def;
+    }
     return i;
 }
 
-/* Placeholder encounter so the shell is runnable before real data exists. */
+/* Placeholder roster: real units come from the extracted unit table. */
 static void game_init(Game *g)
 {
     memset(g, 0, sizeof(*g));
-    roster_add(&g->combat, "Sonny", SIDE_PLAYER, 120, 12, 4, -1);
-    roster_add(&g->combat, "Ally", SIDE_PLAYER, 100, 10, 3, -1);
-    roster_add(&g->combat, "Enemy A", SIDE_ENEMY, 90, 11, 2, 0);
-    roster_add(&g->combat, "Enemy B", SIDE_ENEMY, 90, 8, 2, 0);
-    combat_begin(&g->combat, 20260912);
+    rng_seed(&g->rng, 20260912);
+    rng_refill_krs(&g->rng);
+    roster_add(g, "Sonny", 0, 5, 120, 100, 24, 4, 16, 25, 25);
+    roster_add(g, "Louis", 0, 5, 100, 100, 12, 8, 12, 25, 25);
+    roster_add(g, "Zombie", 1, 4, 90, 100, 18, 4, 10, 25, 25);
+    roster_add(g, "ZPCI Assault", 1, 4, 95, 100, 14, 2, 9, 25, 25);
+    g->round = 1;
+    g->active = 0;
     g->selected_ability = -1;
-    g->hovered_unit = -1;
 }
 
-static Rectangle unit_rect(const Combat *c, int32_t i)
+/* Fires the placeholder basic attack at the first living enemy, so the damage
+   math can be exercised from the running build. */
+static void game_attack(Game *g)
 {
-    /* Players on the left column, enemies on the right, as in the original. */
+    Unit *caster = &g->units[g->active];
+    for (int32_t i = 0; i < g->unit_count; i++) {
+        Unit *t = &g->units[i];
+        if (t->teamSide == caster->teamSide || !t->active)
+            continue;
+        AbilityCoefs a;
+        memset(&a, 0, sizeof(a));
+        a.element = ELEM_PHYSICAL;
+        a.strength_coef = 1.0;
+        a.hit_coef = 1.0;
+        a.damage_coef = 1.0;
+        DamageResult d = formula_full_damage(&g->rng, caster, t, &a);
+        formula_apply_damage(t, d.damage, NULL);
+        break;
+    }
+    do {
+        g->active = (g->active + 1) % g->unit_count;
+        if (g->active == 0)
+            g->round++;
+    } while (!g->units[g->active].active);
+}
+
+static Rectangle unit_rect(const Game *g, int32_t i)
+{
     int slot = 0;
     for (int32_t j = 0; j < i; j++)
-        if (c->units[j].side == c->units[i].side)
+        if (g->units[j].teamSide == g->units[i].teamSide)
             slot++;
-    float x = (c->units[i].side == SIDE_PLAYER) ? 60.0f : STAGE_W - 60.0f - 110.0f;
-    float y = 90.0f + slot * 105.0f;
-    return (Rectangle){x, y, 110.0f, 90.0f};
+    float x = (g->units[i].teamSide == 0) ? 70.0f : STAGE_W - 70.0f - 120.0f;
+    float y = 100.0f + slot * 115.0f;
+    return (Rectangle){x, y, 120.0f, 100.0f};
 }
 
 static void draw_bar(Rectangle r, int32_t cur, int32_t max, Color fill, const char *label)
@@ -72,58 +112,53 @@ static void draw_bar(Rectangle r, int32_t cur, int32_t max, Color fill, const ch
     if (max > 0 && cur > 0) {
         Rectangle f = r;
         f.width = r.width * ((float)cur / (float)max);
+        if (f.width > r.width)
+            f.width = r.width;
         DrawRectangleRec(f, fill);
     }
     DrawRectangleLinesEx(r, 1.0f, (Color){90, 90, 100, 255});
     DrawText(TextFormat("%s %d/%d", label, cur, max), (int)r.x + 3, (int)r.y + 1, 10, RAYWHITE);
 }
 
-static void draw_combat(const Game *g)
+static void draw_battle(const Game *g)
 {
-    const Combat *c = &g->combat;
-
     ClearBackground((Color){24, 26, 32, 255});
-    DrawText("SONNY -- reimplementation shell", 12, 10, 20, (Color){200, 205, 215, 255});
-    DrawText(TextFormat("Round %d   phase %d", c->round, (int)c->phase), 12, 34, 10,
-             (Color){150, 155, 165, 255});
+    DrawText("SONNY -- engine shell", 12, 10, 20, (Color){200, 205, 215, 255});
+    DrawText(TextFormat("Round %d   turn: %s   [space] attack", g->round,
+                        g->units[g->active].name),
+             12, 34, 10, (Color){150, 155, 165, 255});
 
-    int32_t active = combat_current_unit(c);
+    for (int32_t i = 0; i < g->unit_count; i++) {
+        const Unit *u = &g->units[i];
+        Rectangle r = unit_rect(g, i);
+        Color frame = (i == g->active) ? (Color){235, 200, 90, 255}
+                                       : (Color){70, 74, 86, 255};
 
-    for (int32_t i = 0; i < c->unit_count; i++) {
-        const Combatant *u = &c->units[i];
-        Rectangle r = unit_rect(c, i);
-        Color frame = (i == active) ? (Color){235, 200, 90, 255} : (Color){70, 74, 86, 255};
+        DrawRectangleRec(r, (Color){40, 44, 54, u->active ? 255 : 120});
+        DrawRectangleLinesEx(r, (i == g->active) ? 2.0f : 1.0f, frame);
+        DrawText(u->name, (int)r.x + 5, (int)r.y + 5, 10,
+                 u->active ? RAYWHITE : GRAY);
+        DrawText(TextFormat("Lv %d", u->plevel), (int)r.x + 5, (int)r.y + 74, 10,
+                 (Color){140, 145, 155, 255});
 
-        DrawRectangleRec(r, (Color){40, 44, 54, u->alive ? 255 : 120});
-        DrawRectangleLinesEx(r, (i == active) ? 2.0f : 1.0f, frame);
-        DrawText(u->name, (int)r.x + 5, (int)r.y + 5, 10, u->alive ? RAYWHITE : GRAY);
-
-        draw_bar((Rectangle){r.x + 5, r.y + 22, r.width - 10, 12}, u->hp, u->base.hp_max,
-                 (Color){170, 55, 60, 255}, "HP");
-        draw_bar((Rectangle){r.x + 5, r.y + 38, r.width - 10, 12}, u->focus, u->base.focus_max,
-                 (Color){60, 105, 180, 255}, "FP");
-
-        for (int32_t b = 0; b < u->buff_count; b++)
-            DrawRectangle((int)r.x + 5 + b * 14, (int)r.y + 56, 12, 12,
-                          (Color){120, 170, 110, 255});
+        draw_bar((Rectangle){r.x + 5, r.y + 22, r.width - 10, 12}, u->LIFEN,
+                 u->LIFEU, (Color){170, 55, 60, 255}, "HP");
+        draw_bar((Rectangle){r.x + 5, r.y + 38, r.width - 10, 12}, u->FOCUSN,
+                 u->FOCUSU, (Color){60, 105, 180, 255}, "FP");
+        if (u->SHIELD > 0)
+            DrawText(TextFormat("shield %d", u->SHIELD), (int)r.x + 5,
+                     (int)r.y + 56, 10, (Color){120, 170, 220, 255});
     }
 
-    /* Ability bar: four slots plus the turn-order strip above it. */
-    for (int32_t i = 0; i < c->unit_count; i++) {
-        int32_t u = c->turn_order[i];
-        DrawRectangle(12 + i * 26, STAGE_H - 118, 22, 14,
-                      c->units[u].side == SIDE_PLAYER ? (Color){60, 105, 180, 255}
-                                                      : (Color){150, 60, 60, 255});
-    }
     for (int i = 0; i < 8; i++) {
-        Rectangle slot = {12.0f + i * 52.0f, STAGE_H - 96.0f, 46.0f, 46.0f};
+        Rectangle slot = {12.0f + i * 56.0f, STAGE_H - 100.0f, 50.0f, 50.0f};
         DrawRectangleRec(slot, (Color){44, 48, 58, 255});
         DrawRectangleLinesEx(slot, g->selected_ability == i ? 2.0f : 1.0f,
                              g->selected_ability == i ? (Color){235, 200, 90, 255}
                                                       : (Color){80, 84, 96, 255});
     }
-    DrawText("ability bar (icons + tooltips pending asset extraction)", 12, STAGE_H - 42, 10,
-             (Color){130, 135, 145, 255});
+    DrawText("ability bar (icons + tooltips pending asset extraction)", 12,
+             STAGE_H - 42, 10, (Color){130, 135, 145, 255});
 }
 
 int main(void)
@@ -143,13 +178,13 @@ int main(void)
 
     while (!WindowShouldClose()) {
         if (IsKeyPressed(KEY_SPACE))
-            combat_advance_turn(&game.combat);
+            game_attack(&game);
         for (int k = 0; k < 8; k++)
             if (IsKeyPressed(KEY_ONE + k))
                 game.selected_ability = k;
 
         BeginTextureMode(stage);
-        draw_combat(&game);
+        draw_battle(&game);
         EndTextureMode();
 
         float scale = (float)GetScreenHeight() / STAGE_H;

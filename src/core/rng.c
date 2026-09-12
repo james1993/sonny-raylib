@@ -2,13 +2,16 @@
 
 void rng_seed(Rng *r, uint64_t seed)
 {
-    r->s = seed ? seed : 0x9E3779B97F4A7C15ull;
+    r->state = seed ? seed : 0x9E3779B97F4A7C15ull;
+    r->KRSC = 0;
+    for (int i = 0; i < SONNY_KRS_SIZE; i++)
+        r->KRS[i] = 0;
 }
 
 uint32_t rng_next(Rng *r)
 {
-    /* splitmix64, upper bits */
-    uint64_t z = (r->s += 0x9E3779B97F4A7C15ull);
+    /* splitmix64 */
+    uint64_t z = (r->state += 0x9E3779B97F4A7C15ull);
     z = (z ^ (z >> 30)) * 0xBF58476D1CE4E5B9ull;
     z = (z ^ (z >> 27)) * 0x94D049BB133111EBull;
     z = z ^ (z >> 31);
@@ -19,7 +22,6 @@ uint32_t rng_below(Rng *r, uint32_t n)
 {
     if (n == 0)
         return 0;
-    /* Rejection sampling keeps the distribution exactly uniform. */
     uint32_t limit = 0xFFFFFFFFu - (0xFFFFFFFFu % n);
     uint32_t x;
     do {
@@ -28,18 +30,18 @@ uint32_t rng_below(Rng *r, uint32_t n)
     return x % n;
 }
 
-int32_t rng_range(Rng *r, int32_t lo, int32_t hi)
+void rng_refill_krs(Rng *r)
 {
-    if (hi <= lo)
-        return lo;
-    return lo + (int32_t)rng_below(r, (uint32_t)(hi - lo + 1));
+    for (int i = 0; i < SONNY_KRS_SIZE; i++)
+        r->KRS[i] = (int32_t)rng_below(r, 100);
+    r->KRSC = 0;
 }
 
-int rng_chance(Rng *r, int32_t percent)
+int32_t rng_krrr(Rng *r)
 {
-    if (percent <= 0)
-        return 0;
-    if (percent >= 100)
-        return 1;
-    return (int32_t)rng_below(r, 100) < percent;
+    int32_t value = r->KRS[r->KRSC];
+    r->KRSC++;
+    if (r->KRSC == SONNY_KRS_SIZE)
+        r->KRSC = 0;
+    return value;
 }

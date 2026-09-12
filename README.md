@@ -44,3 +44,48 @@ captive-runtime app, so the game itself is a `.swf` sitting next to the launcher
 
 Game mechanics and numbers are reimplemented; original art, audio and text are
 not redistributed here. Point the build at your own copy's assets.
+
+## What has been verified from the original
+
+Decompiled from `SONNY1.swf` (AS2, stage 800×575, 30 fps, 330 frames). The
+game's own structure, with the author's function names intact:
+
+| System | Where it lives in the original |
+| --- | --- |
+| Ability table (142 entries) | `addNewMove` + `_root.hackMove[...]` patches, frame 62 |
+| Unit templates (43) | `createNewUnitKrin` + `jesivie.*` patches |
+| Items (126) | `createNewItemKrin` |
+| Buffs/debuffs (87) | `addNewBuffKrin` + `_root.hackMove2[...]` patches |
+| Damage + hit resolution | `executeMove`, `perScript` |
+| Buff ticking / application | `buffTicker`, `applyBuffKrin`, `applyChangesKrin` |
+| Enemy AI | `AImoveAdder` + each unit's `agressionArray` |
+| XP curve | `expWorkOut` |
+| Battle setup | `createNewBattle`, `krinAddNewUnit` |
+| All display text (EN + DE) | `KrinLang`, frame 61 |
+
+Stats are Vitality, Strength, Magic, Speed, Focus, Piercing, Defense, Health;
+the eight damage elements are Physical, Magic, Ice, Fire, Lightning, Earth,
+Shadow and Poison, and piercing/defense are tracked per element. Player classes
+are Dreadnaught, Templar, Phantom, Phaser and Enigma.
+
+Two details worth knowing, both reproduced rather than cleaned up:
+
+- **Rolls come from a table, not a fresh draw.** At the start of each battle the
+  game fills `KRS[0..99]` with `random(100)` and then walks it cyclically, so
+  within one battle the roll sequence repeats every 100 rolls.
+- **A shield exactly equal to the incoming hit does not absorb it.** The
+  original's condition is `SHIELD - damage > 0`, so the equal case falls through
+  to the damage branch (for zero net damage). Ported as-is.
+
+### Porting status
+
+- [x] Data extraction: abilities, units, items, buffs, all text → JSON
+- [x] Damage and hit resolution (`executeMove` "Full Damage", `perScript`),
+      verified against an independent transcription on 400 generated cases
+- [x] The RNG's battle-scoped ring buffer
+- [ ] Buffs: `applyBuffKrin` / `buffTicker` / `applyChangesKrin`
+- [ ] Turn order and the move queue (`krinAddMove`, `MoveArrayFINAL`)
+- [ ] Enemy AI (`AImoveAdder`, aggression thresholds)
+- [ ] Non-damage move kinds (`Heal`, `Focus`, and the rest of `executeMove`)
+- [ ] Level-ups, ability trees, equipment, shops, zones, save data
+- [ ] Art, audio and UI layout
