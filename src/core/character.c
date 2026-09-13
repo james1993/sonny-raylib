@@ -11,6 +11,11 @@ void character_new(Character *c, int32_t class_id)
     /* Krin.StatSets0 = [0,5,0,3,0] */
     c->spent[1] = 5;
     c->spent[3] = 3;
+    /* The running total starts at the hand-spent bonus alone: the gear below
+       is worn without ever having passed through a slot, so the original
+       never folds it in. */
+    for (int32_t i = 0; i < SONNY_STATS; i++)
+        c->stat_sets[i] = c->spent[i];
     /* Krin.equipArray0 = [0,0,0,4,8,5,0]: the trousers, boots and pipe the
        story gives Sonny on the ship. */
     c->equip[3] = 4;
@@ -40,6 +45,7 @@ void character_respec(Character *c)
     memset(c->buff_adder, 0, sizeof(c->buff_adder));
     memset(c->move_matrix, 0, sizeof(c->move_matrix));
     memset(c->spent, 0, sizeof(c->spent));
+    character_rebuild_sets(c);
     c->spent_skill_points = 0;
     c->spent_stat_points = 0;
     c->move_matrix[0] = SONNY_START_SKILL1;
@@ -134,26 +140,39 @@ int32_t character_skill_points(const Character *c)
     return c->level - 1;
 }
 
+void character_apply_item(Character *c, const ItemDef *item, int adding)
+{
+    if (!item)
+        return;
+    double sign = adding ? 1.0 : -1.0;
+    for (int32_t i = 0; i < SONNY_STATS; i++)
+        c->stat_sets[i] += sign * item->stat[i];
+    for (int32_t e = 0; e < SONNY_ELEMENTS; e++) {
+        c->per_sets[e] += sign * item->per[e];
+        c->def_sets[e] += sign * item->def[e];
+    }
+}
+
+void character_rebuild_sets(Character *c)
+{
+    for (int32_t i = 0; i < SONNY_STATS; i++)
+        c->stat_sets[i] = c->spent[i];
+    for (int32_t e = 0; e < SONNY_ELEMENTS; e++) {
+        c->per_sets[e] = 0;
+        c->def_sets[e] = 0;
+    }
+    for (int32_t slot = 0; slot < SONNY_EQUIP_SLOTS; slot++)
+        character_apply_item(c, item_by_id(c->equip[slot]), 1);
+}
+
 StatSets character_stat_sets(const Character *c)
 {
     StatSets s;
     for (int32_t i = 0; i < SONNY_STATS; i++)
-        s.stat[i] = c->spent[i];
+        s.stat[i] = c->stat_sets[i];
     for (int32_t e = 0; e < SONNY_ELEMENTS; e++) {
-        s.per[e] = 0;
-        s.def[e] = 0;
-    }
-
-    for (int32_t slot = 0; slot < SONNY_EQUIP_SLOTS; slot++) {
-        const ItemDef *item = item_by_id(c->equip[slot]);
-        if (!item)
-            continue;
-        for (int32_t i = 0; i < SONNY_STATS; i++)
-            s.stat[i] += item->stat[i];
-        for (int32_t e = 0; e < SONNY_ELEMENTS; e++) {
-            s.per[e] += item->per[e];
-            s.def[e] += item->def[e];
-        }
+        s.per[e] = c->per_sets[e];
+        s.def[e] = c->def_sets[e];
     }
     return s;
 }

@@ -46,6 +46,10 @@ int main(int argc, char **argv)
                 c.spent[i] = atof(strtok(NULL, " \t\n"));
             for (int i = 0; i < SONNY_EQUIP_SLOTS; i++)
                 c.equip[i] = atoi(strtok(NULL, " \t\n"));
+            /* The vectors describe a character wearing this gear, and the
+               game only ever counts a piece that has passed through a slot,
+               so the running total is worked out as if each had. */
+            character_rebuild_sets(&c);
             strtok(NULL, " \t\n");   /* EXPECT */
 
             double w_life = atof(strtok(NULL, " \t\n"));

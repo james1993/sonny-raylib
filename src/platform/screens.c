@@ -881,6 +881,17 @@ static void swap_carried(Game *g, int32_t *slot)
     g->carried_item = held;
 }
 
+/* The same, for an equipment row: what comes off stops counting and what
+   goes on starts, which is the only way anything ever enters the running
+   total the character carries. */
+static void swap_equipped(Game *g, int32_t row)
+{
+    Character *p = &g->campaign.player;
+    character_apply_item(p, item_by_id(p->equip[row]), 0);
+    swap_carried(g, &p->equip[row]);
+    character_apply_item(p, item_by_id(p->equip[row]), 1);
+}
+
 /* The bag is a list rather than a grid of holes: the original keeps
    itemArray dense, so an item put down past the end is appended and one
    picked up off the end leaves nothing behind. */
@@ -1014,7 +1025,7 @@ void screen_inventory_update(Game *g, Vector2 mouse)
            if the carried item does not fit. */
         if (ui_clicked()
             && item_fits(&c->player, g->carried_item, i))
-            swap_carried(g, &c->player.equip[i]);
+            swap_equipped(g, i);
         break;
     }
 
@@ -1439,7 +1450,7 @@ void screen_shop_update(Game *g, Vector2 mouse)
         g->hovered_item = i;
         if (ui_clicked()
             && item_fits(&c->player, g->carried_item, i))
-            swap_carried(g, &c->player.equip[i]);
+            swap_equipped(g, i);
         break;
     }
 

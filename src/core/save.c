@@ -41,6 +41,16 @@ int save_write(const Campaign *c, const char *path)
     fprintf(fh, "zone %d\n", c->zone);
     fprintf(fh, "spent_skill %d\n", c->player.spent_skill_points);
     fprintf(fh, "spent_stat %d\n", c->player.spent_stat_points);
+    fprintf(fh, "sets");
+    for (int32_t i = 0; i < SONNY_STATS; i++)
+        fprintf(fh, " %.10g", c->player.stat_sets[i]);
+    fprintf(fh, "\nper");
+    for (int32_t e = 0; e < SONNY_ELEMENTS; e++)
+        fprintf(fh, " %.10g", c->player.per_sets[e]);
+    fprintf(fh, "\ndef");
+    for (int32_t e = 0; e < SONNY_ELEMENTS; e++)
+        fprintf(fh, " %.10g", c->player.def_sets[e]);
+    fprintf(fh, "\n");
     fprintf(fh, "friends");
     for (int32_t i = 0; i < SONNY_PARTY_SIZE; i++)
         fprintf(fh, " %d", c->friends[i]);
@@ -101,6 +111,9 @@ int save_read(Campaign *c, const char *path)
     campaign_new(c, 1);
     c->player.spent[1] = 0;     /* the starting bonus is in the save */
     c->player.spent[3] = 0;
+    memset(c->player.stat_sets, 0, sizeof(c->player.stat_sets));
+    memset(c->player.per_sets, 0, sizeof(c->player.per_sets));
+    memset(c->player.def_sets, 0, sizeof(c->player.def_sets));
     memset(c->player.move_matrix, 0, sizeof(c->player.move_matrix));
 
     while (fgets(line, sizeof(line), fh)) {
@@ -127,6 +140,26 @@ int save_read(Campaign *c, const char *path)
             sscanf(rest, "%d", &c->player.spent_skill_points);
         } else if (strcmp(key, "spent_stat") == 0) {
             sscanf(rest, "%d", &c->player.spent_stat_points);
+        } else if (strcmp(key, "sets") == 0) {
+            const char *p = rest;
+            for (int32_t i = 0; i < SONNY_STATS; i++) {
+                char *end;
+                c->player.stat_sets[i] = strtod(p, &end);
+                if (end == p)
+                    break;
+                p = end;
+            }
+        } else if (strcmp(key, "per") == 0 || strcmp(key, "def") == 0) {
+            double *into = (key[0] == 'p') ? c->player.per_sets
+                                           : c->player.def_sets;
+            const char *p = rest;
+            for (int32_t e = 0; e < SONNY_ELEMENTS; e++) {
+                char *end;
+                into[e] = strtod(p, &end);
+                if (end == p)
+                    break;
+                p = end;
+            }
         } else if (strcmp(key, "friends") == 0) {
             read_int_array(rest, c->friends, SONNY_PARTY_SIZE);
         } else if (strcmp(key, "line") == 0) {

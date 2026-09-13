@@ -236,11 +236,15 @@ than the reference renders it -- 43/255 against 52/255 on a white icon at the
 same draw at 0% and 100% lands on the right values, so the gap is somewhere in
 how the blend between them resolves; it has not been run to ground yet.
 
-Known to differ: the attributes on the ability screen include what the
-character is wearing. The original only folds equipment into Krin.StatSets0
-when the inventory frame runs updateEquip(), so a player who opens the ability
-screen before ever opening the character sheet sees the numbers without their
-gear. Both screens here read the same totals.
+* The bonus a character carries (Krin.StatSetsN, PerSetsN, DefSetsN) is a
+  running total, not something worked out from what is worn: an item only
+  enters it by passing through an equipment slot. The gear the story starts
+  Sonny in is worn without ever having done so, so it contributes nothing
+  until he takes it off and puts it back on -- which is why a new Sonny has
+  22 strength and not 25. The respec is the only thing that rebuilds the
+  total from what is worn.
+* It never goes stale where it would matter: LOADBATTLESCENE works the
+  fighting numbers out from the totals before every fight.
 
 ## Driving the game without a pointer
 

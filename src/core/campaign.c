@@ -40,6 +40,14 @@ void campaign_ally(const Campaign *c, int32_t member, Character *out)
         out->equip[i] = m->equip[i];
     for (int32_t i = 0; i < SONNY_STATS; i++)
         out->spent[i] = m->stat[i];
+    for (int32_t e = 0; e < SONNY_ELEMENTS; e++) {
+        out->per_sets[e] = m->per[e];
+        out->def_sets[e] = m->def_[e];
+    }
+    /* A party member's numbers are the table's outright: the bonuses stand
+       in for what they are wearing, so nothing is folded in on top. */
+    for (int32_t i = 0; i < SONNY_STATS; i++)
+        out->stat_sets[i] = m->stat[i];
 }
 
 void campaign_story_joins(Campaign *c)

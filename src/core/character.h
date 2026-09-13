@@ -44,6 +44,15 @@ typedef struct {
        spend is counted up, as the skill points are. */
     int32_t spent_stat_points;
 
+    /* Krin.StatSetsN, PerSetsN and DefSetsN: the bonus the character carries,
+       which the original keeps as a running total rather than working out
+       from what is worn. An item only ever adds to it by passing through an
+       equipment slot, so the gear the story starts Sonny in contributes
+       nothing until he takes it off and puts it back on. */
+    double  stat_sets[SONNY_STATS];
+    double  per_sets[SONNY_ELEMENTS];
+    double  def_sets[SONNY_ELEMENTS];
+
     /* The eight equipped abilities (Krin.moveMatrix). */
     int32_t move_matrix[SONNY_MOVE_SLOTS];
 } Character;
@@ -106,6 +115,14 @@ int32_t character_stat_points(const Character *c);
 int32_t character_skill_points(const Character *c);
 
 StatSets character_stat_sets(const Character *c);
+
+/* Add or take away what one item contributes, which is what an equipment
+   slot does as an item passes through it. */
+void character_apply_item(Character *c, const ItemDef *item, int adding);
+/* Work the running total out from what is worn, which only the respec does
+   -- and which is how a character built for a test gets the totals it would
+   have had if every piece had been put on by hand. */
+void character_rebuild_sets(Character *c);
 
 /* Derived stats, before the health multiplier battles apply. */
 typedef struct {
