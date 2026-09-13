@@ -86,6 +86,9 @@ MENU_INSTANCE = 'KRINMENU'
 POOL_ROW = 'talenter'
 # The zone scene, and the clip repeated on it as the fight markers.
 ZONE_INSTANCE = 'KrinScreen'
+# The world map, and the markers on it, one per zone.
+MAP_INSTANCE = 'krinMapper'
+MAP_MARKER = 'mb'
 # How far inside a screen's clips to look for buttons.
 BUTTON_DEPTH = 4
 MARKER_CHARACTER = 1207
@@ -850,6 +853,66 @@ def zone_screen(body, raw_dir, chrome, boxes):
             'labels': labels, 'markers': markers, 'buttons': buttons}
 
 
+def _map_part(raw_dir, at, name, info):
+    """One piece of the map clip, in stage coordinates."""
+    a, _, _, d, x, y = info['matrix']
+    entry = {'name': name, 'depth': info['depth'],
+             'character': info['character'],
+             'x': round(at[2] + at[0] * x, 3),
+             'y': round(at[3] + at[1] * y, 3),
+             'scale_x': round(at[0] * a, 6), 'scale_y': round(at[1] * d, 6)}
+    geom = sprite_geometry(raw_dir, info['character'])
+    if geom:
+        (entry['width'], entry['height'],
+         entry['origin_x'], entry['origin_y']) = geom
+    return entry
+
+
+def map_screen(body, raw_dir, chrome, texts, boxes):
+    """The world map: one picture with a marker per zone standing on it.
+
+    A marker is shown once the player has reached the zone it leads to, and
+    the map draws its own lines between the ones that are showing, so only
+    where each marker stands is needed here."""
+    placed = next((c for c in chrome if c['name'] == MAP_INSTANCE), None)
+    if not placed:
+        return None
+    at = (placed['scale_x'], placed['scale_y'], placed['x'], placed['y'])
+    frames = model_frames(body, placed['character'])
+    markers = []
+    if frames:
+        for name, info in sorted(frames[0].items(),
+                                 key=lambda kv: kv[1]['depth']):
+            if not name.startswith(MAP_MARKER) or not name[2:].isdigit():
+                continue
+            a, _, _, d, x, y = info['matrix']
+            entry = {'zone': int(name[len(MAP_MARKER):]),
+                     'character': info['character'],
+                     'x': round(at[2] + at[0] * x, 3),
+                     'y': round(at[3] + at[1] * y, 3)}
+            # The box the marker answers in is the button inside it.
+            for button in buttons_in(body, info['character'], boxes,
+                                     (at[0] * a, at[1] * d,
+                                      at[2] + at[0] * x, at[3] + at[1] * y)):
+                entry['width'] = button['width']
+                entry['height'] = button['height']
+                entry['button'] = button['character']
+                break
+            markers.append(entry)
+    return {'x': placed['x'], 'y': placed['y'],
+            'scale_x': placed['scale_x'], 'scale_y': placed['scale_y'],
+            'character': placed['character'],
+            # The clip's own children and no further: each is exported whole
+            # and already carries whatever is inside it, so recursing would
+            # draw the map a second time over its own frame.
+            'parts': [_map_part(raw_dir, at, name, info)
+                      for name, info in sorted((frames[0] if frames
+                                                else {}).items(),
+                                               key=lambda kv: kv[1]['depth'])
+                      if not name.startswith(MAP_MARKER)],
+            'markers': sorted(markers, key=lambda m: m['zone'])}
+
+
 def speech_box(body, raw_dir, chrome, texts, fonts):
     """The box that carries what a character is saying.
 
@@ -1177,6 +1240,9 @@ def main(path, raw_dir=None):
                'menus': menus,
                'button_art': art,
                'talent_row': row,
+               'map_screen': map_screen(body, raw_dir,
+                                        [e for group in screens.values()
+                                         for e in group], texts, boxes),
                'talents': talents, 'menu': menu_screens}, sys.stdout, indent=1)
     print()
 

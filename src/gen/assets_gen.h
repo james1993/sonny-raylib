@@ -254,6 +254,19 @@ extern const ZoneMarker SONNY_ZONE_MARKERS[];
 extern const int SONNY_ZONE_MARKER_COUNT;
 /* The `index`-th marker on `zone`, in the order the frame stacks them. */
 const ZoneMarker *zone_marker(const char *zone, int32_t index);
+/* One zone's marker on the world map, in stage coordinates, with the box it
+   answers in. The map shows a marker once the player has reached the zone it
+   leads to, and draws its own lines between the ones that show. */
+typedef struct {
+    int32_t zone;
+    int32_t character;
+    float   x, y;
+    float   width, height;
+} MapMarker;
+
+extern const MapMarker SONNY_MAP_MARKERS[];
+extern const int SONNY_MAP_MARKER_COUNT;
+
 /* Where the scene is placed, and which frame label each zone uses. */
 extern const StageLayer SONNY_ZONE_SCREEN;
 extern const char *const SONNY_ZONE_LABELS[];

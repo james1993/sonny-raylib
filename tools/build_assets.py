@@ -325,6 +325,13 @@ def collect_names(data_dir):
     for part in ((stage.get('talent_row') or {}).get('parts') or []):
         if part.get('width') and not part.get('frames'):
             want['chrome'].add('#%d' % part['character'])
+    # The world map and the marker that stands on it per zone.
+    world = stage.get('map_screen') or {}
+    for part in (world.get('parts') or []):
+        if part.get('width') and not part.get('frames'):
+            want['chrome'].add('#%d' % part['character'])
+    for marker in (world.get('markers') or []):
+        want['chrome'].add('#%d' % marker['character'])
     # The store's picture. Its clip has a frame per store and the screen
     # points it at shopId + 1, so every store's frame is wanted.
     picture = next((p for p in ((stage.get('menus') or {}).get('shop') or {})

@@ -2196,6 +2196,48 @@
     ]
    ]
   },
+  "#1720": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1720.png"
+   ],
+   "bounds": [
+    -31.25,
+    -20.0,
+    733.6,
+    487.5
+   ],
+   "offsets": [
+    [
+     31.25,
+     20.0
+    ]
+   ]
+  },
+  "#1722": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1722.png"
+   ],
+   "offsets": [
+    [
+     0.0,
+     0.0
+    ]
+   ]
+  },
+  "#1725": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1725.png"
+   ],
+   "offsets": [
+    [
+     15.5,
+     15.5
+    ]
+   ]
+  },
   "#1726": {
    "category": "chrome",
    "frames": [

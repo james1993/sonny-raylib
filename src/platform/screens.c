@@ -238,94 +238,108 @@ void screen_zone_draw(Game *g, Vector2 mouse)
 
 /* ----------------------------------------------------------- world map */
 
-/* A zone is on the map once progress has reached the battle before its first
-   -- the original's `progressLevelOn >= progressArray[i][0] - 1`. */
+/* The map, which the root timeline stops on its own frame for: one picture
+   with a marker standing on each zone. A marker shows once the player has
+   reached the zone it leads to -- the original's
+   `progressLevelOn >= progressArray[i][0] - 1`, which is the battle before
+   that zone's first -- and the map draws its own lines between the ones
+   showing. Clicking one travels there. */
+#define MAP_SCREEN "overMap"
+#define MAP_CLIP   "krinMapper"
+
+/* The line the map draws between one marker and the one before it: two wide,
+   black, and nearly transparent. */
+#define MAP_LINE_WIDTH 2.0f
+#define MAP_LINE_ALPHA 77          /* lineStyle(2, 0, 30) */
+
 static int zone_unlocked(const Campaign *c, const ZoneDef *zone)
 {
     return c->progress_battle >= zone->first_battle - 1;
 }
 
-static Rectangle zone_rect(int i)
+/* Whether this marker's zone has been reached. The marker's index is the
+   zone's, which is how the frame's own loop pairs them up. */
+static int marker_unlocked(const Campaign *c, const MapMarker *m)
 {
-    return (Rectangle){90 + i * 170, 240, 150, 96};
+    return m->zone < SONNY_ZONE_COUNT
+        && zone_unlocked(c, &SONNY_ZONES[m->zone]);
+}
+
+static Rectangle marker_rect(const MapMarker *m)
+{
+    return (Rectangle){m->x - m->width / 2, m->y - m->height / 2,
+                       m->width, m->height};
 }
 
 void screen_map_update(Game *g, Vector2 mouse)
 {
     g->hovered_item = -1;
-    for (int i = 0; i < SONNY_ZONE_COUNT; i++) {
-        const ZoneDef *zone = &SONNY_ZONES[i];
-        if (!zone_unlocked(&g->campaign, zone))
+    for (int i = 0; i < SONNY_MAP_MARKER_COUNT; i++) {
+        const MapMarker *m = &SONNY_MAP_MARKERS[i];
+        if (!marker_unlocked(&g->campaign, m) || !hit(marker_rect(m), mouse))
             continue;
-        Rectangle r = zone_rect(i);
-        if (hit(r, mouse))
-            g->hovered_item = i;
-        if (!hit(r, mouse) || !IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
-            continue;
+        g->hovered_item = m->zone;
+        if (!IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+            break;
         /* Travelling changes where you are, not how far you have got. */
-        g->campaign.zone = zone->zone;
+        g->campaign.zone = m->zone;
         audio_play("Click3pickup");
-        game_notice(g, "%s", zone->name);
         g->screen = SCREEN_ZONE;
         return;
     }
-    if (menu_close_pressed(mouse))
-        g->screen = SCREEN_ZONE;
+    /* There is no way off the map but to pick somewhere: the original's
+       frame has no close of its own, and the first zone's marker is always
+       showing. */
 }
 
 void screen_map_draw(Game *g, Vector2 mouse)
 {
-    ClearBackground((Color){18, 20, 26, 255});
-    ui_text(lang_text("SYSTEM", 27), 22, 16, 20, (Color){210, 215, 225, 255});
+    (void)mouse;
+    ClearBackground(BLACK);
+    /* The map is a black backing with the picture over it. The picture's
+       export carries a margin its filter spread into, which the original
+       never shows, so it is kept inside the backing. */
+    const ClipPart *backing = clip_part(MAP_SCREEN, MAP_CLIP, 0);
+    if (backing) {
+        Rectangle box = placed_rect(backing->x, backing->y, backing->scale_x,
+                                    backing->scale_y, backing->width,
+                                    backing->height, backing->origin_x,
+                                    backing->origin_y);
+        BeginScissorMode((int)box.x, (int)box.y, (int)box.width,
+                         (int)box.height);
+    }
+    draw_clip_parts(MAP_SCREEN, MAP_CLIP, NO_OFFSET, NULL, WHITE);
+    if (backing)
+        EndScissorMode();
 
-    /* The original draws a line from each unlocked zone back to the one
-       before it, so the route reads as a path. */
-    for (int i = 1; i < SONNY_ZONE_COUNT; i++) {
-        if (!zone_unlocked(&g->campaign, &SONNY_ZONES[i]))
+    /* The route: a line from each marker showing back to the one before it. */
+    for (int i = 1; i < SONNY_MAP_MARKER_COUNT; i++) {
+        const MapMarker *m = &SONNY_MAP_MARKERS[i];
+        if (!marker_unlocked(&g->campaign, m))
             continue;
-        Rectangle a = zone_rect(i - 1);
-        Rectangle b = zone_rect(i);
-        DrawLineEx((Vector2){a.x + a.width, a.y + a.height / 2},
-                   (Vector2){b.x, b.y + b.height / 2}, 2.0f,
-                   (Color){90, 94, 110, 255});
+        const MapMarker *back = &SONNY_MAP_MARKERS[i - 1];
+        DrawLineEx((Vector2){m->x, m->y}, (Vector2){back->x, back->y},
+                   MAP_LINE_WIDTH, (Color){0, 0, 0, MAP_LINE_ALPHA});
     }
 
-    for (int i = 0; i < SONNY_ZONE_COUNT; i++) {
-        const ZoneDef *zone = &SONNY_ZONES[i];
-        Rectangle r = zone_rect(i);
-        if (!zone_unlocked(&g->campaign, zone)) {
-            DrawRectangleLinesEx(r, 1.0f, (Color){44, 46, 54, 255});
+    for (int i = 0; i < SONNY_MAP_MARKER_COUNT; i++) {
+        const MapMarker *m = &SONNY_MAP_MARKERS[i];
+        if (!marker_unlocked(&g->campaign, m))
             continue;
-        }
-        int here = (g->campaign.zone == zone->zone);
-        DrawRectangleRec(r, (Color){28, 31, 39, 255});
-        /* Each zone shows its own backdrop. */
-        const BattleDef *def = battle_def_by_id(zone->first_battle);
-        if (def && def->zone_bg[0]) {
-            BeginScissorMode((int)r.x, (int)r.y, (int)r.width, (int)r.height);
-            asset_draw_cover(def->zone_bg, 1, r, (Color){255, 255, 255, 150});
-            EndScissorMode();
-        }
-        DrawRectangleLinesEx(r, (here || hit(r, mouse)) ? 2.0f : 1.0f,
-                             here ? (Color){235, 200, 90, 255}
-                                  : (Color){90, 94, 110, 255});
-        ui_text(TextFormat("%s%d", lang_text("SYSTEM", 9), zone->zone + 1),
-                 (int)r.x + 8, (int)r.y + 8, 10, (Color){235, 200, 90, 255});
-        ui_text(zone->name, (int)r.x + 8, (int)(r.y + r.height - 26), 10,
-                 RAYWHITE);
-        ui_text(zone->subtitle, (int)r.x + 8, (int)(r.y + r.height - 14), 10,
-                 (Color){170, 175, 185, 255});
+        asset_draw_placed(TextFormat("#%d", m->character), 1,
+                          (Vector2){m->x, m->y}, 1.0f, WHITE);
     }
 
+    /* What the pointer is on: the tooltip the marker's own handler fills,
+       which is the zone's name over what the place is called. */
     if (g->hovered_item >= 0 && g->hovered_item < SONNY_ZONE_COUNT) {
-        const ZoneDef *zone = &SONNY_ZONES[g->hovered_item];
-        ui_text(TextFormat("%s%d to %s%d", lang_text("SYSTEM", 10),
-                            zone->first_battle - 1, lang_text("SYSTEM", 10),
-                            zone->last_battle - 1),
-                 90, 370, 10, (Color){170, 175, 185, 255});
+        Rectangle box = {mouse.x + 12, mouse.y + 12, 200, 40};
+        if (box.x + box.width > STAGE_W)
+            box.x = STAGE_W - box.width;
+        draw_panel(box, lang_text("ZONES", g->hovered_item));
+        ui_text(lang_text("ZONES2", g->hovered_item), (int)box.x + 8,
+                (int)box.y + 24, 10, (Color){200, 205, 215, 255});
     }
-    draw_button((Rectangle){STAGE_W - 120, STAGE_H - 44, 100, 28}, "Back",
-                mouse, 1);
 }
 
 /* A slot's own empty square, which the menu screens share. */

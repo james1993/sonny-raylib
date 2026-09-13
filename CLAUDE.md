@@ -151,6 +151,11 @@ What the original settled that guesswork had got wrong:
   it cannot be taken from the zone.
 * The store's picture is a clip with a frame per store, pointed at shopId + 1
   by number rather than by name.
+* The world map is a picture with a marker per zone, shown once progress has
+  reached the battle before that zone's first, with the route drawn between
+  the ones showing at run time. There is no way off it but to pick somewhere.
+* The map picture's export carries a margin its filter spread into, which the
+  original never shows; the black backing under it is its real extent.
 
 * The attribute swatches go grey the moment the last point is spent, and are
   coloured again the next time the screen opens -- the menu clip goes back to

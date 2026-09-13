@@ -266,6 +266,19 @@ extern const ZoneMarker SONNY_ZONE_MARKERS[];
 extern const int SONNY_ZONE_MARKER_COUNT;
 /* The `index`-th marker on `zone`, in the order the frame stacks them. */
 const ZoneMarker *zone_marker(const char *zone, int32_t index);
+/* One zone's marker on the world map, in stage coordinates, with the box it
+   answers in. The map shows a marker once the player has reached the zone it
+   leads to, and draws its own lines between the ones that show. */
+typedef struct {
+    int32_t zone;
+    int32_t character;
+    float   x, y;
+    float   width, height;
+} MapMarker;
+
+extern const MapMarker SONNY_MAP_MARKERS[];
+extern const int SONNY_MAP_MARKER_COUNT;
+
 /* Where the scene is placed, and which frame label each zone uses. */
 extern const StageLayer SONNY_ZONE_SCREEN;
 extern const char *const SONNY_ZONE_LABELS[];
@@ -592,10 +605,14 @@ const StageChrome *stage_chrome(const char *screen, const char *name)
                   for part in menu['parts']]
     # The pool row is attached rather than placed, so its pieces stay in the
     # row's own coordinates and the screen offsets them per row.
+    map_parts = [dict(part, screen='overMap', owner='krinMapper')
+                 for part in ((stage_json.get('map_screen') or {})
+                              .get('parts') or [])]
     row_parts = [dict(part, screen='menu', owner='talenter')
                  for part in ((stage_json.get('talent_row') or {})
                               .get('parts') or [])]
-    for part in (stage_json.get('clip_parts') or []) + menu_parts + row_parts:
+    for part in ((stage_json.get('clip_parts') or []) + menu_parts + row_parts
+                 + map_parts):
         lines.append('    { %s, %s, %s, %d, %d, %d, %s, %s, %s, %s, %s, %s, %s, %s },'
                      % (c_string(part['screen']), c_string(part['owner']),
                         c_string(part['name']),
@@ -808,6 +825,20 @@ const ButtonPiece *button_piece(int32_t button, int32_t index)
             return &SONNY_BUTTON_ART[i];
     return NULL;
 }""")
+
+    world = stage_json.get('map_screen') or {}
+    lines.append('')
+    lines.append('const MapMarker SONNY_MAP_MARKERS[] = {')
+    for marker in (world.get('markers') or []):
+        lines.append('    { %d, %d, %s, %s, %s, %s },'
+                     % (marker['zone'], marker['character'],
+                        c_float(marker['x']), c_float(marker['y']),
+                        c_float(marker.get('width') or 0),
+                        c_float(marker.get('height') or 0)))
+    lines.append('};')
+    lines.append('const int SONNY_MAP_MARKER_COUNT = '
+                 '(int)(sizeof(SONNY_MAP_MARKERS) / '
+                 'sizeof(SONNY_MAP_MARKERS[0]));')
 
     zone_clip = stage_json.get('zone_screen') or {}
     lines.append('')

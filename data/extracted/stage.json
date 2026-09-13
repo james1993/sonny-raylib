@@ -26779,6 +26779,92 @@
    }
   ]
  },
+ "map_screen": {
+  "x": 39.55,
+  "y": 53.5,
+  "scale_x": 1.0,
+  "scale_y": 1.0,
+  "character": 1726,
+  "parts": [
+   {
+    "name": "@1",
+    "depth": 1,
+    "character": 963,
+    "x": 39.55,
+    "y": 53.5,
+    "scale_x": 1.0,
+    "scale_y": 1.0,
+    "width": 719.7,
+    "height": 457.0,
+    "origin_x": -0.45,
+    "origin_y": -0.5
+   },
+   {
+    "name": "@5",
+    "depth": 5,
+    "character": 1720,
+    "x": 39.55,
+    "y": 53.5,
+    "scale_x": 1.0,
+    "scale_y": 1.0,
+    "width": 764.85,
+    "height": 507.5,
+    "origin_x": 31.25,
+    "origin_y": 20.0
+   },
+   {
+    "name": "lineMC",
+    "depth": 7,
+    "character": 1722,
+    "x": 39.55,
+    "y": 53.5,
+    "scale_x": 1.0,
+    "scale_y": 1.0,
+    "width": 720.15,
+    "height": 458.1,
+    "origin_x": 0.0,
+    "origin_y": 0.0
+   }
+  ],
+  "markers": [
+   {
+    "zone": 0,
+    "character": 1725,
+    "x": 136.55,
+    "y": 429.5,
+    "width": 30.0,
+    "height": 30.0,
+    "button": 1724
+   },
+   {
+    "zone": 1,
+    "character": 1725,
+    "x": 376.65,
+    "y": 422.25,
+    "width": 30.0,
+    "height": 30.0,
+    "button": 1724
+   },
+   {
+    "zone": 2,
+    "character": 1725,
+    "x": 479.15,
+    "y": 165.0,
+    "width": 30.0,
+    "height": 30.0,
+    "button": 1724
+   },
+   {
+    "zone": 3,
+    "character": 1725,
+    "x": 716.15,
+    "y": 426.05,
+    "width": 30.0,
+    "height": 30.0,
+    "button": 1724
+   }
+  ]
+ },
  "talents": {
   "4": {
    "x": 138.8,
