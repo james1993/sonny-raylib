@@ -3,6 +3,13 @@
 `sonny-linux-x86_64` is the game built for 64-bit Linux. raylib is linked
 into it; what it needs from the system is glibc, X11 and OpenGL.
 
+The stage is the original's own 800 by 575 and every coordinate in the game is
+in it, but that is an authored size: the window is resizable and the stage is
+scaled into it, letterboxed to keep its shape, exactly as Flash scaled the
+stage to whatever the player was given. It opens at the largest whole multiple
+that leaves room on your monitor -- two or three up on most screens. **F11**,
+or alt-enter, goes full screen.
+
 Run it from the top of the repository, because it loads `assets/` relative to
 the working directory:
 

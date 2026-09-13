@@ -36,7 +36,31 @@ int main(int argc, char **argv)
     uint64_t seed = (argc > 1) ? strtoull(argv[1], NULL, 10) : 20260912;
 
     SetTraceLogLevel(LOG_WARNING);
+    /* The stage is the original's own 800 by 575 and every coordinate in the
+       game is in it, but that is an authored size, not a window size: Flash
+       scales the stage to whatever the player is given, letterboxing to keep
+       the shape. So the window is resizable and the stage is scaled into it,
+       and it opens at the largest whole multiple that leaves room on the
+       monitor -- a window of exactly 800 by 575 is uncomfortably small on
+       anything modern. */
+    SetConfigFlags(FLAG_WINDOW_RESIZABLE | FLAG_VSYNC_HINT);
     InitWindow(STAGE_W, STAGE_H, "Sonny");
+    SetWindowMinSize(STAGE_W / 2, STAGE_H / 2);
+    {
+        int monitor = GetCurrentMonitor();
+        int room_w = GetMonitorWidth(monitor);
+        int room_h = GetMonitorHeight(monitor);
+        int fit = 1;
+        /* Leave a tenth of the screen for the desktop's own furniture. */
+        while ((fit + 1) * STAGE_W <= room_w * 9 / 10
+               && (fit + 1) * STAGE_H <= room_h * 9 / 10 && fit < 4)
+            fit++;
+        if (fit > 1) {
+            SetWindowSize(STAGE_W * fit, STAGE_H * fit);
+            SetWindowPosition((room_w - STAGE_W * fit) / 2,
+                              (room_h - STAGE_H * fit) / 2);
+        }
+    }
     /* The right-hand team's containers carry a negative horizontal scale --
        that is how the original faces them the other way -- and a mirrored
        quad winds the opposite way, so the default backface culling throws it
@@ -121,6 +145,12 @@ int main(int argc, char **argv)
     }
 
     while (!WindowShouldClose()) {
+        /* Full screen, the way anything else does it. */
+        if (IsKeyPressed(KEY_F11)
+            || ((IsKeyDown(KEY_LEFT_ALT) || IsKeyDown(KEY_RIGHT_ALT))
+                && IsKeyPressed(KEY_ENTER)))
+            ToggleBorderlessWindowed();
+
         Vector2 mouse = stage_mouse();
         if (parked) {
             const char *y = strchr(parked, ':');
@@ -243,14 +273,20 @@ int main(int argc, char **argv)
         EndBlendMode();
         EndTextureMode();
 
-        float scale = (float)GetScreenHeight() / STAGE_H;
-        float sw = STAGE_W * scale;
+        /* Fit the stage into the window and let the rest be black on
+           whichever side is over. A whole multiple keeps every pixel square,
+           which is what the text was aligned to; anything else is smoothed
+           instead. */
+        StageFit fit = stage_fit(GetScreenWidth(), GetScreenHeight());
+        int whole = (fit.scale >= 1.0f && fit.scale == (float)(int)fit.scale);
+        SetTextureFilter(stage.texture, whole ? TEXTURE_FILTER_POINT
+                                              : TEXTURE_FILTER_BILINEAR);
         BeginDrawing();
         ClearBackground(BLACK);
         DrawTexturePro(stage.texture,
                        (Rectangle){0, 0, (float)STAGE_W, -(float)STAGE_H},
-                       (Rectangle){(GetScreenWidth() - sw) / 2.0f, 0, sw,
-                                   (float)GetScreenHeight()},
+                       (Rectangle){fit.x, fit.y, STAGE_W * fit.scale,
+                                   STAGE_H * fit.scale},
                        (Vector2){0, 0}, 0.0f, WHITE);
         EndDrawing();
 

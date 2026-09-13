@@ -12,9 +12,11 @@
 #include "../gen/assets_gen.h"
 #include "../core/campaign.h"
 #include "../core/save.h"
+#include "../core/stagefit.h"
 
-#define STAGE_W   800
-#define STAGE_H   575
+/* The stage the original authored everything in, and how fast it runs. */
+#define STAGE_W   SONNY_STAGE_W
+#define STAGE_H   SONNY_STAGE_H
 #define STAGE_FPS 30
 
 #define PLAYER_SLOT   1

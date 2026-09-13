@@ -475,12 +475,13 @@ void game_notice(Game *g, const char *fmt, ...)
    applies to the fixed 800x575 stage. */
 Vector2 stage_mouse(void)
 {
+    /* Back out of the window and into the stage, undoing the same fit the
+       frame is drawn with -- whichever side the letterbox falls on. */
     Vector2 m = GetMousePosition();
-    float scale = (float)GetScreenHeight() / STAGE_H;
-    if (scale <= 0)
+    StageFit fit = stage_fit(GetScreenWidth(), GetScreenHeight());
+    if (fit.scale <= 0)
         return m;
-    return (Vector2){(m.x - (GetScreenWidth() - STAGE_W * scale) / 2) / scale,
-                     m.y / scale};
+    return (Vector2){(m.x - fit.x) / fit.scale, (m.y - fit.y) / fit.scale};
 }
 
 /* A click the harness makes rather than the pointer, so a run through the

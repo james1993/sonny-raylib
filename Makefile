@@ -4,7 +4,7 @@ RAYLIB_LIBS = -lraylib -lm -lpthread -ldl -lrt -lX11
 
 CORE_SRC = src/core/formula.c src/core/rng.c src/core/unit.c \
            src/core/buffs.c src/core/battle.c src/core/character.c \
-           src/core/campaign.c src/core/save.c \
+           src/core/campaign.c src/core/save.c src/core/stagefit.c \
            src/gen/gamedata.c
 BUILD    = build
 
@@ -36,6 +36,7 @@ test: $(BUILD)
 	$(CC) $(CFLAGS) -Werror -o $(BUILD)/test_talents tests/test_talents.c $(CORE_SRC) -lm
 	$(CC) $(CFLAGS) -Werror -o $(BUILD)/test_campaign tests/test_campaign.c $(CORE_SRC) -lm
 	$(CC) $(CFLAGS) -Werror -o $(BUILD)/test_party tests/test_party.c $(CORE_SRC) -lm
+	$(CC) $(CFLAGS) -Werror -o $(BUILD)/test_window tests/test_window.c $(CORE_SRC) -lm
 	$(CC) $(CFLAGS) -Werror -o $(BUILD)/test_save tests/test_save.c $(CORE_SRC) -lm
 	$(BUILD)/test_formula tests/vectors_formula.txt
 	$(BUILD)/test_rng
@@ -46,6 +47,7 @@ test: $(BUILD)
 	$(BUILD)/test_talents
 	$(BUILD)/test_campaign
 	$(BUILD)/test_party
+	$(BUILD)/test_window
 	$(BUILD)/test_save
 
 # Regenerate the C data tables from the extracted JSON.

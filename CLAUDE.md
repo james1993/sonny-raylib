@@ -254,6 +254,17 @@ how the blend between them resolves; it has not been run to ground yet.
 * It never goes stale where it would matter: LOADBATTLESCENE works the
   fighting numbers out from the totals before every fight.
 
+## The stage and the window
+
+The stage is 800 by 575 -- the SWF's own header -- and every coordinate in the
+game is in it. That is an authored size, not a window size: Flash scales the
+stage to whatever the player is given and letterboxes to keep its shape, so
+the window here is resizable and `stage_fit` puts the stage in it. Drawing and
+the pointer both go through that one function, which is what keeps a click
+landing where it looks like it landed; `tests/test_window.c` checks the round
+trip at nine window shapes. A whole multiple is drawn with point filtering to
+keep pixels square, anything else with bilinear.
+
 ## Driving the game without a pointer
 
 `SONNY_CLICKS="frame:x:y,..."` presses at a stage coordinate on the frame
