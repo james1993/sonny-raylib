@@ -67,8 +67,11 @@ int main(int argc, char **argv)
             game.screen = SCREEN_TALENTS;
         else if (strcmp(want_screen, "inventory") == 0)
             game.screen = SCREEN_INVENTORY;
-        else if (strcmp(want_screen, "shop") == 0)
+        else if (strcmp(want_screen, "shop") == 0) {
+            /* The store the first zone's marker opens. */
+            game.shop_button = 1212;
             game.screen = SCREEN_SHOP;
+        }
         else if (strcmp(want_screen, "map") == 0)
             game.screen = SCREEN_MAP;
         else if (strcmp(want_screen, "victory") == 0)

@@ -317,6 +317,9 @@ def gen_battles(battles):
     return '\n'.join(lines)
 
 
+SHOP_SLOTS = 15
+
+
 def gen_zones(zones):
     lines = ['const ZoneDef SONNY_ZONES[] = {']
     for z in zones:
@@ -338,6 +341,31 @@ def gen_zones(zones):
     lines.append('};')
     lines.append('const int SONNY_ZONE_COUNT = '
                  '(int)(sizeof(SONNY_ZONES) / sizeof(SONNY_ZONES[0]));')
+    return '\n'.join(lines)
+
+
+def gen_shops(shops):
+    """The stores, exactly as krinSetShop stocks them, and which button on a
+    zone's scene opens which one."""
+    stock = shops.get('stock') or {}
+    buttons = shops.get('buttons') or {}
+    lines = ['const ShopDef SONNY_SHOPS[] = {']
+    for key in sorted(stock, key=int):
+        items = list(stock[key])[:SHOP_SLOTS]
+        items += [0] * (SHOP_SLOTS - len(items))
+        lines.append('    { .id = %s, .item = { %s } },'
+                     % (key, ', '.join(str(i) for i in items)))
+    lines.append('};')
+    lines.append('const int SONNY_SHOP_COUNT = '
+                 '(int)(sizeof(SONNY_SHOPS) / sizeof(SONNY_SHOPS[0]));')
+    lines.append('')
+    lines.append('const ShopButton SONNY_SHOP_BUTTONS[] = {')
+    for key in sorted(buttons, key=int):
+        lines.append('    { %s, %d },' % (key, buttons[key]))
+    lines.append('};')
+    lines.append('const int SONNY_SHOP_BUTTON_COUNT = '
+                 '(int)(sizeof(SONNY_SHOP_BUTTONS) / '
+                 'sizeof(SONNY_SHOP_BUTTONS[0]));')
     return '\n'.join(lines)
 
 
@@ -632,6 +660,30 @@ extern const int SONNY_ELEMENT_DEF_COUNT;
 extern const ZoneDef SONNY_ZONES[];
 extern const int SONNY_ZONE_COUNT;
 
+/* A store's stock. Every store offers a fixed list of item ids, which is what
+   krinSetShop sets Krin.dropArray to; a zero is an empty slot, and the screen
+   hides it. */
+#define SONNY_SHOP_SLOTS 15
+typedef struct {
+    int32_t id;
+    int32_t item[SONNY_SHOP_SLOTS];
+} ShopDef;
+
+/* Which store a marker on a zone's scene opens. A marker is a button, and the
+   shopId its handler sets is the only thing that says which store it is. */
+typedef struct {
+    int32_t button;       /* the button's own character id */
+    int32_t shop;
+} ShopButton;
+
+extern const ShopDef SONNY_SHOPS[];
+extern const int SONNY_SHOP_COUNT;
+extern const ShopButton SONNY_SHOP_BUTTONS[];
+extern const int SONNY_SHOP_BUTTON_COUNT;
+/* The store with this id, and the store a marker's button opens. */
+const ShopDef *shop_by_id(int32_t id);
+const ShopDef *shop_for_button(int32_t button);
+
 /* Lookups by the original's own ids/keys. NULL when absent.
  *
  * Prefer ids: two template names repeat ("Templar" is both the player class
@@ -650,6 +702,22 @@ const ZoneDef *zone_of_battle(int32_t battle_id);
 '''
 
 LOOKUPS = '''
+const ShopDef *shop_by_id(int32_t id)
+{
+    for (int i = 0; i < SONNY_SHOP_COUNT; i++)
+        if (SONNY_SHOPS[i].id == id)
+            return &SONNY_SHOPS[i];
+    return NULL;
+}
+
+const ShopDef *shop_for_button(int32_t button)
+{
+    for (int i = 0; i < SONNY_SHOP_BUTTON_COUNT; i++)
+        if (SONNY_SHOP_BUTTONS[i].button == button)
+            return shop_by_id(SONNY_SHOP_BUTTONS[i].shop);
+    return NULL;
+}
+
 const AbilityDef *ability_by_id(int32_t id)
 {
     for (int i = 0; i < SONNY_ABILITY_COUNT; i++)
@@ -746,6 +814,7 @@ def main():
         fh.write(gen_talents(load('talents')) + '\n\n')
         fh.write(gen_battles(load('battles')) + '\n\n')
         fh.write(gen_zones(load('zones')) + '\n\n')
+        fh.write(gen_shops(load('shops')) + '\n\n')
         fh.write(gen_elements(load('elements')) + '\n\n')
         fh.write(gen_lang(load('lang')) + '\n')
         fh.write(LOOKUPS)

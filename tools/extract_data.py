@@ -461,6 +461,46 @@ def extract_tables(text):
     return moves, units, items, buffs
 
 
+SHOP_STOCK_RE = re.compile(
+    r'if\(id == (\d+)\)\s*\{\s*Krin\.dropArray = \[([^\]]*)\];')
+SHOP_BUTTON_RE = re.compile(r'_root\.Krin\.shopId = (\d+);')
+
+
+def extract_shops(text):
+    """What each store has for sale, from krinSetShop's own branches."""
+    out = {}
+    for match in SHOP_STOCK_RE.finditer(text):
+        out[int(match.group(1))] = [int(v) for v in
+                                    match.group(2).replace(' ', '').split(',')]
+    return out
+
+
+def extract_shop_buttons(scripts_dir):
+    """Which store each marker opens, by the button's own character id.
+
+    A zone's store is a button on the zone scene, and the only thing that says
+    which store it is, is the shopId its handler sets."""
+    out = {}
+    for name in sorted(os.listdir(scripts_dir)):
+        if not name.startswith('DefineButton2_'):
+            continue
+        character = name.split('_', 1)[1]
+        if not character.isdigit():
+            continue
+        folder = os.path.join(scripts_dir, name)
+        if not os.path.isdir(folder):
+            continue
+        for handler in sorted(os.listdir(folder)):
+            if not handler.endswith('.as'):
+                continue
+            body = open(os.path.join(folder, handler), encoding='utf-8',
+                        errors='replace').read()
+            found = SHOP_BUTTON_RE.search(body)
+            if found:
+                out[int(character)] = int(found.group(1))
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('scripts_dir', help='ffdec script export dir (…/scripts)')
@@ -487,6 +527,8 @@ def main():
         doll = extract_doll(open(doll_as, encoding='utf-8',
                                  errors='replace').read())
     text = open(data_as, encoding='utf-8', errors='replace').read()
+    shops = {'stock': extract_shops(text),
+             'buttons': extract_shop_buttons(args.scripts_dir)}
     moves, units, items, buffs = extract_tables(text)
     battles = extract_battles(text)
 
@@ -572,7 +614,8 @@ def main():
                           ('units', unit_list), ('items', item_list),
                           ('buffs', buff_list), ('talents', talent_payload),
                           ('battles', battle_list), ('zones', zone_list),
-                          ('elements', elements), ('doll', doll)):
+                          ('elements', elements), ('doll', doll),
+                          ('shops', shops)):
         path = os.path.join(args.out, name + '.json')
         with open(path, 'w', encoding='utf-8') as fh:
             json.dump(payload, fh, indent=1, ensure_ascii=False)

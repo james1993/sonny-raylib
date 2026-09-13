@@ -101,7 +101,6 @@ static const TextField *win_field(const char *name)
    which is the only thing that tells them apart, since a button is never
    part of the art. These are the ids the original's own handlers hang off. */
 #define HUB_BUTTON_PROGRESS  1211   /* the marker that starts the next fight */
-#define HUB_BUTTON_SHOP      1212   /* the marker that opens the store */
 #define HUB_BUTTON_INVENTORY 1252
 #define HUB_BUTTON_SKILLS    1253
 #define HUB_BUTTON_SAVE      1254
@@ -116,14 +115,46 @@ static int hub_pressed(int32_t character, Vector2 mouse)
                                                      b->height});
 }
 
+/* The marker on this zone's scene that opens a store, if it has one. A zone
+   can carry more than one; this is the `index`-th. */
+static const StageButton *zone_store(const Campaign *c, int32_t index)
+{
+    const ZoneDef *zone = campaign_zone(c);
+    if (!zone || zone->zone >= SONNY_ZONE_LABEL_COUNT)
+        return NULL;
+    const char *label = SONNY_ZONE_LABELS[zone->zone];
+    for (int i = 0; i < SONNY_BUTTON_COUNT; i++) {
+        const StageButton *b = &SONNY_BUTTONS[i];
+        if (strcmp(b->screen, label) != 0
+            || !shop_for_button(b->character))
+            continue;
+        if (index-- == 0)
+            return b;
+    }
+    return NULL;
+}
+
 void screen_zone_update(Game *g, Vector2 mouse)
 {
+    /* The store. Which one it is comes from the marker's own button, so the
+       screen remembers which was pressed. */
+    for (int32_t i = 0; ; i++) {
+        const StageButton *b = zone_store(&g->campaign, i);
+        if (!b)
+            break;
+        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)
+            && CheckCollisionPointRec(mouse, (Rectangle){b->x, b->y, b->width,
+                                                         b->height})) {
+            audio_play("Click3pickup");
+            g->shop_button = b->character;
+            g->screen = SCREEN_SHOP;
+            return;
+        }
+    }
+
     if (hub_pressed(HUB_BUTTON_PROGRESS, mouse)) {
         audio_play("Click3pickup");
         battle_screen_start(g, g->campaign.progress_battle);
-    } else if (hub_pressed(HUB_BUTTON_SHOP, mouse)) {
-        audio_play("Click3pickup");
-        g->screen = SCREEN_SHOP;
     } else if (hub_pressed(HUB_BUTTON_INVENTORY, mouse)) {
         audio_play("Click3pickup");
         g->screen = SCREEN_INVENTORY;
@@ -966,105 +997,200 @@ void screen_inventory_draw(Game *g, Vector2 mouse)
 
 /* ---------------------------------------------------------------- shop */
 
-/* What the store offers: everything the character could wear at this level,
-   which is how the original stocks a zone's store from the item table. */
-static int32_t shop_stock(const Campaign *c, const ItemDef **out, int32_t max)
+/* The store, which the menu clip carries on its "shop" frame: a picture of
+   the place and what its keeper says on the left, the character and what they
+   are wearing in the middle with the stock under it, and the bag on the
+   right. The frame's own script (sprite 1503, frame 16) is what says where
+   the text comes from.
+
+   Which store it is comes from the marker that opened it: every zone's scene
+   has one, and the shopId its button sets picks both the stock and the line
+   the keeper says. */
+#define MENU_SHOP "shop"
+
+/* How many slots the store's grid has, and the bag's on this frame. */
+#define SHOP_STOCK_SLOTS SONNY_SHOP_SLOTS
+
+static const TextField *shop_field(const char *name)
 {
-    int32_t n = 0;
-    for (int i = 0; i < SONNY_ITEM_COUNT && n < max; i++) {
-        const ItemDef *item = &SONNY_ITEMS[i];
-        if (item->slot < 2 || item->price <= 0)
-            continue;
-        /* A couple of table entries have no name in the language file; the
-           original never shows those either. */
-        if (!item->name || !item->name[0])
-            continue;
-        if (item->level_req > c->player.level)
-            continue;
-        if (item->level_req + 4 < c->player.level)
-            continue;   /* long outgrown */
-        out[n++] = item;
-    }
-    return n;
+    return text_field_named(MENU_SCREEN, MENU_SHOP, name, 0);
 }
 
-static Rectangle stock_rect(int i)
+/* Where the store's picture goes, and which of its frames this store is. */
+static const ClipPart *shop_picture(void)
 {
-    return (Rectangle){70 + (i / 10) * 340, 110 + (i % 10) * 34, 320, 30};
+    for (int32_t i = 0; ; i++) {
+        const ClipPart *part = clip_part(MENU_SCREEN, MENU_SHOP, i);
+        if (!part)
+            return NULL;
+        if (part->frames > 0)
+            return part;
+    }
 }
 
-void screen_shop_update(Game *g, Vector2 mouse)
+static Rectangle shop_stock_rect(int32_t i)
 {
-    Campaign *c = &g->campaign;
-    const ItemDef *stock[20];
-    int32_t count = shop_stock(c, stock, 20);
-    g->hovered_item = -1;
+    return named_slot(MENU_SHOP, "dropSlot", i,
+                      (Rectangle){305 + (i % 5) * 38, 292 + (i / 5) * 38,
+                                  34, 34});
+}
 
-    for (int32_t i = 0; i < count; i++) {
-        Rectangle r = stock_rect(i);
-        if (hit(r, mouse))
-            g->hovered_item = i;
-        if (!hit(r, mouse) || !IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
-            continue;
+static Rectangle shop_bag_rect(int32_t i)
+{
+    return named_slot(MENU_SHOP, "itemSlot", i,
+                      (Rectangle){533 + (i % 6) * 38, 128 + (i / 6) * 38,
+                                  34, 34});
+}
 
-        if (c->euros < stock[i]->price) {
-            game_notice(g, "Not enough euros.");
-            break;
-        }
-        if (c->inventory_count >= (int32_t)(sizeof(c->inventory)
-                                            / sizeof(c->inventory[0]))) {
-            game_notice(g, "The bag is full.");
-            break;
-        }
-        c->euros -= stock[i]->price;
-        c->inventory[c->inventory_count++] = stock[i]->id;
-        audio_play("Click2putdown");
-        game_notice(g, "Bought %s.", stock[i]->name);
-        break;
-    }
-
-    if (menu_close_pressed(mouse))
-        g->screen = SCREEN_ZONE;
+static Rectangle shop_equip_rect(int32_t i)
+{
+    return named_slot(MENU_SHOP, "playerSlot", i,
+                      (Rectangle){301, 118 + i * 34, 34, 34});
 }
 
 void screen_shop_draw(Game *g, Vector2 mouse)
 {
     const Campaign *c = &g->campaign;
-    const ItemDef *stock[20];
-    int32_t count = shop_stock(c, stock, 20);
+    const ShopDef *shop = shop_for_button(g->shop_button);
 
-    ClearBackground((Color){18, 20, 26, 255});
-    ui_text(lang_text("SYSTEM", 15), 22, 16, 20, (Color){210, 215, 225, 255});
-    ui_text(TextFormat("Euros %d", c->euros), 22, 44, 10,
-             (Color){225, 200, 120, 255});
+    ClearBackground(BLACK);
+    draw_screen_chrome(HUB_SCREEN);
+    draw_clip_parts(MENU_SCREEN, MENU_SHOP, NO_OFFSET, NULL, WHITE);
+    /* The two buttons in the purse strip -- the store's own euro sign and the
+       recycler -- are art the frame keeps inside the buttons themselves. */
+    for (int32_t i = 0; i < SONNY_BUTTON_COUNT; i++)
+        if (strcmp(SONNY_BUTTONS[i].screen, MENU_SHOP) == 0)
+            draw_button_art(&SONNY_BUTTONS[i], WHITE);
 
-    for (int32_t i = 0; i < count; i++) {
-        Rectangle r = stock_rect(i);
-        const ItemDef *item = stock[i];
-        int affordable = c->euros >= item->price;
-        DrawRectangleRec(r, (Color){30, 33, 41, 255});
-        DrawRectangleLinesEx(r, hit(r, mouse) ? 2.0f : 1.0f,
-                             (Color){80, 84, 96, 255});
-        ui_text(item->name, (int)r.x + 8, (int)r.y + 9, 10,
-                 affordable ? RAYWHITE : (Color){140, 110, 110, 255});
-        ui_text(TextFormat("%d", item->price), (int)(r.x + r.width - 44),
-                 (int)r.y + 9, 10,
-                 affordable ? (Color){225, 200, 120, 255}
-                            : (Color){140, 110, 110, 255});
+    /* The picture of the place. Its clip has a frame per store and the
+       screen points it at shopId + 1. */
+    const ClipPart *picture = shop_picture();
+    if (picture && shop) {
+        const Texture2D *tex = asset_texture(
+            TextFormat("#%d@%d", picture->character, shop->id + 1), 1);
+        if (tex) {
+            Rectangle dst = placed_rect(picture->x, picture->y,
+                                        picture->scale_x, picture->scale_y,
+                                        picture->width, picture->height,
+                                        picture->origin_x, picture->origin_y);
+            DrawTexturePro(*tex, (Rectangle){0, 0, (float)tex->width,
+                                             (float)tex->height},
+                           dst, (Vector2){0, 0}, 0.0f, WHITE);
+        }
     }
 
-    if (g->hovered_item >= 0 && g->hovered_item < count) {
-        const ItemDef *item = stock[g->hovered_item];
-        Rectangle box = {70, STAGE_H - 130, STAGE_W - 200, 76};
-        draw_panel(box, item->name);
-        ui_text(item->tooltip, (int)box.x + 8, (int)box.y + 26, 10,
-                 (Color){200, 205, 215, 255});
-        ui_text(TextFormat("%s%d", lang_text("MENU", 0), item->level_req),
-                 (int)box.x + 8, (int)box.y + 48, 10,
-                 (Color){150, 160, 175, 255});
+    draw_field_wrapped(shop_field("@895"), NO_OFFSET,
+                       shop ? lang_text("SHOP", shop->id) : "");
+    draw_field(shop_field("@896"), NO_OFFSET, lang_text("MENU", 6));
+    draw_field(shop_field("@1059"), NO_OFFSET, lang_text("MENU", 14));
+    draw_field(shop_field("@1052"), NO_OFFSET, TextFormat("%d", c->euros));
+    draw_field(shop_field("@1053"), NO_OFFSET, EURO);
+
+    /* The character, stood where the frame stands them, in what they wear. */
+    const MenuSlot *doll = menu_slot(MENU_SHOP, "chest");
+    if (doll) {
+        DollSpec spec;
+        memset(&spec, 0, sizeof(spec));
+        spec.gender = "M";
+        spec.skin = "ONE";
+        spec.hair = "ONE";
+        char looks[SONNY_EQUIP_SLOTS][24];
+        for (int i = 0; i < SONNY_EQUIP_SLOTS; i++) {
+            const ItemDef *item = item_by_id(c->player.equip[i]);
+            snprintf(looks[i], sizeof(looks[i]), "%s",
+                     (item && item->looks) ? item->looks : "");
+            spec.looks[i] = looks[i];
+        }
+        doll_draw(&spec, doll_animation_frame("stand", g->anim_tick / 3, 1),
+                  (Vector2){doll->x - 6.0f, doll->y + 10.0f}, 1.3f, 0, WHITE);
     }
-    draw_button((Rectangle){STAGE_W - 120, STAGE_H - 44, 100, 28}, "Back",
-                mouse, 1);
+
+    for (int i = 0; i < SONNY_EQUIP_SLOTS; i++) {
+        Rectangle r = shop_equip_rect(i);
+        draw_slot_art(MENU_SHOP, "playerSlot", i);
+        draw_item_icon(item_by_id(c->player.equip[i]), r, WHITE);
+        if (hit(r, mouse))
+            DrawRectangleLinesEx(r, 1.0f, (Color){235, 200, 90, 255});
+    }
+
+    /* The stock. A slot the store leaves empty is hidden outright, which is
+       what the frame's script does with a zero. */
+    for (int32_t i = 0; i < SHOP_STOCK_SLOTS; i++) {
+        int32_t id = shop ? shop->item[i] : 0;
+        if (id == 0)
+            continue;
+        Rectangle r = shop_stock_rect(i);
+        draw_slot_art(MENU_SHOP, "dropSlot", i);
+        draw_item_icon(item_by_id(id), r, WHITE);
+        if (hit(r, mouse))
+            DrawRectangleLinesEx(r, 1.0f, (Color){235, 200, 90, 255});
+    }
+
+    for (int32_t i = 0; i < MENU_BAG_SLOTS; i++) {
+        Rectangle r = shop_bag_rect(i);
+        draw_slot_art(MENU_SHOP, "itemSlot", i);
+        if (i < c->inventory_count)
+            draw_item_icon(item_by_id(c->inventory[i]), r, WHITE);
+        if (hit(r, mouse))
+            DrawRectangleLinesEx(r, 1.0f, (Color){235, 200, 90, 255});
+    }
+
+    /* What the pointer is on, in the game's own words. */
+    const ItemDef *shown = NULL;
+    if (g->hovered_item >= 100) {
+        int32_t i = g->hovered_item - 100;
+        if (i < c->inventory_count)
+            shown = item_by_id(c->inventory[i]);
+    } else if (g->hovered_item >= 0 && shop
+               && g->hovered_item < SHOP_STOCK_SLOTS) {
+        shown = item_by_id(shop->item[g->hovered_item]);
+    }
+    if (shown && shown->id != 0) {
+        Rectangle box = {70, STAGE_H - 140, STAGE_W - 200, 90};
+        draw_panel(box, shown->name);
+        ui_text(shown->tooltip, (int)box.x + 8, (int)box.y + 26, 10,
+                (Color){200, 205, 215, 255});
+        ui_text(TextFormat("%s%d", EURO, shown->price), (int)box.x + 8,
+                (int)box.y + 68, 10, (Color){225, 200, 120, 255});
+    }
+}
+
+void screen_shop_update(Game *g, Vector2 mouse)
+{
+    Campaign *c = &g->campaign;
+    const ShopDef *shop = shop_for_button(g->shop_button);
+    g->hovered_item = -1;
+
+    for (int32_t i = 0; shop && i < SHOP_STOCK_SLOTS; i++) {
+        const ItemDef *item = item_by_id(shop->item[i]);
+        if (!item || item->id == 0)
+            continue;
+        Rectangle r = shop_stock_rect(i);
+        if (!hit(r, mouse))
+            continue;
+        g->hovered_item = i;
+        if (!IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+            break;
+        if (c->euros < item->price) {
+            game_notice(g, "%s", lang_text("MENU", 20));
+            break;
+        }
+        if (c->inventory_count >= (int32_t)(sizeof(c->inventory)
+                                            / sizeof(c->inventory[0])))
+            break;
+        c->euros -= item->price;
+        c->inventory[c->inventory_count++] = item->id;
+        audio_play("Click2putdown");
+        break;
+    }
+
+    for (int32_t i = 0; i < c->inventory_count; i++) {
+        if (hit(shop_bag_rect(i), mouse))
+            g->hovered_item = 100 + i;
+    }
+
+    if (menu_close_pressed(mouse))
+        g->screen = SCREEN_ZONE;
 }
 
 /* ------------------------------------------------------------- victory */

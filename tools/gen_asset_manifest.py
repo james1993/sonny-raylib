@@ -751,11 +751,19 @@ const BarField *bar_field(const char *side, const char *role)
 
     lines.append('')
     lines.append('const StageButton SONNY_BUTTONS[] = {')
+    # A zone scene's own buttons, keyed by the zone's frame label: the
+    # markers that start a fight, and the one that opens that zone's store.
+    zone_buttons = [dict(b, screen=label, owner='KrinScreen')
+                    for label, group in sorted(((stage_json.get('zone_screen')
+                                                 or {}).get('buttons')
+                                                or {}).items())
+                    for b in group]
     menu_buttons = [dict(b, screen=label)
                     for label, menu in sorted((stage_json.get('menus')
                                                or {}).items())
                     for b in (menu.get('buttons') or [])]
-    for b in (stage_json.get('buttons') or []) + menu_buttons:
+    for b in ((stage_json.get('buttons') or []) + menu_buttons
+              + zone_buttons):
         lines.append('    { %s, %s, %s, %d, %s, %s, %s, %s },'
                      % (c_string(b['screen']), c_string(b.get('owner') or ''),
                         c_string(b['name']), b['character'],

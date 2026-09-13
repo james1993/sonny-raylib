@@ -808,7 +808,7 @@ def item_icon_clip(body):
     return None
 
 
-def zone_screen(body, raw_dir, chrome):
+def zone_screen(body, raw_dir, chrome, boxes):
     """The scene the hub is built around.
 
     One clip holds a frame per zone -- the deck of the research ship, the
@@ -821,6 +821,7 @@ def zone_screen(body, raw_dir, chrome):
     labels = sprite_frame_labels(body, placed['character'])
     frames = model_frames(body, placed['character'])
     markers = {}
+    buttons = {}
     counts = {}
     for label, frame in sorted(labels.items(), key=lambda kv: kv[1]):
         index = frame - 1
@@ -837,10 +838,16 @@ def zone_screen(body, raw_dir, chrome):
                           'y': round(placed['y'] + placed['scale_y'] * y, 3)})
         markers[label] = [f for f in found
                           if f['character'] == MARKER_CHARACTER]
+        # The buttons on that zone's own frame. A marker is a glow with a
+        # button inside it, and which button it is says what the marker does
+        # -- start the next fight, or open that zone's store.
+        at = (placed['scale_x'], placed['scale_y'], placed['x'], placed['y'])
+        buttons[label] = buttons_in(body, placed['character'], boxes, at, 0,
+                                    index)
     return {'x': placed['x'], 'y': placed['y'],
             'scale_x': placed['scale_x'], 'scale_y': placed['scale_y'],
             'character': placed['character'],
-            'labels': labels, 'markers': markers}
+            'labels': labels, 'markers': markers, 'buttons': buttons}
 
 
 def speech_box(body, raw_dir, chrome, texts, fonts):
@@ -1166,7 +1173,7 @@ def main(path, raw_dir=None):
                'buttons': buttons,
                'zone_screen': zone_screen(body, raw_dir,
                                           [e for group in screens.values()
-                                           for e in group]),
+                                           for e in group], boxes),
                'menus': menus,
                'button_art': art,
                'talent_row': row,

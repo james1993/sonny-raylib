@@ -5598,6 +5598,28 @@ const ZoneDef SONNY_ZONES[] = {
 };
 const int SONNY_ZONE_COUNT = (int)(sizeof(SONNY_ZONES) / sizeof(SONNY_ZONES[0]));
 
+const ShopDef SONNY_SHOPS[] = {
+    { .id = 0, .item = { 6, 7, 10, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } },
+    { .id = 1, .item = { 27, 29, 23, 22, 24, 31, 26, 19, 18, 16, 30, 33, 0, 0, 0 } },
+    { .id = 2, .item = { 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 61, 48, 52, 54 } },
+    { .id = 3, .item = { 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 0, 0, 0 } },
+    { .id = 4, .item = { 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 0, 0, 0, 0, 0 } },
+    { .id = 5, .item = { 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 0, 0, 0, 0, 0 } },
+};
+const int SONNY_SHOP_COUNT = (int)(sizeof(SONNY_SHOPS) / sizeof(SONNY_SHOPS[0]));
+
+const ShopButton SONNY_SHOP_BUTTONS[] = {
+    { 1212, 0 },
+    { 1218, 1 },
+    { 1227, 2 },
+    { 1232, 3 },
+    { 1233, 4 },
+    { 1234, 5 },
+    { 1244, 0 },
+    { 1255, 0 },
+};
+const int SONNY_SHOP_BUTTON_COUNT = (int)(sizeof(SONNY_SHOP_BUTTONS) / sizeof(SONNY_SHOP_BUTTONS[0]));
+
 const ElementDef SONNY_ELEMENT_DEFS[] = {
     { "Physical", 0xC40000u },
     { "Magic", 0xFB95C8u },
@@ -5712,6 +5734,22 @@ const LangArray SONNY_LANG[] = {
     { "ZONES2", LANG_ZONES2, 5 },
 };
 const int SONNY_LANG_COUNT = (int)(sizeof(SONNY_LANG) / sizeof(SONNY_LANG[0]));
+
+const ShopDef *shop_by_id(int32_t id)
+{
+    for (int i = 0; i < SONNY_SHOP_COUNT; i++)
+        if (SONNY_SHOPS[i].id == id)
+            return &SONNY_SHOPS[i];
+    return NULL;
+}
+
+const ShopDef *shop_for_button(int32_t button)
+{
+    for (int i = 0; i < SONNY_SHOP_BUTTON_COUNT; i++)
+        if (SONNY_SHOP_BUTTONS[i].button == button)
+            return shop_by_id(SONNY_SHOP_BUTTONS[i].shop);
+    return NULL;
+}
 
 const AbilityDef *ability_by_id(int32_t id)
 {

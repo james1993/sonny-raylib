@@ -220,6 +220,30 @@ extern const int SONNY_ELEMENT_DEF_COUNT;
 extern const ZoneDef SONNY_ZONES[];
 extern const int SONNY_ZONE_COUNT;
 
+/* A store's stock. Every store offers a fixed list of item ids, which is what
+   krinSetShop sets Krin.dropArray to; a zero is an empty slot, and the screen
+   hides it. */
+#define SONNY_SHOP_SLOTS 15
+typedef struct {
+    int32_t id;
+    int32_t item[SONNY_SHOP_SLOTS];
+} ShopDef;
+
+/* Which store a marker on a zone's scene opens. A marker is a button, and the
+   shopId its handler sets is the only thing that says which store it is. */
+typedef struct {
+    int32_t button;       /* the button's own character id */
+    int32_t shop;
+} ShopButton;
+
+extern const ShopDef SONNY_SHOPS[];
+extern const int SONNY_SHOP_COUNT;
+extern const ShopButton SONNY_SHOP_BUTTONS[];
+extern const int SONNY_SHOP_BUTTON_COUNT;
+/* The store with this id, and the store a marker's button opens. */
+const ShopDef *shop_by_id(int32_t id);
+const ShopDef *shop_for_button(int32_t button);
+
 /* Lookups by the original's own ids/keys. NULL when absent.
  *
  * Prefer ids: two template names repeat ("Templar" is both the player class

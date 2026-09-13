@@ -145,6 +145,13 @@ What the original settled that guesswork had got wrong:
   the cut copy is what the orbs draw.
 * `for..in` over an array in ActionScript 2 hands back its indices last to
   first, which is the order the ability pool fills its rows in.
+* A store's stock is a fixed list of item ids per store (krinSetShop), and
+  which store a marker opens is only in the marker's button: the shopId its
+  handler sets. A zone can carry more than one -- the fourth has three -- so
+  it cannot be taken from the zone.
+* The store's picture is a clip with a frame per store, pointed at shopId + 1
+  by number rather than by name.
+
 * The attribute swatches go grey the moment the last point is spent, and are
   coloured again the next time the screen opens -- the menu clip goes back to
   its first frame, so the grey never survives a visit.

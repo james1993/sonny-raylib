@@ -145,6 +145,10 @@ def collect_names(data_dir):
     buffs = load('buffs', data_dir)
     doll = load('doll', data_dir)
     talents = load('talents', data_dir)
+    try:
+        shops = load('shops', data_dir)
+    except (OSError, ValueError):
+        shops = {}
 
     want = {'icon': set(), 'effect': set(), 'background': set(),
             'doll': set(), 'buff': set(), 'ui': set(), 'sound': set(),
@@ -298,6 +302,10 @@ def collect_names(data_dir):
     # A menu's slots are clips the engine fills, but their empty square is
     # still drawn, so their resting frame is wanted too.
     for menu in (stage.get('menus') or {}).values():
+        # A menu screen's own furniture, which is never exported under a name.
+        for part in (menu.get('parts') or []):
+            if part.get('width') and not part.get('frames'):
+                want['chrome'].add('#%d' % part['character'])
         for slot in menu['slots'].values():
             if slot.get('character') and slot.get('width'):
                 want['chrome'].add('#%d' % slot['character'])
@@ -317,6 +325,14 @@ def collect_names(data_dir):
     for part in ((stage.get('talent_row') or {}).get('parts') or []):
         if part.get('width') and not part.get('frames'):
             want['chrome'].add('#%d' % part['character'])
+    # The store's picture. Its clip has a frame per store and the screen
+    # points it at shopId + 1, so every store's frame is wanted.
+    picture = next((p for p in ((stage.get('menus') or {}).get('shop') or {})
+                    .get('parts', []) if p.get('frames')), None)
+    if picture:
+        for shop in (shops.get('stock') or {}):
+            want['chrome'].add('#%d@%d' % (picture['character'],
+                                           int(shop) + 1))
     return want, speculative
 
 

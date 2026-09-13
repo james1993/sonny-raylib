@@ -97,6 +97,9 @@ typedef struct {
        been open: the swatches beside the attributes go grey then, and are
        coloured again the next time the screen is opened. */
     int32_t   stat_points_spent;
+    /* Which store marker opened the shop screen: its button's character is
+       what says which store, as Krin.shopId does in the original. */
+    int32_t   shop_button;
     char      notice[128];
     int32_t   notice_timer;
 
