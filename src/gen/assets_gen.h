@@ -67,6 +67,20 @@ typedef struct {
     int32_t flip;
 } StageSlot;
 
+/* Where the health and focus bar for a slot sits, straight off the root
+   timeline (p1BAR..p6BAR), with the bar art's own size. */
+typedef struct {
+    int32_t slot;
+    float   x, y;          /* where the bar is placed */
+    float   scale;
+    float   width, height; /* the bar art's size */
+    float   origin_x, origin_y;  /* where its own origin sits inside it */
+} StageBar;
+
+extern const StageBar SONNY_STAGE_BARS[];
+extern const int SONNY_STAGE_BAR_COUNT;
+const StageBar *stage_bar(int32_t slot);
+
 extern const StageSlot SONNY_STAGE_SLOTS[];
 extern const int SONNY_STAGE_SLOT_COUNT;
 const StageSlot *stage_slot(int32_t slot);

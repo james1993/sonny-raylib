@@ -40,6 +40,7 @@ int main(int argc, char **argv)
     /* SONNY_SILENT keeps headless runs from opening an audio device. */
     if (!getenv("SONNY_SILENT"))
         audio_init();
+    ui_font_load();
 
     Game game;
     game_start(&game, seed);
@@ -107,7 +108,7 @@ int main(int argc, char **argv)
             break;
         }
         if (game.notice_timer > 0)
-            DrawText(game.notice, 22, STAGE_H - 20, 10,
+            ui_text(game.notice, 22, STAGE_H - 20, 10,
                      (Color){235, 200, 90, 255});
         EndTextureMode();
 
@@ -129,6 +130,7 @@ int main(int argc, char **argv)
     }
 
     audio_shutdown();
+    ui_font_unload();
     assets_unload_all();
     UnloadRenderTexture(stage);
     CloseWindow();

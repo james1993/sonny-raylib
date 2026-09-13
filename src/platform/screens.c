@@ -121,28 +121,28 @@ static void draw_character_summary(const Game *g, Rectangle r)
     draw_panel(r, "Sonny");
     int y = (int)r.y + 26;
     const char *cls = c->class_template ? c->class_template->name : "?";
-    DrawText(TextFormat("%s%d  %s", lang_text("MENU", 0), c->level, cls),
+    ui_text(TextFormat("%s%d  %s", lang_text("MENU", 0), c->level, cls),
              (int)r.x + 10, y, 10, RAYWHITE);
     y += 18;
 
     /* Stat names come from the language table: Vitality, Strength, ... */
     const double values[5] = {d.life, d.strength, d.magic, d.speed, d.focus};
     for (int i = 0; i < 5; i++) {
-        DrawText(TextFormat("%-10s %.0f", lang_text("SYSTEM", i), values[i]),
+        ui_text(TextFormat("%-10s %.0f", lang_text("SYSTEM", i), values[i]),
                  (int)r.x + 10, y, 10, (Color){200, 205, 215, 255});
         y += 14;
     }
     y += 6;
-    DrawText(TextFormat("%s %.0f / %s %.0f", lang_text("SYSTEM", 5), d.per[0],
+    ui_text(TextFormat("%s %.0f / %s %.0f", lang_text("SYSTEM", 5), d.per[0],
                         lang_text("SYSTEM", 6), d.def[0]),
              (int)r.x + 10, y, 10, (Color){150, 160, 175, 255});
     y += 18;
-    DrawText(TextFormat("Euros %d", g->campaign.euros), (int)r.x + 10, y, 10,
+    ui_text(TextFormat("Euros %d", g->campaign.euros), (int)r.x + 10, y, 10,
              (Color){225, 200, 120, 255});
     y += 14;
     int32_t points = character_unspent_skill_points(&g->campaign.player);
     if (points > 0)
-        DrawText(TextFormat("%d ability point%s to spend", points,
+        ui_text(TextFormat("%d ability point%s to spend", points,
                             points == 1 ? "" : "s"),
                  (int)r.x + 10, y, 10, (Color){140, 210, 140, 255});
 }
@@ -159,12 +159,12 @@ void screen_zone_draw(Game *g, Vector2 mouse)
         asset_draw_placed(def->zone_bg, 1, (Vector2){400, 294.5f}, 1.0f,
                           (Color){255, 255, 255, 70});
 
-    DrawText("SONNY", 22, 12, 22, (Color){210, 215, 225, 255});
-    DrawText(TextFormat("%s%d", lang_text("SYSTEM", 9), zone->zone + 1), 60,
+    ui_text("SONNY", 22, 12, 22, (Color){210, 215, 225, 255});
+    ui_text(TextFormat("%s%d", lang_text("SYSTEM", 9), zone->zone + 1), 60,
              120, 20, (Color){235, 200, 90, 255});
-    DrawText(TextFormat("%s: %s", zone->name, zone->subtitle), 60, 146, 10,
+    ui_text(TextFormat("%s: %s", zone->name, zone->subtitle), 60, 146, 10,
              (Color){200, 205, 215, 255});
-    DrawText(TextFormat("%s%d", lang_text("SYSTEM", 10),
+    ui_text(TextFormat("%s%d", lang_text("SYSTEM", 10),
                         g->campaign.progress_battle - 1),
              60, 166, 10, (Color){150, 160, 175, 255});
 
@@ -176,14 +176,14 @@ void screen_zone_draw(Game *g, Vector2 mouse)
         draw_button(r, MENU[i].label ? MENU[i].label : "", mouse, enabled);
     }
     if (g->hovered_item >= 0 && g->hovered_item < MENU_COUNT)
-        DrawText(MENU[g->hovered_item].hint ? MENU[g->hovered_item].hint : "",
+        ui_text(MENU[g->hovered_item].hint ? MENU[g->hovered_item].hint : "",
                  60, 210 + MENU_COUNT * 42 + 8, 10,
                  (Color){170, 175, 185, 255});
 
     draw_character_summary(g, (Rectangle){STAGE_W - 260, 120, 220, 200});
 
     if (campaign_complete(&g->campaign))
-        DrawText("The campaign is complete.", 60, 470, 12,
+        ui_text("The campaign is complete.", 60, 470, 12,
                  (Color){235, 200, 90, 255});
 }
 
@@ -228,7 +228,7 @@ void screen_map_update(Game *g, Vector2 mouse)
 void screen_map_draw(Game *g, Vector2 mouse)
 {
     ClearBackground((Color){18, 20, 26, 255});
-    DrawText(lang_text("SYSTEM", 27), 22, 16, 20, (Color){210, 215, 225, 255});
+    ui_text(lang_text("SYSTEM", 27), 22, 16, 20, (Color){210, 215, 225, 255});
 
     /* The original draws a line from each unlocked zone back to the one
        before it, so the route reads as a path. */
@@ -261,17 +261,17 @@ void screen_map_draw(Game *g, Vector2 mouse)
         DrawRectangleLinesEx(r, (here || hit(r, mouse)) ? 2.0f : 1.0f,
                              here ? (Color){235, 200, 90, 255}
                                   : (Color){90, 94, 110, 255});
-        DrawText(TextFormat("%s%d", lang_text("SYSTEM", 9), zone->zone + 1),
+        ui_text(TextFormat("%s%d", lang_text("SYSTEM", 9), zone->zone + 1),
                  (int)r.x + 8, (int)r.y + 8, 10, (Color){235, 200, 90, 255});
-        DrawText(zone->name, (int)r.x + 8, (int)(r.y + r.height - 26), 10,
+        ui_text(zone->name, (int)r.x + 8, (int)(r.y + r.height - 26), 10,
                  RAYWHITE);
-        DrawText(zone->subtitle, (int)r.x + 8, (int)(r.y + r.height - 14), 10,
+        ui_text(zone->subtitle, (int)r.x + 8, (int)(r.y + r.height - 14), 10,
                  (Color){170, 175, 185, 255});
     }
 
     if (g->hovered_item >= 0 && g->hovered_item < SONNY_ZONE_COUNT) {
         const ZoneDef *zone = &SONNY_ZONES[g->hovered_item];
-        DrawText(TextFormat("%s%d to %s%d", lang_text("SYSTEM", 10),
+        ui_text(TextFormat("%s%d to %s%d", lang_text("SYSTEM", 10),
                             zone->first_battle - 1, lang_text("SYSTEM", 10),
                             zone->last_battle - 1),
                  90, 370, 10, (Color){170, 175, 185, 255});
@@ -343,8 +343,8 @@ void screen_talents_draw(Game *g, Vector2 mouse)
     const Character *c = &g->campaign.player;
 
     ClearBackground((Color){18, 20, 26, 255});
-    DrawText(lang_text("SYSTEM", 19), 22, 16, 20, (Color){210, 215, 225, 255});
-    DrawText(TextFormat("%d points to spend",
+    ui_text(lang_text("SYSTEM", 19), 22, 16, 20, (Color){210, 215, 225, 255});
+    ui_text(TextFormat("%d points to spend",
                         character_unspent_skill_points(c)),
              22, 44, 10, (Color){140, 210, 140, 255});
 
@@ -361,17 +361,17 @@ void screen_talents_draw(Game *g, Vector2 mouse)
         Rectangle inner = {r.x + 3, r.y + 3, r.width - 6, r.height - 20};
         Color tint = rank > 0 ? WHITE : (Color){130, 130, 140, 255};
         if (a && !asset_draw_fit(a->icon, 1, inner, tint))
-            DrawText(a->icon, (int)r.x + 5, (int)r.y + 8, 10, tint);
+            ui_text(a->icon, (int)r.x + 5, (int)r.y + 8, 10, tint);
 
         DrawRectangleLinesEx(r, hit(r, mouse) ? 2.0f : 1.0f,
                              learnable ? (Color){140, 210, 140, 255}
                              : rank > 0 ? (Color){225, 200, 120, 255}
                                         : (Color){80, 84, 96, 255});
-        DrawText(TextFormat("%d/%d", rank, t->max_rank), (int)r.x + 5,
+        ui_text(TextFormat("%d/%d", rank, t->max_rank), (int)r.x + 5,
                  (int)(r.y + r.height - 14), 10,
                  rank > 0 ? RAYWHITE : (Color){140, 145, 155, 255});
         if (t->passive)
-            DrawText("P", (int)(r.x + r.width - 12), (int)r.y + 4, 10,
+            ui_text("P", (int)(r.x + r.width - 12), (int)r.y + 4, 10,
                      (Color){150, 190, 240, 255});
     }
 
@@ -384,13 +384,13 @@ void screen_talents_draw(Game *g, Vector2 mouse)
         const AbilityDef *a = ability_by_id(t->ability_id
                                             + (rank > 0 ? rank - 1 : 0));
         if (a) {
-            DrawText((a->name && a->name[0]) ? a->name : a->icon,
+            ui_text((a->name && a->name[0]) ? a->name : a->icon,
                      (int)box.x + 8, (int)box.y + 8, 10,
                      (Color){235, 200, 90, 255});
-            DrawText(a->tooltip, (int)box.x + 8, (int)box.y + 26, 10,
+            ui_text(a->tooltip, (int)box.x + 8, (int)box.y + 26, 10,
                      (Color){200, 205, 215, 255});
         }
-        DrawText(TextFormat("Next rank at level %d",
+        ui_text(TextFormat("Next rank at level %d",
                             character_talent_next_level(c, g->hovered_item)),
                  (int)box.x + 8, (int)box.y + 56, 10,
                  (Color){150, 160, 175, 255});
@@ -484,9 +484,9 @@ void screen_inventory_draw(Game *g, Vector2 mouse)
     const Campaign *c = &g->campaign;
 
     ClearBackground((Color){18, 20, 26, 255});
-    DrawText(lang_text("SYSTEM", 17), 22, 16, 20, (Color){210, 215, 225, 255});
-    DrawText("Worn", 70, 92, 10, (Color){150, 160, 175, 255});
-    DrawText("Carried", 420, 92, 10, (Color){150, 160, 175, 255});
+    ui_text(lang_text("SYSTEM", 17), 22, 16, 20, (Color){210, 215, 225, 255});
+    ui_text("Worn", 70, 92, 10, (Color){150, 160, 175, 255});
+    ui_text("Carried", 420, 92, 10, (Color){150, 160, 175, 255});
 
     for (int i = 0; i < SONNY_EQUIP_SLOTS; i++) {
         Rectangle r = slot_rect(i);
@@ -495,10 +495,10 @@ void screen_inventory_draw(Game *g, Vector2 mouse)
         DrawRectangleLinesEx(r, hit(r, mouse) ? 2.0f : 1.0f,
                              (Color){80, 84, 96, 255});
         /* ITEMSS names the slot kinds, in the original's own order. */
-        DrawText(lang_text("ITEMSS", i), (int)r.x + 8, (int)r.y + 12, 10,
+        ui_text(lang_text("ITEMSS", i), (int)r.x + 8, (int)r.y + 12, 10,
                  (Color){140, 145, 155, 255});
         if (item && item->id != 0)
-            DrawText(item->name, (int)r.x + 110, (int)r.y + 12, 10, RAYWHITE);
+            ui_text(item->name, (int)r.x + 110, (int)r.y + 12, 10, RAYWHITE);
     }
 
     for (int32_t i = 0; i < c->inventory_count && i < 8; i++) {
@@ -508,7 +508,7 @@ void screen_inventory_draw(Game *g, Vector2 mouse)
         DrawRectangleLinesEx(r, hit(r, mouse) ? 2.0f : 1.0f,
                              (Color){80, 84, 96, 255});
         if (item)
-            DrawText(item->name, (int)r.x + 8, (int)r.y + 9, 10, RAYWHITE);
+            ui_text(item->name, (int)r.x + 8, (int)r.y + 9, 10, RAYWHITE);
     }
 
     /* The hovered item's own description. */
@@ -523,7 +523,7 @@ void screen_inventory_draw(Game *g, Vector2 mouse)
     if (shown && shown->id != 0) {
         Rectangle box = {70, STAGE_H - 140, STAGE_W - 200, 90};
         draw_panel(box, shown->name);
-        DrawText(shown->tooltip, (int)box.x + 8, (int)box.y + 26, 10,
+        ui_text(shown->tooltip, (int)box.x + 8, (int)box.y + 26, 10,
                  (Color){200, 205, 215, 255});
         int y = (int)box.y + 44;
         const char *labels[5] = {lang_text("SYSTEM", 0), lang_text("SYSTEM", 1),
@@ -532,7 +532,7 @@ void screen_inventory_draw(Game *g, Vector2 mouse)
         for (int i = 0; i < 5; i++) {
             if (shown->stat[i] == 0)
                 continue;
-            DrawText(TextFormat("%s +%.0f", labels[i], shown->stat[i]),
+            ui_text(TextFormat("%s +%.0f", labels[i], shown->stat[i]),
                      (int)box.x + 8 + i * 110, y, 10,
                      (Color){140, 210, 140, 255});
         }
@@ -612,8 +612,8 @@ void screen_shop_draw(Game *g, Vector2 mouse)
     int32_t count = shop_stock(c, stock, 20);
 
     ClearBackground((Color){18, 20, 26, 255});
-    DrawText(lang_text("SYSTEM", 15), 22, 16, 20, (Color){210, 215, 225, 255});
-    DrawText(TextFormat("Euros %d", c->euros), 22, 44, 10,
+    ui_text(lang_text("SYSTEM", 15), 22, 16, 20, (Color){210, 215, 225, 255});
+    ui_text(TextFormat("Euros %d", c->euros), 22, 44, 10,
              (Color){225, 200, 120, 255});
 
     for (int32_t i = 0; i < count; i++) {
@@ -623,9 +623,9 @@ void screen_shop_draw(Game *g, Vector2 mouse)
         DrawRectangleRec(r, (Color){30, 33, 41, 255});
         DrawRectangleLinesEx(r, hit(r, mouse) ? 2.0f : 1.0f,
                              (Color){80, 84, 96, 255});
-        DrawText(item->name, (int)r.x + 8, (int)r.y + 9, 10,
+        ui_text(item->name, (int)r.x + 8, (int)r.y + 9, 10,
                  affordable ? RAYWHITE : (Color){140, 110, 110, 255});
-        DrawText(TextFormat("%d", item->price), (int)(r.x + r.width - 44),
+        ui_text(TextFormat("%d", item->price), (int)(r.x + r.width - 44),
                  (int)r.y + 9, 10,
                  affordable ? (Color){225, 200, 120, 255}
                             : (Color){140, 110, 110, 255});
@@ -635,9 +635,9 @@ void screen_shop_draw(Game *g, Vector2 mouse)
         const ItemDef *item = stock[g->hovered_item];
         Rectangle box = {70, STAGE_H - 130, STAGE_W - 200, 76};
         draw_panel(box, item->name);
-        DrawText(item->tooltip, (int)box.x + 8, (int)box.y + 26, 10,
+        ui_text(item->tooltip, (int)box.x + 8, (int)box.y + 26, 10,
                  (Color){200, 205, 215, 255});
-        DrawText(TextFormat("%s%d", lang_text("MENU", 0), item->level_req),
+        ui_text(TextFormat("%s%d", lang_text("MENU", 0), item->level_req),
                  (int)box.x + 8, (int)box.y + 48, 10,
                  (Color){150, 160, 175, 255});
     }
@@ -676,9 +676,9 @@ void screen_victory_update(Game *g, Vector2 mouse)
 void screen_victory_draw(Game *g, Vector2 mouse)
 {
     ClearBackground((Color){18, 20, 26, 255});
-    DrawText(lang_text("VICTORY", 0), 70, 90, 12, (Color){235, 200, 90, 255});
+    ui_text(lang_text("VICTORY", 0), 70, 90, 12, (Color){235, 200, 90, 255});
     if (g->dropped_count > 0)
-        DrawText(lang_text("VICTORY", 1), 70, 112, 10,
+        ui_text(lang_text("VICTORY", 1), 70, 112, 10,
                  (Color){200, 205, 215, 255});
 
     for (int32_t i = 0; i < g->dropped_count; i++) {
@@ -690,21 +690,21 @@ void screen_victory_draw(Game *g, Vector2 mouse)
                              g->taken[i] ? (Color){120, 180, 120, 255}
                                          : (Color){80, 84, 96, 255});
         if (item)
-            DrawText(item->name, (int)r.x + 8, (int)r.y + 11, 10,
+            ui_text(item->name, (int)r.x + 8, (int)r.y + 11, 10,
                      g->taken[i] ? (Color){140, 210, 140, 255} : RAYWHITE);
     }
 
-    DrawText(TextFormat("%s %d", lang_text("VICTORY", 2), g->rewards.euros),
+    ui_text(TextFormat("%s %d", lang_text("VICTORY", 2), g->rewards.euros),
              70, 280, 10, (Color){225, 200, 120, 255});
-    DrawText(TextFormat("%s %.1f%%", lang_text("VICTORY", 3),
+    ui_text(TextFormat("%s %.1f%%", lang_text("VICTORY", 3),
                         g->rewards.xp_percent),
              70, 300, 10, (Color){150, 200, 255, 255});
     if (g->rewards.leveled)
-        DrawText(TextFormat("%s%d!", lang_text("MENU", 0),
+        ui_text(TextFormat("%s%d!", lang_text("MENU", 0),
                             g->campaign.player.level),
                  70, 322, 12, (Color){140, 210, 140, 255});
 
-    DrawText(lang_text("VICTORY", 4), 70, STAGE_H - 120, 10,
+    ui_text(lang_text("VICTORY", 4), 70, STAGE_H - 120, 10,
              (Color){170, 175, 185, 255});
     draw_button((Rectangle){STAGE_W / 2 - 60, STAGE_H - 90, 120, 30},
                 "Continue", mouse, 1);

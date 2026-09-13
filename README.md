@@ -100,9 +100,11 @@ of the SWF's display list, because nothing else knows them:
   the way a player would (place, move, remove, persist across frames) and
   snapshots every frame. Parts are drawn under those matrices directly, so
   skew and rotation survive rather than being approximated.
-- **Where each unit stands.** `tools/extract_stage.py` combines the battle
+- **Where the interface goes.** `tools/extract_stage.py` combines the battle
   screen's placement on the root timeline with the six `player` containers
-  inside it. Position follows the *slot*, not the speed order -- and the
+  inside it, and reads the six `p1BAR`..`p6BAR` health bars the same way. An
+  element's own origin is rarely its corner -- the bar's is its centre -- so
+  the exported SVG's root transform is read for that too. Position follows the *slot*, not the speed order -- and the
   right-hand team's containers carry a negative horizontal scale, which is how
   the original mirrors them to face left.
 - **Where any piece of art sits inside its exported image.** Exports are
@@ -191,7 +193,9 @@ Two details worth knowing, both reproduced rather than cleaned up:
 - [x] Save data (a text file rather than the original's Flash shared object)
 - [x] The world map, with the original's zone-unlock rule
 - [x] Battle dialogue, timed to the turn counter as the original times it
-- [ ] A layout pass against reference screenshots of the original
+- [x] The game's own font (Tahoma, embedded in the SWF)
+- [x] Unit bars, ability bar and speech box placed from the display list
+- [ ] The remaining layout, against reference screenshots of the original
 - [x] Asset pipeline: names resolved, art and audio extracted, manifest
 - [x] Real backdrops and ability icons on screen
 - [x] The character doll: per-part transforms out of the model's display list,

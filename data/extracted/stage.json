@@ -55,5 +55,73 @@
   "scale_x": 1.0,
   "scale_y": 1.0,
   "depth": 1
+ },
+ "bars": {
+  "1": {
+   "x": 136.15,
+   "y": 63.6,
+   "scale_x": 1.085327,
+   "scale_y": 1.160553,
+   "character": 1585,
+   "width": 201.0,
+   "height": 28.75,
+   "origin_x": 100.5,
+   "origin_y": 13.95
+  },
+  "2": {
+   "x": 664.9,
+   "y": 63.6,
+   "scale_x": 1.085327,
+   "scale_y": 1.160553,
+   "character": 1585,
+   "width": 201.0,
+   "height": 28.75,
+   "origin_x": 100.5,
+   "origin_y": 13.95
+  },
+  "3": {
+   "x": 136.15,
+   "y": 98.4,
+   "scale_x": 1.085327,
+   "scale_y": 1.160553,
+   "character": 1585,
+   "width": 201.0,
+   "height": 28.75,
+   "origin_x": 100.5,
+   "origin_y": 13.95
+  },
+  "4": {
+   "x": 664.9,
+   "y": 98.4,
+   "scale_x": 1.085327,
+   "scale_y": 1.160553,
+   "character": 1585,
+   "width": 201.0,
+   "height": 28.75,
+   "origin_x": 100.5,
+   "origin_y": 13.95
+  },
+  "5": {
+   "x": 136.15,
+   "y": 28.55,
+   "scale_x": 1.085327,
+   "scale_y": 1.160553,
+   "character": 1585,
+   "width": 201.0,
+   "height": 28.75,
+   "origin_x": 100.5,
+   "origin_y": 13.95
+  },
+  "6": {
+   "x": 664.9,
+   "y": 28.55,
+   "scale_x": 1.085327,
+   "scale_y": 1.160553,
+   "character": 1585,
+   "width": 201.0,
+   "height": 28.75,
+   "origin_x": 100.5,
+   "origin_y": 13.95
+  }
  }
 }

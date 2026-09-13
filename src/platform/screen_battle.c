@@ -19,13 +19,28 @@ static int player_turn(const Game *g)
 
 /* ------------------------------------------------------------------ layout */
 
+/* The health and focus bar, where the original's root timeline places it
+   (p1BAR..p6BAR): the two teams in columns near the top, ordered slot 5, 1, 3
+   down the left and 6, 2, 4 down the right. The bar art is 201 x 28.75 at a
+   scale of about 1.085, and the right-hand team's is mirrored, so its origin
+   is its right edge. */
 static Rectangle unit_rect(const Battle *b, int32_t slot)
 {
-    /* Rows follow the slot's own place on the field: back, middle, front. */
-    int32_t row = (slot <= 2) ? 1 : (slot <= 4) ? 2 : 0;
-    float x = (b->units[slot].teamSide == 1) ? 12.0f : STAGE_W - 12.0f - 148.0f;
-    float y = 64.0f + row * 66.0f;
-    return (Rectangle){x, y, 148.0f, 60.0f};
+    const StageBar *bar = stage_bar(slot);
+    if (!bar) {
+        int32_t row = (slot <= 2) ? 1 : (slot <= 4) ? 2 : 0;
+        float x = (b->units[slot].teamSide == 1) ? 12.0f
+                                                 : STAGE_W - 12.0f - 148.0f;
+        return (Rectangle){x, 64.0f + row * 66.0f, 148.0f, 60.0f};
+    }
+
+    (void)b;
+    float w = bar->width * bar->scale;
+    float h = bar->height * bar->scale;
+    /* The bar's own origin is its centre, so the placement point is where the
+       middle of it goes. */
+    return (Rectangle){bar->x - bar->origin_x * bar->scale,
+                       bar->y - bar->origin_y * bar->scale, w, h};
 }
 
 /* Where a unit's model stands: the original's own stage layout, so position
@@ -133,7 +148,7 @@ static void draw_bar(Rectangle r, int32_t cur, int32_t max, Color fill,
         DrawRectangleRec(f, fill);
     }
     DrawRectangleLinesEx(r, 1.0f, (Color){90, 90, 100, 255});
-    DrawText(TextFormat("%s %d/%d", label, cur, max), (int)r.x + 4,
+    ui_text(TextFormat("%s %d/%d", label, cur, max), (int)r.x + 4,
              (int)r.y + 1, 10, RAYWHITE);
 }
 
@@ -156,14 +171,14 @@ static void draw_unit(const Game *g, int32_t slot)
     DrawRectangleRec(r, (Color){20, 22, 28, u->active ? 200 : 120});
     DrawRectangleLinesEx(r, (is_acting || is_target) ? 2.0f : 1.0f, frame);
 
-    DrawText(u->name, (int)r.x + 6, (int)r.y + 5, 10,
+    ui_text(u->name, (int)r.x + 6, (int)r.y + 2, 10,
              u->active ? RAYWHITE : GRAY);
-    DrawText(TextFormat("Lv%d", u->plevel), (int)r.x + (int)r.width - 32,
-             (int)r.y + 5, 10, (Color){150, 155, 165, 255});
+    ui_text(TextFormat("Lv%d", u->plevel), (int)(r.x + r.width - 30),
+             (int)r.y + 2, 10, (Color){150, 155, 165, 255});
 
-    draw_bar((Rectangle){r.x + 6, r.y + 20, r.width - 12, 12}, u->LIFEN,
+    draw_bar((Rectangle){r.x + 6, r.y + 14, r.width - 12, 8}, u->LIFEN,
              u->LIFEU, (Color){170, 55, 60, 255}, "HP");
-    draw_bar((Rectangle){r.x + 6, r.y + 35, r.width - 12, 12}, u->FOCUSN,
+    draw_bar((Rectangle){r.x + 6, r.y + 23, r.width - 12, 8}, u->FOCUSN,
              u->FOCUSU, (Color){60, 105, 180, 255}, "FP");
 
     /* Active buffs, with their remaining turns. */
@@ -173,7 +188,7 @@ static void draw_unit(const Game *g, int32_t slot)
             continue;
         const BuffDef *def = buff_find(SONNY_BUFFS, SONNY_BUFF_COUNT,
                                        u->BUFFARRAYK[i].buffId);
-        Rectangle box = {r.x + 6 + shown * 18, r.y + 52, 16, 14};
+        Rectangle box = {r.x + 6 + shown * 16, r.y + r.height + 2, 14, 12};
         /* Buff icons are named by the buff key. The permanent passive buffs
            have no icon frame in the original either, so those fall back to a
            coloured block. */
@@ -183,15 +198,15 @@ static void draw_unit(const Game *g, int32_t slot)
             DrawRectangleRec(box, c);
         }
         if (u->BUFFARRAYK[i].CD > 0)
-            DrawText(TextFormat("%d", u->BUFFARRAYK[i].CD),
+            ui_text(TextFormat("%d", u->BUFFARRAYK[i].CD),
                      (int)box.x + 3, (int)box.y + 2, 10, RAYWHITE);
         shown++;
     }
     if (u->SHIELD > 0)
-        DrawText(TextFormat("shield %d", u->SHIELD), (int)r.x + 6,
+        ui_text(TextFormat("shield %d", u->SHIELD), (int)r.x + 6,
                  (int)r.y + 68, 10, (Color){120, 190, 235, 255});
     if (u->STUN > 0)
-        DrawText("stunned", (int)r.x + (int)r.width - 48, (int)r.y + 68, 10,
+        ui_text("stunned", (int)r.x + (int)r.width - 48, (int)r.y + 68, 10,
                  (Color){225, 200, 120, 255});
 }
 
@@ -217,14 +232,14 @@ static void draw_ability_bar(const Game *g)
                            slot.height - 4};
         if (!asset_draw_fit(a->icon, 1, inner, tint)) {
             const char *label = (a->name && a->name[0]) ? a->name : a->icon;
-            DrawText(label, (int)slot.x + 4, (int)slot.y + 18, 10, text);
+            ui_text(label, (int)slot.x + 4, (int)slot.y + 18, 10, text);
         }
         DrawRectangleLinesEx(slot, g->selected == i ? 2.0f : 1.0f,
                              g->selected == i ? (Color){235, 200, 90, 255}
                                               : (Color){80, 84, 96, 255});
-        DrawText(TextFormat("%d", i + 1), (int)slot.x + 3, (int)slot.y + 2, 10,
+        ui_text(TextFormat("%d", i + 1), (int)slot.x + 3, (int)slot.y + 2, 10,
                  (Color){235, 235, 245, 255});
-        DrawText(TextFormat("%d", a->focus_cost),
+        ui_text(TextFormat("%d", a->focus_cost),
                  (int)(slot.x + slot.width - 12), (int)slot.y + 2, 10,
                  (Color){150, 200, 255, 255});
     }
@@ -241,9 +256,9 @@ static void draw_tooltip(const Game *g)
     Rectangle box = {22, 404, STAGE_W - 44, 40};
     DrawRectangleRec(box, (Color){28, 30, 38, 240});
     DrawRectangleLinesEx(box, 1.0f, (Color){80, 84, 96, 255});
-    DrawText((a->name && a->name[0]) ? a->name : a->icon, (int)box.x + 6,
+    ui_text((a->name && a->name[0]) ? a->name : a->icon, (int)box.x + 6,
              (int)box.y + 5, 10, (Color){235, 200, 90, 255});
-    DrawText(a->tooltip, (int)box.x + 6, (int)box.y + 20, 10,
+    ui_text(a->tooltip, (int)box.x + 6, (int)box.y + 20, 10,
              (Color){200, 205, 215, 255});
 }
 
@@ -263,8 +278,8 @@ static void draw_backdrop(const Game *g)
     if (!drew)
         ClearBackground((Color){24, 26, 32, 255});
 
-    /* Keep the text and panels legible over the art. */
-    DrawRectangle(0, 0, STAGE_W, 60, (Color){12, 13, 17, 190});
+    /* Keep the bars legible over the art: they sit in a band across the top. */
+    DrawRectangle(0, 0, STAGE_W, 120, (Color){12, 13, 17, 150});
     DrawRectangle(0, (int)(BAR_CENTER_Y - 34), STAGE_W,
                   STAGE_H - (int)(BAR_CENTER_Y - 34), (Color){12, 13, 17, 190});
 }
@@ -318,7 +333,7 @@ static void draw_speech(const Game *g)
 
     DrawRectangleRec(box, (Color){16, 18, 24, 235});
     DrawRectangleLinesEx(box, 1.0f, (Color){120, 124, 140, 255});
-    DrawText(speaker->name, (int)box.x + 8, (int)box.y + 6, 10,
+    ui_text(speaker->name, (int)box.x + 8, (int)box.y + 6, 10,
              (Color){235, 200, 90, 255});
 
     /* Wrap the line to the box. */
@@ -337,7 +352,7 @@ static void draw_speech(const Game *g)
             count = (int)sizeof(line) - 1;
         memcpy(line, text + start, count);
         line[count] = 0;
-        DrawText(line, (int)box.x + 8, (int)box.y + 20 + row * 11, 10,
+        ui_text(line, (int)box.x + 8, (int)box.y + 20 + row * 11, 10,
                  (Color){215, 220, 230, 255});
         row++;
         if (row >= 2)
@@ -354,13 +369,13 @@ static void draw_battle(const Game *g)
 
     ClearBackground((Color){24, 26, 32, 255});
     draw_backdrop(g);
-    DrawText("SONNY", 22, 12, 22, (Color){210, 215, 225, 255});
+    ui_text("SONNY", 330, 8, 18, (Color){210, 215, 225, 255});
 
     const char *state = b->phase == PHASE_OVER
         ? (b->winCondition == 1 ? "victory"
            : b->winCondition == 0 ? "defeat" : "draw")
         : player_turn(g) ? "your move" : "enemy phase";
-    DrawText(TextFormat("Round %d   %s", b->round, state), 22, 38, 10,
+    ui_text(TextFormat("Round %d   %s", b->round, state), 330, 30, 10,
              (Color){150, 155, 165, 255});
 
     /* The models first, then the information panels over them. */
@@ -375,14 +390,14 @@ static void draw_battle(const Game *g)
     draw_speech(g);
 
     for (int32_t i = 0; i < g->log_count; i++)
-        DrawText(g->log[i], 200, 320 + i * 13, 10,
+        ui_text(g->log[i], 200, 320 + i * 13, 10,
                  (Color){160, 165, 175, 255});
 
     if (player_turn(g)) {
         const char *hint = (g->selected < 0)
             ? "pick an ability (1-8 or click), then click a target"
             : "click a target";
-        DrawText(hint, 22, STAGE_H - 32, 10, (Color){235, 200, 90, 255});
+        ui_text(hint, 22, STAGE_H - 32, 10, (Color){235, 200, 90, 255});
     }
 }
 

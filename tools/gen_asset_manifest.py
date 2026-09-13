@@ -79,6 +79,20 @@ typedef struct {
     int32_t flip;
 } StageSlot;
 
+/* Where the health and focus bar for a slot sits, straight off the root
+   timeline (p1BAR..p6BAR), with the bar art's own size. */
+typedef struct {
+    int32_t slot;
+    float   x, y;          /* where the bar is placed */
+    float   scale;
+    float   width, height; /* the bar art's size */
+    float   origin_x, origin_y;  /* where its own origin sits inside it */
+} StageBar;
+
+extern const StageBar SONNY_STAGE_BARS[];
+extern const int SONNY_STAGE_BAR_COUNT;
+const StageBar *stage_bar(int32_t slot);
+
 extern const StageSlot SONNY_STAGE_SLOTS[];
 extern const int SONNY_STAGE_SLOT_COUNT;
 const StageSlot *stage_slot(int32_t slot);
@@ -230,6 +244,32 @@ const StageSlot *stage_slot(int32_t slot)
     for (int i = 0; i < SONNY_STAGE_SLOT_COUNT; i++)
         if (SONNY_STAGE_SLOTS[i].slot == slot)
             return &SONNY_STAGE_SLOTS[i];
+    return NULL;
+}''')
+    bars = {}
+    if os.path.exists(args.stage):
+        with open(args.stage, encoding='utf-8') as fh:
+            bars = json.load(fh).get('bars') or {}
+    lines.append('')
+    lines.append('const StageBar SONNY_STAGE_BARS[] = {')
+    for slot in sorted(bars, key=int):
+        b_ = bars[slot]
+        lines.append('    { %s, %s, %s, %s, %s, %s, %s, %s },'
+                     % (slot, c_float(b_['x']), c_float(b_['y']),
+                        c_float(b_['scale_x']),
+                        c_float(b_.get('width', 201.0)),
+                        c_float(b_.get('height', 28.75)),
+                        c_float(b_.get('origin_x', 100.5)),
+                        c_float(b_.get('origin_y', 13.95))))
+    lines.append('};')
+    lines.append('const int SONNY_STAGE_BAR_COUNT = '
+                 '(int)(sizeof(SONNY_STAGE_BARS) / sizeof(SONNY_STAGE_BARS[0]));')
+    lines.append('''
+const StageBar *stage_bar(int32_t slot)
+{
+    for (int i = 0; i < SONNY_STAGE_BAR_COUNT; i++)
+        if (SONNY_STAGE_BARS[i].slot == slot)
+            return &SONNY_STAGE_BARS[i];
     return NULL;
 }''')
     lines.append('')

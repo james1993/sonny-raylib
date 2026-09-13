@@ -5,6 +5,69 @@
 #include <string.h>
 #include "game.h"
 
+/* The game's own font, loaded at a larger size than it is drawn so text stays
+   clean when the fixed stage is scaled up to the window. */
+#define UI_FONT_PATH "assets/font/1478_Tahoma.ttf"
+#define UI_FONT_BASE 32
+
+static Font ui_font;
+static int ui_font_ready;
+
+void ui_font_load(void)
+{
+    if (ui_font_ready)
+        return;
+    if (!FileExists(UI_FONT_PATH))
+        return;
+
+    ui_font = LoadFontEx(UI_FONT_PATH, UI_FONT_BASE, NULL, 0);
+    /* The SWF embeds each font as a subset of the glyphs it happens to use,
+       and three of the four hold only a handful. Anything that thin would
+       render most of the interface as blanks, so fall back to raylib's own
+       font rather than draw nothing. */
+    if (ui_font.texture.id == 0 || ui_font.glyphCount < 90) {
+        if (ui_font.texture.id != 0)
+            UnloadFont(ui_font);
+        TraceLog(LOG_WARNING,
+                 "UI font %s has too few glyphs (%d); using the default",
+                 UI_FONT_PATH, ui_font.glyphCount);
+        return;
+    }
+    SetTextureFilter(ui_font.texture, TEXTURE_FILTER_BILINEAR);
+    ui_font_ready = 1;
+}
+
+void ui_font_unload(void)
+{
+    if (ui_font_ready) {
+        UnloadFont(ui_font);
+        ui_font_ready = 0;
+    }
+}
+
+void ui_text(const char *text, float x, float y, float size, Color color)
+{
+    if (!text || !text[0])
+        return;
+    if (!ui_font_ready) {
+        DrawText(text, (int)x, (int)y, (int)size, color);
+        return;
+    }
+    /* A little negative tracking keeps small sizes close to the original's
+       spacing rather than looking loose. */
+    DrawTextEx(ui_font, text, (Vector2){x, y}, size, size > 14 ? 1.0f : 0.5f,
+               color);
+}
+
+float ui_text_width(const char *text, float size)
+{
+    if (!text || !text[0])
+        return 0;
+    if (!ui_font_ready)
+        return (float)MeasureText(text, (int)size);
+    return MeasureTextEx(ui_font, text, size, size > 14 ? 1.0f : 0.5f).x;
+}
+
 void game_log(Game *g, const char *fmt, ...)
 {
     va_list args;

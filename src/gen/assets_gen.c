@@ -2031,6 +2031,24 @@ const StageSlot *stage_slot(int32_t slot)
     return NULL;
 }
 
+const StageBar SONNY_STAGE_BARS[] = {
+    { 1, 136.150000f, 63.600000f, 1.085327f, 201.000000f, 28.750000f, 100.500000f, 13.950000f },
+    { 2, 664.900000f, 63.600000f, 1.085327f, 201.000000f, 28.750000f, 100.500000f, 13.950000f },
+    { 3, 136.150000f, 98.400000f, 1.085327f, 201.000000f, 28.750000f, 100.500000f, 13.950000f },
+    { 4, 664.900000f, 98.400000f, 1.085327f, 201.000000f, 28.750000f, 100.500000f, 13.950000f },
+    { 5, 136.150000f, 28.550000f, 1.085327f, 201.000000f, 28.750000f, 100.500000f, 13.950000f },
+    { 6, 664.900000f, 28.550000f, 1.085327f, 201.000000f, 28.750000f, 100.500000f, 13.950000f },
+};
+const int SONNY_STAGE_BAR_COUNT = (int)(sizeof(SONNY_STAGE_BARS) / sizeof(SONNY_STAGE_BARS[0]));
+
+const StageBar *stage_bar(int32_t slot)
+{
+    for (int i = 0; i < SONNY_STAGE_BAR_COUNT; i++)
+        if (SONNY_STAGE_BARS[i].slot == slot)
+            return &SONNY_STAGE_BARS[i];
+    return NULL;
+}
+
 const DollPart SONNY_DOLL_PARTS[] = {
     { "head", 0, "HEAD" },
     { "chest", 1, "CHEST" },

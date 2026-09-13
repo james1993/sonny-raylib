@@ -77,6 +77,16 @@ typedef struct {
     uint64_t  seed;
 } Game;
 
+/* Text, drawn in the game's own font.
+ *
+ * The SWF embeds Tahoma, Verdana and Trebuchet MS as subsets; the UI uses
+ * Tahoma, so that is what this loads. Every screen draws through ui_text
+ * rather than raylib's DrawText, which would use the built-in bitmap font. */
+void ui_font_load(void);
+void ui_font_unload(void);
+void ui_text(const char *text, float x, float y, float size, Color color);
+float ui_text_width(const char *text, float size);
+
 /* Shared helpers. */
 void game_log(Game *g, const char *fmt, ...);
 void game_notice(Game *g, const char *fmt, ...);

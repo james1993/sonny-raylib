@@ -9,7 +9,36 @@ horizontal scale, which is how the game mirrors them to face left.
     python3 tools/extract_stage.py SONNY1.swf > data/extracted/stage.json
 """
 import json
+import os
+import re
 import sys
+
+# The root <g> of an exported SVG says where the art's own origin sits inside
+# its canvas -- for the bar, its centre rather than a corner.
+SVG_ROOT_TRANSFORM = re.compile(
+    r'<g transform="matrix\(([-0-9.eE]+), *([-0-9.eE]+), *([-0-9.eE]+), *'
+    r'([-0-9.eE]+), *([-0-9.eE]+), *([-0-9.eE]+)\)"')
+
+
+def sprite_geometry(raw_dir, character):
+    """(width, height, origin x, origin y) of an exported sprite frame."""
+    if not raw_dir:
+        return None
+    import glob
+    matches = glob.glob(os.path.join(raw_dir, 'sprite_svg',
+                                     'DefineSprite_%d' % character, '1.svg'))
+    matches += glob.glob(os.path.join(raw_dir, 'sprite_svg',
+                                      'DefineSprite_%d_*' % character, '1.svg'))
+    if not matches:
+        return None
+    with open(matches[0], encoding='utf-8', errors='replace') as fh:
+        head = fh.read(4096)
+    size = re.search(r'height="([0-9.]+)px" width="([0-9.]+)px"', head)
+    origin = SVG_ROOT_TRANSFORM.search(head)
+    if not size or not origin:
+        return None
+    return (float(size.group(2)), float(size.group(1)),
+            float(origin.group(5)), float(origin.group(6)))
 
 sys.path.insert(0, __file__.rsplit('/', 1)[0])
 from swfinfo import read_swf                       # noqa: E402
@@ -27,7 +56,7 @@ def last_seen(frames, name):
     return found
 
 
-def main(path):
+def main(path, raw_dir=None):
     _, _, _, body = read_swf(path)
 
     root = model_frames(body, 0)
@@ -73,12 +102,30 @@ def main(path):
         if backdrop:
             break
 
+    # The health/focus bars, which the root timeline places by name as
+    # p1BAR..p6BAR. Their size comes from the bar sprite itself.
+    bars = {}
+    for slot in range(1, 7):
+        placement = last_seen(root, 'p%dBAR' % slot)
+        if not placement:
+            continue
+        a, _, _, d, x, y = placement['matrix']
+        entry = {'x': round(x, 3), 'y': round(y, 3),
+                 'scale_x': round(a, 6), 'scale_y': round(d, 6),
+                 'character': placement['character']}
+        geom = sprite_geometry(raw_dir, placement['character'])
+        if geom:
+            entry['width'], entry['height'] = geom[0], geom[1]
+            entry['origin_x'], entry['origin_y'] = geom[2], geom[3]
+        bars[slot] = entry
+
     json.dump({'screen': {'x': sx, 'y': sy, 'character': screen['character']},
-               'slots': slots, 'backdrop': backdrop}, sys.stdout, indent=1)
+               'slots': slots, 'backdrop': backdrop, 'bars': bars},
+              sys.stdout, indent=1)
     print()
 
 
 if __name__ == '__main__':
-    if len(sys.argv) != 2:
+    if len(sys.argv) not in (2, 3):
         raise SystemExit(__doc__)
-    main(sys.argv[1])
+    main(sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else None)
