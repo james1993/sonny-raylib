@@ -292,6 +292,11 @@ def main():
         stage = {}
     selector = stage.get('selector') or {}
     orb_icons = selector.get('icons') or {}
+    # Which sprite a label should be taken from when several carry it. The
+    # battle's two backdrop layers are the containers the game retargets on
+    # load, so their frames are the zone's real art.
+    preferred = {'background': {layer['character'] for layer
+                                in (stage.get('layers') or {}).values()}}
     # The speech portrait, whose frames are labelled with who is speaking.
     portrait = next((p for p in ((stage.get('speech') or {}).get('parts') or [])
                      if p.get('frames')), None)
@@ -363,13 +368,23 @@ def main():
                         entries = [(1, png)]
                         origin = shape_origin(exports, cid)
             elif name in label_index:
-                # A labelled frame inside a sprite. Prefer the art the frame
-                # actually places: a backdrop or icon frame places one shape,
+                # A labelled frame inside a sprite. The same label often
+                # appears in several of them -- a backdrop is labelled both in
+                # the battle's own sky container and in a menu preview -- so
+                # the container the engine actually points at comes first.
+                entries_for_label = label_index[name]
+                if preferred.get(category):
+                    entries_for_label = (
+                        [e for e in entries_for_label
+                         if e[0] in preferred[category]]
+                        + [e for e in entries_for_label
+                           if e[0] not in preferred[category]])
+                # Prefer the art the frame actually places: a backdrop or icon frame places one shape,
                 # and that shape alone is the picture. Rendering the enclosing
                 # frame instead also catches whatever persisted from earlier
                 # frames -- on the battle screen, the design-time unit
                 # placeholders the game overwrites at runtime.
-                for entry in label_index[name]:
+                for entry in entries_for_label:
                     sprite_id, frame = entry[0], entry[1]
                     placed = entry[2] if len(entry) > 2 else []
                     if len(placed) == 1:

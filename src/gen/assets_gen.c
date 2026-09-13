@@ -850,7 +850,7 @@ static const AssetOffset OFFSETS_437[] = { { 403.250000f, 183.100000f } };
 static const char *const FRAMES_438[] = { "assets/art/icon/None.png" };
 static const AssetOffset OFFSETS_438[] = { { 32.500000f, 28.700000f } };
 static const char *const FRAMES_439[] = { "assets/art/background/PLAINS.png" };
-static const AssetOffset OFFSETS_439[] = { { 476.300000f, 260.950000f } };
+static const AssetOffset OFFSETS_439[] = { { 570.450000f, 136.450000f } };
 static const char *const FRAMES_440[] = { "assets/art/background/PLAINS2.png" };
 static const AssetOffset OFFSETS_440[] = { { 570.450000f, 136.450000f } };
 static const char *const FRAMES_441[] = { "assets/art/buff/POISON.png" };
@@ -883,7 +883,7 @@ static const AssetOffset OFFSETS_455[] = { { 12.850000f, 12.200000f } };
 static const char *const FRAMES_456[] = { "assets/art/portrait/Rockstar.png" };
 static const AssetOffset OFFSETS_456[] = { { 26.800000f, 45.500000f } };
 static const char *const FRAMES_457[] = { "assets/art/background/SEA.png" };
-static const AssetOffset OFFSETS_457[] = { { 476.000000f, 223.600000f } };
+static const AssetOffset OFFSETS_457[] = { { 385.950000f, 157.650000f } };
 static const char *const FRAMES_458[] = { "assets/art/buff/SHATTER.png" };
 static const AssetOffset OFFSETS_458[] = { { 7.050000f, 17.350000f } };
 static const char *const FRAMES_459[] = { "assets/art/buff/SHATTER2.png" };
@@ -1426,7 +1426,7 @@ const AssetEntry SONNY_ASSETS[] = {
     { "Master Strike", "orb", FRAMES_436, OFFSETS_436, 1, 1, -20.400000f, -15.500000f, 12.150000f, 12.800000f },
     { "NIGHT", "background", FRAMES_437, OFFSETS_437, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
     { "None", "icon", FRAMES_438, OFFSETS_438, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "PLAINS", "background", FRAMES_439, OFFSETS_439, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "PLAINS", "background", FRAMES_439, OFFSETS_439, 1, 1, -570.450000f, -136.450000f, 535.700000f, 256.950000f },
     { "PLAINS2", "background", FRAMES_440, OFFSETS_440, 1, 1, -570.450000f, -136.450000f, 535.700000f, 256.950000f },
     { "POISON", "buff", FRAMES_441, OFFSETS_441, 1, 1, -5.950000f, -10.950000f, 5.950000f, 10.950000f },
     { "POISONZOMBIE", "buff", FRAMES_442, OFFSETS_442, 1, 1, -5.950000f, -10.950000f, 5.950000f, 10.950000f },
@@ -1444,7 +1444,7 @@ const AssetEntry SONNY_ASSETS[] = {
     { "Rage", "orb", FRAMES_454, OFFSETS_454, 1, 1, -27.100000f, -28.700000f, 21.950000f, 18.250000f },
     { "Re-Energize", "orb", FRAMES_455, OFFSETS_455, 1, 1, -12.850000f, -12.200000f, 12.800000f, 12.800000f },
     { "Rockstar", "portrait", FRAMES_456, OFFSETS_456, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "SEA", "background", FRAMES_457, OFFSETS_457, 1, 1, -476.000000f, -223.600000f, 561.450000f, 390.750000f },
+    { "SEA", "background", FRAMES_457, OFFSETS_457, 1, 1, -385.950000f, -157.650000f, 394.500000f, 158.200000f },
     { "SHATTER", "buff", FRAMES_458, OFFSETS_458, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
     { "SHATTER2", "buff", FRAMES_459, OFFSETS_459, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
     { "SHORE", "background", FRAMES_460, OFFSETS_460, 1, 1, -523.200000f, -166.550000f, 523.250000f, 215.050000f },
