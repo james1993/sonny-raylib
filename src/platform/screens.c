@@ -46,7 +46,7 @@ static const TextField *hub_field(const char *name)
 static int menu_close_pressed(Vector2 mouse)
 {
     const StageButton *b = stage_button(HUB_SCREEN, MENU_BUTTON_CLOSE, 0);
-    return b && IsMouseButtonPressed(MOUSE_BUTTON_LEFT)
+    return b && ui_clicked()
         && CheckCollisionPointRec(mouse, (Rectangle){b->x, b->y, b->width,
                                                      b->height});
 }
@@ -73,7 +73,7 @@ static const TextField *win_field(const char *name)
 static int hub_pressed(int32_t character, Vector2 mouse)
 {
     const StageButton *b = stage_button(HUB_SCREEN, character, 0);
-    return b && IsMouseButtonPressed(MOUSE_BUTTON_LEFT)
+    return b && ui_clicked()
         && CheckCollisionPointRec(mouse, (Rectangle){b->x, b->y, b->width,
                                                      b->height});
 }
@@ -168,7 +168,7 @@ void screen_zone_update(Game *g, Vector2 mouse)
     hub_tooltips(g, mouse);
     /* The markers on the scene. Which one was pressed decides what happens,
        and for a store it is also what says which store. */
-    for (int32_t i = 0; IsMouseButtonPressed(MOUSE_BUTTON_LEFT); i++) {
+    for (int32_t i = 0; ui_clicked(); i++) {
         const StageButton *b = zone_marker_button(&g->campaign, i);
         if (!b)
             break;
@@ -340,7 +340,7 @@ void screen_map_update(Game *g, Vector2 mouse)
         if (!marker_unlocked(&g->campaign, m) || !hit(marker_rect(m), mouse))
             continue;
         g->hovered_item = m->zone;
-        if (!IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+        if (!ui_clicked())
             break;
         /* Travelling changes where you are, not how far you have got. */
         g->campaign.zone = m->zone;
@@ -756,7 +756,7 @@ void screen_talents_update(Game *g, Vector2 mouse)
         else
             game_tooltip(g, lang_text("SKILLNONE", 0),
                          lang_text("SKILLTUT", 0));
-        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
+        if (ui_clicked()) {
             audio_play("Click2putdown");
             place_on_bar(g, i);
             return;
@@ -779,7 +779,7 @@ void screen_talents_update(Game *g, Vector2 mouse)
             if (!a)
                 continue;
             game_tooltip(g, a->name, a->tooltip);
-            if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
+            if (ui_clicked()) {
                 audio_play("Click3pickup");
                 g->carrying = a->id;
                 return;
@@ -792,7 +792,7 @@ void screen_talents_update(Game *g, Vector2 mouse)
     for (int i = 0; i < 4; i++) {
         const StageButton *b = stage_button(MENU_SKILLS,
                                             SKILL_ATTRIBUTES[i].button, 0);
-        if (!b || !IsMouseButtonPressed(MOUSE_BUTTON_LEFT)
+        if (!b || !ui_clicked()
             || !hit((Rectangle){b->x, b->y, b->width, b->height}, mouse))
             continue;
         if (character_unspent_stat_points(c) <= 0)
@@ -821,7 +821,7 @@ void screen_talents_update(Game *g, Vector2 mouse)
                                        shown->name),
                          rank > 0 ? shown->tooltip
                                   : lang_text("SKILLTALENTTIP2", 0));
-        if (!IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+        if (!ui_clicked())
             break;
 
         TalentError err = character_learn(c, node);
@@ -1000,7 +1000,7 @@ void screen_inventory_update(Game *g, Vector2 mouse)
         if (!hit(r, mouse))
             continue;
         g->hovered_item = 100 + i;
-        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+        if (ui_clicked())
             swap_bag(g, i);
         break;
     }
@@ -1012,7 +1012,7 @@ void screen_inventory_update(Game *g, Vector2 mouse)
         g->hovered_item = i;
         /* A row only takes what belongs in it, and the row keeps what it has
            if the carried item does not fit. */
-        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)
+        if (ui_clicked()
             && item_fits(&c->player, g->carried_item, i))
             swap_carried(g, &c->player.equip[i]);
         break;
@@ -1098,7 +1098,7 @@ static void draw_party_row(Game *g, const char *menu, Vector2 mouse)
             continue;
         game_tooltip(g, SONNY_PARTY[i].name,
                      lang_text("MENU", i != 0 ? 48 : 49));
-        if (!IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+        if (!ui_clicked())
             continue;
         /* Holding shift moves someone in or out of the fighting line; a
            plain press turns the sheet over to them. */
@@ -1407,7 +1407,7 @@ void screen_shop_update(Game *g, Vector2 mouse)
         if (!hit(r, mouse))
             continue;
         g->hovered_item = i;
-        if (!IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+        if (!ui_clicked())
             break;
         if (c->euros < item->price) {
             game_notice(g, "%s", lang_text("MENU", 20));
@@ -1427,7 +1427,7 @@ void screen_shop_update(Game *g, Vector2 mouse)
         if (!hit(r, mouse))
             continue;
         g->hovered_item = 100 + i;
-        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+        if (ui_clicked())
             swap_bag(g, i);
         break;
     }
@@ -1437,7 +1437,7 @@ void screen_shop_update(Game *g, Vector2 mouse)
         if (!hit(r, mouse))
             continue;
         g->hovered_item = i;
-        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)
+        if (ui_clicked()
             && item_fits(&c->player, g->carried_item, i))
             swap_carried(g, &c->player.equip[i]);
         break;
@@ -1450,7 +1450,7 @@ void screen_shop_update(Game *g, Vector2 mouse)
                                                          bin->width,
                                                          bin->height})) {
         game_tooltip(g, lang_text("MENU", 5), lang_text("MENU", 5));
-        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && g->carried_item != 0) {
+        if (ui_clicked() && g->carried_item != 0) {
             const ItemDef *item = item_by_id(g->carried_item);
             if (item)
                 c->euros += (item->price + 3) / 4;
@@ -1470,7 +1470,7 @@ void screen_victory_update(Game *g, Vector2 mouse)
     /* Drops are chosen by clicking them, as VICTORY[1] instructs. */
     for (int32_t i = 0; i < g->dropped_count; i++) {
         Rectangle r = drop_rect(i);
-        if (!hit(r, mouse) || !IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+        if (!hit(r, mouse) || !ui_clicked())
             continue;
         if (g->taken[i])
             continue;
@@ -1489,7 +1489,7 @@ void screen_victory_update(Game *g, Vector2 mouse)
     /* "Proceed!" is one of the frame's own fields, so its hit area is that
        field's box. */
     const TextField *proceed = win_field("@23");
-    if (!proceed || !IsMouseButtonPressed(MOUSE_BUTTON_LEFT)
+    if (!proceed || !ui_clicked()
         || !CheckCollisionPointRec(mouse, (Rectangle){proceed->x, proceed->y,
                                                       proceed->width,
                                                       proceed->height}))

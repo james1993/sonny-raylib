@@ -59,6 +59,9 @@ int main(int argc, char **argv)
     /* Headless capture: SONNY_SHOT=path, SONNY_STEPS=frames, and
        SONNY_SCREEN picks which screen to open first. */
     const char *shot = getenv("SONNY_SHOT");
+    /* SONNY_CLICKS drives the game without a pointer: "frame:x:y" triples,
+       so a whole run through the menus can be checked from a script. */
+    const char *clicks = getenv("SONNY_CLICKS");
     int steps = getenv("SONNY_STEPS") ? atoi(getenv("SONNY_STEPS")) : 0;
     const char *want_screen = getenv("SONNY_SCREEN");
     int frames = 0;
@@ -105,6 +108,27 @@ int main(int argc, char **argv)
 
     while (!WindowShouldClose()) {
         Vector2 mouse = stage_mouse();
+        int synthetic = 0;
+        if (clicks) {
+            /* Each triple fires on its own frame. */
+            const char *p = clicks;
+            while (*p) {
+                int at = atoi(p);
+                const char *x = strchr(p, ':');
+                const char *y = x ? strchr(x + 1, ':') : NULL;
+                if (!x || !y)
+                    break;
+                if (at == frames) {
+                    mouse = (Vector2){(float)atof(x + 1), (float)atof(y + 1)};
+                    synthetic = 1;
+                }
+                const char *next = strchr(y + 1, ',');
+                if (!next)
+                    break;
+                p = next + 1;
+            }
+        }
+        ui_set_synthetic_click(synthetic);
         audio_update();
         if (game.notice_timer > 0)
             game.notice_timer--;

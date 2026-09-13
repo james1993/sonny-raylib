@@ -234,3 +234,14 @@ character is wearing. The original only folds equipment into Krin.StatSets0
 when the inventory frame runs updateEquip(), so a player who opens the ability
 screen before ever opening the character sheet sees the numbers without their
 gear. Both screens here read the same totals.
+
+## Driving the game without a pointer
+
+`SONNY_CLICKS="frame:x:y,..."` presses at a stage coordinate on the frame
+given, so a whole run through the menus can be checked from a script:
+
+    SONNY_CLICKS="5:393:355,12:392:341,20:270:208,28:399:274,36:250:470" \
+    SONNY_SHOT=shot.png SONNY_STEPS=70 ./build/sonny
+
+That path is title, New Game, slot 1, Destroyer, PLAY -- which lands on the
+opening comic.

@@ -462,6 +462,20 @@ Vector2 stage_mouse(void)
                      m.y / scale};
 }
 
+/* A click the harness makes rather than the pointer, so a run through the
+   menus can be driven from a script. */
+static int synthetic_click;
+
+void ui_set_synthetic_click(int on)
+{
+    synthetic_click = on;
+}
+
+int ui_clicked(void)
+{
+    return synthetic_click || IsMouseButtonPressed(MOUSE_BUTTON_LEFT);
+}
+
 int hit(Rectangle r, Vector2 p)
 {
     return CheckCollisionPointRec(p, r);
@@ -491,7 +505,7 @@ int draw_button(Rectangle r, const char *label, Vector2 mouse, int enabled)
     DrawRectangleRec(r, fill);
     DrawRectangleLinesEx(r, over ? 2.0f : 1.0f, edge);
     DrawText(label, (int)r.x + 10, (int)(r.y + r.height / 2 - 5), 10, text);
-    return over && IsMouseButtonPressed(MOUSE_BUTTON_LEFT);
+    return over && ui_clicked();
 }
 
 /* ------------------------------------------------------------------ orbs */
@@ -720,7 +734,7 @@ int screen_button_pressed(const char *screen, int32_t character,
                           Vector2 mouse)
 {
     const StageButton *b = stage_button(screen, character, 0);
-    return b && IsMouseButtonPressed(MOUSE_BUTTON_LEFT)
+    return b && ui_clicked()
         && CheckCollisionPointRec(mouse, (Rectangle){b->x, b->y, b->width,
                                                      b->height});
 }

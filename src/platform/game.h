@@ -235,6 +235,10 @@ float ui_sans_text_width(const char *text, float size);
 void game_log(Game *g, const char *fmt, ...);
 void game_notice(Game *g, const char *fmt, ...);
 Vector2 stage_mouse(void);
+/* Whether a press happened this frame, counting the ones a headless run
+   makes for itself. */
+void ui_set_synthetic_click(int on);
+int ui_clicked(void);
 int hit(Rectangle r, Vector2 p);
 void draw_panel(Rectangle r, const char *title);
 int draw_button(Rectangle r, const char *label, Vector2 mouse, int enabled);

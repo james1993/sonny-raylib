@@ -856,7 +856,7 @@ static void handle_input(Game *g)
     if (!player_turn(g) || g->queued)
         return;
 
-    if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && g->ring_unit > 0) {
+    if (ui_clicked() && g->ring_unit > 0) {
         Vector2 centre = unit_stage_pos(b, g->ring_unit);
         float radius = orb_radius();
         for (int i = 0; i < SONNY_RING_SLOT_COUNT; i++) {
@@ -884,7 +884,7 @@ static void handle_input(Game *g)
     /* The turn indicator in the middle of the bottom panel: clicking it ends
        the turn with the null move, which is how the original passes. */
     const StageChrome *pass = stage_chrome(BATTLE_SCREEN_NAME, "krinToMove2");
-    if (pass && IsMouseButtonPressed(MOUSE_BUTTON_LEFT)
+    if (pass && ui_clicked()
         && CheckCollisionPointCircle(stage, (Vector2){pass->x, pass->y},
                                      PASS_BUTTON_RADIUS)) {
         battle_queue(b, PLAYER_SLOT, PLAYER_SLOT, 0, 0);
