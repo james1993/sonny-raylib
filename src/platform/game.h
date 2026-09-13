@@ -126,6 +126,8 @@ typedef struct {
         int32_t sound, graphics, quality, autosave;
     } options;
     int32_t   lost_timer;
+    /* Both sides ran out at once, which the original has its own frame for. */
+    int32_t   battle_drawn;
     int32_t   gameover_tip;
     /* What the tooltip is showing this frame. The original keeps one of
        these and every button fills it on roll-over. */

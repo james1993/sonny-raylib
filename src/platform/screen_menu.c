@@ -20,6 +20,7 @@
 #define MANUAL_SCREEN  "designMenu"
 #define OVER_SCREEN    "gameOverMenu"
 #define LOST_SCREEN    "loseCombat"
+#define DRAW_SCREEN    "drawCombat"
 
 /* Every one of these frames carries the same "Back" button, which goes to the
    title, and the same two corner captions. */
@@ -345,10 +346,12 @@ void screen_settings_update(Game *g, Vector2 mouse)
 void screen_lost_draw(Game *g, Vector2 mouse)
 {
     (void)mouse;
-    (void)g;
+    /* Both ways a fight can end badly have a frame of their own, and each is
+       one line on black. */
+    const char *screen = g->battle_drawn ? DRAW_SCREEN : LOST_SCREEN;
     ClearBackground(BLACK);
-    draw_screen_chrome(LOST_SCREEN);
-    draw_screen_text(LOST_SCREEN);
+    draw_screen_chrome(screen);
+    draw_screen_text(screen);
 }
 
 void screen_lost_update(Game *g, Vector2 mouse)

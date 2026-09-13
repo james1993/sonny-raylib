@@ -214,6 +214,11 @@ What the original settled that guesswork had got wrong:
   coloured again the next time the screen opens -- the menu clip goes back to
   its first frame, so the grey never survives a visit.
 
+Deliberately left out: the preloader. The original waits on a screen that
+says "< CLICK TO PLAY >" while the SWF streams in. Nothing streams here, so
+the screen would only be a gate to click through; the frame it is on has no
+play button of its own, only the sponsor's link.
+
 Known to differ: text is rasterised by stb_truetype without hinting, so stems
 land between pixels where Flash's device-font rendering snaps them onto one.
 Size, spacing, wrap and colour match; the weight reads lighter.

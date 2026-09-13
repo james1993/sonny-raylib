@@ -1072,6 +1072,7 @@ void battle_screen_update(Game *g, Vector2 mouse, int headless)
             g->progress_fight = 0;
             g->boss_fight = 0;
             g->lost_timer = 0;
+            g->battle_drawn = (g->battle.winCondition == 2);
             g->screen = SCREEN_LOST;
         }
         if (audio_ready())
