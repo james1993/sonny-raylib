@@ -93,6 +93,10 @@ typedef struct {
     /* Menu/screen interaction. */
     int32_t   hovered_item;
     int32_t   selected_item;
+    /* Whether the last attribute point went while the ability screen has
+       been open: the swatches beside the attributes go grey then, and are
+       coloured again the next time the screen is opened. */
+    int32_t   stat_points_spent;
     char      notice[128];
     int32_t   notice_timer;
 
@@ -123,6 +127,21 @@ void draw_field_wrapped(const TextField *f, Vector2 clip, const char *text);
    picture because the export bakes its fields' design-time copy in. */
 void draw_clip_parts(const char *screen, const char *owner, Vector2 moved,
                      const char *chosen, Color tint);
+
+/* One ability orb, put back together from the shared pieces the orb clip is
+   made of, centred on `centre` and at the scale the screen places it: a ball,
+   the icon masked to it, the glass over that, and -- when `dim` is not zero
+   -- the black disc the original lays over an orb that cannot be used, at
+   that alpha. */
+void draw_orb(const char *icon, Vector2 centre, float scale, int32_t dim,
+              int32_t cooldown);
+/* The alphas the original gives that disc: eighty-five percent over a move
+   the fight will not let the player use, and eighty over a tree node with
+   nothing spent on it. */
+#define ORB_DIM_RING   217
+#define ORB_DIM_TALENT 204
+/* A button's own art, which is nowhere else in the file. */
+void draw_button_art(const StageButton *b, Color tint);
 
 void game_draw_notice(const Game *g);
 void ui_text(const char *text, float x, float y, float size, Color color);

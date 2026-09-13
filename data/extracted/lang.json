@@ -826,6 +826,72 @@
    "Piercing determines how much damage an element does, the chances of that element scoring a critical hit, and how much damage a critical hit adds. This is indicated visually on the bar graph, from 0% to 100%. Defense operates in a similar way, but as a counter to Piercing.",
    "Strength and Magic are just co-efficients for your abilities. Speed is also a co-efficient, but to only a few abilities. Speed also increases your Piercing (1 point for every 2 points of Speed) and dodge/accuracy. Vitality increases your Health by 8 points.",
    "It's mainly about the Strategy and spec that you use. Observe the enemy carefully, and look into your entire Ability tree to find ways to beat them."
+  ],
+  "SKLOAD": [
+   "Ability Points"
+  ],
+  "SPLOAD": [
+   "Attribute Points"
+  ],
+  "K_TITLE1": [
+   "Ability Tree"
+  ],
+  "K_TITLE2": [
+   "Your Attributes"
+  ],
+  "K_TITLE3": [
+   "Combat Action Bar"
+  ],
+  "SKILLERROR": [
+   "You cannot equip more of that ability."
+  ],
+  "TALENTERROR1": [
+   "You do not have enough Ability Points."
+  ],
+  "TALENTERROR2": [
+   "This Ability cannot be developed further."
+  ],
+  "TALENTERROR3": [
+   "Your Level is not high enough."
+  ],
+  "SKILLTUT": [
+   "To equip an Ability, pick one up from the menu below and place it here."
+  ],
+  "SKILLNONE": [
+   "None"
+  ],
+  "SKILLTHRS1": [
+   " You are allowed to equip this move "
+  ],
+  "SKILLTHRS2": [
+   " time(s) on your action bar."
+  ],
+  "SKILLTALENTTIP": [
+   "Next Tier (Lvl. "
+  ],
+  "SKILLTALENTTIP2": [
+   "You have no points in this ability yet."
+  ],
+  "SKILLTALENTTIP3": [
+   "This ability is at its maximum tier."
+  ],
+  "SKILLTUT2": [
+   "There is currently no Ability equipped into this slot."
+  ],
+  "SKILLAURA": [
+   "Passive Combat Effect"
+  ],
+  "ITEMERROR1": [
+   "Your level is not high enough to use that item."
+  ],
+  "ITEMERROR2": [
+   "You cannot equip this item. It could be for another class."
+  ],
+  "ITEMERROR3": [
+   "This item does not fit into that slot."
+  ],
+  "EXPLAINEXTRA": [
+   "Please select a topic."
   ]
  },
  "GERMAN": {
@@ -1654,6 +1720,78 @@
    "Durchschlagkraft bestimmt wie viel Schaden ein Element ausrichtet, die Chance, dass dieses Element kritisch trifft, und wie viel Schaden ein kritischer Treffer ausrichtet. Visuell kann man dies durch das Balkendiagramm im Fähigkeitsmenu sehen. Beständigkeit ist der Gegenwert zu der Durchschlagkraft.",
    "Kraft und Zauberkraft sind einfach Koeffizienten für deine Fähigkeiten. Beweglichkeit ist auch ein solcher Koeffizient, aber nur für wenige Fähigkeiten, denn es erhöht auch deine Durchschlagkraft(2 Punkte Beweglichkeit ergeben 1 Punkt Durchschlagkraft) und Ausweichchance/Treffsicherheit. Ausdauer erhöht dein Leben um 8 Punkten.",
    "Die Strategie und deine Fähigkeiten sind das Wesentliche.  Beobachte deinen Gegner, und versuche eine Fähigkeitskombination zusammen zu stellen, die es dir ermöglicht, ihn zu besiegen."
+  ],
+  "SKLOAD": [
+   "Fähigkeitspunkte"
+  ],
+  "SPLOAD": [
+   "Eigenschaftspunkte"
+  ],
+  "K_TITLE1": [
+   "Fähigkeitsbaum"
+  ],
+  "K_TITLE2": [
+   "Deine Eigenschaften"
+  ],
+  "K_TITLE3": [
+   "Actionbar"
+  ],
+  "SKILLERROR": [
+   "Du kannst den Charakter mit dieser Fähigkeit nicht mehr ausstatten."
+  ],
+  "TALENTERROR1": [
+   "Du hast nicht genug Fähigkeitspunkte."
+  ],
+  "TALENTERROR2": [
+   "Du kannst diese Fähigkeit nicht weiter entwickeln."
+  ],
+  "TALENTERROR3": [
+   "Dein Level ist nicht hoch genug."
+  ],
+  "TALENTERROR4": [
+   "Du hast die Voraussetzungsfähigkeiten für diese Fähigkeit nicht."
+  ],
+  "SKILLTUT": [
+   "Um eine Fähigkeit benutzten zu können, nimm sie vom Menu und stelle sie hier rein."
+  ],
+  "SKILLNONE": [
+   "Keine."
+  ],
+  "SKILLTHRS1": [
+   " Du kannst den Charakter mit dieser Fähigkeit "
+  ],
+  "SKILLTHRS2": [
+   " mal in deiner Actionbar ausstatten."
+  ],
+  "SKILLTALENTTIP": [
+   "Nächste Stufe (Lvl. "
+  ],
+  "SKILLTALENTTIP2": [
+   "Du hast noch keine Punkte in dieser Fähigkeit."
+  ],
+  "SKILLTALENTTIP3": [
+   "Diese Fähigkeit kannst du nicht weiter entwickeln."
+  ],
+  "SKILLTUT2": [
+   "In diesem Slot ist zurzeit keine Fähigkeit."
+  ],
+  "SKILLAURA": [
+   "Passiver Kampf Effekt"
+  ],
+  "ITEMERROR1": [
+   "Dein Level ist nicht hoch genug um das zu benutzen."
+  ],
+  "ITEMERROR2": [
+   "Du kannst diesen Gegenstand nicht benutzen. Er ist für eine andere Klasse gedacht."
+  ],
+  "ITEMERROR3": [
+   "Dieser Gegenstand passt nicht in den Slot!"
+  ],
+  "ENDING": [
+   "Glückwunsch! Du hast das Spiel beendet. Um weiter coole Spiele zu spielen, geh zu ArmorGames.com, dort kannst du auch vielleicht neue Versionen von Sonny finden! Wenn du noch weiter spielen willst, gibt es eine letzte Herausvorderung, aber sei gewarnt! Es ist sehr schwer. Wenn du weiter machen willst, wirst du Zone 4 betreten, wo dir das ganze Team (6 Mitglieder) zur Verfügung steht. Es gibt vier schwere Bosse, und einen Trainingmodus dass dir immer einen geeigneten Gegner stellt. DIES IST NICHT TEIL DER GESCHICHTE VON SONNY! Es ist nur zum Spaß gedacht! Viel Glück, und danke fürs spielen. Bis zum nächsten Mal!"
+  ],
+  "EXPLAINEXTRA": [
+   "Bitte wähle ein Thema."
   ]
  }
 }

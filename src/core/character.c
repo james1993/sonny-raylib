@@ -33,6 +33,11 @@ int32_t character_unspent_skill_points(const Character *c)
     return character_skill_points(c) - c->spent_skill_points;
 }
 
+int32_t character_unspent_stat_points(const Character *c)
+{
+    return character_stat_points(c) - c->spent_stat_points;
+}
+
 TalentError character_can_learn(const Character *c, int32_t node)
 {
     if (node < 0 || node >= SONNY_TALENT_COUNT)

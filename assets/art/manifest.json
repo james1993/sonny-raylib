@@ -1104,6 +1104,24 @@
     ]
    ]
   },
+  "#1239": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1239.png"
+   ],
+   "bounds": [
+    -30.0,
+    -30.0,
+    30.0,
+    30.0
+   ],
+   "offsets": [
+    [
+     30.0,
+     30.0
+    ]
+   ]
+  },
   "#1248": {
    "category": "chrome",
    "frames": [
@@ -1440,6 +1458,18 @@
     ]
    ]
   },
+  "#1344@2": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1344@2.png"
+   ],
+   "offsets": [
+    [
+     0.0,
+     9.35
+    ]
+   ]
+  },
   "#1345": {
    "category": "chrome",
    "frames": [
@@ -1506,6 +1536,60 @@
     ]
    ]
   },
+  "#1380": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1380.png"
+   ],
+   "bounds": [
+    -21.55,
+    -7.7,
+    21.55,
+    7.75
+   ],
+   "offsets": [
+    [
+     21.55,
+     7.7
+    ]
+   ]
+  },
+  "#1400": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1400.png"
+   ],
+   "bounds": [
+    -12.25,
+    -30.5,
+    12.25,
+    30.55
+   ],
+   "offsets": [
+    [
+     12.25,
+     30.5
+    ]
+   ]
+  },
+  "#1401": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1401.png"
+   ],
+   "bounds": [
+    -5.5,
+    -22.5,
+    5.5,
+    18.0
+   ],
+   "offsets": [
+    [
+     5.5,
+     22.5
+    ]
+   ]
+  },
   "#1406": {
    "category": "chrome",
    "frames": [
@@ -1542,6 +1626,18 @@
     ]
    ]
   },
+  "#1426@1": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1426@1.png"
+   ],
+   "offsets": [
+    [
+     -0.5,
+     0.5
+    ]
+   ]
+  },
   "#1444": {
    "category": "chrome",
    "frames": [
@@ -1551,6 +1647,36 @@
     [
      22.05,
      35.2
+    ]
+   ]
+  },
+  "#1444@8": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1444@8.png"
+   ],
+   "offsets": [
+    [
+     22.05,
+     35.2
+    ]
+   ]
+  },
+  "#1445": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1445.png"
+   ],
+   "bounds": [
+    -22.05,
+    -8.2,
+    22.05,
+    8.25
+   ],
+   "offsets": [
+    [
+     22.05,
+     8.2
     ]
    ]
   },
@@ -1992,6 +2118,42 @@
     ]
    ]
   },
+  "#821": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#821.png"
+   ],
+   "bounds": [
+    -92.4,
+    -16.0,
+    -28.5,
+    16.0
+   ],
+   "offsets": [
+    [
+     92.4,
+     16.0
+    ]
+   ]
+  },
+  "#823": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#823.png"
+   ],
+   "bounds": [
+    13.9,
+    -14.95,
+    75.85,
+    15.05
+   ],
+   "offsets": [
+    [
+     -13.9,
+     14.95
+    ]
+   ]
+  },
   "#824": {
    "category": "chrome",
    "frames": [
@@ -2061,6 +2223,24 @@
     [
      32.5,
      28.7
+    ]
+   ]
+  },
+  "#867": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#867.png"
+   ],
+   "bounds": [
+    -10.5,
+    -10.5,
+    10.5,
+    10.5
+   ],
+   "offsets": [
+    [
+     10.5,
+     10.5
     ]
    ]
   },
@@ -10087,6 +10267,24 @@
     ]
    ]
   },
+  "ORB BRUTALITY": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_BRUTALITY.png"
+   ],
+   "bounds": [
+    -12.85,
+    -19.75,
+    12.15,
+    12.8
+   ],
+   "offsets": [
+    [
+     12.85,
+     19.75
+    ]
+   ]
+  },
   "ORB Blessing of Light": {
    "category": "orb",
    "frames": [
@@ -10249,6 +10447,24 @@
     ]
    ]
   },
+  "ORB ENDURANCE": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_ENDURANCE.png"
+   ],
+   "bounds": [
+    -12.85,
+    -19.95,
+    12.15,
+    31.4
+   ],
+   "offsets": [
+    [
+     12.85,
+     19.95
+    ]
+   ]
+  },
   "ORB Electro Bolt": {
    "category": "orb",
    "frames": [
@@ -10264,6 +10480,18 @@
     [
      12.85,
      15.4
+    ]
+   ]
+  },
+  "ORB Empty": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_Empty.png"
+   ],
+   "offsets": [
+    [
+     11.5,
+     11.5
     ]
    ]
   },
@@ -10447,6 +10675,24 @@
     ]
    ]
   },
+  "ORB REGENERATION": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_REGENERATION.png"
+   ],
+   "bounds": [
+    -13.0,
+    -14.5,
+    17.55,
+    14.0
+   ],
+   "offsets": [
+    [
+     13.0,
+     14.5
+    ]
+   ]
+  },
   "ORB Rage": {
    "category": "orb",
    "frames": [
@@ -10474,6 +10720,24 @@
     -12.85,
     -12.2,
     12.8,
+    12.8
+   ],
+   "offsets": [
+    [
+     12.85,
+     12.2
+    ]
+   ]
+  },
+  "ORB SOLIDITY": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_SOLIDITY.png"
+   ],
+   "bounds": [
+    -12.85,
+    -12.2,
+    12.15,
     12.8
    ],
    "offsets": [

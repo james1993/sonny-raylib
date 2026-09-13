@@ -129,6 +129,9 @@ void screen_zone_update(Game *g, Vector2 mouse)
         g->screen = SCREEN_INVENTORY;
     } else if (hub_pressed(HUB_BUTTON_SKILLS, mouse)) {
         audio_play("Click3pickup");
+        /* Opening the screen puts the menu clip back on its first frame, so
+           the swatches beside the attributes start coloured again. */
+        g->stat_points_spent = 0;
         g->screen = SCREEN_TALENTS;
     } else if (hub_pressed(HUB_BUTTON_MAP, mouse)) {
         audio_play("Click3pickup");
@@ -294,31 +297,340 @@ void screen_map_draw(Game *g, Vector2 mouse)
                 mouse, 1);
 }
 
+/* A slot's own empty square, which the menu screens share. */
+static void draw_slot_art(const char *menu, const char *prefix, int i);
+
 /* ------------------------------------------------------------- talents */
 
-/* The tree's own layout: each node's stage position comes from the menu, the
-   tree sprite and the node instance composed together, so the branches sit in
-   the columns the original arranges them in. The nodes are 52 apart across
-   and 40 down, which sets the box size. */
-#define TALENT_BOX_W 46.0f
-#define TALENT_BOX_H 36.0f
+/* The ability screen, which the menu clip carries on its "skills" frame: the
+   tree down the left, who the character is and their attributes down the
+   middle, and the combat action bar over the pool of everything they know on
+   the right. Everything below is laid out from that frame.
+
+   The frame's own script (sprite 1503, frame 25) is what says where the text
+   comes from; the tree's node clip carries the rest, in its load handler. */
+#define MENU_SKILLS "skills"
+
+/* The button every tree node carries, which is both what the node answers in
+   and, being the only thing that tells a node apart from the art, how big its
+   box is. */
+#define TREE_NODE_BUTTON 1418
+
+/* The plus beside each attribute, by the button's own character: the handlers
+   hang off these, and each adds to one of Krin.StatSets0. */
+#define STAT_BUTTON_VITALITY 1451
+#define STAT_BUTTON_STRENGTH 1448
+#define STAT_BUTTON_MAGIC    1449
+#define STAT_BUTTON_SPEED    1450
+
+/* The swatches behind those buttons. They are one clip with a frame for each
+   state: coloured while there are points to spend, and grey once the last one
+   goes -- which the original only ever does part way through a visit, since
+   opening the screen puts the clip back on its first frame. */
+#define STAT_COLOUR_SLOT "statColor"
+#define STAT_COLOUR_DEAD "#1444@8"
+
+/* The ability pool, which the screen fills with one row per ability the
+   character knows. The rows go in two columns, thirty-five apart down and
+   twenty-five below the top of the pool, exactly as KrinCreateAbilityMatrix
+   places them. */
+#define POOL_SLOT      "talentPool"
+#define POOL_ROW       "talenter"
+#define POOL_ROW_STEP  35.0f
+#define POOL_ROW_TOP   25.0f
+#define POOL_COLUMN_A  5.0f
+#define POOL_COLUMN_B  85.0f
+/* Where the row's own orb sits in it. */
+#define POOL_ROW_ORB_X 28.5f
+#define POOL_ROW_ORB_Y 0.05f
+
+/* The frame the orb clip shows for a slot with nothing assigned to it: the
+   screen does gotoAndStop("Empty") on any such slot of the bar. */
+#define EMPTY_ORB "Empty"
+
+/* The orb inside a tree node sits a fraction above the node's own point. */
+#define TREE_NODE_ORB_Y (-0.35f)
+
+/* The branches the tree draws between a node and each of its prerequisites:
+   a six-wide black line with a two-wide one over it, gold once the
+   prerequisite is learned and near-black while it is not. */
+#define TREE_LINE_BACK   6.0f
+#define TREE_LINE_FRONT  2.0f
+#define TREE_LINE_OPEN   (Color){0xFF, 0xCC, 0x00, 255}
+#define TREE_LINE_SHUT   (Color){0x2B, 0x2B, 0x2B, 255}
+
+/* One of the skills frame's fields, by the name the frame gives it. */
+static const TextField *skill_field(const char *name, int32_t occurrence)
+{
+    return text_field_named(MENU_SCREEN, MENU_SKILLS, name, occurrence);
+}
 
 static Rectangle talent_rect(int32_t node)
 {
     const TalentSlot *slot = talent_slot(node);
-    if (!slot) {
+    const StageButton *box = stage_button(MENU_SKILLS, TREE_NODE_BUTTON, 0);
+    if (!slot || !box) {
         int col = node % 7;
         int row = node / 7;
         return (Rectangle){70 + col * 92, 110 + row * 92, 74, 74};
     }
-    return (Rectangle){slot->x - TALENT_BOX_W / 2, slot->y - TALENT_BOX_H / 2,
-                       TALENT_BOX_W, TALENT_BOX_H};
+    return (Rectangle){slot->x - box->width / 2, slot->y - box->height / 2,
+                       box->width, box->height};
+}
+
+/* The rank readout over a node: the rank and the tier it tops out at, each
+   drawn twice -- black, then white a pixel up and to the left. The frame lays
+   an identical set over every node, but in the tree's own stacking order
+   rather than the nodes' own, so a node takes the set laid nearest to it. */
+#define TREE_RANK_FIELDS 4
+
+static const TextField *node_field(const TalentSlot *slot, int32_t which)
+{
+    int32_t best = -1;
+    float nearest = 0;
+    for (int32_t i = 0; i < SONNY_TALENT_SLOT_COUNT; i++) {
+        const TextField *f = text_field(MENU_SCREEN, MENU_SKILLS,
+                                        i * TREE_RANK_FIELDS);
+        if (!f)
+            break;
+        float dx = f->x - slot->x, dy = f->y - slot->y;
+        float away = dx * dx + dy * dy;
+        if (best < 0 || away < nearest) {
+            best = i;
+            nearest = away;
+        }
+    }
+    if (best < 0)
+        return NULL;
+    return text_field(MENU_SCREEN, MENU_SKILLS,
+                      best * TREE_RANK_FIELDS + which);
+}
+
+/* What a node's orb shows. A node that grants a move shows that move's icon,
+   at the rank currently held -- or the first rank's while nothing is learned,
+   which is what the tree's own load handler points the orb at. A passive
+   shows its buff's icon instead, which the orb clip has its own frame for. */
+static const char *node_icon(const Character *c, int32_t node)
+{
+    const TalentDef *t = &SONNY_TALENTS[node];
+    if (t->passive)
+        return t->buff_name;
+    int32_t rank = c->rank[node];
+    const AbilityDef *a = ability_by_id(t->ability_id
+                                        + (rank > 0 ? rank - 1 : 0));
+    return a ? a->icon : NULL;
+}
+
+/* The eight slots of the combat action bar, which are the same ring the fight
+   puts round a unit -- here the menu places it flat on the screen, so each
+   orb is taken from the selector's own pieces by name. */
+static const SlotPiece *bar_slot(int32_t slot)
+{
+    char name[16];
+    snprintf(name, sizeof(name), "thing%d", (int)slot);
+    for (int32_t i = 0; ; i++) {
+        const SlotPiece *piece = slot_piece(MENU_SKILLS, "selector", i);
+        if (!piece)
+            return NULL;
+        if (strcmp(piece->name, name) == 0)
+            return piece;
+    }
+}
+
+/* Where the pool's `index`-th row goes, in stage coordinates. */
+static Vector2 pool_row(int32_t index)
+{
+    const MenuSlot *pool = menu_slot(MENU_SKILLS, POOL_SLOT);
+    Vector2 at = {0, 0};
+    if (!pool)
+        return at;
+    at.x = pool->x + (index % 2 ? POOL_COLUMN_B : POOL_COLUMN_A);
+    at.y = pool->y + POOL_ROW_TOP + (index / 2) * POOL_ROW_STEP;
+    return at;
+}
+
+/* The four attributes the screen offers, in the order the frame stacks their
+   rows: each is one of SYSTEM's names, one of the character's derived
+   numbers, and the button that buys another point of it. */
+static const struct {
+    const char *label, *value;
+    int32_t     button;
+    int32_t     stat;
+} SKILL_ATTRIBUTES[4] = {
+    {"@573", "@577", STAT_BUTTON_VITALITY, 0},
+    {"@574", "@578", STAT_BUTTON_STRENGTH, 1},
+    {"@575", "@579", STAT_BUTTON_MAGIC,    2},
+    {"@576", "@580", STAT_BUTTON_SPEED,    3},
+};
+
+void screen_talents_draw(Game *g, Vector2 mouse)
+{
+    (void)mouse;
+    const Character *c = &g->campaign.player;
+
+    ClearBackground(BLACK);
+    /* The hub stays behind the menu, as it does in the original. */
+    draw_screen_chrome(HUB_SCREEN);
+    draw_clip_parts(MENU_SCREEN, MENU_SKILLS, NO_OFFSET, NULL, WHITE);
+
+    /* The four headings, which the frame reads out of the language table. */
+    draw_field(skill_field("@603", 0), NO_OFFSET, lang_text("K_TITLE1", 0));
+    draw_field(skill_field("@601", 0), NO_OFFSET, lang_text("K_TITLE2", 0));
+    draw_field(skill_field("@602", 0), NO_OFFSET, lang_text("K_TITLE3", 0));
+    draw_field(skill_field("@604", 0), NO_OFFSET, lang_text("MENU", 16));
+
+    /* Who the character is, and what they have to spend. */
+    draw_field(skill_field("@583", 0), NO_OFFSET, lang_text("NAVTITLE2", 3));
+    draw_field(skill_field("@584", 0), NO_OFFSET,
+               TextFormat("%s%d %s", lang_text("MENU", 0), c->level,
+                          lang_text("CLASS", c->class_template
+                                    ? c->class_template->id - 1 : 0)));
+    draw_field(skill_field("@581", 0), NO_OFFSET,
+               TextFormat("%s:", lang_text("SKLOAD", 0)));
+    draw_field(skill_field("@585", 0), NO_OFFSET,
+               TextFormat("%d", character_unspent_skill_points(c)));
+    draw_field(skill_field("@582", 0), NO_OFFSET,
+               TextFormat("%s:", lang_text("SPLOAD", 0)));
+    draw_field(skill_field("@586", 0), NO_OFFSET,
+               TextFormat("%d", character_unspent_stat_points(c)));
+    /* The tip. Every tree node carries a rank readout whose own fields are
+       called "@1" to "@4" as well, so the screen's own is the one after
+       them. */
+    draw_field_wrapped(skill_field("@1", SONNY_TALENT_SLOT_COUNT), NO_OFFSET,
+                       lang_text("MENU", 44));
+
+    /* The attributes: the swatches behind the row of plus buttons, then each
+       row's name, number and button. */
+    const MenuSlot *swatch = menu_slot(MENU_SKILLS, STAT_COLOUR_SLOT);
+    if (swatch && swatch->width > 0) {
+        const Texture2D *tex = asset_texture(
+            g->stat_points_spent ? STAT_COLOUR_DEAD
+                                 : TextFormat("#%d", swatch->character), 1);
+        if (tex) {
+            Rectangle dst = placed_rect(swatch->x, swatch->y, swatch->scale,
+                                        swatch->scale, swatch->width,
+                                        swatch->height, swatch->origin_x,
+                                        swatch->origin_y);
+            DrawTexturePro(*tex, (Rectangle){0, 0, (float)tex->width,
+                                             (float)tex->height},
+                           dst, (Vector2){0, 0}, 0.0f, WHITE);
+        }
+    }
+    DerivedStats stats = character_derive(c);
+    const double shown[4] = {stats.life, stats.strength, stats.magic,
+                             stats.speed};
+    for (int i = 0; i < 4; i++) {
+        draw_button_art(stage_button(MENU_SKILLS, SKILL_ATTRIBUTES[i].button,
+                                     0), WHITE);
+        draw_field(skill_field(SKILL_ATTRIBUTES[i].label, 0), NO_OFFSET,
+                   TextFormat("%s:", lang_text("SYSTEM",
+                                               SKILL_ATTRIBUTES[i].stat)));
+        draw_field(skill_field(SKILL_ATTRIBUTES[i].value, 0), NO_OFFSET,
+                   TextFormat("%d", (int32_t)shown[i]));
+    }
+
+    /* The tree. The branches go in first, under the nodes, and each is drawn
+       twice: a thick black line with a thin coloured one over it, gold once
+       the prerequisite it comes from is learned. */
+    for (int32_t node = 0; node < SONNY_TALENT_COUNT; node++) {
+        const TalentSlot *from = talent_slot(node);
+        if (!from)
+            continue;
+        for (int32_t i = 0; i < SONNY_TALENTS[node].prereq_count; i++) {
+            int32_t prereq = SONNY_TALENTS[node].prereq[i];
+            const TalentSlot *to = prereq >= 0 ? talent_slot(prereq) : NULL;
+            if (!to)
+                continue;
+            Vector2 a = {from->x, from->y}, b = {to->x, to->y};
+            DrawLineEx(a, b, TREE_LINE_BACK, BLACK);
+            DrawLineEx(a, b, TREE_LINE_FRONT,
+                       c->rank[prereq] > 0 ? TREE_LINE_OPEN : TREE_LINE_SHUT);
+        }
+    }
+    for (int32_t node = 0; node < SONNY_TALENT_COUNT; node++) {
+        const TalentSlot *slot = talent_slot(node);
+        if (!slot)
+            continue;
+        Vector2 centre = {slot->x, slot->y + TREE_NODE_ORB_Y};
+        /* A node with nothing spent on it wears the same black disc the ring
+           puts over a move that cannot be used. */
+        draw_orb(node_icon(c, node), centre, slot->scale,
+                 c->rank[node] > 0 ? 0 : ORB_DIM_TALENT, 0);
+        /* The rank over it, which the tree hides unless the space bar is
+           down. */
+        if (!IsKeyDown(KEY_SPACE))
+            continue;
+        const char *rank = TextFormat("%d", c->rank[node]);
+        const char *tier = TextFormat("%d", SONNY_TALENTS[node].max_rank);
+        draw_field(node_field(slot, 0), NO_OFFSET, rank);
+        draw_field(node_field(slot, 1), NO_OFFSET, tier);
+        draw_field(node_field(slot, 2), NO_OFFSET, rank);
+        draw_field(node_field(slot, 3), NO_OFFSET, tier);
+    }
+
+    /* The combat action bar: the eight slots of the loadout, each an orb, and
+       a slot with nothing on it showing the ring's own empty frame. */
+    for (int32_t i = 0; i < SONNY_MOVE_SLOTS; i++) {
+        const SlotPiece *piece = bar_slot(i);
+        if (!piece)
+            continue;
+        const AbilityDef *a = ability_by_id(c->move_matrix[i]);
+        Vector2 centre = {piece->x, piece->y};
+        draw_orb((a && a->id != 0) ? a->icon : EMPTY_ORB, centre,
+                 piece->scale_x, 0, 0);
+    }
+
+    /* The pool below it: one row per ability the character knows, two to a
+       line, inside the pool's own box. */
+    const MenuSlot *pool = menu_slot(MENU_SKILLS, POOL_SLOT);
+    if (pool && pool->width > 0) {
+        Rectangle box = placed_rect(pool->x, pool->y, pool->scale, pool->scale,
+                                    pool->width, pool->height, pool->origin_x,
+                                    pool->origin_y);
+        int32_t known[SONNY_TALENT_MAX + SONNY_MOVE_SLOTS];
+        int32_t count = character_known_abilities(c, known,
+                                                  (int32_t)(sizeof(known)
+                                                            / sizeof(known[0])));
+        draw_slot_art(MENU_SKILLS, POOL_SLOT, -1);
+        BeginScissorMode((int)box.x, (int)box.y, (int)box.width,
+                         (int)box.height);
+        for (int32_t i = 0; i < count; i++) {
+            Vector2 at = pool_row(i);
+            draw_clip_parts(MENU_SCREEN, POOL_ROW, at, NULL, WHITE);
+            /* The original walks the list of known abilities with for..in,
+               which hands back an array's indices last to first, so the row
+               the pool fills first is the last ability learned. */
+            const AbilityDef *a = ability_by_id(known[count - 1 - i]);
+            Vector2 centre = {at.x + POOL_ROW_ORB_X, at.y + POOL_ROW_ORB_Y};
+            draw_orb(a ? a->icon : NULL, centre, 1.0f, 0, 0);
+        }
+        EndScissorMode();
+    }
 }
 
 void screen_talents_update(Game *g, Vector2 mouse)
 {
     Character *c = &g->campaign.player;
     g->hovered_item = -1;
+
+    /* A point of an attribute, which the original buys one click at a time
+       and stops offering the moment the last one is gone. */
+    for (int i = 0; i < 4; i++) {
+        const StageButton *b = stage_button(MENU_SKILLS,
+                                            SKILL_ATTRIBUTES[i].button, 0);
+        if (!b || !IsMouseButtonPressed(MOUSE_BUTTON_LEFT)
+            || !hit((Rectangle){b->x, b->y, b->width, b->height}, mouse))
+            continue;
+        if (character_unspent_stat_points(c) <= 0)
+            break;
+        c->spent[SKILL_ATTRIBUTES[i].stat] += 1;
+        c->spent_stat_points++;
+        /* The swatches go grey as the last point goes, and stay that way
+           until the screen is opened again. */
+        if (character_unspent_stat_points(c) == 0)
+            g->stat_points_spent = 1;
+        return;
+    }
 
     for (int32_t node = 0; node < SONNY_TALENT_COUNT; node++) {
         if (!hit(talent_rect(node), mouse))
@@ -331,7 +643,6 @@ void screen_talents_update(Game *g, Vector2 mouse)
         switch (err) {
         case TALENT_OK:
             audio_play("Click2putdown");
-            game_notice(g, "Learned rank %d.", c->rank[node]);
             /* A newly learned active talent goes on the first free slot. */
             if (!SONNY_TALENTS[node].passive) {
                 for (int32_t i = 0; i < SONNY_MOVE_SLOTS; i++) {
@@ -345,15 +656,7 @@ void screen_talents_update(Game *g, Vector2 mouse)
         case TALENT_NO_POINTS:
             game_notice(g, "%s", lang_text("MENU", 20));
             break;
-        case TALENT_MAX_RANK:
-            game_notice(g, "Already at its highest rank.");
-            break;
-        case TALENT_LEVEL_TOO_LOW:
-            game_notice(g, "Needs level %d.",
-                        character_talent_next_level(c, node));
-            break;
         default:
-            game_notice(g, "Its prerequisite is not learned yet.");
             break;
         }
         break;
@@ -361,95 +664,6 @@ void screen_talents_update(Game *g, Vector2 mouse)
 
     if (menu_close_pressed(mouse))
         g->screen = SCREEN_ZONE;
-}
-
-void screen_talents_draw(Game *g, Vector2 mouse)
-{
-    const Character *c = &g->campaign.player;
-
-    ClearBackground((Color){18, 20, 26, 255});
-    ui_text(lang_text("SYSTEM", 19), 22, 16, 20, (Color){210, 215, 225, 255});
-    ui_text(TextFormat("%d points to spend",
-                        character_unspent_skill_points(c)),
-             22, 44, 10, (Color){140, 210, 140, 255});
-
-    for (int32_t node = 0; node < SONNY_TALENT_COUNT; node++) {
-        const TalentDef *t = &SONNY_TALENTS[node];
-        Rectangle r = talent_rect(node);
-        int32_t rank = c->rank[node];
-        int learnable = character_can_learn(c, node) == TALENT_OK;
-
-        DrawRectangleRec(r, (Color){34, 38, 48, 255});
-        /* The ability's own icon, at the rank currently held. */
-        const AbilityDef *a = ability_by_id(t->ability_id
-                                            + (rank > 0 ? rank - 1 : 0));
-        Rectangle inner = {r.x + 2, r.y + 2, r.width - 4, r.height - 12};
-        Color tint = rank > 0 ? WHITE : (Color){130, 130, 140, 255};
-        if (a && !asset_draw_fit(a->icon, 1, inner, tint))
-            ui_text(a->icon, (int)r.x + 5, (int)r.y + 8, 10, tint);
-
-        DrawRectangleLinesEx(r, hit(r, mouse) ? 2.0f : 1.0f,
-                             learnable ? (Color){140, 210, 140, 255}
-                             : rank > 0 ? (Color){225, 200, 120, 255}
-                                        : (Color){80, 84, 96, 255});
-        ui_text(TextFormat("%d/%d", rank, t->max_rank), (int)r.x + 3,
-                 (int)(r.y + r.height - 11), 9,
-                 rank > 0 ? RAYWHITE : (Color){140, 145, 155, 255});
-        if (t->passive)
-            ui_text("P", (int)(r.x + r.width - 9), (int)r.y + 2, 9,
-                     (Color){150, 190, 240, 255});
-    }
-
-    /* What the hovered talent does, in the game's own words. The original
-       keeps this side of the screen for the ability pool and its description,
-       so the panel goes there rather than under the tree. */
-    if (g->hovered_item >= 0 && g->hovered_item < SONNY_TALENT_COUNT) {
-        const TalentDef *t = &SONNY_TALENTS[g->hovered_item];
-        int32_t rank = c->rank[g->hovered_item];
-        Rectangle box = {300, 110, STAGE_W - 340, 120};
-        draw_panel(box, NULL);
-        const AbilityDef *a = ability_by_id(t->ability_id
-                                            + (rank > 0 ? rank - 1 : 0));
-        if (a) {
-            ui_text((a->name && a->name[0]) ? a->name : a->icon,
-                     (int)box.x + 8, (int)box.y + 8, 12,
-                     (Color){235, 200, 90, 255});
-            /* The tooltip is a sentence; wrap it to the panel. */
-            const char *text = a->tooltip;
-            char line[128];
-            int start = 0, last_space = -1, row = 0;
-            for (int i = 0; text[i] && row < 4; i++) {
-                if (text[i] == ' ')
-                    last_space = i;
-                if (i - start + 1 < 58 && text[i + 1])
-                    continue;
-                int stop = (text[i + 1] && last_space > start) ? last_space
-                                                              : i + 1;
-                int count = stop - start;
-                if (count > (int)sizeof(line) - 1)
-                    count = (int)sizeof(line) - 1;
-                memcpy(line, text + start, count);
-                line[count] = 0;
-                ui_text(line, (int)box.x + 8, (int)box.y + 28 + row * 12, 10,
-                         (Color){200, 205, 215, 255});
-                row++;
-                start = (stop == last_space) ? stop + 1 : stop;
-                last_space = -1;
-                i = start - 1;
-            }
-        }
-        ui_text(TextFormat("Rank %d of %d, next at level %d", rank,
-                            t->max_rank,
-                            character_talent_next_level(c, g->hovered_item)),
-                 (int)box.x + 8, (int)box.y + 74, 10,
-                 (Color){150, 160, 175, 255});
-        if (t->passive)
-            ui_text("Passive: applied at the start of every battle.",
-                     (int)box.x + 8, (int)box.y + 92, 10,
-                     (Color){150, 190, 240, 255});
-    }
-    draw_button((Rectangle){STAGE_W - 120, STAGE_H - 44, 100, 28}, "Back",
-                mouse, 1);
 }
 
 /* ----------------------------------------------------------- inventory */

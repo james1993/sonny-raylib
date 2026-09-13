@@ -141,14 +141,6 @@ static void draw_doll(const Game *g, int32_t slot)
 /* The turn indicator's clickable middle, which ends the turn. */
 #define PASS_BUTTON_RADIUS 30.0f
 
-/* How dark the original's "cannot use this" disc is over an orb, and the
-   size it prints a slot's remaining cooldown at. */
-#define ORB_FILTER_ALPHA 217
-/* The ring's copy of an ability icon is a different shape to the menus', so
-   it is kept under its own name. */
-#define ORB_ICON_PREFIX "ORB "
-#define ORB_COOLDOWN_SIZE 9.0f
-
 /* Where the speech box goes when it is the left team talking. */
 #define SPEECH_LEFT_X 21.8f
 
@@ -444,62 +436,6 @@ static const char *move_refusal(const Game *g, int slot, int32_t target)
 }
 
 /* One piece of the orb, in the ring's coordinates around `centre`. */
-static void draw_orb_part(const OrbPart *part, Vector2 centre, Color tint)
-{
-    if (!part)
-        return;
-    const Texture2D *tex = asset_texture(TextFormat("#%d", part->character), 1);
-    if (!tex)
-        return;
-    float sx = part->scale_x * SONNY_RING_SCALE;
-    float sy = part->scale_y * SONNY_RING_SCALE;
-    Rectangle dst = {centre.x + (part->x - part->origin_x * part->scale_x)
-                     * SONNY_RING_SCALE,
-                     centre.y + (part->y - part->origin_y * part->scale_y)
-                     * SONNY_RING_SCALE,
-                     part->width * sx, part->height * sy};
-    DrawTexturePro(*tex, (Rectangle){0, 0, (float)tex->width,
-                                     (float)tex->height},
-                   dst, (Vector2){0, 0}, 0.0f, tint);
-}
-
-/* One orb: the ball, the ability's icon over it, the glass highlight, and --
-   only when the move is not on offer -- the black disc the original shows,
-   at the alpha it shows it at, with the slot's remaining cooldown on top. */
-static void draw_orb(const AbilityDef *a, Vector2 centre, int usable,
-                     int32_t cooldown)
-{
-    draw_orb_part(orb_part("ball"), centre, WHITE);
-    if (a && a->icon && a->icon[0]) {
-        /* The ring's own copy of the icon, which the orb clip masks to the
-           ball: the mask is a circle, and a rectangle of its size is close
-           enough to keep an icon from spilling past the edge. */
-        const OrbPart *mask = orb_part("mask");
-        if (mask) {
-            Rectangle box = {centre.x - mask->width * SONNY_RING_SCALE / 2,
-                             centre.y - mask->height * SONNY_RING_SCALE / 2,
-                             mask->width * SONNY_RING_SCALE,
-                             mask->height * SONNY_RING_SCALE};
-            BeginScissorMode((int)box.x, (int)box.y, (int)box.width,
-                             (int)box.height);
-        }
-        asset_draw_placed(TextFormat("%s%s", ORB_ICON_PREFIX, a->icon), 1,
-                          centre, SONNY_RING_SCALE, WHITE);
-        if (mask)
-            EndScissorMode();
-    }
-    draw_orb_part(orb_part("glass"), centre, WHITE);
-    if (!usable)
-        draw_orb_part(orb_part("filter"), centre,
-                      (Color){255, 255, 255, ORB_FILTER_ALPHA});
-    if (cooldown > 0) {
-        const char *left = TextFormat("%d", cooldown);
-        float size = ORB_COOLDOWN_SIZE;
-        ui_sans_text(left, centre.x - ui_sans_text_width(left, size) / 2,
-                     centre.y - size / 2, size, RAYWHITE);
-    }
-}
-
 static void draw_ring(const Game *g)
 {
     if (g->ring_unit <= 0 || !player_turn(g) || g->queued)
@@ -512,8 +448,8 @@ static void draw_ring(const Game *g)
            hides the orb's button and marks the slot zero. */
         if (!a || a->id == 0)
             continue;
-        draw_orb(a, ring_slot_pos(slot, centre),
-                 move_offered(g, slot->slot, g->ring_unit),
+        draw_orb(a->icon, ring_slot_pos(slot, centre), SONNY_RING_SCALE,
+                 move_offered(g, slot->slot, g->ring_unit) ? 0 : ORB_DIM_RING,
                  g->ability_cooldown[slot->slot]);
     }
 }

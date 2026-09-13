@@ -493,3 +493,158 @@ int draw_button(Rectangle r, const char *label, Vector2 mouse, int enabled)
     DrawText(label, (int)r.x + 10, (int)(r.y + r.height / 2 - 5), 10, text);
     return over && IsMouseButtonPressed(MOUSE_BUTTON_LEFT);
 }
+
+/* ------------------------------------------------------------------ orbs */
+
+/* The size an orb prints a slot's remaining cooldown at. */
+#define ORB_ICON_PREFIX "ORB "
+#define ORB_COOLDOWN_SIZE 9.0f
+/* The ring's copy of an ability icon is a different shape to the menus', so
+   it is kept under its own name. */
+
+static void draw_orb_part(const OrbPart *part, Vector2 centre, float scale,
+                          Color tint)
+{
+    if (!part)
+        return;
+    const Texture2D *tex = asset_texture(TextFormat("#%d", part->character), 1);
+    if (!tex)
+        return;
+    float sx = part->scale_x * scale;
+    float sy = part->scale_y * scale;
+    Rectangle dst = {centre.x + (part->x - part->origin_x * part->scale_x)
+                     * scale,
+                     centre.y + (part->y - part->origin_y * part->scale_y)
+                     * scale,
+                     part->width * sx, part->height * sy};
+    DrawTexturePro(*tex, (Rectangle){0, 0, (float)tex->width,
+                                     (float)tex->height},
+                   dst, (Vector2){0, 0}, 0.0f, tint);
+}
+
+/* The orb clip cuts the icon to the ball with a circular mask, and the icons
+   are drawn larger than the ball -- without the cut they show their corners.
+   raylib has no masking, so an icon is combined with the mask the first time
+   it is drawn and the cut copy is what every orb shows afterwards. */
+#define ORB_ICON_CACHE 64
+
+static struct {
+    char      name[48];
+    Texture2D texture;
+    int       ok;
+} orb_cut[ORB_ICON_CACHE];
+static int32_t orb_cut_count;
+
+static const Texture2D *orb_icon_cut(const char *icon)
+{
+    for (int32_t i = 0; i < orb_cut_count; i++)
+        if (strcmp(orb_cut[i].name, icon) == 0)
+            return orb_cut[i].ok ? &orb_cut[i].texture : NULL;
+    if (orb_cut_count >= ORB_ICON_CACHE)
+        return NULL;
+
+    int32_t slot = orb_cut_count++;
+    snprintf(orb_cut[slot].name, sizeof(orb_cut[slot].name), "%s", icon);
+    orb_cut[slot].ok = 0;
+
+    const OrbPart *mask = orb_part("mask");
+    const char *art = TextFormat("%s%s", ORB_ICON_PREFIX, icon);
+    const Texture2D *icon_tex = asset_texture(art, 1);
+    const Texture2D *mask_tex = mask
+        ? asset_texture(TextFormat("#%d", mask->character), 1) : NULL;
+    if (!icon_tex || !mask_tex)
+        return NULL;
+
+    Vector2 icon_origin = asset_frame_offset(art, 1);
+    Vector2 mask_origin = asset_frame_offset(TextFormat("#%d",
+                                                        mask->character), 1);
+    Image icon_img = LoadImageFromTexture(*icon_tex);
+    Image mask_img = LoadImageFromTexture(*mask_tex);
+    Color *icon_px = LoadImageColors(icon_img);
+    Color *mask_px = LoadImageColors(mask_img);
+    Color *out_px = (Color *)MemAlloc((unsigned)(mask_img.width
+                                                 * mask_img.height)
+                                      * sizeof(Color));
+    /* The icon's own origin goes on the mask's, which is how the orb places
+       the two over each other. */
+    int shift_x = (int)(mask_origin.x - icon_origin.x + 0.5f);
+    int shift_y = (int)(mask_origin.y - icon_origin.y + 0.5f);
+    for (int y = 0; y < mask_img.height; y++) {
+        for (int x = 0; x < mask_img.width; x++) {
+            int sx = x - shift_x, sy = y - shift_y;
+            Color c = {0, 0, 0, 0};
+            if (sx >= 0 && sy >= 0 && sx < icon_img.width
+                && sy < icon_img.height)
+                c = icon_px[sy * icon_img.width + sx];
+            c.a = (unsigned char)(c.a * mask_px[y * mask_img.width + x].a
+                                  / 255);
+            out_px[y * mask_img.width + x] = c;
+        }
+    }
+    Image out = {out_px, mask_img.width, mask_img.height, 1,
+                 PIXELFORMAT_UNCOMPRESSED_R8G8B8A8};
+    orb_cut[slot].texture = LoadTextureFromImage(out);
+    orb_cut[slot].ok = 1;
+
+    UnloadImageColors(icon_px);
+    UnloadImageColors(mask_px);
+    UnloadImage(out);
+    UnloadImage(icon_img);
+    UnloadImage(mask_img);
+    return &orb_cut[slot].texture;
+}
+
+void draw_orb(const char *icon, Vector2 centre, float scale, int32_t dim,
+              int32_t cooldown)
+{
+    draw_orb_part(orb_part("ball"), centre, scale, WHITE);
+    const OrbPart *mask = orb_part("mask");
+    if (icon && icon[0] && mask) {
+        const Texture2D *cut = orb_icon_cut(icon);
+        if (cut) {
+            Rectangle dst = {centre.x - mask->origin_x * scale,
+                             centre.y - mask->origin_y * scale,
+                             mask->width * scale, mask->height * scale};
+            DrawTexturePro(*cut, (Rectangle){0, 0, (float)cut->width,
+                                             (float)cut->height},
+                           dst, (Vector2){0, 0}, 0.0f, WHITE);
+        }
+    }
+    draw_orb_part(orb_part("glass"), centre, scale, WHITE);
+    if (dim > 0)
+        draw_orb_part(orb_part("filter"), centre, scale,
+                      (Color){255, 255, 255, (unsigned char)dim});
+    if (cooldown > 0) {
+        const char *left = TextFormat("%d", cooldown);
+        float size = ORB_COOLDOWN_SIZE;
+        ui_sans_text(left, centre.x - ui_sans_text_width(left, size) / 2,
+                     centre.y - size / 2, size, RAYWHITE);
+    }
+}
+
+/* A button's own resting art. The hit shape a button answers in is drawn
+   about the button's own origin, so the middle of the box the screen
+   recorded is where its pieces hang from. */
+void draw_button_art(const StageButton *b, Color tint)
+{
+    if (!b)
+        return;
+    Vector2 centre = {b->x + b->width / 2, b->y + b->height / 2};
+    for (int32_t i = 0; ; i++) {
+        const ButtonPiece *p = button_piece(b->character, i);
+        if (!p)
+            break;
+        if (p->width <= 0)
+            continue;
+        const Texture2D *tex = asset_texture(TextFormat("#%d", p->character),
+                                             1);
+        if (!tex)
+            continue;
+        Rectangle dst = placed_rect(centre.x + p->x, centre.y + p->y,
+                                    p->scale_x, p->scale_y, p->width,
+                                    p->height, p->origin_x, p->origin_y);
+        DrawTexturePro(*tex, (Rectangle){0, 0, (float)tex->width,
+                                         (float)tex->height},
+                       dst, (Vector2){0, 0}, 0.0f, tint);
+    }
+}

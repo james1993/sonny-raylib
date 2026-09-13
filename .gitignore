@@ -1,6 +1,7 @@
-build/
 # Stray raylib screenshots land in the working directory.
-/*.png
 # The full decompiler dump: ~200 MB and regenerable from the SWF with
 # tools/extract_assets.sh. The selected set in assets/art is what ships.
+/*.png
+__pycache__/
 assets/raw/
+build/

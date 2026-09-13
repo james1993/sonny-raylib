@@ -72,7 +72,7 @@ const Texture2D *asset_texture(const char *name, int32_t frame)
 }
 
 /* Where a frame's own origin sits inside its exported image. */
-static Vector2 frame_offset(const char *name, int32_t frame)
+Vector2 asset_frame_offset(const char *name, int32_t frame)
 {
     const AssetEntry *entry = asset_find(name);
     if (!entry || !entry->offsets || entry->frame_count == 0)
@@ -137,7 +137,7 @@ int asset_draw_placed(const char *name, int32_t frame, Vector2 parent,
         return 0;
     /* The frame's recorded offset says where its own origin sits inside the
        image, so this puts that origin exactly on `parent`. */
-    Vector2 offset = frame_offset(name, frame);
+    Vector2 offset = asset_frame_offset(name, frame);
 
     float w = tex->width * scale;
     float h = tex->height * scale;
@@ -206,7 +206,7 @@ static int draw_layer(const char *name, const float m[6], Vector2 origin,
     const Texture2D *tex = asset_texture(name, 1);
     if (!tex)
         return 0;
-    draw_with_matrix(tex, m, origin, scale, flip, frame_offset(name, 1), tint);
+    draw_with_matrix(tex, m, origin, scale, flip, asset_frame_offset(name, 1), tint);
     return 1;
 }
 

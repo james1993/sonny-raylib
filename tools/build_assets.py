@@ -32,6 +32,9 @@ SVG_ROOT_TRANSFORM = re.compile(
 # The ring's own copy of an ability icon, which is a different shape to the
 # one the menus use under the same label.
 ORB_PREFIX = 'ORB '
+# A chrome asset is asked for by character id, optionally with the one frame
+# of it that is wanted: "#1444" or "#1444@8".
+CHROME_ID = re.compile(r'^[0-9]+(@[0-9]+)?$')
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -141,6 +144,7 @@ def collect_names(data_dir):
     battles = load('battles', data_dir)
     buffs = load('buffs', data_dir)
     doll = load('doll', data_dir)
+    talents = load('talents', data_dir)
 
     want = {'icon': set(), 'effect': set(), 'background': set(),
             'doll': set(), 'buff': set(), 'ui': set(), 'sound': set(),
@@ -245,6 +249,14 @@ def collect_names(data_dir):
 
     # UI pieces the battle screen attaches by name.
     want['ui'].update(['KrinBuffShower', 'MODEL1'])
+    # The orb the action bar shows for a slot with nothing assigned to it:
+    # the skills screen does gotoAndStop("Empty") on any such slot.
+    want['orb'].add(ORB_PREFIX + 'Empty')
+    # A passive node of the tree shows its buff's icon rather than the
+    # ability's: the tree does gotoAndStop(abilityXer[k].BUFFNAME).
+    for node in (talents.get('nodes') or []):
+        if node.get('CLASSIFY') == 1 and node.get('BUFFNAME'):
+            want['orb'].add(ORB_PREFIX + node['BUFFNAME'])
 
     # The battle screen's furniture. Most of it is never exported under a
     # name -- the root timeline just places the character -- so it is asked
@@ -289,8 +301,21 @@ def collect_names(data_dir):
         for slot in menu['slots'].values():
             if slot.get('character') and slot.get('width'):
                 want['chrome'].add('#%d' % slot['character'])
+                # A slot the screen points at a frame of by name wants that
+                # frame too, not just the resting one.
+                for frame in (slot.get('labels') or {}).values():
+                    want['chrome'].add('#%d@%d' % (slot['character'], frame))
     for part in ((stage.get('bar') or {}).get('graphics') or []):
         if part.get('character') and part.get('width'):
+            want['chrome'].add('#%d' % part['character'])
+    # A button's own resting art, which appears nowhere else in the file.
+    for pieces in (stage.get('button_art') or {}).values():
+        for piece in pieces:
+            if piece.get('width'):
+                want['chrome'].add('#%d' % piece['character'])
+    # The ability pool's row: a bar with the ability's orb sitting on it.
+    for part in ((stage.get('talent_row') or {}).get('parts') or []):
+        if part.get('width') and not part.get('frames'):
             want['chrome'].add('#%d' % part['character'])
     return want, speculative
 
@@ -390,15 +415,23 @@ def main():
                 elif cid:
                     frames = frame_files(args.raw, cid)[:args.max_frames]
                     entries = list(frames)
-            elif name.startswith('#') and name[1:].isdigit():
+            elif name.startswith('#') and CHROME_ID.match(name[1:]):
                 # Asked for by character id: a sprite keeps its frames, a
-                # shape is one picture carrying its own bounds.
-                cid = int(name[1:])
+                # shape is one picture carrying its own bounds. "#1444@8" asks
+                # for one particular frame, for a clip the screen points at a
+                # frame of by name.
+                spec, _, pick = name[1:].partition('@')
+                cid = int(spec)
                 # Furniture is drawn on its resting frame. Several of these
                 # clips are animations of hundreds of frames -- the turn
                 # indicator's pulse, the fade between screens -- and copying
                 # all of them costs far more than it buys.
-                frames = frame_files(args.raw, cid)[:args.chrome_frames]
+                if pick:
+                    frames = [(1, path) for frame, path
+                              in frame_files(args.raw, cid)
+                              if frame == int(pick)]
+                else:
+                    frames = frame_files(args.raw, cid)[:args.chrome_frames]
                 if frames:
                     entries = list(frames)
                 else:

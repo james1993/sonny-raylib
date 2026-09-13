@@ -29,6 +29,7 @@ int save_write(const Campaign *c, const char *path)
     fprintf(fh, "progress %d\n", c->progress_battle);
     fprintf(fh, "zone %d\n", c->zone);
     fprintf(fh, "spent_skill %d\n", c->player.spent_skill_points);
+    fprintf(fh, "spent_stat %d\n", c->player.spent_stat_points);
 
     fprintf(fh, "stats");
     for (int32_t i = 0; i < SONNY_STATS; i++)
@@ -109,6 +110,8 @@ int save_read(Campaign *c, const char *path)
             sscanf(rest, "%d", &c->zone);
         } else if (strcmp(key, "spent_skill") == 0) {
             sscanf(rest, "%d", &c->player.spent_skill_points);
+        } else if (strcmp(key, "spent_stat") == 0) {
+            sscanf(rest, "%d", &c->player.spent_stat_points);
         } else if (strcmp(key, "stats") == 0) {
             const char *p = rest;
             for (int32_t i = 0; i < SONNY_STATS; i++) {

@@ -217,6 +217,24 @@ typedef struct {
     float       x, y, width, height;
 } StageButton;
 
+/* One piece of a button's resting art. A button is not a sprite and its art
+   is nowhere else in the file, so a screen whose furniture is a row of
+   buttons -- the plus signs beside the attributes -- draws them from here.
+   `art` is asset "#<character>". */
+typedef struct {
+    int32_t button;        /* the button's own character id */
+    int32_t character;
+    float   x, y;
+    float   scale_x, scale_y;
+    float   width, height;
+    float   origin_x, origin_y;
+} ButtonPiece;
+
+extern const ButtonPiece SONNY_BUTTON_ART[];
+extern const int SONNY_BUTTON_ART_COUNT;
+/* The `index`-th piece of this button's resting art, bottom up. */
+const ButtonPiece *button_piece(int32_t button, int32_t index);
+
 extern const StageButton SONNY_BUTTONS[];
 extern const int SONNY_BUTTON_COUNT;
 /* The `index`-th button on `screen` with this character, in placement order. */

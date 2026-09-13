@@ -229,6 +229,24 @@ typedef struct {
     float       x, y, width, height;
 } StageButton;
 
+/* One piece of a button's resting art. A button is not a sprite and its art
+   is nowhere else in the file, so a screen whose furniture is a row of
+   buttons -- the plus signs beside the attributes -- draws them from here.
+   `art` is asset "#<character>". */
+typedef struct {
+    int32_t button;        /* the button's own character id */
+    int32_t character;
+    float   x, y;
+    float   scale_x, scale_y;
+    float   width, height;
+    float   origin_x, origin_y;
+} ButtonPiece;
+
+extern const ButtonPiece SONNY_BUTTON_ART[];
+extern const int SONNY_BUTTON_ART_COUNT;
+/* The `index`-th piece of this button's resting art, bottom up. */
+const ButtonPiece *button_piece(int32_t button, int32_t index);
+
 extern const StageButton SONNY_BUTTONS[];
 extern const int SONNY_BUTTON_COUNT;
 /* The `index`-th button on `screen` with this character, in placement order. */
@@ -572,7 +590,12 @@ const StageChrome *stage_chrome(const char *screen, const char *name)
                   for label, menu in sorted((stage_json.get('menus')
                                              or {}).items())
                   for part in menu['parts']]
-    for part in (stage_json.get('clip_parts') or []) + menu_parts:
+    # The pool row is attached rather than placed, so its pieces stay in the
+    # row's own coordinates and the screen offsets them per row.
+    row_parts = [dict(part, screen='menu', owner='talenter')
+                 for part in ((stage_json.get('talent_row') or {})
+                              .get('parts') or [])]
+    for part in (stage_json.get('clip_parts') or []) + menu_parts + row_parts:
         lines.append('    { %s, %s, %s, %d, %d, %d, %s, %s, %s, %s, %s, %s, %s, %s },'
                      % (c_string(part['screen']), c_string(part['owner']),
                         c_string(part['name']),
@@ -728,7 +751,11 @@ const BarField *bar_field(const char *side, const char *role)
 
     lines.append('')
     lines.append('const StageButton SONNY_BUTTONS[] = {')
-    for b in (stage_json.get('buttons') or []):
+    menu_buttons = [dict(b, screen=label)
+                    for label, menu in sorted((stage_json.get('menus')
+                                               or {}).items())
+                    for b in (menu.get('buttons') or [])]
+    for b in (stage_json.get('buttons') or []) + menu_buttons:
         lines.append('    { %s, %s, %s, %d, %s, %s, %s, %s },'
                      % (c_string(b['screen']), c_string(b.get('owner') or ''),
                         c_string(b['name']), b['character'],
@@ -747,6 +774,32 @@ const StageButton *stage_button(const char *screen, int32_t character,
             return &SONNY_BUTTONS[i];
     return NULL;
 }''')
+
+    lines.append('')
+    lines.append('const ButtonPiece SONNY_BUTTON_ART[] = {')
+    for button in sorted((stage_json.get('button_art') or {}),
+                         key=lambda k: int(k)):
+        for piece in stage_json['button_art'][button]:
+            lines.append('    { %d, %d, %s, %s, %s, %s, %s, %s, %s, %s },'
+                         % (int(button), piece['character'],
+                            c_float(piece['x']), c_float(piece['y']),
+                            c_float(piece['scale_x']),
+                            c_float(piece['scale_y']),
+                            c_float(piece.get('width') or 0),
+                            c_float(piece.get('height') or 0),
+                            c_float(piece.get('origin_x') or 0),
+                            c_float(piece.get('origin_y') or 0)))
+    lines.append('};')
+    lines.append('const int SONNY_BUTTON_ART_COUNT = '
+                 '(int)(sizeof(SONNY_BUTTON_ART) / sizeof(SONNY_BUTTON_ART[0]));')
+    lines.append("""
+const ButtonPiece *button_piece(int32_t button, int32_t index)
+{
+    for (int i = 0; i < SONNY_BUTTON_ART_COUNT; i++)
+        if (SONNY_BUTTON_ART[i].button == button && index-- == 0)
+            return &SONNY_BUTTON_ART[i];
+    return NULL;
+}""")
 
     zone_clip = stage_json.get('zone_screen') or {}
     lines.append('')

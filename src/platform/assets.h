@@ -20,6 +20,8 @@ void assets_set_root(const char *root);
 /* The texture for a still, or frame `frame` (1-based) of an animation.
    Returns NULL when the name is unknown or the file will not load. */
 const Texture2D *asset_texture(const char *name, int32_t frame);
+/* Where a frame's own origin sits inside its exported image, in pixels. */
+Vector2 asset_frame_offset(const char *name, int32_t frame);
 int32_t asset_frame_count(const char *name);
 
 /* Draw an asset centred in `area`, scaled down to fit if needed. Returns 0 if

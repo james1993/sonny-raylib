@@ -103,20 +103,37 @@ def parse_value(tok):
 
 LANG_ASSIGN = re.compile(
     r'^KrinLang\.([A-Z]+)\.([A-Z0-9_]+)\[(\d+)\]\s*=\s*(.+);$')
+# Not every piece of text is in an array: the menu headers and a handful of
+# other labels are plain properties.
+LANG_SCALAR = re.compile(
+    r'^KrinLang\.([A-Z]+)\.([A-Z0-9_]+)\s*=\s*(\"(?:[^\"\\\\]|\\\\.)*\");$')
 
 
 def extract_lang(text):
     langs = {}
+    scalars = {}
     for line in text.splitlines():
-        m = LANG_ASSIGN.match(line.strip())
-        if not m:
+        line = line.strip()
+        m = LANG_ASSIGN.match(line)
+        if m:
+            lang, array, idx, value = (m.group(1), m.group(2),
+                                       int(m.group(3)), m.group(4))
+            langs.setdefault(lang, {}).setdefault(array,
+                                                  {})[idx] = parse_value(value)
             continue
-        lang, array, idx, value = m.group(1), m.group(2), int(m.group(3)), m.group(4)
-        langs.setdefault(lang, {}).setdefault(array, {})[idx] = parse_value(value)
+        m = LANG_SCALAR.match(line)
+        if m:
+            scalars.setdefault(m.group(1), {})[m.group(2)] = parse_value(
+                m.group(3))
     # dict-of-index -> dense list
     for lang, arrays in langs.items():
         for name, entries in arrays.items():
             arrays[name] = [entries.get(i) for i in range(max(entries) + 1)]
+    # A plain label is kept as a one-entry array, so every lookup reads the
+    # same way whether the original wrote it as a property or an array.
+    for lang, entries in scalars.items():
+        for name, value in entries.items():
+            langs.setdefault(lang, {}).setdefault(name, [value])
     return langs
 
 

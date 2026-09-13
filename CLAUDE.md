@@ -128,6 +128,39 @@ What the original settled that guesswork had got wrong:
 * Sonny starts the story already wearing something: Krin.equipArray0 is
   [0,0,0,4,8,5,0].
 
+* A button does carry art, in its own state records, and for a screen whose
+  furniture is a row of buttons -- the plus signs beside the attributes -- that
+  is the only place the art exists.
+* The ability tree's branches are drawn at run time, not exported: a six-wide
+  black line with a two-wide one over it, gold (0xFFCC00) once the prerequisite
+  is learned and 0x2B2B2B while it is not.
+* A tree node shows its move's icon, but a passive node shows its *buff's*
+  instead -- the orb clip has a frame for each -- and every node wears the
+  "cannot use this" disc until a point goes into it. The disc's alpha is not
+  one number: 80% on the tree, 85% round a unit in a fight.
+* The rank over a tree node is there but invisible: the tree hides it unless
+  the space bar is held.
+* An orb's icon is drawn larger than its ball and cut to it by a circular
+  mask. raylib has no masking, so each icon is combined with the mask once and
+  the cut copy is what the orbs draw.
+* `for..in` over an array in ActionScript 2 hands back its indices last to
+  first, which is the order the ability pool fills its rows in.
+* The attribute swatches go grey the moment the last point is spent, and are
+  coloured again the next time the screen opens -- the menu clip goes back to
+  its first frame, so the grey never survives a visit.
+
 Known to differ: text is rasterised by stb_truetype without hinting, so stems
 land between pixels where Flash's device-font rendering snaps them onto one.
 Size, spacing, wrap and colour match; the weight reads lighter.
+
+Known to differ: an orb under the "cannot use this" disc comes out darker here
+than the reference renders it -- 43/255 against 52/255 on a white icon at the
+80% the original asks for. The disc is drawn at exactly that alpha, and the
+same draw at 0% and 100% lands on the right values, so the gap is somewhere in
+how the blend between them resolves; it has not been run to ground yet.
+
+Known to differ: the attributes on the ability screen include what the
+character is wearing. The original only folds equipment into Krin.StatSets0
+when the inventory frame runs updateEquip(), so a player who opens the ability
+screen before ever opening the character sheet sees the numbers without their
+gear. Both screens here read the same totals.

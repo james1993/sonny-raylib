@@ -40,6 +40,9 @@ typedef struct {
     int32_t skill_adder[SONNY_TALENT_MAX];
     char    buff_adder[SONNY_TALENT_MAX][SONNY_NAME_LEN];
     int32_t spent_skill_points;
+    /* Krin.statPoints counts down as attribute points are spent; here the
+       spend is counted up, as the skill points are. */
+    int32_t spent_stat_points;
 
     /* The eight equipped abilities (Krin.moveMatrix). */
     int32_t move_matrix[SONNY_MOVE_SLOTS];
@@ -73,6 +76,7 @@ TalentError character_learn(Character *c, int32_t node);
 
 /* Points left to spend: (level - 1) minus what has been spent. */
 int32_t character_unspent_skill_points(const Character *c);
+int32_t character_unspent_stat_points(const Character *c);
 
 /* Every ability the character knows (Krin.moveMatrix2): the two starting
    abilities followed by each learned active node's current rank. Writes up to

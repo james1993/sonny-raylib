@@ -50,7 +50,8 @@ from swfinfo import read_swf                       # noqa: E402
 from swf_doll import model_frames, header_end      # noqa: E402
 from swf_exports import (walk_tags, read_string,   # noqa: E402
                          TAG_SHOW_FRAME, TAG_FRAME_LABEL,
-                         TAG_DEFINE_SPRITE, TAG_DEFINE_SHAPES)
+                         TAG_DEFINE_SPRITE, TAG_DEFINE_SHAPES,
+                         TAG_EXPORT_ASSETS)
 from swf_doll import (Bits, parse_place, read_matrix,  # noqa: E402
                       TAG_PLACE_OBJECT2, TAG_PLACE_OBJECT3,
                       TAG_REMOVE_OBJECT, TAG_REMOVE_OBJECT2)
@@ -80,6 +81,9 @@ SELECTOR_INSTANCE = 'selector'
 SPEECH_INSTANCE = 'combatScript'
 # The clip that carries every screen that is not the fight, one frame each.
 MENU_INSTANCE = 'KRINMENU'
+# The row the ability pool is built from: the skills screen attaches one of
+# these per ability the character knows.
+POOL_ROW = 'talenter'
 # The zone scene, and the clip repeated on it as the fight markers.
 ZONE_INSTANCE = 'KrinScreen'
 # How far inside a screen's clips to look for buttons.
@@ -478,7 +482,7 @@ def graphic_parts(body, raw_dir, character, texts, at=(1.0, 1.0, 0.0, 0.0),
     return found
 
 
-def menu_frames(body, raw_dir, chrome, texts, fonts):
+def menu_frames(body, raw_dir, chrome, texts, fonts, boxes):
     """The menu, taken apart a screen at a time.
 
     One clip carries every screen that is not the fight: the inventory, the
@@ -532,6 +536,12 @@ def menu_frames(body, raw_dir, chrome, texts, fonts):
                     inner.append(piece)
                 if inner:
                     entry['pieces'] = inner
+            # A slot the screen points at a frame of by name -- the swatches
+            # beside the attributes go grey on "dead" once the last point is
+            # spent -- carries where those frames are.
+            labels = sprite_frame_labels(body, info['character'])
+            if labels:
+                entry['labels'] = labels
             slots[name] = entry
         out[label] = {
             'frame': frame,
@@ -540,6 +550,11 @@ def menu_frames(body, raw_dir, chrome, texts, fonts):
                                    at, 0, index, set(slots)),
             'fields': text_fields(body, placed['character'], texts, fonts,
                                   at, 0, index),
+            # A menu screen has buttons of its own -- the plus signs beside
+            # the attributes, the tree's nodes, the slots of the action bar --
+            # and they are only on the frame that screen is.
+            'buttons': buttons_in(body, placed['character'], boxes, at, 0,
+                                  index),
         }
     return out
 
@@ -685,6 +700,78 @@ def button_boxes(body, shape_bounds):
                            round(min(b[1] for b in boxes), 3),
                            round(max(b[2] for b in boxes), 3),
                            round(max(b[3] for b in boxes), 3)]
+    return out
+
+
+def export_names(body):
+    """name -> character id, off the file's own export table."""
+    out = {}
+    for tag, start, length in walk_tags(body, header_end(body)):
+        if tag != TAG_EXPORT_ASSETS or length < 2:
+            continue
+        count = struct.unpack_from('<H', body, start)[0]
+        pos = start + 2
+        for _ in range(count):
+            cid = struct.unpack_from('<H', body, pos)[0]
+            name, pos = read_string(body, pos + 2)
+            out[name] = cid
+    return out
+
+
+def button_art(body, raw_dir, wanted):
+    """What a button shows at rest, for the buttons a screen draws itself.
+
+    A button is not a sprite, so its art appears nowhere else in the file: it
+    is a list of state records, each placing a character in some of the up,
+    over, down and hit states. A screen whose furniture is a row of buttons --
+    the plus signs beside the attributes -- has to take the up state's pieces
+    off the button itself."""
+    out = {}
+    for tag, start, length in walk_tags(body, header_end(body)):
+        if tag != TAG_DEFINE_BUTTON2 or length < 6:
+            continue
+        button = struct.unpack_from('<H', body, start)[0]
+        if button not in wanted:
+            continue
+        pos = start + 5
+        pieces = []
+        try:
+            while pos < start + length:
+                flags = body[pos]
+                if flags == 0:               # end of the record list
+                    break
+                pos += 1
+                character = struct.unpack_from('<H', body, pos)[0]
+                depth = struct.unpack_from('<H', body, pos + 2)[0]
+                pos += 4
+                matrix, pos = read_matrix(body, pos)
+                # DefineButton2 always carries a colour transform.
+                bits = Bits(body, pos)
+                has_add, has_mult = bits.ub(1), bits.ub(1)
+                nbits = bits.ub(4)
+                for _ in range(4 * (1 if has_mult else 0)
+                               + 4 * (1 if has_add else 0)):
+                    bits.sb(nbits)
+                pos = bits.align()
+                if flags & 0x10:             # has a filter list
+                    pos = skip_filter_list(body, pos)
+                if flags & 0x20:             # has a blend mode
+                    pos += 1
+                if not flags & 0x01:         # not part of the resting state
+                    continue
+                a, _, _, d, x, y = matrix
+                entry = {'character': character, 'depth': depth,
+                         'x': round(x, 3), 'y': round(y, 3),
+                         'scale_x': round(a, 6), 'scale_y': round(d, 6)}
+                geom = sprite_geometry(raw_dir, character)
+                if geom:
+                    (entry['width'], entry['height'],
+                     entry['origin_x'], entry['origin_y']) = geom
+                pieces.append(entry)
+        except (IndexError, ValueError, struct.error):
+            continue
+        if pieces:
+            out[button] = sorted(pieces, key=lambda p: p['depth'])
     return out
 
 
@@ -1049,6 +1136,23 @@ def main(path, raw_dir=None):
             part['scale_y'] = round(entry['scale_y'] * part['scale_y'], 6)
             clip_parts.append(part)
 
+    menus = menu_frames(body, raw_dir,
+                        [e for group in screens.values() for e in group],
+                        texts, fonts, boxes)
+
+    # The art of every button a screen actually places, so a screen made of
+    # buttons can be drawn. Their own art is nowhere else in the file.
+    art = button_art(body, raw_dir,
+                     {b['character'] for b in buttons}
+                     | {b['character'] for m in menus.values()
+                        for b in m['buttons']})
+
+    # The ability pool's row, which the skills screen attaches once per
+    # ability the character knows: a bar with the ability's orb on its left.
+    pool = export_names(body).get(POOL_ROW)
+    row = {'character': pool,
+           'parts': graphic_parts(body, raw_dir, pool, texts)} if pool else {}
+
     json.dump({'screen': {'x': sx, 'y': sy, 'character': screen['character']},
                'slots': slots, 'backdrop': backdrop, 'bars': bars,
                'layers': layers, 'chrome': [e for group in screens.values()
@@ -1063,9 +1167,9 @@ def main(path, raw_dir=None):
                'zone_screen': zone_screen(body, raw_dir,
                                           [e for group in screens.values()
                                            for e in group]),
-               'menus': menu_frames(body, raw_dir,
-                                     [e for group in screens.values()
-                                      for e in group], texts, fonts),
+               'menus': menus,
+               'button_art': art,
+               'talent_row': row,
                'talents': talents, 'menu': menu_screens}, sys.stdout, indent=1)
     print()
 
