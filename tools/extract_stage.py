@@ -119,9 +119,36 @@ def main(path, raw_dir=None):
             entry['origin_x'], entry['origin_y'] = geom[2], geom[3]
         bars[slot] = entry
 
+    # The ability tree. Its nodes live two containers deep -- the menu holds
+    # the tree sprite, which holds st0..stN -- so their stage positions are
+    # the three placements composed.
+    talents = {}
+    menu = last_seen(root, 'KRINMENU')
+    if menu:
+        ma, _, _, md, mx, my = menu['matrix']
+        for frame in model_frames(body, menu['character']):
+            tree = frame.get('talenttreefull')
+            if not tree:
+                continue
+            ta, _, _, td, tx, ty = tree['matrix']
+            for node in model_frames(body, tree['character']):
+                for name, info in node.items():
+                    if not name.startswith('st') or not name[2:].isdigit():
+                        continue
+                    na, _, _, nd, nx, ny = info['matrix']
+                    talents[int(name[2:])] = {
+                        'x': round(mx + ma * (tx + ta * nx), 3),
+                        'y': round(my + md * (ty + td * ny), 3),
+                        'scale': round(ma * ta * na, 6),
+                    }
+                if talents:
+                    break
+            if talents:
+                break
+
     json.dump({'screen': {'x': sx, 'y': sy, 'character': screen['character']},
-               'slots': slots, 'backdrop': backdrop, 'bars': bars},
-              sys.stdout, indent=1)
+               'slots': slots, 'backdrop': backdrop, 'bars': bars,
+               'talents': talents}, sys.stdout, indent=1)
     print()
 
 

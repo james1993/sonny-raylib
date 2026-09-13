@@ -77,6 +77,17 @@ typedef struct {
     float   origin_x, origin_y;  /* where its own origin sits inside it */
 } StageBar;
 
+/* Where a talent tree node sits on the stage. */
+typedef struct {
+    int32_t node;
+    float   x, y;
+    float   scale;
+} TalentSlot;
+
+extern const TalentSlot SONNY_TALENT_SLOTS[];
+extern const int SONNY_TALENT_SLOT_COUNT;
+const TalentSlot *talent_slot(int32_t node);
+
 extern const StageBar SONNY_STAGE_BARS[];
 extern const int SONNY_STAGE_BAR_COUNT;
 const StageBar *stage_bar(int32_t slot);

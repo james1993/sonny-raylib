@@ -282,11 +282,23 @@ void screen_map_draw(Game *g, Vector2 mouse)
 
 /* ------------------------------------------------------------- talents */
 
+/* The tree's own layout: each node's stage position comes from the menu, the
+   tree sprite and the node instance composed together, so the branches sit in
+   the columns the original arranges them in. The nodes are 52 apart across
+   and 40 down, which sets the box size. */
+#define TALENT_BOX_W 46.0f
+#define TALENT_BOX_H 36.0f
+
 static Rectangle talent_rect(int32_t node)
 {
-    int col = node % 7;
-    int row = node / 7;
-    return (Rectangle){70 + col * 92, 110 + row * 92, 74, 74};
+    const TalentSlot *slot = talent_slot(node);
+    if (!slot) {
+        int col = node % 7;
+        int row = node / 7;
+        return (Rectangle){70 + col * 92, 110 + row * 92, 74, 74};
+    }
+    return (Rectangle){slot->x - TALENT_BOX_W / 2, slot->y - TALENT_BOX_H / 2,
+                       TALENT_BOX_W, TALENT_BOX_H};
 }
 
 void screen_talents_update(Game *g, Vector2 mouse)
@@ -358,7 +370,7 @@ void screen_talents_draw(Game *g, Vector2 mouse)
         /* The ability's own icon, at the rank currently held. */
         const AbilityDef *a = ability_by_id(t->ability_id
                                             + (rank > 0 ? rank - 1 : 0));
-        Rectangle inner = {r.x + 3, r.y + 3, r.width - 6, r.height - 20};
+        Rectangle inner = {r.x + 2, r.y + 2, r.width - 4, r.height - 12};
         Color tint = rank > 0 ? WHITE : (Color){130, 130, 140, 255};
         if (a && !asset_draw_fit(a->icon, 1, inner, tint))
             ui_text(a->icon, (int)r.x + 5, (int)r.y + 8, 10, tint);
@@ -367,33 +379,61 @@ void screen_talents_draw(Game *g, Vector2 mouse)
                              learnable ? (Color){140, 210, 140, 255}
                              : rank > 0 ? (Color){225, 200, 120, 255}
                                         : (Color){80, 84, 96, 255});
-        ui_text(TextFormat("%d/%d", rank, t->max_rank), (int)r.x + 5,
-                 (int)(r.y + r.height - 14), 10,
+        ui_text(TextFormat("%d/%d", rank, t->max_rank), (int)r.x + 3,
+                 (int)(r.y + r.height - 11), 9,
                  rank > 0 ? RAYWHITE : (Color){140, 145, 155, 255});
         if (t->passive)
-            ui_text("P", (int)(r.x + r.width - 12), (int)r.y + 4, 10,
+            ui_text("P", (int)(r.x + r.width - 9), (int)r.y + 2, 9,
                      (Color){150, 190, 240, 255});
     }
 
-    /* What the hovered talent does, in the game's own words. */
+    /* What the hovered talent does, in the game's own words. The original
+       keeps this side of the screen for the ability pool and its description,
+       so the panel goes there rather than under the tree. */
     if (g->hovered_item >= 0 && g->hovered_item < SONNY_TALENT_COUNT) {
         const TalentDef *t = &SONNY_TALENTS[g->hovered_item];
         int32_t rank = c->rank[g->hovered_item];
-        Rectangle box = {22, STAGE_H - 130, STAGE_W - 160, 78};
+        Rectangle box = {300, 110, STAGE_W - 340, 120};
         draw_panel(box, NULL);
         const AbilityDef *a = ability_by_id(t->ability_id
                                             + (rank > 0 ? rank - 1 : 0));
         if (a) {
             ui_text((a->name && a->name[0]) ? a->name : a->icon,
-                     (int)box.x + 8, (int)box.y + 8, 10,
+                     (int)box.x + 8, (int)box.y + 8, 12,
                      (Color){235, 200, 90, 255});
-            ui_text(a->tooltip, (int)box.x + 8, (int)box.y + 26, 10,
-                     (Color){200, 205, 215, 255});
+            /* The tooltip is a sentence; wrap it to the panel. */
+            const char *text = a->tooltip;
+            char line[128];
+            int start = 0, last_space = -1, row = 0;
+            for (int i = 0; text[i] && row < 4; i++) {
+                if (text[i] == ' ')
+                    last_space = i;
+                if (i - start + 1 < 58 && text[i + 1])
+                    continue;
+                int stop = (text[i + 1] && last_space > start) ? last_space
+                                                              : i + 1;
+                int count = stop - start;
+                if (count > (int)sizeof(line) - 1)
+                    count = (int)sizeof(line) - 1;
+                memcpy(line, text + start, count);
+                line[count] = 0;
+                ui_text(line, (int)box.x + 8, (int)box.y + 28 + row * 12, 10,
+                         (Color){200, 205, 215, 255});
+                row++;
+                start = (stop == last_space) ? stop + 1 : stop;
+                last_space = -1;
+                i = start - 1;
+            }
         }
-        ui_text(TextFormat("Next rank at level %d",
+        ui_text(TextFormat("Rank %d of %d, next at level %d", rank,
+                            t->max_rank,
                             character_talent_next_level(c, g->hovered_item)),
-                 (int)box.x + 8, (int)box.y + 56, 10,
+                 (int)box.x + 8, (int)box.y + 74, 10,
                  (Color){150, 160, 175, 255});
+        if (t->passive)
+            ui_text("Passive: applied at the start of every battle.",
+                     (int)box.x + 8, (int)box.y + 92, 10,
+                     (Color){150, 190, 240, 255});
     }
     draw_button((Rectangle){STAGE_W - 120, STAGE_H - 44, 100, 28}, "Back",
                 mouse, 1);

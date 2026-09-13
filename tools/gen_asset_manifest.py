@@ -89,6 +89,17 @@ typedef struct {
     float   origin_x, origin_y;  /* where its own origin sits inside it */
 } StageBar;
 
+/* Where a talent tree node sits on the stage. */
+typedef struct {
+    int32_t node;
+    float   x, y;
+    float   scale;
+} TalentSlot;
+
+extern const TalentSlot SONNY_TALENT_SLOTS[];
+extern const int SONNY_TALENT_SLOT_COUNT;
+const TalentSlot *talent_slot(int32_t node);
+
 extern const StageBar SONNY_STAGE_BARS[];
 extern const int SONNY_STAGE_BAR_COUNT;
 const StageBar *stage_bar(int32_t slot);
@@ -270,6 +281,28 @@ const StageBar *stage_bar(int32_t slot)
     for (int i = 0; i < SONNY_STAGE_BAR_COUNT; i++)
         if (SONNY_STAGE_BARS[i].slot == slot)
             return &SONNY_STAGE_BARS[i];
+    return NULL;
+}''')
+    talent_slots = {}
+    if os.path.exists(args.stage):
+        with open(args.stage, encoding='utf-8') as fh:
+            talent_slots = json.load(fh).get('talents') or {}
+    lines.append('')
+    lines.append('const TalentSlot SONNY_TALENT_SLOTS[] = {')
+    for node in sorted(talent_slots, key=int):
+        t_ = talent_slots[node]
+        lines.append('    { %s, %s, %s, %s },'
+                     % (node, c_float(t_['x']), c_float(t_['y']),
+                        c_float(t_['scale'])))
+    lines.append('};')
+    lines.append('const int SONNY_TALENT_SLOT_COUNT = '
+                 '(int)(sizeof(SONNY_TALENT_SLOTS) / sizeof(SONNY_TALENT_SLOTS[0]));')
+    lines.append('''
+const TalentSlot *talent_slot(int32_t node)
+{
+    for (int i = 0; i < SONNY_TALENT_SLOT_COUNT; i++)
+        if (SONNY_TALENT_SLOTS[i].node == node)
+            return &SONNY_TALENT_SLOTS[i];
     return NULL;
 }''')
     lines.append('')
