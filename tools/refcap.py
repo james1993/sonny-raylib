@@ -37,7 +37,8 @@ import time
 import zlib
 
 STAGE_W, STAGE_H = 800, 575
-DISPLAY = ':97'
+# A display of this run's own, so two captures can be taken at once.
+DISPLAY = ':%d' % (90 + os.getpid() % 8)
 
 
 def patch_debug_mode(src, dest):

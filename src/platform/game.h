@@ -39,6 +39,14 @@ typedef struct {
     Battle           battle;
     const BattleDef *def;
     int32_t   ability_ids[ABILITY_SLOTS];
+    /* Krin.abilityCoolDown: how many of the player's own moves each slot has
+       still to sit out. Every slot counts down as one of the player's moves
+       resolves, and the slot just used is then set to its ability's own
+       cooldown. */
+    int32_t   ability_cooldown[ABILITY_SLOTS];
+    /* Which slot the queued move came from, so its cooldown can be set when
+       the move resolves. -1 when nothing is waiting. */
+    int32_t   cooldown_slot;
     int32_t   selected;
     int32_t   hovered_unit;
     int32_t   queued;

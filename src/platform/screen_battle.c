@@ -141,6 +141,11 @@ static void draw_doll(const Game *g, int32_t slot)
 /* The turn indicator's clickable middle, which ends the turn. */
 #define PASS_BUTTON_RADIUS 30.0f
 
+/* How dark the original's "cannot use this" disc is over an orb, and the
+   size it prints a slot's remaining cooldown at. */
+#define ORB_FILTER_ALPHA 217
+#define ORB_COOLDOWN_SIZE 9.0f
+
 /* Where the speech box goes when it is the left team talking. */
 #define SPEECH_LEFT_X 21.8f
 
@@ -415,25 +420,48 @@ static float orb_radius(void)
     return ball ? ball->width * SONNY_RING_SCALE / 2.0f : 12.0f;
 }
 
-/* Whether the player could use `a` on `target` right now, by the original's
-   own checks in addMoveForPlayer: enough focus, enough health, off cooldown,
-   and a move this kind of target can take at all. */
-static int move_usable(const Game *g, const AbilityDef *a, int32_t target)
+/* Whether a move can be aimed at this kind of target at all: its own
+   self/enemy/ally flags, which is what the original checks. */
+static int move_targets(const Game *g, const AbilityDef *a, int32_t target)
 {
     const Battle *b = &g->battle;
     const Unit *self = &b->units[PLAYER_SLOT];
     const Unit *t = &b->units[target];
     if (!a || a->id == 0 || !t->active)
         return 0;
-    if (self->FOCUSN < a->focus_cost)
-        return 0;
-    if (self->LIFEN <= a->health_cost
-                       + (int32_t)floorf(self->LIFEU * a->health_cost_pct + 0.5f))
-        return 0;
-    int enemy = t->teamSide != self->teamSide;
-    if (enemy)
+    if (t->teamSide != self->teamSide)
         return a->target_enemy != 0;
     return (target == PLAYER_SLOT) ? a->target_self != 0 : a->target_ally != 0;
+}
+
+/* What the ring shows as unavailable. The original dims an orb for two
+   reasons only -- the move cannot be aimed at that target, or the slot is
+   still cooling down -- and leaves the cost checks to the click, where it
+   says which cost is short. */
+static int move_offered(const Game *g, int slot, int32_t target)
+{
+    const AbilityDef *a = ability_by_id(g->ability_ids[slot]);
+    return move_targets(g, a, target) && g->ability_cooldown[slot] == 0;
+}
+
+/* Why a move cannot be used, in the original's own words, or NULL when it
+   can. These are the checks addMoveForPlayer makes before it will take one. */
+static const char *move_refusal(const Game *g, int slot, int32_t target)
+{
+    const AbilityDef *a = ability_by_id(g->ability_ids[slot]);
+    const Unit *self = &g->battle.units[PLAYER_SLOT];
+    if (!a || a->id == 0)
+        return "";
+    if (self->FOCUSN < a->focus_cost)
+        return "You cannot use this move because you don't have enough Focus.";
+    if (g->ability_cooldown[slot] != 0)
+        return "This move is not ready yet.";
+    if (self->LIFEN <= a->health_cost
+                       + (int32_t)floorf(self->LIFEU * a->health_cost_pct + 0.5f))
+        return "You cannot use this move because you don't have enough Health.";
+    if (!move_targets(g, a, target))
+        return "You cannot use this move on that target.";
+    return NULL;
 }
 
 /* One piece of the orb, in the ring's coordinates around `centre`. */
@@ -457,8 +485,10 @@ static void draw_orb_part(const OrbPart *part, Vector2 centre, Color tint)
 }
 
 /* One orb: the ball, the ability's icon over it, the glass highlight, and --
-   only when the move cannot be used -- the black disc the original shows. */
-static void draw_orb(const AbilityDef *a, Vector2 centre, int usable)
+   only when the move is not on offer -- the black disc the original shows,
+   at the alpha it shows it at, with the slot's remaining cooldown on top. */
+static void draw_orb(const AbilityDef *a, Vector2 centre, int usable,
+                     int32_t cooldown)
 {
     draw_orb_part(orb_part("ball"), centre, WHITE);
     if (a && a->icon && a->icon[0]) {
@@ -472,7 +502,14 @@ static void draw_orb(const AbilityDef *a, Vector2 centre, int usable)
     }
     draw_orb_part(orb_part("glass"), centre, WHITE);
     if (!usable)
-        draw_orb_part(orb_part("filter"), centre, WHITE);
+        draw_orb_part(orb_part("filter"), centre,
+                      (Color){255, 255, 255, ORB_FILTER_ALPHA});
+    if (cooldown > 0) {
+        const char *left = TextFormat("%d", cooldown);
+        float size = ORB_COOLDOWN_SIZE;
+        ui_sans_text(left, centre.x - ui_sans_text_width(left, size) / 2,
+                     centre.y - size / 2, size, RAYWHITE);
+    }
 }
 
 static void draw_ring(const Game *g)
@@ -488,7 +525,8 @@ static void draw_ring(const Game *g)
         if (!a || a->id == 0)
             continue;
         draw_orb(a, ring_slot_pos(slot, centre),
-                 move_usable(g, a, g->hovered_unit));
+                 move_offered(g, slot->slot, g->hovered_unit),
+                 g->ability_cooldown[slot->slot]);
     }
 }
 
@@ -955,13 +993,16 @@ static void handle_input(Game *g)
             if (!CheckCollisionPointCircle(stage, ring_slot_pos(slot, centre),
                                            radius))
                 continue;
-            if (!move_usable(g, a, g->hovered_unit)) {
-                /* The original says why, rather than doing nothing. */
-                game_notice(g, "You cannot use this move on that target.");
+            const char *refusal = move_refusal(g, slot->slot, g->hovered_unit);
+            if (refusal) {
+                /* The original says which check failed, rather than doing
+                   nothing. */
+                game_notice(g, refusal);
                 return;
             }
             battle_queue(b, PLAYER_SLOT, g->hovered_unit, a->id, 0);
             g->queued = 1;
+            g->cooldown_slot = slot->slot;
             return;
         }
     }
@@ -981,6 +1022,25 @@ static void handle_input(Game *g)
         battle_queue(b, PLAYER_SLOT, PLAYER_SLOT, 0, 0);
         g->queued = 1;
     }
+}
+
+/* Krin.abilityCoolDown, kept the way the original keeps it: as one of the
+   player's own moves resolves every slot counts down, and then the slot that
+   move came from is set to its ability's cooldown. Order matters -- a move
+   with a cooldown of three sits out the player's next three. */
+static void tick_cooldowns(Game *g, const MoveEvent *e)
+{
+    if (e->caster != PLAYER_SLOT)
+        return;
+    for (int i = 0; i < ABILITY_SLOTS; i++)
+        if (g->ability_cooldown[i] > 0)
+            g->ability_cooldown[i]--;
+
+    const AbilityDef *a = ability_by_id(e->moveID);
+    if (a && e->moveID != 0 && g->cooldown_slot >= 0
+        && g->cooldown_slot < ABILITY_SLOTS)
+        g->ability_cooldown[g->cooldown_slot] = a->cooldown;
+    g->cooldown_slot = -1;
 }
 
 static void advance(Game *g)
@@ -1008,6 +1068,7 @@ static void advance(Game *g)
         if (battle_resolve_step(b, &e)) {
             g->last = e;
             g->has_last = 1;
+            tick_cooldowns(g, &e);
             describe(g, &e);
             present(g, &e);
             g->resolve_timer = RESOLVE_FRAMES;
@@ -1042,6 +1103,10 @@ void battle_screen_start(Game *g, int32_t battle_id)
     }
 
     g->def = def;
+    /* A fight starts with every slot ready, as the original resets
+       Krin.abilityCoolDown when it builds the player. */
+    memset(g->ability_cooldown, 0, sizeof(g->ability_cooldown));
+    g->cooldown_slot = -1;
     g->seed = rng_next(&g->rng);
     campaign_setup_battle(&g->campaign, def, &g->battle, g->seed);
 
