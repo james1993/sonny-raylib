@@ -112,6 +112,14 @@ What the original settled that guesswork had got wrong:
 * raylib bakes printable ASCII and nothing else, so the euro sign the game
   prints against every price has to be asked for by codepoint.
 
+* Buttons are not part of the art -- a DefineButton2 never renders -- so what
+  a screen responds to only exists in its button records. Their hit boxes are
+  extracted from the SWF; a button's character id is what says what pressing it
+  does. Two things bite: a DefineButton2's header is five bytes, not six, and
+  its records always carry a colour transform whether or not a flag says so.
+* The hub is a scene with a frame per zone and markers on it -- one starts the
+  next fight, one opens the store -- not a list of buttons.
+
 Known to differ: text is rasterised by stb_truetype without hinting, so stems
 land between pixels where Flash's device-font rendering snaps them onto one.
 Size, spacing, wrap and colour match; the weight reads lighter.

@@ -50,14 +50,15 @@ from swfinfo import read_swf                       # noqa: E402
 from swf_doll import model_frames, header_end      # noqa: E402
 from swf_exports import (walk_tags, read_string,   # noqa: E402
                          TAG_SHOW_FRAME, TAG_FRAME_LABEL,
-                         TAG_DEFINE_SPRITE)
-from swf_doll import (Bits, parse_place,          # noqa: E402
+                         TAG_DEFINE_SPRITE, TAG_DEFINE_SHAPES)
+from swf_doll import (Bits, parse_place, read_matrix,  # noqa: E402
                       TAG_PLACE_OBJECT2, TAG_PLACE_OBJECT3,
                       TAG_REMOVE_OBJECT, TAG_REMOVE_OBJECT2)
 
 TAG_DEFINE_EDIT_TEXT = 37
 TAG_DEFINE_FONT2 = 48
 TAG_DEFINE_FONT3 = 75
+TAG_DEFINE_BUTTON2 = 34
 
 BATTLE_SCREEN = 'BATTLESCREEN'
 # The root frame the game stops on during a fight.
@@ -79,6 +80,11 @@ SELECTOR_INSTANCE = 'selector'
 SPEECH_INSTANCE = 'combatScript'
 # The clip that carries every screen that is not the fight, one frame each.
 MENU_INSTANCE = 'KRINMENU'
+# The zone scene, and the clip repeated on it as the fight markers.
+ZONE_INSTANCE = 'KrinScreen'
+# How far inside a screen's clips to look for buttons.
+BUTTON_DEPTH = 4
+MARKER_CHARACTER = 1207
 # How far to look inside a clip for its text fields.
 TEXT_FIELD_DEPTH = 3
 # Inside the orb, the icon is whatever the frame places in this depth range.
@@ -537,6 +543,177 @@ def sprite_frame_labels(body, sprite_id):
     return out
 
 
+def buttons_in(body, character, boxes, at=(1.0, 1.0, 0.0, 0.0), depth=0,
+               frame=0):
+    """Every button under a clip, with the box it responds in, composed into
+    stage coordinates. Buttons sit wherever the screen puts them -- on the
+    scene, inside a panel, a container or two down -- so this walks in."""
+    if depth > BUTTON_DEPTH:
+        return []
+    sx, sy, tx, ty = at
+    found = []
+    frames = model_frames(body, character)
+    if frame >= len(frames):
+        return []
+    for name, info in sorted(frames[frame].items(),
+                             key=lambda kv: kv[1]['depth']):
+        a, _, _, d, x, y = info['matrix']
+        here = (sx * a, sy * d, tx + sx * x, ty + sy * y)
+        box = boxes.get(info['character'])
+        if box:
+            found.append({
+                'name': name, 'character': info['character'],
+                'x': round(here[2] + here[0] * box[0], 3),
+                'y': round(here[3] + here[1] * box[1], 3),
+                'width': round(abs(here[0]) * (box[2] - box[0]), 3),
+                'height': round(abs(here[1]) * (box[3] - box[1]), 3)})
+            continue
+        found.extend(buttons_in(body, info['character'], boxes, here,
+                                depth + 1))
+    return found
+
+
+def shape_bounds(body):
+    """id -> [xmin, ymin, xmax, ymax] for every shape in the file."""
+    out = {}
+    for tag, start, length in walk_tags(body, header_end(body)):
+        if tag not in TAG_DEFINE_SHAPES or length < 2:
+            continue
+        cid = struct.unpack_from('<H', body, start)[0]
+        bits = Bits(body, start + 2)
+        n = bits.ub(5)
+        xmin, xmax, ymin, ymax = (bits.sb(n) / 20.0 for _ in range(4))
+        out[str(cid)] = [round(xmin, 3), round(ymin, 3),
+                         round(xmax, 3), round(ymax, 3)]
+    return out
+
+
+def skip_filter_list(body, pos):
+    """Step over a button record's filter list.
+
+    Every filter is a type byte and a fixed payload, except the two gradient
+    ones, which carry a colour ramp first."""
+    count = body[pos]
+    pos += 1
+    sizes = {0: 23, 1: 9, 2: 15, 3: 27, 6: 80}
+    for _ in range(count):
+        kind = body[pos]
+        pos += 1
+        if kind in sizes:
+            pos += sizes[kind]
+        elif kind in (4, 7):                 # gradient glow, gradient bevel
+            colours = body[pos]
+            pos += 1 + colours * 5 + 23
+        elif kind == 5:                      # convolution
+            mx, my = body[pos], body[pos + 1]
+            pos += 2 + 4 + 4 + 4 * mx * my + 4 + 1
+        else:
+            raise ValueError('unknown filter %d' % kind)
+    return pos
+
+
+def button_boxes(body, shape_bounds):
+    """id -> the box a button responds in, in its own coordinates.
+
+    A DefineButton2 is a list of state records, each placing a character in
+    some of the up/over/down/hit states. The hit state is the one that decides
+    where the pointer counts as being on the button; when a button gives none,
+    the states it does give stand in for it."""
+    out = {}
+    for tag, start, length in walk_tags(body, header_end(body)):
+        if tag != TAG_DEFINE_BUTTON2 or length < 6:
+            continue
+        button = struct.unpack_from('<H', body, start)[0]
+        # id (2), the flags byte, then the action offset (2).
+        pos = start + 5
+        hit = []
+        any_state = []
+        try:
+            while pos < start + length:
+                flags = body[pos]
+                if flags == 0:               # end of the record list
+                    break
+                pos += 1
+                character = struct.unpack_from('<H', body, pos)[0]
+                pos += 4                     # character, depth
+                matrix, pos = read_matrix(body, pos)
+                # DefineButton2 always carries a colour transform.
+                bits = Bits(body, pos)
+                has_add, has_mult = bits.ub(1), bits.ub(1)
+                nbits = bits.ub(4)
+                for _ in range(4 * (1 if has_mult else 0)
+                               + 4 * (1 if has_add else 0)):
+                    bits.sb(nbits)
+                pos = bits.align()
+                if flags & 0x10:             # has a filter list
+                    pos = skip_filter_list(body, pos)
+                if flags & 0x20:             # has a blend mode
+                    pos += 1
+                box = placed_box(shape_bounds.get(str(character)), matrix)
+                if box:
+                    any_state.append(box)
+                    if flags & 0x08:         # the hit state
+                        hit.append(box)
+        except (IndexError, ValueError, struct.error):
+            continue
+        boxes = hit or any_state
+        if boxes:
+            out[button] = [round(min(b[0] for b in boxes), 3),
+                           round(min(b[1] for b in boxes), 3),
+                           round(max(b[2] for b in boxes), 3),
+                           round(max(b[3] for b in boxes), 3)]
+    return out
+
+
+def placed_box(bounds, matrix):
+    """A shape's bounds with a placement matrix applied."""
+    if not bounds:
+        return None
+    xmin, ymin, xmax, ymax = bounds
+    a, b, c, d, tx, ty = matrix
+    corners = [(a * x + c * y + tx, b * x + d * y + ty)
+               for x, y in ((xmin, ymin), (xmax, ymin),
+                            (xmin, ymax), (xmax, ymax))]
+    xs = [p[0] for p in corners]
+    ys = [p[1] for p in corners]
+    return (min(xs), min(ys), max(xs), max(ys))
+
+
+def zone_screen(body, raw_dir, chrome):
+    """The scene the hub is built around.
+
+    One clip holds a frame per zone -- the deck of the research ship, the
+    plains, and so on -- and on each are the markers the player clicks to pick
+    a fight. The frames are labelled with the zone, and the markers are the
+    repeated instances of one clip, so both come off the timeline."""
+    placed = next((c for c in chrome if c['name'] == ZONE_INSTANCE), None)
+    if not placed:
+        return None
+    labels = sprite_frame_labels(body, placed['character'])
+    frames = model_frames(body, placed['character'])
+    markers = {}
+    counts = {}
+    for label, frame in sorted(labels.items(), key=lambda kv: kv[1]):
+        index = frame - 1
+        if index >= len(frames):
+            continue
+        for name, info in frames[index].items():
+            counts.setdefault(info['character'], []).append(1)
+        found = []
+        for name, info in sorted(frames[index].items(),
+                                 key=lambda kv: kv[1]['depth']):
+            a, _, _, d, x, y = info['matrix']
+            found.append({'name': name, 'character': info['character'],
+                          'x': round(placed['x'] + placed['scale_x'] * x, 3),
+                          'y': round(placed['y'] + placed['scale_y'] * y, 3)})
+        markers[label] = [f for f in found
+                          if f['character'] == MARKER_CHARACTER]
+    return {'x': placed['x'], 'y': placed['y'],
+            'scale_x': placed['scale_x'], 'scale_y': placed['scale_y'],
+            'character': placed['character'],
+            'labels': labels, 'markers': markers}
+
+
 def speech_box(body, raw_dir, chrome, texts, fonts):
     """The box that carries what a character is saying.
 
@@ -742,6 +919,29 @@ def main(path, raw_dir=None):
         return entries
 
     screens = {label: frame_chrome(label) for label in SCREEN_FRAMES}
+
+    # Every button a screen places, with the box it responds in. A button is
+    # not a sprite, so it never appears in the art; its id is what says what
+    # pressing it does.
+    boxes = button_boxes(body, shape_bounds(body))
+    buttons = []
+    for label, entries in screens.items():
+        for entry in entries:
+            at = (entry['scale_x'], entry['scale_y'], entry['x'], entry['y'])
+            box = boxes.get(entry['character'])
+            if box:
+                found = [{'name': entry['name'],
+                          'character': entry['character'],
+                          'x': round(entry['x'] + entry['scale_x'] * box[0], 3),
+                          'y': round(entry['y'] + entry['scale_y'] * box[1], 3),
+                          'width': round(entry['scale_x'] * (box[2] - box[0]), 3),
+                          'height': round(entry['scale_y'] * (box[3] - box[1]), 3)}]
+            else:
+                found = buttons_in(body, entry['character'], boxes, at)
+            for button in found:
+                button['screen'] = label
+                button['owner'] = entry['name']
+                buttons.append(button)
     chrome = screens[BATTLE_FRAME_LABEL]
 
     # Which root-level clip is the sky is not something to guess at: it is
@@ -816,6 +1016,10 @@ def main(path, raw_dir=None):
                'chrome_text': chrome_fields,
                'speech': speech_box(body, raw_dir, chrome, texts, fonts),
                'clip_parts': clip_parts,
+               'buttons': buttons,
+               'zone_screen': zone_screen(body, raw_dir,
+                                          [e for group in screens.values()
+                                           for e in group]),
                'menus': menu_frames(body, raw_dir,
                                      [e for group in screens.values()
                                       for e in group], texts, fonts),

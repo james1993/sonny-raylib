@@ -10,181 +10,179 @@
 #include "audio.h"
 #include "game.h"
 
+/* The menu clip's frames, by the labels the original gives them: one screen
+   each, and the same slot name means different places on different frames. */
+#define MENU_SCREEN    "menu"
+#define MENU_INVENTORY "inventory"
+#define MENU_WIN       "win"
+
+/* Nothing on a menu moves, so its pieces are drawn where they are recorded. */
+static const Vector2 NO_OFFSET = {0, 0};
+
+/* What the game spends, as its own fields carry it. */
+#define EURO "\u20ac"
+
+/* How many bag slots a menu frame's grid has. */
+#define MENU_BAG_SLOTS 36
+
+/* Pieces of the hub the game drives rather than simply draws: the scene
+   itself, the menu that covers it, the tooltip and the fade, and the progress
+   bar, whose width says how far through the zone the player is. */
+static int chrome_is_hub_runtime(const char *name)
+{
+    static const char *const driven[] = {
+        "KrinScreen", "KRINMENU", "KrinToolTipper", "KrinCombatText",
+        "krinNavFadeSpeech", "@1242", "krinXbarPro",
+    };
+    for (size_t i = 0; i < sizeof(driven) / sizeof(driven[0]); i++)
+        if (strcmp(name, driven[i]) == 0)
+            return 1;
+    return 0;
+}
+
+/* The root frame the hub is laid out from. */
+#define HUB_SCREEN "Navigation"
+
+/* One of the hub's fields, by the name the frame gives it. */
+static const TextField *hub_field(const char *name)
+{
+    return text_field_named(HUB_SCREEN, name, name, 0);
+}
+
+/* Everything a screen's frame places that is a picture, in its own depth
+   order. Anything the engine fills itself is drawn by the screen. */
+static void draw_screen_chrome(const char *screen)
+{
+    for (int i = 0; i < SONNY_STAGE_CHROME_COUNT; i++) {
+        const StageChrome *c = &SONNY_STAGE_CHROME[i];
+        if (strcmp(c->screen, screen) != 0 || c->width <= 0)
+            continue;
+        if (chrome_is_hub_runtime(c->name))
+            continue;
+        const Texture2D *tex = asset_texture(TextFormat("#%d", c->character),
+                                             1);
+        if (!tex)
+            continue;
+        Rectangle dst = placed_rect(c->x, c->y, c->scale_x, c->scale_y,
+                                    c->width, c->height, c->origin_x,
+                                    c->origin_y);
+        DrawTexturePro(*tex, (Rectangle){0, 0, (float)tex->width,
+                                         (float)tex->height},
+                       dst, (Vector2){0, 0}, 0.0f, WHITE);
+    }
+}
+
+/* One of the victory frame's fields, by the name the clip gives it. */
+static const TextField *win_field(const char *name)
+{
+    return text_field_named(MENU_SCREEN, MENU_WIN, name, 0);
+}
+
 /* ------------------------------------------------------------ zone hub */
 
-typedef struct {
-    const char *label;
-    const char *hint;
-    Screen      goes_to;
-    int         action;     /* 0 screen, 1 battle, 2 save, 3 training */
-} MenuEntry;
+/* What the hub's buttons do, by the character id of the button itself --
+   which is the only thing that tells them apart, since a button is never
+   part of the art. These are the ids the original's own handlers hang off. */
+#define HUB_BUTTON_PROGRESS  1211   /* the marker that starts the next fight */
+#define HUB_BUTTON_SHOP      1212   /* the marker that opens the store */
+#define HUB_BUTTON_INVENTORY 1252
+#define HUB_BUTTON_SKILLS    1253
+#define HUB_BUTTON_SAVE      1254
+#define HUB_BUTTON_MAP       1251
 
-/* SYSTEM[13..28], in the order the original lists them. */
-static MenuEntry MENU[] = {
-    {NULL, NULL, SCREEN_MAP,       0},   /* World Map      */
-    {NULL, NULL, SCREEN_BATTLE,    1},   /* Next Battle    */
-    {NULL, NULL, SCREEN_SHOP,      0},   /* Item Store     */
-    {NULL, NULL, SCREEN_INVENTORY, 0},   /* Inventory      */
-    {NULL, NULL, SCREEN_TALENTS,   0},   /* Abilities      */
-    {NULL, NULL, SCREEN_ZONE,      2},   /* Save Game      */
-    {NULL, NULL, SCREEN_BATTLE,    3},   /* Training Fight */
-};
-#define MENU_COUNT ((int)(sizeof(MENU) / sizeof(MENU[0])))
-
-static void menu_text(void)
+/* Whether the pointer is on the hub's button with this character. */
+static int hub_pressed(int32_t character, Vector2 mouse)
 {
-    /* Filled once from the language table, by the original's own indices. */
-    static int done;
-    if (done)
-        return;
-    MENU[0].label = lang_text("SYSTEM", 27);   /* World Map */
-    MENU[0].hint = lang_text("SYSTEM", 28);
-    MENU[1].label = lang_text("SYSTEM", 13);
-    MENU[1].hint = lang_text("SYSTEM", 14);
-    MENU[2].label = lang_text("SYSTEM", 15);
-    MENU[2].hint = lang_text("SYSTEM", 16);
-    MENU[3].label = lang_text("SYSTEM", 17);
-    MENU[3].hint = lang_text("SYSTEM", 18);
-    MENU[4].label = lang_text("SYSTEM", 19);
-    MENU[4].hint = lang_text("SYSTEM", 20);
-    MENU[5].label = lang_text("SYSTEM", 21);
-    MENU[5].hint = lang_text("SYSTEM", 22);
-    MENU[6].label = lang_text("SYSTEM", 29);
-    MENU[6].hint = lang_text("SYSTEM", 30);
-    done = 1;
-}
-
-static Rectangle menu_rect(int i)
-{
-    return (Rectangle){60, 196 + i * 38, 260, 31};
-}
-
-/* A random training fight from the zone's own list, as the original picks one. */
-static int32_t training_battle(Game *g)
-{
-    const ZoneDef *zone = campaign_zone(&g->campaign);
-    if (!zone || zone->training_count == 0)
-        return 0;
-    int32_t index = (int32_t)rng_below(&g->rng, (uint32_t)zone->training_count);
-    return zone->training[index];
+    const StageButton *b = stage_button(HUB_SCREEN, character, 0);
+    return b && IsMouseButtonPressed(MOUSE_BUTTON_LEFT)
+        && CheckCollisionPointRec(mouse, (Rectangle){b->x, b->y, b->width,
+                                                     b->height});
 }
 
 void screen_zone_update(Game *g, Vector2 mouse)
 {
-    menu_text();
-    g->hovered_item = -1;
-
-    for (int i = 0; i < MENU_COUNT; i++) {
-        Rectangle r = menu_rect(i);
-        if (hit(r, mouse))
-            g->hovered_item = i;
-
-        int enabled = 1;
-        if (MENU[i].action == 3 && training_battle(g) == 0)
-            enabled = 0;
-        if (MENU[i].action == 1 && campaign_complete(&g->campaign))
-            enabled = 0;
-
-        if (!draw_button(r, MENU[i].label ? MENU[i].label : "", mouse, enabled))
-            continue;
-
+    if (hub_pressed(HUB_BUTTON_PROGRESS, mouse)) {
         audio_play("Click3pickup");
-        switch (MENU[i].action) {
-        case 1:
-            battle_screen_start(g, g->campaign.progress_battle);
-            break;
-        case 2:
-            if (save_write(&g->campaign, SONNY_SAVE_PATH) == 0)
-                game_notice(g, "Progress saved.");
-            else
-                game_notice(g, "Could not write the save file.");
-            break;
-        case 3: {
-            int32_t id = training_battle(g);
-            if (id)
-                battle_screen_start(g, id);
-            break;
-        }
-        default:
-            g->screen = MENU[i].goes_to;
-            break;
-        }
-        return;
+        battle_screen_start(g, g->campaign.progress_battle);
+    } else if (hub_pressed(HUB_BUTTON_SHOP, mouse)) {
+        audio_play("Click3pickup");
+        g->screen = SCREEN_SHOP;
+    } else if (hub_pressed(HUB_BUTTON_INVENTORY, mouse)) {
+        audio_play("Click3pickup");
+        g->screen = SCREEN_INVENTORY;
+    } else if (hub_pressed(HUB_BUTTON_SKILLS, mouse)) {
+        audio_play("Click3pickup");
+        g->screen = SCREEN_TALENTS;
+    } else if (hub_pressed(HUB_BUTTON_MAP, mouse)) {
+        audio_play("Click3pickup");
+        g->screen = SCREEN_MAP;
+    } else if (hub_pressed(HUB_BUTTON_SAVE, mouse)) {
+        audio_play("Click3pickup");
+        if (save_write(&g->campaign, SONNY_SAVE_PATH) != 0)
+            game_notice(g, "Could not write the save file.");
     }
 }
 
-static void draw_character_summary(const Game *g, Rectangle r)
-{
-    const Character *c = &g->campaign.player;
-    DerivedStats d = character_derive(c);
 
-    draw_panel(r, "Sonny");
-    int y = (int)r.y + 26;
-    const char *cls = c->class_template ? c->class_template->name : "?";
-    ui_text(TextFormat("%s%d  %s", lang_text("MENU", 0), c->level, cls),
-             (int)r.x + 10, y, 10, RAYWHITE);
-    y += 18;
 
-    /* Stat names come from the language table: Vitality, Strength, ... */
-    const double values[5] = {d.life, d.strength, d.magic, d.speed, d.focus};
-    for (int i = 0; i < 5; i++) {
-        ui_text(TextFormat("%-10s %.0f", lang_text("SYSTEM", i), values[i]),
-                 (int)r.x + 10, y, 10, (Color){200, 205, 215, 255});
-        y += 14;
-    }
-    y += 6;
-    ui_text(TextFormat("%s %.0f / %s %.0f", lang_text("SYSTEM", 5), d.per[0],
-                        lang_text("SYSTEM", 6), d.def[0]),
-             (int)r.x + 10, y, 10, (Color){150, 160, 175, 255});
-    y += 18;
-    ui_text(TextFormat("Euros %d", g->campaign.euros), (int)r.x + 10, y, 10,
-             (Color){225, 200, 120, 255});
-    y += 14;
-    int32_t points = character_unspent_skill_points(&g->campaign.player);
-    if (points > 0)
-        ui_text(TextFormat("%d ability point%s to spend", points,
-                            points == 1 ? "" : "s"),
-                 (int)r.x + 10, y, 10, (Color){140, 210, 140, 255});
-}
-
+/* The hub, laid out from the original's Navigation frame: the zone's own
+   scene across the top with the markers that start a fight or open the shop,
+   the row of buttons along the bottom, and the zone's name and progress
+   beside them. */
 void screen_zone_draw(Game *g, Vector2 mouse)
 {
-    menu_text();
+    (void)mouse;
     const ZoneDef *zone = campaign_zone(&g->campaign);
 
-    ClearBackground((Color){18, 20, 26, 255});
-    /* The zone's own backdrop, dimmed, behind the menu. */
-    const BattleDef *def = battle_def_by_id(g->campaign.progress_battle);
-    if (def && def->zone_bg[0])
-        asset_draw_placed(def->zone_bg, 1, (Vector2){400, 294.5f}, 1.0f,
-                          (Color){255, 255, 255, 70});
+    ClearBackground(BLACK);
+    /* The scene, one frame of the clip per zone. */
+    if (zone && zone->zone < SONNY_ZONE_LABEL_COUNT)
+        asset_draw_placed(SONNY_ZONE_LABELS[zone->zone], 1,
+                          (Vector2){SONNY_ZONE_SCREEN.x, SONNY_ZONE_SCREEN.y},
+                          1.0f, WHITE);
 
-    ui_text("SONNY", 22, 12, 22, (Color){210, 215, 225, 255});
-    ui_text(TextFormat("%s%d", lang_text("SYSTEM", 9), zone->zone + 1), 60,
-             120, 20, (Color){235, 200, 90, 255});
-    ui_text(TextFormat("%s: %s", zone->name, zone->subtitle), 60, 146, 10,
-             (Color){200, 205, 215, 255});
-    ui_text(TextFormat("%s%d", lang_text("SYSTEM", 10),
-                        g->campaign.progress_battle - 1),
-             60, 166, 10, (Color){150, 160, 175, 255});
+    /* The furniture below it: the panels, the row of buttons and their
+       icons, the marker that says a fight is waiting. */
+    draw_screen_chrome(HUB_SCREEN);
 
-    for (int i = 0; i < MENU_COUNT; i++) {
-        Rectangle r = menu_rect(i);
-        int enabled = !(MENU[i].action == 3 && training_battle((Game *)g) == 0)
-                   && !(MENU[i].action == 1
-                        && campaign_complete(&g->campaign));
-        draw_button(r, MENU[i].label ? MENU[i].label : "", mouse, enabled);
+    /* How far through the zone the player is. The bar is scaled by the same
+       fraction the original scales it by: how many of the zone's fights are
+       behind them, out of how many it has. */
+    const StageChrome *bar = stage_chrome(HUB_SCREEN, "krinXbarPro");
+    if (bar && zone) {
+        float total = (float)(zone->last_battle - zone->first_battle);
+        float done = 1.0f + (float)(g->campaign.progress_battle
+                                    - zone->first_battle);
+        if (done > total)
+            done = total;
+        if (total > 0) {
+            Rectangle box = placed_rect(bar->x, bar->y, bar->scale_x,
+                                        bar->scale_y, bar->width, bar->height,
+                                        bar->origin_x, bar->origin_y);
+            const Texture2D *tex = asset_texture(TextFormat("#%d",
+                                                            bar->character), 1);
+            if (tex) {
+                Rectangle src = {0, 0, tex->width * (done / total),
+                                 (float)tex->height};
+                box.width *= done / total;
+                DrawTexturePro(*tex, src, box, (Vector2){0, 0}, 0.0f, WHITE);
+            }
+        }
     }
-    if (g->hovered_item >= 0 && g->hovered_item < MENU_COUNT)
-        ui_text(MENU[g->hovered_item].hint ? MENU[g->hovered_item].hint : "",
-                 60, 210 + MENU_COUNT * 42 + 8, 10,
-                 (Color){170, 175, 185, 255});
 
-    draw_character_summary(g, (Rectangle){STAGE_W - 260, 120, 220, 200});
-
-    if (campaign_complete(&g->campaign))
-        ui_text("The campaign is complete.", 60, 470, 12,
-                 (Color){235, 200, 90, 255});
+    /* The three lines the original builds beside the bar. */
+    if (zone) {
+        const char *title = TextFormat("%s%d", lang_text("SYSTEM", 9),
+                                       zone->zone + 1);
+        const char *where = TextFormat("%s: %s", zone->name, zone->subtitle);
+        draw_field(hub_field("@132"), NO_OFFSET, title);
+        /* The name is drawn twice, a dark copy under a light one. */
+        draw_field(hub_field("@130"), NO_OFFSET, where);
+        draw_field(hub_field("@133"), NO_OFFSET, where);
+        draw_field(hub_field("@131"), NO_OFFSET,
+                   TextFormat("%s%d", lang_text("SYSTEM", 10),
+                              g->campaign.progress_battle - 1));
+    }
 }
 
 /* ----------------------------------------------------------- world map */
@@ -447,21 +445,6 @@ void screen_talents_draw(Game *g, Vector2 mouse)
    its placement point. */
 #define MENU_SLOT_SIZE 34.0f
 
-/* The menu clip's frames, by the labels the original gives them: one screen
-   each, and the same slot name means different places on different frames. */
-#define MENU_SCREEN    "menu"
-#define MENU_INVENTORY "inventory"
-#define MENU_WIN       "win"
-
-/* Nothing on a menu moves, so its pieces are drawn where they are recorded. */
-static const Vector2 NO_OFFSET = {0, 0};
-
-/* What the game spends, as its own fields carry it. */
-#define EURO "\u20ac"
-
-/* How many bag slots a menu frame's grid has. */
-#define MENU_BAG_SLOTS 36
-
 static Rectangle named_slot(const char *menu, const char *prefix, int i,
                             Rectangle fallback)
 {
@@ -522,11 +505,6 @@ static void draw_slot_art(const char *menu, const char *prefix, int i)
                    dst, (Vector2){0, 0}, 0.0f, WHITE);
 }
 
-/* One of the victory frame's fields, by the name the clip gives it. */
-static const TextField *win_field(const char *name)
-{
-    return text_field_named(MENU_SCREEN, MENU_WIN, name, 0);
-}
 
 /* An item's icon is a frame label on the icon sprite, named for the item. */
 static void draw_item_icon(const ItemDef *item, Rectangle r, Color tint)

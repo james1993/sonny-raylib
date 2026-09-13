@@ -43,20 +43,14 @@
    ]
   },
   "PLAINS": {
-   "category": "background",
+   "category": "zone",
    "frames": [
-    "assets/art/background/PLAINS.png"
-   ],
-   "bounds": [
-    -570.45,
-    -136.45,
-    535.7,
-    256.95
+    "assets/art/zone/PLAINS.png"
    ],
    "offsets": [
     [
-     570.45,
-     136.45
+     476.3,
+     260.95
     ]
    ]
   },
@@ -10093,6 +10087,42 @@
     [
      46.2,
      83.65
+    ]
+   ]
+  },
+  "HEW": {
+   "category": "zone",
+   "frames": [
+    "assets/art/zone/HEW.png"
+   ],
+   "offsets": [
+    [
+     476.3,
+     260.95
+    ]
+   ]
+  },
+  "KOJIS_REST": {
+   "category": "zone",
+   "frames": [
+    "assets/art/zone/KOJIS_REST.png"
+   ],
+   "offsets": [
+    [
+     476.3,
+     260.95
+    ]
+   ]
+  },
+  "WHITE_NOVEMBER": {
+   "category": "zone",
+   "frames": [
+    "assets/art/zone/WHITE_NOVEMBER.png"
+   ],
+   "offsets": [
+    [
+     476.3,
+     260.95
     ]
    ]
   }

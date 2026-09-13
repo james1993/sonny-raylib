@@ -144,7 +144,8 @@ def collect_names(data_dir):
 
     want = {'icon': set(), 'effect': set(), 'background': set(),
             'doll': set(), 'buff': set(), 'ui': set(), 'sound': set(),
-            'chrome': set(), 'orb': set(), 'portrait': set()}
+            'chrome': set(), 'orb': set(), 'portrait': set(),
+            'zone': set()}
     speculative = set()
     # Expected to have no art: enemy ability icons (never on the player's
     # bar), permanent passive-talent buffs, and the doll cross-product below,
@@ -272,6 +273,9 @@ def collect_names(data_dir):
     for part in (stage.get('clip_parts') or []):
         if part.get('character') and part.get('width') and not part.get('frames'):
             want['chrome'].add('#%d' % part['character'])
+    # The hub's scene, one labelled frame per zone.
+    want['zone'].update(((stage.get('zone_screen') or {}).get('labels')) or {})
+
     # A menu's slots are clips the engine fills, but their empty square is
     # still drawn, so their resting frame is wanted too.
     for menu in (stage.get('menus') or {}).values():
@@ -307,6 +311,9 @@ def main():
         stage = {}
     selector = stage.get('selector') or {}
     orb_icons = selector.get('icons') or {}
+    zone_clip = stage.get('zone_screen') or {}
+    zone_character = zone_clip.get('character')
+    zone_labels = zone_clip.get('labels') or {}
     # Which sprite a label should be taken from when several carry it. The
     # battle's two backdrop layers are the containers the game retargets on
     # load, so their frames are the zone's real art.
@@ -340,6 +347,13 @@ def main():
                 path = sound_file(args.raw, exports, name)
                 if path:
                     entries = [(1, path)]
+            elif category == 'zone':
+                frame = zone_labels.get(name)
+                if frame:
+                    for index, path in frame_files(args.raw, zone_character):
+                        if index == frame:
+                            entries = [(1, path)]
+                            break
             elif category == 'portrait':
                 frame = portrait_labels.get(name)
                 if frame:

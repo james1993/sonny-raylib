@@ -218,6 +218,41 @@ typedef struct {
     float       scale_x, scale_y;
 } StageLayer;
 
+/* A button a screen places, with the box it responds in, in stage
+   coordinates. A button is not a sprite -- it never appears in the art -- so
+   its character id is what says what pressing it does. */
+typedef struct {
+    const char *screen;    /* the root frame that places it */
+    const char *owner;     /* the clip it sits in */
+    const char *name;      /* the instance name inside that clip */
+    int32_t     character;
+    float       x, y, width, height;
+} StageButton;
+
+extern const StageButton SONNY_BUTTONS[];
+extern const int SONNY_BUTTON_COUNT;
+/* The `index`-th button on `screen` with this character, in placement order. */
+const StageButton *stage_button(const char *screen, int32_t character,
+                                int32_t index);
+
+/* The scene the hub is built around: one clip with a frame per zone, drawn as
+   asset "<label>" in the zone category, and the markers on it the player
+   clicks to pick a fight. */
+typedef struct {
+    const char *zone;      /* the frame's label, which is the art's name */
+    const char *name;      /* the marker's instance name */
+    float       x, y;
+} ZoneMarker;
+
+extern const ZoneMarker SONNY_ZONE_MARKERS[];
+extern const int SONNY_ZONE_MARKER_COUNT;
+/* The `index`-th marker on `zone`, in the order the frame stacks them. */
+const ZoneMarker *zone_marker(const char *zone, int32_t index);
+/* Where the scene is placed, and which frame label each zone uses. */
+extern const StageLayer SONNY_ZONE_SCREEN;
+extern const char *const SONNY_ZONE_LABELS[];
+extern const int SONNY_ZONE_LABEL_COUNT;
+
 /* Where a talent tree node sits on the stage. */
 typedef struct {
     int32_t node;
@@ -671,6 +706,61 @@ const BarField *bar_field(const char *side, const char *role)
     lines.append('};')
     lines.append('const int SONNY_LIFE_COLOUR_COUNT = '
                  '(int)(sizeof(SONNY_LIFE_COLOURS) / sizeof(SONNY_LIFE_COLOURS[0]));')
+
+    lines.append('')
+    lines.append('const StageButton SONNY_BUTTONS[] = {')
+    for b in (stage_json.get('buttons') or []):
+        lines.append('    { %s, %s, %s, %d, %s, %s, %s, %s },'
+                     % (c_string(b['screen']), c_string(b.get('owner') or ''),
+                        c_string(b['name']), b['character'],
+                        c_float(b['x']), c_float(b['y']),
+                        c_float(b['width']), c_float(b['height'])))
+    lines.append('};')
+    lines.append('const int SONNY_BUTTON_COUNT = '
+                 '(int)(sizeof(SONNY_BUTTONS) / sizeof(SONNY_BUTTONS[0]));')
+    lines.append('''
+const StageButton *stage_button(const char *screen, int32_t character,
+                                int32_t index)
+{
+    for (int i = 0; i < SONNY_BUTTON_COUNT; i++)
+        if (strcmp(SONNY_BUTTONS[i].screen, screen) == 0
+            && SONNY_BUTTONS[i].character == character && index-- == 0)
+            return &SONNY_BUTTONS[i];
+    return NULL;
+}''')
+
+    zone_clip = stage_json.get('zone_screen') or {}
+    lines.append('')
+    lines.append('const ZoneMarker SONNY_ZONE_MARKERS[] = {')
+    for label in sorted((zone_clip.get('labels') or {}),
+                        key=lambda k: zone_clip['labels'][k]):
+        for marker in (zone_clip.get('markers') or {}).get(label, []):
+            lines.append('    { %s, %s, %s, %s },'
+                         % (c_string(label), c_string(marker['name']),
+                            c_float(marker['x']), c_float(marker['y'])))
+    lines.append('};')
+    lines.append('const int SONNY_ZONE_MARKER_COUNT = '
+                 '(int)(sizeof(SONNY_ZONE_MARKERS) / sizeof(SONNY_ZONE_MARKERS[0]));')
+    lines.append('''
+const ZoneMarker *zone_marker(const char *zone, int32_t index)
+{
+    for (int i = 0; i < SONNY_ZONE_MARKER_COUNT; i++)
+        if (strcmp(SONNY_ZONE_MARKERS[i].zone, zone) == 0 && index-- == 0)
+            return &SONNY_ZONE_MARKERS[i];
+    return NULL;
+}''')
+    lines.append('const StageLayer SONNY_ZONE_SCREEN = { "zone", %s, %s, %s, %s };'
+                 % (c_float(zone_clip.get('x') or 0),
+                    c_float(zone_clip.get('y') or 0),
+                    c_float(zone_clip.get('scale_x') or 1),
+                    c_float(zone_clip.get('scale_y') or 1)))
+    lines.append('const char *const SONNY_ZONE_LABELS[] = {')
+    for label in sorted((zone_clip.get('labels') or {}),
+                        key=lambda k: zone_clip['labels'][k]):
+        lines.append('    %s,' % c_string(label))
+    lines.append('};')
+    lines.append('const int SONNY_ZONE_LABEL_COUNT = '
+                 '(int)(sizeof(SONNY_ZONE_LABELS) / sizeof(SONNY_ZONE_LABELS[0]));')
 
     lines.append('')
     lines.append('const StageLayer SONNY_STAGE_LAYERS[] = {')

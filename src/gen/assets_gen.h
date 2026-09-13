@@ -206,6 +206,41 @@ typedef struct {
     float       scale_x, scale_y;
 } StageLayer;
 
+/* A button a screen places, with the box it responds in, in stage
+   coordinates. A button is not a sprite -- it never appears in the art -- so
+   its character id is what says what pressing it does. */
+typedef struct {
+    const char *screen;    /* the root frame that places it */
+    const char *owner;     /* the clip it sits in */
+    const char *name;      /* the instance name inside that clip */
+    int32_t     character;
+    float       x, y, width, height;
+} StageButton;
+
+extern const StageButton SONNY_BUTTONS[];
+extern const int SONNY_BUTTON_COUNT;
+/* The `index`-th button on `screen` with this character, in placement order. */
+const StageButton *stage_button(const char *screen, int32_t character,
+                                int32_t index);
+
+/* The scene the hub is built around: one clip with a frame per zone, drawn as
+   asset "<label>" in the zone category, and the markers on it the player
+   clicks to pick a fight. */
+typedef struct {
+    const char *zone;      /* the frame's label, which is the art's name */
+    const char *name;      /* the marker's instance name */
+    float       x, y;
+} ZoneMarker;
+
+extern const ZoneMarker SONNY_ZONE_MARKERS[];
+extern const int SONNY_ZONE_MARKER_COUNT;
+/* The `index`-th marker on `zone`, in the order the frame stacks them. */
+const ZoneMarker *zone_marker(const char *zone, int32_t index);
+/* Where the scene is placed, and which frame label each zone uses. */
+extern const StageLayer SONNY_ZONE_SCREEN;
+extern const char *const SONNY_ZONE_LABELS[];
+extern const int SONNY_ZONE_LABEL_COUNT;
+
 /* Where a talent tree node sits on the stage. */
 typedef struct {
     int32_t node;
