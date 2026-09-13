@@ -22,6 +22,8 @@ static void game_start(Game *g, uint64_t seed)
        Neither says anything about it: the original announces nothing here. */
     if (save_read(&g->campaign, SONNY_SAVE_PATH) != 0)
         campaign_new(&g->campaign, 1);
+    /* A save from before a story point still gets whoever it has reached. */
+    campaign_story_joins(&g->campaign);
     g->screen = SCREEN_ZONE;
     g->selected = -1;
     g->hovered_unit = -1;

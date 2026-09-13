@@ -464,6 +464,15 @@ def extract_tables(text):
 SHOP_STOCK_RE = re.compile(
     r'if\(id == (\d+)\)\s*\{\s*Krin\.dropArray = \[([^\]]*)\];')
 SHOP_BUTTON_RE = re.compile(r'_root\.Krin\.shopId = (\d+);')
+# A marker that starts the zone's next story fight sets progressFight; one
+# that starts a practice fight picks out of the zone's training list, and the
+# count it rolls against is the marker's own, not the list's length.
+PROGRESS_BUTTON_RE = re.compile(r'_root\.Krin\.progressFight = true;')
+TRAINING_BUTTON_RE = re.compile(
+    r'random\((\d+)\);?\s*\n?\s*_root\.Krin\.BattlePick = '
+    r'_root\.Krin\.trainingArray|'
+    r'_root\.Krin\.trainingArray\[_root\.Krin\.sectionIn\]'
+    r'\[random\((\d+)\)\]')
 
 
 def extract_shops(text):
@@ -475,11 +484,115 @@ def extract_shops(text):
     return out
 
 
-def extract_shop_buttons(scripts_dir):
-    """Which store each marker opens, by the button's own character id.
+PARTY_INDEXED_RE = re.compile(
+    r'^Krin\.(NameSets|ClassStats|LevelStats|ExpStats|SkinSet|HairSet|GSet)'
+    r'\[(\d)\]\s*=\s*(.+);$')
+PARTY_SUFFIX_RE = re.compile(
+    r'^Krin\.(equipArray|StatSets|PerSets|DefSets|agArray)(\d)'
+    r'\s*=\s*(\[[^\]]*\]);$')
+PARTY_JOIN_RE = re.compile(
+    r'progressLevelOn (==|>=) (\d+)\)[\s\S]{0,120}?'
+    r'friendArray = \[([^\]]*)\]')
+PARTY_START_RE = re.compile(r'^Krin\.friendArray = \[([^\]]*)\];$')
+# The set-up loop gives every member the same starting arrays before the
+# named ones are patched in: Krin["agArray" + i] = [25,88,78,55].
+PARTY_DEFAULT_RE = re.compile(
+    r'^Krin\[\"(equipArray|StatSets|PerSets|DefSets|agArray)\" \+ i\]'
+    r'\s*=\s*(\[[^\]]*\]);$')
+PARTY_TEAM_RE = re.compile(r'^Krin\.friendArrayX = \[([^\]]*)\];$')
 
-    A zone's store is a button on the zone scene, and the only thing that says
-    which store it is, is the shopId its handler sets."""
+
+def extract_party(text, scripts_dir):
+    """Sonny and the five who can fight beside him.
+
+    Each is a name, a class, a level and a set of equipment and stat bonuses,
+    and the game keeps them in parallel arrays indexed the same way the battle
+    roster refers to them. Who has actually joined is friendArray, which the
+    story rewrites at two points."""
+    members = [{'index': i} for i in range(6)]
+    starting, team, defaults = None, None, {}
+    for raw in text.splitlines():
+        line = raw.strip()
+        m = PARTY_INDEXED_RE.match(line)
+        if m and int(m.group(2)) < 6:
+            members[int(m.group(2))][m.group(1)] = parse_value(m.group(3))
+            continue
+        m = PARTY_SUFFIX_RE.match(line)
+        if m and int(m.group(2)) < 6:
+            members[int(m.group(2))][m.group(1)] = parse_value(m.group(3))
+            continue
+        m = PARTY_DEFAULT_RE.match(line)
+        if m:
+            defaults[m.group(1)] = parse_value(m.group(2))
+            continue
+        m = PARTY_START_RE.match(line)
+        if m:
+            starting = parse_value('[' + m.group(1) + ']')
+            continue
+        m = PARTY_TEAM_RE.match(line)
+        if m:
+            team = parse_value('[' + m.group(1) + ']')
+
+    # Where the story hands someone over: a marker's own handler, and the map.
+    joins = []
+    for folder, _, files in os.walk(scripts_dir):
+        for name in sorted(files):
+            if not name.endswith('.as'):
+                continue
+            body = open(os.path.join(folder, name), encoding='utf-8',
+                        errors='replace').read()
+            for m in PARTY_JOIN_RE.finditer(body):
+                joins.append({'at': int(m.group(2)),
+                              'exact': m.group(1) == '==',
+                              'friends': parse_value('[' + m.group(3) + ']')})
+    joins.sort(key=lambda j: j['at'])
+    for member in members:
+        for key, value in defaults.items():
+            member.setdefault(key, value)
+    return {'members': members, 'starting': starting, 'team': team,
+            'joins': joins}
+
+
+def extract_zone_buttons(scripts_dir):
+    """What each marker on a zone's scene does, by the button's own id.
+
+    A marker is a button and nothing else says what it is for: one starts the
+    zone's next story fight, one rolls a practice fight out of the zone's
+    training list, one opens a store, and the rest are scenery the scene
+    reacts to. The store's id and the number the practice marker rolls
+    against both come out of the handler."""
+    out = {}
+    for name in sorted(os.listdir(scripts_dir)):
+        if not name.startswith('DefineButton2_'):
+            continue
+        character = name.split('_', 1)[1]
+        if not character.isdigit():
+            continue
+        folder = os.path.join(scripts_dir, name)
+        if not os.path.isdir(folder):
+            continue
+        for handler in sorted(os.listdir(folder)):
+            if not handler.endswith('.as'):
+                continue
+            body = open(os.path.join(folder, handler), encoding='utf-8',
+                        errors='replace').read()
+            entry = None
+            shop = SHOP_BUTTON_RE.search(body)
+            training = TRAINING_BUTTON_RE.search(body)
+            if shop:
+                entry = {'kind': 'shop', 'shop': int(shop.group(1))}
+            elif training:
+                rolls = training.group(1) or training.group(2)
+                entry = {'kind': 'training', 'choices': int(rolls)}
+            elif PROGRESS_BUTTON_RE.search(body):
+                entry = {'kind': 'progress'}
+            if entry:
+                out[int(character)] = entry
+    return out
+
+
+def extract_shop_buttons(scripts_dir):
+    """Which store each marker opens, by the button's own character id."""
     out = {}
     for name in sorted(os.listdir(scripts_dir)):
         if not name.startswith('DefineButton2_'):
@@ -529,6 +642,8 @@ def main():
     text = open(data_as, encoding='utf-8', errors='replace').read()
     shops = {'stock': extract_shops(text),
              'buttons': extract_shop_buttons(args.scripts_dir)}
+    zone_buttons = extract_zone_buttons(args.scripts_dir)
+    party = extract_party(text, args.scripts_dir)
     moves, units, items, buffs = extract_tables(text)
     battles = extract_battles(text)
 
@@ -615,7 +730,9 @@ def main():
                           ('buffs', buff_list), ('talents', talent_payload),
                           ('battles', battle_list), ('zones', zone_list),
                           ('elements', elements), ('doll', doll),
-                          ('shops', shops)):
+                          ('shops', shops),
+                          ('zone_buttons', zone_buttons),
+                          ('party', party)):
         path = os.path.join(args.out, name + '.json')
         with open(path, 'w', encoding='utf-8') as fh:
             json.dump(payload, fh, indent=1, ensure_ascii=False)

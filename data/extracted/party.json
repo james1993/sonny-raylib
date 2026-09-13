@@ -1,0 +1,348 @@
+{
+ "members": [
+  {
+   "index": 0,
+   "NameSets": "Sonny",
+   "ClassStats": 1,
+   "LevelStats": 1,
+   "ExpStats": 0,
+   "HairSet": 1,
+   "equipArray": [
+    0,
+    0,
+    0,
+    4,
+    8,
+    5,
+    0
+   ],
+   "StatSets": [
+    0,
+    5,
+    0,
+    3,
+    0
+   ],
+   "PerSets": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "DefSets": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "agArray": [
+    25,
+    88,
+    78,
+    55
+   ]
+  },
+  {
+   "index": 1,
+   "NameSets": "Veradux",
+   "ClassStats": 5,
+   "LevelStats": 6,
+   "ExpStats": 0,
+   "SkinSet": 1,
+   "HairSet": 2,
+   "DefSets": [
+    30,
+    30,
+    15,
+    15,
+    15,
+    15,
+    15,
+    15
+   ],
+   "StatSets": [
+    20,
+    20,
+    34,
+    22,
+    0
+   ],
+   "equipArray": [
+    34,
+    35,
+    36,
+    37,
+    38,
+    31,
+    0
+   ],
+   "PerSets": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "agArray": [
+    25,
+    88,
+    78,
+    55
+   ]
+  },
+  {
+   "index": 2,
+   "NameSets": "Amber",
+   "ClassStats": 3,
+   "LevelStats": 12,
+   "ExpStats": 0,
+   "GSet": 1,
+   "SkinSet": 2,
+   "HairSet": 6,
+   "StatSets": [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "PerSets": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "DefSets": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "equipArray": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "agArray": [
+    25,
+    88,
+    78,
+    55
+   ]
+  },
+  {
+   "index": 3,
+   "NameSets": "Gligus",
+   "ClassStats": 1,
+   "LevelStats": 12,
+   "ExpStats": 0,
+   "SkinSet": 3,
+   "HairSet": 0,
+   "StatSets": [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "PerSets": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "DefSets": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "equipArray": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "agArray": [
+    25,
+    88,
+    78,
+    55
+   ]
+  },
+  {
+   "index": 4,
+   "NameSets": "Teco",
+   "ClassStats": 2,
+   "LevelStats": 12,
+   "ExpStats": 0,
+   "SkinSet": 4,
+   "HairSet": 4,
+   "StatSets": [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "PerSets": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "DefSets": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "equipArray": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "agArray": [
+    25,
+    88,
+    78,
+    55
+   ]
+  },
+  {
+   "index": 5,
+   "NameSets": "Catelin",
+   "ClassStats": 4,
+   "LevelStats": 12,
+   "GSet": 1,
+   "SkinSet": 5,
+   "HairSet": 5,
+   "StatSets": [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "PerSets": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "DefSets": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "equipArray": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "agArray": [
+    25,
+    88,
+    78,
+    55
+   ]
+  }
+ ],
+ "starting": [
+  0,
+  -1,
+  -1,
+  -1,
+  -1,
+  -1
+ ],
+ "team": [
+  1,
+  2
+ ],
+ "joins": [
+  {
+   "at": 15,
+   "exact": true,
+   "friends": [
+    0,
+    1,
+    -1,
+    -1,
+    -1,
+    -1
+   ]
+  },
+  {
+   "at": 38,
+   "exact": false,
+   "friends": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ]
+  }
+ ]
+}

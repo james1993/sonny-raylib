@@ -100,6 +100,13 @@ typedef struct {
     /* Which store marker opened the shop screen: its button's character is
        what says which store, as Krin.shopId does in the original. */
     int32_t   shop_button;
+    /* Krin.bossFight and Krin.progressFight, set by the marker that started
+       the fight: the first picks the boss music and, on a win, counts the
+       zone as beaten; the second is what carries progress forward. */
+    int32_t   boss_fight;
+    int32_t   progress_fight;
+    /* How far through the original's four-track battle playlist we are. */
+    int32_t   music_turn;
     char      notice[128];
     int32_t   notice_timer;
 

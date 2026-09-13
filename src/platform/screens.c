@@ -100,7 +100,6 @@ static const TextField *win_field(const char *name)
 /* What the hub's buttons do, by the character id of the button itself --
    which is the only thing that tells them apart, since a button is never
    part of the art. These are the ids the original's own handlers hang off. */
-#define HUB_BUTTON_PROGRESS  1211   /* the marker that starts the next fight */
 #define HUB_BUTTON_INVENTORY 1252
 #define HUB_BUTTON_SKILLS    1253
 #define HUB_BUTTON_SAVE      1254
@@ -115,9 +114,11 @@ static int hub_pressed(int32_t character, Vector2 mouse)
                                                      b->height});
 }
 
-/* The marker on this zone's scene that opens a store, if it has one. A zone
-   can carry more than one; this is the `index`-th. */
-static const StageButton *zone_store(const Campaign *c, int32_t index)
+/* The `index`-th marker on this zone's scene, in the order the frame stacks
+   them. Every marker is a button, and what its button is says what it does --
+   the next story fight, a practice fight, or a store. Everything else on the
+   scene is scenery the original only animates. */
+static const StageButton *zone_marker_button(const Campaign *c, int32_t index)
 {
     const ZoneDef *zone = campaign_zone(c);
     if (!zone || zone->zone >= SONNY_ZONE_LABEL_COUNT)
@@ -125,8 +126,7 @@ static const StageButton *zone_store(const Campaign *c, int32_t index)
     const char *label = SONNY_ZONE_LABELS[zone->zone];
     for (int i = 0; i < SONNY_BUTTON_COUNT; i++) {
         const StageButton *b = &SONNY_BUTTONS[i];
-        if (strcmp(b->screen, label) != 0
-            || !shop_for_button(b->character))
+        if (strcmp(b->screen, label) != 0 || !zone_button(b->character))
             continue;
         if (index-- == 0)
             return b;
@@ -134,28 +134,82 @@ static const StageButton *zone_store(const Campaign *c, int32_t index)
     return NULL;
 }
 
+/* Which battle the story marker starts. The original clamps to the zone's
+   last fight once progress has passed it, and calls that fight -- and the
+   fight that ends the zone -- a boss fight. */
+static int32_t progress_pick(const Campaign *c, int *boss)
+{
+    const ZoneDef *zone = campaign_zone(c);
+    int32_t pick = c->progress_battle;
+    *boss = 0;
+    if (!zone)
+        return pick;
+    if (c->progress_battle > zone->last_battle - 1) {
+        pick = zone->last_battle - 1;
+        *boss = 1;
+    } else if (c->progress_battle == zone->last_battle - 1) {
+        *boss = 1;
+    }
+    return pick;
+}
+
+/* Which battle a practice marker rolls. The marker's own number is what it
+   rolls against, not how long the zone's training list is -- the second
+   zone lists nine and rolls eight of them. */
+static int32_t training_pick(const Campaign *c, Rng *rng, int32_t choices)
+{
+    const ZoneDef *zone = campaign_zone(c);
+    if (!zone || zone->training_count <= 0 || choices <= 0)
+        return 0;
+    if (choices > zone->training_count)
+        choices = zone->training_count;
+    return zone->training[rng_below(rng, (uint32_t)choices)];
+}
+
 void screen_zone_update(Game *g, Vector2 mouse)
 {
-    /* The store. Which one it is comes from the marker's own button, so the
-       screen remembers which was pressed. */
-    for (int32_t i = 0; ; i++) {
-        const StageButton *b = zone_store(&g->campaign, i);
+    /* The markers on the scene. Which one was pressed decides what happens,
+       and for a store it is also what says which store. */
+    for (int32_t i = 0; IsMouseButtonPressed(MOUSE_BUTTON_LEFT); i++) {
+        const StageButton *b = zone_marker_button(&g->campaign, i);
         if (!b)
             break;
-        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)
-            && CheckCollisionPointRec(mouse, (Rectangle){b->x, b->y, b->width,
-                                                         b->height})) {
-            audio_play("Click3pickup");
+        if (!CheckCollisionPointRec(mouse, (Rectangle){b->x, b->y, b->width,
+                                                       b->height}))
+            continue;
+        const ZoneButton *marker = zone_button(b->character);
+        audio_play("Click3pickup");
+        switch (marker->kind) {
+        case MARKER_SHOP:
             g->shop_button = b->character;
             g->screen = SCREEN_SHOP;
             return;
+        case MARKER_TRAINING: {
+            int32_t pick = training_pick(&g->campaign, &g->rng,
+                                         marker->choices);
+            g->boss_fight = 0;
+            g->progress_fight = 0;
+            if (pick)
+                battle_screen_start(g, pick);
+            return;
+        }
+        case MARKER_PROGRESS:
+        default: {
+            int boss = 0;
+            int32_t pick = progress_pick(&g->campaign, &boss);
+            g->boss_fight = boss;
+            /* Clamping past the zone's last fight makes it a boss fight that
+               no longer carries progress. */
+            g->progress_fight = (g->campaign.progress_battle
+                                 <= campaign_zone(&g->campaign)->last_battle
+                                    - 1);
+            battle_screen_start(g, pick);
+            return;
+        }
         }
     }
 
-    if (hub_pressed(HUB_BUTTON_PROGRESS, mouse)) {
-        audio_play("Click3pickup");
-        battle_screen_start(g, g->campaign.progress_battle);
-    } else if (hub_pressed(HUB_BUTTON_INVENTORY, mouse)) {
+    if (hub_pressed(HUB_BUTTON_INVENTORY, mouse)) {
         audio_play("Click3pickup");
         g->screen = SCREEN_INVENTORY;
     } else if (hub_pressed(HUB_BUTTON_SKILLS, mouse)) {

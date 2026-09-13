@@ -358,14 +358,82 @@ def gen_shops(shops):
     lines.append('};')
     lines.append('const int SONNY_SHOP_COUNT = '
                  '(int)(sizeof(SONNY_SHOPS) / sizeof(SONNY_SHOPS[0]));')
-    lines.append('')
-    lines.append('const ShopButton SONNY_SHOP_BUTTONS[] = {')
-    for key in sorted(buttons, key=int):
-        lines.append('    { %s, %d },' % (key, buttons[key]))
+    return '\n'.join(lines)
+
+
+PARTY_SIZE = 6
+
+
+def gen_party(party):
+    """Sonny and the five who can fight beside him, with who has joined when
+    the story starts and who it hands over later."""
+    def arr(m, key, n):
+        v = m.get(key) or []
+        v = [int(num(x)) for x in v][:n]
+        v += [0] * (n - len(v))
+        return ', '.join(str(x) for x in v)
+
+    lines = ['const PartyMember SONNY_PARTY[] = {']
+    for m in party['members']:
+        lines.append('    { /* %s */' % (m.get('NameSets') or '?'))
+        lines.append('        .index = %d, .name = %s, .class_id = %d,'
+                     % (m['index'], c_string(str(m.get('NameSets') or '')),
+                        int(num(m.get('ClassStats') or 0))))
+        lines.append('        .level = %d, .gender = %d, .skin = %d, '
+                     '.hair = %d,'
+                     % (int(num(m.get('LevelStats') or 0)),
+                        int(num(m.get('GSet') or 0)),
+                        int(num(m.get('SkinSet') or 0)),
+                        int(num(m.get('HairSet') or 0))))
+        lines.append('        .equip = { %s },' % arr(m, 'equipArray', 7))
+        lines.append('        .stat = { %s },' % arr(m, 'StatSets', 5))
+        lines.append('        .per = { %s },' % arr(m, 'PerSets', 8))
+        lines.append('        .def_ = { %s },' % arr(m, 'DefSets', 8))
+        lines.append('        .aggression = { %s },' % arr(m, 'agArray', 4))
+        lines.append('    },')
     lines.append('};')
-    lines.append('const int SONNY_SHOP_BUTTON_COUNT = '
-                 '(int)(sizeof(SONNY_SHOP_BUTTONS) / '
-                 'sizeof(SONNY_SHOP_BUTTONS[0]));')
+    lines.append('const int SONNY_PARTY_COUNT = '
+                 '(int)(sizeof(SONNY_PARTY) / sizeof(SONNY_PARTY[0]));')
+    lines.append('')
+    starting = [int(num(v)) for v in (party.get('starting') or [])]
+    starting += [-1] * (PARTY_SIZE - len(starting))
+    lines.append('const int32_t SONNY_PARTY_START[SONNY_PARTY_SIZE] = { %s };'
+                 % ', '.join(str(v) for v in starting[:PARTY_SIZE]))
+    team = [int(num(v)) for v in (party.get('team') or [])]
+    team += [0] * (2 - len(team))
+    lines.append('const int32_t SONNY_PARTY_TEAM[2] = { %s };'
+                 % ', '.join(str(v) for v in team[:2]))
+    lines.append('')
+    lines.append('const PartyJoin SONNY_PARTY_JOINS[] = {')
+    for j in (party.get('joins') or []):
+        friends = [int(num(v)) for v in j['friends']]
+        friends += [-1] * (PARTY_SIZE - len(friends))
+        lines.append('    { %d, %d, { %s } },'
+                     % (j['at'], 1 if j['exact'] else 0,
+                        ', '.join(str(v) for v in friends[:PARTY_SIZE])))
+    lines.append('};')
+    lines.append('const int SONNY_PARTY_JOIN_COUNT = '
+                 '(int)(sizeof(SONNY_PARTY_JOINS) / '
+                 'sizeof(SONNY_PARTY_JOINS[0]));')
+    return '\n'.join(lines)
+
+
+MARKER_KINDS = {'progress': 'MARKER_PROGRESS', 'training': 'MARKER_TRAINING',
+                'shop': 'MARKER_SHOP'}
+
+
+def gen_zone_buttons(buttons):
+    """What each marker on a zone's scene does, by its button's own id."""
+    lines = ['const ZoneButton SONNY_ZONE_BUTTONS[] = {']
+    for key in sorted(buttons, key=int):
+        b = buttons[key]
+        lines.append('    { %s, %s, %d, %d },'
+                     % (key, MARKER_KINDS[b['kind']], b.get('shop', -1),
+                        b.get('choices', 0)))
+    lines.append('};')
+    lines.append('const int SONNY_ZONE_BUTTON_COUNT = '
+                 '(int)(sizeof(SONNY_ZONE_BUTTONS) / '
+                 'sizeof(SONNY_ZONE_BUTTONS[0]));')
     return '\n'.join(lines)
 
 
@@ -669,19 +737,70 @@ typedef struct {
     int32_t item[SONNY_SHOP_SLOTS];
 } ShopDef;
 
-/* Which store a marker on a zone's scene opens. A marker is a button, and the
-   shopId its handler sets is the only thing that says which store it is. */
+/* What a marker on a zone's scene does. A marker is a button and nothing else
+   says what it is for: one starts the zone's next story fight, one rolls a
+   practice fight out of the zone's training list, one opens a store, and
+   everything else on the scene is scenery. */
+typedef enum {
+    MARKER_PROGRESS = 0,
+    MARKER_TRAINING,
+    MARKER_SHOP
+} MarkerKind;
+
 typedef struct {
-    int32_t button;       /* the button's own character id */
-    int32_t shop;
-} ShopButton;
+    int32_t    button;    /* the button's own character id */
+    MarkerKind kind;
+    int32_t    shop;      /* MARKER_SHOP: which store; -1 otherwise */
+    int32_t    choices;   /* MARKER_TRAINING: how many the marker rolls
+                             against, which is its own number and not the
+                             training list's length */
+} ZoneButton;
+
+/* One of the six the story can put in the fighting line. Their stats are kept
+   the way the original keeps them: parallel arrays of a class, a level and
+   the bonuses that stand in for equipment and spent points. */
+#define SONNY_PARTY_SIZE 6
+
+typedef struct {
+    int32_t     index;
+    const char *name;
+    int32_t     class_id;      /* Krin.ClassStats */
+    int32_t     level;
+    int32_t     gender;        /* Krin.GSet: 0 male, 1 female */
+    int32_t     skin, hair;
+    int32_t     equip[7];      /* Krin.equipArrayN */
+    double      stat[5];       /* Krin.StatSetsN */
+    double      per[SONNY_ELEMENTS];
+    double      def_[SONNY_ELEMENTS];
+    int32_t     aggression[4]; /* Krin.agArrayN */
+} PartyMember;
+
+/* A point in the story that hands someone over: when progress reaches `at`
+   -- exactly, or having passed it -- friendArray becomes `friends`, where -1
+   means that place is still empty. */
+typedef struct {
+    int32_t at;
+    int32_t exact;
+    int32_t friends[SONNY_PARTY_SIZE];
+} PartyJoin;
+
+extern const PartyMember SONNY_PARTY[];
+extern const int SONNY_PARTY_COUNT;
+/* Krin.friendArray as the story starts, and Krin.friendArrayX -- which two of
+   them stand in the line. */
+extern const int32_t SONNY_PARTY_START[SONNY_PARTY_SIZE];
+extern const int32_t SONNY_PARTY_TEAM[2];
+extern const PartyJoin SONNY_PARTY_JOINS[];
+extern const int SONNY_PARTY_JOIN_COUNT;
 
 extern const ShopDef SONNY_SHOPS[];
 extern const int SONNY_SHOP_COUNT;
-extern const ShopButton SONNY_SHOP_BUTTONS[];
-extern const int SONNY_SHOP_BUTTON_COUNT;
-/* The store with this id, and the store a marker's button opens. */
+extern const ZoneButton SONNY_ZONE_BUTTONS[];
+extern const int SONNY_ZONE_BUTTON_COUNT;
+/* The store with this id, what a marker's button does, and the store it
+   opens (NULL when it is not a store marker). */
 const ShopDef *shop_by_id(int32_t id);
+const ZoneButton *zone_button(int32_t button);
 const ShopDef *shop_for_button(int32_t button);
 
 /* Lookups by the original's own ids/keys. NULL when absent.
@@ -710,12 +829,18 @@ const ShopDef *shop_by_id(int32_t id)
     return NULL;
 }
 
+const ZoneButton *zone_button(int32_t button)
+{
+    for (int i = 0; i < SONNY_ZONE_BUTTON_COUNT; i++)
+        if (SONNY_ZONE_BUTTONS[i].button == button)
+            return &SONNY_ZONE_BUTTONS[i];
+    return NULL;
+}
+
 const ShopDef *shop_for_button(int32_t button)
 {
-    for (int i = 0; i < SONNY_SHOP_BUTTON_COUNT; i++)
-        if (SONNY_SHOP_BUTTONS[i].button == button)
-            return shop_by_id(SONNY_SHOP_BUTTONS[i].shop);
-    return NULL;
+    const ZoneButton *b = zone_button(button);
+    return (b && b->kind == MARKER_SHOP) ? shop_by_id(b->shop) : NULL;
 }
 
 const AbilityDef *ability_by_id(int32_t id)
@@ -815,6 +940,8 @@ def main():
         fh.write(gen_battles(load('battles')) + '\n\n')
         fh.write(gen_zones(load('zones')) + '\n\n')
         fh.write(gen_shops(load('shops')) + '\n\n')
+        fh.write(gen_zone_buttons(load('zone_buttons')) + '\n\n')
+        fh.write(gen_party(load('party')) + '\n\n')
         fh.write(gen_elements(load('elements')) + '\n\n')
         fh.write(gen_lang(load('lang')) + '\n')
         fh.write(LOOKUPS)

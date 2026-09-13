@@ -229,19 +229,70 @@ typedef struct {
     int32_t item[SONNY_SHOP_SLOTS];
 } ShopDef;
 
-/* Which store a marker on a zone's scene opens. A marker is a button, and the
-   shopId its handler sets is the only thing that says which store it is. */
+/* What a marker on a zone's scene does. A marker is a button and nothing else
+   says what it is for: one starts the zone's next story fight, one rolls a
+   practice fight out of the zone's training list, one opens a store, and
+   everything else on the scene is scenery. */
+typedef enum {
+    MARKER_PROGRESS = 0,
+    MARKER_TRAINING,
+    MARKER_SHOP
+} MarkerKind;
+
 typedef struct {
-    int32_t button;       /* the button's own character id */
-    int32_t shop;
-} ShopButton;
+    int32_t    button;    /* the button's own character id */
+    MarkerKind kind;
+    int32_t    shop;      /* MARKER_SHOP: which store; -1 otherwise */
+    int32_t    choices;   /* MARKER_TRAINING: how many the marker rolls
+                             against, which is its own number and not the
+                             training list's length */
+} ZoneButton;
+
+/* One of the six the story can put in the fighting line. Their stats are kept
+   the way the original keeps them: parallel arrays of a class, a level and
+   the bonuses that stand in for equipment and spent points. */
+#define SONNY_PARTY_SIZE 6
+
+typedef struct {
+    int32_t     index;
+    const char *name;
+    int32_t     class_id;      /* Krin.ClassStats */
+    int32_t     level;
+    int32_t     gender;        /* Krin.GSet: 0 male, 1 female */
+    int32_t     skin, hair;
+    int32_t     equip[7];      /* Krin.equipArrayN */
+    double      stat[5];       /* Krin.StatSetsN */
+    double      per[SONNY_ELEMENTS];
+    double      def_[SONNY_ELEMENTS];
+    int32_t     aggression[4]; /* Krin.agArrayN */
+} PartyMember;
+
+/* A point in the story that hands someone over: when progress reaches `at`
+   -- exactly, or having passed it -- friendArray becomes `friends`, where -1
+   means that place is still empty. */
+typedef struct {
+    int32_t at;
+    int32_t exact;
+    int32_t friends[SONNY_PARTY_SIZE];
+} PartyJoin;
+
+extern const PartyMember SONNY_PARTY[];
+extern const int SONNY_PARTY_COUNT;
+/* Krin.friendArray as the story starts, and Krin.friendArrayX -- which two of
+   them stand in the line. */
+extern const int32_t SONNY_PARTY_START[SONNY_PARTY_SIZE];
+extern const int32_t SONNY_PARTY_TEAM[2];
+extern const PartyJoin SONNY_PARTY_JOINS[];
+extern const int SONNY_PARTY_JOIN_COUNT;
 
 extern const ShopDef SONNY_SHOPS[];
 extern const int SONNY_SHOP_COUNT;
-extern const ShopButton SONNY_SHOP_BUTTONS[];
-extern const int SONNY_SHOP_BUTTON_COUNT;
-/* The store with this id, and the store a marker's button opens. */
+extern const ZoneButton SONNY_ZONE_BUTTONS[];
+extern const int SONNY_ZONE_BUTTON_COUNT;
+/* The store with this id, what a marker's button does, and the store it
+   opens (NULL when it is not a store marker). */
 const ShopDef *shop_by_id(int32_t id);
+const ZoneButton *zone_button(int32_t button);
 const ShopDef *shop_for_button(int32_t button);
 
 /* Lookups by the original's own ids/keys. NULL when absent.

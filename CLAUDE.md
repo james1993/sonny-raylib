@@ -151,6 +151,18 @@ What the original settled that guesswork had got wrong:
   it cannot be taken from the zone.
 * The store's picture is a clip with a frame per store, pointed at shopId + 1
   by number rather than by name.
+* Every marker on a zone's scene is a button and nothing else says what it is
+  for: one starts the next story fight, one rolls a practice fight out of the
+  zone's training list, one opens a store, and the rest are scenery. The
+  practice marker rolls against its own number, not the list's length -- the
+  second zone lists nine and rolls eight.
+* A fight only carries progress when the story marker started it
+  (Krin.progressFight). Replaying a zone's last fight is a boss fight that
+  pays out and leaves progress where it is.
+* The party is six parallel arrays, and who has joined is friendArray, which
+  the story rewrites at exactly two points: Veradux at battle 15, everyone at
+  38. friendArrayX names which two stand in the line.
+
 * The world map is a picture with a marker per zone, shown once progress has
   reached the battle before that zone's first, with the route drawn between
   the ones showing at run time. There is no way off it but to pick somewhere.

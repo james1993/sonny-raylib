@@ -20,8 +20,11 @@
 
 typedef struct {
     Character  player;
-    Character  allies[SONNY_MAX_ALLIES];
-    int32_t    ally_present[SONNY_MAX_ALLIES];
+    /* Krin.friendArray: who has joined, by the place they take in the party
+       -- -1 for a place the story has not filled yet. */
+    int32_t    friends[SONNY_PARTY_SIZE];
+    /* Krin.friendArrayX: which two of them stand in the fighting line. */
+    int32_t    line[SONNY_MAX_ALLIES];
     int32_t    progress_battle;   /* Krin.progressLevelOn */
     int32_t    zone;              /* Krin.sectionIn */
     int32_t    euros;
@@ -30,6 +33,15 @@ typedef struct {
 } Campaign;
 
 void campaign_new(Campaign *c, int32_t class_id);
+
+/* Whether this party member has joined. */
+int campaign_has_friend(const Campaign *c, int32_t member);
+/* Build the character one of them fights as, from the party table. */
+void campaign_ally(const Campaign *c, int32_t member, Character *out);
+/* Apply any point of the story that progress has now reached. The original
+   does this in the marker handlers and on the map, so it runs wherever
+   progress can have moved. */
+void campaign_story_joins(Campaign *c);
 
 /* Build a battle from a roster definition: the player in slot 1, then each
    roster entry in slots 2..6. Returns 0 if the definition is unusable. */

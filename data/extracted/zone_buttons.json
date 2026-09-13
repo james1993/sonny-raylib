@@ -1,0 +1,51 @@
+{
+ "1211": {
+  "kind": "progress"
+ },
+ "1212": {
+  "kind": "shop",
+  "shop": 0
+ },
+ "1217": {
+  "kind": "progress"
+ },
+ "1218": {
+  "kind": "shop",
+  "shop": 1
+ },
+ "1219": {
+  "kind": "training",
+  "choices": 8
+ },
+ "1227": {
+  "kind": "shop",
+  "shop": 2
+ },
+ "1228": {
+  "kind": "training",
+  "choices": 11
+ },
+ "1232": {
+  "kind": "shop",
+  "shop": 3
+ },
+ "1233": {
+  "kind": "shop",
+  "shop": 4
+ },
+ "1234": {
+  "kind": "shop",
+  "shop": 5
+ },
+ "1244": {
+  "kind": "shop",
+  "shop": 0
+ },
+ "1255": {
+  "kind": "shop",
+  "shop": 0
+ },
+ "1256": {
+  "kind": "progress"
+ }
+}

@@ -9,6 +9,50 @@ void campaign_new(Campaign *c, int32_t class_id)
     /* The first progress battle of zone 0. */
     c->progress_battle = SONNY_ZONES[0].first_battle;
     c->zone = 0;
+    for (int32_t i = 0; i < SONNY_PARTY_SIZE; i++)
+        c->friends[i] = SONNY_PARTY_START[i];
+    for (int32_t i = 0; i < SONNY_MAX_ALLIES; i++)
+        c->line[i] = SONNY_PARTY_TEAM[i];
+}
+
+int campaign_has_friend(const Campaign *c, int32_t member)
+{
+    if (member < 0 || member >= SONNY_PARTY_SIZE)
+        return 0;
+    for (int32_t i = 0; i < SONNY_PARTY_SIZE; i++)
+        if (c->friends[i] == member)
+            return 1;
+    return 0;
+}
+
+void campaign_ally(const Campaign *c, int32_t member, Character *out)
+{
+    (void)c;
+    memset(out, 0, sizeof(*out));
+    if (member < 0 || member >= SONNY_PARTY_COUNT)
+        return;
+    const PartyMember *m = &SONNY_PARTY[member];
+    /* ClassStats is the class id plus one, the way the class menu numbers
+       them, so the template is the one before it. */
+    out->class_template = unit_template_by_id(m->class_id);
+    out->level = m->level;
+    for (int32_t i = 0; i < SONNY_EQUIP_SLOTS; i++)
+        out->equip[i] = m->equip[i];
+    for (int32_t i = 0; i < SONNY_STATS; i++)
+        out->spent[i] = m->stat[i];
+}
+
+void campaign_story_joins(Campaign *c)
+{
+    for (int i = 0; i < SONNY_PARTY_JOIN_COUNT; i++) {
+        const PartyJoin *j = &SONNY_PARTY_JOINS[i];
+        int reached = j->exact ? (c->progress_battle == j->at)
+                               : (c->progress_battle >= j->at);
+        if (!reached)
+            continue;
+        for (int32_t k = 0; k < SONNY_PARTY_SIZE; k++)
+            c->friends[k] = j->friends[k];
+    }
 }
 
 const ZoneDef *campaign_zone(const Campaign *c)
@@ -28,6 +72,9 @@ void campaign_advance(Campaign *c)
     const ZoneDef *z = zone_of_battle(c->progress_battle);
     if (z)
         c->zone = z->zone;
+    /* The story hands people over at set points, which the original checks in
+       the marker's own handler and on the map. */
+    campaign_story_joins(c);
 }
 
 int campaign_setup_battle(const Campaign *c, const BattleDef *def, Battle *out,
@@ -54,10 +101,19 @@ int campaign_setup_battle(const Campaign *c, const BattleDef *def, Battle *out,
             if (t)
                 battle_place_enemy(out, slot, t, level, 1);
         } else {
-            /* A negative entry selects a party ally: friendArrayX[entry + 2]. */
-            int32_t ally = entry + 2;
-            if (ally >= 0 && ally < SONNY_MAX_ALLIES && c->ally_present[ally])
-                battle_place_character(out, slot, &c->allies[ally], NULL, 1);
+            /* A negative entry selects a party ally: friendArrayX[entry + 2]
+               names which of the six stands there, and they only turn up if
+               the story has handed them over. */
+            int32_t place = entry + 2;
+            if (place < 0 || place >= SONNY_MAX_ALLIES)
+                continue;
+            int32_t member = c->line[place];
+            if (!campaign_has_friend(c, member))
+                continue;
+            Character ally;
+            campaign_ally(c, member, &ally);
+            battle_place_character(out, slot, &ally,
+                                   SONNY_PARTY[member].name, 1);
         }
     }
 

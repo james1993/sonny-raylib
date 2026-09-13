@@ -958,6 +958,23 @@ static void advance(Game *g)
 
 /* ----------------------------------------------------------------- entry */
 
+/* What plays during a fight. The original walks a list of four tracks, one
+   per fight, and swaps in the boss theme for a boss marker or for the three
+   fights it names outright. */
+static const char *battle_music(Game *g)
+{
+    static const char *const TRACKS[4] = {
+        "menumusic", "BattleMusic2loopable", "Gamemusic002",
+        "BattleMusic1loopable",
+    };
+    int32_t at = g->campaign.progress_battle;
+    if (g->boss_fight || at == 24 || at == 30 || at == 36)
+        return "BossBattleloopable";
+    const char *track = TRACKS[g->music_turn % 4];
+    g->music_turn++;
+    return track;
+}
+
 void battle_screen_start(Game *g, int32_t battle_id)
 {
     const BattleDef *def = battle_def_by_id(battle_id);
@@ -1008,7 +1025,7 @@ void battle_screen_start(Game *g, int32_t battle_id)
              lang_text("SYSTEM", 10), g->campaign.progress_battle - 1,
              g->battle.TeamMove);
     if (audio_ready())
-        audio_music("BattleMusic1loopable");
+        audio_music(battle_music(g));
 }
 
 void battle_screen_update(Game *g, Vector2 mouse, int headless)
@@ -1038,9 +1055,13 @@ void battle_screen_update(Game *g, Vector2 mouse, int headless)
     if (g->battle.phase == PHASE_OVER) {
         if (g->battle.winCondition == 1) {
             g->rewards = campaign_award(&g->campaign, &g->battle, &g->rng);
-            /* Only a progress battle advances the campaign. */
-            if (g->def && g->def->id == g->campaign.progress_battle)
+            /* Only a fight the story marker started carries progress -- a
+               practice fight and a replayed boss both leave it where it is,
+               as Krin.progressFight does. */
+            if (g->progress_fight)
                 campaign_advance(&g->campaign);
+            g->progress_fight = 0;
+            g->boss_fight = 0;
             g->screen = SCREEN_VICTORY;
         } else {
             game_notice(g, "Defeated.");

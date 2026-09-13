@@ -5608,17 +5608,89 @@ const ShopDef SONNY_SHOPS[] = {
 };
 const int SONNY_SHOP_COUNT = (int)(sizeof(SONNY_SHOPS) / sizeof(SONNY_SHOPS[0]));
 
-const ShopButton SONNY_SHOP_BUTTONS[] = {
-    { 1212, 0 },
-    { 1218, 1 },
-    { 1227, 2 },
-    { 1232, 3 },
-    { 1233, 4 },
-    { 1234, 5 },
-    { 1244, 0 },
-    { 1255, 0 },
+const ZoneButton SONNY_ZONE_BUTTONS[] = {
+    { 1211, MARKER_PROGRESS, -1, 0 },
+    { 1212, MARKER_SHOP, 0, 0 },
+    { 1217, MARKER_PROGRESS, -1, 0 },
+    { 1218, MARKER_SHOP, 1, 0 },
+    { 1219, MARKER_TRAINING, -1, 8 },
+    { 1227, MARKER_SHOP, 2, 0 },
+    { 1228, MARKER_TRAINING, -1, 11 },
+    { 1232, MARKER_SHOP, 3, 0 },
+    { 1233, MARKER_SHOP, 4, 0 },
+    { 1234, MARKER_SHOP, 5, 0 },
+    { 1244, MARKER_SHOP, 0, 0 },
+    { 1255, MARKER_SHOP, 0, 0 },
+    { 1256, MARKER_PROGRESS, -1, 0 },
 };
-const int SONNY_SHOP_BUTTON_COUNT = (int)(sizeof(SONNY_SHOP_BUTTONS) / sizeof(SONNY_SHOP_BUTTONS[0]));
+const int SONNY_ZONE_BUTTON_COUNT = (int)(sizeof(SONNY_ZONE_BUTTONS) / sizeof(SONNY_ZONE_BUTTONS[0]));
+
+const PartyMember SONNY_PARTY[] = {
+    { /* Sonny */
+        .index = 0, .name = "Sonny", .class_id = 1,
+        .level = 1, .gender = 0, .skin = 0, .hair = 1,
+        .equip = { 0, 0, 0, 4, 8, 5, 0 },
+        .stat = { 0, 5, 0, 3, 0 },
+        .per = { 0, 0, 0, 0, 0, 0, 0, 0 },
+        .def_ = { 0, 0, 0, 0, 0, 0, 0, 0 },
+        .aggression = { 25, 88, 78, 55 },
+    },
+    { /* Veradux */
+        .index = 1, .name = "Veradux", .class_id = 5,
+        .level = 6, .gender = 0, .skin = 1, .hair = 2,
+        .equip = { 34, 35, 36, 37, 38, 31, 0 },
+        .stat = { 20, 20, 34, 22, 0 },
+        .per = { 0, 0, 0, 0, 0, 0, 0, 0 },
+        .def_ = { 30, 30, 15, 15, 15, 15, 15, 15 },
+        .aggression = { 25, 88, 78, 55 },
+    },
+    { /* Amber */
+        .index = 2, .name = "Amber", .class_id = 3,
+        .level = 12, .gender = 1, .skin = 2, .hair = 6,
+        .equip = { 0, 0, 0, 0, 0, 0, 0 },
+        .stat = { 0, 0, 0, 0, 0 },
+        .per = { 0, 0, 0, 0, 0, 0, 0, 0 },
+        .def_ = { 0, 0, 0, 0, 0, 0, 0, 0 },
+        .aggression = { 25, 88, 78, 55 },
+    },
+    { /* Gligus */
+        .index = 3, .name = "Gligus", .class_id = 1,
+        .level = 12, .gender = 0, .skin = 3, .hair = 0,
+        .equip = { 0, 0, 0, 0, 0, 0, 0 },
+        .stat = { 0, 0, 0, 0, 0 },
+        .per = { 0, 0, 0, 0, 0, 0, 0, 0 },
+        .def_ = { 0, 0, 0, 0, 0, 0, 0, 0 },
+        .aggression = { 25, 88, 78, 55 },
+    },
+    { /* Teco */
+        .index = 4, .name = "Teco", .class_id = 2,
+        .level = 12, .gender = 0, .skin = 4, .hair = 4,
+        .equip = { 0, 0, 0, 0, 0, 0, 0 },
+        .stat = { 0, 0, 0, 0, 0 },
+        .per = { 0, 0, 0, 0, 0, 0, 0, 0 },
+        .def_ = { 0, 0, 0, 0, 0, 0, 0, 0 },
+        .aggression = { 25, 88, 78, 55 },
+    },
+    { /* Catelin */
+        .index = 5, .name = "Catelin", .class_id = 4,
+        .level = 12, .gender = 1, .skin = 5, .hair = 5,
+        .equip = { 0, 0, 0, 0, 0, 0, 0 },
+        .stat = { 0, 0, 0, 0, 0 },
+        .per = { 0, 0, 0, 0, 0, 0, 0, 0 },
+        .def_ = { 0, 0, 0, 0, 0, 0, 0, 0 },
+        .aggression = { 25, 88, 78, 55 },
+    },
+};
+const int SONNY_PARTY_COUNT = (int)(sizeof(SONNY_PARTY) / sizeof(SONNY_PARTY[0]));
+
+const int32_t SONNY_PARTY_START[SONNY_PARTY_SIZE] = { 0, -1, -1, -1, -1, -1 };
+const int32_t SONNY_PARTY_TEAM[2] = { 1, 2 };
+
+const PartyJoin SONNY_PARTY_JOINS[] = {
+    { 15, 1, { 0, 1, -1, -1, -1, -1 } },
+    { 38, 0, { 0, 1, 2, 3, 4, 5 } },
+};
+const int SONNY_PARTY_JOIN_COUNT = (int)(sizeof(SONNY_PARTY_JOINS) / sizeof(SONNY_PARTY_JOINS[0]));
 
 const ElementDef SONNY_ELEMENT_DEFS[] = {
     { "Physical", 0xC40000u },
@@ -5743,12 +5815,18 @@ const ShopDef *shop_by_id(int32_t id)
     return NULL;
 }
 
+const ZoneButton *zone_button(int32_t button)
+{
+    for (int i = 0; i < SONNY_ZONE_BUTTON_COUNT; i++)
+        if (SONNY_ZONE_BUTTONS[i].button == button)
+            return &SONNY_ZONE_BUTTONS[i];
+    return NULL;
+}
+
 const ShopDef *shop_for_button(int32_t button)
 {
-    for (int i = 0; i < SONNY_SHOP_BUTTON_COUNT; i++)
-        if (SONNY_SHOP_BUTTONS[i].button == button)
-            return shop_by_id(SONNY_SHOP_BUTTONS[i].shop);
-    return NULL;
+    const ZoneButton *b = zone_button(button);
+    return (b && b->kind == MARKER_SHOP) ? shop_by_id(b->shop) : NULL;
 }
 
 const AbilityDef *ability_by_id(int32_t id)
