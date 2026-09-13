@@ -8402,14 +8402,14 @@
    ]
   },
   "None": {
-   "category": "icon",
+   "category": "item",
    "frames": [
-    "assets/art/icon/None.png"
+    "assets/art/item/None.png"
    ],
    "offsets": [
     [
-     32.5,
-     28.7
+     49.0,
+     68.7
     ]
    ]
   },
@@ -8608,6 +8608,1482 @@
     [
      13.5,
      20.75
+    ]
+   ]
+  },
+  "A Broken Pipe": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/A_Broken_Pipe.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "A Sword": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/A_Sword.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Armor of the Fallen": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Armor_of_the_Fallen.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Armor of the Teacher": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Armor_of_the_Teacher.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Assasin's Tunic": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Assasin's_Tunic.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Assassin's Armor": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Assassin's_Armor.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Assassin's Boots": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Assassin's_Boots.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Assassin's Gloves": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Assassin's_Gloves.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Assassin's Helm": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Assassin's_Helm.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Assassin's Leggings": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Assassin's_Leggings.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Assassination": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Assassination.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Balance": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Balance.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Blade of Light": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Blade_of_Light.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Bloody Blade": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Bloody_Blade.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Bloody Dagger": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Bloody_Dagger.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Boots of Stealth": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Boots_of_Stealth.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Breaker's Armor": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Breaker's_Armor.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Breaker's Axe": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Breaker's_Axe.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Breaker's Boots": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Breaker's_Boots.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Breaker's Gloves": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Breaker's_Gloves.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Breaker's Mask": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Breaker's_Mask.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Breaker's Pantyhose": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Breaker's_Pantyhose.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Broken Totem": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Broken_Totem.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Cannibal's Hunger": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Cannibal's_Hunger.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Champion's Trophy": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Champion's_Trophy.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Cold Steel Leggings": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Cold_Steel_Leggings.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Convoy Package": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Convoy_Package.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Crow Bar": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Crow_Bar.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Crown of Frozen Shadows": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Crown_of_Frozen_Shadows.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Dead Peacock": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Dead_Peacock.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Deep Sea Greaves": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Deep_Sea_Greaves.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Destroyer's Armor": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Destroyer's_Armor.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Destroyer's Boots": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Destroyer's_Boots.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Destroyer's Gloves": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Destroyer's_Gloves.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Destroyer's Helm": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Destroyer's_Helm.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Destroyer's Leggings": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Destroyer's_Leggings.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Destruction": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Destruction.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Engineering Gloves": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Engineering_Gloves.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Eternity": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Eternity.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Fire Axe": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Fire_Axe.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Footguard of the Shore": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Footguard_of_the_Shore.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Frost Lantern": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Frost_Lantern.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Ghost Medallion": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Ghost_Medallion.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Ghostly Mask": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Ghostly_Mask.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Grand Master's Gloves": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Grand_Master's_Gloves.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Guardian's Armor": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Guardian's_Armor.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Guardian's Boots": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Guardian's_Boots.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Guardian's Gloves": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Guardian's_Gloves.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Guardian's Helm": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Guardian's_Helm.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Guardian's Leggings": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Guardian's_Leggings.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Gunslinger's Armor": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Gunslinger's_Armor.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Gunslinger's Boots": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Gunslinger's_Boots.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Gunslinger's Gloves": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Gunslinger's_Gloves.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Gunslinger's Helm": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Gunslinger's_Helm.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Gunslinger's Leggings": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Gunslinger's_Leggings.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Handguards of Destiny": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Handguards_of_Destiny.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Handwraps of Caution": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Handwraps_of_Caution.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Helm of Peril": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Helm_of_Peril.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Hunter's Armor": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Hunter's_Armor.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Hunter's Boots": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Hunter's_Boots.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Hunter's Handguards": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Hunter's_Handguards.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Hunter's Helm": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Hunter's_Helm.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Hunter's Legplates": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Hunter's_Legplates.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Icy Katana": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Icy_Katana.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Ivory Mace": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Ivory_Mace.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Ivory Shield": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Ivory_Shield.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Judgement": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Judgement.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Knight's Armor": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Knight's_Armor.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Knight's Boots": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Knight's_Boots.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Knight's Gloves": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Knight's_Gloves.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Knight's Helm": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Knight's_Helm.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Knight's Leggings": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Knight's_Leggings.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Legplates of Icy Doom": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Legplates_of_Icy_Doom.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Levo Jeans": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Levo_Jeans.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "M7-V Rifle": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/M7-V_Rifle.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Magic Lantern": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Magic_Lantern.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Mender's Armor": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Mender's_Armor.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Mender's Axe": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Mender's_Axe.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Mender's Boots": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Mender's_Boots.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Mender's Gloves": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Mender's_Gloves.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Mender's Leggings": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Mender's_Leggings.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Moon-Struck Horrors": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Moon-Struck_Horrors.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Murder": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Murder.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Nature's Fury": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Nature's_Fury.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Navy Boots": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Navy_Boots.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Nike Head Wear": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Nike_Head_Wear.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Paladin's Armor": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Paladin's_Armor.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Paladin's Boots": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Paladin's_Boots.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Paladin's Gloves": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Paladin's_Gloves.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Paladin's Helm": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Paladin's_Helm.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Paladin's Leggings": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Paladin's_Leggings.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Power Lantern": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Power_Lantern.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Proverse All Stars": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Proverse_All_Stars.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Pulse Rifle": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Pulse_Rifle.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Reckoning": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Reckoning.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Shadow Legwraps": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Shadow_Legwraps.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Steel Slicer": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Steel_Slicer.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Stone Club": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Stone_Club.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Striker's Armor": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Striker's_Armor.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Striker's Flip-Flops": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Striker's_Flip-Flops.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Striker's Gloves": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Striker's_Gloves.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Striker's Leggings": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Striker's_Leggings.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Striker's Mask": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Striker's_Mask.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Survivor's Armor": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Survivor's_Armor.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Survivor's Boots": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Survivor's_Boots.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Survivor's Gloves": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Survivor's_Gloves.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Survivor's Helm": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Survivor's_Helm.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Survivor's Leggings": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Survivor's_Leggings.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Swift Blade": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Swift_Blade.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "The Grand Rifle": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/The_Grand_Rifle.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Tool": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Tool.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Torment": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Torment.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Tribal Blade": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Tribal_Blade.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Tribal Dagger": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Tribal_Dagger.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "White T-Shirt": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/White_T-Shirt.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "ZPCI Blade": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/ZPCI_Blade.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "ZPCI Dog Tag": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/ZPCI_Dog_Tag.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "ZPCI Med-Wear A": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/ZPCI_Med-Wear_A.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "ZPCI Med-Wear B": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/ZPCI_Med-Wear_B.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "ZPCI Med-Wear C": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/ZPCI_Med-Wear_C.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "ZPCI Med-Wear D": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/ZPCI_Med-Wear_D.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "ZPCI Med-Wear E": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/ZPCI_Med-Wear_E.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "Zombie Fingers": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/Zombie_Fingers.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
     ]
    ]
   },

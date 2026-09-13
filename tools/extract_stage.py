@@ -509,6 +509,29 @@ def menu_frames(body, raw_dir, chrome, texts, fonts):
             if geom:
                 (entry['width'], entry['height'],
                  entry['origin_x'], entry['origin_y']) = geom
+            # A slot that is itself a row of named pieces -- the two bands of
+            # element bars are eight each -- carries them, so the screen can
+            # size and colour each one.
+            children = model_frames(body, info['character'])
+            if children:
+                inner = []
+                for child, cinfo in sorted(children[0].items(),
+                                           key=lambda kv: kv[1]['depth']):
+                    if child.startswith('@'):
+                        continue
+                    ca, _, _, cd, cx, cy = cinfo['matrix']
+                    piece = {'name': child, 'character': cinfo['character'],
+                             'x': round(entry['x'] + at[0] * a * cx, 3),
+                             'y': round(entry['y'] + at[1] * d * cy, 3),
+                             'scale_x': round(at[0] * a * ca, 6),
+                             'scale_y': round(at[1] * d * cd, 6)}
+                    cgeom = sprite_geometry(raw_dir, cinfo['character'])
+                    if cgeom:
+                        (piece['width'], piece['height'],
+                         piece['origin_x'], piece['origin_y']) = cgeom
+                    inner.append(piece)
+                if inner:
+                    entry['pieces'] = inner
             slots[name] = entry
         out[label] = {
             'frame': frame,
@@ -677,6 +700,25 @@ def placed_box(bounds, matrix):
     xs = [p[0] for p in corners]
     ys = [p[1] for p in corners]
     return (min(xs), min(ys), max(xs), max(ys))
+
+
+def item_icon_clip(body):
+    """The clip every item slot shows its contents through.
+
+    A slot holds an `inner` whose frames are labelled with item names; the
+    game points it at the name of whatever is in the slot."""
+    for tag, start, length in walk_tags(body, header_end(body)):
+        if tag != TAG_DEFINE_SPRITE or length < 4:
+            continue
+        sprite = struct.unpack_from('<H', body, start)[0]
+        frames = model_frames(body, sprite)
+        if not frames:
+            continue
+        inner = frames[0].get('inner')
+        if inner and len(sprite_frame_labels(body, inner['character'])) > 50:
+            return {'character': inner['character'],
+                    'labels': sprite_frame_labels(body, inner['character'])}
+    return None
 
 
 def zone_screen(body, raw_dir, chrome):
@@ -1016,6 +1058,7 @@ def main(path, raw_dir=None):
                'chrome_text': chrome_fields,
                'speech': speech_box(body, raw_dir, chrome, texts, fonts),
                'clip_parts': clip_parts,
+               'item_icons': item_icon_clip(body),
                'buttons': buttons,
                'zone_screen': zone_screen(body, raw_dir,
                                           [e for group in screens.values()

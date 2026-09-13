@@ -275,6 +275,25 @@ typedef struct {
     float       origin_x, origin_y;
 } MenuSlot;
 
+/* A named piece inside a slot: the eight bars in each of the piercing and
+   defense bands are these, one per element, sized and coloured by the
+   character's own numbers. */
+typedef struct {
+    const char *menu;
+    const char *slot;
+    const char *name;
+    int32_t     character;
+    float       x, y;
+    float       scale_x, scale_y;
+    float       width, height;
+    float       origin_x, origin_y;
+} SlotPiece;
+
+extern const SlotPiece SONNY_SLOT_PIECES[];
+extern const int SONNY_SLOT_PIECE_COUNT;
+/* The `index`-th piece of `slot` on `menu`, in the order it stacks them. */
+const SlotPiece *slot_piece(const char *menu, const char *slot, int32_t index);
+
 extern const MenuSlot SONNY_MENU_SLOTS[];
 extern const int SONNY_MENU_SLOT_COUNT;
 const MenuSlot *menu_slot(const char *menu, const char *name);
@@ -802,7 +821,34 @@ const StageLayer *stage_layer(const char *name)
     lines.append('};')
     lines.append('const int SONNY_MENU_SLOT_COUNT = '
                  '(int)(sizeof(SONNY_MENU_SLOTS) / sizeof(SONNY_MENU_SLOTS[0]));')
+    lines.append('')
+    lines.append('const SlotPiece SONNY_SLOT_PIECES[] = {')
+    for menu in sorted(menus):
+        for name in sorted(menus[menu]['slots']):
+            for piece in (menus[menu]['slots'][name].get('pieces') or []):
+                lines.append('    { %s, %s, %s, %d, %s, %s, %s, %s, %s, %s, %s, %s },'
+                             % (c_string(menu), c_string(name),
+                                c_string(piece['name']), piece['character'],
+                                c_float(piece['x']), c_float(piece['y']),
+                                c_float(piece['scale_x']),
+                                c_float(piece['scale_y']),
+                                c_float(piece.get('width') or 0),
+                                c_float(piece.get('height') or 0),
+                                c_float(piece.get('origin_x') or 0),
+                                c_float(piece.get('origin_y') or 0)))
+    lines.append('};')
+    lines.append('const int SONNY_SLOT_PIECE_COUNT = '
+                 '(int)(sizeof(SONNY_SLOT_PIECES) / sizeof(SONNY_SLOT_PIECES[0]));')
     lines.append('''
+const SlotPiece *slot_piece(const char *menu, const char *slot, int32_t index)
+{
+    for (int i = 0; i < SONNY_SLOT_PIECE_COUNT; i++)
+        if (strcmp(SONNY_SLOT_PIECES[i].menu, menu) == 0
+            && strcmp(SONNY_SLOT_PIECES[i].slot, slot) == 0 && index-- == 0)
+            return &SONNY_SLOT_PIECES[i];
+    return NULL;
+}
+
 const MenuSlot *menu_slot(const char *menu, const char *name)
 {
     if (!menu || !name)

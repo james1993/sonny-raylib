@@ -25,6 +25,11 @@ static const Vector2 NO_OFFSET = {0, 0};
 /* How many bag slots a menu frame's grid has. */
 #define MENU_BAG_SLOTS 36
 
+/* What a full element bar stands for. A character's piercing and defense
+   start at twenty-five and climb from there, and the band is scaled so the
+   numbers a first zone reaches fill about half of it. */
+#define ELEMENT_BAR_FULL 200.0
+
 /* Pieces of the hub the game drives rather than simply draws: the scene
    itself, the menu that covers it, the tooltip and the fade, and the progress
    bar, whose width says how far through the zone the player is. */
@@ -70,6 +75,18 @@ static void draw_screen_chrome(const char *screen)
                                          (float)tex->height},
                        dst, (Vector2){0, 0}, 0.0f, WHITE);
     }
+}
+
+/* The cross the menu screens close with, which the original places once on
+   the hub's own frame. */
+#define MENU_BUTTON_CLOSE 1364
+
+static int menu_close_pressed(Vector2 mouse)
+{
+    const StageButton *b = stage_button(HUB_SCREEN, MENU_BUTTON_CLOSE, 0);
+    return b && IsMouseButtonPressed(MOUSE_BUTTON_LEFT)
+        && CheckCollisionPointRec(mouse, (Rectangle){b->x, b->y, b->width,
+                                                     b->height});
 }
 
 /* One of the victory frame's fields, by the name the clip gives it. */
@@ -218,8 +235,7 @@ void screen_map_update(Game *g, Vector2 mouse)
         g->screen = SCREEN_ZONE;
         return;
     }
-    if (draw_button((Rectangle){STAGE_W - 120, STAGE_H - 44, 100, 28}, "Back",
-                    mouse, 1))
+    if (menu_close_pressed(mouse))
         g->screen = SCREEN_ZONE;
 }
 
@@ -343,8 +359,7 @@ void screen_talents_update(Game *g, Vector2 mouse)
         break;
     }
 
-    if (draw_button((Rectangle){STAGE_W - 120, STAGE_H - 44, 100, 28}, "Back",
-                    mouse, 1))
+    if (menu_close_pressed(mouse))
         g->screen = SCREEN_ZONE;
 }
 
@@ -490,7 +505,12 @@ static Rectangle win_bag_rect(int i)
 static void draw_slot_art(const char *menu, const char *prefix, int i)
 {
     char name[32];
-    snprintf(name, sizeof(name), "%s%d", prefix, i);
+    /* A slot the frame numbers, or -- with i below zero -- one it names
+       outright, like the two bands of element bars. */
+    if (i < 0)
+        snprintf(name, sizeof(name), "%s", prefix);
+    else
+        snprintf(name, sizeof(name), "%s%d", prefix, i);
     const MenuSlot *slot = menu_slot(menu, name);
     if (!slot || slot->width <= 0)
         return;
@@ -507,13 +527,17 @@ static void draw_slot_art(const char *menu, const char *prefix, int i)
 
 
 /* An item's icon is a frame label on the icon sprite, named for the item. */
+/* An item's picture: a frame of the clip every slot shows its contents
+   through, labelled with the item's name and drawn at its own size on the
+   middle of the slot, as the original attaches it. */
 static void draw_item_icon(const ItemDef *item, Rectangle r, Color tint)
 {
     if (!item || item->id == 0)
         return;
-    if (!asset_draw_fit(item->name, 1, r, tint))
+    Vector2 middle = {r.x + r.width / 2, r.y + r.height / 2};
+    if (!asset_draw_placed(item->name, 1, middle, 1.0f, tint))
         ui_text(item->name, (int)r.x + 2, (int)(r.y + r.height / 2 - 4), 9,
-                 tint);
+                tint);
 }
 
 /* An item can go in a slot when the slot matches and the requirements pass.
@@ -579,19 +603,101 @@ void screen_inventory_update(Game *g, Vector2 mouse)
         break;
     }
 
-    if (draw_button((Rectangle){STAGE_W - 120, STAGE_H - 44, 100, 28}, "Back",
-                    mouse, 1))
+    if (menu_close_pressed(mouse))
         g->screen = SCREEN_ZONE;
 }
 
+/* One of the two bands of element bars. Each band is eight pieces, one per
+   element, and the game gives each the element's own colour and stands it at
+   a height for the number it shows -- twenty-five being the baseline every
+   character starts at. */
+static void draw_element_bars(const char *menu, const char *slot,
+                              const double *values)
+{
+    for (int i = 0; i < SONNY_ELEMENT_DEF_COUNT; i++) {
+        /* Each bar is drawn twice: a dim full-height one behind, then the
+           value over it. The pieces come in that order. */
+        const SlotPiece *back = slot_piece(menu, slot, i);
+        const SlotPiece *front = slot_piece(menu, slot,
+                                            SONNY_ELEMENT_DEF_COUNT + i);
+        if (!back || !front)
+            return;
+        uint32_t rgb = SONNY_ELEMENT_DEFS[i].colour;
+        Color colour = {(unsigned char)(rgb >> 16), (unsigned char)(rgb >> 8),
+                        (unsigned char)rgb, 255};
+        float fraction = (float)(values[i] / ELEMENT_BAR_FULL);
+        if (fraction < 0) fraction = 0;
+        if (fraction > 1) fraction = 1;
+
+        Rectangle box = placed_rect(back->x, back->y, back->scale_x,
+                                    back->scale_y, back->width, back->height,
+                                    back->origin_x, back->origin_y);
+        DrawRectangleRec(box, (Color){colour.r / 4, colour.g / 4,
+                                      colour.b / 4, 255});
+        Rectangle filled = box;
+        filled.height = box.height * fraction;
+        filled.y = box.y + box.height - filled.height;
+        DrawRectangleRec(filled, colour);
+    }
+}
+
+/* One of the inventory frame's fields, by the name the clip gives it. */
+static const TextField *inv_field(const char *name)
+{
+    return text_field_named(MENU_SCREEN, MENU_INVENTORY, name, 0);
+}
+
+/* The character sheet, laid out from the menu clip's "inventory" frame: who
+   the character is and what they are wearing on the left, their stats and
+   their piercing and defense in the middle, and the bag on the right. */
 void screen_inventory_draw(Game *g, Vector2 mouse)
 {
     const Campaign *c = &g->campaign;
 
-    ClearBackground((Color){18, 20, 26, 255});
-    ui_text(lang_text("SYSTEM", 17), 22, 16, 20, (Color){210, 215, 225, 255});
+    ClearBackground(BLACK);
+    /* The hub's own furniture stays behind the menu, as it does in the
+       original: the row of buttons and the zone's progress are still there. */
+    draw_screen_chrome(HUB_SCREEN);
+    draw_clip_parts(MENU_SCREEN, MENU_INVENTORY, NO_OFFSET, NULL, WHITE);
 
-    /* The doll preview, wearing what is equipped. */
+    draw_field(inv_field("@881"), NO_OFFSET, lang_text("NAVTITLE2", 3));
+    draw_field(inv_field("@882"), NO_OFFSET,
+               TextFormat("%s%d %s", lang_text("MENU", 0), c->player.level,
+                          /* Krin.ClassStats[0] is Krin.Class + 1, so the
+                             name the class menu offered is one back. */
+                          lang_text("CLASS", c->player.class_template
+                                    ? c->player.class_template->id - 1 : 0)));
+
+    /* The five stats. The frame gives each its own label and value field, in
+       its own colour, and the names come from the game's text table. */
+    static const char *const STAT_LABEL[5] = {"@883", "@884", "@885", "@886",
+                                              "@887"};
+    static const char *const STAT_VALUE[5] = {"@888", "@889", "@890", "@891",
+                                              "@892"};
+    DerivedStats stats = character_derive(&c->player);
+    const double shown[5] = {stats.life, stats.strength, stats.magic,
+                             stats.speed, stats.focus};
+    for (int i = 0; i < 5; i++) {
+        draw_field(inv_field(STAT_LABEL[i]), NO_OFFSET,
+                   TextFormat("%s:", lang_text("SYSTEM", i)));
+        draw_field(inv_field(STAT_VALUE[i]), NO_OFFSET,
+                   TextFormat("%d", (int32_t)shown[i]));
+    }
+    draw_field(inv_field("@893"), NO_OFFSET, lang_text("SYSTEM", 5));
+    draw_field(inv_field("@894"), NO_OFFSET, lang_text("SYSTEM", 6));
+    draw_element_bars(MENU_INVENTORY, "perBarShow", stats.per);
+    draw_element_bars(MENU_INVENTORY, "defBarShow", stats.def);
+
+    draw_field(inv_field("@1027"), NO_OFFSET, lang_text("MENU", 17));
+    draw_field(inv_field("@1032"), NO_OFFSET,
+               TextFormat("%d%%", (int32_t)c->player.xp));
+    draw_field(inv_field("@1059"), NO_OFFSET, lang_text("MENU", 14));
+    draw_field(inv_field("@1052"), NO_OFFSET, TextFormat("%d", c->euros));
+    draw_field(inv_field("@1053"), NO_OFFSET, EURO);
+
+    /* The doll. The menu attaches each part at its own place rather than
+       through the model sprite, so the model's own matrices do not carry
+       over; it is drawn from the model, stood where the frame stands it. */
     const MenuSlot *doll = menu_slot(MENU_INVENTORY, "chest");
     if (doll) {
         DollSpec spec;
@@ -606,75 +712,42 @@ void screen_inventory_draw(Game *g, Vector2 mouse)
                      (item && item->looks) ? item->looks : "");
             spec.looks[i] = looks[i];
         }
-        /* The menu places each doll part at its own absolute position rather
-           than through the model sprite, so the model's internal matrices --
-           and its mirroring -- do not carry over. The preview is drawn from
-           the model instead, stood at the menu's doll position and scaled to
-           match it. */
         doll_draw(&spec, doll_animation_frame("stand", g->anim_tick / 3, 1),
                   (Vector2){doll->x - 6.0f, doll->y + 10.0f}, 1.3f, 0, WHITE);
     }
 
     for (int i = 0; i < SONNY_EQUIP_SLOTS; i++) {
         Rectangle r = slot_rect(i);
-        const ItemDef *item = item_by_id(c->player.equip[i]);
-        DrawRectangleRec(r, (Color){30, 33, 41, 220});
-        DrawRectangleLinesEx(r, hit(r, mouse) ? 2.0f : 1.0f,
-                             (Color){80, 84, 96, 255});
-        draw_item_icon(item, r, WHITE);
-        /* The slot kinds are named in ITEMSS, but those names are wider than
-           a 34-pixel slot -- the two weapon slots sit 40 apart -- so the name
-           goes in the detail panel on hover rather than inside the box. */
-        if ((!item || item->id == 0) && hit(r, mouse))
-            ui_text(lang_text("ITEMSS", i), (int)r.x, (int)(r.y - 12), 10,
-                     (Color){170, 175, 185, 255});
+        draw_slot_art(MENU_INVENTORY, "playerSlot", i);
+        draw_item_icon(item_by_id(c->player.equip[i]), r, WHITE);
+        if (hit(r, mouse))
+            DrawRectangleLinesEx(r, 1.0f, (Color){235, 200, 90, 255});
     }
 
-    for (int32_t i = 0; i < 36; i++) {
+    for (int32_t i = 0; i < MENU_BAG_SLOTS; i++) {
         Rectangle r = bag_rect(i);
-        const ItemDef *item = (i < c->inventory_count)
-                            ? item_by_id(c->inventory[i]) : NULL;
-        DrawRectangleRec(r, (Color){30, 33, 41, 220});
-        DrawRectangleLinesEx(r, hit(r, mouse) ? 2.0f : 1.0f,
-                             (Color){70, 74, 86, 255});
-        draw_item_icon(item, r, WHITE);
+        draw_slot_art(MENU_INVENTORY, "itemSlot", i);
+        if (i < c->inventory_count)
+            draw_item_icon(item_by_id(c->inventory[i]), r, WHITE);
+        if (hit(r, mouse))
+            DrawRectangleLinesEx(r, 1.0f, (Color){235, 200, 90, 255});
     }
 
-    /* The hovered item's own description. */
-    const ItemDef *shown = NULL;
+    /* What the pointer is on, in the game's own words. */
+    const ItemDef *shown_item = NULL;
     if (g->hovered_item >= 100) {
         int32_t i = g->hovered_item - 100;
         if (i < c->inventory_count)
-            shown = item_by_id(c->inventory[i]);
+            shown_item = item_by_id(c->inventory[i]);
     } else if (g->hovered_item >= 0 && g->hovered_item < SONNY_EQUIP_SLOTS) {
-        shown = item_by_id(c->player.equip[g->hovered_item]);
+        shown_item = item_by_id(c->player.equip[g->hovered_item]);
     }
-    if (!shown && g->hovered_item >= 0
-        && g->hovered_item < SONNY_EQUIP_SLOTS) {
-        Rectangle box = {70, STAGE_H - 140, STAGE_W - 200, 40};
-        draw_panel(box, lang_text("ITEMSS", g->hovered_item));
-        ui_text("Empty.", (int)box.x + 8, (int)box.y + 24, 10,
-                 (Color){150, 160, 175, 255});
-    }
-    if (shown && shown->id != 0) {
+    if (shown_item && shown_item->id != 0) {
         Rectangle box = {70, STAGE_H - 140, STAGE_W - 200, 90};
-        draw_panel(box, shown->name);
-        ui_text(shown->tooltip, (int)box.x + 8, (int)box.y + 26, 10,
-                 (Color){200, 205, 215, 255});
-        int y = (int)box.y + 44;
-        const char *labels[5] = {lang_text("SYSTEM", 0), lang_text("SYSTEM", 1),
-                                 lang_text("SYSTEM", 2), lang_text("SYSTEM", 3),
-                                 lang_text("SYSTEM", 4)};
-        for (int i = 0; i < 5; i++) {
-            if (shown->stat[i] == 0)
-                continue;
-            ui_text(TextFormat("%s +%.0f", labels[i], shown->stat[i]),
-                     (int)box.x + 8 + i * 110, y, 10,
-                     (Color){140, 210, 140, 255});
-        }
+        draw_panel(box, shown_item->name);
+        ui_text(shown_item->tooltip, (int)box.x + 8, (int)box.y + 26, 10,
+                (Color){200, 205, 215, 255});
     }
-    draw_button((Rectangle){STAGE_W - 120, STAGE_H - 44, 100, 28}, "Back",
-                mouse, 1);
 }
 
 /* ---------------------------------------------------------------- shop */
@@ -736,8 +809,7 @@ void screen_shop_update(Game *g, Vector2 mouse)
         break;
     }
 
-    if (draw_button((Rectangle){STAGE_W - 120, STAGE_H - 44, 100, 28}, "Back",
-                    mouse, 1))
+    if (menu_close_pressed(mouse))
         g->screen = SCREEN_ZONE;
 }
 

@@ -145,7 +145,7 @@ def collect_names(data_dir):
     want = {'icon': set(), 'effect': set(), 'background': set(),
             'doll': set(), 'buff': set(), 'ui': set(), 'sound': set(),
             'chrome': set(), 'orb': set(), 'portrait': set(),
-            'zone': set()}
+            'zone': set(), 'item': set()}
     speculative = set()
     # Expected to have no art: enemy ability icons (never on the player's
     # bar), permanent passive-talent buffs, and the doll cross-product below,
@@ -273,6 +273,13 @@ def collect_names(data_dir):
     for part in (stage.get('clip_parts') or []):
         if part.get('character') and part.get('width') and not part.get('frames'):
             want['chrome'].add('#%d' % part['character'])
+    # An item's picture, which is a frame of the clip every slot shows its
+    # contents through, labelled with the item's name.
+    for it in items:
+        if it.get('name'):
+            want['item'].add(it['name'])
+            speculative.add(it['name'])
+
     # The hub's scene, one labelled frame per zone.
     want['zone'].update(((stage.get('zone_screen') or {}).get('labels')) or {})
 
@@ -311,6 +318,9 @@ def main():
         stage = {}
     selector = stage.get('selector') or {}
     orb_icons = selector.get('icons') or {}
+    item_clip = stage.get('item_icons') or {}
+    item_character = item_clip.get('character')
+    item_labels = item_clip.get('labels') or {}
     zone_clip = stage.get('zone_screen') or {}
     zone_character = zone_clip.get('character')
     zone_labels = zone_clip.get('labels') or {}
@@ -347,6 +357,13 @@ def main():
                 path = sound_file(args.raw, exports, name)
                 if path:
                     entries = [(1, path)]
+            elif category == 'item':
+                frame = item_labels.get(name)
+                if frame:
+                    for index, path in frame_files(args.raw, item_character):
+                        if index == frame:
+                            entries = [(1, path)]
+                            break
             elif category == 'zone':
                 frame = zone_labels.get(name)
                 if frame:

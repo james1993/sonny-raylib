@@ -263,6 +263,25 @@ typedef struct {
     float       origin_x, origin_y;
 } MenuSlot;
 
+/* A named piece inside a slot: the eight bars in each of the piercing and
+   defense bands are these, one per element, sized and coloured by the
+   character's own numbers. */
+typedef struct {
+    const char *menu;
+    const char *slot;
+    const char *name;
+    int32_t     character;
+    float       x, y;
+    float       scale_x, scale_y;
+    float       width, height;
+    float       origin_x, origin_y;
+} SlotPiece;
+
+extern const SlotPiece SONNY_SLOT_PIECES[];
+extern const int SONNY_SLOT_PIECE_COUNT;
+/* The `index`-th piece of `slot` on `menu`, in the order it stacks them. */
+const SlotPiece *slot_piece(const char *menu, const char *slot, int32_t index);
+
 extern const MenuSlot SONNY_MENU_SLOTS[];
 extern const int SONNY_MENU_SLOT_COUNT;
 const MenuSlot *menu_slot(const char *menu, const char *name);

@@ -120,6 +120,14 @@ What the original settled that guesswork had got wrong:
 * The hub is a scene with a frame per zone and markers on it -- one starts the
   next fight, one opens the store -- not a list of buttons.
 
+* An item's picture is not in the icon set the abilities use. Every slot shows
+  its contents through one clip whose frames are labelled with item names, and
+  the game points it at whatever is in the slot.
+* The character sheet's two bands of element bars are eight pieces each, one
+  per element, coloured and sized by the character's own numbers.
+* Sonny starts the story already wearing something: Krin.equipArray0 is
+  [0,0,0,4,8,5,0].
+
 Known to differ: text is rasterised by stb_truetype without hinting, so stems
 land between pixels where Flash's device-font rendering snaps them onto one.
 Size, spacing, wrap and colour match; the weight reads lighter.

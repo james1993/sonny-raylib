@@ -11,6 +11,11 @@ void character_new(Character *c, int32_t class_id)
     /* Krin.StatSets0 = [0,5,0,3,0] */
     c->spent[1] = 5;
     c->spent[3] = 3;
+    /* Krin.equipArray0 = [0,0,0,4,8,5,0]: the trousers, boots and pipe the
+       story gives Sonny on the ship. */
+    c->equip[3] = 4;
+    c->equip[4] = 8;
+    c->equip[5] = 5;
     c->move_matrix[0] = SONNY_START_SKILL1;
     c->move_matrix[1] = SONNY_START_SKILL2;
 }
