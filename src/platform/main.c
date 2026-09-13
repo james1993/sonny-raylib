@@ -63,6 +63,8 @@ int main(int argc, char **argv)
             game.screen = SCREEN_INVENTORY;
         else if (strcmp(want_screen, "shop") == 0)
             game.screen = SCREEN_SHOP;
+        else if (strcmp(want_screen, "map") == 0)
+            game.screen = SCREEN_MAP;
     }
 
     while (!WindowShouldClose()) {
@@ -94,6 +96,10 @@ int main(int argc, char **argv)
         case SCREEN_SHOP:
             screen_shop_draw(&game, mouse);
             screen_shop_update(&game, mouse);
+            break;
+        case SCREEN_MAP:
+            screen_map_draw(&game, mouse);
+            screen_map_update(&game, mouse);
             break;
         default:
             screen_zone_draw(&game, mouse);

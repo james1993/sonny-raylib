@@ -4872,6 +4872,154 @@ const int SONNY_TALENT_COUNT = (int)(sizeof(SONNY_TALENTS) / sizeof(SONNY_TALENT
 const int32_t SONNY_START_SKILL1 = 69;
 const int32_t SONNY_START_SKILL2 = 70;
 
+static const Speech SPEECHES_1[] = {
+    { 5, 5, 0, 5.000000f, "agrgra", "v_1" },
+};
+static const Speech SPEECHES_2[] = {
+    { 5, 0, 0, 4.500000f, "I may be blind, but there's no mistaking that smell. Can you take him out?", "v_1" },
+    { 1, 0, 1, 5.000000f, "Yes, I...I suppose I can. Ugh...I don't feel too well.", "" },
+    { 5, 0, 2, 3.700000f, "It will wear off eventually. You need to focus!", "" },
+    { 0, 0, 3, 6.500000f, "Notice the grey 'ring' in the lower middle panel, around the exclamation mark. Wait until it turns blue.", "" },
+    { 0, 0, 4, 5.500000f, "Once the ring is blue, click on the enemy to target him. Your abilities will appear around him.", "" },
+    { 1, 2, 0, 1.500000f, "He doesn't look too happy.", "v_2" },
+    { 5, 2, 1, 3.500000f, "He's enraged! You'll have to defend yourself! Get ready!", "" },
+    { 0, 2, 2, 5.000000f, "Target yourself instead of the enemy this turn, so you can use your defensive ability.", "" },
+    { 0, 2, 3, 5.000000f, "To find out more about an ability, hold your mouse over its icon for a couple of seconds.", "" },
+    { 5, 4, 0, 5.000000f, "Good job, Sonny. Keep going, and stay alert. There will be more of them ahead.", "v_3" },
+};
+static const Speech SPEECHES_3[] = {
+    { 1, 1, 0, 6.000000f, "What are these things, anyway? They look horrid, decayed - and the smell is nauseating!", "v_4" },
+    { 5, 1, 1, 3.000000f, "I reckon they used to be the ship's crew...but, not anymore.", "" },
+    { 1, 1, 2, 1.500000f, "What's happened to them?", "" },
+    { 5, 1, 3, 4.500000f, "It's complicated and we're running out of time! I'll tell you everything when we're off this ship!", "" },
+};
+static const Speech SPEECHES_4[] = {
+    { 5, 0, 0, 3.000000f, "You're outnumbered. Don't worry, though! You have the strongest weapon.", "v_5" },
+    { 1, 0, 1, 1.000000f, "This pipe?", "" },
+    { 5, 0, 2, 6.000000f, "No, I'm talking about your brain! Think! Attack the weakest one first, and defend yourself when you can!", "" },
+};
+static const Speech SPEECHES_5[] = {
+    { 5, 0, 0, 3.600000f, "That green one in front of us is toxic. Watch out for its poison.", "v_6" },
+    { 1, 0, 1, 2.400000f, "But, you're blind, how do you even know...?", "" },
+    { 5, 0, 2, 3.500000f, "Don't get all technical on me, Sonny. Just be glad I told you.", "" },
+};
+static const Speech SPEECHES_7[] = {
+    { 1, 0, 0, 3.000000f, "Hey, I can see the speed boat hangar. It's right up ahead!", "v_7" },
+    { 5, 6, 0, 3.000000f, "I think I can hear helicopters, Sonny.. it must be the rescue team!", "v_8" },
+};
+static const Speech SPEECHES_8[] = {
+    { 5, 0, 0, 3.700000f, "Finally! You're here! I thought we would die on this forsaken ship!", "v_9" },
+    { 2, 0, 1, 3.000000f, "Take them out, boys. We don't need any witnesses.", "" },
+    { 5, 0, 2, 1.000000f, "What...?", "" },
+    { 1, 1, 0, 4.000000f, "Louis! This is NOT a good day to be shooting my friends!", "v_10" },
+    { 6, 1, 1, 2.300000f, "Hey, look at that! That one just talked!", "" },
+    { 2, 1, 2, 5.000000f, "So what? That 'thing' is no different from the rest of them. Just do your job, soldier!", "" },
+};
+static const Speech SPEECHES_9[] = {
+    { 1, 0, 0, 3.300000f, "Hey Uh... do you know where I can find the nearest pay phone?", "v2_1" },
+    { 2, 0, 1, 2.000000f, "Uruhugh!", "" },
+    { 1, 0, 2, 2.000000f, "Whoa, take it easy!", "" },
+};
+static const Speech SPEECHES_10[] = {
+    { 1, 0, 0, 3.000000f, "What did I do to deserve this?", "v2_2" },
+};
+static const Speech SPEECHES_11[] = {
+    { 2, 0, 0, 3.000000f, "Leave...horrors...ahead...", "v2_3" },
+};
+static const Speech SPEECHES_12[] = {
+    { 2, 0, 0, 3.000000f, "You are not welcome here!", "v2_4" },
+};
+static const Speech SPEECHES_13[] = {
+    { 2, 0, 0, 1.700000f, "There's another! Shoot him down.", "v2_5" },
+    { 1, 0, 1, 2.000000f, "By all means, try!", "" },
+};
+static const Speech SPEECHES_15[] = {
+    { 2, 0, 0, 2.500000f, "There he is! He's wearing the stolen combat suit!", "v2_6" },
+    { 5, 0, 1, 5.000000f, "HEY! Hey, you! I don't know if you noticed, but I'm slightly outnumbered here! Could you help me out? ", "" },
+    { 1, 0, 2, 3.000000f, "Can't say I'm too fond of these bastards myself.", "" },
+    { 4, 0, 3, 3.000000f, "Focus fire! Everyone take the same target!", "" },
+};
+static const Speech SPEECHES_16[] = {
+    { 5, 0, 0, 3.000000f, "Thanks for helping me back there, bud. I'm Veradux.", "v2_7" },
+    { 1, 0, 1, 3.000000f, "They call me Sonny. I can't remember my real name.", "" },
+    { 4, 0, 2, 6.000000f, "The Sensei does not approve of your presence here! We've been sent to kill you!", "" },
+    { 5, 0, 3, 2.500000f, "I got your back, Sonny! Rip them open! ", "" },
+};
+static const Speech SPEECHES_18[] = {
+    { 2, 0, 0, 8.000000f, "You tread our sacred grounds. You refuse to leave. For that, I shall break you.", "v2_8" },
+};
+static const Speech SPEECHES_19[] = {
+    { 5, 0, 0, 2.500000f, "You're kickin' ass! We make a heck of a team.", "v3_1" },
+    { 1, 0, 1, 2.000000f, "So. How long do you plan to stick around?", "" },
+    { 5, 0, 2, 2.300000f, "Uh... Until death do us part!", "" },
+    { 1, 0, 3, 1.300000f, "You're hilarious.", "" },
+    { 2, 0, 4, 4.000000f, "This is Shaman land! I'll cut you down in the name of my tribe!", "" },
+};
+static const Speech SPEECHES_21[] = {
+    { 1, 0, 0, 4.500000f, "Argh! Something is wrong... My head!", "v3_2" },
+    { 5, 0, 1, 1.500000f, "You alright Sonny?", "" },
+    { 1, 0, 2, 3.000000f, "Yeah I'll be alright.", "" },
+};
+static const Speech SPEECHES_22[] = {
+    { 2, 0, 0, 3.000000f, "The 'Council' hunts you, infidels! Back away!", "v3_3" },
+};
+static const Speech SPEECHES_24[] = {
+    { 2, 0, 0, 3.800000f, "That's about as far as you'll go!", "v3_4" },
+    { 1, 0, 1, 1.900000f, "Ha ha! Nice outfit.", "" },
+    { 5, 0, 2, 1.700000f, "It sure looks better than yours!", "" },
+    { 1, 0, 3, 2.000000f, "Hey! Who's side are you on?", "" },
+};
+static const Speech SPEECHES_26[] = {
+    { 5, 0, 0, 4.000000f, "Sonny... I'm starting to feel it too...", "v3_5" },
+    { 1, 0, 1, 3.200000f, "What's happening? Are we dying?", "" },
+    { 5, 0, 2, 4.000000f, "Not physically... But our minds are decaying.", "" },
+    { 1, 0, 3, 3.000000f, "Oh, brilliant. That doesn't sound painful at all.", "" },
+};
+static const Speech SPEECHES_27[] = {
+    { 1, 0, 0, 2.000000f, "How did I know we'd find them here as well?", "v3_6" },
+};
+static const Speech SPEECHES_29[] = {
+    { 5, 0, 0, 3.000000f, "Hey, go for the weaker one first, or we'll never get them down.", "v3_7" },
+};
+static const Speech SPEECHES_30[] = {
+    { 6, 0, 0, 2.400000f, "We, the council, deem you dead!", "v3_8" },
+    { 4, 0, 1, 2.800000f, "You have trespassed here, and killed our brethren!", "" },
+    { 2, 0, 2, 3.300000f, "Your blood will pay for your misdeeds!", "" },
+    { 1, 0, 3, 3.000000f, "Haha... Who, us? We wouldn't hurt a fly!", "" },
+};
+static const Speech SPEECHES_31[] = {
+    { 5, 0, 0, 5.000000f, "Well, would you look at that! The last Shaman. How sad. Let's kill it!", "v3_9" },
+};
+static const Speech SPEECHES_32[] = {
+    { 1, 0, 0, 5.000000f, "No not these guys again... I can't ... I... Argh!", "v3_10" },
+    { 5, 0, 1, 4.500000f, "Someone is playing with our minds... Stay focused!", "" },
+};
+static const Speech SPEECHES_34[] = {
+    { 2, 0, 0, 2.800000f, "The Baron awaits you, children.", "v3_11" },
+    { 5, 0, 1, 2.000000f, "Is he the one behind these mind games?", "" },
+    { 2, 2, 0, 3.500000f, "He is your new master. You shall obey.", "v3_12" },
+    { 1, 2, 1, 3.000000f, "Obey THIS, you twat!", "" },
+};
+static const Speech SPEECHES_35[] = {
+    { 2, 0, 0, 3.200000f, "More Zombies! Let's fry them! We'll meet with the Paladin later.", "v3_13" },
+    { 4, 0, 1, 4.000000f, "We're wasting time, the Paladin needs our help to take down the Baron!", "" },
+    { 5, 0, 2, 3.000000f, "Reinforcements? That Baron must be one mean zombie.", "" },
+};
+static const Speech SPEECHES_36[] = {
+    { 2, 0, 0, 10.000000f, "Welcome to the darkness, my children...become one with me and all beings.", "v3_14" },
+    { 3, 0, 1, 4.000000f, "Finally, my reinforcements! It's good to see you're alive and well!", "" },
+    { 5, 0, 2, 4.000000f, "Just shut up and nod, Sonny. Shut up and nod.", "" },
+    { 3, 4, 0, 3.000000f, "Wait, wasn't there supposed to be three of you?", "v3_15" },
+};
+static const Speech SPEECHES_37[] = {
+    { 5, 0, 0, 3.500000f, "The Baron is gone. Let's kill this whoopy superhero and leave!", "v3_16" },
+    { 1, 0, 1, 2.500000f, "But... why? He helped us-", "" },
+    { 5, 0, 2, 3.000000f, "Sonny. To them, we're vermin...we're monsters.", "" },
+    { 5, 0, 3, 4.000000f, "Now we can either be alive monsters, or dead monsters. You choose.", "" },
+    { 2, 1, 0, 3.000000f, "What is this...? You would turn on me?!", "v3_17" },
+    { 2, 1, 1, 3.000000f, "You shall pay for this deception!", "" },
+};
+
 const BattleDef SONNY_BATTLES[] = {
     { /* battle 1 */
         .id = 1,
@@ -4882,7 +5030,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "", .sky_bg = "",
         .drops = { { 2, 40 } }, .drop_count = 1,
         .rare = { 2, 1 }, .rare_count = 2, .rare_dropper = 1,
-        .speech_count = 1,
+        .speeches = SPEECHES_1, .speech_count = 1,
     },
     { /* battle 2 */
         .id = 2,
@@ -4893,7 +5041,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "WHITE NOVEMBER", .sky_bg = "SEA",
         .drops = { { 0, 0 } }, .drop_count = 0,
         .rare = { 0 }, .rare_count = 0, .rare_dropper = 0,
-        .speech_count = 10,
+        .speeches = SPEECHES_2, .speech_count = 10,
     },
     { /* battle 3 */
         .id = 3,
@@ -4904,7 +5052,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "WHITE NOVEMBER", .sky_bg = "SEA",
         .drops = { { 0, 0 } }, .drop_count = 0,
         .rare = { 0 }, .rare_count = 0, .rare_dropper = 0,
-        .speech_count = 4,
+        .speeches = SPEECHES_3, .speech_count = 4,
     },
     { /* battle 4 */
         .id = 4,
@@ -4915,7 +5063,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "WHITE NOVEMBER", .sky_bg = "SEA",
         .drops = { { 9, 100 } }, .drop_count = 1,
         .rare = { 0 }, .rare_count = 0, .rare_dropper = 0,
-        .speech_count = 3,
+        .speeches = SPEECHES_4, .speech_count = 3,
     },
     { /* battle 5 */
         .id = 5,
@@ -4926,7 +5074,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "WHITE NOVEMBER", .sky_bg = "SEA",
         .drops = { { 0, 0 } }, .drop_count = 0,
         .rare = { 0 }, .rare_count = 0, .rare_dropper = 0,
-        .speech_count = 3,
+        .speeches = SPEECHES_5, .speech_count = 3,
     },
     { /* battle 6 */
         .id = 6,
@@ -4937,7 +5085,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "WHITE NOVEMBER", .sky_bg = "SEA",
         .drops = { { 0, 0 } }, .drop_count = 0,
         .rare = { 0 }, .rare_count = 0, .rare_dropper = 0,
-        .speech_count = 0,
+        .speeches = NULL, .speech_count = 0,
     },
     { /* battle 7 */
         .id = 7,
@@ -4948,7 +5096,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "WHITE NOVEMBER", .sky_bg = "SEA",
         .drops = { { 0, 0 } }, .drop_count = 0,
         .rare = { 0 }, .rare_count = 0, .rare_dropper = 0,
-        .speech_count = 2,
+        .speeches = SPEECHES_7, .speech_count = 2,
     },
     { /* battle 8 */
         .id = 8,
@@ -4959,7 +5107,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "WHITE NOVEMBER", .sky_bg = "SEA",
         .drops = { { 0, 0 } }, .drop_count = 0,
         .rare = { 13, 14 }, .rare_count = 2, .rare_dropper = 1,
-        .speech_count = 6,
+        .speeches = SPEECHES_8, .speech_count = 6,
     },
     { /* battle 9 */
         .id = 9,
@@ -4970,7 +5118,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "SHORE", .sky_bg = "NIGHT",
         .drops = { { 0, 0 } }, .drop_count = 0,
         .rare = { 0 }, .rare_count = 0, .rare_dropper = 0,
-        .speech_count = 3,
+        .speeches = SPEECHES_9, .speech_count = 3,
     },
     { /* battle 10 */
         .id = 10,
@@ -4981,7 +5129,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "SHORE", .sky_bg = "NIGHT",
         .drops = { { 0, 0 } }, .drop_count = 0,
         .rare = { 0 }, .rare_count = 0, .rare_dropper = 0,
-        .speech_count = 1,
+        .speeches = SPEECHES_10, .speech_count = 1,
     },
     { /* battle 11 */
         .id = 11,
@@ -4992,7 +5140,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "SHORE", .sky_bg = "NIGHT",
         .drops = { { 32, 3 } }, .drop_count = 1,
         .rare = { 15, 17 }, .rare_count = 2, .rare_dropper = 1,
-        .speech_count = 1,
+        .speeches = SPEECHES_11, .speech_count = 1,
     },
     { /* battle 12 */
         .id = 12,
@@ -5003,7 +5151,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "SHORE", .sky_bg = "NIGHT",
         .drops = { { 32, 3 }, { 20, 50 }, { 21, 50 } }, .drop_count = 3,
         .rare = { 0 }, .rare_count = 0, .rare_dropper = 0,
-        .speech_count = 1,
+        .speeches = SPEECHES_12, .speech_count = 1,
     },
     { /* battle 13 */
         .id = 13,
@@ -5014,7 +5162,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "SHORE", .sky_bg = "NIGHT",
         .drops = { { 0, 0 } }, .drop_count = 0,
         .rare = { 25, 28 }, .rare_count = 2, .rare_dropper = 1,
-        .speech_count = 2,
+        .speeches = SPEECHES_13, .speech_count = 2,
     },
     { /* battle 14 */
         .id = 14,
@@ -5025,7 +5173,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "SHORE", .sky_bg = "NIGHT",
         .drops = { { 0, 0 } }, .drop_count = 0,
         .rare = { 0 }, .rare_count = 0, .rare_dropper = 0,
-        .speech_count = 0,
+        .speeches = NULL, .speech_count = 0,
     },
     { /* battle 15 */
         .id = 15,
@@ -5036,7 +5184,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "SHORE", .sky_bg = "NIGHT",
         .drops = { { 0, 0 } }, .drop_count = 0,
         .rare = { 25, 28 }, .rare_count = 2, .rare_dropper = 1,
-        .speech_count = 4,
+        .speeches = SPEECHES_15, .speech_count = 4,
     },
     { /* battle 16 */
         .id = 16,
@@ -5047,7 +5195,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "SHORE", .sky_bg = "NIGHT",
         .drops = { { 32, 3 }, { 20, 50 }, { 21, 50 } }, .drop_count = 3,
         .rare = { 15, 17 }, .rare_count = 2, .rare_dropper = 1,
-        .speech_count = 4,
+        .speeches = SPEECHES_16, .speech_count = 4,
     },
     { /* battle 17 */
         .id = 17,
@@ -5058,7 +5206,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "SHORE", .sky_bg = "NIGHT",
         .drops = { { 32, 5 } }, .drop_count = 1,
         .rare = { 15, 17 }, .rare_count = 2, .rare_dropper = 1,
-        .speech_count = 0,
+        .speeches = NULL, .speech_count = 0,
     },
     { /* battle 18 */
         .id = 18,
@@ -5069,7 +5217,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "SHORE", .sky_bg = "NIGHT",
         .drops = { { 32, 5 } }, .drop_count = 1,
         .rare = { 39, 40, 41, 42, 43 }, .rare_count = 5, .rare_dropper = 1,
-        .speech_count = 1,
+        .speeches = SPEECHES_18, .speech_count = 1,
     },
     { /* battle 19 */
         .id = 19,
@@ -5080,7 +5228,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "PLAINS", .sky_bg = "DAY",
         .drops = { { 0, 0 } }, .drop_count = 0,
         .rare = { 44, 45, 46, 47 }, .rare_count = 4, .rare_dropper = 1,
-        .speech_count = 5,
+        .speeches = SPEECHES_19, .speech_count = 5,
     },
     { /* battle 20 */
         .id = 20,
@@ -5091,7 +5239,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "PLAINS", .sky_bg = "DAY",
         .drops = { { 81, 85 } }, .drop_count = 1,
         .rare = { 59, 60, 62, 63 }, .rare_count = 4, .rare_dropper = 1,
-        .speech_count = 0,
+        .speeches = NULL, .speech_count = 0,
     },
     { /* battle 21 */
         .id = 21,
@@ -5102,7 +5250,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "PLAINS", .sky_bg = "DAY",
         .drops = { { 81, 85 } }, .drop_count = 1,
         .rare = { 59, 60, 62, 63, 44, 45, 46, 47, 55, 56, 57, 58, 49, 50, 51, 53 }, .rare_count = 16, .rare_dropper = 1,
-        .speech_count = 3,
+        .speeches = SPEECHES_21, .speech_count = 3,
     },
     { /* battle 22 */
         .id = 22,
@@ -5113,7 +5261,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "PLAINS", .sky_bg = "DAY",
         .drops = { { 0, 0 } }, .drop_count = 0,
         .rare = { 49, 50, 51, 53 }, .rare_count = 4, .rare_dropper = 1,
-        .speech_count = 1,
+        .speeches = SPEECHES_22, .speech_count = 1,
     },
     { /* battle 23 */
         .id = 23,
@@ -5124,7 +5272,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "PLAINS", .sky_bg = "DAY",
         .drops = { { 81, 85 } }, .drop_count = 1,
         .rare = { 59, 60, 62, 63 }, .rare_count = 4, .rare_dropper = 1,
-        .speech_count = 0,
+        .speeches = NULL, .speech_count = 0,
     },
     { /* battle 24 */
         .id = 24,
@@ -5135,7 +5283,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "PLAINS", .sky_bg = "DAY",
         .drops = { { 81, 85 } }, .drop_count = 1,
         .rare = { 75, 77, 78, 79 }, .rare_count = 4, .rare_dropper = 1,
-        .speech_count = 4,
+        .speeches = SPEECHES_24, .speech_count = 4,
     },
     { /* battle 25 */
         .id = 25,
@@ -5146,7 +5294,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "PLAINS", .sky_bg = "DAY",
         .drops = { { 81, 85 } }, .drop_count = 1,
         .rare = { 55, 56, 57, 58 }, .rare_count = 4, .rare_dropper = 1,
-        .speech_count = 0,
+        .speeches = NULL, .speech_count = 0,
     },
     { /* battle 26 */
         .id = 26,
@@ -5157,7 +5305,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "PLAINS", .sky_bg = "DAY",
         .drops = { { 81, 85 } }, .drop_count = 1,
         .rare = { 59, 60, 62, 63, 44, 45, 46, 47, 55, 56, 57, 58, 49, 50, 51, 53 }, .rare_count = 16, .rare_dropper = 1,
-        .speech_count = 4,
+        .speeches = SPEECHES_26, .speech_count = 4,
     },
     { /* battle 27 */
         .id = 27,
@@ -5168,7 +5316,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "PLAINS", .sky_bg = "DAY",
         .drops = { { 0, 0 } }, .drop_count = 0,
         .rare = { 0 }, .rare_count = 0, .rare_dropper = 0,
-        .speech_count = 1,
+        .speeches = SPEECHES_27, .speech_count = 1,
     },
     { /* battle 28 */
         .id = 28,
@@ -5179,7 +5327,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "PLAINS", .sky_bg = "DAY",
         .drops = { { 0, 0 } }, .drop_count = 0,
         .rare = { 49, 50, 51, 53, 44, 45, 46, 47 }, .rare_count = 8, .rare_dropper = 2,
-        .speech_count = 0,
+        .speeches = NULL, .speech_count = 0,
     },
     { /* battle 29 */
         .id = 29,
@@ -5190,7 +5338,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "PLAINS", .sky_bg = "DAY",
         .drops = { { 81, 85 } }, .drop_count = 1,
         .rare = { 44, 45, 46, 47, 55, 56, 57, 58 }, .rare_count = 8, .rare_dropper = 2,
-        .speech_count = 1,
+        .speeches = SPEECHES_29, .speech_count = 1,
     },
     { /* battle 30 */
         .id = 30,
@@ -5201,7 +5349,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "PLAINS", .sky_bg = "DAY",
         .drops = { { 0, 0 } }, .drop_count = 0,
         .rare = { 76, 77, 78, 79 }, .rare_count = 4, .rare_dropper = 1,
-        .speech_count = 4,
+        .speeches = SPEECHES_30, .speech_count = 4,
     },
     { /* battle 31 */
         .id = 31,
@@ -5212,7 +5360,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "PLAINS", .sky_bg = "DAY",
         .drops = { { 0, 0 } }, .drop_count = 0,
         .rare = { 0 }, .rare_count = 0, .rare_dropper = 0,
-        .speech_count = 1,
+        .speeches = SPEECHES_31, .speech_count = 1,
     },
     { /* battle 32 */
         .id = 32,
@@ -5223,7 +5371,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "PLAINS", .sky_bg = "DAY",
         .drops = { { 81, 85 } }, .drop_count = 1,
         .rare = { 59, 60, 62, 63, 44, 45, 46, 47, 55, 56, 57, 58, 49, 50, 51, 53 }, .rare_count = 16, .rare_dropper = 1,
-        .speech_count = 2,
+        .speeches = SPEECHES_32, .speech_count = 2,
     },
     { /* battle 33 */
         .id = 33,
@@ -5234,7 +5382,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "PLAINS", .sky_bg = "DAY",
         .drops = { { 0, 0 } }, .drop_count = 0,
         .rare = { 0 }, .rare_count = 0, .rare_dropper = 0,
-        .speech_count = 0,
+        .speeches = NULL, .speech_count = 0,
     },
     { /* battle 34 */
         .id = 34,
@@ -5245,7 +5393,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "PLAINS", .sky_bg = "DAY",
         .drops = { { 81, 85 } }, .drop_count = 1,
         .rare = { 59, 60, 62, 63, 44, 45, 46, 47, 55, 56, 57, 58, 49, 50, 51, 53 }, .rare_count = 16, .rare_dropper = 1,
-        .speech_count = 4,
+        .speeches = SPEECHES_34, .speech_count = 4,
     },
     { /* battle 35 */
         .id = 35,
@@ -5256,7 +5404,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "PLAINS", .sky_bg = "DAY",
         .drops = { { 0, 0 } }, .drop_count = 0,
         .rare = { 0 }, .rare_count = 0, .rare_dropper = 0,
-        .speech_count = 3,
+        .speeches = SPEECHES_35, .speech_count = 3,
     },
     { /* battle 36 */
         .id = 36,
@@ -5267,7 +5415,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "PLAINS", .sky_bg = "DAY",
         .drops = { { 0, 0 } }, .drop_count = 0,
         .rare = { 75, 76, 77, 78, 79 }, .rare_count = 5, .rare_dropper = 1,
-        .speech_count = 4,
+        .speeches = SPEECHES_36, .speech_count = 4,
     },
     { /* battle 37 */
         .id = 37,
@@ -5278,7 +5426,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "PLAINS", .sky_bg = "DAY",
         .drops = { { 80, 15 } }, .drop_count = 1,
         .rare = { 121, 122, 123, 124, 125 }, .rare_count = 5, .rare_dropper = 1,
-        .speech_count = 6,
+        .speeches = SPEECHES_37, .speech_count = 6,
     },
     { /* battle 38 */
         .id = 38,
@@ -5289,7 +5437,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "PLAINS2", .sky_bg = "DAY2",
         .drops = { { 119, 100 } }, .drop_count = 1,
         .rare = { 0 }, .rare_count = 0, .rare_dropper = 0,
-        .speech_count = 0,
+        .speeches = NULL, .speech_count = 0,
     },
     { /* battle 39 */
         .id = 39,
@@ -5300,7 +5448,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "PLAINS2", .sky_bg = "DAY2",
         .drops = { { 119, 100 } }, .drop_count = 1,
         .rare = { 0 }, .rare_count = 0, .rare_dropper = 0,
-        .speech_count = 0,
+        .speeches = NULL, .speech_count = 0,
     },
     { /* battle 40 */
         .id = 40,
@@ -5311,7 +5459,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "PLAINS2", .sky_bg = "DAY2",
         .drops = { { 119, 100 } }, .drop_count = 1,
         .rare = { 0 }, .rare_count = 0, .rare_dropper = 0,
-        .speech_count = 0,
+        .speeches = NULL, .speech_count = 0,
     },
     { /* battle 41 */
         .id = 41,
@@ -5322,7 +5470,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "PLAINS2", .sky_bg = "DAY2",
         .drops = { { 119, 100 } }, .drop_count = 1,
         .rare = { 0 }, .rare_count = 0, .rare_dropper = 0,
-        .speech_count = 0,
+        .speeches = NULL, .speech_count = 0,
     },
     { /* battle 1001 */
         .id = 1001,
@@ -5333,7 +5481,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "SHORE", .sky_bg = "NIGHT",
         .drops = { { 32, 5 }, { 20, 30 }, { 21, 30 } }, .drop_count = 3,
         .rare = { 0 }, .rare_count = 0, .rare_dropper = 0,
-        .speech_count = 0,
+        .speeches = NULL, .speech_count = 0,
     },
     { /* battle 1002 */
         .id = 1002,
@@ -5344,7 +5492,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "SHORE", .sky_bg = "NIGHT",
         .drops = { { 32, 5 }, { 15, 30 }, { 17, 30 } }, .drop_count = 3,
         .rare = { 0 }, .rare_count = 0, .rare_dropper = 0,
-        .speech_count = 0,
+        .speeches = NULL, .speech_count = 0,
     },
     { /* battle 1003 */
         .id = 1003,
@@ -5355,7 +5503,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "SHORE", .sky_bg = "NIGHT",
         .drops = { { 32, 5 }, { 25, 30 }, { 28, 30 } }, .drop_count = 3,
         .rare = { 0 }, .rare_count = 0, .rare_dropper = 0,
-        .speech_count = 0,
+        .speeches = NULL, .speech_count = 0,
     },
     { /* battle 1004 */
         .id = 1004,
@@ -5366,7 +5514,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "PLAINS", .sky_bg = "DAY",
         .drops = { { 79, 8 } }, .drop_count = 1,
         .rare = { 49, 50, 51, 53 }, .rare_count = 4, .rare_dropper = 1,
-        .speech_count = 0,
+        .speeches = NULL, .speech_count = 0,
     },
     { /* battle 1005 */
         .id = 1005,
@@ -5377,7 +5525,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "PLAINS", .sky_bg = "DAY",
         .drops = { { 78, 8 } }, .drop_count = 1,
         .rare = { 55, 56, 57, 58 }, .rare_count = 4, .rare_dropper = 1,
-        .speech_count = 0,
+        .speeches = NULL, .speech_count = 0,
     },
     { /* battle 1006 */
         .id = 1006,
@@ -5388,7 +5536,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "PLAINS", .sky_bg = "DAY",
         .drops = { { 75, 8 }, { 76, 8 } }, .drop_count = 2,
         .rare = { 44, 45, 46, 47 }, .rare_count = 4, .rare_dropper = 1,
-        .speech_count = 0,
+        .speeches = NULL, .speech_count = 0,
     },
     { /* battle 1007 */
         .id = 1007,
@@ -5399,7 +5547,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "PLAINS", .sky_bg = "DAY",
         .drops = { { 77, 8 } }, .drop_count = 1,
         .rare = { 59, 60, 62, 63 }, .rare_count = 4, .rare_dropper = 1,
-        .speech_count = 0,
+        .speeches = NULL, .speech_count = 0,
     },
     { /* battle 1008 */
         .id = 1008,
@@ -5410,7 +5558,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "PLAINS2", .sky_bg = "DAY2",
         .drops = { { 120, 100 } }, .drop_count = 1,
         .rare = { 0 }, .rare_count = 0, .rare_dropper = 0,
-        .speech_count = 0,
+        .speeches = NULL, .speech_count = 0,
     },
     { /* battle 1009 */
         .id = 1009,
@@ -5421,7 +5569,7 @@ const BattleDef SONNY_BATTLES[] = {
         .zone_bg = "PLAINS2", .sky_bg = "DAY2",
         .drops = { { 114, 100 } }, .drop_count = 1,
         .rare = { 0 }, .rare_count = 0, .rare_dropper = 0,
-        .speech_count = 0,
+        .speeches = NULL, .speech_count = 0,
     },
 };
 const int SONNY_BATTLE_COUNT = (int)(sizeof(SONNY_BATTLES) / sizeof(SONNY_BATTLES[0]));

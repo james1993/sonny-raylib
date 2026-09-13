@@ -27,7 +27,8 @@ typedef enum {
     SCREEN_VICTORY,
     SCREEN_TALENTS,
     SCREEN_INVENTORY,
-    SCREEN_SHOP
+    SCREEN_SHOP,
+    SCREEN_MAP
 } Screen;
 
 typedef struct {
@@ -50,6 +51,15 @@ typedef struct {
     int32_t   effect_tick;
     char      log[LOG_LINES][128];
     int32_t   log_count;
+
+    /* Battle dialogue. turn_counter is the original's turnTimeKKK (completed
+       turns) and speech_seq its within-turn counter; a line holds for its own
+       duration and the fight waits while one is showing. */
+    int32_t   turn_counter;
+    int32_t   speech_seq;
+    int32_t   speech_index;
+    int32_t   speech_timer;
+    const Speech *speech;
 
     /* Rewards from the battle just won. */
     BattleRewards rewards;
@@ -86,6 +96,8 @@ void screen_shop_update(Game *g, Vector2 mouse);
 void screen_shop_draw(Game *g, Vector2 mouse);
 void screen_victory_update(Game *g, Vector2 mouse);
 void screen_victory_draw(Game *g, Vector2 mouse);
+void screen_map_update(Game *g, Vector2 mouse);
+void screen_map_draw(Game *g, Vector2 mouse);
 
 void battle_screen_start(Game *g, int32_t battle_id);
 void battle_screen_update(Game *g, Vector2 mouse, int headless);

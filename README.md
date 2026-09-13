@@ -189,8 +189,9 @@ Two details worth knowing, both reproduced rather than cleaned up:
 - [x] The zone hub, with the original's own menu
 - [x] Ability tree, inventory and shop screens; the victory and rewards screen
 - [x] Save data (a text file rather than the original's Flash shared object)
-- [ ] The world map screen
-- [ ] Battle dialogue (89 speeches extracted, not yet shown)
+- [x] The world map, with the original's zone-unlock rule
+- [x] Battle dialogue, timed to the turn counter as the original times it
+- [ ] A layout pass against reference screenshots of the original
 - [x] Asset pipeline: names resolved, art and audio extracted, manifest
 - [x] Real backdrops and ability icons on screen
 - [x] The character doll: per-part transforms out of the model's display list,

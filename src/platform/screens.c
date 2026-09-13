@@ -21,6 +21,7 @@ typedef struct {
 
 /* SYSTEM[13..28], in the order the original lists them. */
 static MenuEntry MENU[] = {
+    {NULL, NULL, SCREEN_MAP,       0},   /* World Map      */
     {NULL, NULL, SCREEN_BATTLE,    1},   /* Next Battle    */
     {NULL, NULL, SCREEN_SHOP,      0},   /* Item Store     */
     {NULL, NULL, SCREEN_INVENTORY, 0},   /* Inventory      */
@@ -36,24 +37,26 @@ static void menu_text(void)
     static int done;
     if (done)
         return;
-    MENU[0].label = lang_text("SYSTEM", 13);
-    MENU[0].hint = lang_text("SYSTEM", 14);
-    MENU[1].label = lang_text("SYSTEM", 15);
-    MENU[1].hint = lang_text("SYSTEM", 16);
-    MENU[2].label = lang_text("SYSTEM", 17);
-    MENU[2].hint = lang_text("SYSTEM", 18);
-    MENU[3].label = lang_text("SYSTEM", 19);
-    MENU[3].hint = lang_text("SYSTEM", 20);
-    MENU[4].label = lang_text("SYSTEM", 21);
-    MENU[4].hint = lang_text("SYSTEM", 22);
-    MENU[5].label = lang_text("SYSTEM", 29);
-    MENU[5].hint = lang_text("SYSTEM", 30);
+    MENU[0].label = lang_text("SYSTEM", 27);   /* World Map */
+    MENU[0].hint = lang_text("SYSTEM", 28);
+    MENU[1].label = lang_text("SYSTEM", 13);
+    MENU[1].hint = lang_text("SYSTEM", 14);
+    MENU[2].label = lang_text("SYSTEM", 15);
+    MENU[2].hint = lang_text("SYSTEM", 16);
+    MENU[3].label = lang_text("SYSTEM", 17);
+    MENU[3].hint = lang_text("SYSTEM", 18);
+    MENU[4].label = lang_text("SYSTEM", 19);
+    MENU[4].hint = lang_text("SYSTEM", 20);
+    MENU[5].label = lang_text("SYSTEM", 21);
+    MENU[5].hint = lang_text("SYSTEM", 22);
+    MENU[6].label = lang_text("SYSTEM", 29);
+    MENU[6].hint = lang_text("SYSTEM", 30);
     done = 1;
 }
 
 static Rectangle menu_rect(int i)
 {
-    return (Rectangle){60, 210 + i * 42, 260, 34};
+    return (Rectangle){60, 196 + i * 38, 260, 31};
 }
 
 /* A random training fight from the zone's own list, as the original picks one. */
@@ -182,6 +185,99 @@ void screen_zone_draw(Game *g, Vector2 mouse)
     if (campaign_complete(&g->campaign))
         DrawText("The campaign is complete.", 60, 470, 12,
                  (Color){235, 200, 90, 255});
+}
+
+/* ----------------------------------------------------------- world map */
+
+/* A zone is on the map once progress has reached the battle before its first
+   -- the original's `progressLevelOn >= progressArray[i][0] - 1`. */
+static int zone_unlocked(const Campaign *c, const ZoneDef *zone)
+{
+    return c->progress_battle >= zone->first_battle - 1;
+}
+
+static Rectangle zone_rect(int i)
+{
+    return (Rectangle){90 + i * 170, 240, 150, 96};
+}
+
+void screen_map_update(Game *g, Vector2 mouse)
+{
+    g->hovered_item = -1;
+    for (int i = 0; i < SONNY_ZONE_COUNT; i++) {
+        const ZoneDef *zone = &SONNY_ZONES[i];
+        if (!zone_unlocked(&g->campaign, zone))
+            continue;
+        Rectangle r = zone_rect(i);
+        if (hit(r, mouse))
+            g->hovered_item = i;
+        if (!hit(r, mouse) || !IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+            continue;
+        /* Travelling changes where you are, not how far you have got. */
+        g->campaign.zone = zone->zone;
+        audio_play("Click3pickup");
+        game_notice(g, "%s", zone->name);
+        g->screen = SCREEN_ZONE;
+        return;
+    }
+    if (draw_button((Rectangle){STAGE_W - 120, STAGE_H - 44, 100, 28}, "Back",
+                    mouse, 1))
+        g->screen = SCREEN_ZONE;
+}
+
+void screen_map_draw(Game *g, Vector2 mouse)
+{
+    ClearBackground((Color){18, 20, 26, 255});
+    DrawText(lang_text("SYSTEM", 27), 22, 16, 20, (Color){210, 215, 225, 255});
+
+    /* The original draws a line from each unlocked zone back to the one
+       before it, so the route reads as a path. */
+    for (int i = 1; i < SONNY_ZONE_COUNT; i++) {
+        if (!zone_unlocked(&g->campaign, &SONNY_ZONES[i]))
+            continue;
+        Rectangle a = zone_rect(i - 1);
+        Rectangle b = zone_rect(i);
+        DrawLineEx((Vector2){a.x + a.width, a.y + a.height / 2},
+                   (Vector2){b.x, b.y + b.height / 2}, 2.0f,
+                   (Color){90, 94, 110, 255});
+    }
+
+    for (int i = 0; i < SONNY_ZONE_COUNT; i++) {
+        const ZoneDef *zone = &SONNY_ZONES[i];
+        Rectangle r = zone_rect(i);
+        if (!zone_unlocked(&g->campaign, zone)) {
+            DrawRectangleLinesEx(r, 1.0f, (Color){44, 46, 54, 255});
+            continue;
+        }
+        int here = (g->campaign.zone == zone->zone);
+        DrawRectangleRec(r, (Color){28, 31, 39, 255});
+        /* Each zone shows its own backdrop. */
+        const BattleDef *def = battle_def_by_id(zone->first_battle);
+        if (def && def->zone_bg[0]) {
+            BeginScissorMode((int)r.x, (int)r.y, (int)r.width, (int)r.height);
+            asset_draw_cover(def->zone_bg, 1, r, (Color){255, 255, 255, 150});
+            EndScissorMode();
+        }
+        DrawRectangleLinesEx(r, (here || hit(r, mouse)) ? 2.0f : 1.0f,
+                             here ? (Color){235, 200, 90, 255}
+                                  : (Color){90, 94, 110, 255});
+        DrawText(TextFormat("%s%d", lang_text("SYSTEM", 9), zone->zone + 1),
+                 (int)r.x + 8, (int)r.y + 8, 10, (Color){235, 200, 90, 255});
+        DrawText(zone->name, (int)r.x + 8, (int)(r.y + r.height - 26), 10,
+                 RAYWHITE);
+        DrawText(zone->subtitle, (int)r.x + 8, (int)(r.y + r.height - 14), 10,
+                 (Color){170, 175, 185, 255});
+    }
+
+    if (g->hovered_item >= 0 && g->hovered_item < SONNY_ZONE_COUNT) {
+        const ZoneDef *zone = &SONNY_ZONES[g->hovered_item];
+        DrawText(TextFormat("%s%d to %s%d", lang_text("SYSTEM", 10),
+                            zone->first_battle - 1, lang_text("SYSTEM", 10),
+                            zone->last_battle - 1),
+                 90, 370, 10, (Color){170, 175, 185, 255});
+    }
+    draw_button((Rectangle){STAGE_W - 120, STAGE_H - 44, 100, 28}, "Back",
+                mouse, 1);
 }
 
 /* ------------------------------------------------------------- talents */

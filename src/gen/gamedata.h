@@ -70,6 +70,18 @@ typedef struct {
     int32_t chance;          /* drops when CHANCE > random(100) */
 } ItemDrop;
 
+/* A line of battle dialogue. It shows when the battle's turn counter reaches
+   `turn` and the within-turn counter reaches `sequence`, and holds for
+   `seconds` at the original's 30 fps. */
+typedef struct {
+    int32_t     speaker;     /* slot */
+    int32_t     turn;
+    int32_t     sequence;
+    float       seconds;
+    const char *say;
+    const char *voice_over;
+} Speech;
+
 /* One battle's roster (a KBR object).
  *
  * players[i] fills slot i + 2: a positive value is an enemy unit template, a
@@ -93,8 +105,9 @@ typedef struct {
     int32_t     drop_count;
     int32_t     rare[SONNY_MAX_RARE];
     int32_t     rare_count;
-    int32_t     rare_dropper;     /* how many rare picks to make */
-    int32_t     speech_count;     /* dialogue lives in data/extracted */
+    int32_t      rare_dropper;    /* how many rare picks to make */
+    const Speech *speeches;
+    int32_t      speech_count;
 } BattleDef;
 
 typedef struct {

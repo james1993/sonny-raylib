@@ -106,9 +106,19 @@ static void draw_doll(const Game *g, int32_t slot)
     doll_draw(&spec, frame, unit_stage_pos(&g->battle, slot), 1.0f, flip, tint);
 }
 
+/* The bar sits where the original's does: its pieces (the backing, the
+   selected-move icon, the clock) are all placed at (400, 508) on the root
+   timeline, so the eight slots are laid out symmetrically about that. */
+#define BAR_CENTER_X 400.0f
+#define BAR_CENTER_Y 508.0f
+#define BAR_SLOT     46.0f
+
 static Rectangle ability_rect(int i)
 {
-    return (Rectangle){22.0f + i * 62.0f, STAGE_H - 104.0f, 56.0f, 56.0f};
+    float total = ABILITY_SLOTS * BAR_SLOT;
+    return (Rectangle){BAR_CENTER_X - total / 2 + i * BAR_SLOT,
+                       BAR_CENTER_Y - BAR_SLOT / 2, BAR_SLOT - 4,
+                       BAR_SLOT - 4};
 }
 
 static void draw_bar(Rectangle r, int32_t cur, int32_t max, Color fill,
@@ -228,7 +238,7 @@ static void draw_tooltip(const Game *g)
     if (!a || !a->tooltip[0])
         return;
 
-    Rectangle box = {22, STAGE_H - 150, STAGE_W - 44, 40};
+    Rectangle box = {22, 404, STAGE_W - 44, 40};
     DrawRectangleRec(box, (Color){28, 30, 38, 240});
     DrawRectangleLinesEx(box, 1.0f, (Color){80, 84, 96, 255});
     DrawText((a->name && a->name[0]) ? a->name : a->icon, (int)box.x + 6,
@@ -255,7 +265,87 @@ static void draw_backdrop(const Game *g)
 
     /* Keep the text and panels legible over the art. */
     DrawRectangle(0, 0, STAGE_W, 60, (Color){12, 13, 17, 190});
-    DrawRectangle(0, STAGE_H - 120, STAGE_W, 120, (Color){12, 13, 17, 190});
+    DrawRectangle(0, (int)(BAR_CENTER_Y - 34), STAGE_W,
+                  STAGE_H - (int)(BAR_CENTER_Y - 34), (Color){12, 13, 17, 190});
+}
+
+/* --------------------------------------------------------------- dialogue */
+
+/* Show the next line whose turn and sequence have come up, if its speaker is
+   still alive. Returns 1 while a line is on screen, which holds the fight. */
+static int speech_update(Game *g)
+{
+    if (g->speech) {
+        if (--g->speech_timer > 0)
+            return 1;
+        g->speech = NULL;
+    }
+    if (!g->def || g->speech_index >= g->def->speech_count)
+        return 0;
+
+    const Speech *next = &g->def->speeches[g->speech_index];
+    if (next->turn != g->turn_counter || next->sequence != g->speech_seq)
+        return 0;
+
+    g->speech_index++;
+    g->speech_seq++;
+    /* A line from a unit that is already dead is skipped, not shown. */
+    if (next->speaker < 1 || next->speaker >= SONNY_SLOTS
+        || !g->battle.units[next->speaker].active)
+        return 0;
+
+    g->speech = next;
+    g->speech_timer = (int32_t)(next->seconds * STAGE_FPS);
+    if (next->voice_over && next->voice_over[0])
+        audio_play(next->voice_over);
+    return 1;
+}
+
+static void draw_speech(const Game *g)
+{
+    if (!g->speech)
+        return;
+    const Unit *speaker = &g->battle.units[g->speech->speaker];
+
+    /* The original parks the box on the speaker's side of the screen, at
+       (21.8, 460.7) for the left team and (473.3, 460.7) for the right. Its
+       art rises from that origin -- the ability bar sits at y 508, so a box
+       drawn downward from 460 would cover it. */
+    float x = (speaker->teamSide == 2) ? 473.3f : 21.8f;
+    float y = 460.7f;
+    float height = 52;
+    Rectangle box = {x, y - height, 305, height};
+
+    DrawRectangleRec(box, (Color){16, 18, 24, 235});
+    DrawRectangleLinesEx(box, 1.0f, (Color){120, 124, 140, 255});
+    DrawText(speaker->name, (int)box.x + 8, (int)box.y + 6, 10,
+             (Color){235, 200, 90, 255});
+
+    /* Wrap the line to the box. */
+    const char *text = g->speech->say;
+    char line[96];
+    int start = 0, last_space = -1, row = 0;
+    for (int i = 0; text[i] && row < 2; i++) {
+        int len = i - start + 1;
+        if (text[i] == ' ')
+            last_space = i;
+        if (len < 52 && text[i + 1])
+            continue;
+        int end = (text[i + 1] && last_space > start) ? last_space : i + 1;
+        int count = end - start;
+        if (count > (int)sizeof(line) - 1)
+            count = (int)sizeof(line) - 1;
+        memcpy(line, text + start, count);
+        line[count] = 0;
+        DrawText(line, (int)box.x + 8, (int)box.y + 20 + row * 11, 10,
+                 (Color){215, 220, 230, 255});
+        row++;
+        if (row >= 2)
+            break;
+        start = (end == last_space) ? end + 1 : end;
+        last_space = -1;
+        i = start - 1;
+    }
 }
 
 static void draw_battle(const Game *g)
@@ -282,16 +372,17 @@ static void draw_battle(const Game *g)
 
     draw_ability_bar(g);
     draw_tooltip(g);
+    draw_speech(g);
 
     for (int32_t i = 0; i < g->log_count; i++)
-        DrawText(g->log[i], 200, 330 + i * 13, 10,
+        DrawText(g->log[i], 200, 320 + i * 13, 10,
                  (Color){160, 165, 175, 255});
 
     if (player_turn(g)) {
         const char *hint = (g->selected < 0)
             ? "pick an ability (1-8 or click), then click a target"
             : "click a target";
-        DrawText(hint, 22, STAGE_H - 26, 10, (Color){235, 200, 90, 255});
+        DrawText(hint, 22, STAGE_H - 32, 10, (Color){235, 200, 90, 255});
     }
 }
 
@@ -459,6 +550,10 @@ static void advance(Game *g)
             g->resolve_timer = RESOLVE_FRAMES;
         } else if (b->phase != PHASE_OVER) {
             battle_end_phase(b);
+            /* A completed phase advances the dialogue's turn counter and
+               resets its within-turn sequence. */
+            g->turn_counter++;
+            g->speech_seq = 0;
         }
     }
 }
@@ -500,6 +595,11 @@ void battle_screen_start(Game *g, int32_t battle_id)
     g->effect = NULL;
     g->log_count = 0;
     g->screen = SCREEN_BATTLE;
+    g->turn_counter = 0;
+    g->speech_seq = 0;
+    g->speech_index = 0;
+    g->speech_timer = 0;
+    g->speech = NULL;
 
     game_log(g, "%s%d. Team %d is faster and acts first.",
              lang_text("SYSTEM", 10), g->campaign.progress_battle - 1,
@@ -521,6 +621,10 @@ void battle_screen_update(Game *g, Vector2 mouse, int headless)
     g->anim_tick++;
     if (g->effect)
         g->effect_tick++;
+
+    /* Dialogue holds the fight, as speechDone does in the original. */
+    if (speech_update(g))
+        return;
     advance(g);
 
     /* When the fight ends, pay out and move on. */

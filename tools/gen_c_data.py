@@ -15,6 +15,11 @@ ELEMENTS = ["Physical", "Magic", "Ice", "Fire", "Lightning", "Earth",
             "Shadow", "Poison"]
 
 
+def c_float(value):
+    """A C float literal that round-trips."""
+    return '%.6ff' % float(value)
+
+
 def c_string(value):
     if value is None:
         return '""'
@@ -240,7 +245,26 @@ def gen_lang(langs, language='ENGLISH'):
 
 
 def gen_battles(battles):
-    lines = ['const BattleDef SONNY_BATTLES[] = {']
+    lines = []
+    # Battle dialogue. A line shows when the turn counter reaches its
+    # turnTime and the within-turn counter its turnTime2, provided the
+    # speaker is still alive.
+    for b in battles:
+        speeches = [s for s in (b.get('speeches') or []) if isinstance(s, dict)]
+        if not speeches:
+            continue
+        lines.append('static const Speech SPEECHES_%d[] = {' % b['id'])
+        for sp in speeches:
+            lines.append('    { %d, %d, %d, %s, %s, %s },'
+                         % (int(num(sp.get('player'))),
+                            int(num(sp.get('turnTime'))),
+                            int(num(sp.get('turnTime2'))),
+                            c_float(num(sp.get('timeToSay'), 4)),
+                            c_string(sp.get('say') or ''),
+                            c_string(sp.get('voiceOver') or '')))
+        lines.append('};')
+    lines.append('')
+    lines.append('const BattleDef SONNY_BATTLES[] = {')
     for b in battles:
         players = (b.get('players') or [0] * 5) + [0] * 5
         levels_raw = (b.get('playersLevels') or [0] * 5) + [0] * 5
@@ -281,7 +305,11 @@ def gen_battles(battles):
                      '.rare_dropper = %d,'
                      % (', '.join(str(r) for r in rare) or '0', len(rare),
                         int(num(b.get('itemRareDropper')))))
-        lines.append('        .speech_count = %d,' % len(b.get('speeches') or []))
+        speeches = [sp for sp in (b.get('speeches') or [])
+                    if isinstance(sp, dict)]
+        lines.append('        .speeches = %s, .speech_count = %d,'
+                     % (('SPEECHES_%d' % b['id']) if speeches else 'NULL',
+                        len(speeches)))
         lines.append('    },')
     lines.append('};')
     lines.append('const int SONNY_BATTLE_COUNT = '
@@ -443,6 +471,18 @@ typedef struct {
     int32_t chance;          /* drops when CHANCE > random(100) */
 } ItemDrop;
 
+/* A line of battle dialogue. It shows when the battle's turn counter reaches
+   `turn` and the within-turn counter reaches `sequence`, and holds for
+   `seconds` at the original's 30 fps. */
+typedef struct {
+    int32_t     speaker;     /* slot */
+    int32_t     turn;
+    int32_t     sequence;
+    float       seconds;
+    const char *say;
+    const char *voice_over;
+} Speech;
+
 /* One battle's roster (a KBR object).
  *
  * players[i] fills slot i + 2: a positive value is an enemy unit template, a
@@ -466,8 +506,9 @@ typedef struct {
     int32_t     drop_count;
     int32_t     rare[SONNY_MAX_RARE];
     int32_t     rare_count;
-    int32_t     rare_dropper;     /* how many rare picks to make */
-    int32_t     speech_count;     /* dialogue lives in data/extracted */
+    int32_t      rare_dropper;    /* how many rare picks to make */
+    const Speech *speeches;
+    int32_t      speech_count;
 } BattleDef;
 
 typedef struct {
