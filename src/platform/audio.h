@@ -24,6 +24,18 @@ void audio_play(const char *name);
 void audio_music(const char *name);
 void audio_update(void);
 
+/* A cutscene's narration. In the original this is a stream sound on the
+   animation's own timeline, which means the animation does not have its own
+   clock: Flash holds the timeline to the audio. So it is played as a stream
+   here too and the comic is stepped from its playhead. */
+/* Returns whether the track actually started, which decides whether the
+   playhead can be used as the animation's clock. */
+int  audio_narration(const char *name);
+void audio_narration_stop(void);
+int  audio_narration_playing(void);
+/* Seconds of narration played, which is the animation's own frame clock. */
+float audio_narration_time(void);
+
 int32_t audio_loaded_count(void);
 
 #endif

@@ -330,6 +330,30 @@ Rectangle placed_rect(float x, float y, float scale_x, float scale_y,
                        w * scale_x, h * scale_y};
 }
 
+/* Where an exported image goes, as opposed to where its box is.
+   The decompiler rasterises a shape into a bitmap a pixel wider and taller
+   than the box the SWF declares: the art fills w by h of it at one pixel to
+   the unit, and the last row and column are padding. So the image has to be
+   drawn at its own pixel size and the padding allowed to fall outside the
+   box. Squeezing 61 pixels into 60 is less than a pixel, but it is a pixel
+   taken off the corner of every icon on the screen, and it shows. */
+Rectangle placed_texture(const Texture2D *tex, float x, float y,
+                         float scale_x, float scale_y, float ox, float oy)
+{
+    return placed_rect(x, y, scale_x, scale_y, (float)tex->width,
+                       (float)tex->height, ox, oy);
+}
+
+void draw_texture_placed(const Texture2D *tex, float x, float y,
+                         float scale_x, float scale_y, float ox, float oy,
+                         Color tint)
+{
+    DrawTexturePro(*tex, (Rectangle){0, 0, (float)tex->width,
+                                     (float)tex->height},
+                   placed_texture(tex, x, y, scale_x, scale_y, ox, oy),
+                   (Vector2){0, 0}, 0.0f, tint);
+}
+
 /* One text field, laid out as the SWF lays it out: its own box, alignment,
    leading, size, colour and face, relative to the clip it belongs to. */
 void draw_field_tinted(const TextField *f, Vector2 clip,
@@ -417,13 +441,9 @@ void draw_clip_parts(const char *screen, const char *owner,
         const Texture2D *tex = asset_texture(name, 1);
         if (!tex)
             continue;
-        Rectangle dst = placed_rect(moved.x + part->x, moved.y + part->y,
-                                    part->scale_x, part->scale_y,
-                                    part->width, part->height,
-                                    part->origin_x, part->origin_y);
-        DrawTexturePro(*tex, (Rectangle){0, 0, (float)tex->width,
-                                         (float)tex->height},
-                       dst, (Vector2){0, 0}, 0.0f, tint);
+        draw_texture_placed(tex, moved.x + part->x, moved.y + part->y,
+                            part->scale_x, part->scale_y,
+                            part->origin_x, part->origin_y, tint);
     }
 }
 
@@ -687,13 +707,9 @@ void draw_button_state(const StageButton *b, int over, Color tint)
                                              1);
         if (!tex)
             continue;
-        Rectangle dst = placed_rect(centre.x + p->x * sx, centre.y + p->y * sy,
-                                    p->scale_x * sx, p->scale_y * sy,
-                                    p->width, p->height, p->origin_x,
-                                    p->origin_y);
-        DrawTexturePro(*tex, (Rectangle){0, 0, (float)tex->width,
-                                         (float)tex->height},
-                       dst, (Vector2){0, 0}, 0.0f, tint);
+        draw_texture_placed(tex, centre.x + p->x * sx, centre.y + p->y * sy,
+                            p->scale_x * sx, p->scale_y * sy,
+                            p->origin_x, p->origin_y, tint);
     }
 }
 
@@ -727,12 +743,8 @@ void draw_screen_chrome(const char *screen)
                                              1);
         if (!tex)
             continue;
-        Rectangle dst = placed_rect(c->x, c->y, c->scale_x, c->scale_y,
-                                    c->width, c->height, c->origin_x,
-                                    c->origin_y);
-        DrawTexturePro(*tex, (Rectangle){0, 0, (float)tex->width,
-                                         (float)tex->height},
-                       dst, (Vector2){0, 0}, 0.0f, WHITE);
+        draw_texture_placed(tex, c->x, c->y, c->scale_x, c->scale_y,
+                            c->origin_x, c->origin_y, WHITE);
     }
 }
 

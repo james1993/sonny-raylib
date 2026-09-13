@@ -10,10 +10,12 @@ typedef struct {
     int32_t     frame;
     Texture2D   texture;
     int32_t     ok;
+    int64_t     used;          /* when this was last asked for */
 } CachedTexture;
 
 static CachedTexture cache[ASSET_CACHE_MAX];
 static int32_t cache_count;
+static int64_t cache_clock;
 static char asset_root[512] = ".";
 
 void assets_set_root(const char *root)
@@ -48,16 +50,33 @@ const Texture2D *asset_texture(const char *name, int32_t frame)
         frame = ((frame - 1) % entry->frame_count) + 1;
 
     for (int32_t i = 0; i < cache_count; i++) {
-        if (cache[i].name == entry->name && cache[i].frame == frame)
+        if (cache[i].name == entry->name && cache[i].frame == frame) {
+            cache[i].used = ++cache_clock;
             return cache[i].ok ? &cache[i].texture : NULL;
+        }
     }
-    if (cache_count >= ASSET_CACHE_MAX)
-        return NULL;
 
     char path[1024];
     snprintf(path, sizeof(path), "%s/%s", asset_root, entry->frames[frame - 1]);
 
-    CachedTexture *slot = &cache[cache_count++];
+    /* A comic is a thousand pictures of its own, so a cache that only fills
+       up would leave the game with nothing to draw once one has played. The
+       one that has gone longest without being asked for makes way. Asking
+       for a texture puts it at the head of that order, so a pointer handed
+       back by this function is never what the next call throws out -- which
+       is what lets a caller hold one while it fetches another. */
+    CachedTexture *slot;
+    if (cache_count < ASSET_CACHE_MAX) {
+        slot = &cache[cache_count++];
+    } else {
+        slot = &cache[0];
+        for (int32_t i = 1; i < cache_count; i++)
+            if (cache[i].used < slot->used)
+                slot = &cache[i];
+        if (slot->ok)
+            UnloadTexture(slot->texture);
+    }
+    slot->used = ++cache_clock;
     slot->name = entry->name;
     slot->frame = frame;
     slot->ok = 0;

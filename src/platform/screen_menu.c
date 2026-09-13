@@ -51,9 +51,18 @@ static const Vector2 NOWHERE = {0, 0};
 
 /* A frame fills its screen by setting variables, and each field says which
    one it is bound to, so text goes in by the name the script uses. */
+/* Setting a variable in Flash fills every field bound to it, and several of
+   these frames bind two -- a dark copy under a light one, which is how they
+   get a drop shadow -- so all of them are drawn, in the order the display
+   list has them. */
 static void say(const char *screen, const char *variable, const char *text)
 {
-    draw_field_wrapped(text_field_var(screen, variable), NOWHERE, text);
+    for (int32_t i = 0; i < SONNY_TEXT_FIELD_COUNT; i++) {
+        const TextField *f = &SONNY_TEXT_FIELDS[i];
+        if (strcmp(f->screen, screen) == 0
+            && strcmp(f->variable, variable) == 0)
+            draw_field_wrapped(f, NOWHERE, text);
+    }
 }
 
 /* A screen's furniture, its buttons' own art, and the two captions every one
@@ -184,12 +193,21 @@ void screen_slots_update(Game *g, Vector2 mouse)
 
 void screen_class_draw(Game *g, Vector2 mouse)
 {
-    (void)g;
     draw_frame(CLASS_SCREEN, mouse);
     say(CLASS_SCREEN, "whatToSay1", lang_text("MENU", 24));
     for (int i = 0; i < 4; i++)
         say(CLASS_SCREEN, TextFormat("whatToSay%d", i + 2),
             lang_text("CLASS", i));
+    /* Each class button names itself on rollOver: the class as the title and
+       CLASSDESCRIPT as the body. */
+    for (int i = 0; i < 4; i++) {
+        const StageButton *b = stage_button(CLASS_SCREEN, CLASS_BUTTONS[i], 0);
+        if (b && CheckCollisionPointRec(mouse, (Rectangle){b->x, b->y,
+                                                           b->width,
+                                                           b->height}))
+            game_tooltip(g, lang_text("CLASS", i),
+                         lang_text("CLASSDESCRIPT", i));
+    }
 }
 
 void screen_class_update(Game *g, Vector2 mouse)
@@ -369,13 +387,7 @@ void screen_gameover_draw(Game *g, Vector2 mouse)
         TextFormat("< %s >", lang_text("MENU", 51)));
     /* The tip under it, which the frame draws twice -- a dark copy under a
        light one -- and picks by the counter the original keeps. */
-    const char *tip = lang_text("GOTIP", g->gameover_tip);
-    for (int32_t i = 0; i < SONNY_TEXT_FIELD_COUNT; i++) {
-        const TextField *f = &SONNY_TEXT_FIELDS[i];
-        if (strcmp(f->screen, OVER_SCREEN) == 0
-            && strcmp(f->variable, "tipTextGO") == 0)
-            draw_field_wrapped(f, NOWHERE, tip);
-    }
+    say(OVER_SCREEN, "tipTextGO", lang_text("GOTIP", g->gameover_tip));
 }
 
 void screen_gameover_update(Game *g, Vector2 mouse)
@@ -425,15 +437,28 @@ void screen_ending_update(Game *g, Vector2 mouse)
  */
 #define CUTSCENE_SKIP 1697
 
-/* Which clip each cutscene frame plays, and where it goes when it ends. */
+/* The SWF runs at 30 frames a second, and a comic's narration carries exactly
+   one frame of audio for each frame of animation (735 samples at 22050 Hz), so
+   the playhead and the animation are the same clock. */
+#define CUTSCENE_FPS 30.0f
+
+/* Which clip each cutscene frame plays, the narration over it, and where the
+   root timeline goes when it ends. The intro does not go to the hub: SKIP and
+   the last frame both hand the root over to `gotoSceneKrin`, which the PLAY
+   button set to "IntroSeq" -- fifteen frames that end by setting BattlePick to
+   2 and progressFight, and going to LOADBATTLESCENE. So the opening comic
+   leads straight into the first fight. */
+#define INTRO_BATTLE 2
+
 static const struct {
     const char *screen;
     int32_t     clip;
-    int32_t     then;
+    const char *voice;
+    int32_t     then;           /* SCREEN_BATTLE means IntroSeq's own ending */
 } CUTSCENES[] = {
-    {"CS_INTRO", 1695, SCREEN_ZONE},
-    {"CS_BRIDGE", 1710, SCREEN_MAP},
-    {"CS_OUTRO", 1719, SCREEN_ENDING},
+    {"CS_INTRO", 1695, "CutsceneVoiceIntro", SCREEN_BATTLE},
+    {"CS_BRIDGE", 1710, "CutsceneVoiceBridge", SCREEN_MAP},
+    {"CS_OUTRO", 1719, "CutsceneVoiceOutro", SCREEN_ENDING},
 };
 
 void game_play_cutscene(Game *g, int32_t which)
@@ -443,9 +468,28 @@ void game_play_cutscene(Game *g, int32_t which)
         return;
     g->cutscene = which;
     g->cutscene_frame = 1;
+    g->cutscene_clock = 0.0f;
+    g->cutscene_playhead = 0.0f;
     const CutsceneDef *def = cutscene_by_clip(CUTSCENES[which].clip);
     g->cutscene_line = def ? def->start : 0;
     g->screen = SCREEN_CUTSCENE;
+    /* The narration is the animation's clock, so it starts with it. */
+    g->cutscene_voiced = audio_narration(CUTSCENES[which].voice);
+}
+
+/* Where the root timeline goes once the comic has faded out. */
+static void cutscene_over(Game *g)
+{
+    int32_t then = CUTSCENES[g->cutscene].then;
+    audio_narration_stop();
+    if (then != SCREEN_BATTLE) {
+        g->screen = then;
+        return;
+    }
+    /* IntroSeq's last frame: the first fight, and it carries progress. */
+    g->boss_fight = 0;
+    g->progress_fight = 1;
+    battle_screen_start(g, INTRO_BATTLE);
 }
 
 /* The caption as the animation has reached it: every cue up to this frame,
@@ -485,7 +529,11 @@ void screen_cutscene_draw(Game *g, Vector2 mouse)
     if (panel) {
         const char *art = TextFormat("#%d", panel->character);
         int32_t count = asset_frame_count(art);
-        int32_t frame = count > 0 ? ((g->cutscene_frame - 1) % count) + 1 : 1;
+        int32_t frame = g->cutscene_frame;
+        if (count > 0 && frame > count)
+            frame = count;
+        if (frame < 1)
+            frame = 1;
         /* Each frame of a comic is its own size, so every one is stood on
            the placement point by its own recorded origin rather than by the
            bounds the first frame happened to have. */
@@ -500,12 +548,32 @@ void screen_cutscene_update(Game *g, Vector2 mouse)
 {
     const char *screen = CUTSCENES[g->cutscene].screen;
     if (screen_button_pressed(screen, CUTSCENE_SKIP, mouse)) {
+        /* SKIP stops the sound and hands the root timeline on; that is all it
+           does. */
         audio_play("Click3pickup");
-        g->screen = CUTSCENES[g->cutscene].then;
+        cutscene_over(g);
         return;
     }
-    const char *art = TextFormat("#%d", CUTSCENES[g->cutscene].clip);
-    int32_t count = asset_frame_count(art);
-    if (++g->cutscene_frame > count && count > 0)
-        g->screen = CUTSCENES[g->cutscene].then;
+
+    /* The clock. A comic's narration is a stream sound, which is what Flash
+       holds the timeline to, so the playhead is the animation's position --
+       but only while it is actually moving. Flash falls back to the frame
+       rate when the sound cannot play, and so does this: the clock runs on
+       its own and the narration pulls it into step whenever it advances.
+       (Ruffle, which has no fallback, is why the original stands still in a
+       capture with no sound device.) */
+    g->cutscene_clock += GetFrameTime();
+    if (g->cutscene_voiced && audio_narration_playing()) {
+        float played = audio_narration_time();
+        if (played > g->cutscene_playhead) {
+            g->cutscene_playhead = played;
+            g->cutscene_clock = played;
+        }
+    }
+    g->cutscene_frame = 1 + (int32_t)(g->cutscene_clock * CUTSCENE_FPS);
+
+    int32_t count = asset_frame_count(TextFormat("#%d",
+                                                 CUTSCENES[g->cutscene].clip));
+    if (count > 0 && g->cutscene_frame > count)
+        cutscene_over(g);
 }

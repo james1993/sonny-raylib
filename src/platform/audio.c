@@ -25,6 +25,10 @@ static Music music;
 static int32_t music_playing;
 static char music_name[64];
 
+/* The cutscene narration, a second stream so it does not fight the music. */
+static Music narration;
+static int32_t narration_playing;
+
 void audio_init(void)
 {
     if (ready)
@@ -130,10 +134,50 @@ void audio_music(const char *name)
     snprintf(music_name, sizeof(music_name), "%s", name);
 }
 
+int audio_narration(const char *name)
+{
+    audio_narration_stop();
+    if (!ready || !name || !name[0])
+        return 0;
+    const AssetEntry *entry = asset_find(name);
+    if (!entry || entry->frame_count == 0 || !FileExists(entry->frames[0]))
+        return 0;
+    narration = LoadMusicStream(entry->frames[0]);
+    if (narration.frameCount == 0)
+        return 0;
+    narration.looping = false;
+    PlayMusicStream(narration);
+    narration_playing = 1;
+    return 1;
+}
+
+void audio_narration_stop(void)
+{
+    if (!narration_playing)
+        return;
+    StopMusicStream(narration);
+    UnloadMusicStream(narration);
+    narration_playing = 0;
+}
+
+int audio_narration_playing(void)
+{
+    return narration_playing && IsMusicStreamPlaying(narration);
+}
+
+float audio_narration_time(void)
+{
+    return narration_playing ? GetMusicTimePlayed(narration) : 0.0f;
+}
+
 void audio_update(void)
 {
-    if (ready && music_playing)
+    if (!ready)
+        return;
+    if (music_playing)
         UpdateMusicStream(music);
+    if (narration_playing)
+        UpdateMusicStream(narration);
 }
 
 void audio_shutdown(void)
@@ -151,6 +195,7 @@ void audio_shutdown(void)
         UnloadMusicStream(music);
         music_playing = 0;
     }
+    audio_narration_stop();
     for (int32_t i = 0; i < cache_count; i++)
         if (cache[i].ok)
             UnloadSound(cache[i].sound);

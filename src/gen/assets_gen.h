@@ -257,14 +257,19 @@ const StageButton *stage_button(const char *screen, int32_t character,
    clicks to pick a fight. */
 typedef struct {
     const char *zone;      /* the frame's label, which is the art's name */
-    const char *name;      /* the marker's instance name */
-    float       x, y;
+    const char *style;     /* the art, one per colour the scenes ask for */
+    float       x, y;      /* where it stands, inside the scene */
+    float       scale_x, scale_y;
 } ZoneMarker;
 
 extern const ZoneMarker SONNY_ZONE_MARKERS[];
 extern const int SONNY_ZONE_MARKER_COUNT;
 /* The `index`-th marker on `zone`, in the order the frame stacks them. */
 const ZoneMarker *zone_marker(const char *zone, int32_t index);
+/* How many frames the marker turns through, and how fast. The SWF runs at 30
+   frames a second and the clip is its own loop. */
+extern const int SONNY_MARKER_FRAMES;
+extern const float SONNY_MARKER_FPS;
 /* One zone's marker on the world map, in stage coordinates, with the box it
    answers in. The map shows a marker once the player has reached the zone it
    leads to, and draws its own lines between the ones that show. */

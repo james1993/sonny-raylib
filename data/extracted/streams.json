@@ -1,0 +1,23 @@
+{
+ "CutsceneVoiceIntro": {
+  "clip": 1695,
+  "frames": 1306,
+  "rate": 22050,
+  "samples_per_frame": 735,
+  "file": "assets/art/sound/CutsceneVoiceIntro.mp3"
+ },
+ "CutsceneVoiceBridge": {
+  "clip": 1710,
+  "frames": 1074,
+  "rate": 22050,
+  "samples_per_frame": 735,
+  "file": "assets/art/sound/CutsceneVoiceBridge.mp3"
+ },
+ "CutsceneVoiceOutro": {
+  "clip": 1719,
+  "frames": 742,
+  "rate": 22050,
+  "samples_per_frame": 735,
+  "file": "assets/art/sound/CutsceneVoiceOutro.mp3"
+ }
+}

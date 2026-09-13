@@ -13,6 +13,10 @@ Collection, and every number, string and pixel is extracted from it:
     tools/extract_assets.sh      the decompiler dump (~200 MB, gitignored)
     tools/extract_data.py        abilities, units, items, buffs, talents,
                                  battles, zones, dialogue, all display text
+    tools/extract_streams.py     the cutscene narration, which is a stream
+                                 sound on each comic's own timeline
+    tools/extract_markers.py     the markers on a zone's scene, and a copy of
+                                 the SWF with them taken out of it
     tools/swf_exports.py         export names, frame labels, shape bounds
     tools/swf_doll.py            timeline walker: per-frame part transforms
     tools/extract_stage.py       where the interface goes, from the display list
@@ -41,6 +45,12 @@ that is not automated: setting up the same fight in the real game and comparing.
 - **A SWF RECT is Xmin, Xmax, Ymin, Ymax** -- not Xmin, Ymin, Xmax, Ymax.
 - **An exported image's top-left is not the art's origin.** Every export has an
   SWF sibling whose root transform records the offset; draw at `target - offset`.
+- **An exported image is a pixel bigger than its box.** The decompiler
+  rasterises at one pixel to the unit and rounds the canvas up, so a 60-unit
+  shape comes out 61 pixels with the last row and column empty. Drawing it
+  into the box the SWF declares squeezes 61 pixels into 60 -- less than a
+  pixel, and a pixel off the corner of every icon on the screen. Draw at the
+  image's own size and let the padding fall outside.
 - **Enemies and the player use different stat formulas.** `krinAddNewUnit`
   scales linearly with no rounding; the player's path rounds up over a
   level-scaled baseline. One formula for both is wrong in both directions.
@@ -119,6 +129,15 @@ What the original settled that guesswork had got wrong:
   its records always carry a colour transform whether or not a flag says so.
 * The hub is a scene with a frame per zone and markers on it -- one starts the
   next fight, one opens the store -- not a list of buttons.
+* A marker is a clip of its own: an 82-frame pinwheel drawn in grey, turned
+  red, cyan, gold or green by the colour transform on its placement and given
+  its halo by a glow filter there. Neither is in the clip, and the decompiler
+  freezes a nested timeline at frame one, so the scene it exports has a still
+  marker painted into it. The art build therefore runs twice: once over the
+  SWF as it ships, and once over a copy with the marker placements taken out
+  of the zone clip, which is where the scenes come from. The markers are
+  rendered separately, style by style, with the colour transform applied and
+  the glow worked out from the clip's own alpha so it turns with the wheel.
 
 * An item's picture is not in the icon set the abilities use. Every slot shows
   its contents through one clip whose frames are labelled with item names, and
@@ -153,7 +172,10 @@ What the original settled that guesswork had got wrong:
   by number rather than by name.
 * A field says which variable it is bound to, and a frame fills its screen by
   setting those variables. That binding is the only reliable way to tell which
-  string a field shows -- its instance name says nothing.
+  string a field shows -- its instance name says nothing. More than one field
+  can be bound to the same variable, and setting it fills all of them: that is
+  how these screens get a drop shadow, a dark copy under a light one. Drawing
+  only the first one found leaves the advice on the settings screen black.
 * A field with no variable is never set at run time: what it was authored with
   is what it shows, as the HTML it was authored in.
 * The front end is a chain of root frames -- mainMenu, subMenu, dataMenu,
@@ -178,6 +200,20 @@ What the original settled that guesswork had got wrong:
   a counter and, on the frames where the caption changes, shows the next line
   of CUTSUB or clears it. The intro is 1306 frames but only 166 pictures --
   most frames repeat -- so the asset build copies each distinct one once.
+* Its narration is not a sound anything starts. Each comic carries a *stream*
+  sound -- a SoundStreamHead on the sprite and a block on every frame -- which
+  no script mentions and the decompiler's sound export does not contain. The
+  header says MP3, mono, 22050 Hz, 735 samples a frame, which at the SWF's 30
+  fps is one frame of audio per frame of animation: the track is the
+  animation's clock, which is what Flash holds a timeline to. The comic runs
+  on that playhead and keeps its own time only while the playhead is not
+  moving -- Flash falls back to the frame rate when the sound cannot play,
+  which is why the original stands still under Ruffle, which does not.
+* The opening comic does not lead to the hub. PLAY sets gotoSceneKrin to
+  "IntroSeq" before going to CS_INTRO, and SKIP and the comic's last frame
+  both hand the root timeline to it: fifteen frames that end by setting
+  BattlePick to 2 and progressFight and going to LOADBATTLESCENE. The story
+  starts in a fight.
 * Winning decides where the game goes next, not the hub: the save is written
   first when autosave is on, a zone just finished goes out to the map (by way
   of a comic after battle 9 and after 38), and otherwise it is back to the hub

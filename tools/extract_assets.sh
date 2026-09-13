@@ -37,9 +37,25 @@ java -Xmx3g -jar "$FFDEC" -format image:png -export image "$OUT/image" "$SWF"
 # the engine.
 java -Xmx3g -jar "$FFDEC" -format sprite:png -export sprite "$OUT/sprite" "$SWF"
 
+# The zone scenes again, without their markers. A marker is a clip nested in
+# the scene and the decompiler freezes nested timelines at frame one, so the
+# scene it hands back has a still marker painted into it and the engine can
+# never turn it. tools/extract_markers.py writes a copy of the SWF with those
+# placements taken out, and renders the marker's own frames separately; this
+# exports the scenes from that copy.
+python3 tools/extract_markers.py "$SWF" --raw "$OUT" \
+    --stripped "$OUT/nomarkers.swf"
+java -Xmx3g -jar "$FFDEC" -format sprite:png -export sprite \
+    "$OUT/nomarkers/sprite" "$OUT/nomarkers.swf"
+
+# The cutscene narration, which is a stream sound on each comic's timeline and
+# so is not in the sound export above.
+python3 tools/extract_streams.py "$SWF"
+
 echo
 echo "Raw export in $OUT:"
 du -sh "$OUT"/* 2>/dev/null || true
 echo
 echo "Next: python3 tools/swf_exports.py \"$SWF\" > data/extracted/exports.json"
-echo "      python3 tools/build_assets.py --raw $OUT"
+echo "      python3 tools/build_assets.py --raw $OUT \\"
+echo "              --zone-raw $OUT/nomarkers"

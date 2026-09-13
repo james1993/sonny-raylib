@@ -269,14 +269,19 @@ const StageButton *stage_button(const char *screen, int32_t character,
    clicks to pick a fight. */
 typedef struct {
     const char *zone;      /* the frame's label, which is the art's name */
-    const char *name;      /* the marker's instance name */
-    float       x, y;
+    const char *style;     /* the art, one per colour the scenes ask for */
+    float       x, y;      /* where it stands, inside the scene */
+    float       scale_x, scale_y;
 } ZoneMarker;
 
 extern const ZoneMarker SONNY_ZONE_MARKERS[];
 extern const int SONNY_ZONE_MARKER_COUNT;
 /* The `index`-th marker on `zone`, in the order the frame stacks them. */
 const ZoneMarker *zone_marker(const char *zone, int32_t index);
+/* How many frames the marker turns through, and how fast. The SWF runs at 30
+   frames a second and the clip is its own loop. */
+extern const int SONNY_MARKER_FRAMES;
+extern const float SONNY_MARKER_FPS;
 /* One zone's marker on the world map, in stage coordinates, with the box it
    answers in. The map shows a marker once the player has reached the zone it
    leads to, and draws its own lines between the ones that show. */
@@ -579,6 +584,11 @@ const StageBar *stage_bar(int32_t slot)
     chrome = []
     layers = {}
     stage_json = {}
+    markers_json = {}
+    markers_path = os.path.join(os.path.dirname(args.stage), 'markers.json')
+    if os.path.exists(markers_path):
+        with open(markers_path, encoding='utf-8') as fh:
+            markers_json = json.load(fh)
     if os.path.exists(args.stage):
         with open(args.stage, encoding='utf-8') as fh:
             stage_json = json.load(fh)
@@ -871,12 +881,15 @@ const ButtonPiece *button_piece(int32_t button, int32_t index)
     zone_clip = stage_json.get('zone_screen') or {}
     lines.append('')
     lines.append('const ZoneMarker SONNY_ZONE_MARKERS[] = {')
+    zoned = markers_json.get('zones') or {}
     for label in sorted((zone_clip.get('labels') or {}),
                         key=lambda k: zone_clip['labels'][k]):
-        for marker in (zone_clip.get('markers') or {}).get(label, []):
-            lines.append('    { %s, %s, %s, %s },'
-                         % (c_string(label), c_string(marker['name']),
-                            c_float(marker['x']), c_float(marker['y'])))
+        for marker in zoned.get(label, []):
+            lines.append('    { %s, %s, %s, %s, %s, %s },'
+                         % (c_string(label), c_string(marker['style']),
+                            c_float(marker['x']), c_float(marker['y']),
+                            c_float(marker['scale_x']),
+                            c_float(marker['scale_y'])))
     lines.append('};')
     lines.append('const int SONNY_ZONE_MARKER_COUNT = '
                  '(int)(sizeof(SONNY_ZONE_MARKERS) / sizeof(SONNY_ZONE_MARKERS[0]));')
@@ -888,6 +901,9 @@ const ZoneMarker *zone_marker(const char *zone, int32_t index)
             return &SONNY_ZONE_MARKERS[i];
     return NULL;
 }''')
+    lines.append('const int SONNY_MARKER_FRAMES = %d;'
+                 % (markers_json.get('frames') or 0))
+    lines.append('const float SONNY_MARKER_FPS = 30.0f;')
     lines.append('const StageLayer SONNY_ZONE_SCREEN = { "zone", %s, %s, %s, %s };'
                  % (c_float(zone_clip.get('x') or 0),
                     c_float(zone_clip.get('y') or 0),

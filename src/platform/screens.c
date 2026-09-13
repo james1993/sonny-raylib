@@ -246,11 +246,37 @@ void screen_zone_draw(Game *g, Vector2 mouse)
     const ZoneDef *zone = campaign_zone(&g->campaign);
 
     ClearBackground(BLACK);
-    /* The scene, one frame of the clip per zone. */
-    if (zone && zone->zone < SONNY_ZONE_LABEL_COUNT)
-        asset_draw_placed(SONNY_ZONE_LABELS[zone->zone], 1,
-                          (Vector2){SONNY_ZONE_SCREEN.x, SONNY_ZONE_SCREEN.y},
-                          1.0f, WHITE);
+    /* The scene, one frame of the clip per zone. The markers are not in it:
+       they are a clip of their own, and the art build takes them out so they
+       can be drawn here and turn. */
+    const char *label = (zone && zone->zone < SONNY_ZONE_LABEL_COUNT)
+                      ? SONNY_ZONE_LABELS[zone->zone] : NULL;
+    Vector2 scene = {SONNY_ZONE_SCREEN.x, SONNY_ZONE_SCREEN.y};
+    if (label)
+        asset_draw_placed(label, 1, scene, 1.0f, WHITE);
+
+    /* The markers, turning. The clip is its own loop at the SWF's frame rate,
+       and every marker on a scene is the same clip, so they turn together. */
+    if (label) {
+        int32_t frame = 1;
+        if (SONNY_MARKER_FRAMES > 0)
+            frame = 1 + (int32_t)(GetTime() * SONNY_MARKER_FPS)
+                        % SONNY_MARKER_FRAMES;
+        for (int32_t i = 0; ; i++) {
+            const ZoneMarker *m = zone_marker(label, i);
+            if (!m)
+                break;
+            /* Two of these are squashed by their placement, so the two scales
+               are kept apart. */
+            const Texture2D *tex = asset_texture(m->style, frame);
+            if (!tex)
+                continue;
+            Vector2 offset = asset_frame_offset(m->style, frame);
+            draw_texture_placed(tex, scene.x + m->x, scene.y + m->y,
+                                m->scale_x, m->scale_y, offset.x, offset.y,
+                                WHITE);
+        }
+    }
 
     /* The furniture below it: the panels, the row of buttons and their
        icons, the marker that says a fight is waiting. The icons are painted
@@ -270,12 +296,12 @@ void screen_zone_draw(Game *g, Vector2 mouse)
         if (done > total)
             done = total;
         if (total > 0) {
-            Rectangle box = placed_rect(bar->x, bar->y, bar->scale_x,
-                                        bar->scale_y, bar->width, bar->height,
-                                        bar->origin_x, bar->origin_y);
             const Texture2D *tex = asset_texture(TextFormat("#%d",
                                                             bar->character), 1);
             if (tex) {
+                Rectangle box = placed_texture(tex, bar->x, bar->y,
+                                               bar->scale_x, bar->scale_y,
+                                               bar->origin_x, bar->origin_y);
                 Rectangle src = {0, 0, tex->width * (done / total),
                                  (float)tex->height};
                 box.width *= done / total;
@@ -615,13 +641,9 @@ void screen_talents_draw(Game *g, Vector2 mouse)
             g->stat_points_spent ? STAT_COLOUR_DEAD
                                  : TextFormat("#%d", swatch->character), 1);
         if (tex) {
-            Rectangle dst = placed_rect(swatch->x, swatch->y, swatch->scale,
-                                        swatch->scale, swatch->width,
-                                        swatch->height, swatch->origin_x,
-                                        swatch->origin_y);
-            DrawTexturePro(*tex, (Rectangle){0, 0, (float)tex->width,
-                                             (float)tex->height},
-                           dst, (Vector2){0, 0}, 0.0f, WHITE);
+            draw_texture_placed(tex, swatch->x, swatch->y, swatch->scale,
+                                swatch->scale, swatch->origin_x,
+                                swatch->origin_y, WHITE);
         }
     }
     DerivedStats stats = character_derive(c);
@@ -1014,12 +1036,8 @@ static void draw_slot_art(const char *menu, const char *prefix, int i)
     const Texture2D *tex = asset_texture(TextFormat("#%d", slot->character), 1);
     if (!tex)
         return;
-    Rectangle dst = placed_rect(slot->x, slot->y, slot->scale, slot->scale,
-                                slot->width, slot->height, slot->origin_x,
-                                slot->origin_y);
-    DrawTexturePro(*tex, (Rectangle){0, 0, (float)tex->width,
-                                     (float)tex->height},
-                   dst, (Vector2){0, 0}, 0.0f, WHITE);
+    draw_texture_placed(tex, slot->x, slot->y, slot->scale, slot->scale,
+                        slot->origin_x, slot->origin_y, WHITE);
 }
 
 
@@ -1348,13 +1366,9 @@ void screen_shop_draw(Game *g, Vector2 mouse)
         const Texture2D *tex = asset_texture(
             TextFormat("#%d@%d", picture->character, shop->id + 1), 1);
         if (tex) {
-            Rectangle dst = placed_rect(picture->x, picture->y,
-                                        picture->scale_x, picture->scale_y,
-                                        picture->width, picture->height,
-                                        picture->origin_x, picture->origin_y);
-            DrawTexturePro(*tex, (Rectangle){0, 0, (float)tex->width,
-                                             (float)tex->height},
-                           dst, (Vector2){0, 0}, 0.0f, WHITE);
+            draw_texture_placed(tex, picture->x, picture->y,
+                                picture->scale_x, picture->scale_y,
+                                picture->origin_x, picture->origin_y, WHITE);
         }
     }
 

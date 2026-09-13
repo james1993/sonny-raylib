@@ -148,6 +148,12 @@ typedef struct {
     int32_t   cutscene;
     int32_t   cutscene_frame;
     int32_t   cutscene_line;
+    /* How far into the comic the clock has got. The narration's playhead is
+       that clock when there is a sound device; without one it runs on its
+       own. */
+    float     cutscene_clock;
+    float     cutscene_playhead;
+    int32_t   cutscene_voiced;
     /* Krin.bossJustPwned: the fight just won was the one that finishes a
        zone, which is what sends the player out to the map. */
     int32_t   boss_beaten;
@@ -171,6 +177,13 @@ void ui_font_unload(void);
 /* Where a piece of art goes, given the placement the original recorded: its
    exported canvas carries the piece's own origin inside it, so the top-left
    is the placement point less that origin. */
+/* Where an exported image goes: its own pixel size, stood on the placement
+   point by the origin the SWF records. */
+Rectangle placed_texture(const Texture2D *tex, float x, float y,
+                         float scale_x, float scale_y, float ox, float oy);
+void draw_texture_placed(const Texture2D *tex, float x, float y,
+                         float scale_x, float scale_y, float ox, float oy,
+                         Color tint);
 Rectangle placed_rect(float x, float y, float scale_x, float scale_y,
                       float w, float h, float ox, float oy);
 /* One of a screen's text fields, laid out the way the SWF lays it out: its

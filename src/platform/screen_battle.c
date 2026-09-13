@@ -190,11 +190,8 @@ static void draw_chrome_art(const StageChrome *c)
     const Texture2D *tex = asset_texture(TextFormat("#%d", c->character), 1);
     if (!tex)
         return;
-    Rectangle dst = placed_rect(c->x, c->y, c->scale_x, c->scale_y,
-                                c->width, c->height, c->origin_x, c->origin_y);
-    DrawTexturePro(*tex, (Rectangle){0, 0, (float)tex->width,
-                                     (float)tex->height},
-                   dst, (Vector2){0, 0}, 0.0f, WHITE);
+    draw_texture_placed(tex, c->x, c->y, c->scale_x, c->scale_y,
+                        c->origin_x, c->origin_y, WHITE);
 }
 
 /* Draw every piece of the battle screen whose depth falls in [from, to). */

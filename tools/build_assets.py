@@ -359,6 +359,11 @@ def collect_names(data_dir):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--raw', default='assets/raw')
+    ap.add_argument('--zone-raw',
+                    help="a second decompiler dump, of the copy of the SWF "
+                         "tools/extract_markers.py strips the markers out of. "
+                         "The zone scenes come from there so the engine can "
+                         "draw the markers itself and let them turn.")
     ap.add_argument('--out', default='assets/art')
     ap.add_argument('--data', default='data/extracted')
     ap.add_argument('--max-frames', type=int, default=64,
@@ -428,7 +433,8 @@ def main():
             elif category == 'zone':
                 frame = zone_labels.get(name)
                 if frame:
-                    for index, path in frame_files(args.raw, zone_character):
+                    for index, path in frame_files(args.zone_raw or args.raw,
+                                                   zone_character):
                         if index == frame:
                             entries = [(1, path)]
                             break
@@ -563,12 +569,45 @@ def main():
             if origin:
                 manifest[name]['bounds'] = origin
             if category != 'sound':
+                # A zone scene taken from the marker-free export has no SVG
+                # sibling of its own; the art is the same size either way, so
+                # the original dump's transform still lines it up.
                 offsets = [frame_offset(src, args.raw)
+                           or frame_offset(src.replace(args.zone_raw or '\0',
+                                                       args.raw), args.raw)
                            for _, src in entries]
                 if any(o is not None for o in offsets):
                     manifest[name]['offsets'] = [o or [0, 0] for o in offsets]
             found += 1
         stats['categories'][category] = {'wanted': len(names), 'found': found}
+
+    # The cutscene narration, which tools/extract_streams.py writes straight
+    # out of the SWF because it is a stream sound on the animation's timeline
+    # rather than anything the decompiler's sound export sees. The files are
+    # already in place; this only puts them in the manifest so the engine can
+    # ask for them by name like any other sound.
+    streams_path = os.path.join(args.data, 'streams.json')
+    if os.path.exists(streams_path):
+        with open(streams_path, encoding='utf-8') as fh:
+            for name, info in json.load(fh).items():
+                if os.path.exists(os.path.join(ROOT, info['file'])):
+                    manifest[name] = {'category': 'sound',
+                                      'frames': [info['file']]}
+
+    # The markers on a zone's scene, which tools/extract_markers.py renders
+    # style by style with their colour transform and glow already applied.
+    # They are a normal multi-frame asset from here on.
+    markers_path = os.path.join(args.data, 'markers.json')
+    if os.path.exists(markers_path):
+        with open(markers_path, encoding='utf-8') as fh:
+            markers = json.load(fh)
+        for name, style in markers.get('styles', {}).items():
+            files = [f for f in style['files']
+                     if os.path.exists(os.path.join(ROOT, f))]
+            if not files:
+                continue
+            manifest[name] = {'category': 'marker', 'frames': files,
+                              'offsets': [style['offset']] * len(files)}
 
     # The character model's frame labels are its animation states, so record
     # each one's start frame and how long it runs. The engine plays these by
