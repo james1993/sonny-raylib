@@ -55,6 +55,17 @@ int main(int argc, char **argv)
 
     RenderTexture2D stage = LoadRenderTexture(STAGE_W, STAGE_H);
     SetTextureFilter(stage.texture, TEXTURE_FILTER_POINT);
+    /* The stage is drawn into a texture and then blitted to the window, and
+       the default blend runs the destination's alpha through the same
+       formula as its colour: laying anything translucent over the stage eats
+       a bite out of the alpha there (0.8 over opaque leaves 0.84), and the
+       blit then multiplies the colour by it. Every soft black the game lays
+       down -- the disc over an unusable orb, the speech box, a fade -- came
+       out darker than it should for that reason alone. Blending the alpha
+       with ONE instead keeps an opaque stage opaque. */
+    rlSetBlendFactorsSeparate(RL_SRC_ALPHA, RL_ONE_MINUS_SRC_ALPHA,
+                              RL_ONE, RL_ONE_MINUS_SRC_ALPHA,
+                              RL_FUNC_ADD, RL_FUNC_ADD);
 
     /* Headless capture: SONNY_SHOT=path, SONNY_STEPS=frames, and
        SONNY_SCREEN picks which screen to open first. */
@@ -141,6 +152,7 @@ int main(int argc, char **argv)
         /* Update and draw go through the same call for each screen: several
            of them decide from the same button rectangles they draw. */
         BeginTextureMode(stage);
+        BeginBlendMode(BLEND_CUSTOM_SEPARATE);
         switch (game.screen) {
         case SCREEN_BATTLE:
             battle_screen_update(&game, mouse, shot != NULL);
@@ -220,6 +232,7 @@ int main(int argc, char **argv)
         game_draw_tooltip(&game, mouse);
         if (game.notice_timer > 0)
             game_draw_notice(&game);
+        EndBlendMode();
         EndTextureMode();
 
         float scale = (float)GetScreenHeight() / STAGE_H;
