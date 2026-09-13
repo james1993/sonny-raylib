@@ -420,6 +420,20 @@ static float orb_radius(void)
     return ball ? ball->width * SONNY_RING_SCALE / 2.0f : 12.0f;
 }
 
+/* How far the ring reaches from the unit it is up around: the furthest orb,
+   plus that orb's own radius. */
+static float ring_radius(void)
+{
+    float far = 0.0f;
+    for (int i = 0; i < SONNY_RING_SLOT_COUNT; i++) {
+        const RingSlot *s = &SONNY_RING_SLOTS[i];
+        float d = sqrtf(s->x * s->x + s->y * s->y) * SONNY_RING_SCALE;
+        if (d > far)
+            far = d;
+    }
+    return far + orb_radius();
+}
+
 /* Whether a move can be aimed at this kind of target at all: its own
    self/enemy/ally flags, which is what the original checks. */
 static int move_targets(const Game *g, const AbilityDef *a, int32_t target)
@@ -462,6 +476,37 @@ static const char *move_refusal(const Game *g, int slot, int32_t target)
     if (!move_targets(g, a, target))
         return "You cannot use this move on that target.";
     return NULL;
+}
+
+/* The graphics of a clip that carries text. Such a clip cannot be drawn as
+   one picture -- the export bakes its fields' design-time copy in -- so its
+   pieces are drawn and the real text goes over them. A piece the game points
+   at a frame of by name takes `chosen` as that name. */
+static void draw_clip_parts(const char *screen, const char *owner,
+                            Vector2 moved, const char *chosen, Color tint)
+{
+    for (int i = 0; i < SONNY_CLIP_PART_COUNT; i++) {
+        const ClipPart *part = &SONNY_CLIP_PARTS[i];
+        if (strcmp(part->screen, screen) != 0
+            || strcmp(part->owner, owner) != 0 || part->width <= 0)
+            continue;
+        /* A piece the game points at a frame of by name -- the speech box's
+           portrait -- is only drawn when the caller says which name. */
+        if (part->frames && !chosen)
+            continue;
+        const char *name = part->frames ? chosen
+                                        : TextFormat("#%d", part->character);
+        const Texture2D *tex = asset_texture(name, 1);
+        if (!tex)
+            continue;
+        Rectangle dst = placed_rect(moved.x + part->x, moved.y + part->y,
+                                    part->scale_x, part->scale_y,
+                                    part->width, part->height,
+                                    part->origin_x, part->origin_y);
+        DrawTexturePro(*tex, (Rectangle){0, 0, (float)tex->width,
+                                         (float)tex->height},
+                       dst, (Vector2){0, 0}, 0.0f, tint);
+    }
 }
 
 /* One piece of the orb, in the ring's coordinates around `centre`. */
@@ -514,9 +559,9 @@ static void draw_orb(const AbilityDef *a, Vector2 centre, int usable,
 
 static void draw_ring(const Game *g)
 {
-    if (g->hovered_unit <= 0 || !player_turn(g) || g->queued)
+    if (g->ring_unit <= 0 || !player_turn(g) || g->queued)
         return;
-    Vector2 centre = unit_stage_pos(&g->battle, g->hovered_unit);
+    Vector2 centre = unit_stage_pos(&g->battle, g->ring_unit);
     for (int i = 0; i < SONNY_RING_SLOT_COUNT; i++) {
         const RingSlot *slot = &SONNY_RING_SLOTS[i];
         const AbilityDef *a = ability_by_id(g->ability_ids[slot->slot]);
@@ -525,7 +570,7 @@ static void draw_ring(const Game *g)
         if (!a || a->id == 0)
             continue;
         draw_orb(a, ring_slot_pos(slot, centre),
-                 move_offered(g, slot->slot, g->hovered_unit),
+                 move_offered(g, slot->slot, g->ring_unit),
                  g->ability_cooldown[slot->slot]);
     }
 }
@@ -535,30 +580,22 @@ static void draw_ring(const Game *g)
    below, both from the clip's own two text fields. */
 static void draw_reticle(const Game *g)
 {
-    if (g->hovered_unit <= 0)
+    if (g->ring_unit <= 0)
         return;
-    const Unit *u = &g->battle.units[g->hovered_unit];
+    const Unit *u = &g->battle.units[g->ring_unit];
     const StageChrome *art = stage_chrome(BATTLE_SCREEN_NAME, RETICLE_INSTANCE);
     if (!art)
         return;
-    Vector2 at = unit_stage_pos(&g->battle, g->hovered_unit);
+    Vector2 at = unit_stage_pos(&g->battle, g->ring_unit);
     int enemy = u->teamSide != g->battle.units[PLAYER_SLOT].teamSide;
     Color tint = enemy ? (Color){255, 90, 90, 255} : (Color){120, 200, 255, 255};
 
-    const Texture2D *tex = asset_texture(TextFormat("#%d", art->character), 1);
-    if (tex) {
-        Rectangle dst = placed_rect(at.x, at.y, art->scale_x, art->scale_y,
-                                    art->width, art->height,
-                                    art->origin_x, art->origin_y);
-        DrawTexturePro(*tex, (Rectangle){0, 0, (float)tex->width,
-                                         (float)tex->height},
-                       dst, (Vector2){0, 0}, 0.0f, tint);
-    }
-
-    /* The clip's fields are recorded where it is parked off stage, so they
-       follow it by the same amount it moved. The name is the lower of the
-       two, the level the upper. */
+    /* The clip's fields are recorded where it is parked off stage, so
+       everything in it follows by the same amount it moved. */
     Vector2 moved = {at.x - art->x, at.y - art->y};
+    draw_clip_parts(BATTLE_SCREEN_NAME, RETICLE_INSTANCE, moved, NULL, tint);
+
+    /* The name is the lower of the two fields, the level the upper. */
     const TextField *name = text_field(BATTLE_SCREEN_NAME, RETICLE_INSTANCE, 0);
     const TextField *level = text_field(BATTLE_SCREEN_NAME, RETICLE_INSTANCE, 1);
     if (name && level && name->y < level->y) {
@@ -566,7 +603,10 @@ static void draw_reticle(const Game *g)
         name = level;
         level = swap;
     }
-    draw_field_tinted(level, moved, TextFormat("Lvl %d", u->plevel), tint);
+    /* The original builds this from its own text table, not a literal. */
+    draw_field_tinted(level, moved,
+                      TextFormat("%s%d", lang_text("MENU", 0), u->plevel),
+                      tint);
     draw_field_tinted(name, moved, u->name, tint);
 }
 
@@ -791,38 +831,16 @@ static void draw_speech(const Game *g)
     if (speaker->teamSide != 2)
         at.x = SPEECH_LEFT_X;
 
-    for (int i = 0; i < SONNY_CLIP_PART_COUNT; i++) {
-        const ClipPart *part = &SONNY_CLIP_PARTS[i];
-        if (strcmp(part->owner, "combatScript") != 0 || part->width <= 0)
-            continue;
-        /* The "press space to skip" label belongs to the cutscenes, not to a
-           line spoken mid-fight. */
-        if (strcmp(part->name, "@8") == 0)
-            continue;
-        /* A piece the game points at a frame of by name: the portrait, whose
-           frames are labelled with who is speaking. */
-        const char *name = part->frames ? speaker->name
-                                        : TextFormat("#%d", part->character);
-        const Texture2D *tex = asset_texture(name, 1);
-        if (!tex)
-            continue;
-        Rectangle dst = placed_rect(at.x + part->x, at.y + part->y,
-                                    part->scale_x, part->scale_y,
-                                    part->width, part->height,
-                                    part->origin_x, part->origin_y);
-        DrawTexturePro(*tex, (Rectangle){0, 0, (float)tex->width,
-                                         (float)tex->height},
-                       dst, (Vector2){0, 0}, 0.0f, WHITE);
-    }
+    Vector2 shifted = {at.x - box->x, at.y - box->y};
+    draw_clip_parts(BATTLE_SCREEN_NAME, "combatScript", shifted, speaker->name,
+                    WHITE);
 
-    /* The clip stacks the two fields body-first, and the original fills them
-       with the line and the speaker's name -- combatText and
-       combatTextName. */
     /* The fields are recorded where the clip is placed, so they follow it by
        however far it moved. */
-    Vector2 moved = {at.x - box->x, at.y - box->y};
-    draw_field_wrapped(text_field(BATTLE_SCREEN_NAME, "combatScript", 0), moved, g->speech->say);
-    draw_field(text_field(BATTLE_SCREEN_NAME, "combatScript", 1), moved, speaker->name);
+    draw_field_wrapped(text_field(BATTLE_SCREEN_NAME, "combatScript", 0),
+                       shifted, g->speech->say);
+    draw_field(text_field(BATTLE_SCREEN_NAME, "combatScript", 1), shifted,
+               speaker->name);
 }
 
 static void draw_battle(const Game *g)
@@ -978,12 +996,28 @@ static void handle_input(Game *g)
                      mouse.y / scale};
 
     g->hovered_unit = unit_at(g, stage);
+    /* SONNY_HOVER pins a slot for a headless capture, so the ring can be
+       photographed without a pointer to move. */
+    if (getenv("SONNY_HOVER"))
+        g->hovered_unit = atoi(getenv("SONNY_HOVER"));
+
+    /* The ring follows the pointer onto a unit, and stays up while the
+       pointer is anywhere within it -- which is what lets it be moved off the
+       unit and onto one of the orbs. The original pins it on a click and
+       drops it when the pointer leaves. */
+    if (g->hovered_unit > 0) {
+        g->ring_unit = g->hovered_unit;
+    } else if (g->ring_unit > 0
+               && !CheckCollisionPointCircle(
+                      stage, unit_stage_pos(b, g->ring_unit), ring_radius())) {
+        g->ring_unit = -1;
+    }
 
     if (!player_turn(g) || g->queued)
         return;
 
-    if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && g->hovered_unit > 0) {
-        Vector2 centre = unit_stage_pos(b, g->hovered_unit);
+    if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && g->ring_unit > 0) {
+        Vector2 centre = unit_stage_pos(b, g->ring_unit);
         float radius = orb_radius();
         for (int i = 0; i < SONNY_RING_SLOT_COUNT; i++) {
             const RingSlot *slot = &SONNY_RING_SLOTS[i];
@@ -993,14 +1027,14 @@ static void handle_input(Game *g)
             if (!CheckCollisionPointCircle(stage, ring_slot_pos(slot, centre),
                                            radius))
                 continue;
-            const char *refusal = move_refusal(g, slot->slot, g->hovered_unit);
+            const char *refusal = move_refusal(g, slot->slot, g->ring_unit);
             if (refusal) {
                 /* The original says which check failed, rather than doing
                    nothing. */
                 game_notice(g, refusal);
                 return;
             }
-            battle_queue(b, PLAYER_SLOT, g->hovered_unit, a->id, 0);
+            battle_queue(b, PLAYER_SLOT, g->ring_unit, a->id, 0);
             g->queued = 1;
             g->cooldown_slot = slot->slot;
             return;

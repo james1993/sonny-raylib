@@ -685,6 +685,11 @@ def main(path, raw_dir=None):
     # Any text the battle screen's furniture carries. Some entries are a text
     # field in their own right -- the frame-rate readout is two of them --
     # and some are clips with fields inside.
+    # Any clip that carries text cannot be exported as one picture: the
+    # decompiler bakes the fields' design-time copy into it. Its graphics are
+    # recorded separately so the screen can put it back together with real
+    # text over them.
+    clip_parts = []
     chrome_fields = []
     for entry in [e for group in screens.values() for e in group]:
         box = texts.get(entry['character'])
@@ -702,12 +707,25 @@ def main(path, raw_dir=None):
                 'device': (fonts.get(box['font']) or ('', 0))[1] == 0,
                 'color': box['color']})
             continue
-        for field in text_fields(body, entry['character'], texts, fonts):
+        fields = text_fields(body, entry['character'], texts, fonts)
+        if not fields:
+            continue
+        for field in fields:
             field['screen'] = entry['screen']
             field['owner'] = entry['name']
             field['x'] = round(entry['x'] + entry['scale_x'] * field['x'], 3)
             field['y'] = round(entry['y'] + entry['scale_y'] * field['y'], 3)
             chrome_fields.append(field)
+        for part in graphic_parts(body, raw_dir, entry['character'], texts):
+            part['screen'] = entry['screen']
+            part['owner'] = entry['name']
+            # In stage coordinates, like the fields, so a clip the game moves
+            # carries its pieces and its text by the same offset.
+            part['x'] = round(entry['x'] + entry['scale_x'] * part['x'], 3)
+            part['y'] = round(entry['y'] + entry['scale_y'] * part['y'], 3)
+            part['scale_x'] = round(entry['scale_x'] * part['scale_x'], 6)
+            part['scale_y'] = round(entry['scale_y'] * part['scale_y'], 6)
+            clip_parts.append(part)
 
     json.dump({'screen': {'x': sx, 'y': sy, 'character': screen['character']},
                'slots': slots, 'backdrop': backdrop, 'bars': bars,
@@ -717,6 +735,7 @@ def main(path, raw_dir=None):
                'selector': selector_ring(body, raw_dir, chrome),
                'chrome_text': chrome_fields,
                'speech': speech_box(body, raw_dir, chrome, texts, fonts),
+               'clip_parts': clip_parts,
                'talents': talents, 'menu': menu_screens}, sys.stdout, indent=1)
     print()
 

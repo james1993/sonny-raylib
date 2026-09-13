@@ -49,6 +49,10 @@ typedef struct {
     int32_t   cooldown_slot;
     int32_t   selected;
     int32_t   hovered_unit;
+    /* The unit the ability ring is up around. It follows the pointer onto a
+       unit and stays while the pointer is anywhere within the ring, which is
+       what lets the pointer leave the unit for one of the orbs. */
+    int32_t   ring_unit;
     int32_t   queued;
     int32_t   resolve_timer;
     int32_t   anim_tick;

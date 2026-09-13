@@ -177,6 +177,7 @@ typedef struct {
    game points at a frame of by name, like the speech box's portrait: its art
    is then the asset of that name rather than "#<character>". */
 typedef struct {
+    const char *screen;
     const char *owner;
     const char *name;
     int32_t     character;
@@ -242,6 +243,9 @@ const TalentSlot *talent_slot(int32_t node);
 
 extern const ClipPart SONNY_CLIP_PARTS[];
 extern const int SONNY_CLIP_PART_COUNT;
+/* The `index`-th piece of `owner` on `screen`, in the order it stacks them. */
+const ClipPart *clip_part(const char *screen, const char *owner,
+                          int32_t index);
 
 extern const TextField SONNY_TEXT_FIELDS[];
 extern const int SONNY_TEXT_FIELD_COUNT;
@@ -499,9 +503,10 @@ const StageChrome *stage_chrome(const char *screen, const char *name)
     chrome_text = stage_json.get('chrome_text') or []
     lines.append('')
     lines.append('const ClipPart SONNY_CLIP_PARTS[] = {')
-    for part in (speech.get('parts') or []):
-        lines.append('    { %s, %s, %d, %d, %d, %s, %s, %s, %s, %s, %s, %s, %s },'
-                     % (c_string(speech['name']), c_string(part['name']),
+    for part in (stage_json.get('clip_parts') or []):
+        lines.append('    { %s, %s, %s, %d, %d, %d, %s, %s, %s, %s, %s, %s, %s, %s },'
+                     % (c_string(part['screen']), c_string(part['owner']),
+                        c_string(part['name']),
                         part['character'], part['depth'],
                         part.get('frames') or 0,
                         c_float(part['x']), c_float(part['y']),
@@ -513,6 +518,15 @@ const StageChrome *stage_chrome(const char *screen, const char *name)
     lines.append('};')
     lines.append('const int SONNY_CLIP_PART_COUNT = '
                  '(int)(sizeof(SONNY_CLIP_PARTS) / sizeof(SONNY_CLIP_PARTS[0]));')
+    lines.append('''
+const ClipPart *clip_part(const char *screen, const char *owner, int32_t index)
+{
+    for (int i = 0; i < SONNY_CLIP_PART_COUNT; i++)
+        if (strcmp(SONNY_CLIP_PARTS[i].screen, screen) == 0
+            && strcmp(SONNY_CLIP_PARTS[i].owner, owner) == 0 && index-- == 0)
+            return &SONNY_CLIP_PARTS[i];
+    return NULL;
+}''')
     lines.append('')
     lines.append('const TextField SONNY_TEXT_FIELDS[] = {')
     for f in chrome_text:

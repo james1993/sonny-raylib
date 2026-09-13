@@ -25,6 +25,7 @@ static void game_start(Game *g, uint64_t seed)
     g->screen = SCREEN_ZONE;
     g->selected = -1;
     g->hovered_unit = -1;
+    g->ring_unit = -1;
 }
 
 int main(int argc, char **argv)

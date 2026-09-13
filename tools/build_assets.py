@@ -262,7 +262,7 @@ def collect_names(data_dir):
     # The speech box is drawn from its pieces for the same reason the bar is:
     # its own frame has the design-time copy baked into it. The portrait is
     # one of them, and the game points it at a frame named for the speaker.
-    for part in ((stage.get('speech') or {}).get('parts') or []):
+    for part in (stage.get('clip_parts') or []):
         if part.get('character') and part.get('width') and not part.get('frames'):
             want['chrome'].add('#%d' % part['character'])
     for part in ((stage.get('bar') or {}).get('graphics') or []):
@@ -278,6 +278,8 @@ def main():
     ap.add_argument('--data', default='data/extracted')
     ap.add_argument('--max-frames', type=int, default=64,
                     help='cap on frames copied per animation')
+    ap.add_argument('--chrome-frames', type=int, default=1,
+                    help='cap on frames copied per piece of furniture')
     args = ap.parse_args()
 
     exports = load('exports', args.data)
@@ -298,8 +300,9 @@ def main():
     preferred = {'background': {layer['character'] for layer
                                 in (stage.get('layers') or {}).values()}}
     # The speech portrait, whose frames are labelled with who is speaking.
-    portrait = next((p for p in ((stage.get('speech') or {}).get('parts') or [])
-                     if p.get('frames')), None)
+    portrait = next((p for p in (stage.get('clip_parts') or [])
+                     if p.get('owner') == 'combatScript' and p.get('frames')),
+                    None)
     portrait_character = portrait['character'] if portrait else None
     portrait_labels = (exports['sprite_frame_labels']
                        .get(str(portrait_character)) or {}) if portrait else {}
@@ -347,7 +350,11 @@ def main():
                 # Asked for by character id: a sprite keeps its frames, a
                 # shape is one picture carrying its own bounds.
                 cid = int(name[1:])
-                frames = frame_files(args.raw, cid)[:args.max_frames]
+                # Furniture is drawn on its resting frame. Several of these
+                # clips are animations of hundreds of frames -- the turn
+                # indicator's pulse, the fade between screens -- and copying
+                # all of them costs far more than it buys.
+                frames = frame_files(args.raw, cid)[:args.chrome_frames]
                 if frames:
                     entries = list(frames)
                 else:

@@ -165,6 +165,7 @@ typedef struct {
    game points at a frame of by name, like the speech box's portrait: its art
    is then the asset of that name rather than "#<character>". */
 typedef struct {
+    const char *screen;
     const char *owner;
     const char *name;
     int32_t     character;
@@ -230,6 +231,9 @@ const TalentSlot *talent_slot(int32_t node);
 
 extern const ClipPart SONNY_CLIP_PARTS[];
 extern const int SONNY_CLIP_PART_COUNT;
+/* The `index`-th piece of `owner` on `screen`, in the order it stacks them. */
+const ClipPart *clip_part(const char *screen, const char *owner,
+                          int32_t index);
 
 extern const TextField SONNY_TEXT_FIELDS[];
 extern const int SONNY_TEXT_FIELD_COUNT;
