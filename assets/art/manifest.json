@@ -7856,9 +7856,9 @@
    ]
   },
   "Blessing of Light": {
-   "category": "orb",
+   "category": "icon",
    "frames": [
-    "assets/art/orb/Blessing_of_Light.png"
+    "assets/art/icon/Blessing_of_Light.png"
    ],
    "bounds": [
     -15.65,
@@ -7874,9 +7874,9 @@
    ]
   },
   "Block": {
-   "category": "orb",
+   "category": "icon",
    "frames": [
-    "assets/art/orb/Block.png"
+    "assets/art/icon/Block.png"
    ],
    "bounds": [
     -16.35,
@@ -7892,9 +7892,9 @@
    ]
   },
   "Blood Focus": {
-   "category": "orb",
+   "category": "icon",
    "frames": [
-    "assets/art/orb/Blood_Focus.png"
+    "assets/art/icon/Blood_Focus.png"
    ],
    "bounds": [
     -12.85,
@@ -7910,9 +7910,9 @@
    ]
   },
   "Blood Strike": {
-   "category": "orb",
+   "category": "icon",
    "frames": [
-    "assets/art/orb/Blood_Strike.png"
+    "assets/art/icon/Blood_Strike.png"
    ],
    "bounds": [
     -17.15,
@@ -7928,9 +7928,9 @@
    ]
   },
   "Break": {
-   "category": "orb",
+   "category": "icon",
    "frames": [
-    "assets/art/orb/Break.png"
+    "assets/art/icon/Break.png"
    ],
    "bounds": [
     -24.15,
@@ -7946,9 +7946,9 @@
    ]
   },
   "Cell Reformation": {
-   "category": "orb",
+   "category": "icon",
    "frames": [
-    "assets/art/orb/Cell_Reformation.png"
+    "assets/art/icon/Cell_Reformation.png"
    ],
    "bounds": [
     -27.1,
@@ -7964,9 +7964,9 @@
    ]
   },
   "Coup De Grace": {
-   "category": "orb",
+   "category": "icon",
    "frames": [
-    "assets/art/orb/Coup_De_Grace.png"
+    "assets/art/icon/Coup_De_Grace.png"
    ],
    "bounds": [
     -19.7,
@@ -7982,9 +7982,9 @@
    ]
   },
   "Cripple": {
-   "category": "orb",
+   "category": "icon",
    "frames": [
-    "assets/art/orb/Cripple.png"
+    "assets/art/icon/Cripple.png"
    ],
    "bounds": [
     -13.0,
@@ -8000,9 +8000,9 @@
    ]
   },
   "Disrupt": {
-   "category": "orb",
+   "category": "icon",
    "frames": [
-    "assets/art/orb/Disrupt.png"
+    "assets/art/icon/Disrupt.png"
    ],
    "bounds": [
     -12.6,
@@ -8018,9 +8018,9 @@
    ]
   },
   "Electro Bolt": {
-   "category": "orb",
+   "category": "icon",
    "frames": [
-    "assets/art/orb/Electro_Bolt.png"
+    "assets/art/icon/Electro_Bolt.png"
    ],
    "bounds": [
     -12.85,
@@ -8036,9 +8036,9 @@
    ]
   },
   "Flame Blast": {
-   "category": "orb",
+   "category": "icon",
    "frames": [
-    "assets/art/orb/Flame_Blast.png"
+    "assets/art/icon/Flame_Blast.png"
    ],
    "bounds": [
     -12.85,
@@ -8054,9 +8054,9 @@
    ]
   },
   "Flame Strike": {
-   "category": "orb",
+   "category": "icon",
    "frames": [
-    "assets/art/orb/Flame_Strike.png"
+    "assets/art/icon/Flame_Strike.png"
    ],
    "bounds": [
     -12.85,
@@ -8072,27 +8072,21 @@
    ]
   },
   "Frost Bolt": {
-   "category": "orb",
+   "category": "icon",
    "frames": [
-    "assets/art/orb/Frost_Bolt.png"
-   ],
-   "bounds": [
-    -14.85,
-    -9.3,
-    12.45,
-    8.9
+    "assets/art/icon/Frost_Bolt.png"
    ],
    "offsets": [
     [
-     14.85,
-     9.3
+     32.5,
+     28.7
     ]
    ]
   },
   "Healing Light": {
-   "category": "orb",
+   "category": "icon",
    "frames": [
-    "assets/art/orb/Healing_Light.png"
+    "assets/art/icon/Healing_Light.png"
    ],
    "bounds": [
     -32.5,
@@ -8108,9 +8102,9 @@
    ]
   },
   "Heroic Motivation": {
-   "category": "orb",
+   "category": "icon",
    "frames": [
-    "assets/art/orb/Heroic_Motivation.png"
+    "assets/art/icon/Heroic_Motivation.png"
    ],
    "bounds": [
     -17.7,
@@ -8126,9 +8120,9 @@
    ]
   },
   "Intervention": {
-   "category": "orb",
+   "category": "icon",
    "frames": [
-    "assets/art/orb/Intervention.png"
+    "assets/art/icon/Intervention.png"
    ],
    "bounds": [
     -16.35,
@@ -8144,9 +8138,9 @@
    ]
   },
   "Ironskin": {
-   "category": "orb",
+   "category": "icon",
    "frames": [
-    "assets/art/orb/Ironskin.png"
+    "assets/art/icon/Ironskin.png"
    ],
    "bounds": [
     -19.0,
@@ -8162,9 +8156,9 @@
    ]
   },
   "Magic Bolt": {
-   "category": "orb",
+   "category": "icon",
    "frames": [
-    "assets/art/orb/Magic_Bolt.png"
+    "assets/art/icon/Magic_Bolt.png"
    ],
    "bounds": [
     -12.85,
@@ -8180,9 +8174,9 @@
    ]
   },
   "Master Strike": {
-   "category": "orb",
+   "category": "icon",
    "frames": [
-    "assets/art/orb/Master_Strike.png"
+    "assets/art/icon/Master_Strike.png"
    ],
    "bounds": [
     -20.4,
@@ -8210,9 +8204,9 @@
    ]
   },
   "Quick Strike": {
-   "category": "orb",
+   "category": "icon",
    "frames": [
-    "assets/art/orb/Quick_Strike.png"
+    "assets/art/icon/Quick_Strike.png"
    ],
    "bounds": [
     -12.85,
@@ -8228,9 +8222,9 @@
    ]
   },
   "Rage": {
-   "category": "orb",
+   "category": "icon",
    "frames": [
-    "assets/art/orb/Rage.png"
+    "assets/art/icon/Rage.png"
    ],
    "bounds": [
     -27.1,
@@ -8246,9 +8240,9 @@
    ]
   },
   "Re-Energize": {
-   "category": "orb",
+   "category": "icon",
    "frames": [
-    "assets/art/orb/Re-Energize.png"
+    "assets/art/icon/Re-Energize.png"
    ],
    "bounds": [
     -12.85,
@@ -8264,9 +8258,9 @@
    ]
   },
   "Shatter Bolt": {
-   "category": "orb",
+   "category": "icon",
    "frames": [
-    "assets/art/orb/Shatter_Bolt.png"
+    "assets/art/icon/Shatter_Bolt.png"
    ],
    "bounds": [
     -16.15,
@@ -8282,9 +8276,9 @@
    ]
   },
   "Smash": {
-   "category": "orb",
+   "category": "icon",
    "frames": [
-    "assets/art/orb/Smash.png"
+    "assets/art/icon/Smash.png"
    ],
    "bounds": [
     -28.7,
@@ -8300,9 +8294,9 @@
    ]
   },
   "Strike": {
-   "category": "orb",
+   "category": "icon",
    "frames": [
-    "assets/art/orb/Strike.png"
+    "assets/art/icon/Strike.png"
    ],
    "bounds": [
     -6.3,
@@ -8318,9 +8312,9 @@
    ]
   },
   "Subversion": {
-   "category": "orb",
+   "category": "icon",
    "frames": [
-    "assets/art/orb/Subversion.png"
+    "assets/art/icon/Subversion.png"
    ],
    "bounds": [
     -12.0,
@@ -8336,9 +8330,9 @@
    ]
   },
   "Sunder": {
-   "category": "orb",
+   "category": "icon",
    "frames": [
-    "assets/art/orb/Sunder.png"
+    "assets/art/icon/Sunder.png"
    ],
    "bounds": [
     -12.85,
@@ -8354,9 +8348,9 @@
    ]
   },
   "Suppression": {
-   "category": "orb",
+   "category": "icon",
    "frames": [
-    "assets/art/orb/Suppression.png"
+    "assets/art/icon/Suppression.png"
    ],
    "bounds": [
     -12.35,
@@ -8372,9 +8366,9 @@
    ]
   },
   "Void": {
-   "category": "orb",
+   "category": "icon",
    "frames": [
-    "assets/art/orb/Void.png"
+    "assets/art/icon/Void.png"
    ],
    "bounds": [
     -12.85,
@@ -8390,9 +8384,549 @@
    ]
   },
   "Wound": {
+   "category": "icon",
+   "frames": [
+    "assets/art/icon/Wound.png"
+   ],
+   "bounds": [
+    -13.5,
+    -20.75,
+    41.95,
+    11.7
+   ],
+   "offsets": [
+    [
+     13.5,
+     20.75
+    ]
+   ]
+  },
+  "ORB Blessing of Light": {
    "category": "orb",
    "frames": [
-    "assets/art/orb/Wound.png"
+    "assets/art/orb/ORB_Blessing_of_Light.png"
+   ],
+   "bounds": [
+    -15.65,
+    -17.1,
+    21.85,
+    17.85
+   ],
+   "offsets": [
+    [
+     15.65,
+     17.1
+    ]
+   ]
+  },
+  "ORB Block": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_Block.png"
+   ],
+   "bounds": [
+    -16.35,
+    -13.45,
+    14.4,
+    16.1
+   ],
+   "offsets": [
+    [
+     16.35,
+     13.45
+    ]
+   ]
+  },
+  "ORB Blood Focus": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_Blood_Focus.png"
+   ],
+   "bounds": [
+    -12.85,
+    -12.2,
+    13.85,
+    12.8
+   ],
+   "offsets": [
+    [
+     12.85,
+     12.2
+    ]
+   ]
+  },
+  "ORB Blood Strike": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_Blood_Strike.png"
+   ],
+   "bounds": [
+    -17.15,
+    -14.55,
+    12.15,
+    12.8
+   ],
+   "offsets": [
+    [
+     17.15,
+     14.55
+    ]
+   ]
+  },
+  "ORB Break": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_Break.png"
+   ],
+   "bounds": [
+    -24.15,
+    -10.45,
+    31.65,
+    12.05
+   ],
+   "offsets": [
+    [
+     24.15,
+     10.45
+    ]
+   ]
+  },
+  "ORB Cell Reformation": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_Cell_Reformation.png"
+   ],
+   "bounds": [
+    -27.1,
+    -28.7,
+    21.95,
+    18.25
+   ],
+   "offsets": [
+    [
+     27.1,
+     28.7
+    ]
+   ]
+  },
+  "ORB Coup De Grace": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_Coup_De_Grace.png"
+   ],
+   "bounds": [
+    -19.7,
+    -20.2,
+    24.9,
+    21.5
+   ],
+   "offsets": [
+    [
+     19.7,
+     20.2
+    ]
+   ]
+  },
+  "ORB Cripple": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_Cripple.png"
+   ],
+   "bounds": [
+    -13.0,
+    -12.2,
+    12.15,
+    18.4
+   ],
+   "offsets": [
+    [
+     13.0,
+     12.2
+    ]
+   ]
+  },
+  "ORB Disrupt": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_Disrupt.png"
+   ],
+   "bounds": [
+    -12.6,
+    -11.5,
+    12.8,
+    16.0
+   ],
+   "offsets": [
+    [
+     12.6,
+     11.5
+    ]
+   ]
+  },
+  "ORB Electro Bolt": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_Electro_Bolt.png"
+   ],
+   "bounds": [
+    -12.85,
+    -15.4,
+    12.15,
+    12.8
+   ],
+   "offsets": [
+    [
+     12.85,
+     15.4
+    ]
+   ]
+  },
+  "ORB Flame Blast": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_Flame_Blast.png"
+   ],
+   "bounds": [
+    -12.85,
+    -14.6,
+    12.15,
+    12.8
+   ],
+   "offsets": [
+    [
+     12.85,
+     14.6
+    ]
+   ]
+  },
+  "ORB Flame Strike": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_Flame_Strike.png"
+   ],
+   "bounds": [
+    -12.85,
+    -19.9,
+    18.5,
+    14.3
+   ],
+   "offsets": [
+    [
+     12.85,
+     19.9
+    ]
+   ]
+  },
+  "ORB Frost Bolt": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_Frost_Bolt.png"
+   ],
+   "bounds": [
+    -14.85,
+    -9.3,
+    12.45,
+    8.9
+   ],
+   "offsets": [
+    [
+     14.85,
+     9.3
+    ]
+   ]
+  },
+  "ORB Healing Light": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_Healing_Light.png"
+   ],
+   "bounds": [
+    -32.5,
+    -13.3,
+    13.9,
+    14.9
+   ],
+   "offsets": [
+    [
+     32.5,
+     13.3
+    ]
+   ]
+  },
+  "ORB Heroic Motivation": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_Heroic_Motivation.png"
+   ],
+   "bounds": [
+    -17.7,
+    -12.2,
+    20.7,
+    17.85
+   ],
+   "offsets": [
+    [
+     17.7,
+     12.2
+    ]
+   ]
+  },
+  "ORB Intervention": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_Intervention.png"
+   ],
+   "bounds": [
+    -16.35,
+    -13.45,
+    14.4,
+    16.1
+   ],
+   "offsets": [
+    [
+     16.35,
+     13.45
+    ]
+   ]
+  },
+  "ORB Ironskin": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_Ironskin.png"
+   ],
+   "bounds": [
+    -19.0,
+    -13.4,
+    12.6,
+    12.25
+   ],
+   "offsets": [
+    [
+     19.0,
+     13.4
+    ]
+   ]
+  },
+  "ORB Magic Bolt": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_Magic_Bolt.png"
+   ],
+   "bounds": [
+    -12.85,
+    -15.4,
+    12.15,
+    12.8
+   ],
+   "offsets": [
+    [
+     12.85,
+     15.4
+    ]
+   ]
+  },
+  "ORB Master Strike": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_Master_Strike.png"
+   ],
+   "bounds": [
+    -20.4,
+    -15.5,
+    12.15,
+    12.8
+   ],
+   "offsets": [
+    [
+     20.4,
+     15.5
+    ]
+   ]
+  },
+  "ORB Quick Strike": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_Quick_Strike.png"
+   ],
+   "bounds": [
+    -12.85,
+    -15.4,
+    12.15,
+    12.8
+   ],
+   "offsets": [
+    [
+     12.85,
+     15.4
+    ]
+   ]
+  },
+  "ORB Rage": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_Rage.png"
+   ],
+   "bounds": [
+    -27.1,
+    -28.7,
+    21.95,
+    18.25
+   ],
+   "offsets": [
+    [
+     27.1,
+     28.7
+    ]
+   ]
+  },
+  "ORB Re-Energize": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_Re-Energize.png"
+   ],
+   "bounds": [
+    -12.85,
+    -12.2,
+    12.8,
+    12.8
+   ],
+   "offsets": [
+    [
+     12.85,
+     12.2
+    ]
+   ]
+  },
+  "ORB Shatter Bolt": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_Shatter_Bolt.png"
+   ],
+   "bounds": [
+    -16.15,
+    -17.0,
+    12.15,
+    13.7
+   ],
+   "offsets": [
+    [
+     16.15,
+     17.0
+    ]
+   ]
+  },
+  "ORB Smash": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_Smash.png"
+   ],
+   "bounds": [
+    -28.7,
+    -26.2,
+    11.75,
+    12.4
+   ],
+   "offsets": [
+    [
+     28.7,
+     26.2
+    ]
+   ]
+  },
+  "ORB Strike": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_Strike.png"
+   ],
+   "bounds": [
+    -6.3,
+    -15.3,
+    10.7,
+    15.2
+   ],
+   "offsets": [
+    [
+     6.3,
+     15.3
+    ]
+   ]
+  },
+  "ORB Subversion": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_Subversion.png"
+   ],
+   "bounds": [
+    -12.0,
+    -11.25,
+    12.3,
+    11.25
+   ],
+   "offsets": [
+    [
+     12.0,
+     11.25
+    ]
+   ]
+  },
+  "ORB Sunder": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_Sunder.png"
+   ],
+   "bounds": [
+    -12.85,
+    -12.2,
+    16.3,
+    23.35
+   ],
+   "offsets": [
+    [
+     12.85,
+     12.2
+    ]
+   ]
+  },
+  "ORB Suppression": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_Suppression.png"
+   ],
+   "bounds": [
+    -12.35,
+    -22.6,
+    12.15,
+    22.0
+   ],
+   "offsets": [
+    [
+     12.35,
+     22.6
+    ]
+   ]
+  },
+  "ORB Void": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_Void.png"
+   ],
+   "bounds": [
+    -12.85,
+    -15.0,
+    12.55,
+    14.05
+   ],
+   "offsets": [
+    [
+     12.85,
+     15.0
+    ]
+   ]
+  },
+  "ORB Wound": {
+   "category": "orb",
+   "frames": [
+    "assets/art/orb/ORB_Wound.png"
    ],
    "bounds": [
     -13.5,

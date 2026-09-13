@@ -29,6 +29,10 @@ SVG_ROOT_TRANSFORM = re.compile(
     r'<g transform="matrix\(([-0-9.eE]+), *([-0-9.eE]+), *([-0-9.eE]+), *'
     r'([-0-9.eE]+), *([-0-9.eE]+), *([-0-9.eE]+)\)"')
 
+# The ring's own copy of an ability icon, which is a different shape to the
+# one the menus use under the same label.
+ORB_PREFIX = 'ORB '
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 
@@ -151,12 +155,15 @@ def collect_names(data_dir):
             want['icon'].add(a['icon'])
             # The battle screen does not show a bare icon: it shows the whole
             # orb, which is one clip whose frames are labelled by icon name.
-            # The placeholder move is the one with no picture at all.
-            want['orb'].add(a['icon'])
+            # Its copy of the icon is a different shape to the one the menus
+            # use, so it is asked for under its own name. The placeholder move
+            # is the one with no picture at all.
+            want['orb'].add(ORB_PREFIX + a['icon'])
             if a['icon'] == 'None':
-                speculative.add(a['icon'])
+                speculative.add(ORB_PREFIX + a['icon'])
             if a['id'] >= 500:
                 speculative.add(a['icon'])
+                speculative.add(ORB_PREFIX + a['icon'])
         # `model` names the projectile or impact graphic. `anim` ("Attack",
         # "Heal") is not art at all: it selects which animation the caster
         # plays, and the model's own frame labels (attack1, cast, ...) are
@@ -338,7 +345,7 @@ def main():
             elif category == 'orb':
                 # The icon alone, as the ring's orb clip places it. The orb is
                 # put back together from its shared pieces at draw time.
-                cid = orb_icons.get(name)
+                cid = orb_icons.get(name[len(ORB_PREFIX):])
                 png = shape_png(args.raw, cid) if cid else None
                 if png:
                     entries = [(1, png)]

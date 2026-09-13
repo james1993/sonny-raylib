@@ -144,6 +144,9 @@ static void draw_doll(const Game *g, int32_t slot)
 /* How dark the original's "cannot use this" disc is over an orb, and the
    size it prints a slot's remaining cooldown at. */
 #define ORB_FILTER_ALPHA 217
+/* The ring's copy of an ability icon is a different shape to the menus', so
+   it is kept under its own name. */
+#define ORB_ICON_PREFIX "ORB "
 #define ORB_COOLDOWN_SIZE 9.0f
 
 /* Where the speech box goes when it is the left team talking. */
@@ -537,13 +540,22 @@ static void draw_orb(const AbilityDef *a, Vector2 centre, int usable,
 {
     draw_orb_part(orb_part("ball"), centre, WHITE);
     if (a && a->icon && a->icon[0]) {
-        const Texture2D *icon = asset_texture(a->icon, 1);
-        if (icon) {
-            float scale = SONNY_RING_SCALE;
-            DrawTextureEx(*icon, (Vector2){centre.x - icon->width * scale / 2,
-                                           centre.y - icon->height * scale / 2},
-                          0.0f, scale, WHITE);
+        /* The ring's own copy of the icon, which the orb clip masks to the
+           ball: the mask is a circle, and a rectangle of its size is close
+           enough to keep an icon from spilling past the edge. */
+        const OrbPart *mask = orb_part("mask");
+        if (mask) {
+            Rectangle box = {centre.x - mask->width * SONNY_RING_SCALE / 2,
+                             centre.y - mask->height * SONNY_RING_SCALE / 2,
+                             mask->width * SONNY_RING_SCALE,
+                             mask->height * SONNY_RING_SCALE};
+            BeginScissorMode((int)box.x, (int)box.y, (int)box.width,
+                             (int)box.height);
         }
+        asset_draw_placed(TextFormat("%s%s", ORB_ICON_PREFIX, a->icon), 1,
+                          centre, SONNY_RING_SCALE, WHITE);
+        if (mask)
+            EndScissorMode();
     }
     draw_orb_part(orb_part("glass"), centre, WHITE);
     if (!usable)
@@ -1176,7 +1188,10 @@ void battle_screen_update(Game *g, Vector2 mouse, int headless)
     g->hovered_unit = unit_at(g, mouse);
     handle_input(g);
 
-    if (headless && player_turn(g) && !g->queued) {
+    /* A headless capture passes the turn so the fight keeps moving, unless
+       SONNY_HOVER asked for a unit to be held under the pointer -- which is
+       how the ability ring gets photographed. */
+    if (headless && !getenv("SONNY_HOVER") && player_turn(g) && !g->queued) {
         battle_queue(&g->battle, PLAYER_SLOT, PLAYER_SLOT, 0, 0);
         g->queued = 1;
     }
