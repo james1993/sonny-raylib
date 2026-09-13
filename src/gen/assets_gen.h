@@ -213,17 +213,24 @@ typedef struct {
     float   scale;
 } TalentSlot;
 
-/* A named slot on one of the menu screens, in stage coordinates: the 36 bag
-   slots, the 7 equipment slots, the 15 drop slots, and the doll preview. */
+/* A named slot on one of the menu screens, in stage coordinates: the bag
+   slots, the equipment slots, the drop slots, the doll preview. `menu` is the
+   frame of the menu clip it belongs to -- inventory, win, shop, skills -- and
+   the same name means different places on different frames. */
 typedef struct {
+    const char *menu;
     const char *name;
     float       x, y;
     float       scale;
+    /* The slot's own clip, whose resting frame is the empty square. */
+    int32_t     character;
+    float       width, height;
+    float       origin_x, origin_y;
 } MenuSlot;
 
 extern const MenuSlot SONNY_MENU_SLOTS[];
 extern const int SONNY_MENU_SLOT_COUNT;
-const MenuSlot *menu_slot(const char *name);
+const MenuSlot *menu_slot(const char *menu, const char *name);
 
 extern const TalentSlot SONNY_TALENT_SLOTS[];
 extern const int SONNY_TALENT_SLOT_COUNT;
@@ -240,6 +247,10 @@ extern const int SONNY_TEXT_FIELD_COUNT;
 /* The `index`-th field of `owner`, in the order the clip stacks them. */
 const TextField *text_field(const char *screen, const char *owner,
                             int32_t index);
+/* The `occurrence`-th field called `name`. A screen repeats a name where it
+   repeats a row -- one per party member, say. */
+const TextField *text_field_named(const char *screen, const char *owner,
+                                  const char *name, int32_t occurrence);
 
 extern const RingSlot SONNY_RING_SLOTS[];
 extern const int SONNY_RING_SLOT_COUNT;

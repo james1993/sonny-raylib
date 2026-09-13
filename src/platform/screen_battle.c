@@ -193,16 +193,6 @@ static int chrome_is_runtime(const char *name)
     return strncmp(name, "p", 1) == 0 && strstr(name, "BAR") != NULL;
 }
 
-/* Where a piece of art goes, given the placement the original recorded: its
-   exported canvas carries the piece's own origin inside it, so the top-left
-   is the placement point less that origin. */
-static Rectangle placed_rect(float x, float y, float scale_x, float scale_y,
-                             float w, float h, float ox, float oy)
-{
-    return (Rectangle){x - ox * scale_x, y - oy * scale_y,
-                       w * scale_x, h * scale_y};
-}
-
 static void draw_chrome_art(const StageChrome *c)
 {
     const Texture2D *tex = asset_texture(TextFormat("#%d", c->character), 1);
@@ -376,34 +366,6 @@ static void draw_unit_bar(const Game *g, int32_t slot)
                    TextFormat("%d", u->FOCUSU));
 }
 
-/* One text field, laid out as the SWF lays it out: its own box, alignment,
-   leading, size, colour and face, relative to the clip it belongs to. */
-static void draw_field_tinted(const TextField *f, Vector2 clip,
-                              const char *text, Color colour)
-{
-    if (!f || !text || !text[0])
-        return;
-    float width = f->device ? ui_sans_text_width(text, f->size)
-                            : ui_text_width(text, f->size);
-    float x = clip.x + f->x;
-    if (f->align == 1)
-        x += f->width - width;
-    else if (f->align == 2)
-        x += (f->width - width) / 2.0f;
-    float y = clip.y + f->y + TEXT_GUTTER + f->leading;
-    if (f->device)
-        ui_sans_text(text, x, y, f->size, colour);
-    else
-        ui_text(text, x, y, f->size, colour);
-}
-
-/* The same, in the field's own colour. */
-static void draw_field(const TextField *f, Vector2 clip, const char *text)
-{
-    if (f)
-        draw_field_tinted(f, clip, text, (Color){f->r, f->g, f->b, 255});
-}
-
 /* -------------------------------------------------------------------- ring */
 
 /* The ability ring. The original does not put the player's moves on a bar
@@ -479,37 +441,6 @@ static const char *move_refusal(const Game *g, int slot, int32_t target)
     if (!move_targets(g, a, target))
         return "You cannot use this move on that target.";
     return NULL;
-}
-
-/* The graphics of a clip that carries text. Such a clip cannot be drawn as
-   one picture -- the export bakes its fields' design-time copy in -- so its
-   pieces are drawn and the real text goes over them. A piece the game points
-   at a frame of by name takes `chosen` as that name. */
-static void draw_clip_parts(const char *screen, const char *owner,
-                            Vector2 moved, const char *chosen, Color tint)
-{
-    for (int i = 0; i < SONNY_CLIP_PART_COUNT; i++) {
-        const ClipPart *part = &SONNY_CLIP_PARTS[i];
-        if (strcmp(part->screen, screen) != 0
-            || strcmp(part->owner, owner) != 0 || part->width <= 0)
-            continue;
-        /* A piece the game points at a frame of by name -- the speech box's
-           portrait -- is only drawn when the caller says which name. */
-        if (part->frames && !chosen)
-            continue;
-        const char *name = part->frames ? chosen
-                                        : TextFormat("#%d", part->character);
-        const Texture2D *tex = asset_texture(name, 1);
-        if (!tex)
-            continue;
-        Rectangle dst = placed_rect(moved.x + part->x, moved.y + part->y,
-                                    part->scale_x, part->scale_y,
-                                    part->width, part->height,
-                                    part->origin_x, part->origin_y);
-        DrawTexturePro(*tex, (Rectangle){0, 0, (float)tex->width,
-                                         (float)tex->height},
-                       dst, (Vector2){0, 0}, 0.0f, tint);
-    }
 }
 
 /* One piece of the orb, in the ring's coordinates around `centre`. */
@@ -783,45 +714,6 @@ static int speech_update(Game *g)
     if (next->voice_over && next->voice_over[0])
         audio_play(next->voice_over);
     return 1;
-}
-
-/* The same, wrapped to the field's width and its own line height. */
-static void draw_field_wrapped(const TextField *f, Vector2 clip,
-                               const char *text)
-{
-    if (!f || !text || !text[0])
-        return;
-    /* Flash stacks lines a full line box apart, not a font size apart. */
-    float line_height = f->size * TEXT_LINE_FACTOR + f->leading;
-    int rows = (int)(f->height / line_height);
-    char line[160];
-    int start = 0, count = 0, row = 0;
-    while (text[start] && row < rows) {
-        int fit = 0, space = -1;
-        for (int i = 0; text[start + i]; i++) {
-            if (text[start + i] == ' ')
-                space = i;
-            line[i] = text[start + i];
-            line[i + 1] = 0;
-            if (ui_sans_text_width(line, f->size) > f->width) {
-                fit = (space > 0) ? space : i;
-                break;
-            }
-            fit = i + 1;
-        }
-        count = fit;
-        if (count > (int)sizeof(line) - 1)
-            count = (int)sizeof(line) - 1;
-        memcpy(line, text + start, count);
-        line[count] = 0;
-        TextField row_field = *f;
-        row_field.y = f->y + row * line_height;
-        draw_field(&row_field, clip, line);
-        start += count;
-        while (text[start] == ' ')
-            start++;
-        row++;
-    }
 }
 
 /* What a character is saying. The original places one box and slides it to

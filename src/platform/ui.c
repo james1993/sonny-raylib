@@ -4,8 +4,8 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <string.h>
+#include "assets.h"
 #include "game.h"
-#include "../gen/assets_gen.h"
 
 /* The interface's two faces.
  *
@@ -101,6 +101,18 @@ static UiFace ui_faces[UI_FACES];
    of the interface as blanks. */
 #define UI_MIN_GLYPHS 90
 
+/* raylib bakes printable ASCII by default, which leaves out the euro sign the
+   game prints against every price. */
+static int UI_CODEPOINTS[96];
+#define UI_CODEPOINT_COUNT ((int)(sizeof(UI_CODEPOINTS) / sizeof(UI_CODEPOINTS[0])))
+
+static void codepoints_init(void)
+{
+    for (int i = 0; i < 95; i++)
+        UI_CODEPOINTS[i] = 32 + i;
+    UI_CODEPOINTS[95] = 0x20AC;         /* EURO SIGN */
+}
+
 /* The pair of bakes for one size: the one text is drawn from, and the large
    one it is measured against. `em` is the em square the measuring bake works
    out to in its own pixels, which is what turns its advances into the
@@ -120,13 +132,14 @@ static int face_size(int face, float size)
     if (f->cached == UI_SIZE_CACHE)
         return f->cached - 1;
 
-    Font font = LoadFontEx(f->path, px, NULL, 0);
+    Font font = LoadFontEx(f->path, px, UI_CODEPOINTS, UI_CODEPOINT_COUNT);
     if (font.texture.id == 0)
         return -1;
     SetTextureFilter(font.texture, TEXTURE_FILTER_BILINEAR);
 
     int big = px * UI_METRIC_SCALE;
-    Font metrics = LoadFontEx(f->path, big, NULL, 0);
+    Font metrics = LoadFontEx(f->path, big, UI_CODEPOINTS,
+                              UI_CODEPOINT_COUNT);
     if (metrics.texture.id == 0)
         metrics = font;
 
@@ -140,7 +153,7 @@ static int face_size(int face, float size)
 
 static int face_open(int face, const char *path)
 {
-    Font probe = LoadFontEx(path, 16, NULL, 0);
+    Font probe = LoadFontEx(path, 16, UI_CODEPOINTS, UI_CODEPOINT_COUNT);
     int ok = probe.texture.id != 0 && probe.glyphCount >= UI_MIN_GLYPHS;
     if (probe.texture.id != 0)
         UnloadFont(probe);
@@ -155,6 +168,7 @@ static int face_open(int face, const char *path)
 
 void ui_font_load(void)
 {
+    codepoints_init();
     if (ui_faces[UI_FACE_GAME].ready)
         return;
     if (!FileExists(UI_FONT_PATH) || !face_open(UI_FACE_GAME, UI_FONT_PATH))
@@ -278,6 +292,118 @@ float ui_text_width(const char *text, float size)
 float ui_sans_text_width(const char *text, float size)
 {
     return face_width(UI_FACE_SANS, text, size);
+}
+
+/* The gutter Flash leaves inside every text field before the text starts,
+   and how much taller than its size a line box is. */
+#define TEXT_GUTTER 2.0f
+#define TEXT_LINE_FACTOR 1.15f
+
+/* Where a piece of art goes, given the placement the original recorded: its
+   exported canvas carries the piece's own origin inside it, so the top-left
+   is the placement point less that origin. */
+Rectangle placed_rect(float x, float y, float scale_x, float scale_y,
+                             float w, float h, float ox, float oy)
+{
+    return (Rectangle){x - ox * scale_x, y - oy * scale_y,
+                       w * scale_x, h * scale_y};
+}
+
+/* One text field, laid out as the SWF lays it out: its own box, alignment,
+   leading, size, colour and face, relative to the clip it belongs to. */
+void draw_field_tinted(const TextField *f, Vector2 clip,
+                              const char *text, Color colour)
+{
+    if (!f || !text || !text[0])
+        return;
+    float width = f->device ? ui_sans_text_width(text, f->size)
+                            : ui_text_width(text, f->size);
+    float x = clip.x + f->x;
+    if (f->align == 1)
+        x += f->width - width;
+    else if (f->align == 2)
+        x += (f->width - width) / 2.0f;
+    float y = clip.y + f->y + TEXT_GUTTER + f->leading;
+    if (f->device)
+        ui_sans_text(text, x, y, f->size, colour);
+    else
+        ui_text(text, x, y, f->size, colour);
+}
+
+/* The same, in the field's own colour. */
+void draw_field(const TextField *f, Vector2 clip, const char *text)
+{
+    if (f)
+        draw_field_tinted(f, clip, text, (Color){f->r, f->g, f->b, 255});
+}
+
+/* The same, wrapped to the field's width and stacked by its own line box. */
+void draw_field_wrapped(const TextField *f, Vector2 clip, const char *text)
+{
+    if (!f || !text || !text[0])
+        return;
+    /* Flash stacks lines a full line box apart, not a font size apart. */
+    float line_height = f->size * TEXT_LINE_FACTOR + f->leading;
+    int rows = (int)(f->height / line_height);
+    char line[160];
+    int start = 0, row = 0;
+    while (text[start] && row < rows) {
+        int fit = 0, space = -1;
+        for (int i = 0; text[start + i]; i++) {
+            if (text[start + i] == ' ')
+                space = i;
+            line[i] = text[start + i];
+            line[i + 1] = 0;
+            if (ui_sans_text_width(line, f->size) > f->width) {
+                fit = (space > 0) ? space : i;
+                break;
+            }
+            fit = i + 1;
+        }
+        int count = fit;
+        if (count > (int)sizeof(line) - 1)
+            count = (int)sizeof(line) - 1;
+        memcpy(line, text + start, count);
+        line[count] = 0;
+        TextField row_field = *f;
+        row_field.y = f->y + row * line_height;
+        draw_field(&row_field, clip, line);
+        start += count;
+        while (text[start] == ' ')
+            start++;
+        row++;
+    }
+}
+
+/* The graphics of a clip that carries text. Such a clip cannot be drawn as
+   one picture -- the export bakes its fields' design-time copy in -- so its
+   pieces are drawn and the real text goes over them. A piece the game points
+   at a frame of by name takes `chosen` as that name. */
+void draw_clip_parts(const char *screen, const char *owner,
+                            Vector2 moved, const char *chosen, Color tint)
+{
+    for (int i = 0; i < SONNY_CLIP_PART_COUNT; i++) {
+        const ClipPart *part = &SONNY_CLIP_PARTS[i];
+        if (strcmp(part->screen, screen) != 0
+            || strcmp(part->owner, owner) != 0 || part->width <= 0)
+            continue;
+        /* A piece the game points at a frame of by name -- the speech box's
+           portrait -- is only drawn when the caller says which name. */
+        if (part->frames && !chosen)
+            continue;
+        const char *name = part->frames ? chosen
+                                        : TextFormat("#%d", part->character);
+        const Texture2D *tex = asset_texture(name, 1);
+        if (!tex)
+            continue;
+        Rectangle dst = placed_rect(moved.x + part->x, moved.y + part->y,
+                                    part->scale_x, part->scale_y,
+                                    part->width, part->height,
+                                    part->origin_x, part->origin_y);
+        DrawTexturePro(*tex, (Rectangle){0, 0, (float)tex->width,
+                                         (float)tex->height},
+                       dst, (Vector2){0, 0}, 0.0f, tint);
+    }
 }
 
 /* Where a message goes. In a fight the original runs it across the top of

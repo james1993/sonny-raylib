@@ -9,6 +9,7 @@
 #define SONNY_GAME_H
 
 #include "raylib.h"
+#include "../gen/assets_gen.h"
 #include "../core/campaign.h"
 #include "../core/save.h"
 
@@ -106,6 +107,23 @@ typedef struct {
  * rather than raylib's DrawText, which would use the built-in bitmap font. */
 void ui_font_load(void);
 void ui_font_unload(void);
+/* Where a piece of art goes, given the placement the original recorded: its
+   exported canvas carries the piece's own origin inside it, so the top-left
+   is the placement point less that origin. */
+Rectangle placed_rect(float x, float y, float scale_x, float scale_y,
+                      float w, float h, float ox, float oy);
+/* One of a screen's text fields, laid out the way the SWF lays it out: its
+   own box, alignment, leading, size, colour and face. `clip` is how far the
+   clip it belongs to has moved from where the original places it. */
+void draw_field(const TextField *f, Vector2 clip, const char *text);
+void draw_field_tinted(const TextField *f, Vector2 clip, const char *text,
+                       Color colour);
+void draw_field_wrapped(const TextField *f, Vector2 clip, const char *text);
+/* The graphics of a clip that carries text, which cannot be drawn as one
+   picture because the export bakes its fields' design-time copy in. */
+void draw_clip_parts(const char *screen, const char *owner, Vector2 moved,
+                     const char *chosen, Color tint);
+
 void game_draw_notice(const Game *g);
 void ui_text(const char *text, float x, float y, float size, Color color);
 float ui_text_width(const char *text, float size);

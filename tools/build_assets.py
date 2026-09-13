@@ -272,6 +272,12 @@ def collect_names(data_dir):
     for part in (stage.get('clip_parts') or []):
         if part.get('character') and part.get('width') and not part.get('frames'):
             want['chrome'].add('#%d' % part['character'])
+    # A menu's slots are clips the engine fills, but their empty square is
+    # still drawn, so their resting frame is wanted too.
+    for menu in (stage.get('menus') or {}).values():
+        for slot in menu['slots'].values():
+            if slot.get('character') and slot.get('width'):
+                want['chrome'].add('#%d' % slot['character'])
     for part in ((stage.get('bar') or {}).get('graphics') or []):
         if part.get('character') and part.get('width'):
             want['chrome'].add('#%d' % part['character'])

@@ -447,11 +447,27 @@ void screen_talents_draw(Game *g, Vector2 mouse)
    its placement point. */
 #define MENU_SLOT_SIZE 34.0f
 
-static Rectangle named_slot(const char *prefix, int i, Rectangle fallback)
+/* The menu clip's frames, by the labels the original gives them: one screen
+   each, and the same slot name means different places on different frames. */
+#define MENU_SCREEN    "menu"
+#define MENU_INVENTORY "inventory"
+#define MENU_WIN       "win"
+
+/* Nothing on a menu moves, so its pieces are drawn where they are recorded. */
+static const Vector2 NO_OFFSET = {0, 0};
+
+/* What the game spends, as its own fields carry it. */
+#define EURO "\u20ac"
+
+/* How many bag slots a menu frame's grid has. */
+#define MENU_BAG_SLOTS 36
+
+static Rectangle named_slot(const char *menu, const char *prefix, int i,
+                            Rectangle fallback)
 {
     char name[32];
     snprintf(name, sizeof(name), "%s%d", prefix, i);
-    const MenuSlot *slot = menu_slot(name);
+    const MenuSlot *slot = menu_slot(menu, name);
     if (!slot)
         return fallback;
     return (Rectangle){slot->x - MENU_SLOT_SIZE / 2,
@@ -459,22 +475,57 @@ static Rectangle named_slot(const char *prefix, int i, Rectangle fallback)
                        MENU_SLOT_SIZE, MENU_SLOT_SIZE};
 }
 
+/* The equipment slots and the bag, as the inventory frame places them. */
 static Rectangle slot_rect(int i)
 {
-    return named_slot("playerSlot", i,
+    return named_slot(MENU_INVENTORY, "playerSlot", i,
                       (Rectangle){70, 110 + i * 44, 300, 38});
 }
 
 static Rectangle bag_rect(int i)
 {
-    return named_slot("itemSlot", i,
+    return named_slot(MENU_INVENTORY, "itemSlot", i,
                       (Rectangle){420, 110 + i * 34, 320, 30});
 }
 
+/* What a fight dropped, and the bag again -- the victory frame lays both out
+   itself, on a different grid to the inventory's. */
 static Rectangle drop_rect(int i)
 {
-    return named_slot("dropSlot", i,
+    return named_slot(MENU_WIN, "dropSlot", i,
                       (Rectangle){70 + i * 150, 190, 140, 34});
+}
+
+static Rectangle win_bag_rect(int i)
+{
+    return named_slot(MENU_WIN, "itemSlot", i,
+                      (Rectangle){420, 110 + i * 34, 320, 30});
+}
+
+/* A slot's own empty square, drawn where the frame places it. The engine
+   fills the slot itself, but the square under it is the original's. */
+static void draw_slot_art(const char *menu, const char *prefix, int i)
+{
+    char name[32];
+    snprintf(name, sizeof(name), "%s%d", prefix, i);
+    const MenuSlot *slot = menu_slot(menu, name);
+    if (!slot || slot->width <= 0)
+        return;
+    const Texture2D *tex = asset_texture(TextFormat("#%d", slot->character), 1);
+    if (!tex)
+        return;
+    Rectangle dst = placed_rect(slot->x, slot->y, slot->scale, slot->scale,
+                                slot->width, slot->height, slot->origin_x,
+                                slot->origin_y);
+    DrawTexturePro(*tex, (Rectangle){0, 0, (float)tex->width,
+                                     (float)tex->height},
+                   dst, (Vector2){0, 0}, 0.0f, WHITE);
+}
+
+/* One of the victory frame's fields, by the name the clip gives it. */
+static const TextField *win_field(const char *name)
+{
+    return text_field_named(MENU_SCREEN, MENU_WIN, name, 0);
 }
 
 /* An item's icon is a frame label on the icon sprite, named for the item. */
@@ -563,7 +614,7 @@ void screen_inventory_draw(Game *g, Vector2 mouse)
     ui_text(lang_text("SYSTEM", 17), 22, 16, 20, (Color){210, 215, 225, 255});
 
     /* The doll preview, wearing what is equipped. */
-    const MenuSlot *doll = menu_slot("chest");
+    const MenuSlot *doll = menu_slot(MENU_INVENTORY, "chest");
     if (doll) {
         DollSpec spec;
         memset(&spec, 0, sizeof(spec));
@@ -775,47 +826,73 @@ void screen_victory_update(Game *g, Vector2 mouse)
         break;
     }
 
-    if (draw_button((Rectangle){STAGE_W / 2 - 60, STAGE_H - 90, 120, 30},
-                    "Continue", mouse, 1))
+    /* "Proceed!" is one of the frame's own fields, so its hit area is that
+       field's box. */
+    const TextField *proceed = win_field("@23");
+    if (proceed && IsMouseButtonPressed(MOUSE_BUTTON_LEFT)
+        && CheckCollisionPointRec(mouse, (Rectangle){proceed->x, proceed->y,
+                                                     proceed->width,
+                                                     proceed->height}))
         g->screen = SCREEN_ZONE;
 }
 
+/* The tally after a fight, laid out from the menu clip's own "win" frame: the
+   party's experience down the left, what the fight paid in the middle, and
+   the bag on the right with whatever dropped beside it. Every line is one of
+   the frame's own text fields, filled from the game's own text arrays. */
 void screen_victory_draw(Game *g, Vector2 mouse)
 {
-    ClearBackground((Color){18, 20, 26, 255});
-    ui_text(lang_text("VICTORY", 0), 70, 90, 12, (Color){235, 200, 90, 255});
-    if (g->dropped_count > 0)
-        ui_text(lang_text("VICTORY", 1), 70, 112, 10,
-                 (Color){200, 205, 215, 255});
+    ClearBackground(BLACK);
+    draw_clip_parts(MENU_SCREEN, MENU_WIN, NO_OFFSET, NULL, WHITE);
+
+    draw_field(win_field("@901"), NO_OFFSET, lang_text("VICTORY", 0));
+    if (g->dropped_count == 0)
+        draw_field(win_field("@904"), NO_OFFSET, lang_text("MENU", 12));
+    else
+        draw_field(win_field("@899"), NO_OFFSET, lang_text("VICTORY", 1));
+
+    draw_field(win_field("@895"), NO_OFFSET, lang_text("VICTORY", 2));
+    draw_field(win_field("@896"), NO_OFFSET,
+               TextFormat("%s%d", EURO, g->rewards.euros));
+    draw_field(win_field("@897"), NO_OFFSET, lang_text("VICTORY", 3));
+    draw_field(win_field("@898"), NO_OFFSET,
+               TextFormat("%d%%", (int32_t)g->rewards.xp_percent));
+    draw_field(win_field("@900"), NO_OFFSET, lang_text("VICTORY", 4));
+    draw_field(win_field("@23"), NO_OFFSET, lang_text("MENU", 13));
+    draw_field(win_field("@959"), NO_OFFSET, lang_text("MENU", 15));
+    draw_field(win_field("@1059"), NO_OFFSET, lang_text("MENU", 14));
+    draw_field(win_field("@1052"), NO_OFFSET,
+               TextFormat("%d", g->campaign.euros));
+    /* The frame's own content, which the game never writes to. */
+    draw_field(win_field("@1053"), NO_OFFSET, EURO);
+
+    /* An experience row per party member -- name, level, and how far through
+       the level they are. The frame stacks three; the story gives the player
+       company later, and the last of the three is the player's own. */
+    const Character *p = &g->campaign.player;
+    draw_field(text_field_named(MENU_SCREEN, MENU_WIN, "@12", 2), NO_OFFSET,
+               g->battle.units[PLAYER_SLOT].name);
+    draw_field(text_field_named(MENU_SCREEN, MENU_WIN, "@13", 2), NO_OFFSET,
+               TextFormat("%s%d", lang_text("MENU", 0), p->level));
+    draw_field(text_field_named(MENU_SCREEN, MENU_WIN, "@17", 2), NO_OFFSET,
+               TextFormat("%d%%", (int32_t)p->xp));
 
     for (int32_t i = 0; i < g->dropped_count; i++) {
         Rectangle r = drop_rect(i);
-        const ItemDef *item = item_by_id(g->dropped[i]);
-        DrawRectangleRec(r, g->taken[i] ? (Color){26, 30, 26, 255}
-                                        : (Color){30, 33, 41, 255});
-        DrawRectangleLinesEx(r, hit(r, mouse) ? 2.0f : 1.0f,
-                             g->taken[i] ? (Color){120, 180, 120, 255}
-                                         : (Color){80, 84, 96, 255});
-        draw_item_icon(item, r, g->taken[i] ? (Color){150, 210, 150, 255}
-                                            : WHITE);
-        if (item)
-            ui_text(item->name, (int)r.x, (int)(r.y + r.height + 2), 9,
-                     g->taken[i] ? (Color){140, 210, 140, 255}
-                                 : (Color){190, 195, 205, 255});
+        draw_slot_art(MENU_WIN, "dropSlot", i);
+        draw_item_icon(item_by_id(g->dropped[i]), r,
+                       g->taken[i] ? (Color){150, 210, 150, 255} : WHITE);
+        if (hit(r, mouse))
+            DrawRectangleLinesEx(r, 1.0f, (Color){235, 200, 90, 255});
     }
 
-    ui_text(TextFormat("%s %d", lang_text("VICTORY", 2), g->rewards.euros),
-             70, 280, 10, (Color){225, 200, 120, 255});
-    ui_text(TextFormat("%s %.1f%%", lang_text("VICTORY", 3),
-                        g->rewards.xp_percent),
-             70, 300, 10, (Color){150, 200, 255, 255});
-    if (g->rewards.leveled)
-        ui_text(TextFormat("%s%d!", lang_text("MENU", 0),
-                            g->campaign.player.level),
-                 70, 322, 12, (Color){140, 210, 140, 255});
-
-    ui_text(lang_text("VICTORY", 4), 70, STAGE_H - 120, 10,
-             (Color){170, 175, 185, 255});
-    draw_button((Rectangle){STAGE_W / 2 - 60, STAGE_H - 90, 120, 30},
-                "Continue", mouse, 1);
+    /* The bag alongside, so what has been taken can be seen going into it.
+       Its squares show whether or not anything is in them; a drop square is
+       only there while something is in it. */
+    for (int32_t i = 0; i < MENU_BAG_SLOTS; i++) {
+        draw_slot_art(MENU_WIN, "itemSlot", i);
+        if (i < g->campaign.inventory_count)
+            draw_item_icon(item_by_id(g->campaign.inventory[i]),
+                           win_bag_rect(i), WHITE);
+    }
 }

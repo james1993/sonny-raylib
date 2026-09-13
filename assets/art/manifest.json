@@ -1260,6 +1260,30 @@
     ]
    ]
   },
+  "#1280": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1280.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "#1282": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1282.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
   "#1283": {
    "category": "chrome",
    "frames": [
@@ -1311,6 +1335,18 @@
     [
      14.75,
      19.75
+    ]
+   ]
+  },
+  "#1318": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1318.png"
+   ],
+   "offsets": [
+    [
+     26.8,
+     45.5
     ]
    ]
   },
@@ -1368,6 +1404,18 @@
     ]
    ]
   },
+  "#1339": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1339.png"
+   ],
+   "offsets": [
+    [
+     69.5,
+     35.0
+    ]
+   ]
+  },
   "#1341": {
    "category": "chrome",
    "frames": [
@@ -1383,6 +1431,18 @@
     [
      262.05,
      -60.45
+    ]
+   ]
+  },
+  "#1344": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1344.png"
+   ],
+   "offsets": [
+    [
+     0.0,
+     9.35
     ]
    ]
   },
@@ -1437,6 +1497,66 @@
     [
      18.35,
      18.2
+    ]
+   ]
+  },
+  "#1367": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1367.png"
+   ],
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "#1406": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1406.png"
+   ],
+   "offsets": [
+    [
+     0.55,
+     1.0
+    ]
+   ]
+  },
+  "#1415": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1415.png"
+   ],
+   "offsets": [
+    [
+     82.0,
+     77.9
+    ]
+   ]
+  },
+  "#1426": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1426.png"
+   ],
+   "offsets": [
+    [
+     -0.5,
+     0.5
+    ]
+   ]
+  },
+  "#1444": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1444.png"
+   ],
+   "offsets": [
+    [
+     22.05,
+     35.2
     ]
    ]
   },
@@ -2091,6 +2211,102 @@
     [
      3.55,
      9.8
+    ]
+   ]
+  },
+  "#919": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#919.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
+   ]
+  },
+  "#920": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#920.png"
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.15
+    ]
+   ]
+  },
+  "#921": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#921.png"
+   ],
+   "offsets": [
+    [
+     5.2,
+     36.9
+    ]
+   ]
+  },
+  "#922": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#922.png"
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
+   ]
+  },
+  "#923": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#923.png"
+   ],
+   "offsets": [
+    [
+     4.6,
+     15.2
+    ]
+   ]
+  },
+  "#924": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#924.png"
+   ],
+   "offsets": [
+    [
+     9.9,
+     16.4
+    ]
+   ]
+  },
+  "#925": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#925.png"
+   ],
+   "offsets": [
+    [
+     2.55,
+     6.7
+    ]
+   ]
+  },
+  "#926": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#926.png"
+   ],
+   "offsets": [
+    [
+     4.0,
+     4.25
     ]
    ]
   },

@@ -103,6 +103,15 @@ What the original settled that guesswork had got wrong:
 * The same frame label appears in several sprites. A backdrop has to be taken
   from the container the game retargets, not from whichever sprite comes first.
 
+* Every screen that is not the fight is one clip with a frame each --
+  inventory, win, shop, skills, data, options -- and the same slot name means
+  different places on different frames. Laying the victory screen out from the
+  wrong frame is an easy mistake: `win` is frame 9, not frame 16.
+* A menu's slots are clips the engine fills. Their empty square is still drawn
+  for the bag; a drop square is only there while something is in it.
+* raylib bakes printable ASCII and nothing else, so the euro sign the game
+  prints against every price has to be asked for by codepoint.
+
 Known to differ: text is rasterised by stb_truetype without hinting, so stems
 land between pixels where Flash's device-font rendering snaps them onto one.
 Size, spacing, wrap and colour match; the weight reads lighter.

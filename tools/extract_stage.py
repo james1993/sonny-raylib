@@ -77,6 +77,8 @@ RAMP_CHARACTER = 91
 SELECTOR_INSTANCE = 'selector'
 # The speech box, which the game slides to the speaker's side of the screen.
 SPEECH_INSTANCE = 'combatScript'
+# The clip that carries every screen that is not the fight, one frame each.
+MENU_INSTANCE = 'KRINMENU'
 # How far to look inside a clip for its text fields.
 TEXT_FIELD_DEPTH = 3
 # Inside the orb, the icon is whatever the frame places in this depth range.
@@ -178,10 +180,14 @@ def edit_text_boxes(body):
             # between lines.
             leading = struct.unpack_from('<h', body, p + 7)[0] / 20.0
             p += 9
+        _, p = read_string(body, p)      # variable name
+        initial = ''
+        if f1 & 0x80:                    # HasText: a label the game never sets
+            initial = read_string(body, p)[0]
         out[cid] = {'xmin': round(xmin, 3), 'ymin': round(ymin, 3),
                     'xmax': round(xmax, 3), 'ymax': round(ymax, 3),
                     'height': height, 'color': color, 'align': align,
-                    'leading': leading, 'font': font}
+                    'leading': leading, 'font': font, 'text': initial}
     return out
 
 
@@ -258,6 +264,7 @@ def bar_widget(body, raw_dir, texts, fonts):
                                    'size': box['height'],
                                    'align': box['align'],
                                    'leading': round(d * fd * box['leading'], 3),
+                                   'text': box['text'],
                                    'font': (fonts.get(box['font']) or ('', 0))[0],
                                    'device': (fonts.get(box['font'])
                                               or ('', 0))[1] == 0,
@@ -381,18 +388,20 @@ def orb_parts(body, raw_dir, orb):
 
 
 def text_fields(body, character, texts, fonts, at=(1.0, 1.0, 0.0, 0.0),
-                depth=0):
+                depth=0, frame=0):
     """Every text field under a clip, with its box in that clip's own
     coordinates. Fields are often a container or two down, so this composes
-    the transforms on the way."""
+    the transforms on the way. `frame` picks which of the clip's own frames to
+    read, for a clip that is a screen per frame."""
     if depth > TEXT_FIELD_DEPTH:
         return []
     sx, sy, tx, ty = at
     found = []
     frames = model_frames(body, character)
-    if not frames:
+    if frame >= len(frames):
         return []
-    for name, info in sorted(frames[0].items(), key=lambda kv: kv[1]['depth']):
+    for name, info in sorted(frames[frame].items(),
+                             key=lambda kv: kv[1]['depth']):
         a, _, _, d, x, y = info['matrix']
         here = (sx * a, sy * d, tx + sx * x, ty + sy * y)
         box = texts.get(info['character'])
@@ -404,6 +413,7 @@ def text_fields(body, character, texts, fonts, at=(1.0, 1.0, 0.0, 0.0),
                           'height': round(here[1] * (box['ymax'] - box['ymin']), 3),
                           'size': box['height'], 'align': box['align'],
                           'leading': box['leading'],
+                          'text': box['text'],
                           'font': (fonts.get(box['font']) or ('', 0))[0],
                           'device': (fonts.get(box['font']) or ('', 0))[1] == 0,
                           'color': box['color']})
@@ -414,7 +424,7 @@ def text_fields(body, character, texts, fonts, at=(1.0, 1.0, 0.0, 0.0),
 
 
 def graphic_parts(body, raw_dir, character, texts, at=(1.0, 1.0, 0.0, 0.0),
-                  depth=0):
+                  depth=0, frame=0, skip=()):
     """Every drawable piece under a clip, with its transform composed.
 
     A clip cannot be exported whole when it carries text fields, because the
@@ -426,10 +436,15 @@ def graphic_parts(body, raw_dir, character, texts, at=(1.0, 1.0, 0.0, 0.0),
     sx, sy, tx, ty = at
     found = []
     frames = model_frames(body, character)
-    if not frames:
+    if frame >= len(frames):
         return []
-    for name, info in sorted(frames[0].items(), key=lambda kv: kv[1]['depth']):
+    for name, info in sorted(frames[frame].items(),
+                             key=lambda kv: kv[1]['depth']):
         if info['character'] in texts:
+            continue
+        # A named slot the engine fills itself -- a bag square, a drop square.
+        # The original hides an empty one, so its art is not the screen's.
+        if name in skip:
             continue
         a, _, _, d, x, y = info['matrix']
         here = (sx * a, sy * d, tx + sx * x, ty + sy * y)
@@ -439,7 +454,7 @@ def graphic_parts(body, raw_dir, character, texts, at=(1.0, 1.0, 0.0, 0.0),
         child = model_frames(body, info['character'])
         if len(child) <= 1:
             inner = graphic_parts(body, raw_dir, info['character'], texts,
-                                  here, depth + 1)
+                                  here, depth + 1, 0, skip)
             if inner:
                 found.extend(inner)
                 continue
@@ -455,6 +470,71 @@ def graphic_parts(body, raw_dir, character, texts, at=(1.0, 1.0, 0.0, 0.0),
             entry['frames'] = len(child)
         found.append(entry)
     return found
+
+
+def menu_frames(body, raw_dir, chrome, texts, fonts):
+    """The menu, taken apart a screen at a time.
+
+    One clip carries every screen that is not the fight: the inventory, the
+    victory tally, the item store, the ability tree, the save slots and the
+    settings, one labelled frame each. Its placement on the hub gives them all
+    stage coordinates, and each frame's own graphics, text fields and named
+    slots are what that screen is made of."""
+    placed = next((c for c in chrome if c['name'] == MENU_INSTANCE), None)
+    if not placed:
+        return {}
+    at = (placed['scale_x'], placed['scale_y'], placed['x'], placed['y'])
+    frames = model_frames(body, placed['character'])
+    out = {}
+    for label, frame in sprite_frame_labels(body, placed['character']).items():
+        index = frame - 1
+        if index >= len(frames):
+            continue
+        slots = {}
+        for name, info in frames[index].items():
+            if name.startswith('@'):
+                continue
+            a, _, _, d, x, y = info['matrix']
+            entry = {'x': round(at[2] + at[0] * x, 3),
+                     'y': round(at[3] + at[1] * y, 3),
+                     'scale': round(at[0] * a, 6),
+                     'character': info['character']}
+            geom = sprite_geometry(raw_dir, info['character'])
+            if geom:
+                (entry['width'], entry['height'],
+                 entry['origin_x'], entry['origin_y']) = geom
+            slots[name] = entry
+        out[label] = {
+            'frame': frame,
+            'slots': slots,
+            'parts': graphic_parts(body, raw_dir, placed['character'], texts,
+                                   at, 0, index, set(slots)),
+            'fields': text_fields(body, placed['character'], texts, fonts,
+                                  at, 0, index),
+        }
+    return out
+
+
+def sprite_frame_labels(body, sprite_id):
+    """label -> 1-based frame, for one sprite's own timeline."""
+    out = {}
+    for tag, start, length in walk_tags(body, header_end(body)):
+        if tag != TAG_DEFINE_SPRITE or length < 4:
+            continue
+        if struct.unpack_from('<H', body, start)[0] != sprite_id:
+            continue
+        frame = 1
+        pending = []
+        for t2, s2, l2 in walk_tags(body, start + 4, start + length):
+            if t2 == TAG_FRAME_LABEL and l2 >= 1:
+                pending.append(read_string(body, s2)[0])
+            elif t2 == TAG_SHOW_FRAME:
+                for label in pending:
+                    out[label] = frame
+                pending = []
+                frame += 1
+        break
+    return out
 
 
 def speech_box(body, raw_dir, chrome, texts, fonts):
@@ -702,7 +782,7 @@ def main(path, raw_dir=None):
                 'width': round(entry['scale_x'] * (box['xmax'] - box['xmin']), 3),
                 'height': round(entry['scale_y'] * (box['ymax'] - box['ymin']), 3),
                 'size': box['height'], 'align': box['align'],
-                'leading': box['leading'],
+                'leading': box['leading'], 'text': box['text'],
                 'font': (fonts.get(box['font']) or ('', 0))[0],
                 'device': (fonts.get(box['font']) or ('', 0))[1] == 0,
                 'color': box['color']})
@@ -736,6 +816,9 @@ def main(path, raw_dir=None):
                'chrome_text': chrome_fields,
                'speech': speech_box(body, raw_dir, chrome, texts, fonts),
                'clip_parts': clip_parts,
+               'menus': menu_frames(body, raw_dir,
+                                     [e for group in screens.values()
+                                      for e in group], texts, fonts),
                'talents': talents, 'menu': menu_screens}, sys.stdout, indent=1)
     print()
 

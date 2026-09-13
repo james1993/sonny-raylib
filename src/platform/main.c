@@ -71,6 +71,8 @@ int main(int argc, char **argv)
             game.screen = SCREEN_SHOP;
         else if (strcmp(want_screen, "map") == 0)
             game.screen = SCREEN_MAP;
+        else if (strcmp(want_screen, "victory") == 0)
+            game.screen = SCREEN_VICTORY;
     }
 
     while (!WindowShouldClose()) {
