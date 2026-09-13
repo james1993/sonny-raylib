@@ -768,10 +768,15 @@ def button_art(body, raw_dir, wanted):
                     pos = skip_filter_list(body, pos)
                 if flags & 0x20:             # has a blend mode
                     pos += 1
-                if not flags & 0x01:         # not part of the resting state
+                # A record can belong to several states at once; what matters
+                # is whether it shows at rest and whether it shows under the
+                # pointer.
+                if not (flags & 0x03):
                     continue
                 a, _, _, d, x, y = matrix
                 entry = {'character': character, 'depth': depth,
+                         'up': 1 if flags & 0x01 else 0,
+                         'over': 1 if flags & 0x02 else 0,
                          'x': round(x, 3), 'y': round(y, 3),
                          'scale_x': round(a, 6), 'scale_y': round(d, 6)}
                 geom = sprite_geometry(raw_dir, character)

@@ -159,6 +159,20 @@ What the original settled that guesswork had got wrong:
 * The front end is a chain of root frames -- mainMenu, subMenu, dataMenu,
   classMenu, optionsMenu -- and nameMenu sits between them without ever being
   reached, so the game never asks for a name.
+* The tooltip is built at run time, not laid out: KrinToolTipper creates its
+  two text fields on the spot, 170 wide, _sans 12 with the title bold on a
+  light backing and the body white on a dark one, and each backing is
+  stretched to whatever the text came out as. It rides the pointer, flips to
+  its left past x 570 and rides up past y 500.
+* A save slot is named for who is in it -- "Lvl N Class" -- not for the
+  player, and the game never asks for a name.
+* A button carries art for its resting state and its over state, and swapping
+  between them is the only thing most of these buttons do to show they can be
+  pressed.
+* The fifth button on the hub's row gives every point back, and the scenery on
+  a zone's scene is clickable: the settings screen counts how many pieces of
+  it have been found.
+
 * Losing stops on loseCombat for a moment and then goes to gameOverMenu,
   where the only way on is to load the slot the run was in.
 

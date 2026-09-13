@@ -29,6 +29,7 @@ typedef enum {
     SCREEN_CLASS,
     SCREEN_OPTIONS,
     SCREEN_MANUAL,
+    SCREEN_SETTINGS,
     SCREEN_LOST,
     SCREEN_GAMEOVER,
     SCREEN_ZONE,
@@ -124,6 +125,10 @@ typedef struct {
     } options;
     int32_t   lost_timer;
     int32_t   gameover_tip;
+    /* What the tooltip is showing this frame. The original keeps one of
+       these and every button fills it on roll-over. */
+    char      tip_title[128];
+    char      tip_body[256];
     char      notice[128];
     int32_t   notice_timer;
 
@@ -167,21 +172,32 @@ void draw_orb(const char *icon, Vector2 centre, float scale, int32_t dim,
    nothing spent on it. */
 #define ORB_DIM_RING   217
 #define ORB_DIM_TALENT 204
-/* A button's own art, which is nowhere else in the file. */
+/* A button's own art, which is nowhere else in the file: at rest, or the
+   state it swaps in while the pointer is on it. */
 void draw_button_art(const StageButton *b, Color tint);
+void draw_button_state(const StageButton *b, int over, Color tint);
 
 /* Everything a root frame places that is a picture, in its own depth order,
    and the art the buttons on it carry. Anything the engine fills itself is
    left to the screen. */
 void draw_screen_chrome(const char *screen);
 void draw_screen_buttons(const char *screen, Vector2 mouse);
-/* The text a frame bakes into its own fields, which the game never sets. */
+/* The text a frame bakes into its own fields, which the game never sets.
+   `owner` narrows it to one clip on that screen; NULL takes them all. */
+void draw_static_text(const char *screen, const char *owner);
 void draw_screen_text(const char *screen);
 /* One of a root frame's own text fields, by the name the frame gives it. */
 const TextField *chrome_field(const char *screen, const char *name);
 /* Whether the pointer has just pressed the button with this character. */
 int screen_button_pressed(const char *screen, int32_t character,
                           Vector2 mouse);
+
+/* The box the original parks under the pointer wherever something has a
+   name. Screens fill it as the pointer passes over things; it is cleared at
+   the top of every frame, so it only shows while something is under the
+   pointer. */
+void game_tooltip(Game *g, const char *title, const char *body);
+void game_draw_tooltip(const Game *g, Vector2 mouse);
 
 void game_draw_notice(const Game *g);
 void ui_text(const char *text, float x, float y, float size, Color color);
@@ -229,6 +245,8 @@ void screen_lost_update(Game *g, Vector2 mouse);
 void screen_lost_draw(Game *g, Vector2 mouse);
 void screen_gameover_update(Game *g, Vector2 mouse);
 void screen_gameover_draw(Game *g, Vector2 mouse);
+void screen_settings_update(Game *g, Vector2 mouse);
+void screen_settings_draw(Game *g, Vector2 mouse);
 
 /* Leave the settings for the story, which is where a new game begins. */
 void game_begin_story(Game *g);

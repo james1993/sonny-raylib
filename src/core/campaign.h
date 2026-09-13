@@ -32,6 +32,16 @@ typedef struct {
     int32_t    inventory_count;
     /* Krin.slotInUse: which of the four saves this run belongs to. */
     int32_t    slot;
+    /* The tally the settings screen shows. Each is one of the counters the
+       original keeps on Krin and nudges where the thing happens. */
+    struct {
+        int32_t zones_cleared;      /* Krin.highestZoneDefeated */
+        int32_t respec_used;        /* Krin.numberOfRespecUsed */
+        int32_t training_used;      /* Krin.numberOfTrainingUsed */
+        int32_t top_physical;       /* the biggest hit of each kind */
+        int32_t top_elemental;
+        int32_t scenery_found;      /* updateBgElementClicked */
+    } stats;
 } Campaign;
 
 void campaign_new(Campaign *c, int32_t class_id);

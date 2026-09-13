@@ -91,6 +91,8 @@ int main(int argc, char **argv)
             game.screen = SCREEN_OPTIONS;
         else if (strcmp(want_screen, "manual") == 0)
             game.screen = SCREEN_MANUAL;
+        else if (strcmp(want_screen, "settings") == 0)
+            game.screen = SCREEN_SETTINGS;
         else if (strcmp(want_screen, "gameover") == 0)
             game.screen = SCREEN_GAMEOVER;
         else if (strcmp(want_screen, "hub") == 0)
@@ -102,6 +104,11 @@ int main(int argc, char **argv)
         audio_update();
         if (game.notice_timer > 0)
             game.notice_timer--;
+
+        /* The tooltip only shows while something is under the pointer, so
+           it is cleared before the screen has its say. */
+        game.tip_title[0] = 0;
+        game.tip_body[0] = 0;
 
         /* Update and draw go through the same call for each screen: several
            of them decide from the same button rectangles they draw. */
@@ -155,6 +162,10 @@ int main(int argc, char **argv)
             screen_manual_draw(&game, mouse);
             screen_manual_update(&game, mouse);
             break;
+        case SCREEN_SETTINGS:
+            screen_settings_draw(&game, mouse);
+            screen_settings_update(&game, mouse);
+            break;
         case SCREEN_LOST:
             screen_lost_draw(&game, mouse);
             screen_lost_update(&game, mouse);
@@ -170,6 +181,7 @@ int main(int argc, char **argv)
         }
         /* A message the game wants to show. In a fight the original runs
            these across the top of the battlefield, in KrinCombatText. */
+        game_draw_tooltip(&game, mouse);
         if (game.notice_timer > 0)
             game_draw_notice(&game);
         EndTextureMode();

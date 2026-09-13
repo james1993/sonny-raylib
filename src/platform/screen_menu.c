@@ -121,7 +121,12 @@ static const char *slot_name(int32_t slot, char *buf, size_t max)
 {
     Campaign peek;
     if (save_read(&peek, save_slot_path(slot)) == 0) {
-        snprintf(buf, max, "%s", lang_text("NAVTITLE2", 3));
+        /* A slot is named for whoever is in it: "Lvl N Class", which is what
+           the save itself carries. */
+        int32_t class_id = peek.player.class_template
+                         ? peek.player.class_template->id - 1 : 0;
+        snprintf(buf, max, "%s%d %s", lang_text("MENU", 0), peek.player.level,
+                 lang_text("CLASS", class_id));
         return buf;
     }
     /* "< Empty Slot >" is built by the frame rather than kept in the table. */
@@ -272,6 +277,63 @@ void screen_manual_update(Game *g, Vector2 mouse)
         audio_play("Click3pickup");
         g->screen = SCREEN_TITLE;
     }
+}
+
+/* ------------------------------------------ the settings inside the game */
+
+/* The same four switches again, on the menu clip's own frame, with the tally
+   the original keeps beside them. */
+#define SETTINGS_MENU  "options"
+#define MENU_SCREEN_ID "menu"
+#define SETTINGS_SOUND    1483
+#define SETTINGS_GRAPHICS 1157
+#define SETTINGS_QUALITY  1162
+#define SETTINGS_AUTOSAVE 1490
+#define SETTINGS_CLOSE    1364
+
+static void menu_say(const char *variable, const char *text)
+{
+    draw_field_wrapped(text_field_var(MENU_SCREEN_ID, variable), NOWHERE,
+                       text);
+}
+
+void screen_settings_draw(Game *g, Vector2 mouse)
+{
+    ClearBackground(BLACK);
+    draw_screen_chrome("Navigation");
+    draw_clip_parts(MENU_SCREEN_ID, SETTINGS_MENU, NOWHERE, NULL, WHITE);
+    draw_static_text(MENU_SCREEN_ID, SETTINGS_MENU);
+    for (int i = 0; i < SONNY_BUTTON_COUNT; i++)
+        if (strcmp(SONNY_BUTTONS[i].screen, SETTINGS_MENU) == 0)
+            draw_button_art(&SONNY_BUTTONS[i], WHITE);
+    (void)mouse;
+
+    menu_say("tit_3", lang_text("MENU", g->options.sound ? 29 : 30));
+    menu_say("tit_4", lang_text("MENU", g->options.graphics ? 31 : 32));
+    menu_say("tit_7", lang_text("MENU", g->options.autosave ? 29 : 30));
+    menu_say("tit_11", lang_text("MENU", g->options.quality ? 31 : 32));
+
+    const Campaign *c = &g->campaign;
+    menu_say("gs_zone_cleared", TextFormat("%d", c->stats.zones_cleared));
+    menu_say("gs_respec_used", TextFormat("%d", c->stats.respec_used));
+    menu_say("gs_training_used", TextFormat("%d", c->stats.training_used));
+    menu_say("gs_top_dmg_physical", TextFormat("%d", c->stats.top_physical));
+    menu_say("gs_top_dmg_elemental", TextFormat("%d", c->stats.top_elemental));
+    menu_say("gs_bg_found", TextFormat("%d", c->stats.scenery_found));
+}
+
+void screen_settings_update(Game *g, Vector2 mouse)
+{
+    if (screen_button_pressed(SETTINGS_MENU, SETTINGS_SOUND, mouse))
+        g->options.sound = !g->options.sound;
+    else if (screen_button_pressed(SETTINGS_MENU, SETTINGS_GRAPHICS, mouse))
+        g->options.graphics = !g->options.graphics;
+    else if (screen_button_pressed(SETTINGS_MENU, SETTINGS_QUALITY, mouse))
+        g->options.quality = !g->options.quality;
+    else if (screen_button_pressed(SETTINGS_MENU, SETTINGS_AUTOSAVE, mouse))
+        g->options.autosave = !g->options.autosave;
+    else if (screen_button_pressed("Navigation", SETTINGS_CLOSE, mouse))
+        g->screen = SCREEN_ZONE;
 }
 
 /* -------------------------------------------------------- losing a fight */

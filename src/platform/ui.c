@@ -627,6 +627,13 @@ void draw_orb(const char *icon, Vector2 centre, float scale, int32_t dim,
    recorded is where its pieces hang from. */
 void draw_button_art(const StageButton *b, Color tint)
 {
+    draw_button_state(b, 0, tint);
+}
+
+/* `over` picks the state the pointer being on the button swaps in, which is
+   the only thing most of these buttons do to show they can be pressed. */
+void draw_button_state(const StageButton *b, int over, Color tint)
+{
     if (!b)
         return;
     Vector2 centre = {b->x + b->width / 2, b->y + b->height / 2};
@@ -634,6 +641,8 @@ void draw_button_art(const StageButton *b, Color tint)
         const ButtonPiece *p = button_piece(b->character, i);
         if (!p)
             break;
+        if (!(over ? p->over : p->up))
+            continue;
         if (p->width <= 0)
             continue;
         const Texture2D *tex = asset_texture(TextFormat("#%d", p->character),
@@ -694,12 +703,11 @@ void draw_screen_buttons(const char *screen, Vector2 mouse)
         const StageButton *b = &SONNY_BUTTONS[i];
         if (strcmp(b->screen, screen) != 0)
             continue;
-        draw_button_art(b, WHITE);
-        /* The original's buttons light their own over state; ours marks the
-           box, which is all the art gives us for most of them. */
+        /* A button shows one set of pieces at rest and another under the
+           pointer, which is the only thing most of them do to say they can
+           be pressed. */
         Rectangle box = {b->x, b->y, b->width, b->height};
-        if (CheckCollisionPointRec(mouse, box))
-            DrawRectangleLinesEx(box, 1.0f, (Color){235, 200, 90, 90});
+        draw_button_state(b, CheckCollisionPointRec(mouse, box), WHITE);
     }
 }
 
@@ -759,11 +767,13 @@ static const char *strip_markup(const char *html, char *out, size_t max)
     return out;
 }
 
-void draw_screen_text(const char *screen)
+void draw_static_text(const char *screen, const char *owner)
 {
     for (int i = 0; i < SONNY_TEXT_FIELD_COUNT; i++) {
         const TextField *f = &SONNY_TEXT_FIELDS[i];
         if (strcmp(f->screen, screen) != 0)
+            continue;
+        if (owner && strcmp(f->owner, owner) != 0)
             continue;
         /* A field the frame's script fills is the screen's to draw. */
         if (f->variable[0] || !f->text || !f->text[0])
@@ -773,4 +783,107 @@ void draw_screen_text(const char *screen)
         if (plain[0])
             draw_field_wrapped(f, (Vector2){0, 0}, plain);
     }
+}
+
+void draw_screen_text(const char *screen)
+{
+    draw_static_text(screen, NULL);
+}
+
+/* ---------------------------------------------------------- the tooltip */
+
+/* The box the original parks under the pointer wherever something has a name.
+ * KrinToolTipper builds it at run time rather than laying it out: two text
+ * fields it creates on the spot, each with a backing stretched to fit, in the
+ * sizes and colours sprite 1142's "GO" frame sets. The clip follows the
+ * pointer with startDrag, and it flips to the other side of it near the right
+ * edge and rides up near the bottom.
+ */
+#define TOOLTIP_WIDTH    170.0f
+#define TOOLTIP_SIZE     12.0f
+#define TOOLTIP_TITLE_Y  0.0f
+#define TOOLTIP_BODY_Y   21.0f
+#define TOOLTIP_INDENT   3.0f
+#define TOOLTIP_FLIP_X   570.0f   /* past this the box goes left of the pointer */
+#define TOOLTIP_NEAR_X   13.0f
+#define TOOLTIP_FAR_X    (-183.0f)
+#define TOOLTIP_RISE_Y   500.0f
+#define TOOLTIP_RISE     (-50.0f)
+
+void game_tooltip(Game *g, const char *title, const char *body)
+{
+    snprintf(g->tip_title, sizeof(g->tip_title), "%s", title ? title : "");
+    snprintf(g->tip_body, sizeof(g->tip_body), "%s", body ? body : "");
+}
+
+/* One of the tooltip's two blocks: the text wrapped to the box's width on its
+   own backing, which is only as big as the text turned out to be. */
+static float tip_block(const char *text, float x, float y, Color backing,
+                       Color ink, int bold)
+{
+    (void)bold;
+    char line[256];
+    float height = 0;
+    /* Measure first: the backing is stretched to the text, not the other way
+       round. */
+    for (int pass = 0; pass < 2; pass++) {
+        float at = y;
+        int start = 0;
+        while (text[start]) {
+            int take = 0, last_fit = 0;
+            for (int i = start; ; i++) {
+                if (text[i] == ' ' || text[i] == 0) {
+                    int count = i - start;
+                    if (count > (int)sizeof(line) - 1)
+                        count = (int)sizeof(line) - 1;
+                    memcpy(line, text + start, count);
+                    line[count] = 0;
+                    if (ui_sans_text_width(line, TOOLTIP_SIZE)
+                            <= TOOLTIP_WIDTH - TOOLTIP_INDENT * 2
+                        || !last_fit)
+                        last_fit = i;
+                    else
+                        break;
+                    take = i;
+                    if (text[i] == 0)
+                        break;
+                }
+            }
+            take = last_fit;
+            int count = take - start;
+            if (count > (int)sizeof(line) - 1)
+                count = (int)sizeof(line) - 1;
+            memcpy(line, text + start, count);
+            line[count] = 0;
+            if (pass == 1)
+                ui_sans_text(line, x + TOOLTIP_INDENT, at, TOOLTIP_SIZE, ink);
+            at += TOOLTIP_SIZE + 4.0f;
+            start = text[take] ? take + 1 : take;
+        }
+        height = at - y;
+        if (pass == 0) {
+            float width = TOOLTIP_WIDTH;
+            DrawRectangleRec((Rectangle){x, y, width, height}, backing);
+            DrawRectangleLinesEx((Rectangle){x, y, width, height}, 1.0f,
+                                 (Color){0, 0, 0, 255});
+        }
+    }
+    return height;
+}
+
+void game_draw_tooltip(const Game *g, Vector2 mouse)
+{
+    if (!g->tip_title[0] && !g->tip_body[0])
+        return;
+    float sx = (mouse.x < TOOLTIP_FLIP_X) ? TOOLTIP_NEAR_X : TOOLTIP_FAR_X;
+    float sy = (mouse.y > TOOLTIP_RISE_Y) ? TOOLTIP_RISE : 0.0f;
+    float x = mouse.x + sx;
+    /* The title sits on a light backing, the body under it on a dark one --
+       the two shapes the clip keeps behind its fields. */
+    if (g->tip_title[0])
+        tip_block(g->tip_title, x, mouse.y + sy + TOOLTIP_TITLE_Y,
+                  (Color){219, 219, 219, 217}, (Color){0, 0, 0, 255}, 1);
+    if (g->tip_body[0])
+        tip_block(g->tip_body, x, mouse.y + sy + TOOLTIP_BODY_Y,
+                  (Color){0, 0, 0, 230}, (Color){255, 255, 255, 255}, 0);
 }

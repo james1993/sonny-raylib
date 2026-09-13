@@ -229,6 +229,8 @@ typedef struct {
 typedef struct {
     int32_t button;        /* the button's own character id */
     int32_t character;
+    int32_t up;            /* shows at rest */
+    int32_t over;          /* shows under the pointer */
     float   x, y;
     float   scale_x, scale_y;
     float   width, height;
@@ -237,7 +239,7 @@ typedef struct {
 
 extern const ButtonPiece SONNY_BUTTON_ART[];
 extern const int SONNY_BUTTON_ART_COUNT;
-/* The `index`-th piece of this button's resting art, bottom up. */
+/* The `index`-th piece of this button's art, bottom up. */
 const ButtonPiece *button_piece(int32_t button, int32_t index);
 
 extern const StageButton SONNY_BUTTONS[];

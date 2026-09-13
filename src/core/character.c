@@ -33,6 +33,19 @@ int32_t character_unspent_skill_points(const Character *c)
     return character_skill_points(c) - c->spent_skill_points;
 }
 
+void character_respec(Character *c)
+{
+    memset(c->rank, 0, sizeof(c->rank));
+    memset(c->skill_adder, 0, sizeof(c->skill_adder));
+    memset(c->buff_adder, 0, sizeof(c->buff_adder));
+    memset(c->move_matrix, 0, sizeof(c->move_matrix));
+    memset(c->spent, 0, sizeof(c->spent));
+    c->spent_skill_points = 0;
+    c->spent_stat_points = 0;
+    c->move_matrix[0] = SONNY_START_SKILL1;
+    c->move_matrix[1] = SONNY_START_SKILL2;
+}
+
 int32_t character_unspent_stat_points(const Character *c)
 {
     return character_stat_points(c) - c->spent_stat_points;

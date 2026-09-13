@@ -78,6 +78,12 @@ TalentError character_learn(Character *c, int32_t node);
 int32_t character_unspent_skill_points(const Character *c);
 int32_t character_unspent_stat_points(const Character *c);
 
+/* Give every point back to be spent again, as the hub's respec does: the
+   tree is cleared, the bar goes back to the two starting abilities, and the
+   hand-spent stat bonus is dropped -- what equipment adds is untouched,
+   because the original rebuilds StatSets0 from the equipment alone. */
+void character_respec(Character *c);
+
 /* Every ability the character knows (Krin.moveMatrix2): the two starting
    abilities followed by each learned active node's current rank. Writes up to
    `max` ids and returns how many. */

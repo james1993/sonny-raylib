@@ -65,6 +65,8 @@ static const TextField *win_field(const char *name)
 #define HUB_BUTTON_INVENTORY 1252
 #define HUB_BUTTON_SKILLS    1253
 #define HUB_BUTTON_SAVE      1254
+#define HUB_BUTTON_OPTIONS   1257   /* opens the menu's own settings frame */
+#define HUB_BUTTON_RESPEC    1258   /* gives every point back to spend again */
 #define HUB_BUTTON_MAP       1251
 
 /* Whether the pointer is on the hub's button with this character. */
@@ -128,8 +130,42 @@ static int32_t training_pick(const Campaign *c, Rng *rng, int32_t choices)
     return zone->training[rng_below(rng, (uint32_t)choices)];
 }
 
+/* What each of the hub's buttons calls itself, as SYSTEM keeps them: a name
+   and the line under it, in pairs. */
+static void hub_tooltips(Game *g, Vector2 mouse)
+{
+    static const struct { int32_t character; int32_t say; } NAMED[] = {
+        {HUB_BUTTON_INVENTORY, 17}, {HUB_BUTTON_SKILLS, 19},
+        {HUB_BUTTON_SAVE, 21}, {HUB_BUTTON_OPTIONS, 23},
+        {HUB_BUTTON_RESPEC, 32}, {HUB_BUTTON_MAP, 27},
+    };
+    for (size_t i = 0; i < sizeof(NAMED) / sizeof(NAMED[0]); i++) {
+        const StageButton *b = stage_button(HUB_SCREEN, NAMED[i].character, 0);
+        if (b && CheckCollisionPointRec(mouse, (Rectangle){b->x, b->y,
+                                                           b->width,
+                                                           b->height}))
+            game_tooltip(g, lang_text("SYSTEM", NAMED[i].say),
+                         lang_text("SYSTEM", NAMED[i].say + 1));
+    }
+    /* The markers on the scene name themselves the same way. */
+    for (int32_t i = 0; ; i++) {
+        const StageButton *b = zone_marker_button(&g->campaign, i);
+        if (!b)
+            break;
+        if (!CheckCollisionPointRec(mouse, (Rectangle){b->x, b->y, b->width,
+                                                       b->height}))
+            continue;
+        const ZoneButton *marker = zone_button(b->character);
+        int32_t say = marker->kind == MARKER_SHOP ? 15
+                    : marker->kind == MARKER_TRAINING ? 29 : 13;
+        game_tooltip(g, lang_text("SYSTEM", say),
+                     lang_text("SYSTEM", say + 1));
+    }
+}
+
 void screen_zone_update(Game *g, Vector2 mouse)
 {
+    hub_tooltips(g, mouse);
     /* The markers on the scene. Which one was pressed decides what happens,
        and for a store it is also what says which store. */
     for (int32_t i = 0; IsMouseButtonPressed(MOUSE_BUTTON_LEFT); i++) {
@@ -151,6 +187,7 @@ void screen_zone_update(Game *g, Vector2 mouse)
                                          marker->choices);
             g->boss_fight = 0;
             g->progress_fight = 0;
+            g->campaign.stats.training_used++;
             if (pick)
                 battle_screen_start(g, pick);
             return;
@@ -188,6 +225,13 @@ void screen_zone_update(Game *g, Vector2 mouse)
         if (save_write(&g->campaign,
                        save_slot_path(g->campaign.slot)) != 0)
             game_notice(g, "Could not write the save file.");
+    } else if (hub_pressed(HUB_BUTTON_OPTIONS, mouse)) {
+        audio_play("Click3pickup");
+        g->screen = SCREEN_SETTINGS;
+    } else if (hub_pressed(HUB_BUTTON_RESPEC, mouse)) {
+        audio_play("Click3pickup");
+        g->campaign.stats.respec_used++;
+        character_respec(&g->campaign.player);
     }
 }
 
@@ -349,14 +393,9 @@ void screen_map_draw(Game *g, Vector2 mouse)
 
     /* What the pointer is on: the tooltip the marker's own handler fills,
        which is the zone's name over what the place is called. */
-    if (g->hovered_item >= 0 && g->hovered_item < SONNY_ZONE_COUNT) {
-        Rectangle box = {mouse.x + 12, mouse.y + 12, 200, 40};
-        if (box.x + box.width > STAGE_W)
-            box.x = STAGE_W - box.width;
-        draw_panel(box, lang_text("ZONES", g->hovered_item));
-        ui_text(lang_text("ZONES2", g->hovered_item), (int)box.x + 8,
-                (int)box.y + 24, 10, (Color){200, 205, 215, 255});
-    }
+    if (g->hovered_item >= 0 && g->hovered_item < SONNY_ZONE_COUNT)
+        game_tooltip(g, lang_text("ZONES", g->hovered_item),
+                     lang_text("ZONES2", g->hovered_item));
 }
 
 /* A slot's own empty square, which the menu screens share. */
@@ -1018,12 +1057,8 @@ void screen_inventory_draw(Game *g, Vector2 mouse)
     } else if (g->hovered_item >= 0 && g->hovered_item < SONNY_EQUIP_SLOTS) {
         shown_item = item_by_id(c->player.equip[g->hovered_item]);
     }
-    if (shown_item && shown_item->id != 0) {
-        Rectangle box = {70, STAGE_H - 140, STAGE_W - 200, 90};
-        draw_panel(box, shown_item->name);
-        ui_text(shown_item->tooltip, (int)box.x + 8, (int)box.y + 26, 10,
-                (Color){200, 205, 215, 255});
-    }
+    if (shown_item && shown_item->id != 0)
+        game_tooltip(g, shown_item->name, shown_item->tooltip);
 }
 
 /* ---------------------------------------------------------------- shop */
@@ -1176,14 +1211,9 @@ void screen_shop_draw(Game *g, Vector2 mouse)
                && g->hovered_item < SHOP_STOCK_SLOTS) {
         shown = item_by_id(shop->item[g->hovered_item]);
     }
-    if (shown && shown->id != 0) {
-        Rectangle box = {70, STAGE_H - 140, STAGE_W - 200, 90};
-        draw_panel(box, shown->name);
-        ui_text(shown->tooltip, (int)box.x + 8, (int)box.y + 26, 10,
-                (Color){200, 205, 215, 255});
-        ui_text(TextFormat("%s%d", EURO, shown->price), (int)box.x + 8,
-                (int)box.y + 68, 10, (Color){225, 200, 120, 255});
-    }
+    if (shown && shown->id != 0)
+        game_tooltip(g, TextFormat("%s  %s%d", shown->name, EURO,
+                                   shown->price), shown->tooltip);
 }
 
 void screen_shop_update(Game *g, Vector2 mouse)
