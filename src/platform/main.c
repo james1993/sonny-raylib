@@ -10,6 +10,7 @@
 #include "assets.h"
 #include "audio.h"
 #include "game.h"
+#include "rlgl.h"
 
 static void game_start(Game *g, uint64_t seed)
 {
@@ -35,6 +36,12 @@ int main(int argc, char **argv)
 
     SetTraceLogLevel(LOG_WARNING);
     InitWindow(STAGE_W, STAGE_H, "Sonny");
+    /* The right-hand team's containers carry a negative horizontal scale --
+       that is how the original faces them the other way -- and a mirrored
+       quad winds the opposite way, so the default backface culling throws it
+       out. Nothing here is three-dimensional, so the culling only ever costs
+       us the mirrored half of the screen. */
+    rlDisableBackfaceCulling();
     SetTargetFPS(STAGE_FPS);
     assets_set_root(getenv("SONNY_ASSETS") ? getenv("SONNY_ASSETS") : ".");
     /* SONNY_SILENT keeps headless runs from opening an audio device. */
