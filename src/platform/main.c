@@ -91,6 +91,10 @@ int main(int argc, char **argv)
             game.screen = SCREEN_OPTIONS;
         else if (strcmp(want_screen, "manual") == 0)
             game.screen = SCREEN_MANUAL;
+        else if (strcmp(want_screen, "ending") == 0)
+            game.screen = SCREEN_ENDING;
+        else if (strcmp(want_screen, "intro") == 0)
+            game_play_cutscene(&game, 0);
         else if (strcmp(want_screen, "settings") == 0)
             game.screen = SCREEN_SETTINGS;
         else if (strcmp(want_screen, "gameover") == 0)
@@ -161,6 +165,14 @@ int main(int argc, char **argv)
         case SCREEN_MANUAL:
             screen_manual_draw(&game, mouse);
             screen_manual_update(&game, mouse);
+            break;
+        case SCREEN_ENDING:
+            screen_ending_draw(&game, mouse);
+            screen_ending_update(&game, mouse);
+            break;
+        case SCREEN_CUTSCENE:
+            screen_cutscene_draw(&game, mouse);
+            screen_cutscene_update(&game, mouse);
             break;
         case SCREEN_SETTINGS:
             screen_settings_draw(&game, mouse);

@@ -553,6 +553,46 @@ def extract_party(text, scripts_dir):
             'joins': joins}
 
 
+CUT_START_RE = re.compile(r'^\s*dooder = (\d+);')
+CUT_NEXT_RE = re.compile(r'subText = _root\.KrinLang\[[^\]]*\]\.CUTSUB\[dooder\]')
+CUT_CLEAR_RE = re.compile(r'subText = "";')
+
+
+def extract_cutscenes(scripts_dir, characters):
+    """When each cutscene puts a line of its subtitle up.
+
+    A cutscene is one long animation whose own frames carry the script: it
+    sets a counter at the start, and on the frames where the caption changes
+    it shows the next line of CUTSUB or clears it."""
+    out = {}
+    for cid in characters:
+        folder = os.path.join(scripts_dir, 'DefineSprite_%d' % cid)
+        if not os.path.isdir(folder):
+            continue
+        start, cues = 0, []
+        for name in sorted(os.listdir(folder)):
+            if not name.startswith('frame_'):
+                continue
+            frame = name[len('frame_'):]
+            if not frame.isdigit():
+                continue
+            path = os.path.join(folder, name, 'DoAction.as')
+            if not os.path.exists(path):
+                continue
+            body = open(path, encoding='utf-8', errors='replace').read()
+            m = CUT_START_RE.search(body)
+            if m and int(frame) == 1:
+                start = int(m.group(1))
+            if CUT_NEXT_RE.search(body):
+                cues.append({'frame': int(frame), 'clear': False})
+            elif CUT_CLEAR_RE.search(body):
+                cues.append({'frame': int(frame), 'clear': True})
+        if cues:
+            cues.sort(key=lambda c: c['frame'])
+            out[cid] = {'start': start, 'cues': cues}
+    return out
+
+
 def extract_zone_buttons(scripts_dir):
     """What each marker on a zone's scene does, by the button's own id.
 
@@ -644,6 +684,7 @@ def main():
              'buttons': extract_shop_buttons(args.scripts_dir)}
     zone_buttons = extract_zone_buttons(args.scripts_dir)
     party = extract_party(text, args.scripts_dir)
+    cutscenes = extract_cutscenes(args.scripts_dir, (1695, 1710, 1719))
     moves, units, items, buffs = extract_tables(text)
     battles = extract_battles(text)
 
@@ -732,7 +773,7 @@ def main():
                           ('elements', elements), ('doll', doll),
                           ('shops', shops),
                           ('zone_buttons', zone_buttons),
-                          ('party', party)):
+                          ('party', party), ('cutscenes', cutscenes)):
         path = os.path.join(args.out, name + '.json')
         with open(path, 'w', encoding='utf-8') as fh:
             json.dump(payload, fh, indent=1, ensure_ascii=False)

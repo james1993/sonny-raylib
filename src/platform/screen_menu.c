@@ -255,7 +255,7 @@ void screen_options_update(Game *g, Vector2 mouse)
    and then drops the player on the deck of the ship. */
 void game_begin_story(Game *g)
 {
-    g->screen = SCREEN_ZONE;
+    game_play_cutscene(g, 0);
 }
 
 /* ------------------------------------------------------------ the manual */
@@ -389,4 +389,120 @@ void screen_gameover_update(Game *g, Vector2 mouse)
     } else if (screen_button_pressed(OVER_SCREEN, BUTTON_BACK, mouse)) {
         g->screen = SCREEN_TITLE;
     }
+}
+
+/* ------------------------------------------------------------ the end */
+
+#define END_SCREEN "endMenu"
+#define BUTTON_END_AGAIN 1175
+#define BUTTON_END_MORE  1177
+
+void screen_ending_draw(Game *g, Vector2 mouse)
+{
+    (void)g;
+    draw_frame(END_SCREEN, mouse);
+    say(END_SCREEN, "enderText", lang_text("ENDING", 0));
+    say(END_SCREEN, "whatToSay3", lang_text("MENU", 19));
+}
+
+void screen_ending_update(Game *g, Vector2 mouse)
+{
+    if (screen_button_pressed(END_SCREEN, BUTTON_END_AGAIN, mouse)
+        || screen_button_pressed(END_SCREEN, BUTTON_END_MORE, mouse)) {
+        audio_play("Click3pickup");
+        g->screen = SCREEN_TITLE;
+    }
+}
+
+/* ---------------------------------------------------------- cutscenes */
+
+/* The three comics the story is told in. Each is one long animation on a root
+ * frame of its own, with a caption under it the animation's own frames change
+ * and a SKIP the player can press at any point.
+ */
+#define CUTSCENE_SKIP 1697
+
+/* Which clip each cutscene frame plays, and where it goes when it ends. */
+static const struct {
+    const char *screen;
+    int32_t     clip;
+    int32_t     then;
+} CUTSCENES[] = {
+    {"CS_INTRO", 1695, SCREEN_ZONE},
+    {"CS_BRIDGE", 1710, SCREEN_MAP},
+    {"CS_OUTRO", 1719, SCREEN_ENDING},
+};
+
+void game_play_cutscene(Game *g, int32_t which)
+{
+    if (which < 0 || which >= (int32_t)(sizeof(CUTSCENES)
+                                        / sizeof(CUTSCENES[0])))
+        return;
+    g->cutscene = which;
+    g->cutscene_frame = 1;
+    const CutsceneDef *def = cutscene_by_clip(CUTSCENES[which].clip);
+    g->cutscene_line = def ? def->start : 0;
+    g->screen = SCREEN_CUTSCENE;
+}
+
+/* The caption as the animation has reached it: every cue up to this frame,
+   replayed, because a cue either shows the next line or clears it. */
+static const char *cutscene_caption(const Game *g)
+{
+    int32_t clip = CUTSCENES[g->cutscene].clip;
+    const CutsceneDef *def = cutscene_by_clip(clip);
+    int32_t line = def ? def->start : 0;
+    const char *shown = "";
+    for (int i = 0; i < SONNY_CUTSCENE_CUE_COUNT; i++) {
+        const CutsceneCue *cue = &SONNY_CUTSCENE_CUES[i];
+        if (cue->clip != clip || cue->frame > g->cutscene_frame)
+            continue;
+        if (cue->clear) {
+            shown = "";
+        } else {
+            shown = lang_text("CUTSUB", line);
+            line++;
+        }
+    }
+    return shown;
+}
+
+void screen_cutscene_draw(Game *g, Vector2 mouse)
+{
+    const char *screen = CUTSCENES[g->cutscene].screen;
+    draw_frame(screen, mouse);
+    /* The comic itself, which the frame places over the backing. */
+    const StageChrome *panel = NULL;
+    for (int i = 0; i < SONNY_STAGE_CHROME_COUNT; i++) {
+        const StageChrome *c = &SONNY_STAGE_CHROME[i];
+        if (strcmp(c->screen, screen) == 0
+            && c->character == CUTSCENES[g->cutscene].clip)
+            panel = c;
+    }
+    if (panel) {
+        const char *art = TextFormat("#%d", panel->character);
+        int32_t count = asset_frame_count(art);
+        int32_t frame = count > 0 ? ((g->cutscene_frame - 1) % count) + 1 : 1;
+        /* Each frame of a comic is its own size, so every one is stood on
+           the placement point by its own recorded origin rather than by the
+           bounds the first frame happened to have. */
+        asset_draw_placed(art, frame, (Vector2){panel->x, panel->y},
+                          panel->scale_x, WHITE);
+    }
+    draw_field_wrapped(text_field_var(screen, "subText"), NOWHERE,
+                       cutscene_caption(g));
+}
+
+void screen_cutscene_update(Game *g, Vector2 mouse)
+{
+    const char *screen = CUTSCENES[g->cutscene].screen;
+    if (screen_button_pressed(screen, CUTSCENE_SKIP, mouse)) {
+        audio_play("Click3pickup");
+        g->screen = CUTSCENES[g->cutscene].then;
+        return;
+    }
+    const char *art = TextFormat("#%d", CUTSCENES[g->cutscene].clip);
+    int32_t count = asset_frame_count(art);
+    if (++g->cutscene_frame > count && count > 0)
+        g->screen = CUTSCENES[g->cutscene].then;
 }

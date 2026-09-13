@@ -420,6 +420,27 @@ def gen_party(party):
     return '\n'.join(lines)
 
 
+def gen_cutscenes(cutscenes):
+    """Where each cutscene changes its caption."""
+    lines = ['const CutsceneCue SONNY_CUTSCENE_CUES[] = {']
+    for cid in sorted(cutscenes, key=int):
+        for cue in cutscenes[cid]['cues']:
+            lines.append('    { %s, %d, %d },'
+                         % (cid, cue['frame'], 1 if cue['clear'] else 0))
+    lines.append('};')
+    lines.append('const int SONNY_CUTSCENE_CUE_COUNT = '
+                 '(int)(sizeof(SONNY_CUTSCENE_CUES) / '
+                 'sizeof(SONNY_CUTSCENE_CUES[0]));')
+    lines.append('')
+    lines.append('const CutsceneDef SONNY_CUTSCENES[] = {')
+    for cid in sorted(cutscenes, key=int):
+        lines.append('    { %s, %d },' % (cid, cutscenes[cid]['start']))
+    lines.append('};')
+    lines.append('const int SONNY_CUTSCENE_COUNT = '
+                 '(int)(sizeof(SONNY_CUTSCENES) / sizeof(SONNY_CUTSCENES[0]));')
+    return '\n'.join(lines)
+
+
 MARKER_KINDS = {'progress': 'MARKER_PROGRESS', 'training': 'MARKER_TRAINING',
                 'shop': 'MARKER_SHOP'}
 
@@ -798,6 +819,26 @@ extern const int32_t SONNY_PARTY_TEAM[2];
 extern const PartyJoin SONNY_PARTY_JOINS[];
 extern const int SONNY_PARTY_JOIN_COUNT;
 
+/* A cutscene is one long animation whose own frames carry its script: it
+   starts a counter and, on the frames where the caption changes, shows the
+   next line of CUTSUB or clears it. */
+typedef struct {
+    int32_t clip;         /* the animation's character id */
+    int32_t start;        /* the line it starts counting from */
+} CutsceneDef;
+
+typedef struct {
+    int32_t clip;
+    int32_t frame;
+    int32_t clear;        /* clears the caption rather than advancing it */
+} CutsceneCue;
+
+extern const CutsceneDef SONNY_CUTSCENES[];
+extern const int SONNY_CUTSCENE_COUNT;
+extern const CutsceneCue SONNY_CUTSCENE_CUES[];
+extern const int SONNY_CUTSCENE_CUE_COUNT;
+const CutsceneDef *cutscene_by_clip(int32_t clip);
+
 extern const ShopDef SONNY_SHOPS[];
 extern const int SONNY_SHOP_COUNT;
 extern const ZoneButton SONNY_ZONE_BUTTONS[];
@@ -826,6 +867,14 @@ const ZoneDef *zone_of_battle(int32_t battle_id);
 '''
 
 LOOKUPS = '''
+const CutsceneDef *cutscene_by_clip(int32_t clip)
+{
+    for (int i = 0; i < SONNY_CUTSCENE_COUNT; i++)
+        if (SONNY_CUTSCENES[i].clip == clip)
+            return &SONNY_CUTSCENES[i];
+    return NULL;
+}
+
 const ShopDef *shop_by_id(int32_t id)
 {
     for (int i = 0; i < SONNY_SHOP_COUNT; i++)
@@ -947,6 +996,7 @@ def main():
         fh.write(gen_shops(load('shops')) + '\n\n')
         fh.write(gen_zone_buttons(load('zone_buttons')) + '\n\n')
         fh.write(gen_party(load('party')) + '\n\n')
+        fh.write(gen_cutscenes(load('cutscenes')) + '\n\n')
         fh.write(gen_elements(load('elements')) + '\n\n')
         fh.write(gen_lang(load('lang')) + '\n')
         fh.write(LOOKUPS)

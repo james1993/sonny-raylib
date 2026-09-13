@@ -5834,6 +5834,56 @@ const PartyJoin SONNY_PARTY_JOINS[] = {
 };
 const int SONNY_PARTY_JOIN_COUNT = (int)(sizeof(SONNY_PARTY_JOINS) / sizeof(SONNY_PARTY_JOINS[0]));
 
+const CutsceneCue SONNY_CUTSCENE_CUES[] = {
+    { 1695, 2, 0 },
+    { 1695, 50, 1 },
+    { 1695, 66, 0 },
+    { 1695, 176, 0 },
+    { 1695, 234, 1 },
+    { 1695, 244, 0 },
+    { 1695, 370, 0 },
+    { 1695, 424, 1 },
+    { 1695, 443, 0 },
+    { 1695, 499, 1 },
+    { 1695, 518, 0 },
+    { 1695, 563, 0 },
+    { 1695, 646, 1 },
+    { 1695, 699, 0 },
+    { 1695, 718, 0 },
+    { 1695, 798, 0 },
+    { 1695, 863, 0 },
+    { 1695, 893, 0 },
+    { 1695, 966, 1 },
+    { 1695, 988, 0 },
+    { 1695, 1009, 1 },
+    { 1695, 1022, 0 },
+    { 1695, 1075, 1 },
+    { 1695, 1100, 0 },
+    { 1695, 1164, 0 },
+    { 1695, 1254, 1 },
+    { 1710, 2, 0 },
+    { 1710, 102, 0 },
+    { 1710, 232, 0 },
+    { 1710, 288, 0 },
+    { 1710, 308, 0 },
+    { 1710, 392, 0 },
+    { 1710, 570, 1 },
+    { 1719, 2, 1 },
+    { 1719, 41, 0 },
+    { 1719, 137, 0 },
+    { 1719, 198, 0 },
+    { 1719, 266, 0 },
+    { 1719, 441, 1 },
+};
+const int SONNY_CUTSCENE_CUE_COUNT = (int)(sizeof(SONNY_CUTSCENE_CUES) / sizeof(SONNY_CUTSCENE_CUES[0]));
+
+const CutsceneDef SONNY_CUTSCENES[] = {
+    { 1695, 0 },
+    { 1710, 17 },
+    { 1719, 23 },
+};
+const int SONNY_CUTSCENE_COUNT = (int)(sizeof(SONNY_CUTSCENES) / sizeof(SONNY_CUTSCENES[0]));
+
 const ElementDef SONNY_ELEMENT_DEFS[] = {
     { "Physical", 0xC40000u },
     { "Magic", 0xFB95C8u },
@@ -5948,6 +5998,14 @@ const LangArray SONNY_LANG[] = {
     { "ZONES2", LANG_ZONES2, 5 },
 };
 const int SONNY_LANG_COUNT = (int)(sizeof(SONNY_LANG) / sizeof(SONNY_LANG[0]));
+
+const CutsceneDef *cutscene_by_clip(int32_t clip)
+{
+    for (int i = 0; i < SONNY_CUTSCENE_COUNT; i++)
+        if (SONNY_CUTSCENES[i].clip == clip)
+            return &SONNY_CUTSCENES[i];
+    return NULL;
+}
 
 const ShopDef *shop_by_id(int32_t id)
 {

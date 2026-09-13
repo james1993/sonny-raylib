@@ -1417,11 +1417,35 @@ void screen_victory_update(Game *g, Vector2 mouse)
     /* "Proceed!" is one of the frame's own fields, so its hit area is that
        field's box. */
     const TextField *proceed = win_field("@23");
-    if (proceed && IsMouseButtonPressed(MOUSE_BUTTON_LEFT)
-        && CheckCollisionPointRec(mouse, (Rectangle){proceed->x, proceed->y,
-                                                     proceed->width,
-                                                     proceed->height}))
-        g->screen = SCREEN_ZONE;
+    if (!proceed || !IsMouseButtonPressed(MOUSE_BUTTON_LEFT)
+        || !CheckCollisionPointRec(mouse, (Rectangle){proceed->x, proceed->y,
+                                                      proceed->width,
+                                                      proceed->height}))
+        return;
+
+    /* Where the game goes from here, as the button's own handler decides it:
+       the save is written first when autosave is on, then a zone that has
+       just been finished goes out to the map -- by way of a comic at the two
+       points the story has one -- and anything else goes back to the hub, or
+       to the ability screen when the fight was a level. */
+    if (g->options.autosave)
+        save_write(&g->campaign, save_slot_path(g->campaign.slot));
+    if (g->boss_beaten) {
+        g->boss_beaten = 0;
+        if (g->campaign.progress_battle == 9)
+            game_play_cutscene(g, 1);
+        else if (g->campaign.progress_battle == 38)
+            game_play_cutscene(g, 2);
+        else
+            g->screen = SCREEN_MAP;
+        return;
+    }
+    if (g->rewards.leveled) {
+        g->stat_points_spent = 0;
+        g->screen = SCREEN_TALENTS;
+        return;
+    }
+    g->screen = SCREEN_ZONE;
 }
 
 /* The tally after a fight, laid out from the menu clip's own "win" frame: the

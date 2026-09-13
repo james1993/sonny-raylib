@@ -30,6 +30,8 @@ typedef enum {
     SCREEN_OPTIONS,
     SCREEN_MANUAL,
     SCREEN_SETTINGS,
+    SCREEN_CUTSCENE,
+    SCREEN_ENDING,
     SCREEN_LOST,
     SCREEN_GAMEOVER,
     SCREEN_ZONE,
@@ -137,6 +139,14 @@ typedef struct {
     /* Krin.mouseItem: the item the pointer is carrying, which every slot
        swaps with rather than moves. */
     int32_t   carried_item;
+    /* Which of the three comics is playing, how far through it is, and which
+       line of the caption it has reached. */
+    int32_t   cutscene;
+    int32_t   cutscene_frame;
+    int32_t   cutscene_line;
+    /* Krin.bossJustPwned: the fight just won was the one that finishes a
+       zone, which is what sends the player out to the map. */
+    int32_t   boss_beaten;
     char      notice[128];
     int32_t   notice_timer;
 
@@ -255,6 +265,12 @@ void screen_gameover_update(Game *g, Vector2 mouse);
 void screen_gameover_draw(Game *g, Vector2 mouse);
 void screen_settings_update(Game *g, Vector2 mouse);
 void screen_settings_draw(Game *g, Vector2 mouse);
+void screen_cutscene_update(Game *g, Vector2 mouse);
+void screen_cutscene_draw(Game *g, Vector2 mouse);
+void screen_ending_update(Game *g, Vector2 mouse);
+void screen_ending_draw(Game *g, Vector2 mouse);
+/* Play one of the three comics: 0 the opening, 1 the bridge, 2 the ending. */
+void game_play_cutscene(Game *g, int32_t which);
 
 /* Leave the settings for the story, which is where a new game begins. */
 void game_begin_story(Game *g);

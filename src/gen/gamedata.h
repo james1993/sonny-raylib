@@ -288,6 +288,26 @@ extern const int32_t SONNY_PARTY_TEAM[2];
 extern const PartyJoin SONNY_PARTY_JOINS[];
 extern const int SONNY_PARTY_JOIN_COUNT;
 
+/* A cutscene is one long animation whose own frames carry its script: it
+   starts a counter and, on the frames where the caption changes, shows the
+   next line of CUTSUB or clears it. */
+typedef struct {
+    int32_t clip;         /* the animation's character id */
+    int32_t start;        /* the line it starts counting from */
+} CutsceneDef;
+
+typedef struct {
+    int32_t clip;
+    int32_t frame;
+    int32_t clear;        /* clears the caption rather than advancing it */
+} CutsceneCue;
+
+extern const CutsceneDef SONNY_CUTSCENES[];
+extern const int SONNY_CUTSCENE_COUNT;
+extern const CutsceneCue SONNY_CUTSCENE_CUES[];
+extern const int SONNY_CUTSCENE_CUE_COUNT;
+const CutsceneDef *cutscene_by_clip(int32_t clip);
+
 extern const ShopDef SONNY_SHOPS[];
 extern const int SONNY_SHOP_COUNT;
 extern const ZoneButton SONNY_ZONE_BUTTONS[];

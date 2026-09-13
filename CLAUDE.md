@@ -169,6 +169,15 @@ What the original settled that guesswork had got wrong:
 * A button carries art for its resting state and its over state, and swapping
   between them is the only thing most of these buttons do to show they can be
   pressed.
+* A cutscene is one long animation whose own frames carry its script: it sets
+  a counter and, on the frames where the caption changes, shows the next line
+  of CUTSUB or clears it. The intro is 1306 frames but only 166 pictures --
+  most frames repeat -- so the asset build copies each distinct one once.
+* Winning decides where the game goes next, not the hub: the save is written
+  first when autosave is on, a zone just finished goes out to the map (by way
+  of a comic after battle 9 and after 38), and otherwise it is back to the hub
+  or on to the ability screen when the fight was a level.
+
 * Nothing in this game is dragged. The pointer carries one thing at a time --
   Krin.mouseItem for an item, UITmouseHold for an ability -- and every slot
   swaps what it holds with what is carried. An equipment row takes only its

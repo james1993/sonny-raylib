@@ -17,6 +17,7 @@ three against the tables in data/extracted:
 """
 import argparse
 import glob
+import hashlib
 import json
 import os
 import re
@@ -153,6 +154,7 @@ def collect_names(data_dir):
     want = {'icon': set(), 'effect': set(), 'background': set(),
             'doll': set(), 'buff': set(), 'ui': set(), 'sound': set(),
             'chrome': set(), 'orb': set(), 'portrait': set(),
+            'cutscene': set(),
             'zone': set(), 'item': set()}
     speculative = set()
     # Expected to have no art: enemy ability icons (never on the player's
@@ -325,6 +327,12 @@ def collect_names(data_dir):
     for part in ((stage.get('talent_row') or {}).get('parts') or []):
         if part.get('width') and not part.get('frames'):
             want['chrome'].add('#%d' % part['character'])
+    # The three cutscenes, each one long animation the screen plays through.
+    for scr in ('CS_INTRO', 'CS_BRIDGE', 'CS_OUTRO'):
+        for entry in (stage.get('chrome') or []):
+            if entry.get('screen') == scr and entry.get('width') \
+                    and entry['character'] not in skip_ids:
+                want['cutscene'].add('#%d' % entry['character'])
     # The world map and the marker that stands on it per zone.
     world = stage.get('map_screen') or {}
     for part in (world.get('parts') or []):
@@ -453,6 +461,10 @@ def main():
                     frames = [(1, path) for frame, path
                               in frame_files(args.raw, cid)
                               if frame == int(pick)]
+                elif category == 'cutscene':
+                    # A cutscene is meant to be played through, so it keeps
+                    # every frame it has.
+                    frames = frame_files(args.raw, cid)
                 else:
                     frames = frame_files(args.raw, cid)[:args.chrome_frames]
                 if frames:
@@ -523,12 +535,23 @@ def main():
             dest_dir = os.path.join(args.out, category)
             os.makedirs(dest_dir, exist_ok=True)
             files = []
+            # An animation holds most of its frames still -- a cutscene of
+            # thirteen hundred frames is a hundred and sixty pictures -- so a
+            # frame that is byte for byte one already copied points at that
+            # copy instead of making another.
+            written = {}
             for index, (_, src) in enumerate(entries, start=1):
                 ext = os.path.splitext(src)[1] or '.png'
+                with open(src, 'rb') as fh:
+                    digest = hashlib.md5(fh.read()).hexdigest()
+                if digest in written:
+                    files.append(written[digest])
+                    continue
                 dest = os.path.join(dest_dir, '%s_%d%s' % (safe, index, ext)
                                     if len(entries) > 1 else '%s%s' % (safe, ext))
                 shutil.copyfile(src, dest)
-                files.append(os.path.relpath(dest, ROOT))
+                written[digest] = os.path.relpath(dest, ROOT)
+                files.append(written[digest])
                 stats['copied'] += 1
                 stats['bytes'] += os.path.getsize(dest)
             manifest[name] = {'category': category, 'frames': files}

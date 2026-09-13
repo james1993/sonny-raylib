@@ -1058,6 +1058,11 @@ void battle_screen_update(Game *g, Vector2 mouse, int headless)
             /* Only a fight the story marker started carries progress -- a
                practice fight and a replayed boss both leave it where it is,
                as Krin.progressFight does. */
+            /* A boss fight won on the story marker is what finishes a
+               zone, which frame 213 records before it clears the flags. */
+            g->boss_beaten = (g->boss_fight && g->progress_fight);
+            if (g->boss_beaten)
+                g->campaign.stats.zones_cleared++;
             if (g->progress_fight)
                 campaign_advance(&g->campaign);
             g->progress_fight = 0;

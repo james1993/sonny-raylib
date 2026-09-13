@@ -1,0 +1,173 @@
+{
+ "1695": {
+  "start": 0,
+  "cues": [
+   {
+    "frame": 2,
+    "clear": false
+   },
+   {
+    "frame": 50,
+    "clear": true
+   },
+   {
+    "frame": 66,
+    "clear": false
+   },
+   {
+    "frame": 176,
+    "clear": false
+   },
+   {
+    "frame": 234,
+    "clear": true
+   },
+   {
+    "frame": 244,
+    "clear": false
+   },
+   {
+    "frame": 370,
+    "clear": false
+   },
+   {
+    "frame": 424,
+    "clear": true
+   },
+   {
+    "frame": 443,
+    "clear": false
+   },
+   {
+    "frame": 499,
+    "clear": true
+   },
+   {
+    "frame": 518,
+    "clear": false
+   },
+   {
+    "frame": 563,
+    "clear": false
+   },
+   {
+    "frame": 646,
+    "clear": true
+   },
+   {
+    "frame": 699,
+    "clear": false
+   },
+   {
+    "frame": 718,
+    "clear": false
+   },
+   {
+    "frame": 798,
+    "clear": false
+   },
+   {
+    "frame": 863,
+    "clear": false
+   },
+   {
+    "frame": 893,
+    "clear": false
+   },
+   {
+    "frame": 966,
+    "clear": true
+   },
+   {
+    "frame": 988,
+    "clear": false
+   },
+   {
+    "frame": 1009,
+    "clear": true
+   },
+   {
+    "frame": 1022,
+    "clear": false
+   },
+   {
+    "frame": 1075,
+    "clear": true
+   },
+   {
+    "frame": 1100,
+    "clear": false
+   },
+   {
+    "frame": 1164,
+    "clear": false
+   },
+   {
+    "frame": 1254,
+    "clear": true
+   }
+  ]
+ },
+ "1710": {
+  "start": 17,
+  "cues": [
+   {
+    "frame": 2,
+    "clear": false
+   },
+   {
+    "frame": 102,
+    "clear": false
+   },
+   {
+    "frame": 232,
+    "clear": false
+   },
+   {
+    "frame": 288,
+    "clear": false
+   },
+   {
+    "frame": 308,
+    "clear": false
+   },
+   {
+    "frame": 392,
+    "clear": false
+   },
+   {
+    "frame": 570,
+    "clear": true
+   }
+  ]
+ },
+ "1719": {
+  "start": 23,
+  "cues": [
+   {
+    "frame": 2,
+    "clear": true
+   },
+   {
+    "frame": 41,
+    "clear": false
+   },
+   {
+    "frame": 137,
+    "clear": false
+   },
+   {
+    "frame": 198,
+    "clear": false
+   },
+   {
+    "frame": 266,
+    "clear": false
+   },
+   {
+    "frame": 441,
+    "clear": true
+   }
+  ]
+ }
+}
