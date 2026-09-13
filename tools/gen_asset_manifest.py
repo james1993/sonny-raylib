@@ -200,6 +200,11 @@ typedef struct {
     const char *screen;    /* the root frame that places its owner */
     const char *owner;     /* which clip it belongs to */
     const char *name;      /* the instance name inside that clip */
+    const char *variable;  /* the variable the frame's script sets */
+    /* What the frame authored into the field. A field with no variable is
+       never set at run time, so this is the text the screen shows -- as the
+       HTML it was authored with. */
+    const char *text;
     float       x, y;
     float       width, height;
     float       size;
@@ -348,6 +353,9 @@ const TextField *text_field(const char *screen, const char *owner,
    repeats a row -- one per party member, say. */
 const TextField *text_field_named(const char *screen, const char *owner,
                                   const char *name, int32_t occurrence);
+/* The field bound to this variable. A frame's script fills its screen by
+   setting variables, so this is what says which field shows what. */
+const TextField *text_field_var(const char *screen, const char *variable);
 
 extern const RingSlot SONNY_RING_SLOTS[];
 extern const int SONNY_RING_SLOT_COUNT;
@@ -644,9 +652,11 @@ const ClipPart *clip_part(const char *screen, const char *owner, int32_t index)
                    for field in menu['fields']]
     for f in chrome_text + menu_fields:
         colour = f.get('color') or [255, 255, 255, 255]
-        lines.append('    { %s, %s, %s, %s, %s, %s, %s, %s, %s, %d, %d, %d, %d, %d },'
+        lines.append('    { %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %d, %d, %d, %d, %d },'
                      % (c_string(f['screen']), c_string(f['owner']),
                         c_string(f['name']),
+                        c_string(f.get('variable') or ''),
+                        c_string(f.get('text') or ''),
                         c_float(f['x']), c_float(f['y']),
                         c_float(f['width']), c_float(f['height']),
                         c_float(f.get('size') or 10.0),
@@ -663,6 +673,15 @@ const TextField *text_field(const char *screen, const char *owner,
     for (int i = 0; i < SONNY_TEXT_FIELD_COUNT; i++)
         if (strcmp(SONNY_TEXT_FIELDS[i].screen, screen) == 0
             && strcmp(SONNY_TEXT_FIELDS[i].owner, owner) == 0 && index-- == 0)
+            return &SONNY_TEXT_FIELDS[i];
+    return NULL;
+}
+
+const TextField *text_field_var(const char *screen, const char *variable)
+{
+    for (int i = 0; i < SONNY_TEXT_FIELD_COUNT; i++)
+        if (strcmp(SONNY_TEXT_FIELDS[i].screen, screen) == 0
+            && strcmp(SONNY_TEXT_FIELDS[i].variable, variable) == 0)
             return &SONNY_TEXT_FIELDS[i];
     return NULL;
 }

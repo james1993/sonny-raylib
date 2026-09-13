@@ -30,6 +30,8 @@ typedef struct {
     int32_t    euros;
     int32_t    inventory[64];
     int32_t    inventory_count;
+    /* Krin.slotInUse: which of the four saves this run belongs to. */
+    int32_t    slot;
 } Campaign;
 
 void campaign_new(Campaign *c, int32_t class_id);

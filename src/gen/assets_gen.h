@@ -188,6 +188,11 @@ typedef struct {
     const char *screen;    /* the root frame that places its owner */
     const char *owner;     /* which clip it belongs to */
     const char *name;      /* the instance name inside that clip */
+    const char *variable;  /* the variable the frame's script sets */
+    /* What the frame authored into the field. A field with no variable is
+       never set at run time, so this is the text the screen shows -- as the
+       HTML it was authored with. */
+    const char *text;
     float       x, y;
     float       width, height;
     float       size;
@@ -336,6 +341,9 @@ const TextField *text_field(const char *screen, const char *owner,
    repeats a row -- one per party member, say. */
 const TextField *text_field_named(const char *screen, const char *owner,
                                   const char *name, int32_t occurrence);
+/* The field bound to this variable. A frame's script fills its screen by
+   setting variables, so this is what says which field shows what. */
+const TextField *text_field_var(const char *screen, const char *variable);
 
 extern const RingSlot SONNY_RING_SLOTS[];
 extern const int SONNY_RING_SLOT_COUNT;

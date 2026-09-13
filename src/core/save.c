@@ -14,6 +14,17 @@ static void write_int_array(FILE *fh, const char *key, const int32_t *values,
     fprintf(fh, "\n");
 }
 
+const char *save_slot_path(int32_t slot)
+{
+    /* The original keeps each run in its own SharedObject, "sonny_slot1"
+       upward, beside where the game is played. */
+    static char path[32];
+    if (slot < 1 || slot > SONNY_SAVE_SLOTS)
+        slot = 1;
+    snprintf(path, sizeof(path), "sonny_slot%d.txt", (int)slot);
+    return path;
+}
+
 int save_write(const Campaign *c, const char *path)
 {
     FILE *fh = fopen(path, "w");

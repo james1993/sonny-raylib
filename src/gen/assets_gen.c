@@ -7,2225 +7,2243 @@ static const char *const FRAMES_0[] = { "assets/art/chrome/#1104.png" };
 static const AssetOffset OFFSETS_0[] = { { 30.500000f, 37.900000f } };
 static const char *const FRAMES_1[] = { "assets/art/chrome/#1110.png" };
 static const AssetOffset OFFSETS_1[] = { { -7.650000f, -519.350000f } };
-static const char *const FRAMES_2[] = { "assets/art/chrome/#1142.png" };
-static const AssetOffset OFFSETS_2[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_3[] = { "assets/art/chrome/#1198.png" };
-static const AssetOffset OFFSETS_3[] = { { 409.750000f, 108.250000f } };
-static const char *const FRAMES_4[] = { "assets/art/chrome/#1237.png" };
-static const AssetOffset OFFSETS_4[] = { { 476.300000f, 260.950000f } };
-static const char *const FRAMES_5[] = { "assets/art/chrome/#1238.png" };
-static const AssetOffset OFFSETS_5[] = { { -30.900000f, -484.300000f } };
-static const char *const FRAMES_6[] = { "assets/art/chrome/#1239.png" };
-static const AssetOffset OFFSETS_6[] = { { 30.000000f, 30.000000f } };
-static const char *const FRAMES_7[] = { "assets/art/chrome/#1248.png" };
-static const AssetOffset OFFSETS_7[] = { { 13.600000f, 12.200000f } };
-static const char *const FRAMES_8[] = { "assets/art/chrome/#1250.png" };
-static const AssetOffset OFFSETS_8[] = { { -39.150000f, -486.250000f } };
-static const char *const FRAMES_9[] = { "assets/art/chrome/#1262.png" };
-static const AssetOffset OFFSETS_9[] = { { 126.000000f, 7.000000f } };
-static const char *const FRAMES_10[] = { "assets/art/chrome/#1267.png" };
-static const AssetOffset OFFSETS_10[] = { { 384.450000f, 207.400000f } };
-static const char *const FRAMES_11[] = { "assets/art/chrome/#1268.png" };
-static const AssetOffset OFFSETS_11[] = { { 382.350000f, 208.550000f } };
-static const char *const FRAMES_12[] = { "assets/art/chrome/#1270.png" };
-static const AssetOffset OFFSETS_12[] = { { 124.500000f, 25.400000f } };
-static const char *const FRAMES_13[] = { "assets/art/chrome/#1272.png" };
-static const AssetOffset OFFSETS_13[] = { { 124.500000f, 133.550000f } };
-static const char *const FRAMES_14[] = { "assets/art/chrome/#1274.png" };
-static const AssetOffset OFFSETS_14[] = { { 91.550000f, 140.900000f } };
-static const char *const FRAMES_15[] = { "assets/art/chrome/#1276.png" };
-static const AssetOffset OFFSETS_15[] = { { 15.500000f, 15.500000f } };
-static const char *const FRAMES_16[] = { "assets/art/chrome/#1280.png" };
-static const AssetOffset OFFSETS_16[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_17[] = { "assets/art/chrome/#1282.png" };
-static const AssetOffset OFFSETS_17[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_18[] = { "assets/art/chrome/#1283.png" };
-static const AssetOffset OFFSETS_18[] = { { 78.750000f, 132.950000f } };
-static const char *const FRAMES_19[] = { "assets/art/chrome/#1313.png" };
-static const AssetOffset OFFSETS_19[] = { { 13.000000f, 18.000000f } };
-static const char *const FRAMES_20[] = { "assets/art/chrome/#1316.png" };
-static const AssetOffset OFFSETS_20[] = { { 14.750000f, 19.750000f } };
-static const char *const FRAMES_21[] = { "assets/art/chrome/#1318.png" };
-static const AssetOffset OFFSETS_21[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_22[] = { "assets/art/chrome/#1333.png" };
-static const AssetOffset OFFSETS_22[] = { { 69.500000f, 35.000000f } };
-static const char *const FRAMES_23[] = { "assets/art/chrome/#1334.png" };
-static const AssetOffset OFFSETS_23[] = { { 125.000000f, 75.000000f } };
-static const char *const FRAMES_24[] = { "assets/art/chrome/#1337.png" };
-static const AssetOffset OFFSETS_24[] = { { 68.500000f, 34.250000f } };
-static const char *const FRAMES_25[] = { "assets/art/chrome/#1339.png" };
-static const AssetOffset OFFSETS_25[] = { { 69.500000f, 35.000000f } };
-static const char *const FRAMES_26[] = { "assets/art/chrome/#1341.png" };
-static const AssetOffset OFFSETS_26[] = { { 262.050000f, -60.450000f } };
-static const char *const FRAMES_27[] = { "assets/art/chrome/#1344.png" };
-static const AssetOffset OFFSETS_27[] = { { 0.000000f, 9.350000f } };
-static const char *const FRAMES_28[] = { "assets/art/chrome/#1344@2.png" };
-static const AssetOffset OFFSETS_28[] = { { 0.000000f, 9.350000f } };
-static const char *const FRAMES_29[] = { "assets/art/chrome/#1345.png" };
-static const AssetOffset OFFSETS_29[] = { { 262.000000f, -60.750000f } };
-static const char *const FRAMES_30[] = { "assets/art/chrome/#1358.png" };
-static const AssetOffset OFFSETS_30[] = { { 15.500000f, 15.500000f } };
-static const char *const FRAMES_31[] = { "assets/art/chrome/#1362.png" };
-static const AssetOffset OFFSETS_31[] = { { 18.350000f, 18.200000f } };
-static const char *const FRAMES_32[] = { "assets/art/chrome/#1367.png" };
-static const AssetOffset OFFSETS_32[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_33[] = { "assets/art/chrome/#1377.png" };
-static const AssetOffset OFFSETS_33[] = { { 98.400000f, 41.600000f } };
-static const char *const FRAMES_34[] = { "assets/art/chrome/#1380.png" };
-static const AssetOffset OFFSETS_34[] = { { 21.550000f, 7.700000f } };
-static const char *const FRAMES_35[] = { "assets/art/chrome/#1390@1.png" };
-static const AssetOffset OFFSETS_35[] = { { 93.500000f, 70.500000f } };
-static const char *const FRAMES_36[] = { "assets/art/chrome/#1390@2.png" };
-static const AssetOffset OFFSETS_36[] = { { 93.500000f, 70.500000f } };
-static const char *const FRAMES_37[] = { "assets/art/chrome/#1390@3.png" };
+static const char *const FRAMES_2[] = { "assets/art/chrome/#1118.png" };
+static const AssetOffset OFFSETS_2[] = { { -185.550000f, -252.200000f } };
+static const char *const FRAMES_3[] = { "assets/art/chrome/#1142.png" };
+static const AssetOffset OFFSETS_3[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_4[] = { "assets/art/chrome/#1179.png" };
+static const AssetOffset OFFSETS_4[] = { { -75.550000f, -90.800000f } };
+static const char *const FRAMES_5[] = { "assets/art/chrome/#1198.png" };
+static const AssetOffset OFFSETS_5[] = { { 409.750000f, 108.250000f } };
+static const char *const FRAMES_6[] = { "assets/art/chrome/#1237.png" };
+static const AssetOffset OFFSETS_6[] = { { 476.300000f, 260.950000f } };
+static const char *const FRAMES_7[] = { "assets/art/chrome/#1238.png" };
+static const AssetOffset OFFSETS_7[] = { { -30.900000f, -484.300000f } };
+static const char *const FRAMES_8[] = { "assets/art/chrome/#1239.png" };
+static const AssetOffset OFFSETS_8[] = { { 30.000000f, 30.000000f } };
+static const char *const FRAMES_9[] = { "assets/art/chrome/#1248.png" };
+static const AssetOffset OFFSETS_9[] = { { 13.600000f, 12.200000f } };
+static const char *const FRAMES_10[] = { "assets/art/chrome/#1250.png" };
+static const AssetOffset OFFSETS_10[] = { { -39.150000f, -486.250000f } };
+static const char *const FRAMES_11[] = { "assets/art/chrome/#1262.png" };
+static const AssetOffset OFFSETS_11[] = { { 126.000000f, 7.000000f } };
+static const char *const FRAMES_12[] = { "assets/art/chrome/#1267.png" };
+static const AssetOffset OFFSETS_12[] = { { 384.450000f, 207.400000f } };
+static const char *const FRAMES_13[] = { "assets/art/chrome/#1268.png" };
+static const AssetOffset OFFSETS_13[] = { { 382.350000f, 208.550000f } };
+static const char *const FRAMES_14[] = { "assets/art/chrome/#1270.png" };
+static const AssetOffset OFFSETS_14[] = { { 124.500000f, 25.400000f } };
+static const char *const FRAMES_15[] = { "assets/art/chrome/#1272.png" };
+static const AssetOffset OFFSETS_15[] = { { 124.500000f, 133.550000f } };
+static const char *const FRAMES_16[] = { "assets/art/chrome/#1274.png" };
+static const AssetOffset OFFSETS_16[] = { { 91.550000f, 140.900000f } };
+static const char *const FRAMES_17[] = { "assets/art/chrome/#1276.png" };
+static const AssetOffset OFFSETS_17[] = { { 15.500000f, 15.500000f } };
+static const char *const FRAMES_18[] = { "assets/art/chrome/#1280.png" };
+static const AssetOffset OFFSETS_18[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_19[] = { "assets/art/chrome/#1282.png" };
+static const AssetOffset OFFSETS_19[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_20[] = { "assets/art/chrome/#1283.png" };
+static const AssetOffset OFFSETS_20[] = { { 78.750000f, 132.950000f } };
+static const char *const FRAMES_21[] = { "assets/art/chrome/#1313.png" };
+static const AssetOffset OFFSETS_21[] = { { 13.000000f, 18.000000f } };
+static const char *const FRAMES_22[] = { "assets/art/chrome/#1316.png" };
+static const AssetOffset OFFSETS_22[] = { { 14.750000f, 19.750000f } };
+static const char *const FRAMES_23[] = { "assets/art/chrome/#1318.png" };
+static const AssetOffset OFFSETS_23[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_24[] = { "assets/art/chrome/#1333.png" };
+static const AssetOffset OFFSETS_24[] = { { 69.500000f, 35.000000f } };
+static const char *const FRAMES_25[] = { "assets/art/chrome/#1334.png" };
+static const AssetOffset OFFSETS_25[] = { { 125.000000f, 75.000000f } };
+static const char *const FRAMES_26[] = { "assets/art/chrome/#1337.png" };
+static const AssetOffset OFFSETS_26[] = { { 68.500000f, 34.250000f } };
+static const char *const FRAMES_27[] = { "assets/art/chrome/#1339.png" };
+static const AssetOffset OFFSETS_27[] = { { 69.500000f, 35.000000f } };
+static const char *const FRAMES_28[] = { "assets/art/chrome/#1341.png" };
+static const AssetOffset OFFSETS_28[] = { { 262.050000f, -60.450000f } };
+static const char *const FRAMES_29[] = { "assets/art/chrome/#1344.png" };
+static const AssetOffset OFFSETS_29[] = { { 0.000000f, 9.350000f } };
+static const char *const FRAMES_30[] = { "assets/art/chrome/#1344@2.png" };
+static const AssetOffset OFFSETS_30[] = { { 0.000000f, 9.350000f } };
+static const char *const FRAMES_31[] = { "assets/art/chrome/#1345.png" };
+static const AssetOffset OFFSETS_31[] = { { 262.000000f, -60.750000f } };
+static const char *const FRAMES_32[] = { "assets/art/chrome/#1358.png" };
+static const AssetOffset OFFSETS_32[] = { { 15.500000f, 15.500000f } };
+static const char *const FRAMES_33[] = { "assets/art/chrome/#1362.png" };
+static const AssetOffset OFFSETS_33[] = { { 18.350000f, 18.200000f } };
+static const char *const FRAMES_34[] = { "assets/art/chrome/#1367.png" };
+static const AssetOffset OFFSETS_34[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_35[] = { "assets/art/chrome/#1377.png" };
+static const AssetOffset OFFSETS_35[] = { { 98.400000f, 41.600000f } };
+static const char *const FRAMES_36[] = { "assets/art/chrome/#1380.png" };
+static const AssetOffset OFFSETS_36[] = { { 21.550000f, 7.700000f } };
+static const char *const FRAMES_37[] = { "assets/art/chrome/#1390@1.png" };
 static const AssetOffset OFFSETS_37[] = { { 93.500000f, 70.500000f } };
-static const char *const FRAMES_38[] = { "assets/art/chrome/#1390@4.png" };
+static const char *const FRAMES_38[] = { "assets/art/chrome/#1390@2.png" };
 static const AssetOffset OFFSETS_38[] = { { 93.500000f, 70.500000f } };
-static const char *const FRAMES_39[] = { "assets/art/chrome/#1390@5.png" };
+static const char *const FRAMES_39[] = { "assets/art/chrome/#1390@3.png" };
 static const AssetOffset OFFSETS_39[] = { { 93.500000f, 70.500000f } };
-static const char *const FRAMES_40[] = { "assets/art/chrome/#1390@6.png" };
+static const char *const FRAMES_40[] = { "assets/art/chrome/#1390@4.png" };
 static const AssetOffset OFFSETS_40[] = { { 93.500000f, 70.500000f } };
-static const char *const FRAMES_41[] = { "assets/art/chrome/#1393.png" };
-static const AssetOffset OFFSETS_41[] = { { 15.500000f, 15.500000f } };
-static const char *const FRAMES_42[] = { "assets/art/chrome/#1400.png" };
-static const AssetOffset OFFSETS_42[] = { { 12.250000f, 30.500000f } };
-static const char *const FRAMES_43[] = { "assets/art/chrome/#1401.png" };
-static const AssetOffset OFFSETS_43[] = { { 5.500000f, 22.500000f } };
-static const char *const FRAMES_44[] = { "assets/art/chrome/#1406.png" };
-static const AssetOffset OFFSETS_44[] = { { 0.550000f, 1.000000f } };
-static const char *const FRAMES_45[] = { "assets/art/chrome/#1415.png" };
-static const AssetOffset OFFSETS_45[] = { { 82.000000f, 77.900000f } };
-static const char *const FRAMES_46[] = { "assets/art/chrome/#1426.png" };
-static const AssetOffset OFFSETS_46[] = { { -0.500000f, 0.500000f } };
-static const char *const FRAMES_47[] = { "assets/art/chrome/#1426@1.png" };
-static const AssetOffset OFFSETS_47[] = { { -0.500000f, 0.500000f } };
-static const char *const FRAMES_48[] = { "assets/art/chrome/#1444.png" };
-static const AssetOffset OFFSETS_48[] = { { 22.050000f, 35.200000f } };
-static const char *const FRAMES_49[] = { "assets/art/chrome/#1444@8.png" };
-static const AssetOffset OFFSETS_49[] = { { 22.050000f, 35.200000f } };
-static const char *const FRAMES_50[] = { "assets/art/chrome/#1445.png" };
-static const AssetOffset OFFSETS_50[] = { { 22.050000f, 8.200000f } };
-static const char *const FRAMES_51[] = { "assets/art/chrome/#1503.png" };
-static const AssetOffset OFFSETS_51[] = { { 384.500000f, 208.400000f } };
-static const char *const FRAMES_52[] = { "assets/art/chrome/#1507.png" };
-static const AssetOffset OFFSETS_52[] = { { 375.000000f, 13.500000f } };
-static const char *const FRAMES_53[] = { "assets/art/chrome/#1508.png" };
-static const AssetOffset OFFSETS_53[] = { { 100.000000f, 12.000000f } };
-static const char *const FRAMES_54[] = { "assets/art/chrome/#1509.png" };
-static const AssetOffset OFFSETS_54[] = { { 237.250000f, 124.100000f } };
-static const char *const FRAMES_55[] = { "assets/art/chrome/#1513.png" };
-static const AssetOffset OFFSETS_55[] = { { 406.450000f, 288.050000f } };
-static const char *const FRAMES_56[] = { "assets/art/chrome/#1516.png" };
-static const AssetOffset OFFSETS_56[] = { { 402.800000f, 288.500000f } };
-static const char *const FRAMES_57[] = { "assets/art/chrome/#1531.png" };
-static const AssetOffset OFFSETS_57[] = { { 395.000000f, 107.750000f } };
-static const char *const FRAMES_58[] = { "assets/art/chrome/#1536.png" };
-static const AssetOffset OFFSETS_58[] = { { 15.000000f, 15.000000f } };
-static const char *const FRAMES_59[] = { "assets/art/chrome/#1537.png" };
-static const AssetOffset OFFSETS_59[] = { { 385.000000f, 157.000000f } };
-static const char *const FRAMES_60[] = { "assets/art/chrome/#1560.png" };
-static const AssetOffset OFFSETS_60[] = { { 0.000000f, 0.000000f } };
-static const char *const FRAMES_61[] = { "assets/art/chrome/#1561.png" };
-static const AssetOffset OFFSETS_61[] = { { 0.000000f, 0.000000f } };
-static const char *const FRAMES_62[] = { "assets/art/chrome/#1562.png" };
+static const char *const FRAMES_41[] = { "assets/art/chrome/#1390@5.png" };
+static const AssetOffset OFFSETS_41[] = { { 93.500000f, 70.500000f } };
+static const char *const FRAMES_42[] = { "assets/art/chrome/#1390@6.png" };
+static const AssetOffset OFFSETS_42[] = { { 93.500000f, 70.500000f } };
+static const char *const FRAMES_43[] = { "assets/art/chrome/#1393.png" };
+static const AssetOffset OFFSETS_43[] = { { 15.500000f, 15.500000f } };
+static const char *const FRAMES_44[] = { "assets/art/chrome/#1400.png" };
+static const AssetOffset OFFSETS_44[] = { { 12.250000f, 30.500000f } };
+static const char *const FRAMES_45[] = { "assets/art/chrome/#1401.png" };
+static const AssetOffset OFFSETS_45[] = { { 5.500000f, 22.500000f } };
+static const char *const FRAMES_46[] = { "assets/art/chrome/#1406.png" };
+static const AssetOffset OFFSETS_46[] = { { 0.550000f, 1.000000f } };
+static const char *const FRAMES_47[] = { "assets/art/chrome/#1415.png" };
+static const AssetOffset OFFSETS_47[] = { { 82.000000f, 77.900000f } };
+static const char *const FRAMES_48[] = { "assets/art/chrome/#1426.png" };
+static const AssetOffset OFFSETS_48[] = { { -0.500000f, 0.500000f } };
+static const char *const FRAMES_49[] = { "assets/art/chrome/#1426@1.png" };
+static const AssetOffset OFFSETS_49[] = { { -0.500000f, 0.500000f } };
+static const char *const FRAMES_50[] = { "assets/art/chrome/#1444.png" };
+static const AssetOffset OFFSETS_50[] = { { 22.050000f, 35.200000f } };
+static const char *const FRAMES_51[] = { "assets/art/chrome/#1444@8.png" };
+static const AssetOffset OFFSETS_51[] = { { 22.050000f, 35.200000f } };
+static const char *const FRAMES_52[] = { "assets/art/chrome/#1445.png" };
+static const AssetOffset OFFSETS_52[] = { { 22.050000f, 8.200000f } };
+static const char *const FRAMES_53[] = { "assets/art/chrome/#1503.png" };
+static const AssetOffset OFFSETS_53[] = { { 384.500000f, 208.400000f } };
+static const char *const FRAMES_54[] = { "assets/art/chrome/#1507.png" };
+static const AssetOffset OFFSETS_54[] = { { 375.000000f, 13.500000f } };
+static const char *const FRAMES_55[] = { "assets/art/chrome/#1508.png" };
+static const AssetOffset OFFSETS_55[] = { { 100.000000f, 12.000000f } };
+static const char *const FRAMES_56[] = { "assets/art/chrome/#1509.png" };
+static const AssetOffset OFFSETS_56[] = { { 237.250000f, 124.100000f } };
+static const char *const FRAMES_57[] = { "assets/art/chrome/#1513.png" };
+static const AssetOffset OFFSETS_57[] = { { 406.450000f, 288.050000f } };
+static const char *const FRAMES_58[] = { "assets/art/chrome/#1516.png" };
+static const AssetOffset OFFSETS_58[] = { { 402.800000f, 288.500000f } };
+static const char *const FRAMES_59[] = { "assets/art/chrome/#1531.png" };
+static const AssetOffset OFFSETS_59[] = { { 395.000000f, 107.750000f } };
+static const char *const FRAMES_60[] = { "assets/art/chrome/#1536.png" };
+static const AssetOffset OFFSETS_60[] = { { 15.000000f, 15.000000f } };
+static const char *const FRAMES_61[] = { "assets/art/chrome/#1537.png" };
+static const AssetOffset OFFSETS_61[] = { { 385.000000f, 157.000000f } };
+static const char *const FRAMES_62[] = { "assets/art/chrome/#1560.png" };
 static const AssetOffset OFFSETS_62[] = { { 0.000000f, 0.000000f } };
-static const char *const FRAMES_63[] = { "assets/art/chrome/#1563.png" };
+static const char *const FRAMES_63[] = { "assets/art/chrome/#1561.png" };
 static const AssetOffset OFFSETS_63[] = { { 0.000000f, 0.000000f } };
-static const char *const FRAMES_64[] = { "assets/art/chrome/#1564.png" };
+static const char *const FRAMES_64[] = { "assets/art/chrome/#1562.png" };
 static const AssetOffset OFFSETS_64[] = { { 0.000000f, 0.000000f } };
-static const char *const FRAMES_65[] = { "assets/art/chrome/#1565.png" };
-static const AssetOffset OFFSETS_65[] = { { -14.500000f, -129.900000f } };
-static const char *const FRAMES_66[] = { "assets/art/chrome/#1566.png" };
-static const AssetOffset OFFSETS_66[] = { { 0.000000f, 6.500000f } };
-static const char *const FRAMES_67[] = { "assets/art/chrome/#1567.png" };
-static const AssetOffset OFFSETS_67[] = { { 0.000000f, 6.500000f } };
-static const char *const FRAMES_68[] = { "assets/art/chrome/#1568.png" };
+static const char *const FRAMES_65[] = { "assets/art/chrome/#1563.png" };
+static const AssetOffset OFFSETS_65[] = { { 0.000000f, 0.000000f } };
+static const char *const FRAMES_66[] = { "assets/art/chrome/#1564.png" };
+static const AssetOffset OFFSETS_66[] = { { 0.000000f, 0.000000f } };
+static const char *const FRAMES_67[] = { "assets/art/chrome/#1565.png" };
+static const AssetOffset OFFSETS_67[] = { { -14.500000f, -129.900000f } };
+static const char *const FRAMES_68[] = { "assets/art/chrome/#1566.png" };
 static const AssetOffset OFFSETS_68[] = { { 0.000000f, 6.500000f } };
-static const char *const FRAMES_69[] = { "assets/art/chrome/#1570.png" };
-static const AssetOffset OFFSETS_69[] = { { 100.500000f, 12.950000f } };
-static const char *const FRAMES_70[] = { "assets/art/chrome/#1585.png" };
-static const AssetOffset OFFSETS_70[] = { { 100.500000f, 13.950000f } };
-static const char *const FRAMES_71[] = { "assets/art/chrome/#1586.png" };
-static const AssetOffset OFFSETS_71[] = { { 35.000000f, 35.000000f } };
-static const char *const FRAMES_72[] = { "assets/art/chrome/#1590.png" };
-static const AssetOffset OFFSETS_72[] = { { 183.250000f, 35.150000f } };
-static const char *const FRAMES_73[] = { "assets/art/chrome/#1596.png" };
-static const AssetOffset OFFSETS_73[] = { { 47.150000f, 41.900000f } };
-static const char *const FRAMES_74[] = { "assets/art/chrome/#1606.png" };
-static const AssetOffset OFFSETS_74[] = { { 82.000000f, 77.900000f } };
-static const char *const FRAMES_75[] = { "assets/art/chrome/#1610.png" };
-static const AssetOffset OFFSETS_75[] = { { 62.850000f, 62.850000f } };
-static const char *const FRAMES_76[] = { "assets/art/chrome/#1613.png" };
-static const AssetOffset OFFSETS_76[] = { { 95.950000f, 35.700000f } };
-static const char *const FRAMES_77[] = { "assets/art/chrome/#1632.png" };
-static const AssetOffset OFFSETS_77[] = { { 95.950000f, 35.700000f } };
-static const char *const FRAMES_78[] = { "assets/art/chrome/#1633.png" };
-static const AssetOffset OFFSETS_78[] = { { 0.500000f, 0.500000f } };
-static const char *const FRAMES_79[] = { "assets/art/chrome/#1640.png" };
-static const AssetOffset OFFSETS_79[] = { { 14.050000f, 42.000000f } };
-static const char *const FRAMES_80[] = { "assets/art/chrome/#1642.png" };
-static const AssetOffset OFFSETS_80[] = { { 404.100000f, 291.050000f } };
-static const char *const FRAMES_81[] = { "assets/art/chrome/#1720.png" };
-static const AssetOffset OFFSETS_81[] = { { 31.250000f, 20.000000f } };
-static const char *const FRAMES_82[] = { "assets/art/chrome/#1722.png" };
-static const AssetOffset OFFSETS_82[] = { { 0.000000f, 0.000000f } };
-static const char *const FRAMES_83[] = { "assets/art/chrome/#1725.png" };
-static const AssetOffset OFFSETS_83[] = { { 15.500000f, 15.500000f } };
-static const char *const FRAMES_84[] = { "assets/art/chrome/#1726.png" };
-static const AssetOffset OFFSETS_84[] = { { 31.250000f, 20.000000f } };
-static const char *const FRAMES_85[] = { "assets/art/chrome/#368.png" };
-static const AssetOffset OFFSETS_85[] = { { 32.500000f, 9.950000f } };
-static const char *const FRAMES_86[] = { "assets/art/chrome/#821.png" };
-static const AssetOffset OFFSETS_86[] = { { 92.400000f, 16.000000f } };
-static const char *const FRAMES_87[] = { "assets/art/chrome/#823.png" };
-static const AssetOffset OFFSETS_87[] = { { -13.900000f, 14.950000f } };
-static const char *const FRAMES_88[] = { "assets/art/chrome/#824.png" };
-static const AssetOffset OFFSETS_88[] = { { 11.500000f, 11.500000f } };
-static const char *const FRAMES_89[] = { "assets/art/chrome/#826.png" };
-static const AssetOffset OFFSETS_89[] = { { 11.500000f, 11.500000f } };
-static const char *const FRAMES_90[] = { "assets/art/chrome/#828.png" };
-static const AssetOffset OFFSETS_90[] = { { 11.500000f, 11.500000f } };
-static const char *const FRAMES_91[] = { "assets/art/chrome/#830.png" };
-static const AssetOffset OFFSETS_91[] = { { 11.650000f, 11.750000f } };
-static const char *const FRAMES_92[] = { "assets/art/chrome/#866.png" };
-static const AssetOffset OFFSETS_92[] = { { 32.500000f, 28.700000f } };
-static const char *const FRAMES_93[] = { "assets/art/chrome/#867.png" };
-static const AssetOffset OFFSETS_93[] = { { 10.500000f, 10.500000f } };
-static const char *const FRAMES_94[] = { "assets/art/chrome/#903.png" };
-static const AssetOffset OFFSETS_94[] = { { 4.000000f, 4.250000f } };
-static const char *const FRAMES_95[] = { "assets/art/chrome/#905.png" };
-static const AssetOffset OFFSETS_95[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_96[] = { "assets/art/chrome/#907.png" };
-static const AssetOffset OFFSETS_96[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_97[] = { "assets/art/chrome/#909.png" };
-static const AssetOffset OFFSETS_97[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_98[] = { "assets/art/chrome/#911.png" };
-static const AssetOffset OFFSETS_98[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_99[] = { "assets/art/chrome/#913.png" };
-static const AssetOffset OFFSETS_99[] = { { 3.750000f, 41.150000f } };
-static const char *const FRAMES_100[] = { "assets/art/chrome/#915.png" };
-static const AssetOffset OFFSETS_100[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_101[] = { "assets/art/chrome/#917.png" };
-static const AssetOffset OFFSETS_101[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_102[] = { "assets/art/chrome/#919.png" };
-static const AssetOffset OFFSETS_102[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_103[] = { "assets/art/chrome/#920.png" };
-static const AssetOffset OFFSETS_103[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_104[] = { "assets/art/chrome/#921.png" };
-static const AssetOffset OFFSETS_104[] = { { 5.200000f, 36.900000f } };
-static const char *const FRAMES_105[] = { "assets/art/chrome/#922.png" };
-static const AssetOffset OFFSETS_105[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_106[] = { "assets/art/chrome/#923.png" };
-static const AssetOffset OFFSETS_106[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_107[] = { "assets/art/chrome/#924.png" };
-static const AssetOffset OFFSETS_107[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_108[] = { "assets/art/chrome/#925.png" };
-static const AssetOffset OFFSETS_108[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_109[] = { "assets/art/chrome/#926.png" };
-static const AssetOffset OFFSETS_109[] = { { 4.000000f, 4.250000f } };
-static const char *const FRAMES_110[] = { "assets/art/chrome/#944.png" };
-static const AssetOffset OFFSETS_110[] = { { 103.150000f, 24.100000f } };
-static const char *const FRAMES_111[] = { "assets/art/chrome/#951.png" };
-static const AssetOffset OFFSETS_111[] = { { 274.850000f, 41.100000f } };
-static const char *const FRAMES_112[] = { "assets/art/chrome/#963.png" };
-static const AssetOffset OFFSETS_112[] = { { -0.450000f, -0.500000f } };
-static const char *const FRAMES_113[] = { "assets/art/item/A_Broken_Pipe.png" };
-static const AssetOffset OFFSETS_113[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_114[] = { "assets/art/item/A_Sword.png" };
-static const AssetOffset OFFSETS_114[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_115[] = { "assets/art/portrait/Amber.png" };
-static const AssetOffset OFFSETS_115[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_116[] = { "assets/art/portrait/Argalla_the_Mender.png" };
-static const AssetOffset OFFSETS_116[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_117[] = { "assets/art/item/Armor_of_the_Fallen.png" };
-static const AssetOffset OFFSETS_117[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_118[] = { "assets/art/item/Armor_of_the_Teacher.png" };
-static const AssetOffset OFFSETS_118[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_119[] = { "assets/art/item/Assasin's_Tunic.png" };
+static const char *const FRAMES_69[] = { "assets/art/chrome/#1567.png" };
+static const AssetOffset OFFSETS_69[] = { { 0.000000f, 6.500000f } };
+static const char *const FRAMES_70[] = { "assets/art/chrome/#1568.png" };
+static const AssetOffset OFFSETS_70[] = { { 0.000000f, 6.500000f } };
+static const char *const FRAMES_71[] = { "assets/art/chrome/#1570.png" };
+static const AssetOffset OFFSETS_71[] = { { 100.500000f, 12.950000f } };
+static const char *const FRAMES_72[] = { "assets/art/chrome/#1585.png" };
+static const AssetOffset OFFSETS_72[] = { { 100.500000f, 13.950000f } };
+static const char *const FRAMES_73[] = { "assets/art/chrome/#1586.png" };
+static const AssetOffset OFFSETS_73[] = { { 35.000000f, 35.000000f } };
+static const char *const FRAMES_74[] = { "assets/art/chrome/#1590.png" };
+static const AssetOffset OFFSETS_74[] = { { 183.250000f, 35.150000f } };
+static const char *const FRAMES_75[] = { "assets/art/chrome/#1596.png" };
+static const AssetOffset OFFSETS_75[] = { { 47.150000f, 41.900000f } };
+static const char *const FRAMES_76[] = { "assets/art/chrome/#1606.png" };
+static const AssetOffset OFFSETS_76[] = { { 82.000000f, 77.900000f } };
+static const char *const FRAMES_77[] = { "assets/art/chrome/#1610.png" };
+static const AssetOffset OFFSETS_77[] = { { 62.850000f, 62.850000f } };
+static const char *const FRAMES_78[] = { "assets/art/chrome/#1613.png" };
+static const AssetOffset OFFSETS_78[] = { { 95.950000f, 35.700000f } };
+static const char *const FRAMES_79[] = { "assets/art/chrome/#1632.png" };
+static const AssetOffset OFFSETS_79[] = { { 95.950000f, 35.700000f } };
+static const char *const FRAMES_80[] = { "assets/art/chrome/#1633.png" };
+static const AssetOffset OFFSETS_80[] = { { 0.500000f, 0.500000f } };
+static const char *const FRAMES_81[] = { "assets/art/chrome/#1640.png" };
+static const AssetOffset OFFSETS_81[] = { { 14.050000f, 42.000000f } };
+static const char *const FRAMES_82[] = { "assets/art/chrome/#1642.png" };
+static const AssetOffset OFFSETS_82[] = { { 404.100000f, 291.050000f } };
+static const char *const FRAMES_83[] = { "assets/art/chrome/#1695.png" };
+static const AssetOffset OFFSETS_83[] = { { 345.650000f, 188.400000f } };
+static const char *const FRAMES_84[] = { "assets/art/chrome/#1699.png" };
+static const AssetOffset OFFSETS_84[] = { { 407.200000f, 296.800000f } };
+static const char *const FRAMES_85[] = { "assets/art/chrome/#1710.png" };
+static const AssetOffset OFFSETS_85[] = { { 448.700000f, 335.400000f } };
+static const char *const FRAMES_86[] = { "assets/art/chrome/#1719.png" };
+static const AssetOffset OFFSETS_86[] = { { 146.350000f, 90.000000f } };
+static const char *const FRAMES_87[] = { "assets/art/chrome/#1720.png" };
+static const AssetOffset OFFSETS_87[] = { { 31.250000f, 20.000000f } };
+static const char *const FRAMES_88[] = { "assets/art/chrome/#1722.png" };
+static const AssetOffset OFFSETS_88[] = { { 0.000000f, 0.000000f } };
+static const char *const FRAMES_89[] = { "assets/art/chrome/#1725.png" };
+static const AssetOffset OFFSETS_89[] = { { 15.500000f, 15.500000f } };
+static const char *const FRAMES_90[] = { "assets/art/chrome/#1726.png" };
+static const AssetOffset OFFSETS_90[] = { { 31.250000f, 20.000000f } };
+static const char *const FRAMES_91[] = { "assets/art/chrome/#368.png" };
+static const AssetOffset OFFSETS_91[] = { { 32.500000f, 9.950000f } };
+static const char *const FRAMES_92[] = { "assets/art/chrome/#821.png" };
+static const AssetOffset OFFSETS_92[] = { { 92.400000f, 16.000000f } };
+static const char *const FRAMES_93[] = { "assets/art/chrome/#823.png" };
+static const AssetOffset OFFSETS_93[] = { { -13.900000f, 14.950000f } };
+static const char *const FRAMES_94[] = { "assets/art/chrome/#824.png" };
+static const AssetOffset OFFSETS_94[] = { { 11.500000f, 11.500000f } };
+static const char *const FRAMES_95[] = { "assets/art/chrome/#826.png" };
+static const AssetOffset OFFSETS_95[] = { { 11.500000f, 11.500000f } };
+static const char *const FRAMES_96[] = { "assets/art/chrome/#828.png" };
+static const AssetOffset OFFSETS_96[] = { { 11.500000f, 11.500000f } };
+static const char *const FRAMES_97[] = { "assets/art/chrome/#830.png" };
+static const AssetOffset OFFSETS_97[] = { { 11.650000f, 11.750000f } };
+static const char *const FRAMES_98[] = { "assets/art/chrome/#866.png" };
+static const AssetOffset OFFSETS_98[] = { { 32.500000f, 28.700000f } };
+static const char *const FRAMES_99[] = { "assets/art/chrome/#867.png" };
+static const AssetOffset OFFSETS_99[] = { { 10.500000f, 10.500000f } };
+static const char *const FRAMES_100[] = { "assets/art/chrome/#903.png" };
+static const AssetOffset OFFSETS_100[] = { { 4.000000f, 4.250000f } };
+static const char *const FRAMES_101[] = { "assets/art/chrome/#905.png" };
+static const AssetOffset OFFSETS_101[] = { { 2.550000f, 6.700000f } };
+static const char *const FRAMES_102[] = { "assets/art/chrome/#907.png" };
+static const AssetOffset OFFSETS_102[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_103[] = { "assets/art/chrome/#909.png" };
+static const AssetOffset OFFSETS_103[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_104[] = { "assets/art/chrome/#911.png" };
+static const AssetOffset OFFSETS_104[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_105[] = { "assets/art/chrome/#913.png" };
+static const AssetOffset OFFSETS_105[] = { { 3.750000f, 41.150000f } };
+static const char *const FRAMES_106[] = { "assets/art/chrome/#915.png" };
+static const AssetOffset OFFSETS_106[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_107[] = { "assets/art/chrome/#917.png" };
+static const AssetOffset OFFSETS_107[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_108[] = { "assets/art/chrome/#919.png" };
+static const AssetOffset OFFSETS_108[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_109[] = { "assets/art/chrome/#920.png" };
+static const AssetOffset OFFSETS_109[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_110[] = { "assets/art/chrome/#921.png" };
+static const AssetOffset OFFSETS_110[] = { { 5.200000f, 36.900000f } };
+static const char *const FRAMES_111[] = { "assets/art/chrome/#922.png" };
+static const AssetOffset OFFSETS_111[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_112[] = { "assets/art/chrome/#923.png" };
+static const AssetOffset OFFSETS_112[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_113[] = { "assets/art/chrome/#924.png" };
+static const AssetOffset OFFSETS_113[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_114[] = { "assets/art/chrome/#925.png" };
+static const AssetOffset OFFSETS_114[] = { { 2.550000f, 6.700000f } };
+static const char *const FRAMES_115[] = { "assets/art/chrome/#926.png" };
+static const AssetOffset OFFSETS_115[] = { { 4.000000f, 4.250000f } };
+static const char *const FRAMES_116[] = { "assets/art/chrome/#944.png" };
+static const AssetOffset OFFSETS_116[] = { { 103.150000f, 24.100000f } };
+static const char *const FRAMES_117[] = { "assets/art/chrome/#951.png" };
+static const AssetOffset OFFSETS_117[] = { { 274.850000f, 41.100000f } };
+static const char *const FRAMES_118[] = { "assets/art/chrome/#963.png" };
+static const AssetOffset OFFSETS_118[] = { { -0.450000f, -0.500000f } };
+static const char *const FRAMES_119[] = { "assets/art/item/A_Broken_Pipe.png" };
 static const AssetOffset OFFSETS_119[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_120[] = { "assets/art/item/Assassin's_Armor.png" };
+static const char *const FRAMES_120[] = { "assets/art/item/A_Sword.png" };
 static const AssetOffset OFFSETS_120[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_121[] = { "assets/art/item/Assassin's_Boots.png" };
-static const AssetOffset OFFSETS_121[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_122[] = { "assets/art/item/Assassin's_Gloves.png" };
-static const AssetOffset OFFSETS_122[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_123[] = { "assets/art/item/Assassin's_Helm.png" };
+static const char *const FRAMES_121[] = { "assets/art/portrait/Amber.png" };
+static const AssetOffset OFFSETS_121[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_122[] = { "assets/art/portrait/Argalla_the_Mender.png" };
+static const AssetOffset OFFSETS_122[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_123[] = { "assets/art/item/Armor_of_the_Fallen.png" };
 static const AssetOffset OFFSETS_123[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_124[] = { "assets/art/item/Assassin's_Leggings.png" };
+static const char *const FRAMES_124[] = { "assets/art/item/Armor_of_the_Teacher.png" };
 static const AssetOffset OFFSETS_124[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_125[] = { "assets/art/item/Assassination.png" };
+static const char *const FRAMES_125[] = { "assets/art/item/Assasin's_Tunic.png" };
 static const AssetOffset OFFSETS_125[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_126[] = { "assets/art/buff/BLACKOUT.png" };
-static const AssetOffset OFFSETS_126[] = { { 5.950000f, 10.950000f } };
-static const char *const FRAMES_127[] = { "assets/art/buff/BLOCK1.png" };
-static const AssetOffset OFFSETS_127[] = { { 7.050000f, 11.600000f } };
-static const char *const FRAMES_128[] = { "assets/art/effect/BOOM1_1.png", "assets/art/effect/BOOM1_2.png", "assets/art/effect/BOOM1_3.png", "assets/art/effect/BOOM1_4.png", "assets/art/effect/BOOM1_5.png", "assets/art/effect/BOOM1_6.png", "assets/art/effect/BOOM1_7.png", "assets/art/effect/BOOM1_8.png", "assets/art/effect/BOOM1_9.png", "assets/art/effect/BOOM1_10.png", "assets/art/effect/BOOM1_11.png", "assets/art/effect/BOOM1_12.png", "assets/art/effect/BOOM1_13.png", "assets/art/effect/BOOM1_14.png", "assets/art/effect/BOOM1_15.png", "assets/art/effect/BOOM1_16.png", "assets/art/effect/BOOM1_17.png", "assets/art/effect/BOOM1_18.png", "assets/art/effect/BOOM1_19.png", "assets/art/effect/BOOM1_20.png", "assets/art/effect/BOOM1_21.png", "assets/art/effect/BOOM1_22.png", "assets/art/effect/BOOM1_23.png", "assets/art/effect/BOOM1_24.png", "assets/art/effect/BOOM1_25.png", "assets/art/effect/BOOM1_26.png", "assets/art/effect/BOOM1_27.png", "assets/art/effect/BOOM1_28.png", "assets/art/effect/BOOM1_29.png", "assets/art/effect/BOOM1_30.png", "assets/art/effect/BOOM1_31.png", "assets/art/effect/BOOM1_32.png", "assets/art/effect/BOOM1_33.png", "assets/art/effect/BOOM1_34.png", "assets/art/effect/BOOM1_35.png", "assets/art/effect/BOOM1_36.png" };
-static const AssetOffset OFFSETS_128[] = { { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f } };
-static const char *const FRAMES_129[] = { "assets/art/effect/BOOM2_1.png", "assets/art/effect/BOOM2_2.png", "assets/art/effect/BOOM2_3.png", "assets/art/effect/BOOM2_4.png", "assets/art/effect/BOOM2_5.png", "assets/art/effect/BOOM2_6.png", "assets/art/effect/BOOM2_7.png", "assets/art/effect/BOOM2_8.png", "assets/art/effect/BOOM2_9.png", "assets/art/effect/BOOM2_10.png", "assets/art/effect/BOOM2_11.png", "assets/art/effect/BOOM2_12.png", "assets/art/effect/BOOM2_13.png", "assets/art/effect/BOOM2_14.png", "assets/art/effect/BOOM2_15.png", "assets/art/effect/BOOM2_16.png", "assets/art/effect/BOOM2_17.png", "assets/art/effect/BOOM2_18.png", "assets/art/effect/BOOM2_19.png", "assets/art/effect/BOOM2_20.png", "assets/art/effect/BOOM2_21.png", "assets/art/effect/BOOM2_22.png", "assets/art/effect/BOOM2_23.png", "assets/art/effect/BOOM2_24.png", "assets/art/effect/BOOM2_25.png", "assets/art/effect/BOOM2_26.png", "assets/art/effect/BOOM2_27.png", "assets/art/effect/BOOM2_28.png", "assets/art/effect/BOOM2_29.png", "assets/art/effect/BOOM2_30.png", "assets/art/effect/BOOM2_31.png", "assets/art/effect/BOOM2_32.png", "assets/art/effect/BOOM2_33.png", "assets/art/effect/BOOM2_34.png", "assets/art/effect/BOOM2_35.png", "assets/art/effect/BOOM2_36.png" };
-static const AssetOffset OFFSETS_129[] = { { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f } };
-static const char *const FRAMES_130[] = { "assets/art/effect/BOOM3_1.png", "assets/art/effect/BOOM3_2.png", "assets/art/effect/BOOM3_3.png", "assets/art/effect/BOOM3_4.png", "assets/art/effect/BOOM3_5.png", "assets/art/effect/BOOM3_6.png", "assets/art/effect/BOOM3_7.png", "assets/art/effect/BOOM3_8.png", "assets/art/effect/BOOM3_9.png", "assets/art/effect/BOOM3_10.png", "assets/art/effect/BOOM3_11.png", "assets/art/effect/BOOM3_12.png", "assets/art/effect/BOOM3_13.png", "assets/art/effect/BOOM3_14.png", "assets/art/effect/BOOM3_15.png", "assets/art/effect/BOOM3_16.png", "assets/art/effect/BOOM3_17.png", "assets/art/effect/BOOM3_18.png", "assets/art/effect/BOOM3_19.png", "assets/art/effect/BOOM3_20.png", "assets/art/effect/BOOM3_21.png", "assets/art/effect/BOOM3_22.png", "assets/art/effect/BOOM3_23.png", "assets/art/effect/BOOM3_24.png", "assets/art/effect/BOOM3_25.png" };
-static const AssetOffset OFFSETS_130[] = { { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f } };
-static const char *const FRAMES_131[] = { "assets/art/effect/BOOM_DARK_1.png", "assets/art/effect/BOOM_DARK_2.png", "assets/art/effect/BOOM_DARK_3.png", "assets/art/effect/BOOM_DARK_4.png", "assets/art/effect/BOOM_DARK_5.png", "assets/art/effect/BOOM_DARK_6.png", "assets/art/effect/BOOM_DARK_7.png", "assets/art/effect/BOOM_DARK_8.png", "assets/art/effect/BOOM_DARK_9.png", "assets/art/effect/BOOM_DARK_10.png", "assets/art/effect/BOOM_DARK_11.png", "assets/art/effect/BOOM_DARK_12.png", "assets/art/effect/BOOM_DARK_13.png", "assets/art/effect/BOOM_DARK_14.png", "assets/art/effect/BOOM_DARK_15.png", "assets/art/effect/BOOM_DARK_16.png", "assets/art/effect/BOOM_DARK_17.png", "assets/art/effect/BOOM_DARK_18.png", "assets/art/effect/BOOM_DARK_19.png", "assets/art/effect/BOOM_DARK_20.png", "assets/art/effect/BOOM_DARK_21.png", "assets/art/effect/BOOM_DARK_22.png", "assets/art/effect/BOOM_DARK_23.png", "assets/art/effect/BOOM_DARK_24.png", "assets/art/effect/BOOM_DARK_25.png" };
-static const AssetOffset OFFSETS_131[] = { { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f } };
-static const char *const FRAMES_132[] = { "assets/art/effect/BOOM_HEAL_1.png", "assets/art/effect/BOOM_HEAL_2.png", "assets/art/effect/BOOM_HEAL_3.png", "assets/art/effect/BOOM_HEAL_4.png", "assets/art/effect/BOOM_HEAL_5.png", "assets/art/effect/BOOM_HEAL_6.png", "assets/art/effect/BOOM_HEAL_7.png", "assets/art/effect/BOOM_HEAL_8.png", "assets/art/effect/BOOM_HEAL_9.png", "assets/art/effect/BOOM_HEAL_10.png", "assets/art/effect/BOOM_HEAL_11.png", "assets/art/effect/BOOM_HEAL_12.png", "assets/art/effect/BOOM_HEAL_13.png", "assets/art/effect/BOOM_HEAL_14.png", "assets/art/effect/BOOM_HEAL_15.png", "assets/art/effect/BOOM_HEAL_16.png" };
-static const AssetOffset OFFSETS_132[] = { { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f } };
-static const char *const FRAMES_133[] = { "assets/art/effect/BOOM_HEAL2_1.png", "assets/art/effect/BOOM_HEAL2_2.png", "assets/art/effect/BOOM_HEAL2_3.png", "assets/art/effect/BOOM_HEAL2_4.png", "assets/art/effect/BOOM_HEAL2_5.png", "assets/art/effect/BOOM_HEAL2_6.png", "assets/art/effect/BOOM_HEAL2_7.png", "assets/art/effect/BOOM_HEAL2_8.png", "assets/art/effect/BOOM_HEAL2_9.png", "assets/art/effect/BOOM_HEAL2_10.png", "assets/art/effect/BOOM_HEAL2_11.png", "assets/art/effect/BOOM_HEAL2_12.png", "assets/art/effect/BOOM_HEAL2_13.png", "assets/art/effect/BOOM_HEAL2_14.png", "assets/art/effect/BOOM_HEAL2_15.png", "assets/art/effect/BOOM_HEAL2_16.png", "assets/art/effect/BOOM_HEAL2_17.png", "assets/art/effect/BOOM_HEAL2_18.png", "assets/art/effect/BOOM_HEAL2_19.png", "assets/art/effect/BOOM_HEAL2_20.png", "assets/art/effect/BOOM_HEAL2_21.png", "assets/art/effect/BOOM_HEAL2_22.png", "assets/art/effect/BOOM_HEAL2_23.png", "assets/art/effect/BOOM_HEAL2_24.png", "assets/art/effect/BOOM_HEAL2_25.png" };
-static const AssetOffset OFFSETS_133[] = { { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f } };
-static const char *const FRAMES_134[] = { "assets/art/effect/BOOM_POWERUP_1.png", "assets/art/effect/BOOM_POWERUP_2.png", "assets/art/effect/BOOM_POWERUP_3.png", "assets/art/effect/BOOM_POWERUP_4.png", "assets/art/effect/BOOM_POWERUP_5.png", "assets/art/effect/BOOM_POWERUP_6.png", "assets/art/effect/BOOM_POWERUP_7.png", "assets/art/effect/BOOM_POWERUP_8.png", "assets/art/effect/BOOM_POWERUP_9.png", "assets/art/effect/BOOM_POWERUP_10.png", "assets/art/effect/BOOM_POWERUP_11.png", "assets/art/effect/BOOM_POWERUP_12.png", "assets/art/effect/BOOM_POWERUP_13.png", "assets/art/effect/BOOM_POWERUP_14.png", "assets/art/effect/BOOM_POWERUP_15.png", "assets/art/effect/BOOM_POWERUP_16.png" };
-static const AssetOffset OFFSETS_134[] = { { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f } };
-static const char *const FRAMES_135[] = { "assets/art/effect/BOOM_RED_1.png", "assets/art/effect/BOOM_RED_2.png", "assets/art/effect/BOOM_RED_3.png", "assets/art/effect/BOOM_RED_4.png", "assets/art/effect/BOOM_RED_5.png", "assets/art/effect/BOOM_RED_6.png", "assets/art/effect/BOOM_RED_7.png", "assets/art/effect/BOOM_RED_8.png", "assets/art/effect/BOOM_RED_9.png", "assets/art/effect/BOOM_RED_10.png", "assets/art/effect/BOOM_RED_11.png", "assets/art/effect/BOOM_RED_12.png", "assets/art/effect/BOOM_RED_13.png", "assets/art/effect/BOOM_RED_14.png", "assets/art/effect/BOOM_RED_15.png", "assets/art/effect/BOOM_RED_16.png", "assets/art/effect/BOOM_RED_17.png", "assets/art/effect/BOOM_RED_18.png", "assets/art/effect/BOOM_RED_19.png", "assets/art/effect/BOOM_RED_20.png", "assets/art/effect/BOOM_RED_21.png", "assets/art/effect/BOOM_RED_22.png", "assets/art/effect/BOOM_RED_23.png", "assets/art/effect/BOOM_RED_24.png", "assets/art/effect/BOOM_RED_25.png" };
-static const AssetOffset OFFSETS_135[] = { { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f } };
-static const char *const FRAMES_136[] = { "assets/art/effect/BOOM_SHIELD_1.png", "assets/art/effect/BOOM_SHIELD_2.png", "assets/art/effect/BOOM_SHIELD_3.png", "assets/art/effect/BOOM_SHIELD_4.png", "assets/art/effect/BOOM_SHIELD_5.png", "assets/art/effect/BOOM_SHIELD_6.png", "assets/art/effect/BOOM_SHIELD_7.png", "assets/art/effect/BOOM_SHIELD_8.png", "assets/art/effect/BOOM_SHIELD_9.png", "assets/art/effect/BOOM_SHIELD_10.png", "assets/art/effect/BOOM_SHIELD_11.png", "assets/art/effect/BOOM_SHIELD_12.png", "assets/art/effect/BOOM_SHIELD_13.png", "assets/art/effect/BOOM_SHIELD_14.png", "assets/art/effect/BOOM_SHIELD_15.png", "assets/art/effect/BOOM_SHIELD_16.png", "assets/art/effect/BOOM_SHIELD_17.png", "assets/art/effect/BOOM_SHIELD_18.png", "assets/art/effect/BOOM_SHIELD_19.png", "assets/art/effect/BOOM_SHIELD_20.png" };
-static const AssetOffset OFFSETS_136[] = { { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f } };
-static const char *const FRAMES_137[] = { "assets/art/effect/BOOM_SLASH_1.png", "assets/art/effect/BOOM_SLASH_2.png", "assets/art/effect/BOOM_SLASH_3.png", "assets/art/effect/BOOM_SLASH_4.png", "assets/art/effect/BOOM_SLASH_5.png", "assets/art/effect/BOOM_SLASH_6.png", "assets/art/effect/BOOM_SLASH_7.png", "assets/art/effect/BOOM_SLASH_8.png", "assets/art/effect/BOOM_SLASH_9.png", "assets/art/effect/BOOM_SLASH_10.png", "assets/art/effect/BOOM_SLASH_11.png", "assets/art/effect/BOOM_SLASH_12.png", "assets/art/effect/BOOM_SLASH_13.png", "assets/art/effect/BOOM_SLASH_14.png", "assets/art/effect/BOOM_SLASH_15.png", "assets/art/effect/BOOM_SLASH_16.png", "assets/art/effect/BOOM_SLASH_17.png", "assets/art/effect/BOOM_SLASH_18.png", "assets/art/effect/BOOM_SLASH_19.png", "assets/art/effect/BOOM_SLASH_20.png", "assets/art/effect/BOOM_SLASH_21.png", "assets/art/effect/BOOM_SLASH_22.png", "assets/art/effect/BOOM_SLASH_23.png", "assets/art/effect/BOOM_SLASH_24.png", "assets/art/effect/BOOM_SLASH_25.png" };
-static const AssetOffset OFFSETS_137[] = { { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f } };
-static const char *const FRAMES_138[] = { "assets/art/effect/BOOM_SLASH2_1.png", "assets/art/effect/BOOM_SLASH2_2.png", "assets/art/effect/BOOM_SLASH2_3.png", "assets/art/effect/BOOM_SLASH2_4.png", "assets/art/effect/BOOM_SLASH2_5.png", "assets/art/effect/BOOM_SLASH2_6.png", "assets/art/effect/BOOM_SLASH2_7.png", "assets/art/effect/BOOM_SLASH2_8.png", "assets/art/effect/BOOM_SLASH2_9.png", "assets/art/effect/BOOM_SLASH2_10.png", "assets/art/effect/BOOM_SLASH2_11.png", "assets/art/effect/BOOM_SLASH2_12.png", "assets/art/effect/BOOM_SLASH2_13.png", "assets/art/effect/BOOM_SLASH2_14.png", "assets/art/effect/BOOM_SLASH2_15.png", "assets/art/effect/BOOM_SLASH2_16.png", "assets/art/effect/BOOM_SLASH2_17.png", "assets/art/effect/BOOM_SLASH2_18.png", "assets/art/effect/BOOM_SLASH2_19.png", "assets/art/effect/BOOM_SLASH2_20.png", "assets/art/effect/BOOM_SLASH2_21.png", "assets/art/effect/BOOM_SLASH2_22.png", "assets/art/effect/BOOM_SLASH2_23.png", "assets/art/effect/BOOM_SLASH2_24.png", "assets/art/effect/BOOM_SLASH2_25.png" };
-static const AssetOffset OFFSETS_138[] = { { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f } };
-static const char *const FRAMES_139[] = { "assets/art/effect/BOOM_SLASHBLUE_1.png", "assets/art/effect/BOOM_SLASHBLUE_2.png", "assets/art/effect/BOOM_SLASHBLUE_3.png", "assets/art/effect/BOOM_SLASHBLUE_4.png", "assets/art/effect/BOOM_SLASHBLUE_5.png", "assets/art/effect/BOOM_SLASHBLUE_6.png", "assets/art/effect/BOOM_SLASHBLUE_7.png", "assets/art/effect/BOOM_SLASHBLUE_8.png", "assets/art/effect/BOOM_SLASHBLUE_9.png", "assets/art/effect/BOOM_SLASHBLUE_10.png", "assets/art/effect/BOOM_SLASHBLUE_11.png", "assets/art/effect/BOOM_SLASHBLUE_12.png", "assets/art/effect/BOOM_SLASHBLUE_13.png", "assets/art/effect/BOOM_SLASHBLUE_14.png", "assets/art/effect/BOOM_SLASHBLUE_15.png", "assets/art/effect/BOOM_SLASHBLUE_16.png", "assets/art/effect/BOOM_SLASHBLUE_17.png", "assets/art/effect/BOOM_SLASHBLUE_18.png", "assets/art/effect/BOOM_SLASHBLUE_19.png", "assets/art/effect/BOOM_SLASHBLUE_20.png", "assets/art/effect/BOOM_SLASHBLUE_21.png", "assets/art/effect/BOOM_SLASHBLUE_22.png", "assets/art/effect/BOOM_SLASHBLUE_23.png", "assets/art/effect/BOOM_SLASHBLUE_24.png", "assets/art/effect/BOOM_SLASHBLUE_25.png" };
-static const AssetOffset OFFSETS_139[] = { { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f } };
-static const char *const FRAMES_140[] = { "assets/art/effect/BOOM_SLASHGREEN_1.png", "assets/art/effect/BOOM_SLASHGREEN_2.png", "assets/art/effect/BOOM_SLASHGREEN_3.png", "assets/art/effect/BOOM_SLASHGREEN_4.png", "assets/art/effect/BOOM_SLASHGREEN_5.png", "assets/art/effect/BOOM_SLASHGREEN_6.png", "assets/art/effect/BOOM_SLASHGREEN_7.png", "assets/art/effect/BOOM_SLASHGREEN_8.png", "assets/art/effect/BOOM_SLASHGREEN_9.png", "assets/art/effect/BOOM_SLASHGREEN_10.png", "assets/art/effect/BOOM_SLASHGREEN_11.png", "assets/art/effect/BOOM_SLASHGREEN_12.png", "assets/art/effect/BOOM_SLASHGREEN_13.png", "assets/art/effect/BOOM_SLASHGREEN_14.png", "assets/art/effect/BOOM_SLASHGREEN_15.png", "assets/art/effect/BOOM_SLASHGREEN_16.png", "assets/art/effect/BOOM_SLASHGREEN_17.png", "assets/art/effect/BOOM_SLASHGREEN_18.png", "assets/art/effect/BOOM_SLASHGREEN_19.png", "assets/art/effect/BOOM_SLASHGREEN_20.png", "assets/art/effect/BOOM_SLASHGREEN_21.png", "assets/art/effect/BOOM_SLASHGREEN_22.png", "assets/art/effect/BOOM_SLASHGREEN_23.png", "assets/art/effect/BOOM_SLASHGREEN_24.png", "assets/art/effect/BOOM_SLASHGREEN_25.png" };
-static const AssetOffset OFFSETS_140[] = { { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f } };
-static const char *const FRAMES_141[] = { "assets/art/effect/BOOM_SLASHORANGE_1.png", "assets/art/effect/BOOM_SLASHORANGE_2.png", "assets/art/effect/BOOM_SLASHORANGE_3.png", "assets/art/effect/BOOM_SLASHORANGE_4.png", "assets/art/effect/BOOM_SLASHORANGE_5.png", "assets/art/effect/BOOM_SLASHORANGE_6.png", "assets/art/effect/BOOM_SLASHORANGE_7.png", "assets/art/effect/BOOM_SLASHORANGE_8.png", "assets/art/effect/BOOM_SLASHORANGE_9.png", "assets/art/effect/BOOM_SLASHORANGE_10.png", "assets/art/effect/BOOM_SLASHORANGE_11.png", "assets/art/effect/BOOM_SLASHORANGE_12.png", "assets/art/effect/BOOM_SLASHORANGE_13.png", "assets/art/effect/BOOM_SLASHORANGE_14.png", "assets/art/effect/BOOM_SLASHORANGE_15.png", "assets/art/effect/BOOM_SLASHORANGE_16.png", "assets/art/effect/BOOM_SLASHORANGE_17.png", "assets/art/effect/BOOM_SLASHORANGE_18.png", "assets/art/effect/BOOM_SLASHORANGE_19.png", "assets/art/effect/BOOM_SLASHORANGE_20.png", "assets/art/effect/BOOM_SLASHORANGE_21.png", "assets/art/effect/BOOM_SLASHORANGE_22.png", "assets/art/effect/BOOM_SLASHORANGE_23.png", "assets/art/effect/BOOM_SLASHORANGE_24.png", "assets/art/effect/BOOM_SLASHORANGE_25.png" };
-static const AssetOffset OFFSETS_141[] = { { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f } };
-static const char *const FRAMES_142[] = { "assets/art/effect/BOOM_SLASHRED_1.png", "assets/art/effect/BOOM_SLASHRED_2.png", "assets/art/effect/BOOM_SLASHRED_3.png", "assets/art/effect/BOOM_SLASHRED_4.png", "assets/art/effect/BOOM_SLASHRED_5.png", "assets/art/effect/BOOM_SLASHRED_6.png", "assets/art/effect/BOOM_SLASHRED_7.png", "assets/art/effect/BOOM_SLASHRED_8.png", "assets/art/effect/BOOM_SLASHRED_9.png", "assets/art/effect/BOOM_SLASHRED_10.png", "assets/art/effect/BOOM_SLASHRED_11.png", "assets/art/effect/BOOM_SLASHRED_12.png", "assets/art/effect/BOOM_SLASHRED_13.png", "assets/art/effect/BOOM_SLASHRED_14.png", "assets/art/effect/BOOM_SLASHRED_15.png", "assets/art/effect/BOOM_SLASHRED_16.png", "assets/art/effect/BOOM_SLASHRED_17.png", "assets/art/effect/BOOM_SLASHRED_18.png", "assets/art/effect/BOOM_SLASHRED_19.png", "assets/art/effect/BOOM_SLASHRED_20.png", "assets/art/effect/BOOM_SLASHRED_21.png", "assets/art/effect/BOOM_SLASHRED_22.png", "assets/art/effect/BOOM_SLASHRED_23.png", "assets/art/effect/BOOM_SLASHRED_24.png", "assets/art/effect/BOOM_SLASHRED_25.png" };
-static const AssetOffset OFFSETS_142[] = { { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f } };
-static const char *const FRAMES_143[] = { "assets/art/effect/BOOM_SPARK_1.png", "assets/art/effect/BOOM_SPARK_2.png", "assets/art/effect/BOOM_SPARK_3.png", "assets/art/effect/BOOM_SPARK_4.png", "assets/art/effect/BOOM_SPARK_5.png", "assets/art/effect/BOOM_SPARK_6.png", "assets/art/effect/BOOM_SPARK_7.png", "assets/art/effect/BOOM_SPARK_8.png", "assets/art/effect/BOOM_SPARK_9.png", "assets/art/effect/BOOM_SPARK_10.png", "assets/art/effect/BOOM_SPARK_11.png", "assets/art/effect/BOOM_SPARK_12.png", "assets/art/effect/BOOM_SPARK_13.png", "assets/art/effect/BOOM_SPARK_14.png", "assets/art/effect/BOOM_SPARK_15.png", "assets/art/effect/BOOM_SPARK_16.png", "assets/art/effect/BOOM_SPARK_17.png", "assets/art/effect/BOOM_SPARK_18.png", "assets/art/effect/BOOM_SPARK_19.png", "assets/art/effect/BOOM_SPARK_20.png", "assets/art/effect/BOOM_SPARK_21.png", "assets/art/effect/BOOM_SPARK_22.png", "assets/art/effect/BOOM_SPARK_23.png", "assets/art/effect/BOOM_SPARK_24.png", "assets/art/effect/BOOM_SPARK_25.png" };
-static const AssetOffset OFFSETS_143[] = { { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f } };
-static const char *const FRAMES_144[] = { "assets/art/effect/BOOM_SPARKBLUE_1.png", "assets/art/effect/BOOM_SPARKBLUE_2.png", "assets/art/effect/BOOM_SPARKBLUE_3.png", "assets/art/effect/BOOM_SPARKBLUE_4.png", "assets/art/effect/BOOM_SPARKBLUE_5.png", "assets/art/effect/BOOM_SPARKBLUE_6.png", "assets/art/effect/BOOM_SPARKBLUE_7.png", "assets/art/effect/BOOM_SPARKBLUE_8.png", "assets/art/effect/BOOM_SPARKBLUE_9.png", "assets/art/effect/BOOM_SPARKBLUE_10.png", "assets/art/effect/BOOM_SPARKBLUE_11.png", "assets/art/effect/BOOM_SPARKBLUE_12.png", "assets/art/effect/BOOM_SPARKBLUE_13.png", "assets/art/effect/BOOM_SPARKBLUE_14.png", "assets/art/effect/BOOM_SPARKBLUE_15.png", "assets/art/effect/BOOM_SPARKBLUE_16.png", "assets/art/effect/BOOM_SPARKBLUE_17.png", "assets/art/effect/BOOM_SPARKBLUE_18.png", "assets/art/effect/BOOM_SPARKBLUE_19.png", "assets/art/effect/BOOM_SPARKBLUE_20.png", "assets/art/effect/BOOM_SPARKBLUE_21.png", "assets/art/effect/BOOM_SPARKBLUE_22.png", "assets/art/effect/BOOM_SPARKBLUE_23.png", "assets/art/effect/BOOM_SPARKBLUE_24.png", "assets/art/effect/BOOM_SPARKBLUE_25.png" };
-static const AssetOffset OFFSETS_144[] = { { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f } };
-static const char *const FRAMES_145[] = { "assets/art/buff/BURNING.png" };
-static const AssetOffset OFFSETS_145[] = { { 5.950000f, 10.950000f } };
-static const char *const FRAMES_146[] = { "assets/art/buff/BURNS.png" };
-static const AssetOffset OFFSETS_146[] = { { 5.000000f, 9.300000f } };
-static const char *const FRAMES_147[] = { "assets/art/item/Balance.png" };
-static const AssetOffset OFFSETS_147[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_148[] = { "assets/art/portrait/Baron_Brixius.png" };
-static const AssetOffset OFFSETS_148[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_149[] = { "assets/art/sound/BaronDie.mp3" };
-static const char *const FRAMES_150[] = { "assets/art/sound/BaronHit1.mp3" };
-static const char *const FRAMES_151[] = { "assets/art/sound/BaronHit2.mp3" };
-static const char *const FRAMES_152[] = { "assets/art/sound/BaronHit3.mp3" };
-static const char *const FRAMES_153[] = { "assets/art/sound/BattleMusic1loopable.mp3" };
-static const char *const FRAMES_154[] = { "assets/art/sound/BattleMusic2loopable.mp3" };
-static const char *const FRAMES_155[] = { "assets/art/item/Blade_of_Light.png" };
-static const AssetOffset OFFSETS_155[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_156[] = { "assets/art/icon/Blessing_of_Light.png" };
-static const AssetOffset OFFSETS_156[] = { { 15.650000f, 17.100000f } };
-static const char *const FRAMES_157[] = { "assets/art/icon/Block.png" };
-static const AssetOffset OFFSETS_157[] = { { 16.350000f, 13.450000f } };
-static const char *const FRAMES_158[] = { "assets/art/icon/Blood_Focus.png" };
-static const AssetOffset OFFSETS_158[] = { { 12.850000f, 12.200000f } };
-static const char *const FRAMES_159[] = { "assets/art/icon/Blood_Strike.png" };
-static const AssetOffset OFFSETS_159[] = { { 17.150000f, 14.550000f } };
-static const char *const FRAMES_160[] = { "assets/art/item/Bloody_Blade.png" };
-static const AssetOffset OFFSETS_160[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_161[] = { "assets/art/item/Bloody_Dagger.png" };
+static const char *const FRAMES_126[] = { "assets/art/item/Assassin's_Armor.png" };
+static const AssetOffset OFFSETS_126[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_127[] = { "assets/art/item/Assassin's_Boots.png" };
+static const AssetOffset OFFSETS_127[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_128[] = { "assets/art/item/Assassin's_Gloves.png" };
+static const AssetOffset OFFSETS_128[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_129[] = { "assets/art/item/Assassin's_Helm.png" };
+static const AssetOffset OFFSETS_129[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_130[] = { "assets/art/item/Assassin's_Leggings.png" };
+static const AssetOffset OFFSETS_130[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_131[] = { "assets/art/item/Assassination.png" };
+static const AssetOffset OFFSETS_131[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_132[] = { "assets/art/buff/BLACKOUT.png" };
+static const AssetOffset OFFSETS_132[] = { { 5.950000f, 10.950000f } };
+static const char *const FRAMES_133[] = { "assets/art/buff/BLOCK1.png" };
+static const AssetOffset OFFSETS_133[] = { { 7.050000f, 11.600000f } };
+static const char *const FRAMES_134[] = { "assets/art/effect/BOOM1_1.png", "assets/art/effect/BOOM1_2.png", "assets/art/effect/BOOM1_3.png", "assets/art/effect/BOOM1_4.png", "assets/art/effect/BOOM1_5.png", "assets/art/effect/BOOM1_6.png", "assets/art/effect/BOOM1_7.png", "assets/art/effect/BOOM1_8.png", "assets/art/effect/BOOM1_9.png", "assets/art/effect/BOOM1_10.png", "assets/art/effect/BOOM1_11.png", "assets/art/effect/BOOM1_12.png", "assets/art/effect/BOOM1_13.png", "assets/art/effect/BOOM1_14.png", "assets/art/effect/BOOM1_15.png", "assets/art/effect/BOOM1_16.png", "assets/art/effect/BOOM1_17.png", "assets/art/effect/BOOM1_18.png", "assets/art/effect/BOOM1_19.png", "assets/art/effect/BOOM1_20.png", "assets/art/effect/BOOM1_21.png", "assets/art/effect/BOOM1_22.png", "assets/art/effect/BOOM1_23.png", "assets/art/effect/BOOM1_24.png", "assets/art/effect/BOOM1_25.png", "assets/art/effect/BOOM1_26.png", "assets/art/effect/BOOM1_27.png", "assets/art/effect/BOOM1_28.png", "assets/art/effect/BOOM1_29.png", "assets/art/effect/BOOM1_30.png", "assets/art/effect/BOOM1_31.png", "assets/art/effect/BOOM1_32.png", "assets/art/effect/BOOM1_33.png", "assets/art/effect/BOOM1_34.png", "assets/art/effect/BOOM1_35.png", "assets/art/effect/BOOM1_36.png" };
+static const AssetOffset OFFSETS_134[] = { { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f } };
+static const char *const FRAMES_135[] = { "assets/art/effect/BOOM2_1.png", "assets/art/effect/BOOM2_2.png", "assets/art/effect/BOOM2_3.png", "assets/art/effect/BOOM2_4.png", "assets/art/effect/BOOM2_5.png", "assets/art/effect/BOOM2_6.png", "assets/art/effect/BOOM2_7.png", "assets/art/effect/BOOM2_8.png", "assets/art/effect/BOOM2_9.png", "assets/art/effect/BOOM2_10.png", "assets/art/effect/BOOM2_11.png", "assets/art/effect/BOOM2_12.png", "assets/art/effect/BOOM2_13.png", "assets/art/effect/BOOM2_14.png", "assets/art/effect/BOOM2_15.png", "assets/art/effect/BOOM2_16.png", "assets/art/effect/BOOM2_17.png", "assets/art/effect/BOOM2_18.png", "assets/art/effect/BOOM2_19.png", "assets/art/effect/BOOM2_20.png", "assets/art/effect/BOOM2_21.png", "assets/art/effect/BOOM2_22.png", "assets/art/effect/BOOM2_23.png", "assets/art/effect/BOOM2_24.png", "assets/art/effect/BOOM2_25.png", "assets/art/effect/BOOM2_26.png", "assets/art/effect/BOOM2_27.png", "assets/art/effect/BOOM2_28.png", "assets/art/effect/BOOM2_29.png", "assets/art/effect/BOOM2_30.png", "assets/art/effect/BOOM2_31.png", "assets/art/effect/BOOM2_32.png", "assets/art/effect/BOOM2_33.png", "assets/art/effect/BOOM2_34.png", "assets/art/effect/BOOM2_35.png", "assets/art/effect/BOOM2_36.png" };
+static const AssetOffset OFFSETS_135[] = { { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f } };
+static const char *const FRAMES_136[] = { "assets/art/effect/BOOM3_1.png", "assets/art/effect/BOOM3_2.png", "assets/art/effect/BOOM3_3.png", "assets/art/effect/BOOM3_4.png", "assets/art/effect/BOOM3_5.png", "assets/art/effect/BOOM3_6.png", "assets/art/effect/BOOM3_7.png", "assets/art/effect/BOOM3_8.png", "assets/art/effect/BOOM3_9.png", "assets/art/effect/BOOM3_10.png", "assets/art/effect/BOOM3_11.png", "assets/art/effect/BOOM3_12.png", "assets/art/effect/BOOM3_13.png", "assets/art/effect/BOOM3_14.png", "assets/art/effect/BOOM3_15.png", "assets/art/effect/BOOM3_16.png", "assets/art/effect/BOOM3_17.png", "assets/art/effect/BOOM3_18.png", "assets/art/effect/BOOM3_19.png", "assets/art/effect/BOOM3_20.png", "assets/art/effect/BOOM3_21.png", "assets/art/effect/BOOM3_22.png", "assets/art/effect/BOOM3_23.png", "assets/art/effect/BOOM3_24.png", "assets/art/effect/BOOM3_25.png" };
+static const AssetOffset OFFSETS_136[] = { { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f } };
+static const char *const FRAMES_137[] = { "assets/art/effect/BOOM_DARK_1.png", "assets/art/effect/BOOM_DARK_2.png", "assets/art/effect/BOOM_DARK_3.png", "assets/art/effect/BOOM_DARK_4.png", "assets/art/effect/BOOM_DARK_5.png", "assets/art/effect/BOOM_DARK_6.png", "assets/art/effect/BOOM_DARK_7.png", "assets/art/effect/BOOM_DARK_8.png", "assets/art/effect/BOOM_DARK_9.png", "assets/art/effect/BOOM_DARK_10.png", "assets/art/effect/BOOM_DARK_11.png", "assets/art/effect/BOOM_DARK_12.png", "assets/art/effect/BOOM_DARK_13.png", "assets/art/effect/BOOM_DARK_14.png", "assets/art/effect/BOOM_DARK_15.png", "assets/art/effect/BOOM_DARK_16.png", "assets/art/effect/BOOM_DARK_17.png", "assets/art/effect/BOOM_DARK_18.png", "assets/art/effect/BOOM_DARK_19.png", "assets/art/effect/BOOM_DARK_20.png", "assets/art/effect/BOOM_DARK_21.png", "assets/art/effect/BOOM_DARK_22.png", "assets/art/effect/BOOM_DARK_23.png", "assets/art/effect/BOOM_DARK_24.png", "assets/art/effect/BOOM_DARK_25.png" };
+static const AssetOffset OFFSETS_137[] = { { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f } };
+static const char *const FRAMES_138[] = { "assets/art/effect/BOOM_HEAL_1.png", "assets/art/effect/BOOM_HEAL_2.png", "assets/art/effect/BOOM_HEAL_3.png", "assets/art/effect/BOOM_HEAL_4.png", "assets/art/effect/BOOM_HEAL_5.png", "assets/art/effect/BOOM_HEAL_6.png", "assets/art/effect/BOOM_HEAL_7.png", "assets/art/effect/BOOM_HEAL_8.png", "assets/art/effect/BOOM_HEAL_9.png", "assets/art/effect/BOOM_HEAL_10.png", "assets/art/effect/BOOM_HEAL_11.png", "assets/art/effect/BOOM_HEAL_12.png", "assets/art/effect/BOOM_HEAL_13.png", "assets/art/effect/BOOM_HEAL_14.png", "assets/art/effect/BOOM_HEAL_15.png", "assets/art/effect/BOOM_HEAL_16.png" };
+static const AssetOffset OFFSETS_138[] = { { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f } };
+static const char *const FRAMES_139[] = { "assets/art/effect/BOOM_HEAL2_1.png", "assets/art/effect/BOOM_HEAL2_2.png", "assets/art/effect/BOOM_HEAL2_3.png", "assets/art/effect/BOOM_HEAL2_4.png", "assets/art/effect/BOOM_HEAL2_5.png", "assets/art/effect/BOOM_HEAL2_6.png", "assets/art/effect/BOOM_HEAL2_7.png", "assets/art/effect/BOOM_HEAL2_8.png", "assets/art/effect/BOOM_HEAL2_9.png", "assets/art/effect/BOOM_HEAL2_10.png", "assets/art/effect/BOOM_HEAL2_11.png", "assets/art/effect/BOOM_HEAL2_12.png", "assets/art/effect/BOOM_HEAL2_13.png", "assets/art/effect/BOOM_HEAL2_14.png", "assets/art/effect/BOOM_HEAL2_15.png", "assets/art/effect/BOOM_HEAL2_16.png", "assets/art/effect/BOOM_HEAL2_17.png", "assets/art/effect/BOOM_HEAL2_18.png", "assets/art/effect/BOOM_HEAL2_19.png", "assets/art/effect/BOOM_HEAL2_20.png", "assets/art/effect/BOOM_HEAL2_21.png", "assets/art/effect/BOOM_HEAL2_22.png", "assets/art/effect/BOOM_HEAL2_23.png", "assets/art/effect/BOOM_HEAL2_24.png", "assets/art/effect/BOOM_HEAL2_25.png" };
+static const AssetOffset OFFSETS_139[] = { { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f } };
+static const char *const FRAMES_140[] = { "assets/art/effect/BOOM_POWERUP_1.png", "assets/art/effect/BOOM_POWERUP_2.png", "assets/art/effect/BOOM_POWERUP_3.png", "assets/art/effect/BOOM_POWERUP_4.png", "assets/art/effect/BOOM_POWERUP_5.png", "assets/art/effect/BOOM_POWERUP_6.png", "assets/art/effect/BOOM_POWERUP_7.png", "assets/art/effect/BOOM_POWERUP_8.png", "assets/art/effect/BOOM_POWERUP_9.png", "assets/art/effect/BOOM_POWERUP_10.png", "assets/art/effect/BOOM_POWERUP_11.png", "assets/art/effect/BOOM_POWERUP_12.png", "assets/art/effect/BOOM_POWERUP_13.png", "assets/art/effect/BOOM_POWERUP_14.png", "assets/art/effect/BOOM_POWERUP_15.png", "assets/art/effect/BOOM_POWERUP_16.png" };
+static const AssetOffset OFFSETS_140[] = { { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f } };
+static const char *const FRAMES_141[] = { "assets/art/effect/BOOM_RED_1.png", "assets/art/effect/BOOM_RED_2.png", "assets/art/effect/BOOM_RED_3.png", "assets/art/effect/BOOM_RED_4.png", "assets/art/effect/BOOM_RED_5.png", "assets/art/effect/BOOM_RED_6.png", "assets/art/effect/BOOM_RED_7.png", "assets/art/effect/BOOM_RED_8.png", "assets/art/effect/BOOM_RED_9.png", "assets/art/effect/BOOM_RED_10.png", "assets/art/effect/BOOM_RED_11.png", "assets/art/effect/BOOM_RED_12.png", "assets/art/effect/BOOM_RED_13.png", "assets/art/effect/BOOM_RED_14.png", "assets/art/effect/BOOM_RED_15.png", "assets/art/effect/BOOM_RED_16.png", "assets/art/effect/BOOM_RED_17.png", "assets/art/effect/BOOM_RED_18.png", "assets/art/effect/BOOM_RED_19.png", "assets/art/effect/BOOM_RED_20.png", "assets/art/effect/BOOM_RED_21.png", "assets/art/effect/BOOM_RED_22.png", "assets/art/effect/BOOM_RED_23.png", "assets/art/effect/BOOM_RED_24.png", "assets/art/effect/BOOM_RED_25.png" };
+static const AssetOffset OFFSETS_141[] = { { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f } };
+static const char *const FRAMES_142[] = { "assets/art/effect/BOOM_SHIELD_1.png", "assets/art/effect/BOOM_SHIELD_2.png", "assets/art/effect/BOOM_SHIELD_3.png", "assets/art/effect/BOOM_SHIELD_4.png", "assets/art/effect/BOOM_SHIELD_5.png", "assets/art/effect/BOOM_SHIELD_6.png", "assets/art/effect/BOOM_SHIELD_7.png", "assets/art/effect/BOOM_SHIELD_8.png", "assets/art/effect/BOOM_SHIELD_9.png", "assets/art/effect/BOOM_SHIELD_10.png", "assets/art/effect/BOOM_SHIELD_11.png", "assets/art/effect/BOOM_SHIELD_12.png", "assets/art/effect/BOOM_SHIELD_13.png", "assets/art/effect/BOOM_SHIELD_14.png", "assets/art/effect/BOOM_SHIELD_15.png", "assets/art/effect/BOOM_SHIELD_16.png", "assets/art/effect/BOOM_SHIELD_17.png", "assets/art/effect/BOOM_SHIELD_18.png", "assets/art/effect/BOOM_SHIELD_19.png", "assets/art/effect/BOOM_SHIELD_20.png" };
+static const AssetOffset OFFSETS_142[] = { { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f } };
+static const char *const FRAMES_143[] = { "assets/art/effect/BOOM_SLASH_1.png", "assets/art/effect/BOOM_SLASH_2.png", "assets/art/effect/BOOM_SLASH_3.png", "assets/art/effect/BOOM_SLASH_4.png", "assets/art/effect/BOOM_SLASH_5.png", "assets/art/effect/BOOM_SLASH_6.png", "assets/art/effect/BOOM_SLASH_7.png", "assets/art/effect/BOOM_SLASH_8.png", "assets/art/effect/BOOM_SLASH_9.png", "assets/art/effect/BOOM_SLASH_10.png", "assets/art/effect/BOOM_SLASH_11.png", "assets/art/effect/BOOM_SLASH_12.png", "assets/art/effect/BOOM_SLASH_13.png", "assets/art/effect/BOOM_SLASH_14.png", "assets/art/effect/BOOM_SLASH_15.png", "assets/art/effect/BOOM_SLASH_16.png", "assets/art/effect/BOOM_SLASH_17.png", "assets/art/effect/BOOM_SLASH_18.png", "assets/art/effect/BOOM_SLASH_19.png", "assets/art/effect/BOOM_SLASH_20.png", "assets/art/effect/BOOM_SLASH_21.png", "assets/art/effect/BOOM_SLASH_22.png", "assets/art/effect/BOOM_SLASH_23.png", "assets/art/effect/BOOM_SLASH_24.png", "assets/art/effect/BOOM_SLASH_25.png" };
+static const AssetOffset OFFSETS_143[] = { { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f } };
+static const char *const FRAMES_144[] = { "assets/art/effect/BOOM_SLASH2_1.png", "assets/art/effect/BOOM_SLASH2_2.png", "assets/art/effect/BOOM_SLASH2_3.png", "assets/art/effect/BOOM_SLASH2_4.png", "assets/art/effect/BOOM_SLASH2_5.png", "assets/art/effect/BOOM_SLASH2_6.png", "assets/art/effect/BOOM_SLASH2_7.png", "assets/art/effect/BOOM_SLASH2_8.png", "assets/art/effect/BOOM_SLASH2_9.png", "assets/art/effect/BOOM_SLASH2_10.png", "assets/art/effect/BOOM_SLASH2_11.png", "assets/art/effect/BOOM_SLASH2_12.png", "assets/art/effect/BOOM_SLASH2_13.png", "assets/art/effect/BOOM_SLASH2_14.png", "assets/art/effect/BOOM_SLASH2_15.png", "assets/art/effect/BOOM_SLASH2_16.png", "assets/art/effect/BOOM_SLASH2_17.png", "assets/art/effect/BOOM_SLASH2_18.png", "assets/art/effect/BOOM_SLASH2_19.png", "assets/art/effect/BOOM_SLASH2_20.png", "assets/art/effect/BOOM_SLASH2_21.png", "assets/art/effect/BOOM_SLASH2_22.png", "assets/art/effect/BOOM_SLASH2_23.png", "assets/art/effect/BOOM_SLASH2_24.png", "assets/art/effect/BOOM_SLASH2_25.png" };
+static const AssetOffset OFFSETS_144[] = { { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f } };
+static const char *const FRAMES_145[] = { "assets/art/effect/BOOM_SLASHBLUE_1.png", "assets/art/effect/BOOM_SLASHBLUE_2.png", "assets/art/effect/BOOM_SLASHBLUE_3.png", "assets/art/effect/BOOM_SLASHBLUE_4.png", "assets/art/effect/BOOM_SLASHBLUE_5.png", "assets/art/effect/BOOM_SLASHBLUE_6.png", "assets/art/effect/BOOM_SLASHBLUE_7.png", "assets/art/effect/BOOM_SLASHBLUE_8.png", "assets/art/effect/BOOM_SLASHBLUE_9.png", "assets/art/effect/BOOM_SLASHBLUE_10.png", "assets/art/effect/BOOM_SLASHBLUE_11.png", "assets/art/effect/BOOM_SLASHBLUE_12.png", "assets/art/effect/BOOM_SLASHBLUE_13.png", "assets/art/effect/BOOM_SLASHBLUE_14.png", "assets/art/effect/BOOM_SLASHBLUE_15.png", "assets/art/effect/BOOM_SLASHBLUE_16.png", "assets/art/effect/BOOM_SLASHBLUE_17.png", "assets/art/effect/BOOM_SLASHBLUE_18.png", "assets/art/effect/BOOM_SLASHBLUE_19.png", "assets/art/effect/BOOM_SLASHBLUE_20.png", "assets/art/effect/BOOM_SLASHBLUE_21.png", "assets/art/effect/BOOM_SLASHBLUE_22.png", "assets/art/effect/BOOM_SLASHBLUE_23.png", "assets/art/effect/BOOM_SLASHBLUE_24.png", "assets/art/effect/BOOM_SLASHBLUE_25.png" };
+static const AssetOffset OFFSETS_145[] = { { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f } };
+static const char *const FRAMES_146[] = { "assets/art/effect/BOOM_SLASHGREEN_1.png", "assets/art/effect/BOOM_SLASHGREEN_2.png", "assets/art/effect/BOOM_SLASHGREEN_3.png", "assets/art/effect/BOOM_SLASHGREEN_4.png", "assets/art/effect/BOOM_SLASHGREEN_5.png", "assets/art/effect/BOOM_SLASHGREEN_6.png", "assets/art/effect/BOOM_SLASHGREEN_7.png", "assets/art/effect/BOOM_SLASHGREEN_8.png", "assets/art/effect/BOOM_SLASHGREEN_9.png", "assets/art/effect/BOOM_SLASHGREEN_10.png", "assets/art/effect/BOOM_SLASHGREEN_11.png", "assets/art/effect/BOOM_SLASHGREEN_12.png", "assets/art/effect/BOOM_SLASHGREEN_13.png", "assets/art/effect/BOOM_SLASHGREEN_14.png", "assets/art/effect/BOOM_SLASHGREEN_15.png", "assets/art/effect/BOOM_SLASHGREEN_16.png", "assets/art/effect/BOOM_SLASHGREEN_17.png", "assets/art/effect/BOOM_SLASHGREEN_18.png", "assets/art/effect/BOOM_SLASHGREEN_19.png", "assets/art/effect/BOOM_SLASHGREEN_20.png", "assets/art/effect/BOOM_SLASHGREEN_21.png", "assets/art/effect/BOOM_SLASHGREEN_22.png", "assets/art/effect/BOOM_SLASHGREEN_23.png", "assets/art/effect/BOOM_SLASHGREEN_24.png", "assets/art/effect/BOOM_SLASHGREEN_25.png" };
+static const AssetOffset OFFSETS_146[] = { { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f } };
+static const char *const FRAMES_147[] = { "assets/art/effect/BOOM_SLASHORANGE_1.png", "assets/art/effect/BOOM_SLASHORANGE_2.png", "assets/art/effect/BOOM_SLASHORANGE_3.png", "assets/art/effect/BOOM_SLASHORANGE_4.png", "assets/art/effect/BOOM_SLASHORANGE_5.png", "assets/art/effect/BOOM_SLASHORANGE_6.png", "assets/art/effect/BOOM_SLASHORANGE_7.png", "assets/art/effect/BOOM_SLASHORANGE_8.png", "assets/art/effect/BOOM_SLASHORANGE_9.png", "assets/art/effect/BOOM_SLASHORANGE_10.png", "assets/art/effect/BOOM_SLASHORANGE_11.png", "assets/art/effect/BOOM_SLASHORANGE_12.png", "assets/art/effect/BOOM_SLASHORANGE_13.png", "assets/art/effect/BOOM_SLASHORANGE_14.png", "assets/art/effect/BOOM_SLASHORANGE_15.png", "assets/art/effect/BOOM_SLASHORANGE_16.png", "assets/art/effect/BOOM_SLASHORANGE_17.png", "assets/art/effect/BOOM_SLASHORANGE_18.png", "assets/art/effect/BOOM_SLASHORANGE_19.png", "assets/art/effect/BOOM_SLASHORANGE_20.png", "assets/art/effect/BOOM_SLASHORANGE_21.png", "assets/art/effect/BOOM_SLASHORANGE_22.png", "assets/art/effect/BOOM_SLASHORANGE_23.png", "assets/art/effect/BOOM_SLASHORANGE_24.png", "assets/art/effect/BOOM_SLASHORANGE_25.png" };
+static const AssetOffset OFFSETS_147[] = { { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f } };
+static const char *const FRAMES_148[] = { "assets/art/effect/BOOM_SLASHRED_1.png", "assets/art/effect/BOOM_SLASHRED_2.png", "assets/art/effect/BOOM_SLASHRED_3.png", "assets/art/effect/BOOM_SLASHRED_4.png", "assets/art/effect/BOOM_SLASHRED_5.png", "assets/art/effect/BOOM_SLASHRED_6.png", "assets/art/effect/BOOM_SLASHRED_7.png", "assets/art/effect/BOOM_SLASHRED_8.png", "assets/art/effect/BOOM_SLASHRED_9.png", "assets/art/effect/BOOM_SLASHRED_10.png", "assets/art/effect/BOOM_SLASHRED_11.png", "assets/art/effect/BOOM_SLASHRED_12.png", "assets/art/effect/BOOM_SLASHRED_13.png", "assets/art/effect/BOOM_SLASHRED_14.png", "assets/art/effect/BOOM_SLASHRED_15.png", "assets/art/effect/BOOM_SLASHRED_16.png", "assets/art/effect/BOOM_SLASHRED_17.png", "assets/art/effect/BOOM_SLASHRED_18.png", "assets/art/effect/BOOM_SLASHRED_19.png", "assets/art/effect/BOOM_SLASHRED_20.png", "assets/art/effect/BOOM_SLASHRED_21.png", "assets/art/effect/BOOM_SLASHRED_22.png", "assets/art/effect/BOOM_SLASHRED_23.png", "assets/art/effect/BOOM_SLASHRED_24.png", "assets/art/effect/BOOM_SLASHRED_25.png" };
+static const AssetOffset OFFSETS_148[] = { { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f } };
+static const char *const FRAMES_149[] = { "assets/art/effect/BOOM_SPARK_1.png", "assets/art/effect/BOOM_SPARK_2.png", "assets/art/effect/BOOM_SPARK_3.png", "assets/art/effect/BOOM_SPARK_4.png", "assets/art/effect/BOOM_SPARK_5.png", "assets/art/effect/BOOM_SPARK_6.png", "assets/art/effect/BOOM_SPARK_7.png", "assets/art/effect/BOOM_SPARK_8.png", "assets/art/effect/BOOM_SPARK_9.png", "assets/art/effect/BOOM_SPARK_10.png", "assets/art/effect/BOOM_SPARK_11.png", "assets/art/effect/BOOM_SPARK_12.png", "assets/art/effect/BOOM_SPARK_13.png", "assets/art/effect/BOOM_SPARK_14.png", "assets/art/effect/BOOM_SPARK_15.png", "assets/art/effect/BOOM_SPARK_16.png", "assets/art/effect/BOOM_SPARK_17.png", "assets/art/effect/BOOM_SPARK_18.png", "assets/art/effect/BOOM_SPARK_19.png", "assets/art/effect/BOOM_SPARK_20.png", "assets/art/effect/BOOM_SPARK_21.png", "assets/art/effect/BOOM_SPARK_22.png", "assets/art/effect/BOOM_SPARK_23.png", "assets/art/effect/BOOM_SPARK_24.png", "assets/art/effect/BOOM_SPARK_25.png" };
+static const AssetOffset OFFSETS_149[] = { { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f } };
+static const char *const FRAMES_150[] = { "assets/art/effect/BOOM_SPARKBLUE_1.png", "assets/art/effect/BOOM_SPARKBLUE_2.png", "assets/art/effect/BOOM_SPARKBLUE_3.png", "assets/art/effect/BOOM_SPARKBLUE_4.png", "assets/art/effect/BOOM_SPARKBLUE_5.png", "assets/art/effect/BOOM_SPARKBLUE_6.png", "assets/art/effect/BOOM_SPARKBLUE_7.png", "assets/art/effect/BOOM_SPARKBLUE_8.png", "assets/art/effect/BOOM_SPARKBLUE_9.png", "assets/art/effect/BOOM_SPARKBLUE_10.png", "assets/art/effect/BOOM_SPARKBLUE_11.png", "assets/art/effect/BOOM_SPARKBLUE_12.png", "assets/art/effect/BOOM_SPARKBLUE_13.png", "assets/art/effect/BOOM_SPARKBLUE_14.png", "assets/art/effect/BOOM_SPARKBLUE_15.png", "assets/art/effect/BOOM_SPARKBLUE_16.png", "assets/art/effect/BOOM_SPARKBLUE_17.png", "assets/art/effect/BOOM_SPARKBLUE_18.png", "assets/art/effect/BOOM_SPARKBLUE_19.png", "assets/art/effect/BOOM_SPARKBLUE_20.png", "assets/art/effect/BOOM_SPARKBLUE_21.png", "assets/art/effect/BOOM_SPARKBLUE_22.png", "assets/art/effect/BOOM_SPARKBLUE_23.png", "assets/art/effect/BOOM_SPARKBLUE_24.png", "assets/art/effect/BOOM_SPARKBLUE_25.png" };
+static const AssetOffset OFFSETS_150[] = { { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f } };
+static const char *const FRAMES_151[] = { "assets/art/buff/BURNING.png" };
+static const AssetOffset OFFSETS_151[] = { { 5.950000f, 10.950000f } };
+static const char *const FRAMES_152[] = { "assets/art/buff/BURNS.png" };
+static const AssetOffset OFFSETS_152[] = { { 5.000000f, 9.300000f } };
+static const char *const FRAMES_153[] = { "assets/art/item/Balance.png" };
+static const AssetOffset OFFSETS_153[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_154[] = { "assets/art/portrait/Baron_Brixius.png" };
+static const AssetOffset OFFSETS_154[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_155[] = { "assets/art/sound/BaronDie.mp3" };
+static const char *const FRAMES_156[] = { "assets/art/sound/BaronHit1.mp3" };
+static const char *const FRAMES_157[] = { "assets/art/sound/BaronHit2.mp3" };
+static const char *const FRAMES_158[] = { "assets/art/sound/BaronHit3.mp3" };
+static const char *const FRAMES_159[] = { "assets/art/sound/BattleMusic1loopable.mp3" };
+static const char *const FRAMES_160[] = { "assets/art/sound/BattleMusic2loopable.mp3" };
+static const char *const FRAMES_161[] = { "assets/art/item/Blade_of_Light.png" };
 static const AssetOffset OFFSETS_161[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_162[] = { "assets/art/item/Boots_of_Stealth.png" };
-static const AssetOffset OFFSETS_162[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_163[] = { "assets/art/icon/Break.png" };
-static const AssetOffset OFFSETS_163[] = { { 24.150000f, 10.450000f } };
-static const char *const FRAMES_164[] = { "assets/art/item/Breaker's_Armor.png" };
-static const AssetOffset OFFSETS_164[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_165[] = { "assets/art/item/Breaker's_Axe.png" };
-static const AssetOffset OFFSETS_165[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_166[] = { "assets/art/item/Breaker's_Boots.png" };
+static const char *const FRAMES_162[] = { "assets/art/icon/Blessing_of_Light.png" };
+static const AssetOffset OFFSETS_162[] = { { 15.650000f, 17.100000f } };
+static const char *const FRAMES_163[] = { "assets/art/icon/Block.png" };
+static const AssetOffset OFFSETS_163[] = { { 16.350000f, 13.450000f } };
+static const char *const FRAMES_164[] = { "assets/art/icon/Blood_Focus.png" };
+static const AssetOffset OFFSETS_164[] = { { 12.850000f, 12.200000f } };
+static const char *const FRAMES_165[] = { "assets/art/icon/Blood_Strike.png" };
+static const AssetOffset OFFSETS_165[] = { { 17.150000f, 14.550000f } };
+static const char *const FRAMES_166[] = { "assets/art/item/Bloody_Blade.png" };
 static const AssetOffset OFFSETS_166[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_167[] = { "assets/art/item/Breaker's_Gloves.png" };
+static const char *const FRAMES_167[] = { "assets/art/item/Bloody_Dagger.png" };
 static const AssetOffset OFFSETS_167[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_168[] = { "assets/art/item/Breaker's_Mask.png" };
+static const char *const FRAMES_168[] = { "assets/art/item/Boots_of_Stealth.png" };
 static const AssetOffset OFFSETS_168[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_169[] = { "assets/art/item/Breaker's_Pantyhose.png" };
-static const AssetOffset OFFSETS_169[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_170[] = { "assets/art/item/Broken_Totem.png" };
+static const char *const FRAMES_169[] = { "assets/art/icon/Break.png" };
+static const AssetOffset OFFSETS_169[] = { { 24.150000f, 10.450000f } };
+static const char *const FRAMES_170[] = { "assets/art/item/Breaker's_Armor.png" };
 static const AssetOffset OFFSETS_170[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_171[] = { "assets/art/buff/COLDSOUL.png" };
-static const AssetOffset OFFSETS_171[] = { { 6.100000f, 14.350000f } };
-static const char *const FRAMES_172[] = { "assets/art/buff/CRIPPLE1.png" };
-static const AssetOffset OFFSETS_172[] = { { 6.100000f, 14.350000f } };
-static const char *const FRAMES_173[] = { "assets/art/buff/CRIPPLE2.png" };
-static const AssetOffset OFFSETS_173[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_174[] = { "assets/art/buff/CRIPPLE3.png" };
-static const AssetOffset OFFSETS_174[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_175[] = { "assets/art/item/Cannibal's_Hunger.png" };
+static const char *const FRAMES_171[] = { "assets/art/item/Breaker's_Axe.png" };
+static const AssetOffset OFFSETS_171[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_172[] = { "assets/art/item/Breaker's_Boots.png" };
+static const AssetOffset OFFSETS_172[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_173[] = { "assets/art/item/Breaker's_Gloves.png" };
+static const AssetOffset OFFSETS_173[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_174[] = { "assets/art/item/Breaker's_Mask.png" };
+static const AssetOffset OFFSETS_174[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_175[] = { "assets/art/item/Breaker's_Pantyhose.png" };
 static const AssetOffset OFFSETS_175[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_176[] = { "assets/art/icon/Cell_Reformation.png" };
-static const AssetOffset OFFSETS_176[] = { { 27.100000f, 28.700000f } };
-static const char *const FRAMES_177[] = { "assets/art/item/Champion's_Trophy.png" };
-static const AssetOffset OFFSETS_177[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_178[] = { "assets/art/sound/Click2putdown.mp3" };
-static const char *const FRAMES_179[] = { "assets/art/sound/Click3pickup.mp3" };
-static const char *const FRAMES_180[] = { "assets/art/item/Cold_Steel_Leggings.png" };
-static const AssetOffset OFFSETS_180[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_181[] = { "assets/art/item/Convoy_Package.png" };
+static const char *const FRAMES_176[] = { "assets/art/item/Broken_Totem.png" };
+static const AssetOffset OFFSETS_176[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_177[] = { "assets/art/buff/COLDSOUL.png" };
+static const AssetOffset OFFSETS_177[] = { { 6.100000f, 14.350000f } };
+static const char *const FRAMES_178[] = { "assets/art/buff/CRIPPLE1.png" };
+static const AssetOffset OFFSETS_178[] = { { 6.100000f, 14.350000f } };
+static const char *const FRAMES_179[] = { "assets/art/buff/CRIPPLE2.png" };
+static const AssetOffset OFFSETS_179[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_180[] = { "assets/art/buff/CRIPPLE3.png" };
+static const AssetOffset OFFSETS_180[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_181[] = { "assets/art/item/Cannibal's_Hunger.png" };
 static const AssetOffset OFFSETS_181[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_182[] = { "assets/art/icon/Coup_De_Grace.png" };
-static const AssetOffset OFFSETS_182[] = { { 19.700000f, 20.200000f } };
-static const char *const FRAMES_183[] = { "assets/art/icon/Cripple.png" };
-static const AssetOffset OFFSETS_183[] = { { 13.000000f, 12.200000f } };
-static const char *const FRAMES_184[] = { "assets/art/item/Crow_Bar.png" };
-static const AssetOffset OFFSETS_184[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_185[] = { "assets/art/item/Crown_of_Frozen_Shadows.png" };
-static const AssetOffset OFFSETS_185[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_186[] = { "assets/art/buff/DARKREGEN.png" };
-static const AssetOffset OFFSETS_186[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_187[] = { "assets/art/background/DAY.png" };
-static const AssetOffset OFFSETS_187[] = { { 403.250000f, 183.100000f } };
-static const char *const FRAMES_188[] = { "assets/art/background/DAY2.png" };
-static const AssetOffset OFFSETS_188[] = { { 403.250000f, 183.100000f } };
-static const char *const FRAMES_189[] = { "assets/art/buff/DECAY.png" };
-static const AssetOffset OFFSETS_189[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_190[] = { "assets/art/buff/DOCTOR.png" };
-static const AssetOffset OFFSETS_190[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_191[] = { "assets/art/item/Dead_Peacock.png" };
+static const char *const FRAMES_182[] = { "assets/art/icon/Cell_Reformation.png" };
+static const AssetOffset OFFSETS_182[] = { { 27.100000f, 28.700000f } };
+static const char *const FRAMES_183[] = { "assets/art/item/Champion's_Trophy.png" };
+static const AssetOffset OFFSETS_183[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_184[] = { "assets/art/sound/Click2putdown.mp3" };
+static const char *const FRAMES_185[] = { "assets/art/sound/Click3pickup.mp3" };
+static const char *const FRAMES_186[] = { "assets/art/item/Cold_Steel_Leggings.png" };
+static const AssetOffset OFFSETS_186[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_187[] = { "assets/art/item/Convoy_Package.png" };
+static const AssetOffset OFFSETS_187[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_188[] = { "assets/art/icon/Coup_De_Grace.png" };
+static const AssetOffset OFFSETS_188[] = { { 19.700000f, 20.200000f } };
+static const char *const FRAMES_189[] = { "assets/art/icon/Cripple.png" };
+static const AssetOffset OFFSETS_189[] = { { 13.000000f, 12.200000f } };
+static const char *const FRAMES_190[] = { "assets/art/item/Crow_Bar.png" };
+static const AssetOffset OFFSETS_190[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_191[] = { "assets/art/item/Crown_of_Frozen_Shadows.png" };
 static const AssetOffset OFFSETS_191[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_192[] = { "assets/art/item/Deep_Sea_Greaves.png" };
-static const AssetOffset OFFSETS_192[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_193[] = { "assets/art/item/Destroyer's_Armor.png" };
-static const AssetOffset OFFSETS_193[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_194[] = { "assets/art/item/Destroyer's_Boots.png" };
-static const AssetOffset OFFSETS_194[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_195[] = { "assets/art/item/Destroyer's_Gloves.png" };
-static const AssetOffset OFFSETS_195[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_196[] = { "assets/art/item/Destroyer's_Helm.png" };
-static const AssetOffset OFFSETS_196[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_197[] = { "assets/art/item/Destroyer's_Leggings.png" };
+static const char *const FRAMES_192[] = { "assets/art/buff/DARKREGEN.png" };
+static const AssetOffset OFFSETS_192[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_193[] = { "assets/art/background/DAY.png" };
+static const AssetOffset OFFSETS_193[] = { { 403.250000f, 183.100000f } };
+static const char *const FRAMES_194[] = { "assets/art/background/DAY2.png" };
+static const AssetOffset OFFSETS_194[] = { { 403.250000f, 183.100000f } };
+static const char *const FRAMES_195[] = { "assets/art/buff/DECAY.png" };
+static const AssetOffset OFFSETS_195[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_196[] = { "assets/art/buff/DOCTOR.png" };
+static const AssetOffset OFFSETS_196[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_197[] = { "assets/art/item/Dead_Peacock.png" };
 static const AssetOffset OFFSETS_197[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_198[] = { "assets/art/item/Destruction.png" };
+static const char *const FRAMES_198[] = { "assets/art/item/Deep_Sea_Greaves.png" };
 static const AssetOffset OFFSETS_198[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_199[] = { "assets/art/sound/Die1.mp3" };
-static const char *const FRAMES_200[] = { "assets/art/icon/Disrupt.png" };
-static const AssetOffset OFFSETS_200[] = { { 12.600000f, 11.500000f } };
-static const char *const FRAMES_201[] = { "assets/art/portrait/Dokebi_the_Striker.png" };
-static const AssetOffset OFFSETS_201[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_202[] = { "assets/art/sound/DuxDie.mp3" };
-static const char *const FRAMES_203[] = { "assets/art/sound/DuxHit1.mp3" };
-static const char *const FRAMES_204[] = { "assets/art/sound/DuxHit2.mp3" };
-static const char *const FRAMES_205[] = { "assets/art/sound/DuxHit3.mp3" };
-static const char *const FRAMES_206[] = { "assets/art/sound/ElectricHit.mp3" };
-static const char *const FRAMES_207[] = { "assets/art/icon/Electro_Bolt.png" };
-static const AssetOffset OFFSETS_207[] = { { 12.850000f, 15.400000f } };
-static const char *const FRAMES_208[] = { "assets/art/portrait/Elite_Medic.png" };
-static const AssetOffset OFFSETS_208[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_209[] = { "assets/art/item/Engineering_Gloves.png" };
-static const AssetOffset OFFSETS_209[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_210[] = { "assets/art/item/Eternity.png" };
-static const AssetOffset OFFSETS_210[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_211[] = { "assets/art/sound/Explode.mp3" };
-static const char *const FRAMES_212[] = { "assets/art/buff/FATALFLAW.png" };
-static const AssetOffset OFFSETS_212[] = { { 5.950000f, 10.100000f } };
-static const char *const FRAMES_213[] = { "assets/art/buff/FATE.png" };
-static const AssetOffset OFFSETS_213[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_214[] = { "assets/art/buff/FIRESHOCK.png" };
-static const AssetOffset OFFSETS_214[] = { { 5.950000f, 10.950000f } };
-static const char *const FRAMES_215[] = { "assets/art/doll/F_SARM_SIX.png" };
-static const AssetOffset OFFSETS_215[] = { { 2.150000f, 8.700000f } };
-static const char *const FRAMES_216[] = { "assets/art/doll/F_SARM_THREE.png" };
-static const AssetOffset OFFSETS_216[] = { { 2.150000f, 8.700000f } };
-static const char *const FRAMES_217[] = { "assets/art/doll/F_SCHEST_SIX.png" };
-static const AssetOffset OFFSETS_217[] = { { 8.650000f, 17.700000f } };
-static const char *const FRAMES_218[] = { "assets/art/doll/F_SCHEST_THREE.png" };
-static const AssetOffset OFFSETS_218[] = { { 8.650000f, 16.400000f } };
-static const char *const FRAMES_219[] = { "assets/art/doll/F_SFOOT_SIX.png" };
-static const AssetOffset OFFSETS_219[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_220[] = { "assets/art/doll/F_SFOOT_THREE.png" };
-static const AssetOffset OFFSETS_220[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_221[] = { "assets/art/doll/F_SHAND_SIX.png" };
-static const AssetOffset OFFSETS_221[] = { { 2.700000f, 9.150000f } };
-static const char *const FRAMES_222[] = { "assets/art/doll/F_SHAND_THREE.png" };
-static const AssetOffset OFFSETS_222[] = { { 2.700000f, 9.150000f } };
-static const char *const FRAMES_223[] = { "assets/art/doll/F_SHEAD_SIX.png" };
-static const AssetOffset OFFSETS_223[] = { { 2.250000f, 6.250000f } };
-static const char *const FRAMES_224[] = { "assets/art/doll/F_SHEAD_THREE.png" };
-static const AssetOffset OFFSETS_224[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_225[] = { "assets/art/doll/F_SLEG2_SIX.png" };
-static const AssetOffset OFFSETS_225[] = { { 3.600000f, 15.200000f } };
-static const char *const FRAMES_226[] = { "assets/art/doll/F_SLEG2_THREE.png" };
-static const AssetOffset OFFSETS_226[] = { { 3.600000f, 15.200000f } };
-static const char *const FRAMES_227[] = { "assets/art/item/Fire_Axe.png" };
-static const AssetOffset OFFSETS_227[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_228[] = { "assets/art/icon/Flame_Blast.png" };
-static const AssetOffset OFFSETS_228[] = { { 12.850000f, 14.600000f } };
-static const char *const FRAMES_229[] = { "assets/art/icon/Flame_Strike.png" };
-static const AssetOffset OFFSETS_229[] = { { 12.850000f, 19.900000f } };
-static const char *const FRAMES_230[] = { "assets/art/item/Footguard_of_the_Shore.png" };
-static const AssetOffset OFFSETS_230[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_231[] = { "assets/art/sound/Forcefield.mp3" };
-static const char *const FRAMES_232[] = { "assets/art/icon/Frost_Bolt.png" };
-static const AssetOffset OFFSETS_232[] = { { 32.500000f, 28.700000f } };
-static const char *const FRAMES_233[] = { "assets/art/item/Frost_Lantern.png" };
+static const char *const FRAMES_199[] = { "assets/art/item/Destroyer's_Armor.png" };
+static const AssetOffset OFFSETS_199[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_200[] = { "assets/art/item/Destroyer's_Boots.png" };
+static const AssetOffset OFFSETS_200[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_201[] = { "assets/art/item/Destroyer's_Gloves.png" };
+static const AssetOffset OFFSETS_201[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_202[] = { "assets/art/item/Destroyer's_Helm.png" };
+static const AssetOffset OFFSETS_202[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_203[] = { "assets/art/item/Destroyer's_Leggings.png" };
+static const AssetOffset OFFSETS_203[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_204[] = { "assets/art/item/Destruction.png" };
+static const AssetOffset OFFSETS_204[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_205[] = { "assets/art/sound/Die1.mp3" };
+static const char *const FRAMES_206[] = { "assets/art/icon/Disrupt.png" };
+static const AssetOffset OFFSETS_206[] = { { 12.600000f, 11.500000f } };
+static const char *const FRAMES_207[] = { "assets/art/portrait/Dokebi_the_Striker.png" };
+static const AssetOffset OFFSETS_207[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_208[] = { "assets/art/sound/DuxDie.mp3" };
+static const char *const FRAMES_209[] = { "assets/art/sound/DuxHit1.mp3" };
+static const char *const FRAMES_210[] = { "assets/art/sound/DuxHit2.mp3" };
+static const char *const FRAMES_211[] = { "assets/art/sound/DuxHit3.mp3" };
+static const char *const FRAMES_212[] = { "assets/art/sound/ElectricHit.mp3" };
+static const char *const FRAMES_213[] = { "assets/art/icon/Electro_Bolt.png" };
+static const AssetOffset OFFSETS_213[] = { { 12.850000f, 15.400000f } };
+static const char *const FRAMES_214[] = { "assets/art/portrait/Elite_Medic.png" };
+static const AssetOffset OFFSETS_214[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_215[] = { "assets/art/item/Engineering_Gloves.png" };
+static const AssetOffset OFFSETS_215[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_216[] = { "assets/art/item/Eternity.png" };
+static const AssetOffset OFFSETS_216[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_217[] = { "assets/art/sound/Explode.mp3" };
+static const char *const FRAMES_218[] = { "assets/art/buff/FATALFLAW.png" };
+static const AssetOffset OFFSETS_218[] = { { 5.950000f, 10.100000f } };
+static const char *const FRAMES_219[] = { "assets/art/buff/FATE.png" };
+static const AssetOffset OFFSETS_219[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_220[] = { "assets/art/buff/FIRESHOCK.png" };
+static const AssetOffset OFFSETS_220[] = { { 5.950000f, 10.950000f } };
+static const char *const FRAMES_221[] = { "assets/art/doll/F_SARM_SIX.png" };
+static const AssetOffset OFFSETS_221[] = { { 2.150000f, 8.700000f } };
+static const char *const FRAMES_222[] = { "assets/art/doll/F_SARM_THREE.png" };
+static const AssetOffset OFFSETS_222[] = { { 2.150000f, 8.700000f } };
+static const char *const FRAMES_223[] = { "assets/art/doll/F_SCHEST_SIX.png" };
+static const AssetOffset OFFSETS_223[] = { { 8.650000f, 17.700000f } };
+static const char *const FRAMES_224[] = { "assets/art/doll/F_SCHEST_THREE.png" };
+static const AssetOffset OFFSETS_224[] = { { 8.650000f, 16.400000f } };
+static const char *const FRAMES_225[] = { "assets/art/doll/F_SFOOT_SIX.png" };
+static const AssetOffset OFFSETS_225[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_226[] = { "assets/art/doll/F_SFOOT_THREE.png" };
+static const AssetOffset OFFSETS_226[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_227[] = { "assets/art/doll/F_SHAND_SIX.png" };
+static const AssetOffset OFFSETS_227[] = { { 2.700000f, 9.150000f } };
+static const char *const FRAMES_228[] = { "assets/art/doll/F_SHAND_THREE.png" };
+static const AssetOffset OFFSETS_228[] = { { 2.700000f, 9.150000f } };
+static const char *const FRAMES_229[] = { "assets/art/doll/F_SHEAD_SIX.png" };
+static const AssetOffset OFFSETS_229[] = { { 2.250000f, 6.250000f } };
+static const char *const FRAMES_230[] = { "assets/art/doll/F_SHEAD_THREE.png" };
+static const AssetOffset OFFSETS_230[] = { { 2.550000f, 6.700000f } };
+static const char *const FRAMES_231[] = { "assets/art/doll/F_SLEG2_SIX.png" };
+static const AssetOffset OFFSETS_231[] = { { 3.600000f, 15.200000f } };
+static const char *const FRAMES_232[] = { "assets/art/doll/F_SLEG2_THREE.png" };
+static const AssetOffset OFFSETS_232[] = { { 3.600000f, 15.200000f } };
+static const char *const FRAMES_233[] = { "assets/art/item/Fire_Axe.png" };
 static const AssetOffset OFFSETS_233[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_234[] = { "assets/art/portrait/Frost_Zombie.png" };
-static const AssetOffset OFFSETS_234[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_235[] = { "assets/art/portrait/Galiant_the_Paladin.png" };
-static const AssetOffset OFFSETS_235[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_236[] = { "assets/art/sound/GaliantDie.mp3" };
-static const char *const FRAMES_237[] = { "assets/art/sound/GaliantHit1.mp3" };
-static const char *const FRAMES_238[] = { "assets/art/sound/GaliantHit2.mp3" };
-static const char *const FRAMES_239[] = { "assets/art/sound/GaliantHit3.mp3" };
-static const char *const FRAMES_240[] = { "assets/art/portrait/Ghost_Assassin.png" };
+static const char *const FRAMES_234[] = { "assets/art/icon/Flame_Blast.png" };
+static const AssetOffset OFFSETS_234[] = { { 12.850000f, 14.600000f } };
+static const char *const FRAMES_235[] = { "assets/art/icon/Flame_Strike.png" };
+static const AssetOffset OFFSETS_235[] = { { 12.850000f, 19.900000f } };
+static const char *const FRAMES_236[] = { "assets/art/item/Footguard_of_the_Shore.png" };
+static const AssetOffset OFFSETS_236[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_237[] = { "assets/art/sound/Forcefield.mp3" };
+static const char *const FRAMES_238[] = { "assets/art/icon/Frost_Bolt.png" };
+static const AssetOffset OFFSETS_238[] = { { 32.500000f, 28.700000f } };
+static const char *const FRAMES_239[] = { "assets/art/item/Frost_Lantern.png" };
+static const AssetOffset OFFSETS_239[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_240[] = { "assets/art/portrait/Frost_Zombie.png" };
 static const AssetOffset OFFSETS_240[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_241[] = { "assets/art/item/Ghost_Medallion.png" };
-static const AssetOffset OFFSETS_241[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_242[] = { "assets/art/portrait/Ghost_Samurai.png" };
-static const AssetOffset OFFSETS_242[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_243[] = { "assets/art/sound/GhostDie.mp3" };
-static const char *const FRAMES_244[] = { "assets/art/sound/GhostHit1.mp3" };
-static const char *const FRAMES_245[] = { "assets/art/sound/GhostHit2.mp3" };
-static const char *const FRAMES_246[] = { "assets/art/sound/GhostHit3.mp3" };
-static const char *const FRAMES_247[] = { "assets/art/item/Ghostly_Mask.png" };
+static const char *const FRAMES_241[] = { "assets/art/portrait/Galiant_the_Paladin.png" };
+static const AssetOffset OFFSETS_241[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_242[] = { "assets/art/sound/GaliantDie.mp3" };
+static const char *const FRAMES_243[] = { "assets/art/sound/GaliantHit1.mp3" };
+static const char *const FRAMES_244[] = { "assets/art/sound/GaliantHit2.mp3" };
+static const char *const FRAMES_245[] = { "assets/art/sound/GaliantHit3.mp3" };
+static const char *const FRAMES_246[] = { "assets/art/portrait/Ghost_Assassin.png" };
+static const AssetOffset OFFSETS_246[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_247[] = { "assets/art/item/Ghost_Medallion.png" };
 static const AssetOffset OFFSETS_247[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_248[] = { "assets/art/item/Grand_Master's_Gloves.png" };
-static const AssetOffset OFFSETS_248[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_249[] = { "assets/art/item/Guardian's_Armor.png" };
-static const AssetOffset OFFSETS_249[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_250[] = { "assets/art/item/Guardian's_Boots.png" };
-static const AssetOffset OFFSETS_250[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_251[] = { "assets/art/item/Guardian's_Gloves.png" };
-static const AssetOffset OFFSETS_251[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_252[] = { "assets/art/item/Guardian's_Helm.png" };
-static const AssetOffset OFFSETS_252[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_253[] = { "assets/art/item/Guardian's_Leggings.png" };
+static const char *const FRAMES_248[] = { "assets/art/portrait/Ghost_Samurai.png" };
+static const AssetOffset OFFSETS_248[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_249[] = { "assets/art/sound/GhostDie.mp3" };
+static const char *const FRAMES_250[] = { "assets/art/sound/GhostHit1.mp3" };
+static const char *const FRAMES_251[] = { "assets/art/sound/GhostHit2.mp3" };
+static const char *const FRAMES_252[] = { "assets/art/sound/GhostHit3.mp3" };
+static const char *const FRAMES_253[] = { "assets/art/item/Ghostly_Mask.png" };
 static const AssetOffset OFFSETS_253[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_254[] = { "assets/art/item/Gunslinger's_Armor.png" };
+static const char *const FRAMES_254[] = { "assets/art/item/Grand_Master's_Gloves.png" };
 static const AssetOffset OFFSETS_254[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_255[] = { "assets/art/item/Gunslinger's_Boots.png" };
+static const char *const FRAMES_255[] = { "assets/art/item/Guardian's_Armor.png" };
 static const AssetOffset OFFSETS_255[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_256[] = { "assets/art/item/Gunslinger's_Gloves.png" };
+static const char *const FRAMES_256[] = { "assets/art/item/Guardian's_Boots.png" };
 static const AssetOffset OFFSETS_256[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_257[] = { "assets/art/item/Gunslinger's_Helm.png" };
+static const char *const FRAMES_257[] = { "assets/art/item/Guardian's_Gloves.png" };
 static const AssetOffset OFFSETS_257[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_258[] = { "assets/art/item/Gunslinger's_Leggings.png" };
+static const char *const FRAMES_258[] = { "assets/art/item/Guardian's_Helm.png" };
 static const AssetOffset OFFSETS_258[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_259[] = { "assets/art/doll/HAIR_BART.png" };
-static const AssetOffset OFFSETS_259[] = { { 2.900000f, 7.650000f } };
-static const char *const FRAMES_260[] = { "assets/art/doll/HAIR_FIVE.png" };
-static const AssetOffset OFFSETS_260[] = { { 15.950000f, 11.800000f } };
-static const char *const FRAMES_261[] = { "assets/art/doll/HAIR_FOUR.png" };
-static const AssetOffset OFFSETS_261[] = { { 6.150000f, 12.900000f } };
-static const char *const FRAMES_262[] = { "assets/art/doll/HAIR_ONE.png" };
-static const AssetOffset OFFSETS_262[] = { { 3.550000f, 8.850000f } };
-static const char *const FRAMES_263[] = { "assets/art/doll/HAIR_SIX.png" };
-static const AssetOffset OFFSETS_263[] = { { 15.950000f, 11.800000f } };
-static const char *const FRAMES_264[] = { "assets/art/doll/HAIR_THREE.png" };
-static const AssetOffset OFFSETS_264[] = { { 8.300000f, 9.650000f } };
-static const char *const FRAMES_265[] = { "assets/art/doll/HAIR_TWO.png" };
-static const AssetOffset OFFSETS_265[] = { { 5.150000f, 9.450000f } };
-static const char *const FRAMES_266[] = { "assets/art/zone/HEW.png" };
-static const AssetOffset OFFSETS_266[] = { { 476.300000f, 260.950000f } };
-static const char *const FRAMES_267[] = { "assets/art/item/Handguards_of_Destiny.png" };
-static const AssetOffset OFFSETS_267[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_268[] = { "assets/art/item/Handwraps_of_Caution.png" };
-static const AssetOffset OFFSETS_268[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_269[] = { "assets/art/sound/Healing.mp3" };
-static const char *const FRAMES_270[] = { "assets/art/icon/Healing_Light.png" };
-static const AssetOffset OFFSETS_270[] = { { 32.500000f, 13.300000f } };
-static const char *const FRAMES_271[] = { "assets/art/item/Helm_of_Peril.png" };
-static const AssetOffset OFFSETS_271[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_272[] = { "assets/art/icon/Heroic_Motivation.png" };
-static const AssetOffset OFFSETS_272[] = { { 17.700000f, 12.200000f } };
-static const char *const FRAMES_273[] = { "assets/art/sound/Hit2.mp3" };
-static const char *const FRAMES_274[] = { "assets/art/sound/Hit3.mp3" };
-static const char *const FRAMES_275[] = { "assets/art/sound/Hit4.mp3" };
-static const char *const FRAMES_276[] = { "assets/art/sound/Hit5.mp3" };
-static const char *const FRAMES_277[] = { "assets/art/item/Hunter's_Armor.png" };
+static const char *const FRAMES_259[] = { "assets/art/item/Guardian's_Leggings.png" };
+static const AssetOffset OFFSETS_259[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_260[] = { "assets/art/item/Gunslinger's_Armor.png" };
+static const AssetOffset OFFSETS_260[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_261[] = { "assets/art/item/Gunslinger's_Boots.png" };
+static const AssetOffset OFFSETS_261[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_262[] = { "assets/art/item/Gunslinger's_Gloves.png" };
+static const AssetOffset OFFSETS_262[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_263[] = { "assets/art/item/Gunslinger's_Helm.png" };
+static const AssetOffset OFFSETS_263[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_264[] = { "assets/art/item/Gunslinger's_Leggings.png" };
+static const AssetOffset OFFSETS_264[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_265[] = { "assets/art/doll/HAIR_BART.png" };
+static const AssetOffset OFFSETS_265[] = { { 2.900000f, 7.650000f } };
+static const char *const FRAMES_266[] = { "assets/art/doll/HAIR_FIVE.png" };
+static const AssetOffset OFFSETS_266[] = { { 15.950000f, 11.800000f } };
+static const char *const FRAMES_267[] = { "assets/art/doll/HAIR_FOUR.png" };
+static const AssetOffset OFFSETS_267[] = { { 6.150000f, 12.900000f } };
+static const char *const FRAMES_268[] = { "assets/art/doll/HAIR_ONE.png" };
+static const AssetOffset OFFSETS_268[] = { { 3.550000f, 8.850000f } };
+static const char *const FRAMES_269[] = { "assets/art/doll/HAIR_SIX.png" };
+static const AssetOffset OFFSETS_269[] = { { 15.950000f, 11.800000f } };
+static const char *const FRAMES_270[] = { "assets/art/doll/HAIR_THREE.png" };
+static const AssetOffset OFFSETS_270[] = { { 8.300000f, 9.650000f } };
+static const char *const FRAMES_271[] = { "assets/art/doll/HAIR_TWO.png" };
+static const AssetOffset OFFSETS_271[] = { { 5.150000f, 9.450000f } };
+static const char *const FRAMES_272[] = { "assets/art/zone/HEW.png" };
+static const AssetOffset OFFSETS_272[] = { { 476.300000f, 260.950000f } };
+static const char *const FRAMES_273[] = { "assets/art/item/Handguards_of_Destiny.png" };
+static const AssetOffset OFFSETS_273[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_274[] = { "assets/art/item/Handwraps_of_Caution.png" };
+static const AssetOffset OFFSETS_274[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_275[] = { "assets/art/sound/Healing.mp3" };
+static const char *const FRAMES_276[] = { "assets/art/icon/Healing_Light.png" };
+static const AssetOffset OFFSETS_276[] = { { 32.500000f, 13.300000f } };
+static const char *const FRAMES_277[] = { "assets/art/item/Helm_of_Peril.png" };
 static const AssetOffset OFFSETS_277[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_278[] = { "assets/art/item/Hunter's_Boots.png" };
-static const AssetOffset OFFSETS_278[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_279[] = { "assets/art/item/Hunter's_Handguards.png" };
-static const AssetOffset OFFSETS_279[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_280[] = { "assets/art/item/Hunter's_Helm.png" };
-static const AssetOffset OFFSETS_280[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_281[] = { "assets/art/item/Hunter's_Legplates.png" };
-static const AssetOffset OFFSETS_281[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_282[] = { "assets/art/buff/IGNITE.png" };
-static const AssetOffset OFFSETS_282[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_283[] = { "assets/art/buff/INTERVENTION1.png" };
-static const AssetOffset OFFSETS_283[] = { { 6.400000f, 10.450000f } };
-static const char *const FRAMES_284[] = { "assets/art/buff/INTERVENTION10.png" };
-static const AssetOffset OFFSETS_284[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_285[] = { "assets/art/buff/INTERVENTION2.png" };
-static const AssetOffset OFFSETS_285[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_286[] = { "assets/art/buff/INTERVENTION3.png" };
-static const AssetOffset OFFSETS_286[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_287[] = { "assets/art/buff/INTERVENTION4.png" };
-static const AssetOffset OFFSETS_287[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_288[] = { "assets/art/buff/INTERVENTION5.png" };
+static const char *const FRAMES_278[] = { "assets/art/icon/Heroic_Motivation.png" };
+static const AssetOffset OFFSETS_278[] = { { 17.700000f, 12.200000f } };
+static const char *const FRAMES_279[] = { "assets/art/sound/Hit2.mp3" };
+static const char *const FRAMES_280[] = { "assets/art/sound/Hit3.mp3" };
+static const char *const FRAMES_281[] = { "assets/art/sound/Hit4.mp3" };
+static const char *const FRAMES_282[] = { "assets/art/sound/Hit5.mp3" };
+static const char *const FRAMES_283[] = { "assets/art/item/Hunter's_Armor.png" };
+static const AssetOffset OFFSETS_283[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_284[] = { "assets/art/item/Hunter's_Boots.png" };
+static const AssetOffset OFFSETS_284[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_285[] = { "assets/art/item/Hunter's_Handguards.png" };
+static const AssetOffset OFFSETS_285[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_286[] = { "assets/art/item/Hunter's_Helm.png" };
+static const AssetOffset OFFSETS_286[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_287[] = { "assets/art/item/Hunter's_Legplates.png" };
+static const AssetOffset OFFSETS_287[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_288[] = { "assets/art/buff/IGNITE.png" };
 static const AssetOffset OFFSETS_288[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_289[] = { "assets/art/buff/INTERVENTION6.png" };
-static const AssetOffset OFFSETS_289[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_290[] = { "assets/art/buff/INTERVENTION7.png" };
+static const char *const FRAMES_289[] = { "assets/art/buff/INTERVENTION1.png" };
+static const AssetOffset OFFSETS_289[] = { { 6.400000f, 10.450000f } };
+static const char *const FRAMES_290[] = { "assets/art/buff/INTERVENTION10.png" };
 static const AssetOffset OFFSETS_290[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_291[] = { "assets/art/buff/INTERVENTION8.png" };
+static const char *const FRAMES_291[] = { "assets/art/buff/INTERVENTION2.png" };
 static const AssetOffset OFFSETS_291[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_292[] = { "assets/art/buff/INTERVENTION9.png" };
+static const char *const FRAMES_292[] = { "assets/art/buff/INTERVENTION3.png" };
 static const AssetOffset OFFSETS_292[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_293[] = { "assets/art/buff/IRONSKIN1.png" };
-static const AssetOffset OFFSETS_293[] = { { 5.950000f, 10.950000f } };
-static const char *const FRAMES_294[] = { "assets/art/buff/IRONSKIN2.png" };
+static const char *const FRAMES_293[] = { "assets/art/buff/INTERVENTION4.png" };
+static const AssetOffset OFFSETS_293[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_294[] = { "assets/art/buff/INTERVENTION5.png" };
 static const AssetOffset OFFSETS_294[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_295[] = { "assets/art/buff/IRONSKIN3.png" };
+static const char *const FRAMES_295[] = { "assets/art/buff/INTERVENTION6.png" };
 static const AssetOffset OFFSETS_295[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_296[] = { "assets/art/buff/IRONSKIN4.png" };
+static const char *const FRAMES_296[] = { "assets/art/buff/INTERVENTION7.png" };
 static const AssetOffset OFFSETS_296[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_297[] = { "assets/art/buff/IRONSKIN5.png" };
+static const char *const FRAMES_297[] = { "assets/art/buff/INTERVENTION8.png" };
 static const AssetOffset OFFSETS_297[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_298[] = { "assets/art/sound/IceShatter.mp3" };
-static const char *const FRAMES_299[] = { "assets/art/item/Icy_Katana.png" };
-static const AssetOffset OFFSETS_299[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_300[] = { "assets/art/portrait/Information.png" };
-static const AssetOffset OFFSETS_300[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_301[] = { "assets/art/icon/Intervention.png" };
-static const AssetOffset OFFSETS_301[] = { { 16.350000f, 13.450000f } };
-static const char *const FRAMES_302[] = { "assets/art/icon/Ironskin.png" };
-static const AssetOffset OFFSETS_302[] = { { 19.000000f, 13.400000f } };
-static const char *const FRAMES_303[] = { "assets/art/item/Ivory_Mace.png" };
-static const AssetOffset OFFSETS_303[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_304[] = { "assets/art/item/Ivory_Shield.png" };
-static const AssetOffset OFFSETS_304[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_305[] = { "assets/art/item/Judgement.png" };
+static const char *const FRAMES_298[] = { "assets/art/buff/INTERVENTION9.png" };
+static const AssetOffset OFFSETS_298[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_299[] = { "assets/art/buff/IRONSKIN1.png" };
+static const AssetOffset OFFSETS_299[] = { { 5.950000f, 10.950000f } };
+static const char *const FRAMES_300[] = { "assets/art/buff/IRONSKIN2.png" };
+static const AssetOffset OFFSETS_300[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_301[] = { "assets/art/buff/IRONSKIN3.png" };
+static const AssetOffset OFFSETS_301[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_302[] = { "assets/art/buff/IRONSKIN4.png" };
+static const AssetOffset OFFSETS_302[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_303[] = { "assets/art/buff/IRONSKIN5.png" };
+static const AssetOffset OFFSETS_303[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_304[] = { "assets/art/sound/IceShatter.mp3" };
+static const char *const FRAMES_305[] = { "assets/art/item/Icy_Katana.png" };
 static const AssetOffset OFFSETS_305[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_306[] = { "assets/art/zone/KOJIS_REST.png" };
-static const AssetOffset OFFSETS_306[] = { { 476.300000f, 260.950000f } };
-static const char *const FRAMES_307[] = { "assets/art/item/Knight's_Armor.png" };
-static const AssetOffset OFFSETS_307[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_308[] = { "assets/art/item/Knight's_Boots.png" };
-static const AssetOffset OFFSETS_308[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_309[] = { "assets/art/item/Knight's_Gloves.png" };
+static const char *const FRAMES_306[] = { "assets/art/portrait/Information.png" };
+static const AssetOffset OFFSETS_306[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_307[] = { "assets/art/icon/Intervention.png" };
+static const AssetOffset OFFSETS_307[] = { { 16.350000f, 13.450000f } };
+static const char *const FRAMES_308[] = { "assets/art/icon/Ironskin.png" };
+static const AssetOffset OFFSETS_308[] = { { 19.000000f, 13.400000f } };
+static const char *const FRAMES_309[] = { "assets/art/item/Ivory_Mace.png" };
 static const AssetOffset OFFSETS_309[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_310[] = { "assets/art/item/Knight's_Helm.png" };
+static const char *const FRAMES_310[] = { "assets/art/item/Ivory_Shield.png" };
 static const AssetOffset OFFSETS_310[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_311[] = { "assets/art/item/Knight's_Leggings.png" };
+static const char *const FRAMES_311[] = { "assets/art/item/Judgement.png" };
 static const AssetOffset OFFSETS_311[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_312[] = { "assets/art/ui/KrinBuffShower.png" };
-static const AssetOffset OFFSETS_312[] = { { 8.000000f, 17.350000f } };
-static const char *const FRAMES_313[] = { "assets/art/item/Legplates_of_Icy_Doom.png" };
+static const char *const FRAMES_312[] = { "assets/art/zone/KOJIS_REST.png" };
+static const AssetOffset OFFSETS_312[] = { { 476.300000f, 260.950000f } };
+static const char *const FRAMES_313[] = { "assets/art/item/Knight's_Armor.png" };
 static const AssetOffset OFFSETS_313[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_314[] = { "assets/art/item/Levo_Jeans.png" };
+static const char *const FRAMES_314[] = { "assets/art/item/Knight's_Boots.png" };
 static const AssetOffset OFFSETS_314[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_315[] = { "assets/art/portrait/Louis_the_Blind.png" };
-static const AssetOffset OFFSETS_315[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_316[] = { "assets/art/sound/LouisDie.mp3" };
-static const char *const FRAMES_317[] = { "assets/art/portrait/Ludwig.png" };
-static const AssetOffset OFFSETS_317[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_318[] = { "assets/art/item/M7-V_Rifle.png" };
-static const AssetOffset OFFSETS_318[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_319[] = { "assets/art/buff/MAGICWOUND.png" };
-static const AssetOffset OFFSETS_319[] = { { 5.950000f, 10.100000f } };
-static const char *const FRAMES_320[] = { "assets/art/ui/MODEL1_1.png", "assets/art/ui/MODEL1_2.png", "assets/art/ui/MODEL1_3.png", "assets/art/ui/MODEL1_4.png", "assets/art/ui/MODEL1_5.png", "assets/art/ui/MODEL1_6.png", "assets/art/ui/MODEL1_7.png", "assets/art/ui/MODEL1_8.png", "assets/art/ui/MODEL1_9.png", "assets/art/ui/MODEL1_10.png", "assets/art/ui/MODEL1_11.png", "assets/art/ui/MODEL1_12.png", "assets/art/ui/MODEL1_13.png", "assets/art/ui/MODEL1_14.png", "assets/art/ui/MODEL1_15.png", "assets/art/ui/MODEL1_16.png", "assets/art/ui/MODEL1_17.png", "assets/art/ui/MODEL1_18.png", "assets/art/ui/MODEL1_19.png", "assets/art/ui/MODEL1_20.png", "assets/art/ui/MODEL1_21.png", "assets/art/ui/MODEL1_22.png", "assets/art/ui/MODEL1_23.png", "assets/art/ui/MODEL1_24.png", "assets/art/ui/MODEL1_25.png", "assets/art/ui/MODEL1_26.png", "assets/art/ui/MODEL1_27.png", "assets/art/ui/MODEL1_28.png", "assets/art/ui/MODEL1_29.png", "assets/art/ui/MODEL1_30.png", "assets/art/ui/MODEL1_31.png", "assets/art/ui/MODEL1_32.png", "assets/art/ui/MODEL1_33.png", "assets/art/ui/MODEL1_34.png", "assets/art/ui/MODEL1_35.png", "assets/art/ui/MODEL1_36.png", "assets/art/ui/MODEL1_37.png", "assets/art/ui/MODEL1_38.png", "assets/art/ui/MODEL1_39.png", "assets/art/ui/MODEL1_40.png", "assets/art/ui/MODEL1_41.png", "assets/art/ui/MODEL1_42.png", "assets/art/ui/MODEL1_43.png", "assets/art/ui/MODEL1_44.png", "assets/art/ui/MODEL1_45.png", "assets/art/ui/MODEL1_46.png", "assets/art/ui/MODEL1_47.png", "assets/art/ui/MODEL1_48.png", "assets/art/ui/MODEL1_49.png", "assets/art/ui/MODEL1_50.png", "assets/art/ui/MODEL1_51.png", "assets/art/ui/MODEL1_52.png", "assets/art/ui/MODEL1_53.png", "assets/art/ui/MODEL1_54.png", "assets/art/ui/MODEL1_55.png", "assets/art/ui/MODEL1_56.png", "assets/art/ui/MODEL1_57.png", "assets/art/ui/MODEL1_58.png", "assets/art/ui/MODEL1_59.png", "assets/art/ui/MODEL1_60.png", "assets/art/ui/MODEL1_61.png", "assets/art/ui/MODEL1_62.png", "assets/art/ui/MODEL1_63.png", "assets/art/ui/MODEL1_64.png" };
-static const AssetOffset OFFSETS_320[] = { { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f } };
-static const char *const FRAMES_321[] = { "assets/art/doll/M_ARM_FINAL1.png" };
-static const AssetOffset OFFSETS_321[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_322[] = { "assets/art/doll/M_ARM_FINAL2.png" };
-static const AssetOffset OFFSETS_322[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_323[] = { "assets/art/doll/M_ARM_FINAL3.png" };
-static const AssetOffset OFFSETS_323[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_324[] = { "assets/art/doll/M_ARM_FINAL4.png" };
-static const AssetOffset OFFSETS_324[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_325[] = { "assets/art/doll/M_ARM_GER.png" };
-static const AssetOffset OFFSETS_325[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_326[] = { "assets/art/doll/M_ARM_JEANS.png" };
-static const AssetOffset OFFSETS_326[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_327[] = { "assets/art/doll/M_ARM_KNIGHT.png" };
+static const char *const FRAMES_315[] = { "assets/art/item/Knight's_Gloves.png" };
+static const AssetOffset OFFSETS_315[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_316[] = { "assets/art/item/Knight's_Helm.png" };
+static const AssetOffset OFFSETS_316[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_317[] = { "assets/art/item/Knight's_Leggings.png" };
+static const AssetOffset OFFSETS_317[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_318[] = { "assets/art/ui/KrinBuffShower.png" };
+static const AssetOffset OFFSETS_318[] = { { 8.000000f, 17.350000f } };
+static const char *const FRAMES_319[] = { "assets/art/item/Legplates_of_Icy_Doom.png" };
+static const AssetOffset OFFSETS_319[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_320[] = { "assets/art/item/Levo_Jeans.png" };
+static const AssetOffset OFFSETS_320[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_321[] = { "assets/art/portrait/Louis_the_Blind.png" };
+static const AssetOffset OFFSETS_321[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_322[] = { "assets/art/sound/LouisDie.mp3" };
+static const char *const FRAMES_323[] = { "assets/art/portrait/Ludwig.png" };
+static const AssetOffset OFFSETS_323[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_324[] = { "assets/art/item/M7-V_Rifle.png" };
+static const AssetOffset OFFSETS_324[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_325[] = { "assets/art/buff/MAGICWOUND.png" };
+static const AssetOffset OFFSETS_325[] = { { 5.950000f, 10.100000f } };
+static const char *const FRAMES_326[] = { "assets/art/ui/MODEL1_1.png", "assets/art/ui/MODEL1_2.png", "assets/art/ui/MODEL1_3.png", "assets/art/ui/MODEL1_4.png", "assets/art/ui/MODEL1_5.png", "assets/art/ui/MODEL1_6.png", "assets/art/ui/MODEL1_7.png", "assets/art/ui/MODEL1_8.png", "assets/art/ui/MODEL1_9.png", "assets/art/ui/MODEL1_10.png", "assets/art/ui/MODEL1_11.png", "assets/art/ui/MODEL1_12.png", "assets/art/ui/MODEL1_13.png", "assets/art/ui/MODEL1_14.png", "assets/art/ui/MODEL1_15.png", "assets/art/ui/MODEL1_16.png", "assets/art/ui/MODEL1_17.png", "assets/art/ui/MODEL1_18.png", "assets/art/ui/MODEL1_19.png", "assets/art/ui/MODEL1_20.png", "assets/art/ui/MODEL1_21.png", "assets/art/ui/MODEL1_22.png", "assets/art/ui/MODEL1_23.png", "assets/art/ui/MODEL1_24.png", "assets/art/ui/MODEL1_25.png", "assets/art/ui/MODEL1_26.png", "assets/art/ui/MODEL1_27.png", "assets/art/ui/MODEL1_28.png", "assets/art/ui/MODEL1_29.png", "assets/art/ui/MODEL1_30.png", "assets/art/ui/MODEL1_31.png", "assets/art/ui/MODEL1_32.png", "assets/art/ui/MODEL1_33.png", "assets/art/ui/MODEL1_34.png", "assets/art/ui/MODEL1_35.png", "assets/art/ui/MODEL1_36.png", "assets/art/ui/MODEL1_37.png", "assets/art/ui/MODEL1_38.png", "assets/art/ui/MODEL1_39.png", "assets/art/ui/MODEL1_40.png", "assets/art/ui/MODEL1_41.png", "assets/art/ui/MODEL1_42.png", "assets/art/ui/MODEL1_43.png", "assets/art/ui/MODEL1_44.png", "assets/art/ui/MODEL1_45.png", "assets/art/ui/MODEL1_46.png", "assets/art/ui/MODEL1_47.png", "assets/art/ui/MODEL1_48.png", "assets/art/ui/MODEL1_49.png", "assets/art/ui/MODEL1_50.png", "assets/art/ui/MODEL1_51.png", "assets/art/ui/MODEL1_52.png", "assets/art/ui/MODEL1_53.png", "assets/art/ui/MODEL1_54.png", "assets/art/ui/MODEL1_55.png", "assets/art/ui/MODEL1_56.png", "assets/art/ui/MODEL1_57.png", "assets/art/ui/MODEL1_58.png", "assets/art/ui/MODEL1_59.png", "assets/art/ui/MODEL1_60.png", "assets/art/ui/MODEL1_61.png", "assets/art/ui/MODEL1_62.png", "assets/art/ui/MODEL1_63.png", "assets/art/ui/MODEL1_64.png" };
+static const AssetOffset OFFSETS_326[] = { { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f } };
+static const char *const FRAMES_327[] = { "assets/art/doll/M_ARM_FINAL1.png" };
 static const AssetOffset OFFSETS_327[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_328[] = { "assets/art/doll/M_ARM_MEDIC.png" };
+static const char *const FRAMES_328[] = { "assets/art/doll/M_ARM_FINAL2.png" };
 static const AssetOffset OFFSETS_328[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_329[] = { "assets/art/doll/M_ARM_NINJA.png" };
+static const char *const FRAMES_329[] = { "assets/art/doll/M_ARM_FINAL3.png" };
 static const AssetOffset OFFSETS_329[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_330[] = { "assets/art/doll/M_ARM_ROCKSTAR.png" };
+static const char *const FRAMES_330[] = { "assets/art/doll/M_ARM_FINAL4.png" };
 static const AssetOffset OFFSETS_330[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_331[] = { "assets/art/doll/M_ARM_SAMURAI.png" };
-static const AssetOffset OFFSETS_331[] = { { 6.800000f, 9.700000f } };
-static const char *const FRAMES_332[] = { "assets/art/doll/M_ARM_SAMURAI2.png" };
-static const AssetOffset OFFSETS_332[] = { { 6.800000f, 9.700000f } };
-static const char *const FRAMES_333[] = { "assets/art/doll/M_ARM_SAMURAI3.png" };
-static const AssetOffset OFFSETS_333[] = { { 6.800000f, 9.700000f } };
-static const char *const FRAMES_334[] = { "assets/art/doll/M_ARM_SHAMAN1.png" };
+static const char *const FRAMES_331[] = { "assets/art/doll/M_ARM_GER.png" };
+static const AssetOffset OFFSETS_331[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_332[] = { "assets/art/doll/M_ARM_JEANS.png" };
+static const AssetOffset OFFSETS_332[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_333[] = { "assets/art/doll/M_ARM_KNIGHT.png" };
+static const AssetOffset OFFSETS_333[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_334[] = { "assets/art/doll/M_ARM_MEDIC.png" };
 static const AssetOffset OFFSETS_334[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_335[] = { "assets/art/doll/M_ARM_SHAMAN2.png" };
+static const char *const FRAMES_335[] = { "assets/art/doll/M_ARM_NINJA.png" };
 static const AssetOffset OFFSETS_335[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_336[] = { "assets/art/doll/M_ARM_SHAMAN3.png" };
+static const char *const FRAMES_336[] = { "assets/art/doll/M_ARM_ROCKSTAR.png" };
 static const AssetOffset OFFSETS_336[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_337[] = { "assets/art/doll/M_ARM_SHAMAN4.png" };
-static const AssetOffset OFFSETS_337[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_338[] = { "assets/art/doll/M_ARM_SHIRT.png" };
-static const AssetOffset OFFSETS_338[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_339[] = { "assets/art/doll/M_ARM_SINJID.png" };
-static const AssetOffset OFFSETS_339[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_340[] = { "assets/art/doll/M_ARM_SURVIVOR.png" };
+static const char *const FRAMES_337[] = { "assets/art/doll/M_ARM_SAMURAI.png" };
+static const AssetOffset OFFSETS_337[] = { { 6.800000f, 9.700000f } };
+static const char *const FRAMES_338[] = { "assets/art/doll/M_ARM_SAMURAI2.png" };
+static const AssetOffset OFFSETS_338[] = { { 6.800000f, 9.700000f } };
+static const char *const FRAMES_339[] = { "assets/art/doll/M_ARM_SAMURAI3.png" };
+static const AssetOffset OFFSETS_339[] = { { 6.800000f, 9.700000f } };
+static const char *const FRAMES_340[] = { "assets/art/doll/M_ARM_SHAMAN1.png" };
 static const AssetOffset OFFSETS_340[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_341[] = { "assets/art/doll/M_ARM_USA1.png" };
+static const char *const FRAMES_341[] = { "assets/art/doll/M_ARM_SHAMAN2.png" };
 static const AssetOffset OFFSETS_341[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_342[] = { "assets/art/doll/M_ARM_USA2.png" };
+static const char *const FRAMES_342[] = { "assets/art/doll/M_ARM_SHAMAN3.png" };
 static const AssetOffset OFFSETS_342[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_343[] = { "assets/art/doll/M_ARM_USA3.png" };
+static const char *const FRAMES_343[] = { "assets/art/doll/M_ARM_SHAMAN4.png" };
 static const AssetOffset OFFSETS_343[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_344[] = { "assets/art/doll/M_ARM_USA4.png" };
+static const char *const FRAMES_344[] = { "assets/art/doll/M_ARM_SHIRT.png" };
 static const AssetOffset OFFSETS_344[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_345[] = { "assets/art/doll/M_ARM_USA5.png" };
+static const char *const FRAMES_345[] = { "assets/art/doll/M_ARM_SINJID.png" };
 static const AssetOffset OFFSETS_345[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_346[] = { "assets/art/doll/M_CHEST_FINAL1.png" };
-static const AssetOffset OFFSETS_346[] = { { 9.900000f, 17.900000f } };
-static const char *const FRAMES_347[] = { "assets/art/doll/M_CHEST_FINAL2.png" };
-static const AssetOffset OFFSETS_347[] = { { 9.900000f, 17.900000f } };
-static const char *const FRAMES_348[] = { "assets/art/doll/M_CHEST_FINAL3.png" };
-static const AssetOffset OFFSETS_348[] = { { 9.900000f, 17.900000f } };
-static const char *const FRAMES_349[] = { "assets/art/doll/M_CHEST_FINAL4.png" };
-static const AssetOffset OFFSETS_349[] = { { 9.900000f, 17.900000f } };
-static const char *const FRAMES_350[] = { "assets/art/doll/M_CHEST_GER.png" };
-static const AssetOffset OFFSETS_350[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_351[] = { "assets/art/doll/M_CHEST_KNIGHT.png" };
-static const AssetOffset OFFSETS_351[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_352[] = { "assets/art/doll/M_CHEST_MEDIC.png" };
-static const AssetOffset OFFSETS_352[] = { { 9.900000f, 20.800000f } };
-static const char *const FRAMES_353[] = { "assets/art/doll/M_CHEST_NINJA.png" };
-static const AssetOffset OFFSETS_353[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_354[] = { "assets/art/doll/M_CHEST_ROCKSTAR.png" };
-static const AssetOffset OFFSETS_354[] = { { 11.300000f, 17.750000f } };
-static const char *const FRAMES_355[] = { "assets/art/doll/M_CHEST_SAMURAI.png" };
-static const AssetOffset OFFSETS_355[] = { { 17.800000f, 17.850000f } };
-static const char *const FRAMES_356[] = { "assets/art/doll/M_CHEST_SAMURAI2.png" };
-static const AssetOffset OFFSETS_356[] = { { 17.800000f, 23.650000f } };
-static const char *const FRAMES_357[] = { "assets/art/doll/M_CHEST_SAMURAI3.png" };
-static const AssetOffset OFFSETS_357[] = { { 17.800000f, 23.650000f } };
-static const char *const FRAMES_358[] = { "assets/art/doll/M_CHEST_SHAMAN1.png" };
-static const AssetOffset OFFSETS_358[] = { { 9.300000f, 21.100000f } };
-static const char *const FRAMES_359[] = { "assets/art/doll/M_CHEST_SHAMAN2.png" };
-static const AssetOffset OFFSETS_359[] = { { 9.300000f, 21.100000f } };
-static const char *const FRAMES_360[] = { "assets/art/doll/M_CHEST_SHAMAN3.png" };
-static const AssetOffset OFFSETS_360[] = { { 9.300000f, 21.100000f } };
-static const char *const FRAMES_361[] = { "assets/art/doll/M_CHEST_SHAMAN4.png" };
-static const AssetOffset OFFSETS_361[] = { { 9.300000f, 21.100000f } };
-static const char *const FRAMES_362[] = { "assets/art/doll/M_CHEST_SHIRT.png" };
-static const AssetOffset OFFSETS_362[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_363[] = { "assets/art/doll/M_CHEST_SINJID.png" };
-static const AssetOffset OFFSETS_363[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_364[] = { "assets/art/doll/M_CHEST_SURVIVOR.png" };
-static const AssetOffset OFFSETS_364[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_365[] = { "assets/art/doll/M_CHEST_USA1.png" };
-static const AssetOffset OFFSETS_365[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_366[] = { "assets/art/doll/M_CHEST_USA2.png" };
-static const AssetOffset OFFSETS_366[] = { { 9.900000f, 17.900000f } };
-static const char *const FRAMES_367[] = { "assets/art/doll/M_CHEST_USA3.png" };
-static const AssetOffset OFFSETS_367[] = { { 9.900000f, 17.900000f } };
-static const char *const FRAMES_368[] = { "assets/art/doll/M_CHEST_USA4.png" };
-static const AssetOffset OFFSETS_368[] = { { 9.900000f, 17.900000f } };
-static const char *const FRAMES_369[] = { "assets/art/doll/M_CHEST_USA5.png" };
-static const AssetOffset OFFSETS_369[] = { { 9.900000f, 17.900000f } };
-static const char *const FRAMES_370[] = { "assets/art/doll/M_FOOT_FINAL1.png" };
-static const AssetOffset OFFSETS_370[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_371[] = { "assets/art/doll/M_FOOT_FINAL2.png" };
-static const AssetOffset OFFSETS_371[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_372[] = { "assets/art/doll/M_FOOT_FINAL3.png" };
-static const AssetOffset OFFSETS_372[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_373[] = { "assets/art/doll/M_FOOT_FINAL4.png" };
-static const AssetOffset OFFSETS_373[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_374[] = { "assets/art/doll/M_FOOT_GER.png" };
-static const AssetOffset OFFSETS_374[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_375[] = { "assets/art/doll/M_FOOT_JEANS.png" };
-static const AssetOffset OFFSETS_375[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_376[] = { "assets/art/doll/M_FOOT_KNIGHT.png" };
+static const char *const FRAMES_346[] = { "assets/art/doll/M_ARM_SURVIVOR.png" };
+static const AssetOffset OFFSETS_346[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_347[] = { "assets/art/doll/M_ARM_USA1.png" };
+static const AssetOffset OFFSETS_347[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_348[] = { "assets/art/doll/M_ARM_USA2.png" };
+static const AssetOffset OFFSETS_348[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_349[] = { "assets/art/doll/M_ARM_USA3.png" };
+static const AssetOffset OFFSETS_349[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_350[] = { "assets/art/doll/M_ARM_USA4.png" };
+static const AssetOffset OFFSETS_350[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_351[] = { "assets/art/doll/M_ARM_USA5.png" };
+static const AssetOffset OFFSETS_351[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_352[] = { "assets/art/doll/M_CHEST_FINAL1.png" };
+static const AssetOffset OFFSETS_352[] = { { 9.900000f, 17.900000f } };
+static const char *const FRAMES_353[] = { "assets/art/doll/M_CHEST_FINAL2.png" };
+static const AssetOffset OFFSETS_353[] = { { 9.900000f, 17.900000f } };
+static const char *const FRAMES_354[] = { "assets/art/doll/M_CHEST_FINAL3.png" };
+static const AssetOffset OFFSETS_354[] = { { 9.900000f, 17.900000f } };
+static const char *const FRAMES_355[] = { "assets/art/doll/M_CHEST_FINAL4.png" };
+static const AssetOffset OFFSETS_355[] = { { 9.900000f, 17.900000f } };
+static const char *const FRAMES_356[] = { "assets/art/doll/M_CHEST_GER.png" };
+static const AssetOffset OFFSETS_356[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_357[] = { "assets/art/doll/M_CHEST_KNIGHT.png" };
+static const AssetOffset OFFSETS_357[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_358[] = { "assets/art/doll/M_CHEST_MEDIC.png" };
+static const AssetOffset OFFSETS_358[] = { { 9.900000f, 20.800000f } };
+static const char *const FRAMES_359[] = { "assets/art/doll/M_CHEST_NINJA.png" };
+static const AssetOffset OFFSETS_359[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_360[] = { "assets/art/doll/M_CHEST_ROCKSTAR.png" };
+static const AssetOffset OFFSETS_360[] = { { 11.300000f, 17.750000f } };
+static const char *const FRAMES_361[] = { "assets/art/doll/M_CHEST_SAMURAI.png" };
+static const AssetOffset OFFSETS_361[] = { { 17.800000f, 17.850000f } };
+static const char *const FRAMES_362[] = { "assets/art/doll/M_CHEST_SAMURAI2.png" };
+static const AssetOffset OFFSETS_362[] = { { 17.800000f, 23.650000f } };
+static const char *const FRAMES_363[] = { "assets/art/doll/M_CHEST_SAMURAI3.png" };
+static const AssetOffset OFFSETS_363[] = { { 17.800000f, 23.650000f } };
+static const char *const FRAMES_364[] = { "assets/art/doll/M_CHEST_SHAMAN1.png" };
+static const AssetOffset OFFSETS_364[] = { { 9.300000f, 21.100000f } };
+static const char *const FRAMES_365[] = { "assets/art/doll/M_CHEST_SHAMAN2.png" };
+static const AssetOffset OFFSETS_365[] = { { 9.300000f, 21.100000f } };
+static const char *const FRAMES_366[] = { "assets/art/doll/M_CHEST_SHAMAN3.png" };
+static const AssetOffset OFFSETS_366[] = { { 9.300000f, 21.100000f } };
+static const char *const FRAMES_367[] = { "assets/art/doll/M_CHEST_SHAMAN4.png" };
+static const AssetOffset OFFSETS_367[] = { { 9.300000f, 21.100000f } };
+static const char *const FRAMES_368[] = { "assets/art/doll/M_CHEST_SHIRT.png" };
+static const AssetOffset OFFSETS_368[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_369[] = { "assets/art/doll/M_CHEST_SINJID.png" };
+static const AssetOffset OFFSETS_369[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_370[] = { "assets/art/doll/M_CHEST_SURVIVOR.png" };
+static const AssetOffset OFFSETS_370[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_371[] = { "assets/art/doll/M_CHEST_USA1.png" };
+static const AssetOffset OFFSETS_371[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_372[] = { "assets/art/doll/M_CHEST_USA2.png" };
+static const AssetOffset OFFSETS_372[] = { { 9.900000f, 17.900000f } };
+static const char *const FRAMES_373[] = { "assets/art/doll/M_CHEST_USA3.png" };
+static const AssetOffset OFFSETS_373[] = { { 9.900000f, 17.900000f } };
+static const char *const FRAMES_374[] = { "assets/art/doll/M_CHEST_USA4.png" };
+static const AssetOffset OFFSETS_374[] = { { 9.900000f, 17.900000f } };
+static const char *const FRAMES_375[] = { "assets/art/doll/M_CHEST_USA5.png" };
+static const AssetOffset OFFSETS_375[] = { { 9.900000f, 17.900000f } };
+static const char *const FRAMES_376[] = { "assets/art/doll/M_FOOT_FINAL1.png" };
 static const AssetOffset OFFSETS_376[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_377[] = { "assets/art/doll/M_FOOT_MEDIC.png" };
+static const char *const FRAMES_377[] = { "assets/art/doll/M_FOOT_FINAL2.png" };
 static const AssetOffset OFFSETS_377[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_378[] = { "assets/art/doll/M_FOOT_NAVY.png" };
+static const char *const FRAMES_378[] = { "assets/art/doll/M_FOOT_FINAL3.png" };
 static const AssetOffset OFFSETS_378[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_379[] = { "assets/art/doll/M_FOOT_NINJA.png" };
+static const char *const FRAMES_379[] = { "assets/art/doll/M_FOOT_FINAL4.png" };
 static const AssetOffset OFFSETS_379[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_380[] = { "assets/art/doll/M_FOOT_ROCKSTAR.png" };
+static const char *const FRAMES_380[] = { "assets/art/doll/M_FOOT_GER.png" };
 static const AssetOffset OFFSETS_380[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_381[] = { "assets/art/doll/M_FOOT_SAMURAI.png" };
+static const char *const FRAMES_381[] = { "assets/art/doll/M_FOOT_JEANS.png" };
 static const AssetOffset OFFSETS_381[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_382[] = { "assets/art/doll/M_FOOT_SAMURAI2.png" };
+static const char *const FRAMES_382[] = { "assets/art/doll/M_FOOT_KNIGHT.png" };
 static const AssetOffset OFFSETS_382[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_383[] = { "assets/art/doll/M_FOOT_SAMURAI3.png" };
+static const char *const FRAMES_383[] = { "assets/art/doll/M_FOOT_MEDIC.png" };
 static const AssetOffset OFFSETS_383[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_384[] = { "assets/art/doll/M_FOOT_SHAMAN1.png" };
-static const AssetOffset OFFSETS_384[] = { { 0.000000f, 0.000000f } };
-static const char *const FRAMES_385[] = { "assets/art/doll/M_FOOT_SINJID.png" };
+static const char *const FRAMES_384[] = { "assets/art/doll/M_FOOT_NAVY.png" };
+static const AssetOffset OFFSETS_384[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_385[] = { "assets/art/doll/M_FOOT_NINJA.png" };
 static const AssetOffset OFFSETS_385[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_386[] = { "assets/art/doll/M_FOOT_SURVIVOR.png" };
+static const char *const FRAMES_386[] = { "assets/art/doll/M_FOOT_ROCKSTAR.png" };
 static const AssetOffset OFFSETS_386[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_387[] = { "assets/art/doll/M_FOOT_USA1.png" };
+static const char *const FRAMES_387[] = { "assets/art/doll/M_FOOT_SAMURAI.png" };
 static const AssetOffset OFFSETS_387[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_388[] = { "assets/art/doll/M_FOOT_USA2.png" };
+static const char *const FRAMES_388[] = { "assets/art/doll/M_FOOT_SAMURAI2.png" };
 static const AssetOffset OFFSETS_388[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_389[] = { "assets/art/doll/M_FOOT_USA3.png" };
+static const char *const FRAMES_389[] = { "assets/art/doll/M_FOOT_SAMURAI3.png" };
 static const AssetOffset OFFSETS_389[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_390[] = { "assets/art/doll/M_FOOT_USA4.png" };
-static const AssetOffset OFFSETS_390[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_391[] = { "assets/art/doll/M_FOOT_USA5.png" };
+static const char *const FRAMES_390[] = { "assets/art/doll/M_FOOT_SHAMAN1.png" };
+static const AssetOffset OFFSETS_390[] = { { 0.000000f, 0.000000f } };
+static const char *const FRAMES_391[] = { "assets/art/doll/M_FOOT_SINJID.png" };
 static const AssetOffset OFFSETS_391[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_392[] = { "assets/art/doll/M_HAND_ENGINEERINGGLOVES.png" };
-static const AssetOffset OFFSETS_392[] = { { 3.550000f, 2.450000f } };
-static const char *const FRAMES_393[] = { "assets/art/doll/M_HAND_FINAL1.png" };
-static const AssetOffset OFFSETS_393[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_394[] = { "assets/art/doll/M_HAND_FINAL2.png" };
-static const AssetOffset OFFSETS_394[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_395[] = { "assets/art/doll/M_HAND_FINAL3.png" };
-static const AssetOffset OFFSETS_395[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_396[] = { "assets/art/doll/M_HAND_FINAL4.png" };
-static const AssetOffset OFFSETS_396[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_397[] = { "assets/art/doll/M_HAND_GER.png" };
-static const AssetOffset OFFSETS_397[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_398[] = { "assets/art/doll/M_HAND_KNIGHT.png" };
-static const AssetOffset OFFSETS_398[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_399[] = { "assets/art/doll/M_HAND_MEDIC.png" };
+static const char *const FRAMES_392[] = { "assets/art/doll/M_FOOT_SURVIVOR.png" };
+static const AssetOffset OFFSETS_392[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_393[] = { "assets/art/doll/M_FOOT_USA1.png" };
+static const AssetOffset OFFSETS_393[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_394[] = { "assets/art/doll/M_FOOT_USA2.png" };
+static const AssetOffset OFFSETS_394[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_395[] = { "assets/art/doll/M_FOOT_USA3.png" };
+static const AssetOffset OFFSETS_395[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_396[] = { "assets/art/doll/M_FOOT_USA4.png" };
+static const AssetOffset OFFSETS_396[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_397[] = { "assets/art/doll/M_FOOT_USA5.png" };
+static const AssetOffset OFFSETS_397[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_398[] = { "assets/art/doll/M_HAND_ENGINEERINGGLOVES.png" };
+static const AssetOffset OFFSETS_398[] = { { 3.550000f, 2.450000f } };
+static const char *const FRAMES_399[] = { "assets/art/doll/M_HAND_FINAL1.png" };
 static const AssetOffset OFFSETS_399[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_400[] = { "assets/art/doll/M_HAND_NINJA.png" };
+static const char *const FRAMES_400[] = { "assets/art/doll/M_HAND_FINAL2.png" };
 static const AssetOffset OFFSETS_400[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_401[] = { "assets/art/doll/M_HAND_ROCKSTAR.png" };
-static const AssetOffset OFFSETS_401[] = { { 5.750000f, 9.950000f } };
-static const char *const FRAMES_402[] = { "assets/art/doll/M_HAND_SAMURAI.png" };
-static const AssetOffset OFFSETS_402[] = { { 3.550000f, 2.450000f } };
-static const char *const FRAMES_403[] = { "assets/art/doll/M_HAND_SAMURAI2.png" };
-static const AssetOffset OFFSETS_403[] = { { 3.550000f, 2.450000f } };
-static const char *const FRAMES_404[] = { "assets/art/doll/M_HAND_SAMURAI3.png" };
-static const AssetOffset OFFSETS_404[] = { { 3.550000f, 2.450000f } };
-static const char *const FRAMES_405[] = { "assets/art/doll/M_HAND_SHAMAN1.png" };
-static const AssetOffset OFFSETS_405[] = { { 3.550000f, 8.950000f } };
-static const char *const FRAMES_406[] = { "assets/art/doll/M_HAND_SHAMAN2.png" };
-static const AssetOffset OFFSETS_406[] = { { 3.550000f, 8.950000f } };
-static const char *const FRAMES_407[] = { "assets/art/doll/M_HAND_SHAMAN3.png" };
-static const AssetOffset OFFSETS_407[] = { { 3.550000f, 8.950000f } };
-static const char *const FRAMES_408[] = { "assets/art/doll/M_HAND_SHAMAN4.png" };
-static const AssetOffset OFFSETS_408[] = { { 3.550000f, 8.950000f } };
-static const char *const FRAMES_409[] = { "assets/art/doll/M_HAND_SINJID.png" };
-static const AssetOffset OFFSETS_409[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_410[] = { "assets/art/doll/M_HAND_SURVIVOR.png" };
-static const AssetOffset OFFSETS_410[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_411[] = { "assets/art/doll/M_HAND_USA1.png" };
-static const AssetOffset OFFSETS_411[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_412[] = { "assets/art/doll/M_HAND_USA2.png" };
-static const AssetOffset OFFSETS_412[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_413[] = { "assets/art/doll/M_HAND_USA3.png" };
-static const AssetOffset OFFSETS_413[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_414[] = { "assets/art/doll/M_HAND_USA4.png" };
-static const AssetOffset OFFSETS_414[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_415[] = { "assets/art/doll/M_HAND_USA5.png" };
+static const char *const FRAMES_401[] = { "assets/art/doll/M_HAND_FINAL3.png" };
+static const AssetOffset OFFSETS_401[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_402[] = { "assets/art/doll/M_HAND_FINAL4.png" };
+static const AssetOffset OFFSETS_402[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_403[] = { "assets/art/doll/M_HAND_GER.png" };
+static const AssetOffset OFFSETS_403[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_404[] = { "assets/art/doll/M_HAND_KNIGHT.png" };
+static const AssetOffset OFFSETS_404[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_405[] = { "assets/art/doll/M_HAND_MEDIC.png" };
+static const AssetOffset OFFSETS_405[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_406[] = { "assets/art/doll/M_HAND_NINJA.png" };
+static const AssetOffset OFFSETS_406[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_407[] = { "assets/art/doll/M_HAND_ROCKSTAR.png" };
+static const AssetOffset OFFSETS_407[] = { { 5.750000f, 9.950000f } };
+static const char *const FRAMES_408[] = { "assets/art/doll/M_HAND_SAMURAI.png" };
+static const AssetOffset OFFSETS_408[] = { { 3.550000f, 2.450000f } };
+static const char *const FRAMES_409[] = { "assets/art/doll/M_HAND_SAMURAI2.png" };
+static const AssetOffset OFFSETS_409[] = { { 3.550000f, 2.450000f } };
+static const char *const FRAMES_410[] = { "assets/art/doll/M_HAND_SAMURAI3.png" };
+static const AssetOffset OFFSETS_410[] = { { 3.550000f, 2.450000f } };
+static const char *const FRAMES_411[] = { "assets/art/doll/M_HAND_SHAMAN1.png" };
+static const AssetOffset OFFSETS_411[] = { { 3.550000f, 8.950000f } };
+static const char *const FRAMES_412[] = { "assets/art/doll/M_HAND_SHAMAN2.png" };
+static const AssetOffset OFFSETS_412[] = { { 3.550000f, 8.950000f } };
+static const char *const FRAMES_413[] = { "assets/art/doll/M_HAND_SHAMAN3.png" };
+static const AssetOffset OFFSETS_413[] = { { 3.550000f, 8.950000f } };
+static const char *const FRAMES_414[] = { "assets/art/doll/M_HAND_SHAMAN4.png" };
+static const AssetOffset OFFSETS_414[] = { { 3.550000f, 8.950000f } };
+static const char *const FRAMES_415[] = { "assets/art/doll/M_HAND_SINJID.png" };
 static const AssetOffset OFFSETS_415[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_416[] = { "assets/art/doll/M_HEAD_FINAL1.png" };
-static const AssetOffset OFFSETS_416[] = { { 10.400000f, 13.500000f } };
-static const char *const FRAMES_417[] = { "assets/art/doll/M_HEAD_FINAL2.png" };
-static const AssetOffset OFFSETS_417[] = { { 10.400000f, 13.500000f } };
-static const char *const FRAMES_418[] = { "assets/art/doll/M_HEAD_FINAL3.png" };
-static const AssetOffset OFFSETS_418[] = { { 10.400000f, 13.500000f } };
-static const char *const FRAMES_419[] = { "assets/art/doll/M_HEAD_FINAL4.png" };
-static const AssetOffset OFFSETS_419[] = { { 10.400000f, 13.500000f } };
-static const char *const FRAMES_420[] = { "assets/art/doll/M_HEAD_GER.png" };
-static const AssetOffset OFFSETS_420[] = { { 3.850000f, 8.350000f } };
-static const char *const FRAMES_421[] = { "assets/art/doll/M_HEAD_KNIGHT.png" };
-static const AssetOffset OFFSETS_421[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_422[] = { "assets/art/doll/M_HEAD_MEDIC.png" };
-static const AssetOffset OFFSETS_422[] = { { 10.450000f, 13.650000f } };
-static const char *const FRAMES_423[] = { "assets/art/doll/M_HEAD_NINJA.png" };
-static const AssetOffset OFFSETS_423[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_424[] = { "assets/art/doll/M_HEAD_ROCKSTAR.png" };
-static const AssetOffset OFFSETS_424[] = { { 6.150000f, 12.900000f } };
-static const char *const FRAMES_425[] = { "assets/art/doll/M_HEAD_SAMURAI.png" };
-static const AssetOffset OFFSETS_425[] = { { 9.500000f, 28.050000f } };
-static const char *const FRAMES_426[] = { "assets/art/doll/M_HEAD_SAMURAI2.png" };
-static const AssetOffset OFFSETS_426[] = { { 9.500000f, 28.050000f } };
-static const char *const FRAMES_427[] = { "assets/art/doll/M_HEAD_SAMURAI3.png" };
-static const AssetOffset OFFSETS_427[] = { { 9.500000f, 28.050000f } };
-static const char *const FRAMES_428[] = { "assets/art/doll/M_HEAD_SHAMAN1.png" };
-static const AssetOffset OFFSETS_428[] = { { 6.000000f, 30.350000f } };
-static const char *const FRAMES_429[] = { "assets/art/doll/M_HEAD_SHAMAN2.png" };
-static const AssetOffset OFFSETS_429[] = { { 6.000000f, 30.350000f } };
-static const char *const FRAMES_430[] = { "assets/art/doll/M_HEAD_SHAMAN3.png" };
-static const AssetOffset OFFSETS_430[] = { { 6.000000f, 30.350000f } };
-static const char *const FRAMES_431[] = { "assets/art/doll/M_HEAD_SHAMAN4.png" };
-static const AssetOffset OFFSETS_431[] = { { 6.000000f, 30.350000f } };
-static const char *const FRAMES_432[] = { "assets/art/doll/M_HEAD_SINJID.png" };
-static const AssetOffset OFFSETS_432[] = { { 5.300000f, 7.200000f } };
-static const char *const FRAMES_433[] = { "assets/art/doll/M_HEAD_SURVIVOR.png" };
-static const AssetOffset OFFSETS_433[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_434[] = { "assets/art/doll/M_HEAD_USA1.png" };
-static const AssetOffset OFFSETS_434[] = { { 2.550000f, 2.800000f } };
-static const char *const FRAMES_435[] = { "assets/art/doll/M_HEAD_USA2.png" };
-static const AssetOffset OFFSETS_435[] = { { 10.400000f, 13.500000f } };
-static const char *const FRAMES_436[] = { "assets/art/doll/M_HEAD_USA3.png" };
-static const AssetOffset OFFSETS_436[] = { { 10.400000f, 13.500000f } };
-static const char *const FRAMES_437[] = { "assets/art/doll/M_HEAD_USA4.png" };
-static const AssetOffset OFFSETS_437[] = { { 10.400000f, 13.500000f } };
-static const char *const FRAMES_438[] = { "assets/art/doll/M_HEAD_USA5.png" };
-static const AssetOffset OFFSETS_438[] = { { 10.400000f, 13.500000f } };
-static const char *const FRAMES_439[] = { "assets/art/doll/M_LEG2_FINAL1.png" };
-static const AssetOffset OFFSETS_439[] = { { 15.950000f, 15.200000f } };
-static const char *const FRAMES_440[] = { "assets/art/doll/M_LEG2_FINAL2.png" };
-static const AssetOffset OFFSETS_440[] = { { 15.950000f, 15.200000f } };
-static const char *const FRAMES_441[] = { "assets/art/doll/M_LEG2_FINAL3.png" };
-static const AssetOffset OFFSETS_441[] = { { 15.950000f, 15.200000f } };
-static const char *const FRAMES_442[] = { "assets/art/doll/M_LEG2_FINAL4.png" };
-static const AssetOffset OFFSETS_442[] = { { 15.950000f, 15.200000f } };
-static const char *const FRAMES_443[] = { "assets/art/doll/M_LEG2_GER.png" };
-static const AssetOffset OFFSETS_443[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_444[] = { "assets/art/doll/M_LEG2_JEANS.png" };
-static const AssetOffset OFFSETS_444[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_445[] = { "assets/art/doll/M_LEG2_KNIGHT.png" };
-static const AssetOffset OFFSETS_445[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_446[] = { "assets/art/doll/M_LEG2_MEDIC.png" };
-static const AssetOffset OFFSETS_446[] = { { 15.000000f, 15.200000f } };
-static const char *const FRAMES_447[] = { "assets/art/doll/M_LEG2_NAVY.png" };
-static const AssetOffset OFFSETS_447[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_448[] = { "assets/art/doll/M_LEG2_NINJA.png" };
-static const AssetOffset OFFSETS_448[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_449[] = { "assets/art/doll/M_LEG2_ROCKSTAR.png" };
-static const AssetOffset OFFSETS_449[] = { { 7.900000f, 15.200000f } };
-static const char *const FRAMES_450[] = { "assets/art/doll/M_LEG2_SAMURAI.png" };
-static const AssetOffset OFFSETS_450[] = { { 6.200000f, 8.650000f } };
-static const char *const FRAMES_451[] = { "assets/art/doll/M_LEG2_SAMURAI2.png" };
-static const AssetOffset OFFSETS_451[] = { { 15.800000f, 20.050000f } };
-static const char *const FRAMES_452[] = { "assets/art/doll/M_LEG2_SAMURAI3.png" };
-static const AssetOffset OFFSETS_452[] = { { 15.800000f, 20.050000f } };
-static const char *const FRAMES_453[] = { "assets/art/doll/M_LEG2_SHAMAN1.png" };
-static const AssetOffset OFFSETS_453[] = { { 5.450000f, 10.400000f } };
-static const char *const FRAMES_454[] = { "assets/art/doll/M_LEG2_SHAMAN2.png" };
-static const AssetOffset OFFSETS_454[] = { { 5.450000f, 10.400000f } };
-static const char *const FRAMES_455[] = { "assets/art/doll/M_LEG2_SHAMAN3.png" };
-static const AssetOffset OFFSETS_455[] = { { 5.450000f, 10.400000f } };
-static const char *const FRAMES_456[] = { "assets/art/doll/M_LEG2_SHAMAN4.png" };
-static const AssetOffset OFFSETS_456[] = { { 5.450000f, 10.400000f } };
-static const char *const FRAMES_457[] = { "assets/art/doll/M_LEG2_SINJID.png" };
-static const AssetOffset OFFSETS_457[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_458[] = { "assets/art/doll/M_LEG2_SURVIVOR.png" };
-static const AssetOffset OFFSETS_458[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_459[] = { "assets/art/doll/M_LEG2_USA1.png" };
-static const AssetOffset OFFSETS_459[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_460[] = { "assets/art/doll/M_LEG2_USA2.png" };
-static const AssetOffset OFFSETS_460[] = { { 15.950000f, 15.200000f } };
-static const char *const FRAMES_461[] = { "assets/art/doll/M_LEG2_USA3.png" };
-static const AssetOffset OFFSETS_461[] = { { 15.950000f, 15.200000f } };
-static const char *const FRAMES_462[] = { "assets/art/doll/M_LEG2_USA4.png" };
-static const AssetOffset OFFSETS_462[] = { { 15.950000f, 15.200000f } };
-static const char *const FRAMES_463[] = { "assets/art/doll/M_LEG2_USA5.png" };
-static const AssetOffset OFFSETS_463[] = { { 15.950000f, 15.200000f } };
-static const char *const FRAMES_464[] = { "assets/art/doll/M_SARM_FIVE.png" };
-static const AssetOffset OFFSETS_464[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_465[] = { "assets/art/doll/M_SARM_FOUR.png" };
-static const AssetOffset OFFSETS_465[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_466[] = { "assets/art/doll/M_SARM_GHOST.png" };
-static const AssetOffset OFFSETS_466[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_467[] = { "assets/art/doll/M_SARM_MAN.png" };
-static const AssetOffset OFFSETS_467[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_468[] = { "assets/art/doll/M_SARM_MAN2.png" };
-static const AssetOffset OFFSETS_468[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_469[] = { "assets/art/doll/M_SARM_MAN3.png" };
-static const AssetOffset OFFSETS_469[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_470[] = { "assets/art/doll/M_SARM_METABII.png" };
+static const char *const FRAMES_416[] = { "assets/art/doll/M_HAND_SURVIVOR.png" };
+static const AssetOffset OFFSETS_416[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_417[] = { "assets/art/doll/M_HAND_USA1.png" };
+static const AssetOffset OFFSETS_417[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_418[] = { "assets/art/doll/M_HAND_USA2.png" };
+static const AssetOffset OFFSETS_418[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_419[] = { "assets/art/doll/M_HAND_USA3.png" };
+static const AssetOffset OFFSETS_419[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_420[] = { "assets/art/doll/M_HAND_USA4.png" };
+static const AssetOffset OFFSETS_420[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_421[] = { "assets/art/doll/M_HAND_USA5.png" };
+static const AssetOffset OFFSETS_421[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_422[] = { "assets/art/doll/M_HEAD_FINAL1.png" };
+static const AssetOffset OFFSETS_422[] = { { 10.400000f, 13.500000f } };
+static const char *const FRAMES_423[] = { "assets/art/doll/M_HEAD_FINAL2.png" };
+static const AssetOffset OFFSETS_423[] = { { 10.400000f, 13.500000f } };
+static const char *const FRAMES_424[] = { "assets/art/doll/M_HEAD_FINAL3.png" };
+static const AssetOffset OFFSETS_424[] = { { 10.400000f, 13.500000f } };
+static const char *const FRAMES_425[] = { "assets/art/doll/M_HEAD_FINAL4.png" };
+static const AssetOffset OFFSETS_425[] = { { 10.400000f, 13.500000f } };
+static const char *const FRAMES_426[] = { "assets/art/doll/M_HEAD_GER.png" };
+static const AssetOffset OFFSETS_426[] = { { 3.850000f, 8.350000f } };
+static const char *const FRAMES_427[] = { "assets/art/doll/M_HEAD_KNIGHT.png" };
+static const AssetOffset OFFSETS_427[] = { { 2.550000f, 6.700000f } };
+static const char *const FRAMES_428[] = { "assets/art/doll/M_HEAD_MEDIC.png" };
+static const AssetOffset OFFSETS_428[] = { { 10.450000f, 13.650000f } };
+static const char *const FRAMES_429[] = { "assets/art/doll/M_HEAD_NINJA.png" };
+static const AssetOffset OFFSETS_429[] = { { 2.550000f, 6.700000f } };
+static const char *const FRAMES_430[] = { "assets/art/doll/M_HEAD_ROCKSTAR.png" };
+static const AssetOffset OFFSETS_430[] = { { 6.150000f, 12.900000f } };
+static const char *const FRAMES_431[] = { "assets/art/doll/M_HEAD_SAMURAI.png" };
+static const AssetOffset OFFSETS_431[] = { { 9.500000f, 28.050000f } };
+static const char *const FRAMES_432[] = { "assets/art/doll/M_HEAD_SAMURAI2.png" };
+static const AssetOffset OFFSETS_432[] = { { 9.500000f, 28.050000f } };
+static const char *const FRAMES_433[] = { "assets/art/doll/M_HEAD_SAMURAI3.png" };
+static const AssetOffset OFFSETS_433[] = { { 9.500000f, 28.050000f } };
+static const char *const FRAMES_434[] = { "assets/art/doll/M_HEAD_SHAMAN1.png" };
+static const AssetOffset OFFSETS_434[] = { { 6.000000f, 30.350000f } };
+static const char *const FRAMES_435[] = { "assets/art/doll/M_HEAD_SHAMAN2.png" };
+static const AssetOffset OFFSETS_435[] = { { 6.000000f, 30.350000f } };
+static const char *const FRAMES_436[] = { "assets/art/doll/M_HEAD_SHAMAN3.png" };
+static const AssetOffset OFFSETS_436[] = { { 6.000000f, 30.350000f } };
+static const char *const FRAMES_437[] = { "assets/art/doll/M_HEAD_SHAMAN4.png" };
+static const AssetOffset OFFSETS_437[] = { { 6.000000f, 30.350000f } };
+static const char *const FRAMES_438[] = { "assets/art/doll/M_HEAD_SINJID.png" };
+static const AssetOffset OFFSETS_438[] = { { 5.300000f, 7.200000f } };
+static const char *const FRAMES_439[] = { "assets/art/doll/M_HEAD_SURVIVOR.png" };
+static const AssetOffset OFFSETS_439[] = { { 2.550000f, 6.700000f } };
+static const char *const FRAMES_440[] = { "assets/art/doll/M_HEAD_USA1.png" };
+static const AssetOffset OFFSETS_440[] = { { 2.550000f, 2.800000f } };
+static const char *const FRAMES_441[] = { "assets/art/doll/M_HEAD_USA2.png" };
+static const AssetOffset OFFSETS_441[] = { { 10.400000f, 13.500000f } };
+static const char *const FRAMES_442[] = { "assets/art/doll/M_HEAD_USA3.png" };
+static const AssetOffset OFFSETS_442[] = { { 10.400000f, 13.500000f } };
+static const char *const FRAMES_443[] = { "assets/art/doll/M_HEAD_USA4.png" };
+static const AssetOffset OFFSETS_443[] = { { 10.400000f, 13.500000f } };
+static const char *const FRAMES_444[] = { "assets/art/doll/M_HEAD_USA5.png" };
+static const AssetOffset OFFSETS_444[] = { { 10.400000f, 13.500000f } };
+static const char *const FRAMES_445[] = { "assets/art/doll/M_LEG2_FINAL1.png" };
+static const AssetOffset OFFSETS_445[] = { { 15.950000f, 15.200000f } };
+static const char *const FRAMES_446[] = { "assets/art/doll/M_LEG2_FINAL2.png" };
+static const AssetOffset OFFSETS_446[] = { { 15.950000f, 15.200000f } };
+static const char *const FRAMES_447[] = { "assets/art/doll/M_LEG2_FINAL3.png" };
+static const AssetOffset OFFSETS_447[] = { { 15.950000f, 15.200000f } };
+static const char *const FRAMES_448[] = { "assets/art/doll/M_LEG2_FINAL4.png" };
+static const AssetOffset OFFSETS_448[] = { { 15.950000f, 15.200000f } };
+static const char *const FRAMES_449[] = { "assets/art/doll/M_LEG2_GER.png" };
+static const AssetOffset OFFSETS_449[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_450[] = { "assets/art/doll/M_LEG2_JEANS.png" };
+static const AssetOffset OFFSETS_450[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_451[] = { "assets/art/doll/M_LEG2_KNIGHT.png" };
+static const AssetOffset OFFSETS_451[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_452[] = { "assets/art/doll/M_LEG2_MEDIC.png" };
+static const AssetOffset OFFSETS_452[] = { { 15.000000f, 15.200000f } };
+static const char *const FRAMES_453[] = { "assets/art/doll/M_LEG2_NAVY.png" };
+static const AssetOffset OFFSETS_453[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_454[] = { "assets/art/doll/M_LEG2_NINJA.png" };
+static const AssetOffset OFFSETS_454[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_455[] = { "assets/art/doll/M_LEG2_ROCKSTAR.png" };
+static const AssetOffset OFFSETS_455[] = { { 7.900000f, 15.200000f } };
+static const char *const FRAMES_456[] = { "assets/art/doll/M_LEG2_SAMURAI.png" };
+static const AssetOffset OFFSETS_456[] = { { 6.200000f, 8.650000f } };
+static const char *const FRAMES_457[] = { "assets/art/doll/M_LEG2_SAMURAI2.png" };
+static const AssetOffset OFFSETS_457[] = { { 15.800000f, 20.050000f } };
+static const char *const FRAMES_458[] = { "assets/art/doll/M_LEG2_SAMURAI3.png" };
+static const AssetOffset OFFSETS_458[] = { { 15.800000f, 20.050000f } };
+static const char *const FRAMES_459[] = { "assets/art/doll/M_LEG2_SHAMAN1.png" };
+static const AssetOffset OFFSETS_459[] = { { 5.450000f, 10.400000f } };
+static const char *const FRAMES_460[] = { "assets/art/doll/M_LEG2_SHAMAN2.png" };
+static const AssetOffset OFFSETS_460[] = { { 5.450000f, 10.400000f } };
+static const char *const FRAMES_461[] = { "assets/art/doll/M_LEG2_SHAMAN3.png" };
+static const AssetOffset OFFSETS_461[] = { { 5.450000f, 10.400000f } };
+static const char *const FRAMES_462[] = { "assets/art/doll/M_LEG2_SHAMAN4.png" };
+static const AssetOffset OFFSETS_462[] = { { 5.450000f, 10.400000f } };
+static const char *const FRAMES_463[] = { "assets/art/doll/M_LEG2_SINJID.png" };
+static const AssetOffset OFFSETS_463[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_464[] = { "assets/art/doll/M_LEG2_SURVIVOR.png" };
+static const AssetOffset OFFSETS_464[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_465[] = { "assets/art/doll/M_LEG2_USA1.png" };
+static const AssetOffset OFFSETS_465[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_466[] = { "assets/art/doll/M_LEG2_USA2.png" };
+static const AssetOffset OFFSETS_466[] = { { 15.950000f, 15.200000f } };
+static const char *const FRAMES_467[] = { "assets/art/doll/M_LEG2_USA3.png" };
+static const AssetOffset OFFSETS_467[] = { { 15.950000f, 15.200000f } };
+static const char *const FRAMES_468[] = { "assets/art/doll/M_LEG2_USA4.png" };
+static const AssetOffset OFFSETS_468[] = { { 15.950000f, 15.200000f } };
+static const char *const FRAMES_469[] = { "assets/art/doll/M_LEG2_USA5.png" };
+static const AssetOffset OFFSETS_469[] = { { 15.950000f, 15.200000f } };
+static const char *const FRAMES_470[] = { "assets/art/doll/M_SARM_FIVE.png" };
 static const AssetOffset OFFSETS_470[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_471[] = { "assets/art/doll/M_SARM_ONE.png" };
+static const char *const FRAMES_471[] = { "assets/art/doll/M_SARM_FOUR.png" };
 static const AssetOffset OFFSETS_471[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_472[] = { "assets/art/doll/M_SARM_TWO.png" };
+static const char *const FRAMES_472[] = { "assets/art/doll/M_SARM_GHOST.png" };
 static const AssetOffset OFFSETS_472[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_473[] = { "assets/art/doll/M_SARM_ZOMBIE.png" };
-static const AssetOffset OFFSETS_473[] = { { 3.800000f, 9.800000f } };
-static const char *const FRAMES_474[] = { "assets/art/doll/M_SARM_ZOMBIE1.png" };
-static const AssetOffset OFFSETS_474[] = { { 3.800000f, 9.800000f } };
-static const char *const FRAMES_475[] = { "assets/art/doll/M_SARM_ZOMBIE2.png" };
-static const AssetOffset OFFSETS_475[] = { { 3.800000f, 9.800000f } };
-static const char *const FRAMES_476[] = { "assets/art/doll/M_SCHEST_FIVE.png" };
-static const AssetOffset OFFSETS_476[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_477[] = { "assets/art/doll/M_SCHEST_FOUR.png" };
-static const AssetOffset OFFSETS_477[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_478[] = { "assets/art/doll/M_SCHEST_GHOST.png" };
-static const AssetOffset OFFSETS_478[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_479[] = { "assets/art/doll/M_SCHEST_MAN.png" };
-static const AssetOffset OFFSETS_479[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_480[] = { "assets/art/doll/M_SCHEST_MAN2.png" };
-static const AssetOffset OFFSETS_480[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_481[] = { "assets/art/doll/M_SCHEST_MAN3.png" };
-static const AssetOffset OFFSETS_481[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_482[] = { "assets/art/doll/M_SCHEST_METABII.png" };
+static const char *const FRAMES_473[] = { "assets/art/doll/M_SARM_MAN.png" };
+static const AssetOffset OFFSETS_473[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_474[] = { "assets/art/doll/M_SARM_MAN2.png" };
+static const AssetOffset OFFSETS_474[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_475[] = { "assets/art/doll/M_SARM_MAN3.png" };
+static const AssetOffset OFFSETS_475[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_476[] = { "assets/art/doll/M_SARM_METABII.png" };
+static const AssetOffset OFFSETS_476[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_477[] = { "assets/art/doll/M_SARM_ONE.png" };
+static const AssetOffset OFFSETS_477[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_478[] = { "assets/art/doll/M_SARM_TWO.png" };
+static const AssetOffset OFFSETS_478[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_479[] = { "assets/art/doll/M_SARM_ZOMBIE.png" };
+static const AssetOffset OFFSETS_479[] = { { 3.800000f, 9.800000f } };
+static const char *const FRAMES_480[] = { "assets/art/doll/M_SARM_ZOMBIE1.png" };
+static const AssetOffset OFFSETS_480[] = { { 3.800000f, 9.800000f } };
+static const char *const FRAMES_481[] = { "assets/art/doll/M_SARM_ZOMBIE2.png" };
+static const AssetOffset OFFSETS_481[] = { { 3.800000f, 9.800000f } };
+static const char *const FRAMES_482[] = { "assets/art/doll/M_SCHEST_FIVE.png" };
 static const AssetOffset OFFSETS_482[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_483[] = { "assets/art/doll/M_SCHEST_ONE.png" };
+static const char *const FRAMES_483[] = { "assets/art/doll/M_SCHEST_FOUR.png" };
 static const AssetOffset OFFSETS_483[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_484[] = { "assets/art/doll/M_SCHEST_TWO.png" };
+static const char *const FRAMES_484[] = { "assets/art/doll/M_SCHEST_GHOST.png" };
 static const AssetOffset OFFSETS_484[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_485[] = { "assets/art/doll/M_SCHEST_ZOMBIE.png" };
+static const char *const FRAMES_485[] = { "assets/art/doll/M_SCHEST_MAN.png" };
 static const AssetOffset OFFSETS_485[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_486[] = { "assets/art/doll/M_SCHEST_ZOMBIE1.png" };
+static const char *const FRAMES_486[] = { "assets/art/doll/M_SCHEST_MAN2.png" };
 static const AssetOffset OFFSETS_486[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_487[] = { "assets/art/doll/M_SCHEST_ZOMBIE2.png" };
-static const AssetOffset OFFSETS_487[] = { { 48.450000f, 37.200000f } };
-static const char *const FRAMES_488[] = { "assets/art/doll/M_SFOOT_FIVE.png" };
-static const AssetOffset OFFSETS_488[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_489[] = { "assets/art/doll/M_SFOOT_FOUR.png" };
-static const AssetOffset OFFSETS_489[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_490[] = { "assets/art/doll/M_SFOOT_GHOST.png" };
-static const AssetOffset OFFSETS_490[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_491[] = { "assets/art/doll/M_SFOOT_MAN.png" };
-static const AssetOffset OFFSETS_491[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_492[] = { "assets/art/doll/M_SFOOT_MAN2.png" };
-static const AssetOffset OFFSETS_492[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_493[] = { "assets/art/doll/M_SFOOT_MAN3.png" };
-static const AssetOffset OFFSETS_493[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_494[] = { "assets/art/doll/M_SFOOT_METABII.png" };
+static const char *const FRAMES_487[] = { "assets/art/doll/M_SCHEST_MAN3.png" };
+static const AssetOffset OFFSETS_487[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_488[] = { "assets/art/doll/M_SCHEST_METABII.png" };
+static const AssetOffset OFFSETS_488[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_489[] = { "assets/art/doll/M_SCHEST_ONE.png" };
+static const AssetOffset OFFSETS_489[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_490[] = { "assets/art/doll/M_SCHEST_TWO.png" };
+static const AssetOffset OFFSETS_490[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_491[] = { "assets/art/doll/M_SCHEST_ZOMBIE.png" };
+static const AssetOffset OFFSETS_491[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_492[] = { "assets/art/doll/M_SCHEST_ZOMBIE1.png" };
+static const AssetOffset OFFSETS_492[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_493[] = { "assets/art/doll/M_SCHEST_ZOMBIE2.png" };
+static const AssetOffset OFFSETS_493[] = { { 48.450000f, 37.200000f } };
+static const char *const FRAMES_494[] = { "assets/art/doll/M_SFOOT_FIVE.png" };
 static const AssetOffset OFFSETS_494[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_495[] = { "assets/art/doll/M_SFOOT_ONE.png" };
+static const char *const FRAMES_495[] = { "assets/art/doll/M_SFOOT_FOUR.png" };
 static const AssetOffset OFFSETS_495[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_496[] = { "assets/art/doll/M_SFOOT_TWO.png" };
+static const char *const FRAMES_496[] = { "assets/art/doll/M_SFOOT_GHOST.png" };
 static const AssetOffset OFFSETS_496[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_497[] = { "assets/art/doll/M_SFOOT_ZOMBIE.png" };
+static const char *const FRAMES_497[] = { "assets/art/doll/M_SFOOT_MAN.png" };
 static const AssetOffset OFFSETS_497[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_498[] = { "assets/art/doll/M_SFOOT_ZOMBIE1.png" };
+static const char *const FRAMES_498[] = { "assets/art/doll/M_SFOOT_MAN2.png" };
 static const AssetOffset OFFSETS_498[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_499[] = { "assets/art/doll/M_SFOOT_ZOMBIE2.png" };
+static const char *const FRAMES_499[] = { "assets/art/doll/M_SFOOT_MAN3.png" };
 static const AssetOffset OFFSETS_499[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_500[] = { "assets/art/doll/M_SHAND_FIVE.png" };
-static const AssetOffset OFFSETS_500[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_501[] = { "assets/art/doll/M_SHAND_FOUR.png" };
-static const AssetOffset OFFSETS_501[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_502[] = { "assets/art/doll/M_SHAND_GHOST.png" };
-static const AssetOffset OFFSETS_502[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_503[] = { "assets/art/doll/M_SHAND_MAN.png" };
-static const AssetOffset OFFSETS_503[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_504[] = { "assets/art/doll/M_SHAND_MAN2.png" };
-static const AssetOffset OFFSETS_504[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_505[] = { "assets/art/doll/M_SHAND_MAN3.png" };
-static const AssetOffset OFFSETS_505[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_506[] = { "assets/art/doll/M_SHAND_METABII.png" };
+static const char *const FRAMES_500[] = { "assets/art/doll/M_SFOOT_METABII.png" };
+static const AssetOffset OFFSETS_500[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_501[] = { "assets/art/doll/M_SFOOT_ONE.png" };
+static const AssetOffset OFFSETS_501[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_502[] = { "assets/art/doll/M_SFOOT_TWO.png" };
+static const AssetOffset OFFSETS_502[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_503[] = { "assets/art/doll/M_SFOOT_ZOMBIE.png" };
+static const AssetOffset OFFSETS_503[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_504[] = { "assets/art/doll/M_SFOOT_ZOMBIE1.png" };
+static const AssetOffset OFFSETS_504[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_505[] = { "assets/art/doll/M_SFOOT_ZOMBIE2.png" };
+static const AssetOffset OFFSETS_505[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_506[] = { "assets/art/doll/M_SHAND_FIVE.png" };
 static const AssetOffset OFFSETS_506[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_507[] = { "assets/art/doll/M_SHAND_ONE.png" };
+static const char *const FRAMES_507[] = { "assets/art/doll/M_SHAND_FOUR.png" };
 static const AssetOffset OFFSETS_507[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_508[] = { "assets/art/doll/M_SHAND_TWO.png" };
+static const char *const FRAMES_508[] = { "assets/art/doll/M_SHAND_GHOST.png" };
 static const AssetOffset OFFSETS_508[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_509[] = { "assets/art/doll/M_SHAND_ZOMBIE.png" };
+static const char *const FRAMES_509[] = { "assets/art/doll/M_SHAND_MAN.png" };
 static const AssetOffset OFFSETS_509[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_510[] = { "assets/art/doll/M_SHAND_ZOMBIE1.png" };
+static const char *const FRAMES_510[] = { "assets/art/doll/M_SHAND_MAN2.png" };
 static const AssetOffset OFFSETS_510[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_511[] = { "assets/art/doll/M_SHAND_ZOMBIE2.png" };
+static const char *const FRAMES_511[] = { "assets/art/doll/M_SHAND_MAN3.png" };
 static const AssetOffset OFFSETS_511[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_512[] = { "assets/art/doll/M_SHEAD_FIVE.png" };
-static const AssetOffset OFFSETS_512[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_513[] = { "assets/art/doll/M_SHEAD_FOUR.png" };
-static const AssetOffset OFFSETS_513[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_514[] = { "assets/art/doll/M_SHEAD_GHOST.png" };
-static const AssetOffset OFFSETS_514[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_515[] = { "assets/art/doll/M_SHEAD_MAN.png" };
-static const AssetOffset OFFSETS_515[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_516[] = { "assets/art/doll/M_SHEAD_MAN2.png" };
-static const AssetOffset OFFSETS_516[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_517[] = { "assets/art/doll/M_SHEAD_MAN3.png" };
-static const AssetOffset OFFSETS_517[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_518[] = { "assets/art/doll/M_SHEAD_METABII.png" };
+static const char *const FRAMES_512[] = { "assets/art/doll/M_SHAND_METABII.png" };
+static const AssetOffset OFFSETS_512[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_513[] = { "assets/art/doll/M_SHAND_ONE.png" };
+static const AssetOffset OFFSETS_513[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_514[] = { "assets/art/doll/M_SHAND_TWO.png" };
+static const AssetOffset OFFSETS_514[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_515[] = { "assets/art/doll/M_SHAND_ZOMBIE.png" };
+static const AssetOffset OFFSETS_515[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_516[] = { "assets/art/doll/M_SHAND_ZOMBIE1.png" };
+static const AssetOffset OFFSETS_516[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_517[] = { "assets/art/doll/M_SHAND_ZOMBIE2.png" };
+static const AssetOffset OFFSETS_517[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_518[] = { "assets/art/doll/M_SHEAD_FIVE.png" };
 static const AssetOffset OFFSETS_518[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_519[] = { "assets/art/doll/M_SHEAD_ONE.png" };
+static const char *const FRAMES_519[] = { "assets/art/doll/M_SHEAD_FOUR.png" };
 static const AssetOffset OFFSETS_519[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_520[] = { "assets/art/doll/M_SHEAD_TWO.png" };
+static const char *const FRAMES_520[] = { "assets/art/doll/M_SHEAD_GHOST.png" };
 static const AssetOffset OFFSETS_520[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_521[] = { "assets/art/doll/M_SHEAD_USA1.png" };
-static const AssetOffset OFFSETS_521[] = { { 3.150000f, 8.150000f } };
-static const char *const FRAMES_522[] = { "assets/art/doll/M_SHEAD_ZOMBIE.png" };
+static const char *const FRAMES_521[] = { "assets/art/doll/M_SHEAD_MAN.png" };
+static const AssetOffset OFFSETS_521[] = { { 2.550000f, 6.700000f } };
+static const char *const FRAMES_522[] = { "assets/art/doll/M_SHEAD_MAN2.png" };
 static const AssetOffset OFFSETS_522[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_523[] = { "assets/art/doll/M_SHEAD_ZOMBIE1.png" };
+static const char *const FRAMES_523[] = { "assets/art/doll/M_SHEAD_MAN3.png" };
 static const AssetOffset OFFSETS_523[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_524[] = { "assets/art/doll/M_SHEAD_ZOMBIE2.png" };
+static const char *const FRAMES_524[] = { "assets/art/doll/M_SHEAD_METABII.png" };
 static const AssetOffset OFFSETS_524[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_525[] = { "assets/art/doll/M_SHOULDER_FINAL1.png" };
-static const AssetOffset OFFSETS_525[] = { { 19.550000f, 9.200000f } };
-static const char *const FRAMES_526[] = { "assets/art/doll/M_SHOULDER_FINAL2.png" };
-static const AssetOffset OFFSETS_526[] = { { 19.550000f, 9.200000f } };
-static const char *const FRAMES_527[] = { "assets/art/doll/M_SHOULDER_FINAL3.png" };
-static const AssetOffset OFFSETS_527[] = { { 19.550000f, 9.200000f } };
-static const char *const FRAMES_528[] = { "assets/art/doll/M_SHOULDER_FINAL4.png" };
-static const AssetOffset OFFSETS_528[] = { { 19.550000f, 9.200000f } };
-static const char *const FRAMES_529[] = { "assets/art/doll/M_SHOULDER_KNIGHT.png" };
-static const AssetOffset OFFSETS_529[] = { { 4.000000f, 4.250000f } };
-static const char *const FRAMES_530[] = { "assets/art/doll/M_SHOULDER_MEDIC.png" };
-static const AssetOffset OFFSETS_530[] = { { 24.150000f, 20.200000f } };
-static const char *const FRAMES_531[] = { "assets/art/doll/M_SHOULDER_NINJA.png" };
-static const AssetOffset OFFSETS_531[] = { { 4.000000f, 4.250000f } };
-static const char *const FRAMES_532[] = { "assets/art/doll/M_SHOULDER_ROCKSTAR.png" };
-static const AssetOffset OFFSETS_532[] = { { 0.000000f, 0.000000f } };
-static const char *const FRAMES_533[] = { "assets/art/doll/M_SHOULDER_SAMURAI.png" };
-static const AssetOffset OFFSETS_533[] = { { 17.900000f, 7.000000f } };
-static const char *const FRAMES_534[] = { "assets/art/doll/M_SHOULDER_SAMURAI2.png" };
-static const AssetOffset OFFSETS_534[] = { { 27.900000f, 26.050000f } };
-static const char *const FRAMES_535[] = { "assets/art/doll/M_SHOULDER_SAMURAI3.png" };
-static const AssetOffset OFFSETS_535[] = { { 27.900000f, 26.050000f } };
-static const char *const FRAMES_536[] = { "assets/art/doll/M_SHOULDER_SHAMAN1.png" };
-static const AssetOffset OFFSETS_536[] = { { 18.650000f, 17.800000f } };
-static const char *const FRAMES_537[] = { "assets/art/doll/M_SHOULDER_SHAMAN2.png" };
-static const AssetOffset OFFSETS_537[] = { { 18.650000f, 17.800000f } };
-static const char *const FRAMES_538[] = { "assets/art/doll/M_SHOULDER_SHAMAN3.png" };
-static const AssetOffset OFFSETS_538[] = { { 18.650000f, 17.800000f } };
-static const char *const FRAMES_539[] = { "assets/art/doll/M_SHOULDER_SHAMAN4.png" };
-static const AssetOffset OFFSETS_539[] = { { 18.650000f, 17.800000f } };
-static const char *const FRAMES_540[] = { "assets/art/doll/M_SHOULDER_SINJID.png" };
-static const AssetOffset OFFSETS_540[] = { { 4.000000f, 4.250000f } };
-static const char *const FRAMES_541[] = { "assets/art/doll/M_SHOULDER_SURVIVOR.png" };
-static const AssetOffset OFFSETS_541[] = { { 4.000000f, 4.250000f } };
-static const char *const FRAMES_542[] = { "assets/art/doll/M_SHOULDER_USA1.png" };
-static const AssetOffset OFFSETS_542[] = { { 0.000000f, 0.000000f } };
-static const char *const FRAMES_543[] = { "assets/art/doll/M_SHOULDER_USA2.png" };
-static const AssetOffset OFFSETS_543[] = { { 19.550000f, 9.200000f } };
-static const char *const FRAMES_544[] = { "assets/art/doll/M_SHOULDER_USA3.png" };
-static const AssetOffset OFFSETS_544[] = { { 19.550000f, 9.200000f } };
-static const char *const FRAMES_545[] = { "assets/art/doll/M_SHOULDER_USA4.png" };
-static const AssetOffset OFFSETS_545[] = { { 19.550000f, 9.200000f } };
-static const char *const FRAMES_546[] = { "assets/art/doll/M_SHOULDER_USA5.png" };
-static const AssetOffset OFFSETS_546[] = { { 19.550000f, 9.200000f } };
-static const char *const FRAMES_547[] = { "assets/art/doll/M_SLEG2_FIVE.png" };
-static const AssetOffset OFFSETS_547[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_548[] = { "assets/art/doll/M_SLEG2_FOUR.png" };
-static const AssetOffset OFFSETS_548[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_549[] = { "assets/art/doll/M_SLEG2_GHOST.png" };
-static const AssetOffset OFFSETS_549[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_550[] = { "assets/art/doll/M_SLEG2_MAN.png" };
-static const AssetOffset OFFSETS_550[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_551[] = { "assets/art/doll/M_SLEG2_MAN2.png" };
-static const AssetOffset OFFSETS_551[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_552[] = { "assets/art/doll/M_SLEG2_MAN3.png" };
-static const AssetOffset OFFSETS_552[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_553[] = { "assets/art/doll/M_SLEG2_METABII.png" };
+static const char *const FRAMES_525[] = { "assets/art/doll/M_SHEAD_ONE.png" };
+static const AssetOffset OFFSETS_525[] = { { 2.550000f, 6.700000f } };
+static const char *const FRAMES_526[] = { "assets/art/doll/M_SHEAD_TWO.png" };
+static const AssetOffset OFFSETS_526[] = { { 2.550000f, 6.700000f } };
+static const char *const FRAMES_527[] = { "assets/art/doll/M_SHEAD_USA1.png" };
+static const AssetOffset OFFSETS_527[] = { { 3.150000f, 8.150000f } };
+static const char *const FRAMES_528[] = { "assets/art/doll/M_SHEAD_ZOMBIE.png" };
+static const AssetOffset OFFSETS_528[] = { { 2.550000f, 6.700000f } };
+static const char *const FRAMES_529[] = { "assets/art/doll/M_SHEAD_ZOMBIE1.png" };
+static const AssetOffset OFFSETS_529[] = { { 2.550000f, 6.700000f } };
+static const char *const FRAMES_530[] = { "assets/art/doll/M_SHEAD_ZOMBIE2.png" };
+static const AssetOffset OFFSETS_530[] = { { 2.550000f, 6.700000f } };
+static const char *const FRAMES_531[] = { "assets/art/doll/M_SHOULDER_FINAL1.png" };
+static const AssetOffset OFFSETS_531[] = { { 19.550000f, 9.200000f } };
+static const char *const FRAMES_532[] = { "assets/art/doll/M_SHOULDER_FINAL2.png" };
+static const AssetOffset OFFSETS_532[] = { { 19.550000f, 9.200000f } };
+static const char *const FRAMES_533[] = { "assets/art/doll/M_SHOULDER_FINAL3.png" };
+static const AssetOffset OFFSETS_533[] = { { 19.550000f, 9.200000f } };
+static const char *const FRAMES_534[] = { "assets/art/doll/M_SHOULDER_FINAL4.png" };
+static const AssetOffset OFFSETS_534[] = { { 19.550000f, 9.200000f } };
+static const char *const FRAMES_535[] = { "assets/art/doll/M_SHOULDER_KNIGHT.png" };
+static const AssetOffset OFFSETS_535[] = { { 4.000000f, 4.250000f } };
+static const char *const FRAMES_536[] = { "assets/art/doll/M_SHOULDER_MEDIC.png" };
+static const AssetOffset OFFSETS_536[] = { { 24.150000f, 20.200000f } };
+static const char *const FRAMES_537[] = { "assets/art/doll/M_SHOULDER_NINJA.png" };
+static const AssetOffset OFFSETS_537[] = { { 4.000000f, 4.250000f } };
+static const char *const FRAMES_538[] = { "assets/art/doll/M_SHOULDER_ROCKSTAR.png" };
+static const AssetOffset OFFSETS_538[] = { { 0.000000f, 0.000000f } };
+static const char *const FRAMES_539[] = { "assets/art/doll/M_SHOULDER_SAMURAI.png" };
+static const AssetOffset OFFSETS_539[] = { { 17.900000f, 7.000000f } };
+static const char *const FRAMES_540[] = { "assets/art/doll/M_SHOULDER_SAMURAI2.png" };
+static const AssetOffset OFFSETS_540[] = { { 27.900000f, 26.050000f } };
+static const char *const FRAMES_541[] = { "assets/art/doll/M_SHOULDER_SAMURAI3.png" };
+static const AssetOffset OFFSETS_541[] = { { 27.900000f, 26.050000f } };
+static const char *const FRAMES_542[] = { "assets/art/doll/M_SHOULDER_SHAMAN1.png" };
+static const AssetOffset OFFSETS_542[] = { { 18.650000f, 17.800000f } };
+static const char *const FRAMES_543[] = { "assets/art/doll/M_SHOULDER_SHAMAN2.png" };
+static const AssetOffset OFFSETS_543[] = { { 18.650000f, 17.800000f } };
+static const char *const FRAMES_544[] = { "assets/art/doll/M_SHOULDER_SHAMAN3.png" };
+static const AssetOffset OFFSETS_544[] = { { 18.650000f, 17.800000f } };
+static const char *const FRAMES_545[] = { "assets/art/doll/M_SHOULDER_SHAMAN4.png" };
+static const AssetOffset OFFSETS_545[] = { { 18.650000f, 17.800000f } };
+static const char *const FRAMES_546[] = { "assets/art/doll/M_SHOULDER_SINJID.png" };
+static const AssetOffset OFFSETS_546[] = { { 4.000000f, 4.250000f } };
+static const char *const FRAMES_547[] = { "assets/art/doll/M_SHOULDER_SURVIVOR.png" };
+static const AssetOffset OFFSETS_547[] = { { 4.000000f, 4.250000f } };
+static const char *const FRAMES_548[] = { "assets/art/doll/M_SHOULDER_USA1.png" };
+static const AssetOffset OFFSETS_548[] = { { 0.000000f, 0.000000f } };
+static const char *const FRAMES_549[] = { "assets/art/doll/M_SHOULDER_USA2.png" };
+static const AssetOffset OFFSETS_549[] = { { 19.550000f, 9.200000f } };
+static const char *const FRAMES_550[] = { "assets/art/doll/M_SHOULDER_USA3.png" };
+static const AssetOffset OFFSETS_550[] = { { 19.550000f, 9.200000f } };
+static const char *const FRAMES_551[] = { "assets/art/doll/M_SHOULDER_USA4.png" };
+static const AssetOffset OFFSETS_551[] = { { 19.550000f, 9.200000f } };
+static const char *const FRAMES_552[] = { "assets/art/doll/M_SHOULDER_USA5.png" };
+static const AssetOffset OFFSETS_552[] = { { 19.550000f, 9.200000f } };
+static const char *const FRAMES_553[] = { "assets/art/doll/M_SLEG2_FIVE.png" };
 static const AssetOffset OFFSETS_553[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_554[] = { "assets/art/doll/M_SLEG2_ONE.png" };
+static const char *const FRAMES_554[] = { "assets/art/doll/M_SLEG2_FOUR.png" };
 static const AssetOffset OFFSETS_554[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_555[] = { "assets/art/doll/M_SLEG2_TWO.png" };
+static const char *const FRAMES_555[] = { "assets/art/doll/M_SLEG2_GHOST.png" };
 static const AssetOffset OFFSETS_555[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_556[] = { "assets/art/doll/M_SLEG2_ZOMBIE.png" };
+static const char *const FRAMES_556[] = { "assets/art/doll/M_SLEG2_MAN.png" };
 static const AssetOffset OFFSETS_556[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_557[] = { "assets/art/doll/M_SLEG2_ZOMBIE1.png" };
+static const char *const FRAMES_557[] = { "assets/art/doll/M_SLEG2_MAN2.png" };
 static const AssetOffset OFFSETS_557[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_558[] = { "assets/art/doll/M_SLEG2_ZOMBIE2.png" };
+static const char *const FRAMES_558[] = { "assets/art/doll/M_SLEG2_MAN3.png" };
 static const AssetOffset OFFSETS_558[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_559[] = { "assets/art/doll/M_SSHOULDER_ONE.png" };
-static const AssetOffset OFFSETS_559[] = { { 0.000000f, 0.000000f } };
-static const char *const FRAMES_560[] = { "assets/art/doll/M_WEAPON_BROAD.png" };
-static const AssetOffset OFFSETS_560[] = { { 15.950000f, 48.550000f } };
-static const char *const FRAMES_561[] = { "assets/art/doll/M_WEAPON_CLUB.png" };
-static const AssetOffset OFFSETS_561[] = { { 2.650000f, 23.150000f } };
-static const char *const FRAMES_562[] = { "assets/art/doll/M_WEAPON_CROWBAR.png" };
-static const AssetOffset OFFSETS_562[] = { { 1.350000f, 17.400000f } };
-static const char *const FRAMES_563[] = { "assets/art/doll/M_WEAPON_FIREAXE.png" };
-static const AssetOffset OFFSETS_563[] = { { 2.200000f, 20.650000f } };
-static const char *const FRAMES_564[] = { "assets/art/doll/M_WEAPON_KATANA.png" };
-static const AssetOffset OFFSETS_564[] = { { 3.750000f, 41.150000f } };
-static const char *const FRAMES_565[] = { "assets/art/doll/M_WEAPON_M4.png" };
-static const AssetOffset OFFSETS_565[] = { { 15.600000f, 56.200000f } };
-static const char *const FRAMES_566[] = { "assets/art/doll/M_WEAPON_MOON.png" };
-static const AssetOffset OFFSETS_566[] = { { 10.200000f, 57.900000f } };
-static const char *const FRAMES_567[] = { "assets/art/doll/M_WEAPON_PALADINSWORD.png" };
-static const AssetOffset OFFSETS_567[] = { { 18.900000f, 89.650000f } };
-static const char *const FRAMES_568[] = { "assets/art/doll/M_WEAPON_PIPE.png" };
-static const AssetOffset OFFSETS_568[] = { { 5.300000f, 27.500000f } };
-static const char *const FRAMES_569[] = { "assets/art/doll/M_WEAPON_SHAMANKNIFE.png" };
-static const AssetOffset OFFSETS_569[] = { { 8.350000f, 31.000000f } };
-static const char *const FRAMES_570[] = { "assets/art/doll/M_WEAPON_SHAMANMAGIC.png" };
-static const AssetOffset OFFSETS_570[] = { { 13.300000f, 30.800000f } };
-static const char *const FRAMES_571[] = { "assets/art/doll/M_WEAPON_SHAMANMED.png" };
-static const AssetOffset OFFSETS_571[] = { { 13.300000f, 30.800000f } };
-static const char *const FRAMES_572[] = { "assets/art/doll/M_WEAPON_SHAMANSWORD.png" };
-static const AssetOffset OFFSETS_572[] = { { 8.800000f, 57.500000f } };
-static const char *const FRAMES_573[] = { "assets/art/doll/M_WEAPON_SHANK.png" };
-static const AssetOffset OFFSETS_573[] = { { 13.800000f, 39.350000f } };
-static const char *const FRAMES_574[] = { "assets/art/doll/M_WEAPON_SHIELD2.png" };
-static const AssetOffset OFFSETS_574[] = { { 17.950000f, 10.300000f } };
-static const char *const FRAMES_575[] = { "assets/art/doll/M_WEAPON_SPELLMACE.png" };
-static const AssetOffset OFFSETS_575[] = { { 14.400000f, 39.300000f } };
-static const char *const FRAMES_576[] = { "assets/art/doll/M_WEAPON_SPELLSTAFF.png" };
-static const AssetOffset OFFSETS_576[] = { { 13.150000f, 49.800000f } };
-static const char *const FRAMES_577[] = { "assets/art/doll/M_WEAPON_STICK.png" };
-static const AssetOffset OFFSETS_577[] = { { 2.650000f, 23.150000f } };
-static const char *const FRAMES_578[] = { "assets/art/doll/M_WEAPON_SWATSWORD.png" };
-static const AssetOffset OFFSETS_578[] = { { 7.050000f, 48.000000f } };
-static const char *const FRAMES_579[] = { "assets/art/doll/M_WEAPON_SWIFT.png" };
-static const AssetOffset OFFSETS_579[] = { { 2.600000f, 36.950000f } };
-static const char *const FRAMES_580[] = { "assets/art/doll/M_WEAPON_SWORD1.png" };
-static const AssetOffset OFFSETS_580[] = { { 4.350000f, 35.150000f } };
-static const char *const FRAMES_581[] = { "assets/art/doll/M_WEAPON_UBER1.png" };
-static const AssetOffset OFFSETS_581[] = { { 40.800000f, 65.450000f } };
-static const char *const FRAMES_582[] = { "assets/art/doll/M_WEAPON_UBER10.png" };
-static const AssetOffset OFFSETS_582[] = { { 14.400000f, 39.300000f } };
-static const char *const FRAMES_583[] = { "assets/art/doll/M_WEAPON_UBER11.png" };
-static const AssetOffset OFFSETS_583[] = { { 12.950000f, 36.850000f } };
-static const char *const FRAMES_584[] = { "assets/art/doll/M_WEAPON_UBER2.png" };
-static const AssetOffset OFFSETS_584[] = { { 12.950000f, 36.850000f } };
-static const char *const FRAMES_585[] = { "assets/art/doll/M_WEAPON_UBER3.png" };
-static const AssetOffset OFFSETS_585[] = { { 15.600000f, 56.200000f } };
-static const char *const FRAMES_586[] = { "assets/art/doll/M_WEAPON_UBER4.png" };
-static const AssetOffset OFFSETS_586[] = { { 15.600000f, 56.200000f } };
-static const char *const FRAMES_587[] = { "assets/art/doll/M_WEAPON_UBER5.png" };
-static const AssetOffset OFFSETS_587[] = { { 17.950000f, 10.300000f } };
-static const char *const FRAMES_588[] = { "assets/art/doll/M_WEAPON_UBER6.png" };
-static const AssetOffset OFFSETS_588[] = { { 17.950000f, 10.300000f } };
-static const char *const FRAMES_589[] = { "assets/art/doll/M_WEAPON_UBER7.png" };
-static const AssetOffset OFFSETS_589[] = { { 17.950000f, 10.300000f } };
-static const char *const FRAMES_590[] = { "assets/art/doll/M_WEAPON_UBER8.png" };
-static const AssetOffset OFFSETS_590[] = { { 14.400000f, 39.300000f } };
-static const char *const FRAMES_591[] = { "assets/art/doll/M_WEAPON_UBER9.png" };
-static const AssetOffset OFFSETS_591[] = { { 14.400000f, 39.300000f } };
-static const char *const FRAMES_592[] = { "assets/art/icon/Magic_Bolt.png" };
-static const AssetOffset OFFSETS_592[] = { { 12.850000f, 15.400000f } };
-static const char *const FRAMES_593[] = { "assets/art/item/Magic_Lantern.png" };
-static const AssetOffset OFFSETS_593[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_594[] = { "assets/art/sound/MagicCast.mp3" };
-static const char *const FRAMES_595[] = { "assets/art/icon/Master_Strike.png" };
-static const AssetOffset OFFSETS_595[] = { { 20.400000f, 15.500000f } };
-static const char *const FRAMES_596[] = { "assets/art/item/Mender's_Armor.png" };
-static const AssetOffset OFFSETS_596[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_597[] = { "assets/art/item/Mender's_Axe.png" };
-static const AssetOffset OFFSETS_597[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_598[] = { "assets/art/item/Mender's_Boots.png" };
-static const AssetOffset OFFSETS_598[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_599[] = { "assets/art/item/Mender's_Gloves.png" };
+static const char *const FRAMES_559[] = { "assets/art/doll/M_SLEG2_METABII.png" };
+static const AssetOffset OFFSETS_559[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_560[] = { "assets/art/doll/M_SLEG2_ONE.png" };
+static const AssetOffset OFFSETS_560[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_561[] = { "assets/art/doll/M_SLEG2_TWO.png" };
+static const AssetOffset OFFSETS_561[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_562[] = { "assets/art/doll/M_SLEG2_ZOMBIE.png" };
+static const AssetOffset OFFSETS_562[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_563[] = { "assets/art/doll/M_SLEG2_ZOMBIE1.png" };
+static const AssetOffset OFFSETS_563[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_564[] = { "assets/art/doll/M_SLEG2_ZOMBIE2.png" };
+static const AssetOffset OFFSETS_564[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_565[] = { "assets/art/doll/M_SSHOULDER_ONE.png" };
+static const AssetOffset OFFSETS_565[] = { { 0.000000f, 0.000000f } };
+static const char *const FRAMES_566[] = { "assets/art/doll/M_WEAPON_BROAD.png" };
+static const AssetOffset OFFSETS_566[] = { { 15.950000f, 48.550000f } };
+static const char *const FRAMES_567[] = { "assets/art/doll/M_WEAPON_CLUB.png" };
+static const AssetOffset OFFSETS_567[] = { { 2.650000f, 23.150000f } };
+static const char *const FRAMES_568[] = { "assets/art/doll/M_WEAPON_CROWBAR.png" };
+static const AssetOffset OFFSETS_568[] = { { 1.350000f, 17.400000f } };
+static const char *const FRAMES_569[] = { "assets/art/doll/M_WEAPON_FIREAXE.png" };
+static const AssetOffset OFFSETS_569[] = { { 2.200000f, 20.650000f } };
+static const char *const FRAMES_570[] = { "assets/art/doll/M_WEAPON_KATANA.png" };
+static const AssetOffset OFFSETS_570[] = { { 3.750000f, 41.150000f } };
+static const char *const FRAMES_571[] = { "assets/art/doll/M_WEAPON_M4.png" };
+static const AssetOffset OFFSETS_571[] = { { 15.600000f, 56.200000f } };
+static const char *const FRAMES_572[] = { "assets/art/doll/M_WEAPON_MOON.png" };
+static const AssetOffset OFFSETS_572[] = { { 10.200000f, 57.900000f } };
+static const char *const FRAMES_573[] = { "assets/art/doll/M_WEAPON_PALADINSWORD.png" };
+static const AssetOffset OFFSETS_573[] = { { 18.900000f, 89.650000f } };
+static const char *const FRAMES_574[] = { "assets/art/doll/M_WEAPON_PIPE.png" };
+static const AssetOffset OFFSETS_574[] = { { 5.300000f, 27.500000f } };
+static const char *const FRAMES_575[] = { "assets/art/doll/M_WEAPON_SHAMANKNIFE.png" };
+static const AssetOffset OFFSETS_575[] = { { 8.350000f, 31.000000f } };
+static const char *const FRAMES_576[] = { "assets/art/doll/M_WEAPON_SHAMANMAGIC.png" };
+static const AssetOffset OFFSETS_576[] = { { 13.300000f, 30.800000f } };
+static const char *const FRAMES_577[] = { "assets/art/doll/M_WEAPON_SHAMANMED.png" };
+static const AssetOffset OFFSETS_577[] = { { 13.300000f, 30.800000f } };
+static const char *const FRAMES_578[] = { "assets/art/doll/M_WEAPON_SHAMANSWORD.png" };
+static const AssetOffset OFFSETS_578[] = { { 8.800000f, 57.500000f } };
+static const char *const FRAMES_579[] = { "assets/art/doll/M_WEAPON_SHANK.png" };
+static const AssetOffset OFFSETS_579[] = { { 13.800000f, 39.350000f } };
+static const char *const FRAMES_580[] = { "assets/art/doll/M_WEAPON_SHIELD2.png" };
+static const AssetOffset OFFSETS_580[] = { { 17.950000f, 10.300000f } };
+static const char *const FRAMES_581[] = { "assets/art/doll/M_WEAPON_SPELLMACE.png" };
+static const AssetOffset OFFSETS_581[] = { { 14.400000f, 39.300000f } };
+static const char *const FRAMES_582[] = { "assets/art/doll/M_WEAPON_SPELLSTAFF.png" };
+static const AssetOffset OFFSETS_582[] = { { 13.150000f, 49.800000f } };
+static const char *const FRAMES_583[] = { "assets/art/doll/M_WEAPON_STICK.png" };
+static const AssetOffset OFFSETS_583[] = { { 2.650000f, 23.150000f } };
+static const char *const FRAMES_584[] = { "assets/art/doll/M_WEAPON_SWATSWORD.png" };
+static const AssetOffset OFFSETS_584[] = { { 7.050000f, 48.000000f } };
+static const char *const FRAMES_585[] = { "assets/art/doll/M_WEAPON_SWIFT.png" };
+static const AssetOffset OFFSETS_585[] = { { 2.600000f, 36.950000f } };
+static const char *const FRAMES_586[] = { "assets/art/doll/M_WEAPON_SWORD1.png" };
+static const AssetOffset OFFSETS_586[] = { { 4.350000f, 35.150000f } };
+static const char *const FRAMES_587[] = { "assets/art/doll/M_WEAPON_UBER1.png" };
+static const AssetOffset OFFSETS_587[] = { { 40.800000f, 65.450000f } };
+static const char *const FRAMES_588[] = { "assets/art/doll/M_WEAPON_UBER10.png" };
+static const AssetOffset OFFSETS_588[] = { { 14.400000f, 39.300000f } };
+static const char *const FRAMES_589[] = { "assets/art/doll/M_WEAPON_UBER11.png" };
+static const AssetOffset OFFSETS_589[] = { { 12.950000f, 36.850000f } };
+static const char *const FRAMES_590[] = { "assets/art/doll/M_WEAPON_UBER2.png" };
+static const AssetOffset OFFSETS_590[] = { { 12.950000f, 36.850000f } };
+static const char *const FRAMES_591[] = { "assets/art/doll/M_WEAPON_UBER3.png" };
+static const AssetOffset OFFSETS_591[] = { { 15.600000f, 56.200000f } };
+static const char *const FRAMES_592[] = { "assets/art/doll/M_WEAPON_UBER4.png" };
+static const AssetOffset OFFSETS_592[] = { { 15.600000f, 56.200000f } };
+static const char *const FRAMES_593[] = { "assets/art/doll/M_WEAPON_UBER5.png" };
+static const AssetOffset OFFSETS_593[] = { { 17.950000f, 10.300000f } };
+static const char *const FRAMES_594[] = { "assets/art/doll/M_WEAPON_UBER6.png" };
+static const AssetOffset OFFSETS_594[] = { { 17.950000f, 10.300000f } };
+static const char *const FRAMES_595[] = { "assets/art/doll/M_WEAPON_UBER7.png" };
+static const AssetOffset OFFSETS_595[] = { { 17.950000f, 10.300000f } };
+static const char *const FRAMES_596[] = { "assets/art/doll/M_WEAPON_UBER8.png" };
+static const AssetOffset OFFSETS_596[] = { { 14.400000f, 39.300000f } };
+static const char *const FRAMES_597[] = { "assets/art/doll/M_WEAPON_UBER9.png" };
+static const AssetOffset OFFSETS_597[] = { { 14.400000f, 39.300000f } };
+static const char *const FRAMES_598[] = { "assets/art/icon/Magic_Bolt.png" };
+static const AssetOffset OFFSETS_598[] = { { 12.850000f, 15.400000f } };
+static const char *const FRAMES_599[] = { "assets/art/item/Magic_Lantern.png" };
 static const AssetOffset OFFSETS_599[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_600[] = { "assets/art/item/Mender's_Leggings.png" };
-static const AssetOffset OFFSETS_600[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_601[] = { "assets/art/item/Moon-Struck_Horrors.png" };
-static const AssetOffset OFFSETS_601[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_602[] = { "assets/art/item/Murder.png" };
+static const char *const FRAMES_600[] = { "assets/art/sound/MagicCast.mp3" };
+static const char *const FRAMES_601[] = { "assets/art/icon/Master_Strike.png" };
+static const AssetOffset OFFSETS_601[] = { { 20.400000f, 15.500000f } };
+static const char *const FRAMES_602[] = { "assets/art/item/Mender's_Armor.png" };
 static const AssetOffset OFFSETS_602[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_603[] = { "assets/art/background/NIGHT.png" };
-static const AssetOffset OFFSETS_603[] = { { 403.250000f, 183.100000f } };
-static const char *const FRAMES_604[] = { "assets/art/item/Nature's_Fury.png" };
+static const char *const FRAMES_603[] = { "assets/art/item/Mender's_Axe.png" };
+static const AssetOffset OFFSETS_603[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_604[] = { "assets/art/item/Mender's_Boots.png" };
 static const AssetOffset OFFSETS_604[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_605[] = { "assets/art/item/Navy_Boots.png" };
+static const char *const FRAMES_605[] = { "assets/art/item/Mender's_Gloves.png" };
 static const AssetOffset OFFSETS_605[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_606[] = { "assets/art/item/Nike_Head_Wear.png" };
+static const char *const FRAMES_606[] = { "assets/art/item/Mender's_Leggings.png" };
 static const AssetOffset OFFSETS_606[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_607[] = { "assets/art/item/None.png" };
+static const char *const FRAMES_607[] = { "assets/art/item/Moon-Struck_Horrors.png" };
 static const AssetOffset OFFSETS_607[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_608[] = { "assets/art/orb/ORB_BRUTALITY.png" };
-static const AssetOffset OFFSETS_608[] = { { 12.850000f, 19.750000f } };
-static const char *const FRAMES_609[] = { "assets/art/orb/ORB_Blessing_of_Light.png" };
-static const AssetOffset OFFSETS_609[] = { { 15.650000f, 17.100000f } };
-static const char *const FRAMES_610[] = { "assets/art/orb/ORB_Block.png" };
-static const AssetOffset OFFSETS_610[] = { { 16.350000f, 13.450000f } };
-static const char *const FRAMES_611[] = { "assets/art/orb/ORB_Blood_Focus.png" };
-static const AssetOffset OFFSETS_611[] = { { 12.850000f, 12.200000f } };
-static const char *const FRAMES_612[] = { "assets/art/orb/ORB_Blood_Strike.png" };
-static const AssetOffset OFFSETS_612[] = { { 17.150000f, 14.550000f } };
-static const char *const FRAMES_613[] = { "assets/art/orb/ORB_Break.png" };
-static const AssetOffset OFFSETS_613[] = { { 24.150000f, 10.450000f } };
-static const char *const FRAMES_614[] = { "assets/art/orb/ORB_Cell_Reformation.png" };
-static const AssetOffset OFFSETS_614[] = { { 27.100000f, 28.700000f } };
-static const char *const FRAMES_615[] = { "assets/art/orb/ORB_Coup_De_Grace.png" };
-static const AssetOffset OFFSETS_615[] = { { 19.700000f, 20.200000f } };
-static const char *const FRAMES_616[] = { "assets/art/orb/ORB_Cripple.png" };
-static const AssetOffset OFFSETS_616[] = { { 13.000000f, 12.200000f } };
-static const char *const FRAMES_617[] = { "assets/art/orb/ORB_Disrupt.png" };
-static const AssetOffset OFFSETS_617[] = { { 12.600000f, 11.500000f } };
-static const char *const FRAMES_618[] = { "assets/art/orb/ORB_ENDURANCE.png" };
-static const AssetOffset OFFSETS_618[] = { { 12.850000f, 19.950000f } };
-static const char *const FRAMES_619[] = { "assets/art/orb/ORB_Electro_Bolt.png" };
-static const AssetOffset OFFSETS_619[] = { { 12.850000f, 15.400000f } };
-static const char *const FRAMES_620[] = { "assets/art/orb/ORB_Empty.png" };
-static const AssetOffset OFFSETS_620[] = { { 11.500000f, 11.500000f } };
-static const char *const FRAMES_621[] = { "assets/art/orb/ORB_Flame_Blast.png" };
-static const AssetOffset OFFSETS_621[] = { { 12.850000f, 14.600000f } };
-static const char *const FRAMES_622[] = { "assets/art/orb/ORB_Flame_Strike.png" };
-static const AssetOffset OFFSETS_622[] = { { 12.850000f, 19.900000f } };
-static const char *const FRAMES_623[] = { "assets/art/orb/ORB_Frost_Bolt.png" };
-static const AssetOffset OFFSETS_623[] = { { 14.850000f, 9.300000f } };
-static const char *const FRAMES_624[] = { "assets/art/orb/ORB_Healing_Light.png" };
-static const AssetOffset OFFSETS_624[] = { { 32.500000f, 13.300000f } };
-static const char *const FRAMES_625[] = { "assets/art/orb/ORB_Heroic_Motivation.png" };
-static const AssetOffset OFFSETS_625[] = { { 17.700000f, 12.200000f } };
-static const char *const FRAMES_626[] = { "assets/art/orb/ORB_Intervention.png" };
-static const AssetOffset OFFSETS_626[] = { { 16.350000f, 13.450000f } };
-static const char *const FRAMES_627[] = { "assets/art/orb/ORB_Ironskin.png" };
-static const AssetOffset OFFSETS_627[] = { { 19.000000f, 13.400000f } };
-static const char *const FRAMES_628[] = { "assets/art/orb/ORB_Magic_Bolt.png" };
-static const AssetOffset OFFSETS_628[] = { { 12.850000f, 15.400000f } };
-static const char *const FRAMES_629[] = { "assets/art/orb/ORB_Master_Strike.png" };
-static const AssetOffset OFFSETS_629[] = { { 20.400000f, 15.500000f } };
-static const char *const FRAMES_630[] = { "assets/art/orb/ORB_Quick_Strike.png" };
-static const AssetOffset OFFSETS_630[] = { { 12.850000f, 15.400000f } };
-static const char *const FRAMES_631[] = { "assets/art/orb/ORB_REGENERATION.png" };
-static const AssetOffset OFFSETS_631[] = { { 13.000000f, 14.500000f } };
-static const char *const FRAMES_632[] = { "assets/art/orb/ORB_Rage.png" };
-static const AssetOffset OFFSETS_632[] = { { 27.100000f, 28.700000f } };
-static const char *const FRAMES_633[] = { "assets/art/orb/ORB_Re-Energize.png" };
-static const AssetOffset OFFSETS_633[] = { { 12.850000f, 12.200000f } };
-static const char *const FRAMES_634[] = { "assets/art/orb/ORB_SOLIDITY.png" };
-static const AssetOffset OFFSETS_634[] = { { 12.850000f, 12.200000f } };
-static const char *const FRAMES_635[] = { "assets/art/orb/ORB_Shatter_Bolt.png" };
-static const AssetOffset OFFSETS_635[] = { { 16.150000f, 17.000000f } };
-static const char *const FRAMES_636[] = { "assets/art/orb/ORB_Smash.png" };
-static const AssetOffset OFFSETS_636[] = { { 28.700000f, 26.200000f } };
-static const char *const FRAMES_637[] = { "assets/art/orb/ORB_Strike.png" };
-static const AssetOffset OFFSETS_637[] = { { 6.300000f, 15.300000f } };
-static const char *const FRAMES_638[] = { "assets/art/orb/ORB_Subversion.png" };
-static const AssetOffset OFFSETS_638[] = { { 12.000000f, 11.250000f } };
-static const char *const FRAMES_639[] = { "assets/art/orb/ORB_Sunder.png" };
+static const char *const FRAMES_608[] = { "assets/art/item/Murder.png" };
+static const AssetOffset OFFSETS_608[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_609[] = { "assets/art/background/NIGHT.png" };
+static const AssetOffset OFFSETS_609[] = { { 403.250000f, 183.100000f } };
+static const char *const FRAMES_610[] = { "assets/art/item/Nature's_Fury.png" };
+static const AssetOffset OFFSETS_610[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_611[] = { "assets/art/item/Navy_Boots.png" };
+static const AssetOffset OFFSETS_611[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_612[] = { "assets/art/item/Nike_Head_Wear.png" };
+static const AssetOffset OFFSETS_612[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_613[] = { "assets/art/item/None.png" };
+static const AssetOffset OFFSETS_613[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_614[] = { "assets/art/orb/ORB_BRUTALITY.png" };
+static const AssetOffset OFFSETS_614[] = { { 12.850000f, 19.750000f } };
+static const char *const FRAMES_615[] = { "assets/art/orb/ORB_Blessing_of_Light.png" };
+static const AssetOffset OFFSETS_615[] = { { 15.650000f, 17.100000f } };
+static const char *const FRAMES_616[] = { "assets/art/orb/ORB_Block.png" };
+static const AssetOffset OFFSETS_616[] = { { 16.350000f, 13.450000f } };
+static const char *const FRAMES_617[] = { "assets/art/orb/ORB_Blood_Focus.png" };
+static const AssetOffset OFFSETS_617[] = { { 12.850000f, 12.200000f } };
+static const char *const FRAMES_618[] = { "assets/art/orb/ORB_Blood_Strike.png" };
+static const AssetOffset OFFSETS_618[] = { { 17.150000f, 14.550000f } };
+static const char *const FRAMES_619[] = { "assets/art/orb/ORB_Break.png" };
+static const AssetOffset OFFSETS_619[] = { { 24.150000f, 10.450000f } };
+static const char *const FRAMES_620[] = { "assets/art/orb/ORB_Cell_Reformation.png" };
+static const AssetOffset OFFSETS_620[] = { { 27.100000f, 28.700000f } };
+static const char *const FRAMES_621[] = { "assets/art/orb/ORB_Coup_De_Grace.png" };
+static const AssetOffset OFFSETS_621[] = { { 19.700000f, 20.200000f } };
+static const char *const FRAMES_622[] = { "assets/art/orb/ORB_Cripple.png" };
+static const AssetOffset OFFSETS_622[] = { { 13.000000f, 12.200000f } };
+static const char *const FRAMES_623[] = { "assets/art/orb/ORB_Disrupt.png" };
+static const AssetOffset OFFSETS_623[] = { { 12.600000f, 11.500000f } };
+static const char *const FRAMES_624[] = { "assets/art/orb/ORB_ENDURANCE.png" };
+static const AssetOffset OFFSETS_624[] = { { 12.850000f, 19.950000f } };
+static const char *const FRAMES_625[] = { "assets/art/orb/ORB_Electro_Bolt.png" };
+static const AssetOffset OFFSETS_625[] = { { 12.850000f, 15.400000f } };
+static const char *const FRAMES_626[] = { "assets/art/orb/ORB_Empty.png" };
+static const AssetOffset OFFSETS_626[] = { { 11.500000f, 11.500000f } };
+static const char *const FRAMES_627[] = { "assets/art/orb/ORB_Flame_Blast.png" };
+static const AssetOffset OFFSETS_627[] = { { 12.850000f, 14.600000f } };
+static const char *const FRAMES_628[] = { "assets/art/orb/ORB_Flame_Strike.png" };
+static const AssetOffset OFFSETS_628[] = { { 12.850000f, 19.900000f } };
+static const char *const FRAMES_629[] = { "assets/art/orb/ORB_Frost_Bolt.png" };
+static const AssetOffset OFFSETS_629[] = { { 14.850000f, 9.300000f } };
+static const char *const FRAMES_630[] = { "assets/art/orb/ORB_Healing_Light.png" };
+static const AssetOffset OFFSETS_630[] = { { 32.500000f, 13.300000f } };
+static const char *const FRAMES_631[] = { "assets/art/orb/ORB_Heroic_Motivation.png" };
+static const AssetOffset OFFSETS_631[] = { { 17.700000f, 12.200000f } };
+static const char *const FRAMES_632[] = { "assets/art/orb/ORB_Intervention.png" };
+static const AssetOffset OFFSETS_632[] = { { 16.350000f, 13.450000f } };
+static const char *const FRAMES_633[] = { "assets/art/orb/ORB_Ironskin.png" };
+static const AssetOffset OFFSETS_633[] = { { 19.000000f, 13.400000f } };
+static const char *const FRAMES_634[] = { "assets/art/orb/ORB_Magic_Bolt.png" };
+static const AssetOffset OFFSETS_634[] = { { 12.850000f, 15.400000f } };
+static const char *const FRAMES_635[] = { "assets/art/orb/ORB_Master_Strike.png" };
+static const AssetOffset OFFSETS_635[] = { { 20.400000f, 15.500000f } };
+static const char *const FRAMES_636[] = { "assets/art/orb/ORB_Quick_Strike.png" };
+static const AssetOffset OFFSETS_636[] = { { 12.850000f, 15.400000f } };
+static const char *const FRAMES_637[] = { "assets/art/orb/ORB_REGENERATION.png" };
+static const AssetOffset OFFSETS_637[] = { { 13.000000f, 14.500000f } };
+static const char *const FRAMES_638[] = { "assets/art/orb/ORB_Rage.png" };
+static const AssetOffset OFFSETS_638[] = { { 27.100000f, 28.700000f } };
+static const char *const FRAMES_639[] = { "assets/art/orb/ORB_Re-Energize.png" };
 static const AssetOffset OFFSETS_639[] = { { 12.850000f, 12.200000f } };
-static const char *const FRAMES_640[] = { "assets/art/orb/ORB_Suppression.png" };
-static const AssetOffset OFFSETS_640[] = { { 12.350000f, 22.600000f } };
-static const char *const FRAMES_641[] = { "assets/art/orb/ORB_Void.png" };
-static const AssetOffset OFFSETS_641[] = { { 12.850000f, 15.000000f } };
-static const char *const FRAMES_642[] = { "assets/art/orb/ORB_Wound.png" };
-static const AssetOffset OFFSETS_642[] = { { 13.500000f, 20.750000f } };
-static const char *const FRAMES_643[] = { "assets/art/zone/PLAINS.png" };
-static const AssetOffset OFFSETS_643[] = { { 476.300000f, 260.950000f } };
-static const char *const FRAMES_644[] = { "assets/art/background/PLAINS2.png" };
-static const AssetOffset OFFSETS_644[] = { { 570.450000f, 136.450000f } };
-static const char *const FRAMES_645[] = { "assets/art/buff/POISON.png" };
-static const AssetOffset OFFSETS_645[] = { { 5.950000f, 10.950000f } };
-static const char *const FRAMES_646[] = { "assets/art/buff/POISONZOMBIE.png" };
-static const AssetOffset OFFSETS_646[] = { { 5.950000f, 10.950000f } };
-static const char *const FRAMES_647[] = { "assets/art/buff/POWERUP.png" };
-static const AssetOffset OFFSETS_647[] = { { 5.950000f, 10.950000f } };
-static const char *const FRAMES_648[] = { "assets/art/item/Paladin's_Armor.png" };
-static const AssetOffset OFFSETS_648[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_649[] = { "assets/art/item/Paladin's_Boots.png" };
-static const AssetOffset OFFSETS_649[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_650[] = { "assets/art/item/Paladin's_Gloves.png" };
-static const AssetOffset OFFSETS_650[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_651[] = { "assets/art/item/Paladin's_Helm.png" };
-static const AssetOffset OFFSETS_651[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_652[] = { "assets/art/item/Paladin's_Leggings.png" };
-static const AssetOffset OFFSETS_652[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_653[] = { "assets/art/sound/PoisonHit.mp3" };
-static const char *const FRAMES_654[] = { "assets/art/item/Power_Lantern.png" };
+static const char *const FRAMES_640[] = { "assets/art/orb/ORB_SOLIDITY.png" };
+static const AssetOffset OFFSETS_640[] = { { 12.850000f, 12.200000f } };
+static const char *const FRAMES_641[] = { "assets/art/orb/ORB_Shatter_Bolt.png" };
+static const AssetOffset OFFSETS_641[] = { { 16.150000f, 17.000000f } };
+static const char *const FRAMES_642[] = { "assets/art/orb/ORB_Smash.png" };
+static const AssetOffset OFFSETS_642[] = { { 28.700000f, 26.200000f } };
+static const char *const FRAMES_643[] = { "assets/art/orb/ORB_Strike.png" };
+static const AssetOffset OFFSETS_643[] = { { 6.300000f, 15.300000f } };
+static const char *const FRAMES_644[] = { "assets/art/orb/ORB_Subversion.png" };
+static const AssetOffset OFFSETS_644[] = { { 12.000000f, 11.250000f } };
+static const char *const FRAMES_645[] = { "assets/art/orb/ORB_Sunder.png" };
+static const AssetOffset OFFSETS_645[] = { { 12.850000f, 12.200000f } };
+static const char *const FRAMES_646[] = { "assets/art/orb/ORB_Suppression.png" };
+static const AssetOffset OFFSETS_646[] = { { 12.350000f, 22.600000f } };
+static const char *const FRAMES_647[] = { "assets/art/orb/ORB_Void.png" };
+static const AssetOffset OFFSETS_647[] = { { 12.850000f, 15.000000f } };
+static const char *const FRAMES_648[] = { "assets/art/orb/ORB_Wound.png" };
+static const AssetOffset OFFSETS_648[] = { { 13.500000f, 20.750000f } };
+static const char *const FRAMES_649[] = { "assets/art/zone/PLAINS.png" };
+static const AssetOffset OFFSETS_649[] = { { 476.300000f, 260.950000f } };
+static const char *const FRAMES_650[] = { "assets/art/background/PLAINS2.png" };
+static const AssetOffset OFFSETS_650[] = { { 570.450000f, 136.450000f } };
+static const char *const FRAMES_651[] = { "assets/art/buff/POISON.png" };
+static const AssetOffset OFFSETS_651[] = { { 5.950000f, 10.950000f } };
+static const char *const FRAMES_652[] = { "assets/art/buff/POISONZOMBIE.png" };
+static const AssetOffset OFFSETS_652[] = { { 5.950000f, 10.950000f } };
+static const char *const FRAMES_653[] = { "assets/art/buff/POWERUP.png" };
+static const AssetOffset OFFSETS_653[] = { { 5.950000f, 10.950000f } };
+static const char *const FRAMES_654[] = { "assets/art/item/Paladin's_Armor.png" };
 static const AssetOffset OFFSETS_654[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_655[] = { "assets/art/sound/PowerupDefense.mp3" };
-static const char *const FRAMES_656[] = { "assets/art/sound/PowerupOffense.mp3" };
-static const char *const FRAMES_657[] = { "assets/art/item/Proverse_All_Stars.png" };
+static const char *const FRAMES_655[] = { "assets/art/item/Paladin's_Boots.png" };
+static const AssetOffset OFFSETS_655[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_656[] = { "assets/art/item/Paladin's_Gloves.png" };
+static const AssetOffset OFFSETS_656[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_657[] = { "assets/art/item/Paladin's_Helm.png" };
 static const AssetOffset OFFSETS_657[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_658[] = { "assets/art/item/Pulse_Rifle.png" };
+static const char *const FRAMES_658[] = { "assets/art/item/Paladin's_Leggings.png" };
 static const AssetOffset OFFSETS_658[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_659[] = { "assets/art/icon/Quick_Strike.png" };
-static const AssetOffset OFFSETS_659[] = { { 12.850000f, 15.400000f } };
-static const char *const FRAMES_660[] = { "assets/art/buff/RAGE1.png" };
-static const AssetOffset OFFSETS_660[] = { { 5.950000f, 10.950000f } };
-static const char *const FRAMES_661[] = { "assets/art/buff/RAGE2.png" };
-static const AssetOffset OFFSETS_661[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_662[] = { "assets/art/buff/RAGE3.png" };
-static const AssetOffset OFFSETS_662[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_663[] = { "assets/art/buff/REGEN.png" };
-static const AssetOffset OFFSETS_663[] = { { 5.750000f, 10.050000f } };
-static const char *const FRAMES_664[] = { "assets/art/buff/REGENFOC.png" };
-static const AssetOffset OFFSETS_664[] = { { 5.750000f, 10.050000f } };
-static const char *const FRAMES_665[] = { "assets/art/buff/REGENSHAMAN.png" };
-static const AssetOffset OFFSETS_665[] = { { 5.750000f, 10.050000f } };
-static const char *const FRAMES_666[] = { "assets/art/icon/Rage.png" };
-static const AssetOffset OFFSETS_666[] = { { 27.100000f, 28.700000f } };
-static const char *const FRAMES_667[] = { "assets/art/icon/Re-Energize.png" };
-static const AssetOffset OFFSETS_667[] = { { 12.850000f, 12.200000f } };
-static const char *const FRAMES_668[] = { "assets/art/item/Reckoning.png" };
-static const AssetOffset OFFSETS_668[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_669[] = { "assets/art/portrait/Rockstar.png" };
-static const AssetOffset OFFSETS_669[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_670[] = { "assets/art/background/SEA.png" };
-static const AssetOffset OFFSETS_670[] = { { 385.950000f, 157.650000f } };
-static const char *const FRAMES_671[] = { "assets/art/buff/SHATTER.png" };
-static const AssetOffset OFFSETS_671[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_672[] = { "assets/art/buff/SHATTER2.png" };
-static const AssetOffset OFFSETS_672[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_673[] = { "assets/art/background/SHORE.png" };
-static const AssetOffset OFFSETS_673[] = { { 523.200000f, 166.550000f } };
-static const char *const FRAMES_674[] = { "assets/art/buff/SPEEDUP.png" };
-static const AssetOffset OFFSETS_674[] = { { 6.150000f, 9.800000f } };
-static const char *const FRAMES_675[] = { "assets/art/buff/STUN1.png" };
-static const AssetOffset OFFSETS_675[] = { { 5.950000f, 10.950000f } };
-static const char *const FRAMES_676[] = { "assets/art/buff/SUBVERSION.png" };
-static const AssetOffset OFFSETS_676[] = { { 6.050000f, 10.700000f } };
-static const char *const FRAMES_677[] = { "assets/art/buff/SUNDER1.png" };
-static const AssetOffset OFFSETS_677[] = { { 5.950000f, 10.100000f } };
-static const char *const FRAMES_678[] = { "assets/art/buff/SUNDER2.png" };
+static const char *const FRAMES_659[] = { "assets/art/sound/PoisonHit.mp3" };
+static const char *const FRAMES_660[] = { "assets/art/item/Power_Lantern.png" };
+static const AssetOffset OFFSETS_660[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_661[] = { "assets/art/sound/PowerupDefense.mp3" };
+static const char *const FRAMES_662[] = { "assets/art/sound/PowerupOffense.mp3" };
+static const char *const FRAMES_663[] = { "assets/art/item/Proverse_All_Stars.png" };
+static const AssetOffset OFFSETS_663[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_664[] = { "assets/art/item/Pulse_Rifle.png" };
+static const AssetOffset OFFSETS_664[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_665[] = { "assets/art/icon/Quick_Strike.png" };
+static const AssetOffset OFFSETS_665[] = { { 12.850000f, 15.400000f } };
+static const char *const FRAMES_666[] = { "assets/art/buff/RAGE1.png" };
+static const AssetOffset OFFSETS_666[] = { { 5.950000f, 10.950000f } };
+static const char *const FRAMES_667[] = { "assets/art/buff/RAGE2.png" };
+static const AssetOffset OFFSETS_667[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_668[] = { "assets/art/buff/RAGE3.png" };
+static const AssetOffset OFFSETS_668[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_669[] = { "assets/art/buff/REGEN.png" };
+static const AssetOffset OFFSETS_669[] = { { 5.750000f, 10.050000f } };
+static const char *const FRAMES_670[] = { "assets/art/buff/REGENFOC.png" };
+static const AssetOffset OFFSETS_670[] = { { 5.750000f, 10.050000f } };
+static const char *const FRAMES_671[] = { "assets/art/buff/REGENSHAMAN.png" };
+static const AssetOffset OFFSETS_671[] = { { 5.750000f, 10.050000f } };
+static const char *const FRAMES_672[] = { "assets/art/icon/Rage.png" };
+static const AssetOffset OFFSETS_672[] = { { 27.100000f, 28.700000f } };
+static const char *const FRAMES_673[] = { "assets/art/icon/Re-Energize.png" };
+static const AssetOffset OFFSETS_673[] = { { 12.850000f, 12.200000f } };
+static const char *const FRAMES_674[] = { "assets/art/item/Reckoning.png" };
+static const AssetOffset OFFSETS_674[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_675[] = { "assets/art/portrait/Rockstar.png" };
+static const AssetOffset OFFSETS_675[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_676[] = { "assets/art/background/SEA.png" };
+static const AssetOffset OFFSETS_676[] = { { 385.950000f, 157.650000f } };
+static const char *const FRAMES_677[] = { "assets/art/buff/SHATTER.png" };
+static const AssetOffset OFFSETS_677[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_678[] = { "assets/art/buff/SHATTER2.png" };
 static const AssetOffset OFFSETS_678[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_679[] = { "assets/art/buff/SUNDER3.png" };
-static const AssetOffset OFFSETS_679[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_680[] = { "assets/art/buff/SUNDER4.png" };
-static const AssetOffset OFFSETS_680[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_681[] = { "assets/art/buff/SUNDER5.png" };
-static const AssetOffset OFFSETS_681[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_682[] = { "assets/art/buff/SUPRESSION.png" };
-static const AssetOffset OFFSETS_682[] = { { 3.850000f, 17.350000f } };
-static const char *const FRAMES_683[] = { "assets/art/portrait/Scarlett.png" };
-static const AssetOffset OFFSETS_683[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_684[] = { "assets/art/portrait/Sensei_Ishiguro.png" };
-static const AssetOffset OFFSETS_684[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_685[] = { "assets/art/item/Shadow_Legwraps.png" };
-static const AssetOffset OFFSETS_685[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_686[] = { "assets/art/portrait/Shaman_of_Blades.png" };
-static const AssetOffset OFFSETS_686[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_687[] = { "assets/art/portrait/Shaman_of_Death.png" };
-static const AssetOffset OFFSETS_687[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_688[] = { "assets/art/sound/ShamanDie.mp3" };
-static const char *const FRAMES_689[] = { "assets/art/sound/ShamanHit1.mp3" };
-static const char *const FRAMES_690[] = { "assets/art/sound/ShamanHit2.mp3" };
-static const char *const FRAMES_691[] = { "assets/art/icon/Shatter_Bolt.png" };
-static const AssetOffset OFFSETS_691[] = { { 16.150000f, 17.000000f } };
-static const char *const FRAMES_692[] = { "assets/art/icon/Smash.png" };
-static const AssetOffset OFFSETS_692[] = { { 28.700000f, 26.200000f } };
-static const char *const FRAMES_693[] = { "assets/art/portrait/Sonny.png" };
+static const char *const FRAMES_679[] = { "assets/art/background/SHORE.png" };
+static const AssetOffset OFFSETS_679[] = { { 523.200000f, 166.550000f } };
+static const char *const FRAMES_680[] = { "assets/art/buff/SPEEDUP.png" };
+static const AssetOffset OFFSETS_680[] = { { 6.150000f, 9.800000f } };
+static const char *const FRAMES_681[] = { "assets/art/buff/STUN1.png" };
+static const AssetOffset OFFSETS_681[] = { { 5.950000f, 10.950000f } };
+static const char *const FRAMES_682[] = { "assets/art/buff/SUBVERSION.png" };
+static const AssetOffset OFFSETS_682[] = { { 6.050000f, 10.700000f } };
+static const char *const FRAMES_683[] = { "assets/art/buff/SUNDER1.png" };
+static const AssetOffset OFFSETS_683[] = { { 5.950000f, 10.100000f } };
+static const char *const FRAMES_684[] = { "assets/art/buff/SUNDER2.png" };
+static const AssetOffset OFFSETS_684[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_685[] = { "assets/art/buff/SUNDER3.png" };
+static const AssetOffset OFFSETS_685[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_686[] = { "assets/art/buff/SUNDER4.png" };
+static const AssetOffset OFFSETS_686[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_687[] = { "assets/art/buff/SUNDER5.png" };
+static const AssetOffset OFFSETS_687[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_688[] = { "assets/art/buff/SUPRESSION.png" };
+static const AssetOffset OFFSETS_688[] = { { 3.850000f, 17.350000f } };
+static const char *const FRAMES_689[] = { "assets/art/portrait/Scarlett.png" };
+static const AssetOffset OFFSETS_689[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_690[] = { "assets/art/portrait/Sensei_Ishiguro.png" };
+static const AssetOffset OFFSETS_690[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_691[] = { "assets/art/item/Shadow_Legwraps.png" };
+static const AssetOffset OFFSETS_691[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_692[] = { "assets/art/portrait/Shaman_of_Blades.png" };
+static const AssetOffset OFFSETS_692[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_693[] = { "assets/art/portrait/Shaman_of_Death.png" };
 static const AssetOffset OFFSETS_693[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_694[] = { "assets/art/item/Steel_Slicer.png" };
-static const AssetOffset OFFSETS_694[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_695[] = { "assets/art/item/Stone_Club.png" };
-static const AssetOffset OFFSETS_695[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_696[] = { "assets/art/icon/Strike.png" };
-static const AssetOffset OFFSETS_696[] = { { 6.300000f, 15.300000f } };
-static const char *const FRAMES_697[] = { "assets/art/item/Striker's_Armor.png" };
-static const AssetOffset OFFSETS_697[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_698[] = { "assets/art/item/Striker's_Flip-Flops.png" };
-static const AssetOffset OFFSETS_698[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_699[] = { "assets/art/item/Striker's_Gloves.png" };
-static const AssetOffset OFFSETS_699[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_700[] = { "assets/art/item/Striker's_Leggings.png" };
+static const char *const FRAMES_694[] = { "assets/art/sound/ShamanDie.mp3" };
+static const char *const FRAMES_695[] = { "assets/art/sound/ShamanHit1.mp3" };
+static const char *const FRAMES_696[] = { "assets/art/sound/ShamanHit2.mp3" };
+static const char *const FRAMES_697[] = { "assets/art/icon/Shatter_Bolt.png" };
+static const AssetOffset OFFSETS_697[] = { { 16.150000f, 17.000000f } };
+static const char *const FRAMES_698[] = { "assets/art/icon/Smash.png" };
+static const AssetOffset OFFSETS_698[] = { { 28.700000f, 26.200000f } };
+static const char *const FRAMES_699[] = { "assets/art/portrait/Sonny.png" };
+static const AssetOffset OFFSETS_699[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_700[] = { "assets/art/item/Steel_Slicer.png" };
 static const AssetOffset OFFSETS_700[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_701[] = { "assets/art/item/Striker's_Mask.png" };
+static const char *const FRAMES_701[] = { "assets/art/item/Stone_Club.png" };
 static const AssetOffset OFFSETS_701[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_702[] = { "assets/art/icon/Subversion.png" };
-static const AssetOffset OFFSETS_702[] = { { 12.000000f, 11.250000f } };
-static const char *const FRAMES_703[] = { "assets/art/icon/Sunder.png" };
-static const AssetOffset OFFSETS_703[] = { { 12.850000f, 12.200000f } };
-static const char *const FRAMES_704[] = { "assets/art/icon/Suppression.png" };
-static const AssetOffset OFFSETS_704[] = { { 12.350000f, 22.600000f } };
-static const char *const FRAMES_705[] = { "assets/art/item/Survivor's_Armor.png" };
+static const char *const FRAMES_702[] = { "assets/art/icon/Strike.png" };
+static const AssetOffset OFFSETS_702[] = { { 6.300000f, 15.300000f } };
+static const char *const FRAMES_703[] = { "assets/art/item/Striker's_Armor.png" };
+static const AssetOffset OFFSETS_703[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_704[] = { "assets/art/item/Striker's_Flip-Flops.png" };
+static const AssetOffset OFFSETS_704[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_705[] = { "assets/art/item/Striker's_Gloves.png" };
 static const AssetOffset OFFSETS_705[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_706[] = { "assets/art/item/Survivor's_Boots.png" };
+static const char *const FRAMES_706[] = { "assets/art/item/Striker's_Leggings.png" };
 static const AssetOffset OFFSETS_706[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_707[] = { "assets/art/item/Survivor's_Gloves.png" };
+static const char *const FRAMES_707[] = { "assets/art/item/Striker's_Mask.png" };
 static const AssetOffset OFFSETS_707[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_708[] = { "assets/art/item/Survivor's_Helm.png" };
-static const AssetOffset OFFSETS_708[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_709[] = { "assets/art/item/Survivor's_Leggings.png" };
-static const AssetOffset OFFSETS_709[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_710[] = { "assets/art/item/Swift_Blade.png" };
-static const AssetOffset OFFSETS_710[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_711[] = { "assets/art/sound/Swing.mp3" };
-static const char *const FRAMES_712[] = { "assets/art/item/The_Grand_Rifle.png" };
+static const char *const FRAMES_708[] = { "assets/art/icon/Subversion.png" };
+static const AssetOffset OFFSETS_708[] = { { 12.000000f, 11.250000f } };
+static const char *const FRAMES_709[] = { "assets/art/icon/Sunder.png" };
+static const AssetOffset OFFSETS_709[] = { { 12.850000f, 12.200000f } };
+static const char *const FRAMES_710[] = { "assets/art/icon/Suppression.png" };
+static const AssetOffset OFFSETS_710[] = { { 12.350000f, 22.600000f } };
+static const char *const FRAMES_711[] = { "assets/art/item/Survivor's_Armor.png" };
+static const AssetOffset OFFSETS_711[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_712[] = { "assets/art/item/Survivor's_Boots.png" };
 static const AssetOffset OFFSETS_712[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_713[] = { "assets/art/item/Tool.png" };
+static const char *const FRAMES_713[] = { "assets/art/item/Survivor's_Gloves.png" };
 static const AssetOffset OFFSETS_713[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_714[] = { "assets/art/item/Torment.png" };
+static const char *const FRAMES_714[] = { "assets/art/item/Survivor's_Helm.png" };
 static const AssetOffset OFFSETS_714[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_715[] = { "assets/art/item/Tribal_Blade.png" };
+static const char *const FRAMES_715[] = { "assets/art/item/Survivor's_Leggings.png" };
 static const AssetOffset OFFSETS_715[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_716[] = { "assets/art/item/Tribal_Dagger.png" };
+static const char *const FRAMES_716[] = { "assets/art/item/Swift_Blade.png" };
 static const AssetOffset OFFSETS_716[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_717[] = { "assets/art/buff/VOID1.png" };
-static const AssetOffset OFFSETS_717[] = { { 5.950000f, 10.950000f } };
-static const char *const FRAMES_718[] = { "assets/art/buff/VOID2.png" };
-static const AssetOffset OFFSETS_718[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_719[] = { "assets/art/buff/VOID3.png" };
-static const AssetOffset OFFSETS_719[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_720[] = { "assets/art/buff/VOID4.png" };
-static const AssetOffset OFFSETS_720[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_721[] = { "assets/art/buff/VOID5.png" };
-static const AssetOffset OFFSETS_721[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_722[] = { "assets/art/buff/VOIDMOB.png" };
-static const AssetOffset OFFSETS_722[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_723[] = { "assets/art/portrait/Vendetta_the_Breaker.png" };
-static const AssetOffset OFFSETS_723[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_724[] = { "assets/art/portrait/Veradux.png" };
-static const AssetOffset OFFSETS_724[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_725[] = { "assets/art/icon/Void.png" };
-static const AssetOffset OFFSETS_725[] = { { 12.850000f, 15.000000f } };
-static const char *const FRAMES_726[] = { "assets/art/buff/WASHED.png" };
-static const AssetOffset OFFSETS_726[] = { { 7.050000f, 11.600000f } };
-static const char *const FRAMES_727[] = { "assets/art/background/WHITE_NOVEMBER.png" };
-static const AssetOffset OFFSETS_727[] = { { 528.500000f, 118.900000f } };
-static const char *const FRAMES_728[] = { "assets/art/zone/WHITE_NOVEMBER.png" };
-static const AssetOffset OFFSETS_728[] = { { 476.300000f, 260.950000f } };
-static const char *const FRAMES_729[] = { "assets/art/buff/WOUND1.png" };
-static const AssetOffset OFFSETS_729[] = { { 5.950000f, 10.950000f } };
-static const char *const FRAMES_730[] = { "assets/art/buff/WOUND2.png" };
-static const AssetOffset OFFSETS_730[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_731[] = { "assets/art/buff/WOUND3.png" };
-static const AssetOffset OFFSETS_731[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_732[] = { "assets/art/item/White_T-Shirt.png" };
-static const AssetOffset OFFSETS_732[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_733[] = { "assets/art/portrait/Wolfgang.png" };
-static const AssetOffset OFFSETS_733[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_734[] = { "assets/art/icon/Wound.png" };
-static const AssetOffset OFFSETS_734[] = { { 13.500000f, 20.750000f } };
-static const char *const FRAMES_735[] = { "assets/art/item/ZPCI_Blade.png" };
-static const AssetOffset OFFSETS_735[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_736[] = { "assets/art/portrait/ZPCI_Captain.png" };
-static const AssetOffset OFFSETS_736[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_737[] = { "assets/art/item/ZPCI_Dog_Tag.png" };
-static const AssetOffset OFFSETS_737[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_738[] = { "assets/art/portrait/ZPCI_Elite.png" };
-static const AssetOffset OFFSETS_738[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_739[] = { "assets/art/portrait/ZPCI_Hunter.png" };
+static const char *const FRAMES_717[] = { "assets/art/sound/Swing.mp3" };
+static const char *const FRAMES_718[] = { "assets/art/item/The_Grand_Rifle.png" };
+static const AssetOffset OFFSETS_718[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_719[] = { "assets/art/item/Tool.png" };
+static const AssetOffset OFFSETS_719[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_720[] = { "assets/art/item/Torment.png" };
+static const AssetOffset OFFSETS_720[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_721[] = { "assets/art/item/Tribal_Blade.png" };
+static const AssetOffset OFFSETS_721[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_722[] = { "assets/art/item/Tribal_Dagger.png" };
+static const AssetOffset OFFSETS_722[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_723[] = { "assets/art/buff/VOID1.png" };
+static const AssetOffset OFFSETS_723[] = { { 5.950000f, 10.950000f } };
+static const char *const FRAMES_724[] = { "assets/art/buff/VOID2.png" };
+static const AssetOffset OFFSETS_724[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_725[] = { "assets/art/buff/VOID3.png" };
+static const AssetOffset OFFSETS_725[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_726[] = { "assets/art/buff/VOID4.png" };
+static const AssetOffset OFFSETS_726[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_727[] = { "assets/art/buff/VOID5.png" };
+static const AssetOffset OFFSETS_727[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_728[] = { "assets/art/buff/VOIDMOB.png" };
+static const AssetOffset OFFSETS_728[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_729[] = { "assets/art/portrait/Vendetta_the_Breaker.png" };
+static const AssetOffset OFFSETS_729[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_730[] = { "assets/art/portrait/Veradux.png" };
+static const AssetOffset OFFSETS_730[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_731[] = { "assets/art/icon/Void.png" };
+static const AssetOffset OFFSETS_731[] = { { 12.850000f, 15.000000f } };
+static const char *const FRAMES_732[] = { "assets/art/buff/WASHED.png" };
+static const AssetOffset OFFSETS_732[] = { { 7.050000f, 11.600000f } };
+static const char *const FRAMES_733[] = { "assets/art/background/WHITE_NOVEMBER.png" };
+static const AssetOffset OFFSETS_733[] = { { 528.500000f, 118.900000f } };
+static const char *const FRAMES_734[] = { "assets/art/zone/WHITE_NOVEMBER.png" };
+static const AssetOffset OFFSETS_734[] = { { 476.300000f, 260.950000f } };
+static const char *const FRAMES_735[] = { "assets/art/buff/WOUND1.png" };
+static const AssetOffset OFFSETS_735[] = { { 5.950000f, 10.950000f } };
+static const char *const FRAMES_736[] = { "assets/art/buff/WOUND2.png" };
+static const AssetOffset OFFSETS_736[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_737[] = { "assets/art/buff/WOUND3.png" };
+static const AssetOffset OFFSETS_737[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_738[] = { "assets/art/item/White_T-Shirt.png" };
+static const AssetOffset OFFSETS_738[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_739[] = { "assets/art/portrait/Wolfgang.png" };
 static const AssetOffset OFFSETS_739[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_740[] = { "assets/art/item/ZPCI_Med-Wear_A.png" };
-static const AssetOffset OFFSETS_740[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_741[] = { "assets/art/item/ZPCI_Med-Wear_B.png" };
+static const char *const FRAMES_740[] = { "assets/art/icon/Wound.png" };
+static const AssetOffset OFFSETS_740[] = { { 13.500000f, 20.750000f } };
+static const char *const FRAMES_741[] = { "assets/art/item/ZPCI_Blade.png" };
 static const AssetOffset OFFSETS_741[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_742[] = { "assets/art/item/ZPCI_Med-Wear_C.png" };
-static const AssetOffset OFFSETS_742[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_743[] = { "assets/art/item/ZPCI_Med-Wear_D.png" };
+static const char *const FRAMES_742[] = { "assets/art/portrait/ZPCI_Captain.png" };
+static const AssetOffset OFFSETS_742[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_743[] = { "assets/art/item/ZPCI_Dog_Tag.png" };
 static const AssetOffset OFFSETS_743[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_744[] = { "assets/art/item/ZPCI_Med-Wear_E.png" };
-static const AssetOffset OFFSETS_744[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_745[] = { "assets/art/portrait/ZPCI_Medic.png" };
+static const char *const FRAMES_744[] = { "assets/art/portrait/ZPCI_Elite.png" };
+static const AssetOffset OFFSETS_744[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_745[] = { "assets/art/portrait/ZPCI_Hunter.png" };
 static const AssetOffset OFFSETS_745[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_746[] = { "assets/art/portrait/ZPCI_Sniper.png" };
-static const AssetOffset OFFSETS_746[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_747[] = { "assets/art/sound/ZPCIHit1.mp3" };
-static const char *const FRAMES_748[] = { "assets/art/sound/ZPCIHit2.mp3" };
-static const char *const FRAMES_749[] = { "assets/art/portrait/Zombie_Ambassador.png" };
-static const AssetOffset OFFSETS_749[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_750[] = { "assets/art/item/Zombie_Fingers.png" };
+static const char *const FRAMES_746[] = { "assets/art/item/ZPCI_Med-Wear_A.png" };
+static const AssetOffset OFFSETS_746[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_747[] = { "assets/art/item/ZPCI_Med-Wear_B.png" };
+static const AssetOffset OFFSETS_747[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_748[] = { "assets/art/item/ZPCI_Med-Wear_C.png" };
+static const AssetOffset OFFSETS_748[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_749[] = { "assets/art/item/ZPCI_Med-Wear_D.png" };
+static const AssetOffset OFFSETS_749[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_750[] = { "assets/art/item/ZPCI_Med-Wear_E.png" };
 static const AssetOffset OFFSETS_750[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_751[] = { "assets/art/sound/ZombieDie.mp3" };
-static const char *const FRAMES_752[] = { "assets/art/sound/ZombieHit1.mp3" };
-static const char *const FRAMES_753[] = { "assets/art/sound/ZombieHit2.mp3" };
-static const char *const FRAMES_754[] = { "assets/art/portrait/mainPlayer.png" };
-static const AssetOffset OFFSETS_754[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_751[] = { "assets/art/portrait/ZPCI_Medic.png" };
+static const AssetOffset OFFSETS_751[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_752[] = { "assets/art/portrait/ZPCI_Sniper.png" };
+static const AssetOffset OFFSETS_752[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_753[] = { "assets/art/sound/ZPCIHit1.mp3" };
+static const char *const FRAMES_754[] = { "assets/art/sound/ZPCIHit2.mp3" };
+static const char *const FRAMES_755[] = { "assets/art/portrait/Zombie_Ambassador.png" };
+static const AssetOffset OFFSETS_755[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_756[] = { "assets/art/item/Zombie_Fingers.png" };
+static const AssetOffset OFFSETS_756[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_757[] = { "assets/art/sound/ZombieDie.mp3" };
+static const char *const FRAMES_758[] = { "assets/art/sound/ZombieHit1.mp3" };
+static const char *const FRAMES_759[] = { "assets/art/sound/ZombieHit2.mp3" };
+static const char *const FRAMES_760[] = { "assets/art/portrait/mainPlayer.png" };
+static const AssetOffset OFFSETS_760[] = { { 26.800000f, 45.500000f } };
 
 const AssetEntry SONNY_ASSETS[] = {
     { "#1104", "chrome", FRAMES_0, OFFSETS_0, 1, 1, -30.500000f, -37.900000f, 826.100000f, 602.500000f },
     { "#1110", "chrome", FRAMES_1, OFFSETS_1, 1, 1, 7.650000f, 519.350000f, 357.450000f, 561.600000f },
-    { "#1142", "chrome", FRAMES_2, OFFSETS_2, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1198", "chrome", FRAMES_3, OFFSETS_3, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1237", "chrome", FRAMES_4, OFFSETS_4, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1238", "chrome", FRAMES_5, OFFSETS_5, 1, 1, 30.900000f, 484.300000f, 425.150000f, 534.050000f },
-    { "#1239", "chrome", FRAMES_6, OFFSETS_6, 1, 1, -30.000000f, -30.000000f, 30.000000f, 30.000000f },
-    { "#1248", "chrome", FRAMES_7, OFFSETS_7, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1250", "chrome", FRAMES_8, OFFSETS_8, 1, 1, 39.150000f, 486.250000f, 424.600000f, 533.450000f },
-    { "#1262", "chrome", FRAMES_9, OFFSETS_9, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1267", "chrome", FRAMES_10, OFFSETS_10, 1, 1, -384.450000f, -207.400000f, -382.000000f, 207.700000f },
-    { "#1268", "chrome", FRAMES_11, OFFSETS_11, 1, 1, -382.350000f, -208.550000f, 381.850000f, 207.550000f },
-    { "#1270", "chrome", FRAMES_12, OFFSETS_12, 1, 1, -124.500000f, -25.400000f, 124.550000f, 25.450000f },
-    { "#1272", "chrome", FRAMES_13, OFFSETS_13, 1, 1, -124.500000f, -133.550000f, 124.550000f, 133.600000f },
-    { "#1274", "chrome", FRAMES_14, OFFSETS_14, 1, 1, -91.550000f, -140.900000f, 91.500000f, 185.600000f },
-    { "#1276", "chrome", FRAMES_15, OFFSETS_15, 1, 1, -15.500000f, -15.500000f, 15.500000f, 15.500000f },
-    { "#1280", "chrome", FRAMES_16, OFFSETS_16, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1282", "chrome", FRAMES_17, OFFSETS_17, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1283", "chrome", FRAMES_18, OFFSETS_18, 1, 1, -78.750000f, -132.950000f, 79.600000f, 180.250000f },
-    { "#1313", "chrome", FRAMES_19, OFFSETS_19, 1, 1, -13.000000f, -18.000000f, 13.000000f, 18.000000f },
-    { "#1316", "chrome", FRAMES_20, OFFSETS_20, 1, 1, -14.750000f, -19.750000f, 14.750000f, 19.750000f },
-    { "#1318", "chrome", FRAMES_21, OFFSETS_21, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1333", "chrome", FRAMES_22, OFFSETS_22, 1, 1, -69.500000f, -35.000000f, 69.500000f, 35.000000f },
-    { "#1334", "chrome", FRAMES_23, OFFSETS_23, 1, 1, -125.000000f, -75.000000f, 125.000000f, 75.000000f },
-    { "#1337", "chrome", FRAMES_24, OFFSETS_24, 1, 1, -68.500000f, -34.250000f, 68.500000f, 33.750000f },
-    { "#1339", "chrome", FRAMES_25, OFFSETS_25, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1341", "chrome", FRAMES_26, OFFSETS_26, 1, 1, -262.050000f, 60.450000f, -227.750000f, 79.250000f },
-    { "#1344", "chrome", FRAMES_27, OFFSETS_27, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1344@2", "chrome", FRAMES_28, OFFSETS_28, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1345", "chrome", FRAMES_29, OFFSETS_29, 1, 1, -262.000000f, 60.750000f, -132.750000f, 79.850000f },
-    { "#1358", "chrome", FRAMES_30, OFFSETS_30, 1, 1, -15.500000f, -15.500000f, 15.500000f, 15.500000f },
-    { "#1362", "chrome", FRAMES_31, OFFSETS_31, 1, 1, -18.350000f, -18.200000f, 18.350000f, 18.200000f },
-    { "#1367", "chrome", FRAMES_32, OFFSETS_32, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1377", "chrome", FRAMES_33, OFFSETS_33, 1, 1, -98.400000f, -41.600000f, 98.400000f, 41.600000f },
-    { "#1380", "chrome", FRAMES_34, OFFSETS_34, 1, 1, -21.550000f, -7.700000f, 21.550000f, 7.750000f },
-    { "#1390@1", "chrome", FRAMES_35, OFFSETS_35, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1390@2", "chrome", FRAMES_36, OFFSETS_36, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1390@3", "chrome", FRAMES_37, OFFSETS_37, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1390@4", "chrome", FRAMES_38, OFFSETS_38, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1390@5", "chrome", FRAMES_39, OFFSETS_39, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1390@6", "chrome", FRAMES_40, OFFSETS_40, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1393", "chrome", FRAMES_41, OFFSETS_41, 1, 1, -15.500000f, -15.500000f, 15.500000f, 15.500000f },
-    { "#1400", "chrome", FRAMES_42, OFFSETS_42, 1, 1, -12.250000f, -30.500000f, 12.250000f, 30.550000f },
-    { "#1401", "chrome", FRAMES_43, OFFSETS_43, 1, 1, -5.500000f, -22.500000f, 5.500000f, 18.000000f },
-    { "#1406", "chrome", FRAMES_44, OFFSETS_44, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1415", "chrome", FRAMES_45, OFFSETS_45, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1426", "chrome", FRAMES_46, OFFSETS_46, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1426@1", "chrome", FRAMES_47, OFFSETS_47, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1444", "chrome", FRAMES_48, OFFSETS_48, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1444@8", "chrome", FRAMES_49, OFFSETS_49, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1445", "chrome", FRAMES_50, OFFSETS_50, 1, 1, -22.050000f, -8.200000f, 22.050000f, 8.250000f },
-    { "#1503", "chrome", FRAMES_51, OFFSETS_51, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1507", "chrome", FRAMES_52, OFFSETS_52, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1508", "chrome", FRAMES_53, OFFSETS_53, 1, 1, -100.000000f, -12.000000f, 57.400000f, 12.000000f },
-    { "#1509", "chrome", FRAMES_54, OFFSETS_54, 1, 1, -237.250000f, -124.100000f, 237.250000f, 124.100000f },
-    { "#1513", "chrome", FRAMES_55, OFFSETS_55, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1516", "chrome", FRAMES_56, OFFSETS_56, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1531", "chrome", FRAMES_57, OFFSETS_57, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1536", "chrome", FRAMES_58, OFFSETS_58, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1537", "chrome", FRAMES_59, OFFSETS_59, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1560", "chrome", FRAMES_60, OFFSETS_60, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1561", "chrome", FRAMES_61, OFFSETS_61, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1562", "chrome", FRAMES_62, OFFSETS_62, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1563", "chrome", FRAMES_63, OFFSETS_63, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1564", "chrome", FRAMES_64, OFFSETS_64, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1565", "chrome", FRAMES_65, OFFSETS_65, 1, 1, 14.500000f, 129.900000f, 785.500000f, 444.950000f },
-    { "#1566", "chrome", FRAMES_66, OFFSETS_66, 1, 1, 0.000000f, -6.500000f, 200.000000f, 5.500000f },
-    { "#1567", "chrome", FRAMES_67, OFFSETS_67, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1568", "chrome", FRAMES_68, OFFSETS_68, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1570", "chrome", FRAMES_69, OFFSETS_69, 1, 1, -100.500000f, -12.950000f, 100.500000f, 13.000000f },
-    { "#1585", "chrome", FRAMES_70, OFFSETS_70, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1586", "chrome", FRAMES_71, OFFSETS_71, 1, 1, -35.000000f, -35.000000f, 35.000000f, 35.000000f },
-    { "#1590", "chrome", FRAMES_72, OFFSETS_72, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1596", "chrome", FRAMES_73, OFFSETS_73, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1606", "chrome", FRAMES_74, OFFSETS_74, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1610", "chrome", FRAMES_75, OFFSETS_75, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1613", "chrome", FRAMES_76, OFFSETS_76, 1, 1, -95.950000f, -35.700000f, 96.000000f, 112.300000f },
-    { "#1632", "chrome", FRAMES_77, OFFSETS_77, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1633", "chrome", FRAMES_78, OFFSETS_78, 1, 1, -0.500000f, -0.500000f, 306.000000f, 94.500000f },
-    { "#1640", "chrome", FRAMES_79, OFFSETS_79, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1642", "chrome", FRAMES_80, OFFSETS_80, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1720", "chrome", FRAMES_81, OFFSETS_81, 1, 1, -31.250000f, -20.000000f, 733.600000f, 487.500000f },
-    { "#1722", "chrome", FRAMES_82, OFFSETS_82, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1725", "chrome", FRAMES_83, OFFSETS_83, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1726", "chrome", FRAMES_84, OFFSETS_84, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#368", "chrome", FRAMES_85, OFFSETS_85, 1, 1, -32.500000f, -9.950000f, 32.550000f, 10.000000f },
-    { "#821", "chrome", FRAMES_86, OFFSETS_86, 1, 1, -92.400000f, -16.000000f, -28.500000f, 16.000000f },
-    { "#823", "chrome", FRAMES_87, OFFSETS_87, 1, 1, 13.900000f, -14.950000f, 75.850000f, 15.050000f },
-    { "#824", "chrome", FRAMES_88, OFFSETS_88, 1, 1, -11.500000f, -11.500000f, 11.500000f, 11.500000f },
-    { "#826", "chrome", FRAMES_89, OFFSETS_89, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#828", "chrome", FRAMES_90, OFFSETS_90, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#830", "chrome", FRAMES_91, OFFSETS_91, 1, 1, -11.650000f, -11.750000f, 12.100000f, 12.000000f },
-    { "#866", "chrome", FRAMES_92, OFFSETS_92, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#867", "chrome", FRAMES_93, OFFSETS_93, 1, 1, -10.500000f, -10.500000f, 10.500000f, 10.500000f },
-    { "#903", "chrome", FRAMES_94, OFFSETS_94, 1, 1, -4.000000f, -4.250000f, 4.000000f, 4.200000f },
-    { "#905", "chrome", FRAMES_95, OFFSETS_95, 1, 1, -2.550000f, -6.700000f, 5.350000f, 4.650000f },
-    { "#907", "chrome", FRAMES_96, OFFSETS_96, 1, 1, -9.900000f, -16.400000f, 9.950000f, 16.450000f },
-    { "#909", "chrome", FRAMES_97, OFFSETS_97, 1, 1, -4.600000f, -15.200000f, 4.650000f, 15.200000f },
-    { "#911", "chrome", FRAMES_98, OFFSETS_98, 1, 1, -5.850000f, -2.650000f, 5.900000f, 2.650000f },
-    { "#913", "chrome", FRAMES_99, OFFSETS_99, 1, 1, -3.750000f, -41.150000f, 2.250000f, 27.800000f },
-    { "#915", "chrome", FRAMES_100, OFFSETS_100, 1, 1, -3.550000f, -9.150000f, 3.500000f, 9.200000f },
-    { "#917", "chrome", FRAMES_101, OFFSETS_101, 1, 1, -3.550000f, -9.800000f, 3.550000f, 9.850000f },
-    { "#919", "chrome", FRAMES_102, OFFSETS_102, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#920", "chrome", FRAMES_103, OFFSETS_103, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#921", "chrome", FRAMES_104, OFFSETS_104, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#922", "chrome", FRAMES_105, OFFSETS_105, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#923", "chrome", FRAMES_106, OFFSETS_106, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#924", "chrome", FRAMES_107, OFFSETS_107, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#925", "chrome", FRAMES_108, OFFSETS_108, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#926", "chrome", FRAMES_109, OFFSETS_109, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#944", "chrome", FRAMES_110, OFFSETS_110, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#951", "chrome", FRAMES_111, OFFSETS_111, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#963", "chrome", FRAMES_112, OFFSETS_112, 1, 1, 0.450000f, 0.500000f, 720.150000f, 457.500000f },
-    { "A Broken Pipe", "item", FRAMES_113, OFFSETS_113, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "A Sword", "item", FRAMES_114, OFFSETS_114, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Amber", "portrait", FRAMES_115, OFFSETS_115, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Argalla the Mender", "portrait", FRAMES_116, OFFSETS_116, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Armor of the Fallen", "item", FRAMES_117, OFFSETS_117, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Armor of the Teacher", "item", FRAMES_118, OFFSETS_118, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Assasin's Tunic", "item", FRAMES_119, OFFSETS_119, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Assassin's Armor", "item", FRAMES_120, OFFSETS_120, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Assassin's Boots", "item", FRAMES_121, OFFSETS_121, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Assassin's Gloves", "item", FRAMES_122, OFFSETS_122, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Assassin's Helm", "item", FRAMES_123, OFFSETS_123, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Assassin's Leggings", "item", FRAMES_124, OFFSETS_124, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Assassination", "item", FRAMES_125, OFFSETS_125, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BLACKOUT", "buff", FRAMES_126, OFFSETS_126, 1, 1, -5.950000f, -10.950000f, 5.950000f, 10.950000f },
-    { "BLOCK1", "buff", FRAMES_127, OFFSETS_127, 1, 1, -7.050000f, -11.600000f, 1.850000f, 7.000000f },
-    { "BOOM1", "effect", FRAMES_128, OFFSETS_128, 36, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM2", "effect", FRAMES_129, OFFSETS_129, 36, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM3", "effect", FRAMES_130, OFFSETS_130, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM_DARK", "effect", FRAMES_131, OFFSETS_131, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM_HEAL", "effect", FRAMES_132, OFFSETS_132, 16, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM_HEAL2", "effect", FRAMES_133, OFFSETS_133, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM_POWERUP", "effect", FRAMES_134, OFFSETS_134, 16, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM_RED", "effect", FRAMES_135, OFFSETS_135, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM_SHIELD", "effect", FRAMES_136, OFFSETS_136, 20, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM_SLASH", "effect", FRAMES_137, OFFSETS_137, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM_SLASH2", "effect", FRAMES_138, OFFSETS_138, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM_SLASHBLUE", "effect", FRAMES_139, OFFSETS_139, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM_SLASHGREEN", "effect", FRAMES_140, OFFSETS_140, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM_SLASHORANGE", "effect", FRAMES_141, OFFSETS_141, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM_SLASHRED", "effect", FRAMES_142, OFFSETS_142, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM_SPARK", "effect", FRAMES_143, OFFSETS_143, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM_SPARKBLUE", "effect", FRAMES_144, OFFSETS_144, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BURNING", "buff", FRAMES_145, OFFSETS_145, 1, 1, -5.950000f, -10.950000f, 6.050000f, 10.950000f },
-    { "BURNS", "buff", FRAMES_146, OFFSETS_146, 1, 1, -5.000000f, -9.300000f, 5.000000f, 10.500000f },
-    { "Balance", "item", FRAMES_147, OFFSETS_147, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Baron Brixius", "portrait", FRAMES_148, OFFSETS_148, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BaronDie", "sound", FRAMES_149, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BaronHit1", "sound", FRAMES_150, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BaronHit2", "sound", FRAMES_151, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BaronHit3", "sound", FRAMES_152, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BattleMusic1loopable", "sound", FRAMES_153, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BattleMusic2loopable", "sound", FRAMES_154, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Blade of Light", "item", FRAMES_155, OFFSETS_155, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Blessing of Light", "icon", FRAMES_156, OFFSETS_156, 1, 1, -15.650000f, -17.100000f, 21.850000f, 17.850000f },
-    { "Block", "icon", FRAMES_157, OFFSETS_157, 1, 1, -16.350000f, -13.450000f, 14.400000f, 16.100000f },
-    { "Blood Focus", "icon", FRAMES_158, OFFSETS_158, 1, 1, -12.850000f, -12.200000f, 13.850000f, 12.800000f },
-    { "Blood Strike", "icon", FRAMES_159, OFFSETS_159, 1, 1, -17.150000f, -14.550000f, 12.150000f, 12.800000f },
-    { "Bloody Blade", "item", FRAMES_160, OFFSETS_160, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Bloody Dagger", "item", FRAMES_161, OFFSETS_161, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Boots of Stealth", "item", FRAMES_162, OFFSETS_162, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Break", "icon", FRAMES_163, OFFSETS_163, 1, 1, -24.150000f, -10.450000f, 31.650000f, 12.050000f },
-    { "Breaker's Armor", "item", FRAMES_164, OFFSETS_164, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Breaker's Axe", "item", FRAMES_165, OFFSETS_165, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Breaker's Boots", "item", FRAMES_166, OFFSETS_166, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Breaker's Gloves", "item", FRAMES_167, OFFSETS_167, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Breaker's Mask", "item", FRAMES_168, OFFSETS_168, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Breaker's Pantyhose", "item", FRAMES_169, OFFSETS_169, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Broken Totem", "item", FRAMES_170, OFFSETS_170, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "COLDSOUL", "buff", FRAMES_171, OFFSETS_171, 1, 1, -6.100000f, -14.350000f, 6.150000f, 2.900000f },
-    { "CRIPPLE1", "buff", FRAMES_172, OFFSETS_172, 1, 1, -6.100000f, -14.350000f, 6.150000f, 2.900000f },
-    { "CRIPPLE2", "buff", FRAMES_173, OFFSETS_173, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "CRIPPLE3", "buff", FRAMES_174, OFFSETS_174, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Cannibal's Hunger", "item", FRAMES_175, OFFSETS_175, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Cell Reformation", "icon", FRAMES_176, OFFSETS_176, 1, 1, -27.100000f, -28.700000f, 21.950000f, 18.250000f },
-    { "Champion's Trophy", "item", FRAMES_177, OFFSETS_177, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Click2putdown", "sound", FRAMES_178, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Click3pickup", "sound", FRAMES_179, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Cold Steel Leggings", "item", FRAMES_180, OFFSETS_180, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Convoy Package", "item", FRAMES_181, OFFSETS_181, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Coup De Grace", "icon", FRAMES_182, OFFSETS_182, 1, 1, -19.700000f, -20.200000f, 24.900000f, 21.500000f },
-    { "Cripple", "icon", FRAMES_183, OFFSETS_183, 1, 1, -13.000000f, -12.200000f, 12.150000f, 18.400000f },
-    { "Crow Bar", "item", FRAMES_184, OFFSETS_184, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Crown of Frozen Shadows", "item", FRAMES_185, OFFSETS_185, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "DARKREGEN", "buff", FRAMES_186, OFFSETS_186, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "DAY", "background", FRAMES_187, OFFSETS_187, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "DAY2", "background", FRAMES_188, OFFSETS_188, 1, 1, -403.250000f, -183.100000f, 411.200000f, 155.150000f },
-    { "DECAY", "buff", FRAMES_189, OFFSETS_189, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "DOCTOR", "buff", FRAMES_190, OFFSETS_190, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Dead Peacock", "item", FRAMES_191, OFFSETS_191, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Deep Sea Greaves", "item", FRAMES_192, OFFSETS_192, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Destroyer's Armor", "item", FRAMES_193, OFFSETS_193, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Destroyer's Boots", "item", FRAMES_194, OFFSETS_194, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Destroyer's Gloves", "item", FRAMES_195, OFFSETS_195, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Destroyer's Helm", "item", FRAMES_196, OFFSETS_196, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Destroyer's Leggings", "item", FRAMES_197, OFFSETS_197, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Destruction", "item", FRAMES_198, OFFSETS_198, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Die1", "sound", FRAMES_199, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Disrupt", "icon", FRAMES_200, OFFSETS_200, 1, 1, -12.600000f, -11.500000f, 12.800000f, 16.000000f },
-    { "Dokebi the Striker", "portrait", FRAMES_201, OFFSETS_201, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "DuxDie", "sound", FRAMES_202, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "DuxHit1", "sound", FRAMES_203, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "DuxHit2", "sound", FRAMES_204, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "DuxHit3", "sound", FRAMES_205, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ElectricHit", "sound", FRAMES_206, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Electro Bolt", "icon", FRAMES_207, OFFSETS_207, 1, 1, -12.850000f, -15.400000f, 12.150000f, 12.800000f },
-    { "Elite Medic", "portrait", FRAMES_208, OFFSETS_208, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Engineering Gloves", "item", FRAMES_209, OFFSETS_209, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Eternity", "item", FRAMES_210, OFFSETS_210, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Explode", "sound", FRAMES_211, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "FATALFLAW", "buff", FRAMES_212, OFFSETS_212, 1, 1, -5.950000f, -10.100000f, 5.950000f, 0.700000f },
-    { "FATE", "buff", FRAMES_213, OFFSETS_213, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "FIRESHOCK", "buff", FRAMES_214, OFFSETS_214, 1, 1, -5.950000f, -10.950000f, 5.950000f, 10.950000f },
-    { "F_SARM_SIX", "doll", FRAMES_215, OFFSETS_215, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "F_SARM_THREE", "doll", FRAMES_216, OFFSETS_216, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "F_SCHEST_SIX", "doll", FRAMES_217, OFFSETS_217, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "F_SCHEST_THREE", "doll", FRAMES_218, OFFSETS_218, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "F_SFOOT_SIX", "doll", FRAMES_219, OFFSETS_219, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "F_SFOOT_THREE", "doll", FRAMES_220, OFFSETS_220, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "F_SHAND_SIX", "doll", FRAMES_221, OFFSETS_221, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "F_SHAND_THREE", "doll", FRAMES_222, OFFSETS_222, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "F_SHEAD_SIX", "doll", FRAMES_223, OFFSETS_223, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "F_SHEAD_THREE", "doll", FRAMES_224, OFFSETS_224, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "F_SLEG2_SIX", "doll", FRAMES_225, OFFSETS_225, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "F_SLEG2_THREE", "doll", FRAMES_226, OFFSETS_226, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Fire Axe", "item", FRAMES_227, OFFSETS_227, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Flame Blast", "icon", FRAMES_228, OFFSETS_228, 1, 1, -12.850000f, -14.600000f, 12.150000f, 12.800000f },
-    { "Flame Strike", "icon", FRAMES_229, OFFSETS_229, 1, 1, -12.850000f, -19.900000f, 18.500000f, 14.300000f },
-    { "Footguard of the Shore", "item", FRAMES_230, OFFSETS_230, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Forcefield", "sound", FRAMES_231, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Frost Bolt", "icon", FRAMES_232, OFFSETS_232, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Frost Lantern", "item", FRAMES_233, OFFSETS_233, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Frost Zombie", "portrait", FRAMES_234, OFFSETS_234, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Galiant the Paladin", "portrait", FRAMES_235, OFFSETS_235, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "GaliantDie", "sound", FRAMES_236, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "GaliantHit1", "sound", FRAMES_237, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "GaliantHit2", "sound", FRAMES_238, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "GaliantHit3", "sound", FRAMES_239, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Ghost Assassin", "portrait", FRAMES_240, OFFSETS_240, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Ghost Medallion", "item", FRAMES_241, OFFSETS_241, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Ghost Samurai", "portrait", FRAMES_242, OFFSETS_242, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "GhostDie", "sound", FRAMES_243, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "GhostHit1", "sound", FRAMES_244, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "GhostHit2", "sound", FRAMES_245, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "GhostHit3", "sound", FRAMES_246, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Ghostly Mask", "item", FRAMES_247, OFFSETS_247, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Grand Master's Gloves", "item", FRAMES_248, OFFSETS_248, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Guardian's Armor", "item", FRAMES_249, OFFSETS_249, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Guardian's Boots", "item", FRAMES_250, OFFSETS_250, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Guardian's Gloves", "item", FRAMES_251, OFFSETS_251, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Guardian's Helm", "item", FRAMES_252, OFFSETS_252, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Guardian's Leggings", "item", FRAMES_253, OFFSETS_253, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Gunslinger's Armor", "item", FRAMES_254, OFFSETS_254, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Gunslinger's Boots", "item", FRAMES_255, OFFSETS_255, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Gunslinger's Gloves", "item", FRAMES_256, OFFSETS_256, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Gunslinger's Helm", "item", FRAMES_257, OFFSETS_257, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Gunslinger's Leggings", "item", FRAMES_258, OFFSETS_258, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "HAIR_BART", "doll", FRAMES_259, OFFSETS_259, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "HAIR_FIVE", "doll", FRAMES_260, OFFSETS_260, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "HAIR_FOUR", "doll", FRAMES_261, OFFSETS_261, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "HAIR_ONE", "doll", FRAMES_262, OFFSETS_262, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "HAIR_SIX", "doll", FRAMES_263, OFFSETS_263, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "HAIR_THREE", "doll", FRAMES_264, OFFSETS_264, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "HAIR_TWO", "doll", FRAMES_265, OFFSETS_265, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "HEW", "zone", FRAMES_266, OFFSETS_266, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Handguards of Destiny", "item", FRAMES_267, OFFSETS_267, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Handwraps of Caution", "item", FRAMES_268, OFFSETS_268, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Healing", "sound", FRAMES_269, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Healing Light", "icon", FRAMES_270, OFFSETS_270, 1, 1, -32.500000f, -13.300000f, 13.900000f, 14.900000f },
-    { "Helm of Peril", "item", FRAMES_271, OFFSETS_271, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Heroic Motivation", "icon", FRAMES_272, OFFSETS_272, 1, 1, -17.700000f, -12.200000f, 20.700000f, 17.850000f },
-    { "Hit2", "sound", FRAMES_273, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Hit3", "sound", FRAMES_274, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Hit4", "sound", FRAMES_275, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Hit5", "sound", FRAMES_276, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Hunter's Armor", "item", FRAMES_277, OFFSETS_277, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Hunter's Boots", "item", FRAMES_278, OFFSETS_278, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Hunter's Handguards", "item", FRAMES_279, OFFSETS_279, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Hunter's Helm", "item", FRAMES_280, OFFSETS_280, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Hunter's Legplates", "item", FRAMES_281, OFFSETS_281, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "IGNITE", "buff", FRAMES_282, OFFSETS_282, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "INTERVENTION1", "buff", FRAMES_283, OFFSETS_283, 1, 1, -6.400000f, -10.450000f, 5.850000f, 6.450000f },
-    { "INTERVENTION10", "buff", FRAMES_284, OFFSETS_284, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "INTERVENTION2", "buff", FRAMES_285, OFFSETS_285, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "INTERVENTION3", "buff", FRAMES_286, OFFSETS_286, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "INTERVENTION4", "buff", FRAMES_287, OFFSETS_287, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "INTERVENTION5", "buff", FRAMES_288, OFFSETS_288, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "INTERVENTION6", "buff", FRAMES_289, OFFSETS_289, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "INTERVENTION7", "buff", FRAMES_290, OFFSETS_290, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "INTERVENTION8", "buff", FRAMES_291, OFFSETS_291, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "INTERVENTION9", "buff", FRAMES_292, OFFSETS_292, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "IRONSKIN1", "buff", FRAMES_293, OFFSETS_293, 1, 1, -5.950000f, -10.950000f, 6.050000f, 11.000000f },
-    { "IRONSKIN2", "buff", FRAMES_294, OFFSETS_294, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "IRONSKIN3", "buff", FRAMES_295, OFFSETS_295, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "IRONSKIN4", "buff", FRAMES_296, OFFSETS_296, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "IRONSKIN5", "buff", FRAMES_297, OFFSETS_297, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "IceShatter", "sound", FRAMES_298, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Icy Katana", "item", FRAMES_299, OFFSETS_299, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Information", "portrait", FRAMES_300, OFFSETS_300, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Intervention", "icon", FRAMES_301, OFFSETS_301, 1, 1, -16.350000f, -13.450000f, 14.400000f, 16.100000f },
-    { "Ironskin", "icon", FRAMES_302, OFFSETS_302, 1, 1, -19.000000f, -13.400000f, 12.600000f, 12.250000f },
-    { "Ivory Mace", "item", FRAMES_303, OFFSETS_303, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Ivory Shield", "item", FRAMES_304, OFFSETS_304, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Judgement", "item", FRAMES_305, OFFSETS_305, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "KOJIS_REST", "zone", FRAMES_306, OFFSETS_306, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Knight's Armor", "item", FRAMES_307, OFFSETS_307, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Knight's Boots", "item", FRAMES_308, OFFSETS_308, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Knight's Gloves", "item", FRAMES_309, OFFSETS_309, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Knight's Helm", "item", FRAMES_310, OFFSETS_310, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Knight's Leggings", "item", FRAMES_311, OFFSETS_311, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "KrinBuffShower", "ui", FRAMES_312, OFFSETS_312, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Legplates of Icy Doom", "item", FRAMES_313, OFFSETS_313, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Levo Jeans", "item", FRAMES_314, OFFSETS_314, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Louis the Blind", "portrait", FRAMES_315, OFFSETS_315, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "LouisDie", "sound", FRAMES_316, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Ludwig", "portrait", FRAMES_317, OFFSETS_317, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M7-V Rifle", "item", FRAMES_318, OFFSETS_318, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "MAGICWOUND", "buff", FRAMES_319, OFFSETS_319, 1, 1, -5.950000f, -10.100000f, 5.950000f, 0.700000f },
-    { "MODEL1", "ui", FRAMES_320, OFFSETS_320, 64, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_FINAL1", "doll", FRAMES_321, OFFSETS_321, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_FINAL2", "doll", FRAMES_322, OFFSETS_322, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_FINAL3", "doll", FRAMES_323, OFFSETS_323, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_FINAL4", "doll", FRAMES_324, OFFSETS_324, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_GER", "doll", FRAMES_325, OFFSETS_325, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_JEANS", "doll", FRAMES_326, OFFSETS_326, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_KNIGHT", "doll", FRAMES_327, OFFSETS_327, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_MEDIC", "doll", FRAMES_328, OFFSETS_328, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_NINJA", "doll", FRAMES_329, OFFSETS_329, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_ROCKSTAR", "doll", FRAMES_330, OFFSETS_330, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_SAMURAI", "doll", FRAMES_331, OFFSETS_331, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_SAMURAI2", "doll", FRAMES_332, OFFSETS_332, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_SAMURAI3", "doll", FRAMES_333, OFFSETS_333, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_SHAMAN1", "doll", FRAMES_334, OFFSETS_334, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_SHAMAN2", "doll", FRAMES_335, OFFSETS_335, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_SHAMAN3", "doll", FRAMES_336, OFFSETS_336, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_SHAMAN4", "doll", FRAMES_337, OFFSETS_337, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_SHIRT", "doll", FRAMES_338, OFFSETS_338, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_SINJID", "doll", FRAMES_339, OFFSETS_339, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_SURVIVOR", "doll", FRAMES_340, OFFSETS_340, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_USA1", "doll", FRAMES_341, OFFSETS_341, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_USA2", "doll", FRAMES_342, OFFSETS_342, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_USA3", "doll", FRAMES_343, OFFSETS_343, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_USA4", "doll", FRAMES_344, OFFSETS_344, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_USA5", "doll", FRAMES_345, OFFSETS_345, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_FINAL1", "doll", FRAMES_346, OFFSETS_346, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_FINAL2", "doll", FRAMES_347, OFFSETS_347, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_FINAL3", "doll", FRAMES_348, OFFSETS_348, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_FINAL4", "doll", FRAMES_349, OFFSETS_349, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_GER", "doll", FRAMES_350, OFFSETS_350, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_KNIGHT", "doll", FRAMES_351, OFFSETS_351, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_MEDIC", "doll", FRAMES_352, OFFSETS_352, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_NINJA", "doll", FRAMES_353, OFFSETS_353, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_ROCKSTAR", "doll", FRAMES_354, OFFSETS_354, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_SAMURAI", "doll", FRAMES_355, OFFSETS_355, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_SAMURAI2", "doll", FRAMES_356, OFFSETS_356, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_SAMURAI3", "doll", FRAMES_357, OFFSETS_357, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_SHAMAN1", "doll", FRAMES_358, OFFSETS_358, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_SHAMAN2", "doll", FRAMES_359, OFFSETS_359, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_SHAMAN3", "doll", FRAMES_360, OFFSETS_360, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_SHAMAN4", "doll", FRAMES_361, OFFSETS_361, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_SHIRT", "doll", FRAMES_362, OFFSETS_362, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_SINJID", "doll", FRAMES_363, OFFSETS_363, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_SURVIVOR", "doll", FRAMES_364, OFFSETS_364, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_USA1", "doll", FRAMES_365, OFFSETS_365, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_USA2", "doll", FRAMES_366, OFFSETS_366, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_USA3", "doll", FRAMES_367, OFFSETS_367, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_USA4", "doll", FRAMES_368, OFFSETS_368, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_USA5", "doll", FRAMES_369, OFFSETS_369, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_FINAL1", "doll", FRAMES_370, OFFSETS_370, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_FINAL2", "doll", FRAMES_371, OFFSETS_371, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_FINAL3", "doll", FRAMES_372, OFFSETS_372, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_FINAL4", "doll", FRAMES_373, OFFSETS_373, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_GER", "doll", FRAMES_374, OFFSETS_374, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_JEANS", "doll", FRAMES_375, OFFSETS_375, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_KNIGHT", "doll", FRAMES_376, OFFSETS_376, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_MEDIC", "doll", FRAMES_377, OFFSETS_377, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_NAVY", "doll", FRAMES_378, OFFSETS_378, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_NINJA", "doll", FRAMES_379, OFFSETS_379, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_ROCKSTAR", "doll", FRAMES_380, OFFSETS_380, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_SAMURAI", "doll", FRAMES_381, OFFSETS_381, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_SAMURAI2", "doll", FRAMES_382, OFFSETS_382, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_SAMURAI3", "doll", FRAMES_383, OFFSETS_383, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_SHAMAN1", "doll", FRAMES_384, OFFSETS_384, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_SINJID", "doll", FRAMES_385, OFFSETS_385, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_SURVIVOR", "doll", FRAMES_386, OFFSETS_386, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_USA1", "doll", FRAMES_387, OFFSETS_387, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_USA2", "doll", FRAMES_388, OFFSETS_388, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_USA3", "doll", FRAMES_389, OFFSETS_389, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_USA4", "doll", FRAMES_390, OFFSETS_390, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_USA5", "doll", FRAMES_391, OFFSETS_391, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_ENGINEERINGGLOVES", "doll", FRAMES_392, OFFSETS_392, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_FINAL1", "doll", FRAMES_393, OFFSETS_393, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_FINAL2", "doll", FRAMES_394, OFFSETS_394, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_FINAL3", "doll", FRAMES_395, OFFSETS_395, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_FINAL4", "doll", FRAMES_396, OFFSETS_396, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_GER", "doll", FRAMES_397, OFFSETS_397, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_KNIGHT", "doll", FRAMES_398, OFFSETS_398, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_MEDIC", "doll", FRAMES_399, OFFSETS_399, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_NINJA", "doll", FRAMES_400, OFFSETS_400, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_ROCKSTAR", "doll", FRAMES_401, OFFSETS_401, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_SAMURAI", "doll", FRAMES_402, OFFSETS_402, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_SAMURAI2", "doll", FRAMES_403, OFFSETS_403, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_SAMURAI3", "doll", FRAMES_404, OFFSETS_404, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_SHAMAN1", "doll", FRAMES_405, OFFSETS_405, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_SHAMAN2", "doll", FRAMES_406, OFFSETS_406, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_SHAMAN3", "doll", FRAMES_407, OFFSETS_407, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_SHAMAN4", "doll", FRAMES_408, OFFSETS_408, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_SINJID", "doll", FRAMES_409, OFFSETS_409, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_SURVIVOR", "doll", FRAMES_410, OFFSETS_410, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_USA1", "doll", FRAMES_411, OFFSETS_411, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_USA2", "doll", FRAMES_412, OFFSETS_412, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_USA3", "doll", FRAMES_413, OFFSETS_413, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_USA4", "doll", FRAMES_414, OFFSETS_414, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_USA5", "doll", FRAMES_415, OFFSETS_415, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_FINAL1", "doll", FRAMES_416, OFFSETS_416, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_FINAL2", "doll", FRAMES_417, OFFSETS_417, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_FINAL3", "doll", FRAMES_418, OFFSETS_418, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_FINAL4", "doll", FRAMES_419, OFFSETS_419, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_GER", "doll", FRAMES_420, OFFSETS_420, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_KNIGHT", "doll", FRAMES_421, OFFSETS_421, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_MEDIC", "doll", FRAMES_422, OFFSETS_422, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_NINJA", "doll", FRAMES_423, OFFSETS_423, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_ROCKSTAR", "doll", FRAMES_424, OFFSETS_424, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_SAMURAI", "doll", FRAMES_425, OFFSETS_425, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_SAMURAI2", "doll", FRAMES_426, OFFSETS_426, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_SAMURAI3", "doll", FRAMES_427, OFFSETS_427, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_SHAMAN1", "doll", FRAMES_428, OFFSETS_428, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_SHAMAN2", "doll", FRAMES_429, OFFSETS_429, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_SHAMAN3", "doll", FRAMES_430, OFFSETS_430, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_SHAMAN4", "doll", FRAMES_431, OFFSETS_431, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_SINJID", "doll", FRAMES_432, OFFSETS_432, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_SURVIVOR", "doll", FRAMES_433, OFFSETS_433, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_USA1", "doll", FRAMES_434, OFFSETS_434, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_USA2", "doll", FRAMES_435, OFFSETS_435, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_USA3", "doll", FRAMES_436, OFFSETS_436, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_USA4", "doll", FRAMES_437, OFFSETS_437, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_USA5", "doll", FRAMES_438, OFFSETS_438, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_FINAL1", "doll", FRAMES_439, OFFSETS_439, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_FINAL2", "doll", FRAMES_440, OFFSETS_440, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_FINAL3", "doll", FRAMES_441, OFFSETS_441, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_FINAL4", "doll", FRAMES_442, OFFSETS_442, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_GER", "doll", FRAMES_443, OFFSETS_443, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_JEANS", "doll", FRAMES_444, OFFSETS_444, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_KNIGHT", "doll", FRAMES_445, OFFSETS_445, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_MEDIC", "doll", FRAMES_446, OFFSETS_446, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_NAVY", "doll", FRAMES_447, OFFSETS_447, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_NINJA", "doll", FRAMES_448, OFFSETS_448, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_ROCKSTAR", "doll", FRAMES_449, OFFSETS_449, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_SAMURAI", "doll", FRAMES_450, OFFSETS_450, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_SAMURAI2", "doll", FRAMES_451, OFFSETS_451, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_SAMURAI3", "doll", FRAMES_452, OFFSETS_452, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_SHAMAN1", "doll", FRAMES_453, OFFSETS_453, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_SHAMAN2", "doll", FRAMES_454, OFFSETS_454, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_SHAMAN3", "doll", FRAMES_455, OFFSETS_455, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_SHAMAN4", "doll", FRAMES_456, OFFSETS_456, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_SINJID", "doll", FRAMES_457, OFFSETS_457, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_SURVIVOR", "doll", FRAMES_458, OFFSETS_458, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_USA1", "doll", FRAMES_459, OFFSETS_459, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_USA2", "doll", FRAMES_460, OFFSETS_460, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_USA3", "doll", FRAMES_461, OFFSETS_461, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_USA4", "doll", FRAMES_462, OFFSETS_462, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_USA5", "doll", FRAMES_463, OFFSETS_463, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SARM_FIVE", "doll", FRAMES_464, OFFSETS_464, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SARM_FOUR", "doll", FRAMES_465, OFFSETS_465, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SARM_GHOST", "doll", FRAMES_466, OFFSETS_466, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SARM_MAN", "doll", FRAMES_467, OFFSETS_467, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SARM_MAN2", "doll", FRAMES_468, OFFSETS_468, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SARM_MAN3", "doll", FRAMES_469, OFFSETS_469, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SARM_METABII", "doll", FRAMES_470, OFFSETS_470, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SARM_ONE", "doll", FRAMES_471, OFFSETS_471, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SARM_TWO", "doll", FRAMES_472, OFFSETS_472, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SARM_ZOMBIE", "doll", FRAMES_473, OFFSETS_473, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SARM_ZOMBIE1", "doll", FRAMES_474, OFFSETS_474, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SARM_ZOMBIE2", "doll", FRAMES_475, OFFSETS_475, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SCHEST_FIVE", "doll", FRAMES_476, OFFSETS_476, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SCHEST_FOUR", "doll", FRAMES_477, OFFSETS_477, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SCHEST_GHOST", "doll", FRAMES_478, OFFSETS_478, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SCHEST_MAN", "doll", FRAMES_479, OFFSETS_479, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SCHEST_MAN2", "doll", FRAMES_480, OFFSETS_480, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SCHEST_MAN3", "doll", FRAMES_481, OFFSETS_481, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SCHEST_METABII", "doll", FRAMES_482, OFFSETS_482, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SCHEST_ONE", "doll", FRAMES_483, OFFSETS_483, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SCHEST_TWO", "doll", FRAMES_484, OFFSETS_484, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SCHEST_ZOMBIE", "doll", FRAMES_485, OFFSETS_485, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SCHEST_ZOMBIE1", "doll", FRAMES_486, OFFSETS_486, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SCHEST_ZOMBIE2", "doll", FRAMES_487, OFFSETS_487, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SFOOT_FIVE", "doll", FRAMES_488, OFFSETS_488, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SFOOT_FOUR", "doll", FRAMES_489, OFFSETS_489, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SFOOT_GHOST", "doll", FRAMES_490, OFFSETS_490, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SFOOT_MAN", "doll", FRAMES_491, OFFSETS_491, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SFOOT_MAN2", "doll", FRAMES_492, OFFSETS_492, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SFOOT_MAN3", "doll", FRAMES_493, OFFSETS_493, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SFOOT_METABII", "doll", FRAMES_494, OFFSETS_494, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SFOOT_ONE", "doll", FRAMES_495, OFFSETS_495, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SFOOT_TWO", "doll", FRAMES_496, OFFSETS_496, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SFOOT_ZOMBIE", "doll", FRAMES_497, OFFSETS_497, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SFOOT_ZOMBIE1", "doll", FRAMES_498, OFFSETS_498, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SFOOT_ZOMBIE2", "doll", FRAMES_499, OFFSETS_499, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHAND_FIVE", "doll", FRAMES_500, OFFSETS_500, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHAND_FOUR", "doll", FRAMES_501, OFFSETS_501, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHAND_GHOST", "doll", FRAMES_502, OFFSETS_502, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHAND_MAN", "doll", FRAMES_503, OFFSETS_503, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHAND_MAN2", "doll", FRAMES_504, OFFSETS_504, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHAND_MAN3", "doll", FRAMES_505, OFFSETS_505, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHAND_METABII", "doll", FRAMES_506, OFFSETS_506, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHAND_ONE", "doll", FRAMES_507, OFFSETS_507, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHAND_TWO", "doll", FRAMES_508, OFFSETS_508, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHAND_ZOMBIE", "doll", FRAMES_509, OFFSETS_509, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHAND_ZOMBIE1", "doll", FRAMES_510, OFFSETS_510, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHAND_ZOMBIE2", "doll", FRAMES_511, OFFSETS_511, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHEAD_FIVE", "doll", FRAMES_512, OFFSETS_512, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHEAD_FOUR", "doll", FRAMES_513, OFFSETS_513, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHEAD_GHOST", "doll", FRAMES_514, OFFSETS_514, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHEAD_MAN", "doll", FRAMES_515, OFFSETS_515, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHEAD_MAN2", "doll", FRAMES_516, OFFSETS_516, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHEAD_MAN3", "doll", FRAMES_517, OFFSETS_517, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHEAD_METABII", "doll", FRAMES_518, OFFSETS_518, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHEAD_ONE", "doll", FRAMES_519, OFFSETS_519, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHEAD_TWO", "doll", FRAMES_520, OFFSETS_520, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHEAD_USA1", "doll", FRAMES_521, OFFSETS_521, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHEAD_ZOMBIE", "doll", FRAMES_522, OFFSETS_522, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHEAD_ZOMBIE1", "doll", FRAMES_523, OFFSETS_523, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHEAD_ZOMBIE2", "doll", FRAMES_524, OFFSETS_524, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_FINAL1", "doll", FRAMES_525, OFFSETS_525, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_FINAL2", "doll", FRAMES_526, OFFSETS_526, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_FINAL3", "doll", FRAMES_527, OFFSETS_527, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_FINAL4", "doll", FRAMES_528, OFFSETS_528, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_KNIGHT", "doll", FRAMES_529, OFFSETS_529, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_MEDIC", "doll", FRAMES_530, OFFSETS_530, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_NINJA", "doll", FRAMES_531, OFFSETS_531, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_ROCKSTAR", "doll", FRAMES_532, OFFSETS_532, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_SAMURAI", "doll", FRAMES_533, OFFSETS_533, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_SAMURAI2", "doll", FRAMES_534, OFFSETS_534, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_SAMURAI3", "doll", FRAMES_535, OFFSETS_535, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_SHAMAN1", "doll", FRAMES_536, OFFSETS_536, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_SHAMAN2", "doll", FRAMES_537, OFFSETS_537, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_SHAMAN3", "doll", FRAMES_538, OFFSETS_538, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_SHAMAN4", "doll", FRAMES_539, OFFSETS_539, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_SINJID", "doll", FRAMES_540, OFFSETS_540, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_SURVIVOR", "doll", FRAMES_541, OFFSETS_541, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_USA1", "doll", FRAMES_542, OFFSETS_542, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_USA2", "doll", FRAMES_543, OFFSETS_543, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_USA3", "doll", FRAMES_544, OFFSETS_544, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_USA4", "doll", FRAMES_545, OFFSETS_545, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_USA5", "doll", FRAMES_546, OFFSETS_546, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SLEG2_FIVE", "doll", FRAMES_547, OFFSETS_547, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SLEG2_FOUR", "doll", FRAMES_548, OFFSETS_548, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SLEG2_GHOST", "doll", FRAMES_549, OFFSETS_549, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SLEG2_MAN", "doll", FRAMES_550, OFFSETS_550, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SLEG2_MAN2", "doll", FRAMES_551, OFFSETS_551, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SLEG2_MAN3", "doll", FRAMES_552, OFFSETS_552, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SLEG2_METABII", "doll", FRAMES_553, OFFSETS_553, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SLEG2_ONE", "doll", FRAMES_554, OFFSETS_554, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SLEG2_TWO", "doll", FRAMES_555, OFFSETS_555, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SLEG2_ZOMBIE", "doll", FRAMES_556, OFFSETS_556, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SLEG2_ZOMBIE1", "doll", FRAMES_557, OFFSETS_557, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SLEG2_ZOMBIE2", "doll", FRAMES_558, OFFSETS_558, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SSHOULDER_ONE", "doll", FRAMES_559, OFFSETS_559, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_BROAD", "doll", FRAMES_560, OFFSETS_560, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_CLUB", "doll", FRAMES_561, OFFSETS_561, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_CROWBAR", "doll", FRAMES_562, OFFSETS_562, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_FIREAXE", "doll", FRAMES_563, OFFSETS_563, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_KATANA", "doll", FRAMES_564, OFFSETS_564, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_M4", "doll", FRAMES_565, OFFSETS_565, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_MOON", "doll", FRAMES_566, OFFSETS_566, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_PALADINSWORD", "doll", FRAMES_567, OFFSETS_567, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_PIPE", "doll", FRAMES_568, OFFSETS_568, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_SHAMANKNIFE", "doll", FRAMES_569, OFFSETS_569, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_SHAMANMAGIC", "doll", FRAMES_570, OFFSETS_570, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_SHAMANMED", "doll", FRAMES_571, OFFSETS_571, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_SHAMANSWORD", "doll", FRAMES_572, OFFSETS_572, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_SHANK", "doll", FRAMES_573, OFFSETS_573, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_SHIELD2", "doll", FRAMES_574, OFFSETS_574, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_SPELLMACE", "doll", FRAMES_575, OFFSETS_575, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_SPELLSTAFF", "doll", FRAMES_576, OFFSETS_576, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_STICK", "doll", FRAMES_577, OFFSETS_577, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_SWATSWORD", "doll", FRAMES_578, OFFSETS_578, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_SWIFT", "doll", FRAMES_579, OFFSETS_579, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_SWORD1", "doll", FRAMES_580, OFFSETS_580, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_UBER1", "doll", FRAMES_581, OFFSETS_581, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_UBER10", "doll", FRAMES_582, OFFSETS_582, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_UBER11", "doll", FRAMES_583, OFFSETS_583, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_UBER2", "doll", FRAMES_584, OFFSETS_584, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_UBER3", "doll", FRAMES_585, OFFSETS_585, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_UBER4", "doll", FRAMES_586, OFFSETS_586, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_UBER5", "doll", FRAMES_587, OFFSETS_587, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_UBER6", "doll", FRAMES_588, OFFSETS_588, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_UBER7", "doll", FRAMES_589, OFFSETS_589, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_UBER8", "doll", FRAMES_590, OFFSETS_590, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_UBER9", "doll", FRAMES_591, OFFSETS_591, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Magic Bolt", "icon", FRAMES_592, OFFSETS_592, 1, 1, -12.850000f, -15.400000f, 12.150000f, 12.800000f },
-    { "Magic Lantern", "item", FRAMES_593, OFFSETS_593, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "MagicCast", "sound", FRAMES_594, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Master Strike", "icon", FRAMES_595, OFFSETS_595, 1, 1, -20.400000f, -15.500000f, 12.150000f, 12.800000f },
-    { "Mender's Armor", "item", FRAMES_596, OFFSETS_596, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Mender's Axe", "item", FRAMES_597, OFFSETS_597, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Mender's Boots", "item", FRAMES_598, OFFSETS_598, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Mender's Gloves", "item", FRAMES_599, OFFSETS_599, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Mender's Leggings", "item", FRAMES_600, OFFSETS_600, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Moon-Struck Horrors", "item", FRAMES_601, OFFSETS_601, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Murder", "item", FRAMES_602, OFFSETS_602, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "NIGHT", "background", FRAMES_603, OFFSETS_603, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Nature's Fury", "item", FRAMES_604, OFFSETS_604, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Navy Boots", "item", FRAMES_605, OFFSETS_605, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Nike Head Wear", "item", FRAMES_606, OFFSETS_606, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "None", "item", FRAMES_607, OFFSETS_607, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ORB BRUTALITY", "orb", FRAMES_608, OFFSETS_608, 1, 1, -12.850000f, -19.750000f, 12.150000f, 12.800000f },
-    { "ORB Blessing of Light", "orb", FRAMES_609, OFFSETS_609, 1, 1, -15.650000f, -17.100000f, 21.850000f, 17.850000f },
-    { "ORB Block", "orb", FRAMES_610, OFFSETS_610, 1, 1, -16.350000f, -13.450000f, 14.400000f, 16.100000f },
-    { "ORB Blood Focus", "orb", FRAMES_611, OFFSETS_611, 1, 1, -12.850000f, -12.200000f, 13.850000f, 12.800000f },
-    { "ORB Blood Strike", "orb", FRAMES_612, OFFSETS_612, 1, 1, -17.150000f, -14.550000f, 12.150000f, 12.800000f },
-    { "ORB Break", "orb", FRAMES_613, OFFSETS_613, 1, 1, -24.150000f, -10.450000f, 31.650000f, 12.050000f },
-    { "ORB Cell Reformation", "orb", FRAMES_614, OFFSETS_614, 1, 1, -27.100000f, -28.700000f, 21.950000f, 18.250000f },
-    { "ORB Coup De Grace", "orb", FRAMES_615, OFFSETS_615, 1, 1, -19.700000f, -20.200000f, 24.900000f, 21.500000f },
-    { "ORB Cripple", "orb", FRAMES_616, OFFSETS_616, 1, 1, -13.000000f, -12.200000f, 12.150000f, 18.400000f },
-    { "ORB Disrupt", "orb", FRAMES_617, OFFSETS_617, 1, 1, -12.600000f, -11.500000f, 12.800000f, 16.000000f },
-    { "ORB ENDURANCE", "orb", FRAMES_618, OFFSETS_618, 1, 1, -12.850000f, -19.950000f, 12.150000f, 31.400000f },
-    { "ORB Electro Bolt", "orb", FRAMES_619, OFFSETS_619, 1, 1, -12.850000f, -15.400000f, 12.150000f, 12.800000f },
-    { "ORB Empty", "orb", FRAMES_620, OFFSETS_620, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ORB Flame Blast", "orb", FRAMES_621, OFFSETS_621, 1, 1, -12.850000f, -14.600000f, 12.150000f, 12.800000f },
-    { "ORB Flame Strike", "orb", FRAMES_622, OFFSETS_622, 1, 1, -12.850000f, -19.900000f, 18.500000f, 14.300000f },
-    { "ORB Frost Bolt", "orb", FRAMES_623, OFFSETS_623, 1, 1, -14.850000f, -9.300000f, 12.450000f, 8.900000f },
-    { "ORB Healing Light", "orb", FRAMES_624, OFFSETS_624, 1, 1, -32.500000f, -13.300000f, 13.900000f, 14.900000f },
-    { "ORB Heroic Motivation", "orb", FRAMES_625, OFFSETS_625, 1, 1, -17.700000f, -12.200000f, 20.700000f, 17.850000f },
-    { "ORB Intervention", "orb", FRAMES_626, OFFSETS_626, 1, 1, -16.350000f, -13.450000f, 14.400000f, 16.100000f },
-    { "ORB Ironskin", "orb", FRAMES_627, OFFSETS_627, 1, 1, -19.000000f, -13.400000f, 12.600000f, 12.250000f },
-    { "ORB Magic Bolt", "orb", FRAMES_628, OFFSETS_628, 1, 1, -12.850000f, -15.400000f, 12.150000f, 12.800000f },
-    { "ORB Master Strike", "orb", FRAMES_629, OFFSETS_629, 1, 1, -20.400000f, -15.500000f, 12.150000f, 12.800000f },
-    { "ORB Quick Strike", "orb", FRAMES_630, OFFSETS_630, 1, 1, -12.850000f, -15.400000f, 12.150000f, 12.800000f },
-    { "ORB REGENERATION", "orb", FRAMES_631, OFFSETS_631, 1, 1, -13.000000f, -14.500000f, 17.550000f, 14.000000f },
-    { "ORB Rage", "orb", FRAMES_632, OFFSETS_632, 1, 1, -27.100000f, -28.700000f, 21.950000f, 18.250000f },
-    { "ORB Re-Energize", "orb", FRAMES_633, OFFSETS_633, 1, 1, -12.850000f, -12.200000f, 12.800000f, 12.800000f },
-    { "ORB SOLIDITY", "orb", FRAMES_634, OFFSETS_634, 1, 1, -12.850000f, -12.200000f, 12.150000f, 12.800000f },
-    { "ORB Shatter Bolt", "orb", FRAMES_635, OFFSETS_635, 1, 1, -16.150000f, -17.000000f, 12.150000f, 13.700000f },
-    { "ORB Smash", "orb", FRAMES_636, OFFSETS_636, 1, 1, -28.700000f, -26.200000f, 11.750000f, 12.400000f },
-    { "ORB Strike", "orb", FRAMES_637, OFFSETS_637, 1, 1, -6.300000f, -15.300000f, 10.700000f, 15.200000f },
-    { "ORB Subversion", "orb", FRAMES_638, OFFSETS_638, 1, 1, -12.000000f, -11.250000f, 12.300000f, 11.250000f },
-    { "ORB Sunder", "orb", FRAMES_639, OFFSETS_639, 1, 1, -12.850000f, -12.200000f, 16.300000f, 23.350000f },
-    { "ORB Suppression", "orb", FRAMES_640, OFFSETS_640, 1, 1, -12.350000f, -22.600000f, 12.150000f, 22.000000f },
-    { "ORB Void", "orb", FRAMES_641, OFFSETS_641, 1, 1, -12.850000f, -15.000000f, 12.550000f, 14.050000f },
-    { "ORB Wound", "orb", FRAMES_642, OFFSETS_642, 1, 1, -13.500000f, -20.750000f, 41.950000f, 11.700000f },
-    { "PLAINS", "zone", FRAMES_643, OFFSETS_643, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "PLAINS2", "background", FRAMES_644, OFFSETS_644, 1, 1, -570.450000f, -136.450000f, 535.700000f, 256.950000f },
-    { "POISON", "buff", FRAMES_645, OFFSETS_645, 1, 1, -5.950000f, -10.950000f, 5.950000f, 10.950000f },
-    { "POISONZOMBIE", "buff", FRAMES_646, OFFSETS_646, 1, 1, -5.950000f, -10.950000f, 5.950000f, 10.950000f },
-    { "POWERUP", "buff", FRAMES_647, OFFSETS_647, 1, 1, -5.950000f, -10.950000f, 6.050000f, 10.950000f },
-    { "Paladin's Armor", "item", FRAMES_648, OFFSETS_648, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Paladin's Boots", "item", FRAMES_649, OFFSETS_649, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Paladin's Gloves", "item", FRAMES_650, OFFSETS_650, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Paladin's Helm", "item", FRAMES_651, OFFSETS_651, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Paladin's Leggings", "item", FRAMES_652, OFFSETS_652, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "PoisonHit", "sound", FRAMES_653, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Power Lantern", "item", FRAMES_654, OFFSETS_654, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "PowerupDefense", "sound", FRAMES_655, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "PowerupOffense", "sound", FRAMES_656, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Proverse All Stars", "item", FRAMES_657, OFFSETS_657, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Pulse Rifle", "item", FRAMES_658, OFFSETS_658, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Quick Strike", "icon", FRAMES_659, OFFSETS_659, 1, 1, -12.850000f, -15.400000f, 12.150000f, 12.800000f },
-    { "RAGE1", "buff", FRAMES_660, OFFSETS_660, 1, 1, -5.950000f, -10.950000f, 6.050000f, 10.950000f },
-    { "RAGE2", "buff", FRAMES_661, OFFSETS_661, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "RAGE3", "buff", FRAMES_662, OFFSETS_662, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "REGEN", "buff", FRAMES_663, OFFSETS_663, 1, 1, -5.750000f, -10.050000f, 6.550000f, 11.000000f },
-    { "REGENFOC", "buff", FRAMES_664, OFFSETS_664, 1, 1, -5.750000f, -10.050000f, 6.550000f, 11.000000f },
-    { "REGENSHAMAN", "buff", FRAMES_665, OFFSETS_665, 1, 1, -5.750000f, -10.050000f, 6.550000f, 11.000000f },
-    { "Rage", "icon", FRAMES_666, OFFSETS_666, 1, 1, -27.100000f, -28.700000f, 21.950000f, 18.250000f },
-    { "Re-Energize", "icon", FRAMES_667, OFFSETS_667, 1, 1, -12.850000f, -12.200000f, 12.800000f, 12.800000f },
-    { "Reckoning", "item", FRAMES_668, OFFSETS_668, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Rockstar", "portrait", FRAMES_669, OFFSETS_669, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "SEA", "background", FRAMES_670, OFFSETS_670, 1, 1, -385.950000f, -157.650000f, 394.500000f, 158.200000f },
-    { "SHATTER", "buff", FRAMES_671, OFFSETS_671, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "SHATTER2", "buff", FRAMES_672, OFFSETS_672, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "SHORE", "background", FRAMES_673, OFFSETS_673, 1, 1, -523.200000f, -166.550000f, 523.250000f, 215.050000f },
-    { "SPEEDUP", "buff", FRAMES_674, OFFSETS_674, 1, 1, -6.150000f, -9.800000f, 5.850000f, 3.200000f },
-    { "STUN1", "buff", FRAMES_675, OFFSETS_675, 1, 1, -5.950000f, -10.950000f, 5.950000f, 10.950000f },
-    { "SUBVERSION", "buff", FRAMES_676, OFFSETS_676, 1, 1, -6.050000f, -10.700000f, 5.700000f, 6.950000f },
-    { "SUNDER1", "buff", FRAMES_677, OFFSETS_677, 1, 1, -5.950000f, -10.100000f, 5.950000f, 0.700000f },
-    { "SUNDER2", "buff", FRAMES_678, OFFSETS_678, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "SUNDER3", "buff", FRAMES_679, OFFSETS_679, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "SUNDER4", "buff", FRAMES_680, OFFSETS_680, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "SUNDER5", "buff", FRAMES_681, OFFSETS_681, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "SUPRESSION", "buff", FRAMES_682, OFFSETS_682, 1, 1, -3.850000f, -17.350000f, 3.850000f, 17.250000f },
-    { "Scarlett", "portrait", FRAMES_683, OFFSETS_683, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Sensei Ishiguro", "portrait", FRAMES_684, OFFSETS_684, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Shadow Legwraps", "item", FRAMES_685, OFFSETS_685, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Shaman of Blades", "portrait", FRAMES_686, OFFSETS_686, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Shaman of Death", "portrait", FRAMES_687, OFFSETS_687, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ShamanDie", "sound", FRAMES_688, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ShamanHit1", "sound", FRAMES_689, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ShamanHit2", "sound", FRAMES_690, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Shatter Bolt", "icon", FRAMES_691, OFFSETS_691, 1, 1, -16.150000f, -17.000000f, 12.150000f, 13.700000f },
-    { "Smash", "icon", FRAMES_692, OFFSETS_692, 1, 1, -28.700000f, -26.200000f, 11.750000f, 12.400000f },
-    { "Sonny", "portrait", FRAMES_693, OFFSETS_693, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Steel Slicer", "item", FRAMES_694, OFFSETS_694, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Stone Club", "item", FRAMES_695, OFFSETS_695, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Strike", "icon", FRAMES_696, OFFSETS_696, 1, 1, -6.300000f, -15.300000f, 10.700000f, 15.200000f },
-    { "Striker's Armor", "item", FRAMES_697, OFFSETS_697, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Striker's Flip-Flops", "item", FRAMES_698, OFFSETS_698, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Striker's Gloves", "item", FRAMES_699, OFFSETS_699, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Striker's Leggings", "item", FRAMES_700, OFFSETS_700, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Striker's Mask", "item", FRAMES_701, OFFSETS_701, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Subversion", "icon", FRAMES_702, OFFSETS_702, 1, 1, -12.000000f, -11.250000f, 12.300000f, 11.250000f },
-    { "Sunder", "icon", FRAMES_703, OFFSETS_703, 1, 1, -12.850000f, -12.200000f, 16.300000f, 23.350000f },
-    { "Suppression", "icon", FRAMES_704, OFFSETS_704, 1, 1, -12.350000f, -22.600000f, 12.150000f, 22.000000f },
-    { "Survivor's Armor", "item", FRAMES_705, OFFSETS_705, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Survivor's Boots", "item", FRAMES_706, OFFSETS_706, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Survivor's Gloves", "item", FRAMES_707, OFFSETS_707, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Survivor's Helm", "item", FRAMES_708, OFFSETS_708, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Survivor's Leggings", "item", FRAMES_709, OFFSETS_709, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Swift Blade", "item", FRAMES_710, OFFSETS_710, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Swing", "sound", FRAMES_711, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "The Grand Rifle", "item", FRAMES_712, OFFSETS_712, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Tool", "item", FRAMES_713, OFFSETS_713, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Torment", "item", FRAMES_714, OFFSETS_714, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Tribal Blade", "item", FRAMES_715, OFFSETS_715, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Tribal Dagger", "item", FRAMES_716, OFFSETS_716, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "VOID1", "buff", FRAMES_717, OFFSETS_717, 1, 1, -5.950000f, -10.950000f, 5.950000f, 10.950000f },
-    { "VOID2", "buff", FRAMES_718, OFFSETS_718, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "VOID3", "buff", FRAMES_719, OFFSETS_719, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "VOID4", "buff", FRAMES_720, OFFSETS_720, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "VOID5", "buff", FRAMES_721, OFFSETS_721, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "VOIDMOB", "buff", FRAMES_722, OFFSETS_722, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Vendetta the Breaker", "portrait", FRAMES_723, OFFSETS_723, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Veradux", "portrait", FRAMES_724, OFFSETS_724, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Void", "icon", FRAMES_725, OFFSETS_725, 1, 1, -12.850000f, -15.000000f, 12.550000f, 14.050000f },
-    { "WASHED", "buff", FRAMES_726, OFFSETS_726, 1, 1, -7.050000f, -11.600000f, 1.850000f, 7.000000f },
-    { "WHITE NOVEMBER", "background", FRAMES_727, OFFSETS_727, 1, 1, -528.500000f, -118.900000f, 551.450000f, 246.050000f },
-    { "WHITE_NOVEMBER", "zone", FRAMES_728, OFFSETS_728, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "WOUND1", "buff", FRAMES_729, OFFSETS_729, 1, 1, -5.950000f, -10.950000f, 5.950000f, 10.950000f },
-    { "WOUND2", "buff", FRAMES_730, OFFSETS_730, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "WOUND3", "buff", FRAMES_731, OFFSETS_731, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "White T-Shirt", "item", FRAMES_732, OFFSETS_732, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Wolfgang", "portrait", FRAMES_733, OFFSETS_733, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Wound", "icon", FRAMES_734, OFFSETS_734, 1, 1, -13.500000f, -20.750000f, 41.950000f, 11.700000f },
-    { "ZPCI Blade", "item", FRAMES_735, OFFSETS_735, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZPCI Captain", "portrait", FRAMES_736, OFFSETS_736, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZPCI Dog Tag", "item", FRAMES_737, OFFSETS_737, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZPCI Elite", "portrait", FRAMES_738, OFFSETS_738, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZPCI Hunter", "portrait", FRAMES_739, OFFSETS_739, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZPCI Med-Wear A", "item", FRAMES_740, OFFSETS_740, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZPCI Med-Wear B", "item", FRAMES_741, OFFSETS_741, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZPCI Med-Wear C", "item", FRAMES_742, OFFSETS_742, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZPCI Med-Wear D", "item", FRAMES_743, OFFSETS_743, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZPCI Med-Wear E", "item", FRAMES_744, OFFSETS_744, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZPCI Medic", "portrait", FRAMES_745, OFFSETS_745, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZPCI Sniper", "portrait", FRAMES_746, OFFSETS_746, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZPCIHit1", "sound", FRAMES_747, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZPCIHit2", "sound", FRAMES_748, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Zombie Ambassador", "portrait", FRAMES_749, OFFSETS_749, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Zombie Fingers", "item", FRAMES_750, OFFSETS_750, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZombieDie", "sound", FRAMES_751, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZombieHit1", "sound", FRAMES_752, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZombieHit2", "sound", FRAMES_753, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "mainPlayer", "portrait", FRAMES_754, OFFSETS_754, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1118", "chrome", FRAMES_2, OFFSETS_2, 1, 1, 185.550000f, 252.200000f, 611.650000f, 297.450000f },
+    { "#1142", "chrome", FRAMES_3, OFFSETS_3, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1179", "chrome", FRAMES_4, OFFSETS_4, 1, 1, 75.550000f, 90.800000f, 720.250000f, 470.950000f },
+    { "#1198", "chrome", FRAMES_5, OFFSETS_5, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1237", "chrome", FRAMES_6, OFFSETS_6, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1238", "chrome", FRAMES_7, OFFSETS_7, 1, 1, 30.900000f, 484.300000f, 425.150000f, 534.050000f },
+    { "#1239", "chrome", FRAMES_8, OFFSETS_8, 1, 1, -30.000000f, -30.000000f, 30.000000f, 30.000000f },
+    { "#1248", "chrome", FRAMES_9, OFFSETS_9, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1250", "chrome", FRAMES_10, OFFSETS_10, 1, 1, 39.150000f, 486.250000f, 424.600000f, 533.450000f },
+    { "#1262", "chrome", FRAMES_11, OFFSETS_11, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1267", "chrome", FRAMES_12, OFFSETS_12, 1, 1, -384.450000f, -207.400000f, -382.000000f, 207.700000f },
+    { "#1268", "chrome", FRAMES_13, OFFSETS_13, 1, 1, -382.350000f, -208.550000f, 381.850000f, 207.550000f },
+    { "#1270", "chrome", FRAMES_14, OFFSETS_14, 1, 1, -124.500000f, -25.400000f, 124.550000f, 25.450000f },
+    { "#1272", "chrome", FRAMES_15, OFFSETS_15, 1, 1, -124.500000f, -133.550000f, 124.550000f, 133.600000f },
+    { "#1274", "chrome", FRAMES_16, OFFSETS_16, 1, 1, -91.550000f, -140.900000f, 91.500000f, 185.600000f },
+    { "#1276", "chrome", FRAMES_17, OFFSETS_17, 1, 1, -15.500000f, -15.500000f, 15.500000f, 15.500000f },
+    { "#1280", "chrome", FRAMES_18, OFFSETS_18, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1282", "chrome", FRAMES_19, OFFSETS_19, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1283", "chrome", FRAMES_20, OFFSETS_20, 1, 1, -78.750000f, -132.950000f, 79.600000f, 180.250000f },
+    { "#1313", "chrome", FRAMES_21, OFFSETS_21, 1, 1, -13.000000f, -18.000000f, 13.000000f, 18.000000f },
+    { "#1316", "chrome", FRAMES_22, OFFSETS_22, 1, 1, -14.750000f, -19.750000f, 14.750000f, 19.750000f },
+    { "#1318", "chrome", FRAMES_23, OFFSETS_23, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1333", "chrome", FRAMES_24, OFFSETS_24, 1, 1, -69.500000f, -35.000000f, 69.500000f, 35.000000f },
+    { "#1334", "chrome", FRAMES_25, OFFSETS_25, 1, 1, -125.000000f, -75.000000f, 125.000000f, 75.000000f },
+    { "#1337", "chrome", FRAMES_26, OFFSETS_26, 1, 1, -68.500000f, -34.250000f, 68.500000f, 33.750000f },
+    { "#1339", "chrome", FRAMES_27, OFFSETS_27, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1341", "chrome", FRAMES_28, OFFSETS_28, 1, 1, -262.050000f, 60.450000f, -227.750000f, 79.250000f },
+    { "#1344", "chrome", FRAMES_29, OFFSETS_29, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1344@2", "chrome", FRAMES_30, OFFSETS_30, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1345", "chrome", FRAMES_31, OFFSETS_31, 1, 1, -262.000000f, 60.750000f, -132.750000f, 79.850000f },
+    { "#1358", "chrome", FRAMES_32, OFFSETS_32, 1, 1, -15.500000f, -15.500000f, 15.500000f, 15.500000f },
+    { "#1362", "chrome", FRAMES_33, OFFSETS_33, 1, 1, -18.350000f, -18.200000f, 18.350000f, 18.200000f },
+    { "#1367", "chrome", FRAMES_34, OFFSETS_34, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1377", "chrome", FRAMES_35, OFFSETS_35, 1, 1, -98.400000f, -41.600000f, 98.400000f, 41.600000f },
+    { "#1380", "chrome", FRAMES_36, OFFSETS_36, 1, 1, -21.550000f, -7.700000f, 21.550000f, 7.750000f },
+    { "#1390@1", "chrome", FRAMES_37, OFFSETS_37, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1390@2", "chrome", FRAMES_38, OFFSETS_38, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1390@3", "chrome", FRAMES_39, OFFSETS_39, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1390@4", "chrome", FRAMES_40, OFFSETS_40, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1390@5", "chrome", FRAMES_41, OFFSETS_41, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1390@6", "chrome", FRAMES_42, OFFSETS_42, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1393", "chrome", FRAMES_43, OFFSETS_43, 1, 1, -15.500000f, -15.500000f, 15.500000f, 15.500000f },
+    { "#1400", "chrome", FRAMES_44, OFFSETS_44, 1, 1, -12.250000f, -30.500000f, 12.250000f, 30.550000f },
+    { "#1401", "chrome", FRAMES_45, OFFSETS_45, 1, 1, -5.500000f, -22.500000f, 5.500000f, 18.000000f },
+    { "#1406", "chrome", FRAMES_46, OFFSETS_46, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1415", "chrome", FRAMES_47, OFFSETS_47, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1426", "chrome", FRAMES_48, OFFSETS_48, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1426@1", "chrome", FRAMES_49, OFFSETS_49, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1444", "chrome", FRAMES_50, OFFSETS_50, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1444@8", "chrome", FRAMES_51, OFFSETS_51, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1445", "chrome", FRAMES_52, OFFSETS_52, 1, 1, -22.050000f, -8.200000f, 22.050000f, 8.250000f },
+    { "#1503", "chrome", FRAMES_53, OFFSETS_53, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1507", "chrome", FRAMES_54, OFFSETS_54, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1508", "chrome", FRAMES_55, OFFSETS_55, 1, 1, -100.000000f, -12.000000f, 57.400000f, 12.000000f },
+    { "#1509", "chrome", FRAMES_56, OFFSETS_56, 1, 1, -237.250000f, -124.100000f, 237.250000f, 124.100000f },
+    { "#1513", "chrome", FRAMES_57, OFFSETS_57, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1516", "chrome", FRAMES_58, OFFSETS_58, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1531", "chrome", FRAMES_59, OFFSETS_59, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1536", "chrome", FRAMES_60, OFFSETS_60, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1537", "chrome", FRAMES_61, OFFSETS_61, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1560", "chrome", FRAMES_62, OFFSETS_62, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1561", "chrome", FRAMES_63, OFFSETS_63, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1562", "chrome", FRAMES_64, OFFSETS_64, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1563", "chrome", FRAMES_65, OFFSETS_65, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1564", "chrome", FRAMES_66, OFFSETS_66, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1565", "chrome", FRAMES_67, OFFSETS_67, 1, 1, 14.500000f, 129.900000f, 785.500000f, 444.950000f },
+    { "#1566", "chrome", FRAMES_68, OFFSETS_68, 1, 1, 0.000000f, -6.500000f, 200.000000f, 5.500000f },
+    { "#1567", "chrome", FRAMES_69, OFFSETS_69, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1568", "chrome", FRAMES_70, OFFSETS_70, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1570", "chrome", FRAMES_71, OFFSETS_71, 1, 1, -100.500000f, -12.950000f, 100.500000f, 13.000000f },
+    { "#1585", "chrome", FRAMES_72, OFFSETS_72, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1586", "chrome", FRAMES_73, OFFSETS_73, 1, 1, -35.000000f, -35.000000f, 35.000000f, 35.000000f },
+    { "#1590", "chrome", FRAMES_74, OFFSETS_74, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1596", "chrome", FRAMES_75, OFFSETS_75, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1606", "chrome", FRAMES_76, OFFSETS_76, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1610", "chrome", FRAMES_77, OFFSETS_77, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1613", "chrome", FRAMES_78, OFFSETS_78, 1, 1, -95.950000f, -35.700000f, 96.000000f, 112.300000f },
+    { "#1632", "chrome", FRAMES_79, OFFSETS_79, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1633", "chrome", FRAMES_80, OFFSETS_80, 1, 1, -0.500000f, -0.500000f, 306.000000f, 94.500000f },
+    { "#1640", "chrome", FRAMES_81, OFFSETS_81, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1642", "chrome", FRAMES_82, OFFSETS_82, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1695", "chrome", FRAMES_83, OFFSETS_83, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1699", "chrome", FRAMES_84, OFFSETS_84, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1710", "chrome", FRAMES_85, OFFSETS_85, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1719", "chrome", FRAMES_86, OFFSETS_86, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1720", "chrome", FRAMES_87, OFFSETS_87, 1, 1, -31.250000f, -20.000000f, 733.600000f, 487.500000f },
+    { "#1722", "chrome", FRAMES_88, OFFSETS_88, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1725", "chrome", FRAMES_89, OFFSETS_89, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1726", "chrome", FRAMES_90, OFFSETS_90, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#368", "chrome", FRAMES_91, OFFSETS_91, 1, 1, -32.500000f, -9.950000f, 32.550000f, 10.000000f },
+    { "#821", "chrome", FRAMES_92, OFFSETS_92, 1, 1, -92.400000f, -16.000000f, -28.500000f, 16.000000f },
+    { "#823", "chrome", FRAMES_93, OFFSETS_93, 1, 1, 13.900000f, -14.950000f, 75.850000f, 15.050000f },
+    { "#824", "chrome", FRAMES_94, OFFSETS_94, 1, 1, -11.500000f, -11.500000f, 11.500000f, 11.500000f },
+    { "#826", "chrome", FRAMES_95, OFFSETS_95, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#828", "chrome", FRAMES_96, OFFSETS_96, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#830", "chrome", FRAMES_97, OFFSETS_97, 1, 1, -11.650000f, -11.750000f, 12.100000f, 12.000000f },
+    { "#866", "chrome", FRAMES_98, OFFSETS_98, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#867", "chrome", FRAMES_99, OFFSETS_99, 1, 1, -10.500000f, -10.500000f, 10.500000f, 10.500000f },
+    { "#903", "chrome", FRAMES_100, OFFSETS_100, 1, 1, -4.000000f, -4.250000f, 4.000000f, 4.200000f },
+    { "#905", "chrome", FRAMES_101, OFFSETS_101, 1, 1, -2.550000f, -6.700000f, 5.350000f, 4.650000f },
+    { "#907", "chrome", FRAMES_102, OFFSETS_102, 1, 1, -9.900000f, -16.400000f, 9.950000f, 16.450000f },
+    { "#909", "chrome", FRAMES_103, OFFSETS_103, 1, 1, -4.600000f, -15.200000f, 4.650000f, 15.200000f },
+    { "#911", "chrome", FRAMES_104, OFFSETS_104, 1, 1, -5.850000f, -2.650000f, 5.900000f, 2.650000f },
+    { "#913", "chrome", FRAMES_105, OFFSETS_105, 1, 1, -3.750000f, -41.150000f, 2.250000f, 27.800000f },
+    { "#915", "chrome", FRAMES_106, OFFSETS_106, 1, 1, -3.550000f, -9.150000f, 3.500000f, 9.200000f },
+    { "#917", "chrome", FRAMES_107, OFFSETS_107, 1, 1, -3.550000f, -9.800000f, 3.550000f, 9.850000f },
+    { "#919", "chrome", FRAMES_108, OFFSETS_108, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#920", "chrome", FRAMES_109, OFFSETS_109, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#921", "chrome", FRAMES_110, OFFSETS_110, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#922", "chrome", FRAMES_111, OFFSETS_111, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#923", "chrome", FRAMES_112, OFFSETS_112, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#924", "chrome", FRAMES_113, OFFSETS_113, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#925", "chrome", FRAMES_114, OFFSETS_114, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#926", "chrome", FRAMES_115, OFFSETS_115, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#944", "chrome", FRAMES_116, OFFSETS_116, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#951", "chrome", FRAMES_117, OFFSETS_117, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#963", "chrome", FRAMES_118, OFFSETS_118, 1, 1, 0.450000f, 0.500000f, 720.150000f, 457.500000f },
+    { "A Broken Pipe", "item", FRAMES_119, OFFSETS_119, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "A Sword", "item", FRAMES_120, OFFSETS_120, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Amber", "portrait", FRAMES_121, OFFSETS_121, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Argalla the Mender", "portrait", FRAMES_122, OFFSETS_122, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Armor of the Fallen", "item", FRAMES_123, OFFSETS_123, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Armor of the Teacher", "item", FRAMES_124, OFFSETS_124, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Assasin's Tunic", "item", FRAMES_125, OFFSETS_125, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Assassin's Armor", "item", FRAMES_126, OFFSETS_126, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Assassin's Boots", "item", FRAMES_127, OFFSETS_127, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Assassin's Gloves", "item", FRAMES_128, OFFSETS_128, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Assassin's Helm", "item", FRAMES_129, OFFSETS_129, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Assassin's Leggings", "item", FRAMES_130, OFFSETS_130, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Assassination", "item", FRAMES_131, OFFSETS_131, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BLACKOUT", "buff", FRAMES_132, OFFSETS_132, 1, 1, -5.950000f, -10.950000f, 5.950000f, 10.950000f },
+    { "BLOCK1", "buff", FRAMES_133, OFFSETS_133, 1, 1, -7.050000f, -11.600000f, 1.850000f, 7.000000f },
+    { "BOOM1", "effect", FRAMES_134, OFFSETS_134, 36, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM2", "effect", FRAMES_135, OFFSETS_135, 36, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM3", "effect", FRAMES_136, OFFSETS_136, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM_DARK", "effect", FRAMES_137, OFFSETS_137, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM_HEAL", "effect", FRAMES_138, OFFSETS_138, 16, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM_HEAL2", "effect", FRAMES_139, OFFSETS_139, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM_POWERUP", "effect", FRAMES_140, OFFSETS_140, 16, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM_RED", "effect", FRAMES_141, OFFSETS_141, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM_SHIELD", "effect", FRAMES_142, OFFSETS_142, 20, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM_SLASH", "effect", FRAMES_143, OFFSETS_143, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM_SLASH2", "effect", FRAMES_144, OFFSETS_144, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM_SLASHBLUE", "effect", FRAMES_145, OFFSETS_145, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM_SLASHGREEN", "effect", FRAMES_146, OFFSETS_146, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM_SLASHORANGE", "effect", FRAMES_147, OFFSETS_147, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM_SLASHRED", "effect", FRAMES_148, OFFSETS_148, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM_SPARK", "effect", FRAMES_149, OFFSETS_149, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM_SPARKBLUE", "effect", FRAMES_150, OFFSETS_150, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BURNING", "buff", FRAMES_151, OFFSETS_151, 1, 1, -5.950000f, -10.950000f, 6.050000f, 10.950000f },
+    { "BURNS", "buff", FRAMES_152, OFFSETS_152, 1, 1, -5.000000f, -9.300000f, 5.000000f, 10.500000f },
+    { "Balance", "item", FRAMES_153, OFFSETS_153, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Baron Brixius", "portrait", FRAMES_154, OFFSETS_154, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BaronDie", "sound", FRAMES_155, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BaronHit1", "sound", FRAMES_156, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BaronHit2", "sound", FRAMES_157, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BaronHit3", "sound", FRAMES_158, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BattleMusic1loopable", "sound", FRAMES_159, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BattleMusic2loopable", "sound", FRAMES_160, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Blade of Light", "item", FRAMES_161, OFFSETS_161, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Blessing of Light", "icon", FRAMES_162, OFFSETS_162, 1, 1, -15.650000f, -17.100000f, 21.850000f, 17.850000f },
+    { "Block", "icon", FRAMES_163, OFFSETS_163, 1, 1, -16.350000f, -13.450000f, 14.400000f, 16.100000f },
+    { "Blood Focus", "icon", FRAMES_164, OFFSETS_164, 1, 1, -12.850000f, -12.200000f, 13.850000f, 12.800000f },
+    { "Blood Strike", "icon", FRAMES_165, OFFSETS_165, 1, 1, -17.150000f, -14.550000f, 12.150000f, 12.800000f },
+    { "Bloody Blade", "item", FRAMES_166, OFFSETS_166, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Bloody Dagger", "item", FRAMES_167, OFFSETS_167, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Boots of Stealth", "item", FRAMES_168, OFFSETS_168, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Break", "icon", FRAMES_169, OFFSETS_169, 1, 1, -24.150000f, -10.450000f, 31.650000f, 12.050000f },
+    { "Breaker's Armor", "item", FRAMES_170, OFFSETS_170, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Breaker's Axe", "item", FRAMES_171, OFFSETS_171, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Breaker's Boots", "item", FRAMES_172, OFFSETS_172, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Breaker's Gloves", "item", FRAMES_173, OFFSETS_173, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Breaker's Mask", "item", FRAMES_174, OFFSETS_174, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Breaker's Pantyhose", "item", FRAMES_175, OFFSETS_175, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Broken Totem", "item", FRAMES_176, OFFSETS_176, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "COLDSOUL", "buff", FRAMES_177, OFFSETS_177, 1, 1, -6.100000f, -14.350000f, 6.150000f, 2.900000f },
+    { "CRIPPLE1", "buff", FRAMES_178, OFFSETS_178, 1, 1, -6.100000f, -14.350000f, 6.150000f, 2.900000f },
+    { "CRIPPLE2", "buff", FRAMES_179, OFFSETS_179, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "CRIPPLE3", "buff", FRAMES_180, OFFSETS_180, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Cannibal's Hunger", "item", FRAMES_181, OFFSETS_181, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Cell Reformation", "icon", FRAMES_182, OFFSETS_182, 1, 1, -27.100000f, -28.700000f, 21.950000f, 18.250000f },
+    { "Champion's Trophy", "item", FRAMES_183, OFFSETS_183, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Click2putdown", "sound", FRAMES_184, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Click3pickup", "sound", FRAMES_185, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Cold Steel Leggings", "item", FRAMES_186, OFFSETS_186, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Convoy Package", "item", FRAMES_187, OFFSETS_187, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Coup De Grace", "icon", FRAMES_188, OFFSETS_188, 1, 1, -19.700000f, -20.200000f, 24.900000f, 21.500000f },
+    { "Cripple", "icon", FRAMES_189, OFFSETS_189, 1, 1, -13.000000f, -12.200000f, 12.150000f, 18.400000f },
+    { "Crow Bar", "item", FRAMES_190, OFFSETS_190, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Crown of Frozen Shadows", "item", FRAMES_191, OFFSETS_191, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "DARKREGEN", "buff", FRAMES_192, OFFSETS_192, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "DAY", "background", FRAMES_193, OFFSETS_193, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "DAY2", "background", FRAMES_194, OFFSETS_194, 1, 1, -403.250000f, -183.100000f, 411.200000f, 155.150000f },
+    { "DECAY", "buff", FRAMES_195, OFFSETS_195, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "DOCTOR", "buff", FRAMES_196, OFFSETS_196, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Dead Peacock", "item", FRAMES_197, OFFSETS_197, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Deep Sea Greaves", "item", FRAMES_198, OFFSETS_198, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Destroyer's Armor", "item", FRAMES_199, OFFSETS_199, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Destroyer's Boots", "item", FRAMES_200, OFFSETS_200, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Destroyer's Gloves", "item", FRAMES_201, OFFSETS_201, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Destroyer's Helm", "item", FRAMES_202, OFFSETS_202, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Destroyer's Leggings", "item", FRAMES_203, OFFSETS_203, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Destruction", "item", FRAMES_204, OFFSETS_204, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Die1", "sound", FRAMES_205, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Disrupt", "icon", FRAMES_206, OFFSETS_206, 1, 1, -12.600000f, -11.500000f, 12.800000f, 16.000000f },
+    { "Dokebi the Striker", "portrait", FRAMES_207, OFFSETS_207, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "DuxDie", "sound", FRAMES_208, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "DuxHit1", "sound", FRAMES_209, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "DuxHit2", "sound", FRAMES_210, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "DuxHit3", "sound", FRAMES_211, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ElectricHit", "sound", FRAMES_212, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Electro Bolt", "icon", FRAMES_213, OFFSETS_213, 1, 1, -12.850000f, -15.400000f, 12.150000f, 12.800000f },
+    { "Elite Medic", "portrait", FRAMES_214, OFFSETS_214, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Engineering Gloves", "item", FRAMES_215, OFFSETS_215, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Eternity", "item", FRAMES_216, OFFSETS_216, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Explode", "sound", FRAMES_217, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "FATALFLAW", "buff", FRAMES_218, OFFSETS_218, 1, 1, -5.950000f, -10.100000f, 5.950000f, 0.700000f },
+    { "FATE", "buff", FRAMES_219, OFFSETS_219, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "FIRESHOCK", "buff", FRAMES_220, OFFSETS_220, 1, 1, -5.950000f, -10.950000f, 5.950000f, 10.950000f },
+    { "F_SARM_SIX", "doll", FRAMES_221, OFFSETS_221, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "F_SARM_THREE", "doll", FRAMES_222, OFFSETS_222, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "F_SCHEST_SIX", "doll", FRAMES_223, OFFSETS_223, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "F_SCHEST_THREE", "doll", FRAMES_224, OFFSETS_224, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "F_SFOOT_SIX", "doll", FRAMES_225, OFFSETS_225, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "F_SFOOT_THREE", "doll", FRAMES_226, OFFSETS_226, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "F_SHAND_SIX", "doll", FRAMES_227, OFFSETS_227, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "F_SHAND_THREE", "doll", FRAMES_228, OFFSETS_228, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "F_SHEAD_SIX", "doll", FRAMES_229, OFFSETS_229, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "F_SHEAD_THREE", "doll", FRAMES_230, OFFSETS_230, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "F_SLEG2_SIX", "doll", FRAMES_231, OFFSETS_231, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "F_SLEG2_THREE", "doll", FRAMES_232, OFFSETS_232, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Fire Axe", "item", FRAMES_233, OFFSETS_233, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Flame Blast", "icon", FRAMES_234, OFFSETS_234, 1, 1, -12.850000f, -14.600000f, 12.150000f, 12.800000f },
+    { "Flame Strike", "icon", FRAMES_235, OFFSETS_235, 1, 1, -12.850000f, -19.900000f, 18.500000f, 14.300000f },
+    { "Footguard of the Shore", "item", FRAMES_236, OFFSETS_236, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Forcefield", "sound", FRAMES_237, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Frost Bolt", "icon", FRAMES_238, OFFSETS_238, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Frost Lantern", "item", FRAMES_239, OFFSETS_239, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Frost Zombie", "portrait", FRAMES_240, OFFSETS_240, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Galiant the Paladin", "portrait", FRAMES_241, OFFSETS_241, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "GaliantDie", "sound", FRAMES_242, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "GaliantHit1", "sound", FRAMES_243, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "GaliantHit2", "sound", FRAMES_244, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "GaliantHit3", "sound", FRAMES_245, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Ghost Assassin", "portrait", FRAMES_246, OFFSETS_246, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Ghost Medallion", "item", FRAMES_247, OFFSETS_247, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Ghost Samurai", "portrait", FRAMES_248, OFFSETS_248, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "GhostDie", "sound", FRAMES_249, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "GhostHit1", "sound", FRAMES_250, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "GhostHit2", "sound", FRAMES_251, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "GhostHit3", "sound", FRAMES_252, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Ghostly Mask", "item", FRAMES_253, OFFSETS_253, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Grand Master's Gloves", "item", FRAMES_254, OFFSETS_254, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Guardian's Armor", "item", FRAMES_255, OFFSETS_255, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Guardian's Boots", "item", FRAMES_256, OFFSETS_256, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Guardian's Gloves", "item", FRAMES_257, OFFSETS_257, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Guardian's Helm", "item", FRAMES_258, OFFSETS_258, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Guardian's Leggings", "item", FRAMES_259, OFFSETS_259, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Gunslinger's Armor", "item", FRAMES_260, OFFSETS_260, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Gunslinger's Boots", "item", FRAMES_261, OFFSETS_261, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Gunslinger's Gloves", "item", FRAMES_262, OFFSETS_262, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Gunslinger's Helm", "item", FRAMES_263, OFFSETS_263, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Gunslinger's Leggings", "item", FRAMES_264, OFFSETS_264, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "HAIR_BART", "doll", FRAMES_265, OFFSETS_265, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "HAIR_FIVE", "doll", FRAMES_266, OFFSETS_266, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "HAIR_FOUR", "doll", FRAMES_267, OFFSETS_267, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "HAIR_ONE", "doll", FRAMES_268, OFFSETS_268, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "HAIR_SIX", "doll", FRAMES_269, OFFSETS_269, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "HAIR_THREE", "doll", FRAMES_270, OFFSETS_270, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "HAIR_TWO", "doll", FRAMES_271, OFFSETS_271, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "HEW", "zone", FRAMES_272, OFFSETS_272, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Handguards of Destiny", "item", FRAMES_273, OFFSETS_273, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Handwraps of Caution", "item", FRAMES_274, OFFSETS_274, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Healing", "sound", FRAMES_275, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Healing Light", "icon", FRAMES_276, OFFSETS_276, 1, 1, -32.500000f, -13.300000f, 13.900000f, 14.900000f },
+    { "Helm of Peril", "item", FRAMES_277, OFFSETS_277, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Heroic Motivation", "icon", FRAMES_278, OFFSETS_278, 1, 1, -17.700000f, -12.200000f, 20.700000f, 17.850000f },
+    { "Hit2", "sound", FRAMES_279, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Hit3", "sound", FRAMES_280, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Hit4", "sound", FRAMES_281, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Hit5", "sound", FRAMES_282, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Hunter's Armor", "item", FRAMES_283, OFFSETS_283, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Hunter's Boots", "item", FRAMES_284, OFFSETS_284, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Hunter's Handguards", "item", FRAMES_285, OFFSETS_285, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Hunter's Helm", "item", FRAMES_286, OFFSETS_286, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Hunter's Legplates", "item", FRAMES_287, OFFSETS_287, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "IGNITE", "buff", FRAMES_288, OFFSETS_288, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "INTERVENTION1", "buff", FRAMES_289, OFFSETS_289, 1, 1, -6.400000f, -10.450000f, 5.850000f, 6.450000f },
+    { "INTERVENTION10", "buff", FRAMES_290, OFFSETS_290, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "INTERVENTION2", "buff", FRAMES_291, OFFSETS_291, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "INTERVENTION3", "buff", FRAMES_292, OFFSETS_292, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "INTERVENTION4", "buff", FRAMES_293, OFFSETS_293, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "INTERVENTION5", "buff", FRAMES_294, OFFSETS_294, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "INTERVENTION6", "buff", FRAMES_295, OFFSETS_295, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "INTERVENTION7", "buff", FRAMES_296, OFFSETS_296, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "INTERVENTION8", "buff", FRAMES_297, OFFSETS_297, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "INTERVENTION9", "buff", FRAMES_298, OFFSETS_298, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "IRONSKIN1", "buff", FRAMES_299, OFFSETS_299, 1, 1, -5.950000f, -10.950000f, 6.050000f, 11.000000f },
+    { "IRONSKIN2", "buff", FRAMES_300, OFFSETS_300, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "IRONSKIN3", "buff", FRAMES_301, OFFSETS_301, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "IRONSKIN4", "buff", FRAMES_302, OFFSETS_302, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "IRONSKIN5", "buff", FRAMES_303, OFFSETS_303, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "IceShatter", "sound", FRAMES_304, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Icy Katana", "item", FRAMES_305, OFFSETS_305, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Information", "portrait", FRAMES_306, OFFSETS_306, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Intervention", "icon", FRAMES_307, OFFSETS_307, 1, 1, -16.350000f, -13.450000f, 14.400000f, 16.100000f },
+    { "Ironskin", "icon", FRAMES_308, OFFSETS_308, 1, 1, -19.000000f, -13.400000f, 12.600000f, 12.250000f },
+    { "Ivory Mace", "item", FRAMES_309, OFFSETS_309, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Ivory Shield", "item", FRAMES_310, OFFSETS_310, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Judgement", "item", FRAMES_311, OFFSETS_311, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "KOJIS_REST", "zone", FRAMES_312, OFFSETS_312, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Knight's Armor", "item", FRAMES_313, OFFSETS_313, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Knight's Boots", "item", FRAMES_314, OFFSETS_314, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Knight's Gloves", "item", FRAMES_315, OFFSETS_315, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Knight's Helm", "item", FRAMES_316, OFFSETS_316, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Knight's Leggings", "item", FRAMES_317, OFFSETS_317, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "KrinBuffShower", "ui", FRAMES_318, OFFSETS_318, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Legplates of Icy Doom", "item", FRAMES_319, OFFSETS_319, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Levo Jeans", "item", FRAMES_320, OFFSETS_320, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Louis the Blind", "portrait", FRAMES_321, OFFSETS_321, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "LouisDie", "sound", FRAMES_322, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Ludwig", "portrait", FRAMES_323, OFFSETS_323, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M7-V Rifle", "item", FRAMES_324, OFFSETS_324, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "MAGICWOUND", "buff", FRAMES_325, OFFSETS_325, 1, 1, -5.950000f, -10.100000f, 5.950000f, 0.700000f },
+    { "MODEL1", "ui", FRAMES_326, OFFSETS_326, 64, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_FINAL1", "doll", FRAMES_327, OFFSETS_327, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_FINAL2", "doll", FRAMES_328, OFFSETS_328, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_FINAL3", "doll", FRAMES_329, OFFSETS_329, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_FINAL4", "doll", FRAMES_330, OFFSETS_330, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_GER", "doll", FRAMES_331, OFFSETS_331, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_JEANS", "doll", FRAMES_332, OFFSETS_332, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_KNIGHT", "doll", FRAMES_333, OFFSETS_333, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_MEDIC", "doll", FRAMES_334, OFFSETS_334, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_NINJA", "doll", FRAMES_335, OFFSETS_335, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_ROCKSTAR", "doll", FRAMES_336, OFFSETS_336, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_SAMURAI", "doll", FRAMES_337, OFFSETS_337, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_SAMURAI2", "doll", FRAMES_338, OFFSETS_338, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_SAMURAI3", "doll", FRAMES_339, OFFSETS_339, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_SHAMAN1", "doll", FRAMES_340, OFFSETS_340, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_SHAMAN2", "doll", FRAMES_341, OFFSETS_341, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_SHAMAN3", "doll", FRAMES_342, OFFSETS_342, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_SHAMAN4", "doll", FRAMES_343, OFFSETS_343, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_SHIRT", "doll", FRAMES_344, OFFSETS_344, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_SINJID", "doll", FRAMES_345, OFFSETS_345, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_SURVIVOR", "doll", FRAMES_346, OFFSETS_346, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_USA1", "doll", FRAMES_347, OFFSETS_347, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_USA2", "doll", FRAMES_348, OFFSETS_348, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_USA3", "doll", FRAMES_349, OFFSETS_349, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_USA4", "doll", FRAMES_350, OFFSETS_350, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_USA5", "doll", FRAMES_351, OFFSETS_351, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_FINAL1", "doll", FRAMES_352, OFFSETS_352, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_FINAL2", "doll", FRAMES_353, OFFSETS_353, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_FINAL3", "doll", FRAMES_354, OFFSETS_354, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_FINAL4", "doll", FRAMES_355, OFFSETS_355, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_GER", "doll", FRAMES_356, OFFSETS_356, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_KNIGHT", "doll", FRAMES_357, OFFSETS_357, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_MEDIC", "doll", FRAMES_358, OFFSETS_358, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_NINJA", "doll", FRAMES_359, OFFSETS_359, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_ROCKSTAR", "doll", FRAMES_360, OFFSETS_360, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_SAMURAI", "doll", FRAMES_361, OFFSETS_361, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_SAMURAI2", "doll", FRAMES_362, OFFSETS_362, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_SAMURAI3", "doll", FRAMES_363, OFFSETS_363, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_SHAMAN1", "doll", FRAMES_364, OFFSETS_364, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_SHAMAN2", "doll", FRAMES_365, OFFSETS_365, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_SHAMAN3", "doll", FRAMES_366, OFFSETS_366, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_SHAMAN4", "doll", FRAMES_367, OFFSETS_367, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_SHIRT", "doll", FRAMES_368, OFFSETS_368, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_SINJID", "doll", FRAMES_369, OFFSETS_369, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_SURVIVOR", "doll", FRAMES_370, OFFSETS_370, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_USA1", "doll", FRAMES_371, OFFSETS_371, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_USA2", "doll", FRAMES_372, OFFSETS_372, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_USA3", "doll", FRAMES_373, OFFSETS_373, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_USA4", "doll", FRAMES_374, OFFSETS_374, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_USA5", "doll", FRAMES_375, OFFSETS_375, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_FINAL1", "doll", FRAMES_376, OFFSETS_376, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_FINAL2", "doll", FRAMES_377, OFFSETS_377, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_FINAL3", "doll", FRAMES_378, OFFSETS_378, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_FINAL4", "doll", FRAMES_379, OFFSETS_379, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_GER", "doll", FRAMES_380, OFFSETS_380, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_JEANS", "doll", FRAMES_381, OFFSETS_381, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_KNIGHT", "doll", FRAMES_382, OFFSETS_382, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_MEDIC", "doll", FRAMES_383, OFFSETS_383, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_NAVY", "doll", FRAMES_384, OFFSETS_384, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_NINJA", "doll", FRAMES_385, OFFSETS_385, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_ROCKSTAR", "doll", FRAMES_386, OFFSETS_386, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_SAMURAI", "doll", FRAMES_387, OFFSETS_387, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_SAMURAI2", "doll", FRAMES_388, OFFSETS_388, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_SAMURAI3", "doll", FRAMES_389, OFFSETS_389, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_SHAMAN1", "doll", FRAMES_390, OFFSETS_390, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_SINJID", "doll", FRAMES_391, OFFSETS_391, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_SURVIVOR", "doll", FRAMES_392, OFFSETS_392, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_USA1", "doll", FRAMES_393, OFFSETS_393, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_USA2", "doll", FRAMES_394, OFFSETS_394, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_USA3", "doll", FRAMES_395, OFFSETS_395, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_USA4", "doll", FRAMES_396, OFFSETS_396, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_USA5", "doll", FRAMES_397, OFFSETS_397, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_ENGINEERINGGLOVES", "doll", FRAMES_398, OFFSETS_398, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_FINAL1", "doll", FRAMES_399, OFFSETS_399, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_FINAL2", "doll", FRAMES_400, OFFSETS_400, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_FINAL3", "doll", FRAMES_401, OFFSETS_401, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_FINAL4", "doll", FRAMES_402, OFFSETS_402, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_GER", "doll", FRAMES_403, OFFSETS_403, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_KNIGHT", "doll", FRAMES_404, OFFSETS_404, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_MEDIC", "doll", FRAMES_405, OFFSETS_405, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_NINJA", "doll", FRAMES_406, OFFSETS_406, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_ROCKSTAR", "doll", FRAMES_407, OFFSETS_407, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_SAMURAI", "doll", FRAMES_408, OFFSETS_408, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_SAMURAI2", "doll", FRAMES_409, OFFSETS_409, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_SAMURAI3", "doll", FRAMES_410, OFFSETS_410, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_SHAMAN1", "doll", FRAMES_411, OFFSETS_411, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_SHAMAN2", "doll", FRAMES_412, OFFSETS_412, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_SHAMAN3", "doll", FRAMES_413, OFFSETS_413, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_SHAMAN4", "doll", FRAMES_414, OFFSETS_414, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_SINJID", "doll", FRAMES_415, OFFSETS_415, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_SURVIVOR", "doll", FRAMES_416, OFFSETS_416, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_USA1", "doll", FRAMES_417, OFFSETS_417, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_USA2", "doll", FRAMES_418, OFFSETS_418, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_USA3", "doll", FRAMES_419, OFFSETS_419, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_USA4", "doll", FRAMES_420, OFFSETS_420, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_USA5", "doll", FRAMES_421, OFFSETS_421, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_FINAL1", "doll", FRAMES_422, OFFSETS_422, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_FINAL2", "doll", FRAMES_423, OFFSETS_423, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_FINAL3", "doll", FRAMES_424, OFFSETS_424, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_FINAL4", "doll", FRAMES_425, OFFSETS_425, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_GER", "doll", FRAMES_426, OFFSETS_426, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_KNIGHT", "doll", FRAMES_427, OFFSETS_427, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_MEDIC", "doll", FRAMES_428, OFFSETS_428, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_NINJA", "doll", FRAMES_429, OFFSETS_429, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_ROCKSTAR", "doll", FRAMES_430, OFFSETS_430, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_SAMURAI", "doll", FRAMES_431, OFFSETS_431, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_SAMURAI2", "doll", FRAMES_432, OFFSETS_432, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_SAMURAI3", "doll", FRAMES_433, OFFSETS_433, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_SHAMAN1", "doll", FRAMES_434, OFFSETS_434, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_SHAMAN2", "doll", FRAMES_435, OFFSETS_435, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_SHAMAN3", "doll", FRAMES_436, OFFSETS_436, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_SHAMAN4", "doll", FRAMES_437, OFFSETS_437, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_SINJID", "doll", FRAMES_438, OFFSETS_438, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_SURVIVOR", "doll", FRAMES_439, OFFSETS_439, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_USA1", "doll", FRAMES_440, OFFSETS_440, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_USA2", "doll", FRAMES_441, OFFSETS_441, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_USA3", "doll", FRAMES_442, OFFSETS_442, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_USA4", "doll", FRAMES_443, OFFSETS_443, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_USA5", "doll", FRAMES_444, OFFSETS_444, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_FINAL1", "doll", FRAMES_445, OFFSETS_445, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_FINAL2", "doll", FRAMES_446, OFFSETS_446, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_FINAL3", "doll", FRAMES_447, OFFSETS_447, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_FINAL4", "doll", FRAMES_448, OFFSETS_448, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_GER", "doll", FRAMES_449, OFFSETS_449, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_JEANS", "doll", FRAMES_450, OFFSETS_450, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_KNIGHT", "doll", FRAMES_451, OFFSETS_451, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_MEDIC", "doll", FRAMES_452, OFFSETS_452, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_NAVY", "doll", FRAMES_453, OFFSETS_453, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_NINJA", "doll", FRAMES_454, OFFSETS_454, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_ROCKSTAR", "doll", FRAMES_455, OFFSETS_455, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_SAMURAI", "doll", FRAMES_456, OFFSETS_456, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_SAMURAI2", "doll", FRAMES_457, OFFSETS_457, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_SAMURAI3", "doll", FRAMES_458, OFFSETS_458, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_SHAMAN1", "doll", FRAMES_459, OFFSETS_459, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_SHAMAN2", "doll", FRAMES_460, OFFSETS_460, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_SHAMAN3", "doll", FRAMES_461, OFFSETS_461, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_SHAMAN4", "doll", FRAMES_462, OFFSETS_462, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_SINJID", "doll", FRAMES_463, OFFSETS_463, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_SURVIVOR", "doll", FRAMES_464, OFFSETS_464, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_USA1", "doll", FRAMES_465, OFFSETS_465, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_USA2", "doll", FRAMES_466, OFFSETS_466, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_USA3", "doll", FRAMES_467, OFFSETS_467, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_USA4", "doll", FRAMES_468, OFFSETS_468, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_USA5", "doll", FRAMES_469, OFFSETS_469, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SARM_FIVE", "doll", FRAMES_470, OFFSETS_470, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SARM_FOUR", "doll", FRAMES_471, OFFSETS_471, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SARM_GHOST", "doll", FRAMES_472, OFFSETS_472, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SARM_MAN", "doll", FRAMES_473, OFFSETS_473, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SARM_MAN2", "doll", FRAMES_474, OFFSETS_474, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SARM_MAN3", "doll", FRAMES_475, OFFSETS_475, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SARM_METABII", "doll", FRAMES_476, OFFSETS_476, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SARM_ONE", "doll", FRAMES_477, OFFSETS_477, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SARM_TWO", "doll", FRAMES_478, OFFSETS_478, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SARM_ZOMBIE", "doll", FRAMES_479, OFFSETS_479, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SARM_ZOMBIE1", "doll", FRAMES_480, OFFSETS_480, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SARM_ZOMBIE2", "doll", FRAMES_481, OFFSETS_481, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SCHEST_FIVE", "doll", FRAMES_482, OFFSETS_482, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SCHEST_FOUR", "doll", FRAMES_483, OFFSETS_483, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SCHEST_GHOST", "doll", FRAMES_484, OFFSETS_484, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SCHEST_MAN", "doll", FRAMES_485, OFFSETS_485, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SCHEST_MAN2", "doll", FRAMES_486, OFFSETS_486, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SCHEST_MAN3", "doll", FRAMES_487, OFFSETS_487, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SCHEST_METABII", "doll", FRAMES_488, OFFSETS_488, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SCHEST_ONE", "doll", FRAMES_489, OFFSETS_489, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SCHEST_TWO", "doll", FRAMES_490, OFFSETS_490, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SCHEST_ZOMBIE", "doll", FRAMES_491, OFFSETS_491, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SCHEST_ZOMBIE1", "doll", FRAMES_492, OFFSETS_492, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SCHEST_ZOMBIE2", "doll", FRAMES_493, OFFSETS_493, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SFOOT_FIVE", "doll", FRAMES_494, OFFSETS_494, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SFOOT_FOUR", "doll", FRAMES_495, OFFSETS_495, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SFOOT_GHOST", "doll", FRAMES_496, OFFSETS_496, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SFOOT_MAN", "doll", FRAMES_497, OFFSETS_497, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SFOOT_MAN2", "doll", FRAMES_498, OFFSETS_498, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SFOOT_MAN3", "doll", FRAMES_499, OFFSETS_499, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SFOOT_METABII", "doll", FRAMES_500, OFFSETS_500, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SFOOT_ONE", "doll", FRAMES_501, OFFSETS_501, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SFOOT_TWO", "doll", FRAMES_502, OFFSETS_502, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SFOOT_ZOMBIE", "doll", FRAMES_503, OFFSETS_503, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SFOOT_ZOMBIE1", "doll", FRAMES_504, OFFSETS_504, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SFOOT_ZOMBIE2", "doll", FRAMES_505, OFFSETS_505, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHAND_FIVE", "doll", FRAMES_506, OFFSETS_506, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHAND_FOUR", "doll", FRAMES_507, OFFSETS_507, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHAND_GHOST", "doll", FRAMES_508, OFFSETS_508, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHAND_MAN", "doll", FRAMES_509, OFFSETS_509, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHAND_MAN2", "doll", FRAMES_510, OFFSETS_510, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHAND_MAN3", "doll", FRAMES_511, OFFSETS_511, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHAND_METABII", "doll", FRAMES_512, OFFSETS_512, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHAND_ONE", "doll", FRAMES_513, OFFSETS_513, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHAND_TWO", "doll", FRAMES_514, OFFSETS_514, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHAND_ZOMBIE", "doll", FRAMES_515, OFFSETS_515, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHAND_ZOMBIE1", "doll", FRAMES_516, OFFSETS_516, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHAND_ZOMBIE2", "doll", FRAMES_517, OFFSETS_517, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHEAD_FIVE", "doll", FRAMES_518, OFFSETS_518, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHEAD_FOUR", "doll", FRAMES_519, OFFSETS_519, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHEAD_GHOST", "doll", FRAMES_520, OFFSETS_520, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHEAD_MAN", "doll", FRAMES_521, OFFSETS_521, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHEAD_MAN2", "doll", FRAMES_522, OFFSETS_522, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHEAD_MAN3", "doll", FRAMES_523, OFFSETS_523, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHEAD_METABII", "doll", FRAMES_524, OFFSETS_524, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHEAD_ONE", "doll", FRAMES_525, OFFSETS_525, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHEAD_TWO", "doll", FRAMES_526, OFFSETS_526, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHEAD_USA1", "doll", FRAMES_527, OFFSETS_527, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHEAD_ZOMBIE", "doll", FRAMES_528, OFFSETS_528, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHEAD_ZOMBIE1", "doll", FRAMES_529, OFFSETS_529, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHEAD_ZOMBIE2", "doll", FRAMES_530, OFFSETS_530, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_FINAL1", "doll", FRAMES_531, OFFSETS_531, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_FINAL2", "doll", FRAMES_532, OFFSETS_532, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_FINAL3", "doll", FRAMES_533, OFFSETS_533, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_FINAL4", "doll", FRAMES_534, OFFSETS_534, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_KNIGHT", "doll", FRAMES_535, OFFSETS_535, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_MEDIC", "doll", FRAMES_536, OFFSETS_536, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_NINJA", "doll", FRAMES_537, OFFSETS_537, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_ROCKSTAR", "doll", FRAMES_538, OFFSETS_538, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_SAMURAI", "doll", FRAMES_539, OFFSETS_539, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_SAMURAI2", "doll", FRAMES_540, OFFSETS_540, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_SAMURAI3", "doll", FRAMES_541, OFFSETS_541, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_SHAMAN1", "doll", FRAMES_542, OFFSETS_542, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_SHAMAN2", "doll", FRAMES_543, OFFSETS_543, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_SHAMAN3", "doll", FRAMES_544, OFFSETS_544, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_SHAMAN4", "doll", FRAMES_545, OFFSETS_545, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_SINJID", "doll", FRAMES_546, OFFSETS_546, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_SURVIVOR", "doll", FRAMES_547, OFFSETS_547, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_USA1", "doll", FRAMES_548, OFFSETS_548, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_USA2", "doll", FRAMES_549, OFFSETS_549, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_USA3", "doll", FRAMES_550, OFFSETS_550, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_USA4", "doll", FRAMES_551, OFFSETS_551, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_USA5", "doll", FRAMES_552, OFFSETS_552, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SLEG2_FIVE", "doll", FRAMES_553, OFFSETS_553, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SLEG2_FOUR", "doll", FRAMES_554, OFFSETS_554, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SLEG2_GHOST", "doll", FRAMES_555, OFFSETS_555, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SLEG2_MAN", "doll", FRAMES_556, OFFSETS_556, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SLEG2_MAN2", "doll", FRAMES_557, OFFSETS_557, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SLEG2_MAN3", "doll", FRAMES_558, OFFSETS_558, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SLEG2_METABII", "doll", FRAMES_559, OFFSETS_559, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SLEG2_ONE", "doll", FRAMES_560, OFFSETS_560, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SLEG2_TWO", "doll", FRAMES_561, OFFSETS_561, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SLEG2_ZOMBIE", "doll", FRAMES_562, OFFSETS_562, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SLEG2_ZOMBIE1", "doll", FRAMES_563, OFFSETS_563, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SLEG2_ZOMBIE2", "doll", FRAMES_564, OFFSETS_564, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SSHOULDER_ONE", "doll", FRAMES_565, OFFSETS_565, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_BROAD", "doll", FRAMES_566, OFFSETS_566, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_CLUB", "doll", FRAMES_567, OFFSETS_567, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_CROWBAR", "doll", FRAMES_568, OFFSETS_568, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_FIREAXE", "doll", FRAMES_569, OFFSETS_569, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_KATANA", "doll", FRAMES_570, OFFSETS_570, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_M4", "doll", FRAMES_571, OFFSETS_571, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_MOON", "doll", FRAMES_572, OFFSETS_572, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_PALADINSWORD", "doll", FRAMES_573, OFFSETS_573, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_PIPE", "doll", FRAMES_574, OFFSETS_574, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_SHAMANKNIFE", "doll", FRAMES_575, OFFSETS_575, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_SHAMANMAGIC", "doll", FRAMES_576, OFFSETS_576, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_SHAMANMED", "doll", FRAMES_577, OFFSETS_577, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_SHAMANSWORD", "doll", FRAMES_578, OFFSETS_578, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_SHANK", "doll", FRAMES_579, OFFSETS_579, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_SHIELD2", "doll", FRAMES_580, OFFSETS_580, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_SPELLMACE", "doll", FRAMES_581, OFFSETS_581, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_SPELLSTAFF", "doll", FRAMES_582, OFFSETS_582, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_STICK", "doll", FRAMES_583, OFFSETS_583, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_SWATSWORD", "doll", FRAMES_584, OFFSETS_584, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_SWIFT", "doll", FRAMES_585, OFFSETS_585, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_SWORD1", "doll", FRAMES_586, OFFSETS_586, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_UBER1", "doll", FRAMES_587, OFFSETS_587, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_UBER10", "doll", FRAMES_588, OFFSETS_588, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_UBER11", "doll", FRAMES_589, OFFSETS_589, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_UBER2", "doll", FRAMES_590, OFFSETS_590, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_UBER3", "doll", FRAMES_591, OFFSETS_591, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_UBER4", "doll", FRAMES_592, OFFSETS_592, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_UBER5", "doll", FRAMES_593, OFFSETS_593, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_UBER6", "doll", FRAMES_594, OFFSETS_594, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_UBER7", "doll", FRAMES_595, OFFSETS_595, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_UBER8", "doll", FRAMES_596, OFFSETS_596, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_UBER9", "doll", FRAMES_597, OFFSETS_597, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Magic Bolt", "icon", FRAMES_598, OFFSETS_598, 1, 1, -12.850000f, -15.400000f, 12.150000f, 12.800000f },
+    { "Magic Lantern", "item", FRAMES_599, OFFSETS_599, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "MagicCast", "sound", FRAMES_600, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Master Strike", "icon", FRAMES_601, OFFSETS_601, 1, 1, -20.400000f, -15.500000f, 12.150000f, 12.800000f },
+    { "Mender's Armor", "item", FRAMES_602, OFFSETS_602, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Mender's Axe", "item", FRAMES_603, OFFSETS_603, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Mender's Boots", "item", FRAMES_604, OFFSETS_604, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Mender's Gloves", "item", FRAMES_605, OFFSETS_605, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Mender's Leggings", "item", FRAMES_606, OFFSETS_606, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Moon-Struck Horrors", "item", FRAMES_607, OFFSETS_607, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Murder", "item", FRAMES_608, OFFSETS_608, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "NIGHT", "background", FRAMES_609, OFFSETS_609, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Nature's Fury", "item", FRAMES_610, OFFSETS_610, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Navy Boots", "item", FRAMES_611, OFFSETS_611, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Nike Head Wear", "item", FRAMES_612, OFFSETS_612, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "None", "item", FRAMES_613, OFFSETS_613, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ORB BRUTALITY", "orb", FRAMES_614, OFFSETS_614, 1, 1, -12.850000f, -19.750000f, 12.150000f, 12.800000f },
+    { "ORB Blessing of Light", "orb", FRAMES_615, OFFSETS_615, 1, 1, -15.650000f, -17.100000f, 21.850000f, 17.850000f },
+    { "ORB Block", "orb", FRAMES_616, OFFSETS_616, 1, 1, -16.350000f, -13.450000f, 14.400000f, 16.100000f },
+    { "ORB Blood Focus", "orb", FRAMES_617, OFFSETS_617, 1, 1, -12.850000f, -12.200000f, 13.850000f, 12.800000f },
+    { "ORB Blood Strike", "orb", FRAMES_618, OFFSETS_618, 1, 1, -17.150000f, -14.550000f, 12.150000f, 12.800000f },
+    { "ORB Break", "orb", FRAMES_619, OFFSETS_619, 1, 1, -24.150000f, -10.450000f, 31.650000f, 12.050000f },
+    { "ORB Cell Reformation", "orb", FRAMES_620, OFFSETS_620, 1, 1, -27.100000f, -28.700000f, 21.950000f, 18.250000f },
+    { "ORB Coup De Grace", "orb", FRAMES_621, OFFSETS_621, 1, 1, -19.700000f, -20.200000f, 24.900000f, 21.500000f },
+    { "ORB Cripple", "orb", FRAMES_622, OFFSETS_622, 1, 1, -13.000000f, -12.200000f, 12.150000f, 18.400000f },
+    { "ORB Disrupt", "orb", FRAMES_623, OFFSETS_623, 1, 1, -12.600000f, -11.500000f, 12.800000f, 16.000000f },
+    { "ORB ENDURANCE", "orb", FRAMES_624, OFFSETS_624, 1, 1, -12.850000f, -19.950000f, 12.150000f, 31.400000f },
+    { "ORB Electro Bolt", "orb", FRAMES_625, OFFSETS_625, 1, 1, -12.850000f, -15.400000f, 12.150000f, 12.800000f },
+    { "ORB Empty", "orb", FRAMES_626, OFFSETS_626, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ORB Flame Blast", "orb", FRAMES_627, OFFSETS_627, 1, 1, -12.850000f, -14.600000f, 12.150000f, 12.800000f },
+    { "ORB Flame Strike", "orb", FRAMES_628, OFFSETS_628, 1, 1, -12.850000f, -19.900000f, 18.500000f, 14.300000f },
+    { "ORB Frost Bolt", "orb", FRAMES_629, OFFSETS_629, 1, 1, -14.850000f, -9.300000f, 12.450000f, 8.900000f },
+    { "ORB Healing Light", "orb", FRAMES_630, OFFSETS_630, 1, 1, -32.500000f, -13.300000f, 13.900000f, 14.900000f },
+    { "ORB Heroic Motivation", "orb", FRAMES_631, OFFSETS_631, 1, 1, -17.700000f, -12.200000f, 20.700000f, 17.850000f },
+    { "ORB Intervention", "orb", FRAMES_632, OFFSETS_632, 1, 1, -16.350000f, -13.450000f, 14.400000f, 16.100000f },
+    { "ORB Ironskin", "orb", FRAMES_633, OFFSETS_633, 1, 1, -19.000000f, -13.400000f, 12.600000f, 12.250000f },
+    { "ORB Magic Bolt", "orb", FRAMES_634, OFFSETS_634, 1, 1, -12.850000f, -15.400000f, 12.150000f, 12.800000f },
+    { "ORB Master Strike", "orb", FRAMES_635, OFFSETS_635, 1, 1, -20.400000f, -15.500000f, 12.150000f, 12.800000f },
+    { "ORB Quick Strike", "orb", FRAMES_636, OFFSETS_636, 1, 1, -12.850000f, -15.400000f, 12.150000f, 12.800000f },
+    { "ORB REGENERATION", "orb", FRAMES_637, OFFSETS_637, 1, 1, -13.000000f, -14.500000f, 17.550000f, 14.000000f },
+    { "ORB Rage", "orb", FRAMES_638, OFFSETS_638, 1, 1, -27.100000f, -28.700000f, 21.950000f, 18.250000f },
+    { "ORB Re-Energize", "orb", FRAMES_639, OFFSETS_639, 1, 1, -12.850000f, -12.200000f, 12.800000f, 12.800000f },
+    { "ORB SOLIDITY", "orb", FRAMES_640, OFFSETS_640, 1, 1, -12.850000f, -12.200000f, 12.150000f, 12.800000f },
+    { "ORB Shatter Bolt", "orb", FRAMES_641, OFFSETS_641, 1, 1, -16.150000f, -17.000000f, 12.150000f, 13.700000f },
+    { "ORB Smash", "orb", FRAMES_642, OFFSETS_642, 1, 1, -28.700000f, -26.200000f, 11.750000f, 12.400000f },
+    { "ORB Strike", "orb", FRAMES_643, OFFSETS_643, 1, 1, -6.300000f, -15.300000f, 10.700000f, 15.200000f },
+    { "ORB Subversion", "orb", FRAMES_644, OFFSETS_644, 1, 1, -12.000000f, -11.250000f, 12.300000f, 11.250000f },
+    { "ORB Sunder", "orb", FRAMES_645, OFFSETS_645, 1, 1, -12.850000f, -12.200000f, 16.300000f, 23.350000f },
+    { "ORB Suppression", "orb", FRAMES_646, OFFSETS_646, 1, 1, -12.350000f, -22.600000f, 12.150000f, 22.000000f },
+    { "ORB Void", "orb", FRAMES_647, OFFSETS_647, 1, 1, -12.850000f, -15.000000f, 12.550000f, 14.050000f },
+    { "ORB Wound", "orb", FRAMES_648, OFFSETS_648, 1, 1, -13.500000f, -20.750000f, 41.950000f, 11.700000f },
+    { "PLAINS", "zone", FRAMES_649, OFFSETS_649, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "PLAINS2", "background", FRAMES_650, OFFSETS_650, 1, 1, -570.450000f, -136.450000f, 535.700000f, 256.950000f },
+    { "POISON", "buff", FRAMES_651, OFFSETS_651, 1, 1, -5.950000f, -10.950000f, 5.950000f, 10.950000f },
+    { "POISONZOMBIE", "buff", FRAMES_652, OFFSETS_652, 1, 1, -5.950000f, -10.950000f, 5.950000f, 10.950000f },
+    { "POWERUP", "buff", FRAMES_653, OFFSETS_653, 1, 1, -5.950000f, -10.950000f, 6.050000f, 10.950000f },
+    { "Paladin's Armor", "item", FRAMES_654, OFFSETS_654, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Paladin's Boots", "item", FRAMES_655, OFFSETS_655, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Paladin's Gloves", "item", FRAMES_656, OFFSETS_656, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Paladin's Helm", "item", FRAMES_657, OFFSETS_657, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Paladin's Leggings", "item", FRAMES_658, OFFSETS_658, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "PoisonHit", "sound", FRAMES_659, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Power Lantern", "item", FRAMES_660, OFFSETS_660, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "PowerupDefense", "sound", FRAMES_661, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "PowerupOffense", "sound", FRAMES_662, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Proverse All Stars", "item", FRAMES_663, OFFSETS_663, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Pulse Rifle", "item", FRAMES_664, OFFSETS_664, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Quick Strike", "icon", FRAMES_665, OFFSETS_665, 1, 1, -12.850000f, -15.400000f, 12.150000f, 12.800000f },
+    { "RAGE1", "buff", FRAMES_666, OFFSETS_666, 1, 1, -5.950000f, -10.950000f, 6.050000f, 10.950000f },
+    { "RAGE2", "buff", FRAMES_667, OFFSETS_667, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "RAGE3", "buff", FRAMES_668, OFFSETS_668, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "REGEN", "buff", FRAMES_669, OFFSETS_669, 1, 1, -5.750000f, -10.050000f, 6.550000f, 11.000000f },
+    { "REGENFOC", "buff", FRAMES_670, OFFSETS_670, 1, 1, -5.750000f, -10.050000f, 6.550000f, 11.000000f },
+    { "REGENSHAMAN", "buff", FRAMES_671, OFFSETS_671, 1, 1, -5.750000f, -10.050000f, 6.550000f, 11.000000f },
+    { "Rage", "icon", FRAMES_672, OFFSETS_672, 1, 1, -27.100000f, -28.700000f, 21.950000f, 18.250000f },
+    { "Re-Energize", "icon", FRAMES_673, OFFSETS_673, 1, 1, -12.850000f, -12.200000f, 12.800000f, 12.800000f },
+    { "Reckoning", "item", FRAMES_674, OFFSETS_674, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Rockstar", "portrait", FRAMES_675, OFFSETS_675, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "SEA", "background", FRAMES_676, OFFSETS_676, 1, 1, -385.950000f, -157.650000f, 394.500000f, 158.200000f },
+    { "SHATTER", "buff", FRAMES_677, OFFSETS_677, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "SHATTER2", "buff", FRAMES_678, OFFSETS_678, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "SHORE", "background", FRAMES_679, OFFSETS_679, 1, 1, -523.200000f, -166.550000f, 523.250000f, 215.050000f },
+    { "SPEEDUP", "buff", FRAMES_680, OFFSETS_680, 1, 1, -6.150000f, -9.800000f, 5.850000f, 3.200000f },
+    { "STUN1", "buff", FRAMES_681, OFFSETS_681, 1, 1, -5.950000f, -10.950000f, 5.950000f, 10.950000f },
+    { "SUBVERSION", "buff", FRAMES_682, OFFSETS_682, 1, 1, -6.050000f, -10.700000f, 5.700000f, 6.950000f },
+    { "SUNDER1", "buff", FRAMES_683, OFFSETS_683, 1, 1, -5.950000f, -10.100000f, 5.950000f, 0.700000f },
+    { "SUNDER2", "buff", FRAMES_684, OFFSETS_684, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "SUNDER3", "buff", FRAMES_685, OFFSETS_685, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "SUNDER4", "buff", FRAMES_686, OFFSETS_686, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "SUNDER5", "buff", FRAMES_687, OFFSETS_687, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "SUPRESSION", "buff", FRAMES_688, OFFSETS_688, 1, 1, -3.850000f, -17.350000f, 3.850000f, 17.250000f },
+    { "Scarlett", "portrait", FRAMES_689, OFFSETS_689, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Sensei Ishiguro", "portrait", FRAMES_690, OFFSETS_690, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Shadow Legwraps", "item", FRAMES_691, OFFSETS_691, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Shaman of Blades", "portrait", FRAMES_692, OFFSETS_692, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Shaman of Death", "portrait", FRAMES_693, OFFSETS_693, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ShamanDie", "sound", FRAMES_694, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ShamanHit1", "sound", FRAMES_695, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ShamanHit2", "sound", FRAMES_696, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Shatter Bolt", "icon", FRAMES_697, OFFSETS_697, 1, 1, -16.150000f, -17.000000f, 12.150000f, 13.700000f },
+    { "Smash", "icon", FRAMES_698, OFFSETS_698, 1, 1, -28.700000f, -26.200000f, 11.750000f, 12.400000f },
+    { "Sonny", "portrait", FRAMES_699, OFFSETS_699, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Steel Slicer", "item", FRAMES_700, OFFSETS_700, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Stone Club", "item", FRAMES_701, OFFSETS_701, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Strike", "icon", FRAMES_702, OFFSETS_702, 1, 1, -6.300000f, -15.300000f, 10.700000f, 15.200000f },
+    { "Striker's Armor", "item", FRAMES_703, OFFSETS_703, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Striker's Flip-Flops", "item", FRAMES_704, OFFSETS_704, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Striker's Gloves", "item", FRAMES_705, OFFSETS_705, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Striker's Leggings", "item", FRAMES_706, OFFSETS_706, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Striker's Mask", "item", FRAMES_707, OFFSETS_707, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Subversion", "icon", FRAMES_708, OFFSETS_708, 1, 1, -12.000000f, -11.250000f, 12.300000f, 11.250000f },
+    { "Sunder", "icon", FRAMES_709, OFFSETS_709, 1, 1, -12.850000f, -12.200000f, 16.300000f, 23.350000f },
+    { "Suppression", "icon", FRAMES_710, OFFSETS_710, 1, 1, -12.350000f, -22.600000f, 12.150000f, 22.000000f },
+    { "Survivor's Armor", "item", FRAMES_711, OFFSETS_711, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Survivor's Boots", "item", FRAMES_712, OFFSETS_712, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Survivor's Gloves", "item", FRAMES_713, OFFSETS_713, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Survivor's Helm", "item", FRAMES_714, OFFSETS_714, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Survivor's Leggings", "item", FRAMES_715, OFFSETS_715, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Swift Blade", "item", FRAMES_716, OFFSETS_716, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Swing", "sound", FRAMES_717, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "The Grand Rifle", "item", FRAMES_718, OFFSETS_718, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Tool", "item", FRAMES_719, OFFSETS_719, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Torment", "item", FRAMES_720, OFFSETS_720, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Tribal Blade", "item", FRAMES_721, OFFSETS_721, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Tribal Dagger", "item", FRAMES_722, OFFSETS_722, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "VOID1", "buff", FRAMES_723, OFFSETS_723, 1, 1, -5.950000f, -10.950000f, 5.950000f, 10.950000f },
+    { "VOID2", "buff", FRAMES_724, OFFSETS_724, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "VOID3", "buff", FRAMES_725, OFFSETS_725, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "VOID4", "buff", FRAMES_726, OFFSETS_726, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "VOID5", "buff", FRAMES_727, OFFSETS_727, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "VOIDMOB", "buff", FRAMES_728, OFFSETS_728, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Vendetta the Breaker", "portrait", FRAMES_729, OFFSETS_729, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Veradux", "portrait", FRAMES_730, OFFSETS_730, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Void", "icon", FRAMES_731, OFFSETS_731, 1, 1, -12.850000f, -15.000000f, 12.550000f, 14.050000f },
+    { "WASHED", "buff", FRAMES_732, OFFSETS_732, 1, 1, -7.050000f, -11.600000f, 1.850000f, 7.000000f },
+    { "WHITE NOVEMBER", "background", FRAMES_733, OFFSETS_733, 1, 1, -528.500000f, -118.900000f, 551.450000f, 246.050000f },
+    { "WHITE_NOVEMBER", "zone", FRAMES_734, OFFSETS_734, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "WOUND1", "buff", FRAMES_735, OFFSETS_735, 1, 1, -5.950000f, -10.950000f, 5.950000f, 10.950000f },
+    { "WOUND2", "buff", FRAMES_736, OFFSETS_736, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "WOUND3", "buff", FRAMES_737, OFFSETS_737, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "White T-Shirt", "item", FRAMES_738, OFFSETS_738, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Wolfgang", "portrait", FRAMES_739, OFFSETS_739, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Wound", "icon", FRAMES_740, OFFSETS_740, 1, 1, -13.500000f, -20.750000f, 41.950000f, 11.700000f },
+    { "ZPCI Blade", "item", FRAMES_741, OFFSETS_741, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZPCI Captain", "portrait", FRAMES_742, OFFSETS_742, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZPCI Dog Tag", "item", FRAMES_743, OFFSETS_743, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZPCI Elite", "portrait", FRAMES_744, OFFSETS_744, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZPCI Hunter", "portrait", FRAMES_745, OFFSETS_745, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZPCI Med-Wear A", "item", FRAMES_746, OFFSETS_746, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZPCI Med-Wear B", "item", FRAMES_747, OFFSETS_747, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZPCI Med-Wear C", "item", FRAMES_748, OFFSETS_748, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZPCI Med-Wear D", "item", FRAMES_749, OFFSETS_749, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZPCI Med-Wear E", "item", FRAMES_750, OFFSETS_750, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZPCI Medic", "portrait", FRAMES_751, OFFSETS_751, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZPCI Sniper", "portrait", FRAMES_752, OFFSETS_752, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZPCIHit1", "sound", FRAMES_753, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZPCIHit2", "sound", FRAMES_754, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Zombie Ambassador", "portrait", FRAMES_755, OFFSETS_755, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Zombie Fingers", "item", FRAMES_756, OFFSETS_756, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZombieDie", "sound", FRAMES_757, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZombieHit1", "sound", FRAMES_758, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZombieHit2", "sound", FRAMES_759, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "mainPlayer", "portrait", FRAMES_760, OFFSETS_760, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
 };
 const int SONNY_ASSET_COUNT = (int)(sizeof(SONNY_ASSETS) / sizeof(SONNY_ASSETS[0]));
 
@@ -2960,6 +2978,49 @@ const StageChrome SONNY_STAGE_CHROME[] = {
     { "mainMenu", "@5", 5, 951, 0, 414.950000f, 239.200000f, 1.000000f, 1.000000f, 519.950000f, 67.900000f, 274.850000f, 41.100000f },
     { "mainMenu", "@63", 63, 1110, 0, 0.000000f, 0.000000f, 1.000000f, 1.000000f, 349.800000f, 42.250000f, -7.650000f, -519.350000f },
     { "mainMenu", "@65", 65, 944, 0, 117.200000f, 34.100000f, 1.000000f, 1.000000f, 172.450000f, 46.100000f, 103.150000f, 24.100000f },
+    { "subMenu", "@4", 4, 1104, 0, -4.500000f, -2.050000f, 1.000000f, 1.000000f, 856.600000f, 640.400000f, 30.500000f, 37.900000f },
+    { "subMenu", "@5", 5, 951, 0, 414.950000f, 239.200000f, 1.000000f, 1.000000f, 519.950000f, 67.900000f, 274.850000f, 41.100000f },
+    { "subMenu", "@63", 63, 1110, 0, 0.000000f, 0.000000f, 1.000000f, 1.000000f, 349.800000f, 42.250000f, -7.650000f, -519.350000f },
+    { "subMenu", "@65", 65, 944, 0, 117.200000f, 34.100000f, 1.000000f, 1.000000f, 172.450000f, 46.100000f, 103.150000f, 24.100000f },
+    { "nameMenu", "@4", 4, 1104, 0, -4.500000f, -2.050000f, 1.000000f, 1.000000f, 856.600000f, 640.400000f, 30.500000f, 37.900000f },
+    { "nameMenu", "@5", 5, 1118, 0, 0.000000f, 0.000000f, 1.000000f, 1.000000f, 426.100000f, 45.250000f, -185.550000f, -252.200000f },
+    { "nameMenu", "@63", 63, 1110, 0, 0.000000f, 0.000000f, 1.000000f, 1.000000f, 349.800000f, 42.250000f, -7.650000f, -519.350000f },
+    { "nameMenu", "@65", 65, 944, 0, 117.200000f, 34.100000f, 1.000000f, 1.000000f, 172.450000f, 46.100000f, 103.150000f, 24.100000f },
+    { "dataMenu", "@4", 4, 1104, 0, -4.500000f, -2.050000f, 1.000000f, 1.000000f, 856.600000f, 640.400000f, 30.500000f, 37.900000f },
+    { "dataMenu", "KrinToolTipper", 30, 1142, 0, 800.000000f, 600.000000f, 1.000000f, 1.000000f, 169.000000f, 177.100000f, 49.000000f, 68.700000f },
+    { "dataMenu", "@63", 63, 1110, 0, 0.000000f, 0.000000f, 1.000000f, 1.000000f, 349.800000f, 42.250000f, -7.650000f, -519.350000f },
+    { "dataMenu", "@65", 65, 944, 0, 117.200000f, 34.100000f, 1.000000f, 1.000000f, 172.450000f, 46.100000f, 103.150000f, 24.100000f },
+    { "classMenu", "@4", 4, 1104, 0, -4.500000f, -2.050000f, 1.000000f, 1.000000f, 856.600000f, 640.400000f, 30.500000f, 37.900000f },
+    { "classMenu", "KrinToolTipper", 30, 1142, 0, 800.000000f, 600.000000f, 1.000000f, 1.000000f, 169.000000f, 177.100000f, 49.000000f, 68.700000f },
+    { "classMenu", "@63", 63, 1110, 0, 0.000000f, 0.000000f, 1.000000f, 1.000000f, 349.800000f, 42.250000f, -7.650000f, -519.350000f },
+    { "classMenu", "@65", 65, 944, 0, 117.200000f, 34.100000f, 1.000000f, 1.000000f, 172.450000f, 46.100000f, 103.150000f, 24.100000f },
+    { "optionsMenu", "@4", 4, 1104, 0, -4.500000f, -2.050000f, 1.000000f, 1.000000f, 856.600000f, 640.400000f, 30.500000f, 37.900000f },
+    { "optionsMenu", "@63", 63, 1110, 0, 0.000000f, 0.000000f, 1.000000f, 1.000000f, 349.800000f, 42.250000f, -7.650000f, -519.350000f },
+    { "optionsMenu", "@65", 65, 944, 0, 117.200000f, 34.100000f, 1.000000f, 1.000000f, 172.450000f, 46.100000f, 103.150000f, 24.100000f },
+    { "gameOverMenu", "@4", 4, 1104, 0, -4.500000f, -2.050000f, 1.000000f, 1.000000f, 856.600000f, 640.400000f, 30.500000f, 37.900000f },
+    { "gameOverMenu", "@63", 63, 1110, 0, 0.000000f, 0.000000f, 1.000000f, 1.000000f, 349.800000f, 42.250000f, -7.650000f, -519.350000f },
+    { "gameOverMenu", "@65", 65, 944, 0, 117.200000f, 34.100000f, 1.000000f, 1.000000f, 172.450000f, 46.100000f, 103.150000f, 24.100000f },
+    { "endMenu", "@4", 4, 1104, 0, -4.500000f, -2.050000f, 1.000000f, 1.000000f, 856.600000f, 640.400000f, 30.500000f, 37.900000f },
+    { "endMenu", "@63", 63, 1110, 0, 0.000000f, 0.000000f, 1.000000f, 1.000000f, 349.800000f, 42.250000f, -7.650000f, -519.350000f },
+    { "endMenu", "@65", 65, 944, 0, 117.200000f, 34.100000f, 1.000000f, 1.000000f, 172.450000f, 46.100000f, 103.150000f, 24.100000f },
+    { "designMenu", "@4", 4, 1104, 0, -4.500000f, -2.050000f, 1.000000f, 1.000000f, 856.600000f, 640.400000f, 30.500000f, 37.900000f },
+    { "designMenu", "@5", 5, 1179, 0, 0.000000f, 0.000000f, 1.000000f, 1.000000f, 644.700000f, 380.150000f, -75.550000f, -90.800000f },
+    { "designMenu", "@63", 63, 1110, 0, 0.000000f, 0.000000f, 1.000000f, 1.000000f, 349.800000f, 42.250000f, -7.650000f, -519.350000f },
+    { "designMenu", "@65", 65, 944, 0, 117.200000f, 34.100000f, 1.000000f, 1.000000f, 172.450000f, 46.100000f, 103.150000f, 24.100000f },
+    { "IntroSeq", "@1", 1, 963, 0, -4.500000f, -8.650000f, 1.120178f, 1.291351f, 719.700000f, 457.000000f, -0.450000f, -0.500000f },
+    { "IntroSeq", "@2", 2, 951, 0, 414.900000f, 294.650000f, 1.000000f, 1.000000f, 519.950000f, 67.900000f, 274.850000f, 41.100000f },
+    { "Navigation", "@1", 1, 1198, 0, 400.000000f, 508.000000f, 1.000000f, 1.000000f, 829.250000f, 177.400000f, 409.750000f, 108.250000f },
+    { "Navigation", "KrinScreen", 12, 1237, 0, 400.000000f, 222.900000f, 1.000000f, 1.000000f, 1037.450000f, 652.800000f, 476.300000f, 260.950000f },
+    { "Navigation", "@70", 70, 1238, 0, 0.000000f, 0.000000f, 1.000000f, 1.000000f, 394.250000f, 49.750000f, -30.900000f, -484.300000f },
+    { "Navigation", "@76", 76, 1248, 0, 445.100000f, 473.800000f, 1.000000f, 1.000000f, 27.200000f, 26.400000f, 13.600000f, 12.200000f },
+    { "Navigation", "@86", 86, 1250, 0, 0.000000f, 0.000000f, 1.000000f, 1.000000f, 385.450000f, 47.200000f, -39.150000f, -486.250000f },
+    { "Navigation", "krinXbarPro", 127, 1262, 0, 630.700000f, 522.250000f, 1.000000f, 1.000000f, 251.700000f, 14.050000f, 126.000000f, 7.000000f },
+    { "Navigation", "KRINMENU", 134, 1503, 0, 400.500000f, 222.400000f, 1.000000f, 1.000000f, 764.200000f, 462.250000f, 384.500000f, 208.400000f },
+    { "Navigation", "KrinCombatText", 1198, 1507, 0, 400.000000f, 48.950000f, 1.000000f, 1.000000f, 749.950000f, 37.000000f, 375.000000f, 13.500000f },
+    { "Navigation", "KrinToolTipper", 1200, 1142, 0, 800.000000f, 600.000000f, 1.000000f, 1.000000f, 169.000000f, 177.100000f, 49.000000f, 68.700000f },
+    { "Navigation", "krinNavFadeSpeech", 1233, 1513, 0, 393.850000f, 286.000000f, 1.000000f, 1.000000f, 812.950000f, 576.200000f, 406.450000f, 288.050000f },
+    { "Navigation", "@1242", 1242, 1516, 0, 399.050000f, 284.750000f, 1.000000f, 1.000000f, 805.600000f, 577.050000f, 402.800000f, 288.500000f },
+    { "LOADBATTLESCENE", "@1", 1, 963, 0, -4.250000f, -6.300000f, 1.123230f, 1.279327f, 719.700000f, 457.000000f, -0.450000f, -0.500000f },
     { "KRINBATTLESCENE", "@1", 1, 1198, 0, 400.000000f, 508.000000f, 1.000000f, 1.000000f, 829.250000f, 177.400000f, 409.750000f, 108.250000f },
     { "KRINBATTLESCENE", "@12", 12, 1531, 0, 400.000000f, 73.300000f, 1.000000f, 1.000000f, 803.750000f, 212.000000f, 395.000000f, 107.750000f },
     { "KRINBATTLESCENE", "@18", 18, 1536, 0, 400.000000f, 507.900000f, 1.000000f, 1.000000f, 30.000000f, 30.000000f, 15.000000f, 15.000000f },
@@ -2995,19 +3056,18 @@ const StageChrome SONNY_STAGE_CHROME[] = {
     { "KRINBATTLESCENE", "@567", 567, 1248, 0, 445.100000f, 473.250000f, 1.000000f, 1.000000f, 27.200000f, 26.400000f, 13.600000f, 12.200000f },
     { "KRINBATTLESCENE", "KrinToolTipper", 577, 1142, 0, 800.000000f, 600.000000f, 1.000000f, 1.000000f, 169.000000f, 177.100000f, 49.000000f, 68.700000f },
     { "KRINBATTLESCENE", "blacker5", 610, 1642, 0, 398.100000f, 287.050000f, 1.000000f, 1.000000f, 808.200000f, 582.150000f, 404.100000f, 291.050000f },
-    { "Navigation", "@1", 1, 1198, 0, 400.000000f, 508.000000f, 1.000000f, 1.000000f, 829.250000f, 177.400000f, 409.750000f, 108.250000f },
-    { "Navigation", "KrinScreen", 12, 1237, 0, 400.000000f, 222.900000f, 1.000000f, 1.000000f, 1037.450000f, 652.800000f, 476.300000f, 260.950000f },
-    { "Navigation", "@70", 70, 1238, 0, 0.000000f, 0.000000f, 1.000000f, 1.000000f, 394.250000f, 49.750000f, -30.900000f, -484.300000f },
-    { "Navigation", "@76", 76, 1248, 0, 445.100000f, 473.800000f, 1.000000f, 1.000000f, 27.200000f, 26.400000f, 13.600000f, 12.200000f },
-    { "Navigation", "@86", 86, 1250, 0, 0.000000f, 0.000000f, 1.000000f, 1.000000f, 385.450000f, 47.200000f, -39.150000f, -486.250000f },
-    { "Navigation", "krinXbarPro", 127, 1262, 0, 630.700000f, 522.250000f, 1.000000f, 1.000000f, 251.700000f, 14.050000f, 126.000000f, 7.000000f },
-    { "Navigation", "KRINMENU", 134, 1503, 0, 400.500000f, 222.400000f, 1.000000f, 1.000000f, 764.200000f, 462.250000f, 384.500000f, 208.400000f },
-    { "Navigation", "KrinCombatText", 1198, 1507, 0, 400.000000f, 48.950000f, 1.000000f, 1.000000f, 749.950000f, 37.000000f, 375.000000f, 13.500000f },
-    { "Navigation", "KrinToolTipper", 1200, 1142, 0, 800.000000f, 600.000000f, 1.000000f, 1.000000f, 169.000000f, 177.100000f, 49.000000f, 68.700000f },
-    { "Navigation", "krinNavFadeSpeech", 1233, 1513, 0, 393.850000f, 286.000000f, 1.000000f, 1.000000f, 812.950000f, 576.200000f, 406.450000f, 288.050000f },
-    { "Navigation", "@1242", 1242, 1516, 0, 399.050000f, 284.750000f, 1.000000f, 1.000000f, 805.600000f, 577.050000f, 402.800000f, 288.500000f },
     { "winCombat", "@1", 1, 963, 0, -8.000000f, -0.650000f, 1.129761f, 1.262695f, 719.700000f, 457.000000f, -0.450000f, -0.500000f },
     { "loseCombat", "@1", 1, 963, 0, -8.000000f, -0.650000f, 1.129761f, 1.262695f, 719.700000f, 457.000000f, -0.450000f, -0.500000f },
+    { "drawCombat", "@1", 1, 963, 0, -8.000000f, -0.650000f, 1.129761f, 1.262695f, 719.700000f, 457.000000f, -0.450000f, -0.500000f },
+    { "CS_INTRO", "@1", 1, 963, 0, 0.000000f, 0.000000f, 1.000000f, 1.000000f, 719.700000f, 457.000000f, -0.450000f, -0.500000f },
+    { "CS_INTRO", "@2", 2, 1695, 0, 400.000000f, 287.500000f, 1.000000f, 1.000000f, 644.750000f, 429.200000f, 345.650000f, 188.400000f },
+    { "CS_INTRO", "@25", 25, 1699, 0, 397.800000f, 287.400000f, 1.000000f, 1.000000f, 814.450000f, 593.600000f, 407.200000f, 296.800000f },
+    { "CS_BRIDGE", "@1", 1, 963, 0, 0.000000f, 0.000000f, 1.000000f, 1.000000f, 719.700000f, 457.000000f, -0.450000f, -0.500000f },
+    { "CS_BRIDGE", "@2", 2, 1710, 0, 400.000000f, 287.500000f, 1.000000f, 1.000000f, 901.600000f, 655.450000f, 448.700000f, 335.400000f },
+    { "CS_BRIDGE", "@25", 25, 1699, 0, 397.800000f, 287.400000f, 1.000000f, 1.000000f, 814.450000f, 593.600000f, 407.200000f, 296.800000f },
+    { "CS_OUTRO", "@1", 1, 963, 0, 0.000000f, 0.000000f, 1.000000f, 1.000000f, 719.700000f, 457.000000f, -0.450000f, -0.500000f },
+    { "CS_OUTRO", "@2", 2, 1719, 0, 400.000000f, 287.500000f, 1.000000f, 1.000000f, 312.350000f, 208.000000f, 146.350000f, 90.000000f },
+    { "CS_OUTRO", "@25", 25, 1699, 0, 397.800000f, 287.400000f, 1.000000f, 1.000000f, 814.450000f, 593.600000f, 407.200000f, 296.800000f },
     { "overMap", "krinMapper", 1, 1726, 0, 39.550000f, 53.500000f, 1.000000f, 1.000000f, 764.850000f, 507.500000f, 31.250000f, 20.000000f },
     { "overMap", "KrinToolTipper", 23, 1142, 0, 800.000000f, 600.000000f, 1.000000f, 1.000000f, 169.000000f, 177.100000f, 49.000000f, 68.700000f },
 };
@@ -3023,77 +3083,6 @@ const StageChrome *stage_chrome(const char *screen, const char *name)
 }
 
 const ClipPart SONNY_CLIP_PARTS[] = {
-    { "KRINBATTLESCENE", "p5BAR", "@1", 1566, 1, 0, 27.617000f, 36.094000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 0.000000f, 6.500000f },
-    { "KRINBATTLESCENE", "p5BAR", "LCC", 91, 1, 101, 113.033000f, 21.587000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 100.000000f, 6.000000f },
-    { "KRINBATTLESCENE", "p5BAR", "@5", 1508, 5, 0, 136.150000f, 28.550000f, 1.085327f, 1.160553f, 157.400000f, 24.000000f, 100.000000f, 12.000000f },
-    { "KRINBATTLESCENE", "p5BAR", "@1", 1566, 1, 0, 27.617000f, 36.094000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 0.000000f, 6.500000f },
-    { "KRINBATTLESCENE", "p5BAR", "fB3", 1569, 8, 0, 27.617000f, 36.094000f, 0.854156f, 1.160553f, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "KRINBATTLESCENE", "p5BAR", "@10", 963, 10, 0, 198.502000f, 14.391000f, 0.063858f, 0.061715f, 719.700000f, 457.000000f, -0.450000f, -0.500000f },
-    { "KRINBATTLESCENE", "p5BAR", "LCC", 91, 1, 101, 113.033000f, 21.587000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 100.000000f, 6.000000f },
-    { "KRINBATTLESCENE", "p5BAR", "lB3", 1569, 13, 0, 27.617000f, 22.167000f, 0.854156f, 1.160553f, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "KRINBATTLESCENE", "p5BAR", "@15", 1570, 15, 0, 136.150000f, 28.550000f, 1.085327f, 1.160553f, 201.000000f, 25.950000f, 100.500000f, 12.950000f },
-    { "KRINBATTLESCENE", "p5BAR", "inner", 1584, 17, 16, 137.615000f, 28.434000f, 1.085327f, 1.160553f, 200.450000f, 28.750000f, 101.450000f, 13.850000f },
-    { "KRINBATTLESCENE", "p1BAR", "@1", 1566, 1, 0, 27.617000f, 71.144000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 0.000000f, 6.500000f },
-    { "KRINBATTLESCENE", "p1BAR", "LCC", 91, 1, 101, 113.033000f, 56.637000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 100.000000f, 6.000000f },
-    { "KRINBATTLESCENE", "p1BAR", "@5", 1508, 5, 0, 136.150000f, 63.600000f, 1.085327f, 1.160553f, 157.400000f, 24.000000f, 100.000000f, 12.000000f },
-    { "KRINBATTLESCENE", "p1BAR", "@1", 1566, 1, 0, 27.617000f, 71.144000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 0.000000f, 6.500000f },
-    { "KRINBATTLESCENE", "p1BAR", "fB3", 1569, 8, 0, 27.617000f, 71.144000f, 0.854156f, 1.160553f, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "KRINBATTLESCENE", "p1BAR", "@10", 963, 10, 0, 198.502000f, 49.441000f, 0.063858f, 0.061715f, 719.700000f, 457.000000f, -0.450000f, -0.500000f },
-    { "KRINBATTLESCENE", "p1BAR", "LCC", 91, 1, 101, 113.033000f, 56.637000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 100.000000f, 6.000000f },
-    { "KRINBATTLESCENE", "p1BAR", "lB3", 1569, 13, 0, 27.617000f, 57.217000f, 0.854156f, 1.160553f, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "KRINBATTLESCENE", "p1BAR", "@15", 1570, 15, 0, 136.150000f, 63.600000f, 1.085327f, 1.160553f, 201.000000f, 25.950000f, 100.500000f, 12.950000f },
-    { "KRINBATTLESCENE", "p1BAR", "inner", 1584, 17, 16, 137.615000f, 63.484000f, 1.085327f, 1.160553f, 200.450000f, 28.750000f, 101.450000f, 13.850000f },
-    { "KRINBATTLESCENE", "p3BAR", "@1", 1566, 1, 0, 27.617000f, 105.944000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 0.000000f, 6.500000f },
-    { "KRINBATTLESCENE", "p3BAR", "LCC", 91, 1, 101, 113.033000f, 91.437000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 100.000000f, 6.000000f },
-    { "KRINBATTLESCENE", "p3BAR", "@5", 1508, 5, 0, 136.150000f, 98.400000f, 1.085327f, 1.160553f, 157.400000f, 24.000000f, 100.000000f, 12.000000f },
-    { "KRINBATTLESCENE", "p3BAR", "@1", 1566, 1, 0, 27.617000f, 105.944000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 0.000000f, 6.500000f },
-    { "KRINBATTLESCENE", "p3BAR", "fB3", 1569, 8, 0, 27.617000f, 105.944000f, 0.854156f, 1.160553f, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "KRINBATTLESCENE", "p3BAR", "@10", 963, 10, 0, 198.502000f, 84.241000f, 0.063858f, 0.061715f, 719.700000f, 457.000000f, -0.450000f, -0.500000f },
-    { "KRINBATTLESCENE", "p3BAR", "LCC", 91, 1, 101, 113.033000f, 91.437000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 100.000000f, 6.000000f },
-    { "KRINBATTLESCENE", "p3BAR", "lB3", 1569, 13, 0, 27.617000f, 92.017000f, 0.854156f, 1.160553f, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "KRINBATTLESCENE", "p3BAR", "@15", 1570, 15, 0, 136.150000f, 98.400000f, 1.085327f, 1.160553f, 201.000000f, 25.950000f, 100.500000f, 12.950000f },
-    { "KRINBATTLESCENE", "p3BAR", "inner", 1584, 17, 16, 137.615000f, 98.284000f, 1.085327f, 1.160553f, 200.450000f, 28.750000f, 101.450000f, 13.850000f },
-    { "KRINBATTLESCENE", "p6BAR", "@1", 1566, 1, 0, 556.367000f, 36.094000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 0.000000f, 6.500000f },
-    { "KRINBATTLESCENE", "p6BAR", "LCC", 91, 1, 101, 641.783000f, 21.587000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 100.000000f, 6.000000f },
-    { "KRINBATTLESCENE", "p6BAR", "@5", 1508, 5, 0, 664.900000f, 28.550000f, 1.085327f, 1.160553f, 157.400000f, 24.000000f, 100.000000f, 12.000000f },
-    { "KRINBATTLESCENE", "p6BAR", "@1", 1566, 1, 0, 556.367000f, 36.094000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 0.000000f, 6.500000f },
-    { "KRINBATTLESCENE", "p6BAR", "fB3", 1569, 8, 0, 556.367000f, 36.094000f, 0.854156f, 1.160553f, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "KRINBATTLESCENE", "p6BAR", "@10", 963, 10, 0, 727.252000f, 14.391000f, 0.063858f, 0.061715f, 719.700000f, 457.000000f, -0.450000f, -0.500000f },
-    { "KRINBATTLESCENE", "p6BAR", "LCC", 91, 1, 101, 641.783000f, 21.587000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 100.000000f, 6.000000f },
-    { "KRINBATTLESCENE", "p6BAR", "lB3", 1569, 13, 0, 556.367000f, 22.167000f, 0.854156f, 1.160553f, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "KRINBATTLESCENE", "p6BAR", "@15", 1570, 15, 0, 664.900000f, 28.550000f, 1.085327f, 1.160553f, 201.000000f, 25.950000f, 100.500000f, 12.950000f },
-    { "KRINBATTLESCENE", "p6BAR", "inner", 1584, 17, 16, 666.365000f, 28.434000f, 1.085327f, 1.160553f, 200.450000f, 28.750000f, 101.450000f, 13.850000f },
-    { "KRINBATTLESCENE", "p2BAR", "@1", 1566, 1, 0, 556.367000f, 71.144000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 0.000000f, 6.500000f },
-    { "KRINBATTLESCENE", "p2BAR", "LCC", 91, 1, 101, 641.783000f, 56.637000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 100.000000f, 6.000000f },
-    { "KRINBATTLESCENE", "p2BAR", "@5", 1508, 5, 0, 664.900000f, 63.600000f, 1.085327f, 1.160553f, 157.400000f, 24.000000f, 100.000000f, 12.000000f },
-    { "KRINBATTLESCENE", "p2BAR", "@1", 1566, 1, 0, 556.367000f, 71.144000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 0.000000f, 6.500000f },
-    { "KRINBATTLESCENE", "p2BAR", "fB3", 1569, 8, 0, 556.367000f, 71.144000f, 0.854156f, 1.160553f, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "KRINBATTLESCENE", "p2BAR", "@10", 963, 10, 0, 727.252000f, 49.441000f, 0.063858f, 0.061715f, 719.700000f, 457.000000f, -0.450000f, -0.500000f },
-    { "KRINBATTLESCENE", "p2BAR", "LCC", 91, 1, 101, 641.783000f, 56.637000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 100.000000f, 6.000000f },
-    { "KRINBATTLESCENE", "p2BAR", "lB3", 1569, 13, 0, 556.367000f, 57.217000f, 0.854156f, 1.160553f, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "KRINBATTLESCENE", "p2BAR", "@15", 1570, 15, 0, 664.900000f, 63.600000f, 1.085327f, 1.160553f, 201.000000f, 25.950000f, 100.500000f, 12.950000f },
-    { "KRINBATTLESCENE", "p2BAR", "inner", 1584, 17, 16, 666.365000f, 63.484000f, 1.085327f, 1.160553f, 200.450000f, 28.750000f, 101.450000f, 13.850000f },
-    { "KRINBATTLESCENE", "p4BAR", "@1", 1566, 1, 0, 556.367000f, 105.944000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 0.000000f, 6.500000f },
-    { "KRINBATTLESCENE", "p4BAR", "LCC", 91, 1, 101, 641.783000f, 91.437000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 100.000000f, 6.000000f },
-    { "KRINBATTLESCENE", "p4BAR", "@5", 1508, 5, 0, 664.900000f, 98.400000f, 1.085327f, 1.160553f, 157.400000f, 24.000000f, 100.000000f, 12.000000f },
-    { "KRINBATTLESCENE", "p4BAR", "@1", 1566, 1, 0, 556.367000f, 105.944000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 0.000000f, 6.500000f },
-    { "KRINBATTLESCENE", "p4BAR", "fB3", 1569, 8, 0, 556.367000f, 105.944000f, 0.854156f, 1.160553f, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "KRINBATTLESCENE", "p4BAR", "@10", 963, 10, 0, 727.252000f, 84.241000f, 0.063858f, 0.061715f, 719.700000f, 457.000000f, -0.450000f, -0.500000f },
-    { "KRINBATTLESCENE", "p4BAR", "LCC", 91, 1, 101, 641.783000f, 91.437000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 100.000000f, 6.000000f },
-    { "KRINBATTLESCENE", "p4BAR", "lB3", 1569, 13, 0, 556.367000f, 92.017000f, 0.854156f, 1.160553f, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "KRINBATTLESCENE", "p4BAR", "@15", 1570, 15, 0, 664.900000f, 98.400000f, 1.085327f, 1.160553f, 201.000000f, 25.950000f, 100.500000f, 12.950000f },
-    { "KRINBATTLESCENE", "p4BAR", "inner", 1584, 17, 16, 666.365000f, 98.284000f, 1.085327f, 1.160553f, 200.450000f, 28.750000f, 101.450000f, 13.850000f },
-    { "KRINBATTLESCENE", "KrinSelector3", "@1", 1586, 1, 0, -65.080000f, 192.015000f, 0.899994f, 0.899994f, 70.000000f, 70.000000f, 35.000000f, 35.000000f },
-    { "KRINBATTLESCENE", "KrinSelector5", "@1", 1586, 1, 0, -65.080000f, 621.615000f, 0.899994f, 0.899994f, 70.000000f, 70.000000f, 35.000000f, 35.000000f },
-    { "KRINBATTLESCENE", "KrinSelector6", "@1", 1586, 1, 0, -55.080000f, 84.465000f, 0.899994f, 0.899994f, 70.000000f, 70.000000f, 35.000000f, 35.000000f },
-    { "KRINBATTLESCENE", "KrinSelector4", "@1", 1586, 1, 0, -65.080000f, 406.815000f, 0.899994f, 0.899994f, 70.000000f, 70.000000f, 35.000000f, 35.000000f },
-    { "KRINBATTLESCENE", "KrinSelector2", "@1", 1586, 1, 0, -65.080000f, 299.415000f, 0.899994f, 0.899994f, 70.000000f, 70.000000f, 35.000000f, 35.000000f },
-    { "KRINBATTLESCENE", "KrinSelector1", "@1", 1586, 1, 0, -65.080000f, 514.215000f, 0.899994f, 0.899994f, 70.000000f, 70.000000f, 35.000000f, 35.000000f },
-    { "KRINBATTLESCENE", "@537", "@2", 1613, 2, 0, 679.800000f, 349.950000f, 1.000000f, 1.000000f, 191.950000f, 148.000000f, 95.950000f, 35.700000f },
-    { "KRINBATTLESCENE", "combatScript", "@1", 1633, 1, 0, 473.050000f, 460.550000f, 1.000000f, 1.000000f, 306.500000f, 95.000000f, 0.500000f, 0.500000f },
-    { "KRINBATTLESCENE", "combatScript", "@3", 963, 3, 0, 481.650000f, 468.450000f, 0.083374f, 0.175049f, 719.700000f, 457.000000f, -0.450000f, -0.500000f },
-    { "KRINBATTLESCENE", "combatScript", "inner2", 1312, 6, 125, 511.700000f, 508.750000f, 1.966919f, 1.981918f, 55.350000f, 72.200000f, 26.800000f, 45.500000f },
-    { "KRINBATTLESCENE", "combatScript", "@8", 1639, 8, 45, 506.050000f, 411.900000f, 1.000000f, 1.000000f, 188.150000f, 14.450000f, -21.450000f, -9.350000f },
     { "Navigation", "KRINMENU", "@1", 1267, 1, 0, 400.500000f, 222.400000f, 1.000000f, 1.000000f, 2.450000f, 415.100000f, 384.450000f, 207.400000f },
     { "Navigation", "KRINMENU", "@2", 1268, 2, 0, 398.350000f, 222.550000f, 1.000000f, 1.000000f, 764.200000f, 416.100000f, 382.350000f, 208.550000f },
     { "Navigation", "KRINMENU", "@1", 1270, 1, 0, 628.000000f, 383.600000f, 1.000000f, 1.000000f, 249.050000f, 50.850000f, 124.500000f, 25.400000f },
@@ -3356,6 +3345,77 @@ const ClipPart SONNY_CLIP_PARTS[] = {
     { "Navigation", "krinNavFadeSpeech", "@1", 1508, 1, 0, 503.900000f, 286.050000f, 5.164871f, 24.008331f, 157.400000f, 24.000000f, 100.000000f, 12.000000f },
     { "Navigation", "krinNavFadeSpeech", "@2", 1509, 2, 0, 393.850000f, 228.350000f, 1.000000f, 1.000000f, 474.500000f, 248.200000f, 237.250000f, 124.100000f },
     { "Navigation", "krinNavFadeSpeech", "@6", 1512, 6, 0, 393.850000f, 319.000000f, 8.043335f, 1.000000f, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "KRINBATTLESCENE", "p5BAR", "@1", 1566, 1, 0, 27.617000f, 36.094000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 0.000000f, 6.500000f },
+    { "KRINBATTLESCENE", "p5BAR", "LCC", 91, 1, 101, 113.033000f, 21.587000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 100.000000f, 6.000000f },
+    { "KRINBATTLESCENE", "p5BAR", "@5", 1508, 5, 0, 136.150000f, 28.550000f, 1.085327f, 1.160553f, 157.400000f, 24.000000f, 100.000000f, 12.000000f },
+    { "KRINBATTLESCENE", "p5BAR", "@1", 1566, 1, 0, 27.617000f, 36.094000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 0.000000f, 6.500000f },
+    { "KRINBATTLESCENE", "p5BAR", "fB3", 1569, 8, 0, 27.617000f, 36.094000f, 0.854156f, 1.160553f, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "KRINBATTLESCENE", "p5BAR", "@10", 963, 10, 0, 198.502000f, 14.391000f, 0.063858f, 0.061715f, 719.700000f, 457.000000f, -0.450000f, -0.500000f },
+    { "KRINBATTLESCENE", "p5BAR", "LCC", 91, 1, 101, 113.033000f, 21.587000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 100.000000f, 6.000000f },
+    { "KRINBATTLESCENE", "p5BAR", "lB3", 1569, 13, 0, 27.617000f, 22.167000f, 0.854156f, 1.160553f, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "KRINBATTLESCENE", "p5BAR", "@15", 1570, 15, 0, 136.150000f, 28.550000f, 1.085327f, 1.160553f, 201.000000f, 25.950000f, 100.500000f, 12.950000f },
+    { "KRINBATTLESCENE", "p5BAR", "inner", 1584, 17, 16, 137.615000f, 28.434000f, 1.085327f, 1.160553f, 200.450000f, 28.750000f, 101.450000f, 13.850000f },
+    { "KRINBATTLESCENE", "p1BAR", "@1", 1566, 1, 0, 27.617000f, 71.144000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 0.000000f, 6.500000f },
+    { "KRINBATTLESCENE", "p1BAR", "LCC", 91, 1, 101, 113.033000f, 56.637000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 100.000000f, 6.000000f },
+    { "KRINBATTLESCENE", "p1BAR", "@5", 1508, 5, 0, 136.150000f, 63.600000f, 1.085327f, 1.160553f, 157.400000f, 24.000000f, 100.000000f, 12.000000f },
+    { "KRINBATTLESCENE", "p1BAR", "@1", 1566, 1, 0, 27.617000f, 71.144000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 0.000000f, 6.500000f },
+    { "KRINBATTLESCENE", "p1BAR", "fB3", 1569, 8, 0, 27.617000f, 71.144000f, 0.854156f, 1.160553f, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "KRINBATTLESCENE", "p1BAR", "@10", 963, 10, 0, 198.502000f, 49.441000f, 0.063858f, 0.061715f, 719.700000f, 457.000000f, -0.450000f, -0.500000f },
+    { "KRINBATTLESCENE", "p1BAR", "LCC", 91, 1, 101, 113.033000f, 56.637000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 100.000000f, 6.000000f },
+    { "KRINBATTLESCENE", "p1BAR", "lB3", 1569, 13, 0, 27.617000f, 57.217000f, 0.854156f, 1.160553f, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "KRINBATTLESCENE", "p1BAR", "@15", 1570, 15, 0, 136.150000f, 63.600000f, 1.085327f, 1.160553f, 201.000000f, 25.950000f, 100.500000f, 12.950000f },
+    { "KRINBATTLESCENE", "p1BAR", "inner", 1584, 17, 16, 137.615000f, 63.484000f, 1.085327f, 1.160553f, 200.450000f, 28.750000f, 101.450000f, 13.850000f },
+    { "KRINBATTLESCENE", "p3BAR", "@1", 1566, 1, 0, 27.617000f, 105.944000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 0.000000f, 6.500000f },
+    { "KRINBATTLESCENE", "p3BAR", "LCC", 91, 1, 101, 113.033000f, 91.437000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 100.000000f, 6.000000f },
+    { "KRINBATTLESCENE", "p3BAR", "@5", 1508, 5, 0, 136.150000f, 98.400000f, 1.085327f, 1.160553f, 157.400000f, 24.000000f, 100.000000f, 12.000000f },
+    { "KRINBATTLESCENE", "p3BAR", "@1", 1566, 1, 0, 27.617000f, 105.944000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 0.000000f, 6.500000f },
+    { "KRINBATTLESCENE", "p3BAR", "fB3", 1569, 8, 0, 27.617000f, 105.944000f, 0.854156f, 1.160553f, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "KRINBATTLESCENE", "p3BAR", "@10", 963, 10, 0, 198.502000f, 84.241000f, 0.063858f, 0.061715f, 719.700000f, 457.000000f, -0.450000f, -0.500000f },
+    { "KRINBATTLESCENE", "p3BAR", "LCC", 91, 1, 101, 113.033000f, 91.437000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 100.000000f, 6.000000f },
+    { "KRINBATTLESCENE", "p3BAR", "lB3", 1569, 13, 0, 27.617000f, 92.017000f, 0.854156f, 1.160553f, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "KRINBATTLESCENE", "p3BAR", "@15", 1570, 15, 0, 136.150000f, 98.400000f, 1.085327f, 1.160553f, 201.000000f, 25.950000f, 100.500000f, 12.950000f },
+    { "KRINBATTLESCENE", "p3BAR", "inner", 1584, 17, 16, 137.615000f, 98.284000f, 1.085327f, 1.160553f, 200.450000f, 28.750000f, 101.450000f, 13.850000f },
+    { "KRINBATTLESCENE", "p6BAR", "@1", 1566, 1, 0, 556.367000f, 36.094000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 0.000000f, 6.500000f },
+    { "KRINBATTLESCENE", "p6BAR", "LCC", 91, 1, 101, 641.783000f, 21.587000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 100.000000f, 6.000000f },
+    { "KRINBATTLESCENE", "p6BAR", "@5", 1508, 5, 0, 664.900000f, 28.550000f, 1.085327f, 1.160553f, 157.400000f, 24.000000f, 100.000000f, 12.000000f },
+    { "KRINBATTLESCENE", "p6BAR", "@1", 1566, 1, 0, 556.367000f, 36.094000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 0.000000f, 6.500000f },
+    { "KRINBATTLESCENE", "p6BAR", "fB3", 1569, 8, 0, 556.367000f, 36.094000f, 0.854156f, 1.160553f, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "KRINBATTLESCENE", "p6BAR", "@10", 963, 10, 0, 727.252000f, 14.391000f, 0.063858f, 0.061715f, 719.700000f, 457.000000f, -0.450000f, -0.500000f },
+    { "KRINBATTLESCENE", "p6BAR", "LCC", 91, 1, 101, 641.783000f, 21.587000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 100.000000f, 6.000000f },
+    { "KRINBATTLESCENE", "p6BAR", "lB3", 1569, 13, 0, 556.367000f, 22.167000f, 0.854156f, 1.160553f, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "KRINBATTLESCENE", "p6BAR", "@15", 1570, 15, 0, 664.900000f, 28.550000f, 1.085327f, 1.160553f, 201.000000f, 25.950000f, 100.500000f, 12.950000f },
+    { "KRINBATTLESCENE", "p6BAR", "inner", 1584, 17, 16, 666.365000f, 28.434000f, 1.085327f, 1.160553f, 200.450000f, 28.750000f, 101.450000f, 13.850000f },
+    { "KRINBATTLESCENE", "p2BAR", "@1", 1566, 1, 0, 556.367000f, 71.144000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 0.000000f, 6.500000f },
+    { "KRINBATTLESCENE", "p2BAR", "LCC", 91, 1, 101, 641.783000f, 56.637000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 100.000000f, 6.000000f },
+    { "KRINBATTLESCENE", "p2BAR", "@5", 1508, 5, 0, 664.900000f, 63.600000f, 1.085327f, 1.160553f, 157.400000f, 24.000000f, 100.000000f, 12.000000f },
+    { "KRINBATTLESCENE", "p2BAR", "@1", 1566, 1, 0, 556.367000f, 71.144000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 0.000000f, 6.500000f },
+    { "KRINBATTLESCENE", "p2BAR", "fB3", 1569, 8, 0, 556.367000f, 71.144000f, 0.854156f, 1.160553f, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "KRINBATTLESCENE", "p2BAR", "@10", 963, 10, 0, 727.252000f, 49.441000f, 0.063858f, 0.061715f, 719.700000f, 457.000000f, -0.450000f, -0.500000f },
+    { "KRINBATTLESCENE", "p2BAR", "LCC", 91, 1, 101, 641.783000f, 56.637000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 100.000000f, 6.000000f },
+    { "KRINBATTLESCENE", "p2BAR", "lB3", 1569, 13, 0, 556.367000f, 57.217000f, 0.854156f, 1.160553f, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "KRINBATTLESCENE", "p2BAR", "@15", 1570, 15, 0, 664.900000f, 63.600000f, 1.085327f, 1.160553f, 201.000000f, 25.950000f, 100.500000f, 12.950000f },
+    { "KRINBATTLESCENE", "p2BAR", "inner", 1584, 17, 16, 666.365000f, 63.484000f, 1.085327f, 1.160553f, 200.450000f, 28.750000f, 101.450000f, 13.850000f },
+    { "KRINBATTLESCENE", "p4BAR", "@1", 1566, 1, 0, 556.367000f, 105.944000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 0.000000f, 6.500000f },
+    { "KRINBATTLESCENE", "p4BAR", "LCC", 91, 1, 101, 641.783000f, 91.437000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 100.000000f, 6.000000f },
+    { "KRINBATTLESCENE", "p4BAR", "@5", 1508, 5, 0, 664.900000f, 98.400000f, 1.085327f, 1.160553f, 157.400000f, 24.000000f, 100.000000f, 12.000000f },
+    { "KRINBATTLESCENE", "p4BAR", "@1", 1566, 1, 0, 556.367000f, 105.944000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 0.000000f, 6.500000f },
+    { "KRINBATTLESCENE", "p4BAR", "fB3", 1569, 8, 0, 556.367000f, 105.944000f, 0.854156f, 1.160553f, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "KRINBATTLESCENE", "p4BAR", "@10", 963, 10, 0, 727.252000f, 84.241000f, 0.063858f, 0.061715f, 719.700000f, 457.000000f, -0.450000f, -0.500000f },
+    { "KRINBATTLESCENE", "p4BAR", "LCC", 91, 1, 101, 641.783000f, 91.437000f, 0.854156f, 1.160553f, 200.000000f, 12.000000f, 100.000000f, 6.000000f },
+    { "KRINBATTLESCENE", "p4BAR", "lB3", 1569, 13, 0, 556.367000f, 92.017000f, 0.854156f, 1.160553f, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "KRINBATTLESCENE", "p4BAR", "@15", 1570, 15, 0, 664.900000f, 98.400000f, 1.085327f, 1.160553f, 201.000000f, 25.950000f, 100.500000f, 12.950000f },
+    { "KRINBATTLESCENE", "p4BAR", "inner", 1584, 17, 16, 666.365000f, 98.284000f, 1.085327f, 1.160553f, 200.450000f, 28.750000f, 101.450000f, 13.850000f },
+    { "KRINBATTLESCENE", "KrinSelector3", "@1", 1586, 1, 0, -65.080000f, 192.015000f, 0.899994f, 0.899994f, 70.000000f, 70.000000f, 35.000000f, 35.000000f },
+    { "KRINBATTLESCENE", "KrinSelector5", "@1", 1586, 1, 0, -65.080000f, 621.615000f, 0.899994f, 0.899994f, 70.000000f, 70.000000f, 35.000000f, 35.000000f },
+    { "KRINBATTLESCENE", "KrinSelector6", "@1", 1586, 1, 0, -55.080000f, 84.465000f, 0.899994f, 0.899994f, 70.000000f, 70.000000f, 35.000000f, 35.000000f },
+    { "KRINBATTLESCENE", "KrinSelector4", "@1", 1586, 1, 0, -65.080000f, 406.815000f, 0.899994f, 0.899994f, 70.000000f, 70.000000f, 35.000000f, 35.000000f },
+    { "KRINBATTLESCENE", "KrinSelector2", "@1", 1586, 1, 0, -65.080000f, 299.415000f, 0.899994f, 0.899994f, 70.000000f, 70.000000f, 35.000000f, 35.000000f },
+    { "KRINBATTLESCENE", "KrinSelector1", "@1", 1586, 1, 0, -65.080000f, 514.215000f, 0.899994f, 0.899994f, 70.000000f, 70.000000f, 35.000000f, 35.000000f },
+    { "KRINBATTLESCENE", "@537", "@2", 1613, 2, 0, 679.800000f, 349.950000f, 1.000000f, 1.000000f, 191.950000f, 148.000000f, 95.950000f, 35.700000f },
+    { "KRINBATTLESCENE", "combatScript", "@1", 1633, 1, 0, 473.050000f, 460.550000f, 1.000000f, 1.000000f, 306.500000f, 95.000000f, 0.500000f, 0.500000f },
+    { "KRINBATTLESCENE", "combatScript", "@3", 963, 3, 0, 481.650000f, 468.450000f, 0.083374f, 0.175049f, 719.700000f, 457.000000f, -0.450000f, -0.500000f },
+    { "KRINBATTLESCENE", "combatScript", "inner2", 1312, 6, 125, 511.700000f, 508.750000f, 1.966919f, 1.981918f, 55.350000f, 72.200000f, 26.800000f, 45.500000f },
+    { "KRINBATTLESCENE", "combatScript", "@8", 1639, 8, 45, 506.050000f, 411.900000f, 1.000000f, 1.000000f, 188.150000f, 14.450000f, -21.450000f, -9.350000f },
     { "menu", "data", "@1", 1267, 1, 0, 400.500000f, 222.400000f, 1.000000f, 1.000000f, 2.450000f, 415.100000f, 384.450000f, 207.400000f },
     { "menu", "data", "@2", 1268, 2, 0, 398.350000f, 222.550000f, 1.000000f, 1.000000f, 764.200000f, 416.100000f, 382.350000f, 208.550000f },
     { "menu", "data", "@1", 1272, 1, 0, 260.450000f, 222.350000f, 1.001434f, 1.295532f, 249.050000f, 267.150000f, 124.500000f, 133.550000f },
@@ -3470,320 +3530,389 @@ const ClipPart *clip_part(const char *screen, const char *owner, int32_t index)
 }
 
 const TextField SONNY_TEXT_FIELDS[] = {
-    { "mainMenu", "@7", "@7", 241.950000f, 334.500000f, 304.100000f, 47.750000f, 36.000000f, 2.000000f, 2, 1, 255, 255, 255 },
-    { "mainMenu", "@8", "@8", 241.950000f, 404.500000f, 304.100000f, 24.100000f, 18.000000f, 2.000000f, 2, 1, 255, 255, 255 },
-    { "mainMenu", "@64", "@64", 5.500000f, 533.550000f, 223.300000f, 17.000000f, 10.000000f, 2.000000f, 0, 1, 130, 83, 83 },
-    { "KRINBATTLESCENE", "p5BAR", "@2", 198.502000f, 13.231000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 157, 157, 157 },
-    { "KRINBATTLESCENE", "p5BAR", "@3", 151.833000f, 13.231000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "KRINBATTLESCENE", "p5BAR", "@4", 198.502000f, 27.157000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 157, 157, 157 },
-    { "KRINBATTLESCENE", "p5BAR", "@5", 151.833000f, 27.157000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "KRINBATTLESCENE", "p5BAR", "@6", 29.734000f, 12.360000f, 100.200000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "KRINBATTLESCENE", "p1BAR", "@2", 198.502000f, 48.281000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 157, 157, 157 },
-    { "KRINBATTLESCENE", "p1BAR", "@3", 151.833000f, 48.281000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "KRINBATTLESCENE", "p1BAR", "@4", 198.502000f, 62.207000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 157, 157, 157 },
-    { "KRINBATTLESCENE", "p1BAR", "@5", 151.833000f, 62.207000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "KRINBATTLESCENE", "p1BAR", "@6", 29.734000f, 47.410000f, 100.200000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "KRINBATTLESCENE", "p3BAR", "@2", 198.502000f, 83.081000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 157, 157, 157 },
-    { "KRINBATTLESCENE", "p3BAR", "@3", 151.833000f, 83.081000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "KRINBATTLESCENE", "p3BAR", "@4", 198.502000f, 97.007000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 157, 157, 157 },
-    { "KRINBATTLESCENE", "p3BAR", "@5", 151.833000f, 97.007000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "KRINBATTLESCENE", "p3BAR", "@6", 29.734000f, 82.210000f, 100.200000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "KRINBATTLESCENE", "p6BAR", "@2", 727.252000f, 13.231000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 157, 157, 157 },
-    { "KRINBATTLESCENE", "p6BAR", "@3", 680.583000f, 13.231000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "KRINBATTLESCENE", "p6BAR", "@4", 727.252000f, 27.157000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 157, 157, 157 },
-    { "KRINBATTLESCENE", "p6BAR", "@5", 680.583000f, 27.157000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "KRINBATTLESCENE", "p6BAR", "@6", 558.484000f, 12.360000f, 100.200000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "KRINBATTLESCENE", "p2BAR", "@2", 727.252000f, 48.281000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 157, 157, 157 },
-    { "KRINBATTLESCENE", "p2BAR", "@3", 680.583000f, 48.281000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "KRINBATTLESCENE", "p2BAR", "@4", 727.252000f, 62.207000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 157, 157, 157 },
-    { "KRINBATTLESCENE", "p2BAR", "@5", 680.583000f, 62.207000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "KRINBATTLESCENE", "p2BAR", "@6", 558.484000f, 47.410000f, 100.200000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "KRINBATTLESCENE", "p4BAR", "@2", 727.252000f, 83.081000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 157, 157, 157 },
-    { "KRINBATTLESCENE", "p4BAR", "@3", 680.583000f, 83.081000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "KRINBATTLESCENE", "p4BAR", "@4", 727.252000f, 97.007000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 157, 157, 157 },
-    { "KRINBATTLESCENE", "p4BAR", "@5", 680.583000f, 97.007000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "KRINBATTLESCENE", "p4BAR", "@6", 558.484000f, 82.210000f, 100.200000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "KRINBATTLESCENE", "KrinSelector3", "@3", -229.824000f, 235.755000f, 366.500000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 255, 255, 255 },
-    { "KRINBATTLESCENE", "KrinSelector3", "@4", -229.824000f, 183.330000f, 366.500000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 255, 255, 255 },
-    { "KRINBATTLESCENE", "KrinSelector5", "@3", -229.824000f, 665.355000f, 366.500000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 255, 255, 255 },
-    { "KRINBATTLESCENE", "KrinSelector5", "@4", -229.824000f, 612.930000f, 366.500000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 255, 255, 255 },
-    { "KRINBATTLESCENE", "KrinSelector6", "@3", -219.824000f, 128.205000f, 366.500000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 255, 255, 255 },
-    { "KRINBATTLESCENE", "KrinSelector6", "@4", -219.824000f, 75.780000f, 366.500000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 255, 255, 255 },
-    { "KRINBATTLESCENE", "KrinSelector4", "@3", -229.824000f, 450.555000f, 366.500000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 255, 255, 255 },
-    { "KRINBATTLESCENE", "KrinSelector4", "@4", -229.824000f, 398.130000f, 366.500000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 255, 255, 255 },
-    { "KRINBATTLESCENE", "KrinSelector2", "@3", -229.824000f, 343.155000f, 366.500000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 255, 255, 255 },
-    { "KRINBATTLESCENE", "KrinSelector2", "@4", -229.824000f, 290.730000f, 366.500000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 255, 255, 255 },
-    { "KRINBATTLESCENE", "KrinSelector1", "@3", -229.824000f, 557.955000f, 366.500000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 255, 255, 255 },
-    { "KRINBATTLESCENE", "KrinSelector1", "@4", -229.824000f, 505.530000f, 366.500000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 255, 255, 255 },
-    { "KRINBATTLESCENE", "@535", "@535", 18.300000f, 132.600000f, 35.450000f, 29.350000f, 9.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "KRINBATTLESCENE", "@536", "@536", 40.300000f, 132.600000f, 28.050000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "KRINBATTLESCENE", "@537", "@3", 594.550000f, 319.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 0, 0, 0 },
-    { "KRINBATTLESCENE", "@537", "@4", 594.550000f, 334.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 0, 0, 0 },
-    { "KRINBATTLESCENE", "@537", "@5", 594.550000f, 349.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 0, 0, 0 },
-    { "KRINBATTLESCENE", "@537", "@6", 594.550000f, 364.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 153, 153, 153 },
-    { "KRINBATTLESCENE", "@537", "@7", 594.550000f, 379.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 153, 153, 153 },
-    { "KRINBATTLESCENE", "@537", "@8", 594.550000f, 394.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 153, 153, 153 },
-    { "KRINBATTLESCENE", "@537", "@9", 594.550000f, 409.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 204, 204, 204 },
-    { "KRINBATTLESCENE", "@537", "@10", 594.550000f, 424.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 204, 204, 204 },
-    { "KRINBATTLESCENE", "@537", "@11", 594.550000f, 439.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 204, 204, 204 },
-    { "KRINBATTLESCENE", "@537", "@12", 594.550000f, 319.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 153, 0, 0 },
-    { "KRINBATTLESCENE", "@537", "@13", 594.550000f, 334.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 153, 0, 0 },
-    { "KRINBATTLESCENE", "@537", "@14", 594.550000f, 349.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 153, 0, 0 },
-    { "KRINBATTLESCENE", "@537", "@15", 594.550000f, 364.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 153, 0, 0 },
-    { "KRINBATTLESCENE", "@537", "@16", 594.550000f, 379.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 153, 0, 0 },
-    { "KRINBATTLESCENE", "@537", "@17", 594.550000f, 394.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 153, 0, 0 },
-    { "KRINBATTLESCENE", "@537", "@18", 594.550000f, 409.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 153, 0, 0 },
-    { "KRINBATTLESCENE", "@537", "@19", 594.550000f, 424.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 153, 0, 0 },
-    { "KRINBATTLESCENE", "@537", "@20", 594.550000f, 439.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 153, 0, 0 },
-    { "KRINBATTLESCENE", "combatScript", "@4", 546.073000f, 480.123000f, 227.716000f, 70.623000f, 11.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "KRINBATTLESCENE", "combatScript", "@5", 546.050000f, 463.950000f, 226.700000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 102, 102, 102 },
-    { "Navigation", "@130", "@130", 481.050000f, 491.350000f, 292.550000f, 19.050000f, 12.000000f, 2.000000f, 2, 1, 0, 0, 0 },
-    { "Navigation", "@131", "@131", 643.250000f, 529.300000f, 113.150000f, 26.100000f, 10.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "Navigation", "@132", "@132", 540.750000f, 470.500000f, 181.100000f, 24.900000f, 12.000000f, 2.000000f, 2, 1, 255, 255, 255 },
-    { "Navigation", "@133", "@133", 480.000000f, 490.050000f, 292.000000f, 19.050000f, 12.000000f, 2.000000f, 2, 1, 254, 225, 109 },
-    { "Navigation", "KRINMENU", "@881", 92.000000f, 90.050000f, 166.950000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 204, 204, 204 },
-    { "Navigation", "KRINMENU", "@882", 92.000000f, 109.850000f, 166.950000f, 19.600000f, 12.000000f, 2.000000f, 2, 1, 204, 204, 204 },
-    { "Navigation", "KRINMENU", "@883", 329.950000f, 97.100000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 103, 147, 57 },
-    { "Navigation", "KRINMENU", "@884", 329.950000f, 114.550000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 153, 51, 51 },
-    { "Navigation", "KRINMENU", "@885", 329.950000f, 132.700000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 196, 140, 60 },
-    { "Navigation", "KRINMENU", "@886", 329.950000f, 150.850000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 115, 85, 136 },
-    { "Navigation", "KRINMENU", "@887", 329.950000f, 168.300000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 141, 169, 233 },
-    { "Navigation", "KRINMENU", "@888", 385.950000f, 97.100000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 103, 147, 57 },
-    { "Navigation", "KRINMENU", "@889", 385.950000f, 114.550000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 153, 51, 51 },
-    { "Navigation", "KRINMENU", "@890", 385.950000f, 132.700000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 196, 140, 60 },
-    { "Navigation", "KRINMENU", "@891", 385.950000f, 150.850000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 115, 85, 136 },
-    { "Navigation", "KRINMENU", "@892", 385.950000f, 168.300000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 141, 169, 233 },
-    { "Navigation", "KRINMENU", "@893", 329.800000f, 196.800000f, 119.800000f, 19.600000f, 12.000000f, 2.000000f, 0, 1, 102, 102, 102 },
-    { "Navigation", "KRINMENU", "@894", 329.800000f, 303.200000f, 119.800000f, 19.600000f, 12.000000f, 2.000000f, 0, 1, 102, 102, 102 },
-    { "Navigation", "KRINMENU", "@1027", 30.200000f, 284.400000f, 103.550000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 204, 204, 204 },
-    { "Navigation", "KRINMENU", "@1032", 136.550000f, 284.400000f, 34.800000f, 17.700000f, 10.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "Navigation", "KRINMENU", "@11", 97.400000f, 328.400000f, 146.850000f, 20.700000f, 10.000000f, 2.000000f, 2, 1, 255, 255, 255 },
-    { "Navigation", "KRINMENU", "@1052", 537.100000f, 368.550000f, 105.400000f, 30.550000f, 22.000000f, 2.000000f, 0, 0, 250, 217, 90 },
-    { "Navigation", "KRINMENU", "@1053", 501.450000f, 364.900000f, 34.200000f, 84.600000f, 31.000000f, 2.000000f, 1, 1, 250, 217, 90 },
-    { "Navigation", "KRINMENU", "@1059", 512.300000f, 87.100000f, 233.750000f, 21.900000f, 13.000000f, 2.000000f, 2, 1, 94, 94, 94 },
-    { "Navigation", "krinNavFadeSpeech", "@5", 282.850000f, 310.800000f, 222.000000f, 19.050000f, 12.000000f, 2.000000f, 2, 1, 102, 102, 102 },
-    { "Navigation", "@1240", "@1240", 190.500000f, 155.450000f, 408.750000f, 148.350000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "Navigation", "@1241", "@1241", 190.550000f, 131.400000f, 408.700000f, 21.550000f, 14.000000f, 2.000000f, 0, 1, 102, 102, 102 },
-    { "winCombat", "@2", "@2", 155.400000f, 230.800000f, 92.750000f, 41.850000f, 14.000000f, 2.000000f, 0, 1, 153, 102, 204 },
-    { "loseCombat", "@2", "@2", 155.400000f, 230.800000f, 92.750000f, 41.850000f, 14.000000f, 2.000000f, 0, 1, 153, 102, 204 },
-    { "menu", "inventory", "@881", 92.000000f, 90.050000f, 166.950000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 204, 204, 204 },
-    { "menu", "inventory", "@882", 92.000000f, 109.850000f, 166.950000f, 19.600000f, 12.000000f, 2.000000f, 2, 1, 204, 204, 204 },
-    { "menu", "inventory", "@883", 329.950000f, 97.100000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 103, 147, 57 },
-    { "menu", "inventory", "@884", 329.950000f, 114.550000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 153, 51, 51 },
-    { "menu", "inventory", "@885", 329.950000f, 132.700000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 196, 140, 60 },
-    { "menu", "inventory", "@886", 329.950000f, 150.850000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 115, 85, 136 },
-    { "menu", "inventory", "@887", 329.950000f, 168.300000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 141, 169, 233 },
-    { "menu", "inventory", "@888", 385.950000f, 97.100000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 103, 147, 57 },
-    { "menu", "inventory", "@889", 385.950000f, 114.550000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 153, 51, 51 },
-    { "menu", "inventory", "@890", 385.950000f, 132.700000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 196, 140, 60 },
-    { "menu", "inventory", "@891", 385.950000f, 150.850000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 115, 85, 136 },
-    { "menu", "inventory", "@892", 385.950000f, 168.300000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 141, 169, 233 },
-    { "menu", "inventory", "@893", 329.800000f, 196.800000f, 119.800000f, 19.600000f, 12.000000f, 2.000000f, 0, 1, 102, 102, 102 },
-    { "menu", "inventory", "@894", 329.800000f, 303.200000f, 119.800000f, 19.600000f, 12.000000f, 2.000000f, 0, 1, 102, 102, 102 },
-    { "menu", "inventory", "@1027", 30.200000f, 284.400000f, 103.550000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 204, 204, 204 },
-    { "menu", "inventory", "@1032", 136.550000f, 284.400000f, 34.800000f, 17.700000f, 10.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "inventory", "@11", 97.400000f, 328.400000f, 146.850000f, 20.700000f, 10.000000f, 2.000000f, 2, 1, 255, 255, 255 },
-    { "menu", "inventory", "@1052", 537.100000f, 368.550000f, 105.400000f, 30.550000f, 22.000000f, 2.000000f, 0, 0, 250, 217, 90 },
-    { "menu", "inventory", "@1053", 501.450000f, 364.900000f, 34.200000f, 84.600000f, 31.000000f, 2.000000f, 1, 1, 250, 217, 90 },
-    { "menu", "inventory", "@1059", 512.300000f, 87.100000f, 233.750000f, 21.900000f, 13.000000f, 2.000000f, 2, 1, 94, 94, 94 },
-    { "menu", "normal", "@881", 92.000000f, 90.050000f, 166.950000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 204, 204, 204 },
-    { "menu", "normal", "@882", 92.000000f, 109.850000f, 166.950000f, 19.600000f, 12.000000f, 2.000000f, 2, 1, 204, 204, 204 },
-    { "menu", "normal", "@883", 329.950000f, 97.100000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 103, 147, 57 },
-    { "menu", "normal", "@884", 329.950000f, 114.550000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 153, 51, 51 },
-    { "menu", "normal", "@885", 329.950000f, 132.700000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 196, 140, 60 },
-    { "menu", "normal", "@886", 329.950000f, 150.850000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 115, 85, 136 },
-    { "menu", "normal", "@887", 329.950000f, 168.300000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 141, 169, 233 },
-    { "menu", "normal", "@888", 385.950000f, 97.100000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 103, 147, 57 },
-    { "menu", "normal", "@889", 385.950000f, 114.550000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 153, 51, 51 },
-    { "menu", "normal", "@890", 385.950000f, 132.700000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 196, 140, 60 },
-    { "menu", "normal", "@891", 385.950000f, 150.850000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 115, 85, 136 },
-    { "menu", "normal", "@892", 385.950000f, 168.300000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 141, 169, 233 },
-    { "menu", "normal", "@893", 329.800000f, 196.800000f, 119.800000f, 19.600000f, 12.000000f, 2.000000f, 0, 1, 102, 102, 102 },
-    { "menu", "normal", "@894", 329.800000f, 303.200000f, 119.800000f, 19.600000f, 12.000000f, 2.000000f, 0, 1, 102, 102, 102 },
-    { "menu", "normal", "@1027", 30.200000f, 284.400000f, 103.550000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 204, 204, 204 },
-    { "menu", "normal", "@1052", 537.100000f, 368.550000f, 105.400000f, 30.550000f, 22.000000f, 2.000000f, 0, 0, 250, 217, 90 },
-    { "menu", "normal", "@1053", 501.450000f, 364.900000f, 34.200000f, 84.600000f, 31.000000f, 2.000000f, 1, 1, 250, 217, 90 },
-    { "menu", "normal", "@1059", 512.300000f, 87.100000f, 233.750000f, 21.900000f, 13.000000f, 2.000000f, 2, 1, 94, 94, 94 },
-    { "menu", "options", "@7", 37.900000f, 185.850000f, 184.600000f, 23.500000f, 14.000000f, 2.000000f, 1, 0, 213, 102, 102 },
-    { "menu", "options", "@8", 37.900000f, 221.850000f, 184.600000f, 23.500000f, 14.000000f, 2.000000f, 1, 0, 213, 102, 102 },
-    { "menu", "options", "@9", 229.500000f, 185.850000f, 119.000000f, 30.850000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "options", "@10", 229.500000f, 221.850000f, 121.000000f, 30.850000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "options", "@15", 127.700000f, 121.100000f, 195.650000f, 26.200000f, 16.000000f, 2.000000f, 2, 0, 255, 255, 255 },
-    { "menu", "options", "@16", 437.200000f, 121.100000f, 195.650000f, 26.200000f, 16.000000f, 2.000000f, 2, 0, 255, 255, 255 },
-    { "menu", "options", "@17", 37.900000f, 257.850000f, 184.600000f, 23.500000f, 14.000000f, 2.000000f, 1, 0, 213, 102, 102 },
-    { "menu", "options", "@18", 229.500000f, 257.850000f, 121.000000f, 30.850000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "options", "@21", 37.900000f, 293.850000f, 184.600000f, 23.500000f, 14.000000f, 2.000000f, 1, 0, 213, 102, 102 },
-    { "menu", "options", "@22", 229.500000f, 293.850000f, 121.000000f, 30.850000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "options", "@25", 409.950000f, 169.200000f, 179.150000f, 20.800000f, 12.000000f, 2.000000f, 1, 0, 204, 204, 204 },
-    { "menu", "options", "@26", 599.300000f, 169.200000f, 80.200000f, 20.900000f, 12.000000f, 2.000000f, 0, 0, 255, 255, 255 },
-    { "menu", "options", "@27", 409.950000f, 199.200000f, 179.150000f, 20.800000f, 12.000000f, 2.000000f, 1, 0, 204, 204, 204 },
-    { "menu", "options", "@28", 599.300000f, 199.200000f, 80.200000f, 20.900000f, 12.000000f, 2.000000f, 0, 0, 255, 255, 255 },
-    { "menu", "options", "@29", 409.950000f, 229.200000f, 179.150000f, 20.800000f, 12.000000f, 2.000000f, 1, 0, 204, 204, 204 },
-    { "menu", "options", "@30", 599.300000f, 229.200000f, 80.200000f, 20.900000f, 12.000000f, 2.000000f, 0, 0, 255, 255, 255 },
-    { "menu", "options", "@31", 409.950000f, 259.200000f, 179.150000f, 20.800000f, 12.000000f, 2.000000f, 1, 0, 204, 204, 204 },
-    { "menu", "options", "@32", 599.300000f, 259.200000f, 80.200000f, 20.900000f, 12.000000f, 2.000000f, 0, 0, 255, 255, 255 },
-    { "menu", "options", "@33", 409.950000f, 289.200000f, 179.150000f, 20.800000f, 12.000000f, 2.000000f, 1, 0, 204, 204, 204 },
-    { "menu", "options", "@34", 599.300000f, 289.200000f, 80.200000f, 20.900000f, 12.000000f, 2.000000f, 0, 0, 255, 255, 255 },
-    { "menu", "options", "@35", 409.950000f, 319.200000f, 179.150000f, 20.800000f, 12.000000f, 2.000000f, 1, 0, 204, 204, 204 },
-    { "menu", "options", "@36", 599.300000f, 319.200000f, 80.200000f, 20.900000f, 12.000000f, 2.000000f, 0, 0, 255, 255, 255 },
-    { "menu", "shop", "@895", 54.200000f, 257.150000f, 194.400000f, 138.100000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "shop", "@896", 288.200000f, 235.600000f, 187.300000f, 55.000000f, 12.000000f, 2.000000f, 0, 1, 102, 102, 102 },
-    { "menu", "shop", "@1052", 537.100000f, 368.550000f, 105.400000f, 30.550000f, 22.000000f, 2.000000f, 0, 0, 250, 217, 90 },
-    { "menu", "shop", "@1053", 501.450000f, 364.900000f, 34.200000f, 84.600000f, 31.000000f, 2.000000f, 1, 1, 250, 217, 90 },
-    { "menu", "shop", "@1059", 512.300000f, 87.100000f, 233.750000f, 21.900000f, 13.000000f, 2.000000f, 2, 1, 94, 94, 94 },
-    { "menu", "skills", "@1", 144.750000f, 130.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
-    { "menu", "skills", "@2", 166.300000f, 130.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "menu", "skills", "@3", 143.750000f, 128.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "skills", "@4", 165.300000f, 128.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "skills", "@1", 144.750000f, 170.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
-    { "menu", "skills", "@2", 166.300000f, 170.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "menu", "skills", "@3", 143.750000f, 168.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "skills", "@4", 165.300000f, 168.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "skills", "@1", 196.750000f, 130.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
-    { "menu", "skills", "@2", 218.300000f, 130.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "menu", "skills", "@3", 195.750000f, 128.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "skills", "@4", 217.300000f, 128.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "skills", "@1", 92.750000f, 250.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
-    { "menu", "skills", "@2", 114.300000f, 250.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "menu", "skills", "@3", 91.750000f, 248.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "skills", "@4", 113.300000f, 248.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "skills", "@1", 144.750000f, 210.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
-    { "menu", "skills", "@2", 166.300000f, 210.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "menu", "skills", "@3", 143.750000f, 208.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "skills", "@4", 165.300000f, 208.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "skills", "@1", 144.750000f, 250.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
-    { "menu", "skills", "@2", 166.300000f, 250.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "menu", "skills", "@3", 143.750000f, 248.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "skills", "@4", 165.300000f, 248.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "skills", "@1", 196.750000f, 290.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
-    { "menu", "skills", "@2", 218.300000f, 290.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "menu", "skills", "@3", 195.750000f, 288.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "skills", "@4", 217.300000f, 288.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "skills", "@1", 196.750000f, 170.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
-    { "menu", "skills", "@2", 218.300000f, 170.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "menu", "skills", "@3", 195.750000f, 168.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "skills", "@4", 217.300000f, 168.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "skills", "@1", 92.750000f, 330.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
-    { "menu", "skills", "@2", 114.300000f, 330.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "menu", "skills", "@3", 91.750000f, 328.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "skills", "@4", 113.300000f, 328.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "skills", "@1", 92.750000f, 370.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
-    { "menu", "skills", "@2", 114.300000f, 370.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "menu", "skills", "@3", 91.750000f, 368.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "skills", "@4", 113.300000f, 368.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "skills", "@1", 92.750000f, 290.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
-    { "menu", "skills", "@2", 114.300000f, 290.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "menu", "skills", "@3", 91.750000f, 288.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "skills", "@4", 113.300000f, 288.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "skills", "@1", 196.750000f, 330.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
-    { "menu", "skills", "@2", 218.300000f, 330.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "menu", "skills", "@3", 195.750000f, 328.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "skills", "@4", 217.300000f, 328.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "skills", "@1", 144.750000f, 370.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
-    { "menu", "skills", "@2", 166.300000f, 370.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "menu", "skills", "@3", 143.750000f, 368.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "skills", "@4", 165.300000f, 368.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "skills", "@1", 92.750000f, 130.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
-    { "menu", "skills", "@2", 114.300000f, 130.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "menu", "skills", "@3", 91.750000f, 128.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "skills", "@4", 113.300000f, 128.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "skills", "@1", 92.750000f, 170.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
-    { "menu", "skills", "@2", 114.300000f, 170.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "menu", "skills", "@3", 91.750000f, 168.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "skills", "@4", 113.300000f, 168.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "skills", "@1", 92.750000f, 210.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
-    { "menu", "skills", "@2", 114.300000f, 210.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "menu", "skills", "@3", 91.750000f, 208.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "skills", "@4", 113.300000f, 208.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "skills", "@1", 196.750000f, 210.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
-    { "menu", "skills", "@2", 218.300000f, 210.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "menu", "skills", "@3", 195.750000f, 208.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "skills", "@4", 217.300000f, 208.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "skills", "@1", 196.750000f, 250.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
-    { "menu", "skills", "@2", 218.300000f, 250.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "menu", "skills", "@3", 195.750000f, 248.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "skills", "@4", 217.300000f, 248.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "skills", "@1", 144.750000f, 290.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
-    { "menu", "skills", "@2", 166.300000f, 290.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "menu", "skills", "@3", 143.750000f, 288.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "skills", "@4", 165.300000f, 288.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "skills", "@1", 144.750000f, 330.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
-    { "menu", "skills", "@2", 166.300000f, 330.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "menu", "skills", "@3", 143.750000f, 328.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "skills", "@4", 165.300000f, 328.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "skills", "@1", 248.750000f, 130.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
-    { "menu", "skills", "@2", 270.300000f, 130.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "menu", "skills", "@3", 247.750000f, 128.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "skills", "@4", 269.300000f, 128.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "skills", "@1", 248.750000f, 290.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
-    { "menu", "skills", "@2", 270.300000f, 290.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "menu", "skills", "@3", 247.750000f, 288.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "skills", "@4", 269.300000f, 288.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "skills", "@1", 248.750000f, 170.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
-    { "menu", "skills", "@2", 270.300000f, 170.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "menu", "skills", "@3", 247.750000f, 168.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "skills", "@4", 269.300000f, 168.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "skills", "@1", 248.750000f, 330.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
-    { "menu", "skills", "@2", 270.300000f, 330.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "menu", "skills", "@3", 247.750000f, 328.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "skills", "@4", 269.300000f, 328.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "skills", "@1", 248.750000f, 370.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
-    { "menu", "skills", "@2", 270.300000f, 370.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "menu", "skills", "@3", 247.750000f, 368.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "skills", "@4", 269.300000f, 368.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "skills", "@1", 248.750000f, 210.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
-    { "menu", "skills", "@2", 270.300000f, 210.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "menu", "skills", "@3", 247.750000f, 208.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "skills", "@4", 269.300000f, 208.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "skills", "@1", 248.750000f, 250.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
-    { "menu", "skills", "@2", 270.300000f, 250.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "menu", "skills", "@3", 247.750000f, 248.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "skills", "@4", 269.300000f, 248.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "skills", "@1", 196.750000f, 370.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
-    { "menu", "skills", "@2", 218.300000f, 370.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
-    { "menu", "skills", "@3", 195.750000f, 368.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "skills", "@4", 217.300000f, 368.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "skills", "@573", 356.900000f, 338.450000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 103, 147, 57 },
-    { "menu", "skills", "@574", 356.900000f, 355.900000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 153, 51, 51 },
-    { "menu", "skills", "@575", 356.900000f, 374.050000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 196, 140, 60 },
-    { "menu", "skills", "@576", 356.900000f, 392.200000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 115, 85, 136 },
-    { "menu", "skills", "@577", 393.900000f, 338.450000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 103, 147, 57 },
-    { "menu", "skills", "@578", 393.900000f, 355.900000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 153, 51, 51 },
-    { "menu", "skills", "@579", 393.900000f, 374.050000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 196, 140, 60 },
-    { "menu", "skills", "@580", 393.900000f, 392.200000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 115, 85, 136 },
-    { "menu", "skills", "@581", 312.300000f, 120.150000f, 104.250000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "skills", "@582", 312.300000f, 139.150000f, 104.250000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "skills", "@583", 315.250000f, 77.700000f, 166.950000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 204, 204, 204 },
-    { "menu", "skills", "@584", 315.250000f, 97.500000f, 166.950000f, 19.600000f, 12.000000f, 2.000000f, 2, 1, 204, 204, 204 },
-    { "menu", "skills", "@585", 378.800000f, 120.150000f, 104.250000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "skills", "@586", 378.800000f, 139.150000f, 104.250000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "skills", "@601", 311.000000f, 304.800000f, 164.450000f, 21.900000f, 13.000000f, 2.000000f, 2, 1, 51, 51, 51 },
-    { "menu", "skills", "@602", 514.300000f, 78.100000f, 233.750000f, 21.900000f, 13.000000f, 2.000000f, 2, 1, 94, 94, 94 },
-    { "menu", "skills", "@603", 51.650000f, 78.100000f, 232.700000f, 22.100000f, 13.000000f, 2.000000f, 2, 1, 94, 94, 94 },
-    { "menu", "skills", "@604", 514.300000f, 248.100000f, 233.750000f, 21.900000f, 13.000000f, 2.000000f, 2, 1, 94, 94, 94 },
-    { "menu", "skills", "@1", 317.950000f, 169.700000f, 159.700000f, 104.800000f, 12.000000f, 2.000000f, 0, 1, 153, 153, 153 },
-    { "menu", "win", "@23", 293.300000f, 379.400000f, 173.800000f, 24.100000f, 18.000000f, 2.000000f, 2, 1, 102, 255, 0 },
-    { "menu", "win", "@895", 296.200000f, 287.200000f, 139.300000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 250, 217, 90 },
-    { "menu", "win", "@896", 362.700000f, 287.200000f, 104.250000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 250, 217, 90 },
-    { "menu", "win", "@897", 296.200000f, 304.800000f, 140.300000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
-    { "menu", "win", "@898", 362.700000f, 304.800000f, 104.250000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "win", "@899", 289.200000f, 244.800000f, 184.300000f, 44.600000f, 12.000000f, 2.000000f, 0, 1, 102, 102, 102 },
-    { "menu", "win", "@900", 290.200000f, 327.200000f, 180.300000f, 49.200000f, 12.000000f, 2.000000f, 0, 1, 102, 102, 102 },
-    { "menu", "win", "@901", 288.200000f, 90.400000f, 187.300000f, 55.000000f, 12.000000f, 2.000000f, 0, 1, 102, 102, 102 },
-    { "menu", "win", "@904", 291.200000f, 163.800000f, 180.300000f, 70.600000f, 19.000000f, 2.000000f, 2, 1, 165, 48, 48 },
-    { "menu", "win", "@12", 109.100000f, 234.900000f, 128.900000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 204, 204, 204 },
-    { "menu", "win", "@13", 109.100000f, 252.900000f, 128.900000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 204, 204, 204 },
-    { "menu", "win", "@17", 107.200000f, 277.000000f, 34.800000f, 17.700000f, 10.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "win", "@12", 109.100000f, 327.400000f, 128.900000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 204, 204, 204 },
-    { "menu", "win", "@13", 109.100000f, 345.400000f, 128.900000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 204, 204, 204 },
-    { "menu", "win", "@17", 107.200000f, 369.500000f, 34.800000f, 17.700000f, 10.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "win", "@12", 109.100000f, 142.400000f, 128.900000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 204, 204, 204 },
-    { "menu", "win", "@13", 109.100000f, 160.400000f, 128.900000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 204, 204, 204 },
-    { "menu", "win", "@17", 107.200000f, 184.500000f, 34.800000f, 17.700000f, 10.000000f, 2.000000f, 1, 1, 255, 255, 255 },
-    { "menu", "win", "@959", 41.300000f, 87.100000f, 213.150000f, 19.000000f, 13.000000f, 2.000000f, 2, 1, 94, 94, 94 },
-    { "menu", "win", "@1052", 537.100000f, 368.550000f, 105.400000f, 30.550000f, 22.000000f, 2.000000f, 0, 0, 250, 217, 90 },
-    { "menu", "win", "@1053", 501.450000f, 364.900000f, 34.200000f, 84.600000f, 31.000000f, 2.000000f, 1, 1, 250, 217, 90 },
-    { "menu", "win", "@1059", 512.300000f, 87.100000f, 233.750000f, 21.900000f, 13.000000f, 2.000000f, 2, 1, 94, 94, 94 },
+    { "mainMenu", "@7", "@7", "whatToSay1", "PLAY", 241.950000f, 334.500000f, 304.100000f, 47.750000f, 36.000000f, 2.000000f, 2, 1, 255, 255, 255 },
+    { "mainMenu", "@8", "@8", "whatToSay2", "PLAY", 241.950000f, 404.500000f, 304.100000f, 24.100000f, 18.000000f, 2.000000f, 2, 1, 255, 255, 255 },
+    { "mainMenu", "@64", "@64", "", "<p align=\"left\"><font face=\"_sans\" size=\"10\" color=\"#825353\" letterSpacing=\"0.000000\" kerning=\"0\">Copyright 2007-2024 ArmorGames Inc.</font></p>", 5.500000f, 533.550000f, 223.300000f, 17.000000f, 10.000000f, 2.000000f, 0, 1, 130, 83, 83 },
+    { "subMenu", "@7", "@7", "whatToSay1", "PLAY", 241.000000f, 320.100000f, 304.100000f, 45.600000f, 36.000000f, 2.000000f, 2, 1, 255, 255, 255 },
+    { "subMenu", "@10", "@10", "whatToSay2", "PLAY", 241.000000f, 380.100000f, 304.100000f, 45.600000f, 36.000000f, 2.000000f, 2, 1, 255, 255, 255 },
+    { "subMenu", "@27", "@27", "", "<p align=\"right\"><font face=\"_sans\" size=\"24\" color=\"#ffffff\" letterSpacing=\"0.000000\" kerning=\"0\">Back</font></p>", 450.150000f, 532.150000f, 342.100000f, 34.700000f, 24.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "subMenu", "@64", "@64", "", "<p align=\"left\"><font face=\"_sans\" size=\"10\" color=\"#825353\" letterSpacing=\"0.000000\" kerning=\"0\">Copyright 2007-2024 ArmorGames Inc.</font></p>", 5.500000f, 533.550000f, 223.300000f, 17.000000f, 10.000000f, 2.000000f, 0, 1, 130, 83, 83 },
+    { "nameMenu", "@6", "@6", "", "<p align=\"center\"><font face=\"_sans\" size=\"36\" color=\"#ffffff\" letterSpacing=\"0.000000\" kerning=\"0\">OK!</font></p><p align=\"center\"></p>", 331.850000f, 330.100000f, 136.350000f, 97.300000f, 36.000000f, 2.000000f, 2, 1, 255, 255, 255 },
+    { "nameMenu", "nameInputField", "nameInputField", "userNameInput", "enter Name Here", 187.700000f, 258.100000f, 424.600000f, 35.550000f, 26.000000f, 2.000000f, 2, 1, 255, 204, 0 },
+    { "nameMenu", "@27", "@27", "", "<p align=\"right\"><font face=\"_sans\" size=\"24\" color=\"#ffffff\" letterSpacing=\"0.000000\" kerning=\"0\">Back</font></p>", 450.150000f, 532.150000f, 342.100000f, 34.700000f, 24.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "nameMenu", "@64", "@64", "", "<p align=\"left\"><font face=\"_sans\" size=\"10\" color=\"#825353\" letterSpacing=\"0.000000\" kerning=\"0\">Copyright 2007-2024 ArmorGames Inc.</font></p>", 5.500000f, 533.550000f, 223.300000f, 17.000000f, 10.000000f, 2.000000f, 0, 1, 130, 83, 83 },
+    { "dataMenu", "@5", "@5", "slotNamerText", "slot1", 195.000000f, 192.050000f, 107.850000f, 33.050000f, 26.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "dataMenu", "@6", "@6", "nameSlot1", "slot1", 356.500000f, 192.050000f, 385.100000f, 35.550000f, 26.000000f, 2.000000f, 0, 1, 205, 135, 135 },
+    { "dataMenu", "@7", "@7", "", "", 1095.900000f, 193.450000f, 104.000000f, 33.050000f, 26.000000f, 2.000000f, 0, 1, 255, 204, 0 },
+    { "dataMenu", "@8", "@8", "nameSlot2", "slot1", 356.500000f, 246.050000f, 385.100000f, 35.550000f, 26.000000f, 2.000000f, 0, 1, 205, 135, 135 },
+    { "dataMenu", "@9", "@9", "nameSlot3", "slot1", 356.500000f, 303.050000f, 385.100000f, 35.550000f, 26.000000f, 2.000000f, 0, 1, 205, 135, 135 },
+    { "dataMenu", "@10", "@10", "nameSlot4", "slot1", 356.500000f, 357.050000f, 385.100000f, 35.550000f, 26.000000f, 2.000000f, 0, 1, 205, 135, 135 },
+    { "dataMenu", "@11", "@11", "slotNamerText", "slot2", 195.000000f, 246.050000f, 107.850000f, 33.050000f, 26.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "dataMenu", "@12", "@12", "slotNamerText", "slot3", 195.000000f, 303.050000f, 107.850000f, 33.050000f, 26.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "dataMenu", "@13", "@13", "slotNamerText", "slot4", 195.000000f, 357.050000f, 107.850000f, 33.050000f, 26.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "dataMenu", "@14", "@14", "", "<p align=\"left\"><font face=\"_sans\" size=\"26\" color=\"#ffffff\" letterSpacing=\"0.000000\" kerning=\"0\">1</font></p><p align=\"left\"></p>", 308.000000f, 192.050000f, 136.450000f, 72.100000f, 26.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "dataMenu", "@15", "@15", "", "<p align=\"left\"><font face=\"_sans\" size=\"26\" color=\"#ffffff\" letterSpacing=\"0.000000\" kerning=\"0\">2</font></p><p align=\"left\"></p>", 308.000000f, 246.050000f, 136.450000f, 72.100000f, 26.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "dataMenu", "@16", "@16", "", "<p align=\"left\"><font face=\"_sans\" size=\"26\" color=\"#ffffff\" letterSpacing=\"0.000000\" kerning=\"0\">3</font></p><p align=\"left\"></p>", 308.000000f, 303.050000f, 136.450000f, 72.100000f, 26.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "dataMenu", "@17", "@17", "", "<p align=\"left\"><font face=\"_sans\" size=\"26\" color=\"#ffffff\" letterSpacing=\"0.000000\" kerning=\"0\">4</font></p><p align=\"left\"></p>", 308.000000f, 357.050000f, 136.450000f, 72.100000f, 26.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "dataMenu", "@27", "@27", "", "<p align=\"right\"><font face=\"_sans\" size=\"24\" color=\"#ffffff\" letterSpacing=\"0.000000\" kerning=\"0\">Back</font></p>", 450.150000f, 532.150000f, 342.100000f, 34.700000f, 24.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "dataMenu", "@64", "@64", "", "<p align=\"left\"><font face=\"_sans\" size=\"10\" color=\"#825353\" letterSpacing=\"0.000000\" kerning=\"0\">Copyright 2007-2024 ArmorGames Inc.</font></p>", 5.500000f, 533.550000f, 223.300000f, 17.000000f, 10.000000f, 2.000000f, 0, 1, 130, 83, 83 },
+    { "classMenu", "@5", "@5", "whatToSay1", "pleeze choose your class", 175.200000f, 157.900000f, 449.600000f, 33.050000f, 26.000000f, 2.000000f, 2, 1, 205, 135, 135 },
+    { "classMenu", "@6", "@6", "whatToSay2", "destroyer", 283.100000f, 253.900000f, 233.800000f, 33.050000f, 26.000000f, 2.000000f, 2, 1, 255, 255, 255 },
+    { "classMenu", "@7", "@7", "whatToSay3", "guardian", 283.100000f, 303.900000f, 233.800000f, 33.050000f, 26.000000f, 2.000000f, 2, 1, 255, 255, 255 },
+    { "classMenu", "@8", "@8", "whatToSay4", "assasin", 283.100000f, 353.900000f, 233.800000f, 33.050000f, 26.000000f, 2.000000f, 2, 1, 255, 255, 255 },
+    { "classMenu", "@9", "@9", "whatToSay5", "gunslinger", 283.100000f, 403.900000f, 233.800000f, 33.050000f, 26.000000f, 2.000000f, 2, 1, 255, 255, 255 },
+    { "classMenu", "@27", "@27", "", "<p align=\"right\"><font face=\"_sans\" size=\"24\" color=\"#ffffff\" letterSpacing=\"0.000000\" kerning=\"0\">Back</font></p>", 450.150000f, 532.150000f, 342.100000f, 34.700000f, 24.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "classMenu", "@64", "@64", "", "<p align=\"left\"><font face=\"_sans\" size=\"10\" color=\"#825353\" letterSpacing=\"0.000000\" kerning=\"0\">Copyright 2007-2024 ArmorGames Inc.</font></p>", 5.500000f, 533.550000f, 223.300000f, 17.000000f, 10.000000f, 2.000000f, 0, 1, 130, 83, 83 },
+    { "optionsMenu", "@5", "@5", "tit_1", "SOUNDS:", 236.900000f, 129.950000f, 164.100000f, 30.850000f, 18.000000f, 2.000000f, 1, 1, 213, 102, 102 },
+    { "optionsMenu", "@6", "@6", "tit_2", "GRAPHICS:", 236.900000f, 169.950000f, 164.100000f, 30.850000f, 18.000000f, 2.000000f, 1, 1, 213, 102, 102 },
+    { "optionsMenu", "@7", "@7", "tit_3", "ON", 408.000000f, 129.950000f, 119.000000f, 30.850000f, 18.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "optionsMenu", "@8", "@8", "tit_4", "HIGH", 408.000000f, 169.950000f, 121.000000f, 30.850000f, 18.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "optionsMenu", "@13", "@13", "TitLOL1", "Please configure your settings:", 195.050000f, 70.200000f, 409.950000f, 24.100000f, 16.000000f, 2.000000f, 2, 1, 255, 255, 255 },
+    { "optionsMenu", "@14", "@14", "TitLOL2", "Please configure your settings:", 120.550000f, 320.200000f, 559.150000f, 109.750000f, 14.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "optionsMenu", "@15", "@15", "tit_8", "GRAPHICS:", 236.900000f, 209.950000f, 164.100000f, 30.850000f, 18.000000f, 2.000000f, 1, 1, 213, 102, 102 },
+    { "optionsMenu", "@16", "@16", "tit_7", "HIGH", 408.000000f, 209.950000f, 121.000000f, 30.850000f, 18.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "optionsMenu", "@19", "@19", "TitLOL2", "Please configure your settings:", 119.450000f, 318.050000f, 559.150000f, 109.750000f, 14.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "optionsMenu", "@20", "@20", "whatToSayY", "PLAY", 159.550000f, 454.600000f, 480.950000f, 30.850000f, 24.000000f, 2.000000f, 2, 1, 255, 204, 0 },
+    { "optionsMenu", "@23", "@23", "tit_9", "GRAPHICS:", 236.900000f, 249.950000f, 164.100000f, 30.850000f, 18.000000f, 2.000000f, 1, 1, 213, 102, 102 },
+    { "optionsMenu", "@24", "@24", "tit_11", "HIGH", 408.000000f, 249.950000f, 121.000000f, 30.850000f, 18.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "optionsMenu", "@27", "@27", "", "<p align=\"right\"><font face=\"_sans\" size=\"24\" color=\"#ffffff\" letterSpacing=\"0.000000\" kerning=\"0\">Back</font></p>", 450.150000f, 532.150000f, 342.100000f, 34.700000f, 24.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "optionsMenu", "@64", "@64", "", "<p align=\"left\"><font face=\"_sans\" size=\"10\" color=\"#825353\" letterSpacing=\"0.000000\" kerning=\"0\">Copyright 2007-2024 ArmorGames Inc.</font></p>", 5.500000f, 533.550000f, 223.300000f, 17.000000f, 10.000000f, 2.000000f, 0, 1, 130, 83, 83 },
+    { "gameOverMenu", "@5", "@5", "whatToSay111", "You're dead, Sonny.", 193.100000f, 123.750000f, 413.850000f, 45.350000f, 30.000000f, 2.000000f, 2, 1, 255, 255, 255 },
+    { "gameOverMenu", "@6", "@6", "whatToSay222", "load load load", 250.900000f, 203.400000f, 298.200000f, 33.050000f, 14.000000f, 2.000000f, 2, 1, 255, 204, 0 },
+    { "gameOverMenu", "@9", "@9", "tipTextGO", "load load load", 115.250000f, 273.850000f, 569.500000f, 176.950000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "gameOverMenu", "@10", "@10", "tipTextGO", "load load load", 114.150000f, 271.650000f, 569.500000f, 176.950000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "gameOverMenu", "@27", "@27", "", "<p align=\"right\"><font face=\"_sans\" size=\"24\" color=\"#ffffff\" letterSpacing=\"0.000000\" kerning=\"0\">Back</font></p>", 450.150000f, 532.150000f, 342.100000f, 34.700000f, 24.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "gameOverMenu", "@64", "@64", "", "<p align=\"left\"><font face=\"_sans\" size=\"10\" color=\"#825353\" letterSpacing=\"0.000000\" kerning=\"0\">Copyright 2007-2024 ArmorGames Inc.</font></p>", 5.500000f, 533.550000f, 223.300000f, 17.000000f, 10.000000f, 2.000000f, 0, 1, 130, 83, 83 },
+    { "endMenu", "@5", "@5", "", "<p align=\"center\"><font face=\"_sans\" size=\"36\" color=\"#ffcc00\" letterSpacing=\"0.000000\" kerning=\"0\">OK!</font></p><p align=\"center\"></p>", 199.650000f, 410.100000f, 384.800000f, 97.300000f, 36.000000f, 2.000000f, 2, 1, 255, 204, 0 },
+    { "endMenu", "@8", "@8", "whatToSay3", "PLAY", 240.850000f, 469.100000f, 304.100000f, 30.850000f, 24.000000f, 2.000000f, 2, 1, 255, 255, 255 },
+    { "endMenu", "@11", "@11", "enderText", "srtntsrnstrntrsnstrnstrnstr\015dbsbsbsbr UIGEDVDGVOG\015EVBERDBB\015RBRSBSRB\015S\015BS\015BS", 195.300000f, 109.450000f, 418.050000f, 275.200000f, 14.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "endMenu", "@64", "@64", "", "<p align=\"left\"><font face=\"_sans\" size=\"10\" color=\"#825353\" letterSpacing=\"0.000000\" kerning=\"0\">Copyright 2007-2024 ArmorGames Inc.</font></p>", 5.500000f, 533.550000f, 223.300000f, 17.000000f, 10.000000f, 2.000000f, 0, 1, 130, 83, 83 },
+    { "designMenu", "@6", "@6", "xRx6", "Please select a subject to read about.", 425.200000f, 105.450000f, 278.600000f, 344.300000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "designMenu", "@7", "@7", "xRx1", "eberberberber", 119.400000f, 153.500000f, 225.750000f, 37.400000f, 12.000000f, 2.000000f, 1, 1, 255, 204, 0 },
+    { "designMenu", "@8", "@8", "xRx2", "eberberberber", 119.400000f, 206.000000f, 223.650000f, 36.950000f, 12.000000f, 2.000000f, 1, 1, 255, 204, 0 },
+    { "designMenu", "@9", "@9", "xRx3", "eberberberber", 119.400000f, 258.500000f, 225.750000f, 36.550000f, 12.000000f, 2.000000f, 1, 1, 255, 204, 0 },
+    { "designMenu", "@10", "@10", "xRx4", "eberberberber", 119.400000f, 311.000000f, 223.650000f, 40.300000f, 12.000000f, 2.000000f, 1, 1, 255, 204, 0 },
+    { "designMenu", "@11", "@11", "xRx5", "eberberberber", 119.400000f, 363.500000f, 221.600000f, 37.800000f, 12.000000f, 2.000000f, 1, 1, 255, 204, 0 },
+    { "designMenu", "@12", "@12", "whatToSayX", "Back", 488.150000f, 532.150000f, 304.100000f, 30.850000f, 24.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "designMenu", "@64", "@64", "", "<p align=\"left\"><font face=\"_sans\" size=\"10\" color=\"#825353\" letterSpacing=\"0.000000\" kerning=\"0\">Copyright 2007-2024 ArmorGames Inc.</font></p>", 5.500000f, 533.550000f, 223.300000f, 17.000000f, 10.000000f, 2.000000f, 0, 1, 130, 83, 83 },
+    { "Navigation", "@130", "@130", "klt2", "LEVEL PROGRESS", 481.050000f, 491.350000f, 292.550000f, 19.050000f, 12.000000f, 2.000000f, 2, 1, 0, 0, 0 },
+    { "Navigation", "@131", "@131", "klt3", "LEVEL", 643.250000f, 529.300000f, 113.150000f, 26.100000f, 10.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "Navigation", "@132", "@132", "klt1", "LEVEL PROGRESS", 540.750000f, 470.500000f, 181.100000f, 24.900000f, 12.000000f, 2.000000f, 2, 1, 255, 255, 255 },
+    { "Navigation", "@133", "@133", "klt2", "LEVEL PROGRESS", 480.000000f, 490.050000f, 292.000000f, 19.050000f, 12.000000f, 2.000000f, 2, 1, 254, 225, 109 },
+    { "Navigation", "KRINMENU", "@881", "yut_name", "Player name here", 92.000000f, 90.050000f, 166.950000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 204, 204, 204 },
+    { "Navigation", "KRINMENU", "@882", "yut_info", "Player name here", 92.000000f, 109.850000f, 166.950000f, 19.600000f, 12.000000f, 2.000000f, 2, 1, 204, 204, 204 },
+    { "Navigation", "KRINMENU", "@883", "yut_lif", "strength", 329.950000f, 97.100000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 103, 147, 57 },
+    { "Navigation", "KRINMENU", "@884", "yut_str", "strength", 329.950000f, 114.550000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 153, 51, 51 },
+    { "Navigation", "KRINMENU", "@885", "yut_mag", "strength", 329.950000f, 132.700000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 196, 140, 60 },
+    { "Navigation", "KRINMENU", "@886", "yut_spd", "strength", 329.950000f, 150.850000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 115, 85, 136 },
+    { "Navigation", "KRINMENU", "@887", "yut_foc", "strength", 329.950000f, 168.300000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 141, 169, 233 },
+    { "Navigation", "KRINMENU", "@888", "yut_lif2", "0000", 385.950000f, 97.100000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 103, 147, 57 },
+    { "Navigation", "KRINMENU", "@889", "yut_str2", "0000", 385.950000f, 114.550000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 153, 51, 51 },
+    { "Navigation", "KRINMENU", "@890", "yut_mag2", "0000", 385.950000f, 132.700000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 196, 140, 60 },
+    { "Navigation", "KRINMENU", "@891", "yut_spd2", "0000", 385.950000f, 150.850000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 115, 85, 136 },
+    { "Navigation", "KRINMENU", "@892", "yut_foc2", "0000", 385.950000f, 168.300000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 141, 169, 233 },
+    { "Navigation", "KRINMENU", "@893", "yut_per", "strength", 329.800000f, 196.800000f, 119.800000f, 19.600000f, 12.000000f, 2.000000f, 0, 1, 102, 102, 102 },
+    { "Navigation", "KRINMENU", "@894", "yut_def", "strength", 329.800000f, 303.200000f, 119.800000f, 19.600000f, 12.000000f, 2.000000f, 0, 1, 102, 102, 102 },
+    { "Navigation", "KRINMENU", "@1027", "yut_info51", "Experinece:", 30.200000f, 284.400000f, 103.550000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 204, 204, 204 },
+    { "Navigation", "KRINMENU", "@1032", "exp2", "100%", 136.550000f, 284.400000f, 34.800000f, 17.700000f, 10.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "Navigation", "KRINMENU", "@11", "worder", "Agressive", 97.400000f, 328.400000f, 146.850000f, 20.700000f, 10.000000f, 2.000000f, 2, 1, 255, 255, 255 },
+    { "Navigation", "KRINMENU", "@1052", "dumbEuro", "99999", 537.100000f, 368.550000f, 105.400000f, 30.550000f, 22.000000f, 2.000000f, 0, 0, 250, 217, 90 },
+    { "Navigation", "KRINMENU", "@1053", "", "<p align=\"right\"><font face=\"_sans\" size=\"31\" color=\"#fad95a\" letterSpacing=\"0.000000\" kerning=\"0\">\342\202\254</font></p><p align=\"right\"></p>", 501.450000f, 364.900000f, 34.200000f, 84.600000f, 31.000000f, 2.000000f, 1, 1, 250, 217, 90 },
+    { "Navigation", "KRINMENU", "@1059", "vbbc0", "titlehere", 512.300000f, 87.100000f, 233.750000f, 21.900000f, 13.000000f, 2.000000f, 2, 1, 94, 94, 94 },
+    { "Navigation", "krinNavFadeSpeech", "@5", "texter", "< EWOINENJFEONVFOENV >", 282.850000f, 310.800000f, 222.000000f, 19.050000f, 12.000000f, 2.000000f, 2, 1, 102, 102, 102 },
+    { "Navigation", "@1240", "@1240", "navText", "text", 190.500000f, 155.450000f, 408.750000f, 148.350000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "Navigation", "@1241", "@1241", "navTitle", "TITLE:", 190.550000f, 131.400000f, 408.700000f, 21.550000f, 14.000000f, 2.000000f, 0, 1, 102, 102, 102 },
+    { "KRINBATTLESCENE", "p5BAR", "@2", "lifeMax", "9999999", 198.502000f, 13.231000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 157, 157, 157 },
+    { "KRINBATTLESCENE", "p5BAR", "@3", "lifeNow", "9999999", 151.833000f, 13.231000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "KRINBATTLESCENE", "p5BAR", "@4", "focusMax", "9999999", 198.502000f, 27.157000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 157, 157, 157 },
+    { "KRINBATTLESCENE", "p5BAR", "@5", "focusNow", "9999999", 151.833000f, 27.157000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "KRINBATTLESCENE", "p5BAR", "@6", "playerName", "Player Name", 29.734000f, 12.360000f, 100.200000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "KRINBATTLESCENE", "p1BAR", "@2", "lifeMax", "9999999", 198.502000f, 48.281000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 157, 157, 157 },
+    { "KRINBATTLESCENE", "p1BAR", "@3", "lifeNow", "9999999", 151.833000f, 48.281000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "KRINBATTLESCENE", "p1BAR", "@4", "focusMax", "9999999", 198.502000f, 62.207000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 157, 157, 157 },
+    { "KRINBATTLESCENE", "p1BAR", "@5", "focusNow", "9999999", 151.833000f, 62.207000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "KRINBATTLESCENE", "p1BAR", "@6", "playerName", "Player Name", 29.734000f, 47.410000f, 100.200000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "KRINBATTLESCENE", "p3BAR", "@2", "lifeMax", "9999999", 198.502000f, 83.081000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 157, 157, 157 },
+    { "KRINBATTLESCENE", "p3BAR", "@3", "lifeNow", "9999999", 151.833000f, 83.081000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "KRINBATTLESCENE", "p3BAR", "@4", "focusMax", "9999999", 198.502000f, 97.007000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 157, 157, 157 },
+    { "KRINBATTLESCENE", "p3BAR", "@5", "focusNow", "9999999", 151.833000f, 97.007000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "KRINBATTLESCENE", "p3BAR", "@6", "playerName", "Player Name", 29.734000f, 82.210000f, 100.200000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "KRINBATTLESCENE", "p6BAR", "@2", "lifeMax", "9999999", 727.252000f, 13.231000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 157, 157, 157 },
+    { "KRINBATTLESCENE", "p6BAR", "@3", "lifeNow", "9999999", 680.583000f, 13.231000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "KRINBATTLESCENE", "p6BAR", "@4", "focusMax", "9999999", 727.252000f, 27.157000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 157, 157, 157 },
+    { "KRINBATTLESCENE", "p6BAR", "@5", "focusNow", "9999999", 680.583000f, 27.157000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "KRINBATTLESCENE", "p6BAR", "@6", "playerName", "Player Name", 558.484000f, 12.360000f, 100.200000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "KRINBATTLESCENE", "p2BAR", "@2", "lifeMax", "9999999", 727.252000f, 48.281000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 157, 157, 157 },
+    { "KRINBATTLESCENE", "p2BAR", "@3", "lifeNow", "9999999", 680.583000f, 48.281000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "KRINBATTLESCENE", "p2BAR", "@4", "focusMax", "9999999", 727.252000f, 62.207000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 157, 157, 157 },
+    { "KRINBATTLESCENE", "p2BAR", "@5", "focusNow", "9999999", 680.583000f, 62.207000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "KRINBATTLESCENE", "p2BAR", "@6", "playerName", "Player Name", 558.484000f, 47.410000f, 100.200000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "KRINBATTLESCENE", "p4BAR", "@2", "lifeMax", "9999999", 727.252000f, 83.081000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 157, 157, 157 },
+    { "KRINBATTLESCENE", "p4BAR", "@3", "lifeNow", "9999999", 680.583000f, 83.081000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "KRINBATTLESCENE", "p4BAR", "@4", "focusMax", "9999999", 727.252000f, 97.007000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 157, 157, 157 },
+    { "KRINBATTLESCENE", "p4BAR", "@5", "focusNow", "9999999", 680.583000f, 97.007000f, 42.900000f, 16.000000f, 9.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "KRINBATTLESCENE", "p4BAR", "@6", "playerName", "Player Name", 558.484000f, 82.210000f, 100.200000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "KRINBATTLESCENE", "KrinSelector3", "@3", "TargetName", "T", -229.824000f, 235.755000f, 366.500000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 255, 255, 255 },
+    { "KRINBATTLESCENE", "KrinSelector3", "@4", "TargetLevel", "T", -229.824000f, 183.330000f, 366.500000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 255, 255, 255 },
+    { "KRINBATTLESCENE", "KrinSelector5", "@3", "TargetName", "T", -229.824000f, 665.355000f, 366.500000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 255, 255, 255 },
+    { "KRINBATTLESCENE", "KrinSelector5", "@4", "TargetLevel", "T", -229.824000f, 612.930000f, 366.500000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 255, 255, 255 },
+    { "KRINBATTLESCENE", "KrinSelector6", "@3", "TargetName", "T", -219.824000f, 128.205000f, 366.500000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 255, 255, 255 },
+    { "KRINBATTLESCENE", "KrinSelector6", "@4", "TargetLevel", "T", -219.824000f, 75.780000f, 366.500000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 255, 255, 255 },
+    { "KRINBATTLESCENE", "KrinSelector4", "@3", "TargetName", "T", -229.824000f, 450.555000f, 366.500000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 255, 255, 255 },
+    { "KRINBATTLESCENE", "KrinSelector4", "@4", "TargetLevel", "T", -229.824000f, 398.130000f, 366.500000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 255, 255, 255 },
+    { "KRINBATTLESCENE", "KrinSelector2", "@3", "TargetName", "T", -229.824000f, 343.155000f, 366.500000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 255, 255, 255 },
+    { "KRINBATTLESCENE", "KrinSelector2", "@4", "TargetLevel", "T", -229.824000f, 290.730000f, 366.500000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 255, 255, 255 },
+    { "KRINBATTLESCENE", "KrinSelector1", "@3", "TargetName", "T", -229.824000f, 557.955000f, 366.500000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 255, 255, 255 },
+    { "KRINBATTLESCENE", "KrinSelector1", "@4", "TargetLevel", "T", -229.824000f, 505.530000f, 366.500000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 255, 255, 255 },
+    { "KRINBATTLESCENE", "@535", "@535", "", "<p align=\"left\"><font face=\"_sans\" size=\"9\" color=\"#000000\" letterSpacing=\"0.000000\" kerning=\"0\">FPS:</font></p><p align=\"left\"></p>", 18.300000f, 132.600000f, 35.450000f, 29.350000f, 9.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "KRINBATTLESCENE", "@536", "@536", "frameRateNowKrin", "FPS:", 40.300000f, 132.600000f, 28.050000f, 16.000000f, 9.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "KRINBATTLESCENE", "@537", "@3", "v0", "000000000000", 594.550000f, 319.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 0, 0, 0 },
+    { "KRINBATTLESCENE", "@537", "@4", "v1", "000000000000", 594.550000f, 334.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 0, 0, 0 },
+    { "KRINBATTLESCENE", "@537", "@5", "v2", "000000000000", 594.550000f, 349.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 0, 0, 0 },
+    { "KRINBATTLESCENE", "@537", "@6", "v3", "000000000000", 594.550000f, 364.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 153, 153, 153 },
+    { "KRINBATTLESCENE", "@537", "@7", "v4", "000000000000", 594.550000f, 379.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 153, 153, 153 },
+    { "KRINBATTLESCENE", "@537", "@8", "v5", "000000000000", 594.550000f, 394.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 153, 153, 153 },
+    { "KRINBATTLESCENE", "@537", "@9", "v6", "000000000000", 594.550000f, 409.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 204, 204, 204 },
+    { "KRINBATTLESCENE", "@537", "@10", "v7", "000000000000", 594.550000f, 424.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 204, 204, 204 },
+    { "KRINBATTLESCENE", "@537", "@11", "v8", "000000000000", 594.550000f, 439.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 204, 204, 204 },
+    { "KRINBATTLESCENE", "@537", "@12", "b0", "000000000000", 594.550000f, 319.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 153, 0, 0 },
+    { "KRINBATTLESCENE", "@537", "@13", "b1", "000000000000", 594.550000f, 334.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 153, 0, 0 },
+    { "KRINBATTLESCENE", "@537", "@14", "b2", "000000000000", 594.550000f, 349.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 153, 0, 0 },
+    { "KRINBATTLESCENE", "@537", "@15", "b3", "000000000000", 594.550000f, 364.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 153, 0, 0 },
+    { "KRINBATTLESCENE", "@537", "@16", "b4", "000000000000", 594.550000f, 379.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 153, 0, 0 },
+    { "KRINBATTLESCENE", "@537", "@17", "b5", "000000000000", 594.550000f, 394.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 153, 0, 0 },
+    { "KRINBATTLESCENE", "@537", "@18", "b6", "000000000000", 594.550000f, 409.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 153, 0, 0 },
+    { "KRINBATTLESCENE", "@537", "@19", "b7", "000000000000", 594.550000f, 424.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 153, 0, 0 },
+    { "KRINBATTLESCENE", "@537", "@20", "b8", "000000000000", 594.550000f, 439.350000f, 170.500000f, 16.350000f, 10.000000f, 2.000000f, 2, 1, 153, 0, 0 },
+    { "KRINBATTLESCENE", "combatScript", "@4", "combatText", "To make a move, select your target first, then click him. You will see the abilities that you may use on that target.", 546.073000f, 480.123000f, 227.716000f, 70.623000f, 11.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "KRINBATTLESCENE", "combatScript", "@5", "combatTextName", "Name says:", 546.050000f, 463.950000f, 226.700000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 102, 102, 102 },
+    { "winCombat", "@2", "@2", "", "<p align=\"left\"><font face=\"_sans\" size=\"14\" color=\"#9966cc\" letterSpacing=\"0.000000\" kerning=\"0\">win</font></p><p align=\"left\"></p>", 155.400000f, 230.800000f, 92.750000f, 41.850000f, 14.000000f, 2.000000f, 0, 1, 153, 102, 204 },
+    { "loseCombat", "@2", "@2", "", "<p align=\"left\"><font face=\"_sans\" size=\"14\" color=\"#9966cc\" letterSpacing=\"0.000000\" kerning=\"0\">lose</font></p><p align=\"left\"></p>", 155.400000f, 230.800000f, 92.750000f, 41.850000f, 14.000000f, 2.000000f, 0, 1, 153, 102, 204 },
+    { "drawCombat", "@2", "@2", "", "<p align=\"left\"><font face=\"_sans\" size=\"14\" color=\"#9966cc\" letterSpacing=\"0.000000\" kerning=\"0\">draw</font></p><p align=\"left\"></p>", 155.400000f, 230.800000f, 92.750000f, 41.850000f, 14.000000f, 2.000000f, 0, 1, 153, 102, 204 },
+    { "CS_INTRO", "@21", "@21", "", "<p align=\"right\"><font face=\"_sans\" size=\"12\" color=\"#ffffff\" letterSpacing=\"0.000000\" kerning=\"0\">SKIP</font></p><p align=\"right\"></p>", 645.100000f, 543.750000f, 135.700000f, 36.750000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "CS_INTRO", "@24", "@24", "subText", "", 202.800000f, 380.700000f, 394.400000f, 73.700000f, 18.000000f, 2.000000f, 2, 1, 255, 255, 255 },
+    { "CS_BRIDGE", "@21", "@21", "", "<p align=\"right\"><font face=\"_sans\" size=\"12\" color=\"#ffffff\" letterSpacing=\"0.000000\" kerning=\"0\">SKIP</font></p><p align=\"right\"></p>", 645.100000f, 543.750000f, 135.700000f, 36.750000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "CS_BRIDGE", "@24", "@24", "subText", "", 202.800000f, 380.700000f, 394.400000f, 73.700000f, 18.000000f, 2.000000f, 2, 1, 255, 255, 255 },
+    { "CS_OUTRO", "@21", "@21", "", "<p align=\"right\"><font face=\"_sans\" size=\"12\" color=\"#ffffff\" letterSpacing=\"0.000000\" kerning=\"0\">SKIP</font></p><p align=\"right\"></p>", 645.100000f, 543.750000f, 135.700000f, 36.750000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "CS_OUTRO", "@24", "@24", "subText", "", 202.800000f, 380.700000f, 394.400000f, 73.700000f, 18.000000f, 2.000000f, 2, 1, 255, 255, 255 },
+    { "menu", "inventory", "@881", "yut_name", "Player name here", 92.000000f, 90.050000f, 166.950000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 204, 204, 204 },
+    { "menu", "inventory", "@882", "yut_info", "Player name here", 92.000000f, 109.850000f, 166.950000f, 19.600000f, 12.000000f, 2.000000f, 2, 1, 204, 204, 204 },
+    { "menu", "inventory", "@883", "yut_lif", "strength", 329.950000f, 97.100000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 103, 147, 57 },
+    { "menu", "inventory", "@884", "yut_str", "strength", 329.950000f, 114.550000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 153, 51, 51 },
+    { "menu", "inventory", "@885", "yut_mag", "strength", 329.950000f, 132.700000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 196, 140, 60 },
+    { "menu", "inventory", "@886", "yut_spd", "strength", 329.950000f, 150.850000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 115, 85, 136 },
+    { "menu", "inventory", "@887", "yut_foc", "strength", 329.950000f, 168.300000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 141, 169, 233 },
+    { "menu", "inventory", "@888", "yut_lif2", "0000", 385.950000f, 97.100000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 103, 147, 57 },
+    { "menu", "inventory", "@889", "yut_str2", "0000", 385.950000f, 114.550000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 153, 51, 51 },
+    { "menu", "inventory", "@890", "yut_mag2", "0000", 385.950000f, 132.700000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 196, 140, 60 },
+    { "menu", "inventory", "@891", "yut_spd2", "0000", 385.950000f, 150.850000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 115, 85, 136 },
+    { "menu", "inventory", "@892", "yut_foc2", "0000", 385.950000f, 168.300000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 141, 169, 233 },
+    { "menu", "inventory", "@893", "yut_per", "strength", 329.800000f, 196.800000f, 119.800000f, 19.600000f, 12.000000f, 2.000000f, 0, 1, 102, 102, 102 },
+    { "menu", "inventory", "@894", "yut_def", "strength", 329.800000f, 303.200000f, 119.800000f, 19.600000f, 12.000000f, 2.000000f, 0, 1, 102, 102, 102 },
+    { "menu", "inventory", "@1027", "yut_info51", "Experinece:", 30.200000f, 284.400000f, 103.550000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 204, 204, 204 },
+    { "menu", "inventory", "@1032", "exp2", "100%", 136.550000f, 284.400000f, 34.800000f, 17.700000f, 10.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "inventory", "@11", "worder", "Agressive", 97.400000f, 328.400000f, 146.850000f, 20.700000f, 10.000000f, 2.000000f, 2, 1, 255, 255, 255 },
+    { "menu", "inventory", "@1052", "dumbEuro", "99999", 537.100000f, 368.550000f, 105.400000f, 30.550000f, 22.000000f, 2.000000f, 0, 0, 250, 217, 90 },
+    { "menu", "inventory", "@1053", "", "<p align=\"right\"><font face=\"_sans\" size=\"31\" color=\"#fad95a\" letterSpacing=\"0.000000\" kerning=\"0\">\342\202\254</font></p><p align=\"right\"></p>", 501.450000f, 364.900000f, 34.200000f, 84.600000f, 31.000000f, 2.000000f, 1, 1, 250, 217, 90 },
+    { "menu", "inventory", "@1059", "vbbc0", "titlehere", 512.300000f, 87.100000f, 233.750000f, 21.900000f, 13.000000f, 2.000000f, 2, 1, 94, 94, 94 },
+    { "menu", "normal", "@881", "yut_name", "Player name here", 92.000000f, 90.050000f, 166.950000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 204, 204, 204 },
+    { "menu", "normal", "@882", "yut_info", "Player name here", 92.000000f, 109.850000f, 166.950000f, 19.600000f, 12.000000f, 2.000000f, 2, 1, 204, 204, 204 },
+    { "menu", "normal", "@883", "yut_lif", "strength", 329.950000f, 97.100000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 103, 147, 57 },
+    { "menu", "normal", "@884", "yut_str", "strength", 329.950000f, 114.550000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 153, 51, 51 },
+    { "menu", "normal", "@885", "yut_mag", "strength", 329.950000f, 132.700000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 196, 140, 60 },
+    { "menu", "normal", "@886", "yut_spd", "strength", 329.950000f, 150.850000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 115, 85, 136 },
+    { "menu", "normal", "@887", "yut_foc", "strength", 329.950000f, 168.300000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 141, 169, 233 },
+    { "menu", "normal", "@888", "yut_lif2", "0000", 385.950000f, 97.100000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 103, 147, 57 },
+    { "menu", "normal", "@889", "yut_str2", "0000", 385.950000f, 114.550000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 153, 51, 51 },
+    { "menu", "normal", "@890", "yut_mag2", "0000", 385.950000f, 132.700000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 196, 140, 60 },
+    { "menu", "normal", "@891", "yut_spd2", "0000", 385.950000f, 150.850000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 115, 85, 136 },
+    { "menu", "normal", "@892", "yut_foc2", "0000", 385.950000f, 168.300000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 141, 169, 233 },
+    { "menu", "normal", "@893", "yut_per", "strength", 329.800000f, 196.800000f, 119.800000f, 19.600000f, 12.000000f, 2.000000f, 0, 1, 102, 102, 102 },
+    { "menu", "normal", "@894", "yut_def", "strength", 329.800000f, 303.200000f, 119.800000f, 19.600000f, 12.000000f, 2.000000f, 0, 1, 102, 102, 102 },
+    { "menu", "normal", "@1027", "yut_info51", "Experinece:", 30.200000f, 284.400000f, 103.550000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 204, 204, 204 },
+    { "menu", "normal", "@1052", "dumbEuro", "99999", 537.100000f, 368.550000f, 105.400000f, 30.550000f, 22.000000f, 2.000000f, 0, 0, 250, 217, 90 },
+    { "menu", "normal", "@1053", "", "<p align=\"right\"><font face=\"_sans\" size=\"31\" color=\"#fad95a\" letterSpacing=\"0.000000\" kerning=\"0\">\342\202\254</font></p><p align=\"right\"></p>", 501.450000f, 364.900000f, 34.200000f, 84.600000f, 31.000000f, 2.000000f, 1, 1, 250, 217, 90 },
+    { "menu", "normal", "@1059", "vbbc0", "titlehere", 512.300000f, 87.100000f, 233.750000f, 21.900000f, 13.000000f, 2.000000f, 2, 1, 94, 94, 94 },
+    { "menu", "options", "@7", "", "<p align=\"right\"><font face=\"Tahoma\" size=\"14\" color=\"#d56666\" letterSpacing=\"0.000000\" kerning=\"0\">Sound:</font></p>", 37.900000f, 185.850000f, 184.600000f, 23.500000f, 14.000000f, 2.000000f, 1, 0, 213, 102, 102 },
+    { "menu", "options", "@8", "", "<p align=\"right\"><font face=\"Tahoma\" size=\"14\" color=\"#d56666\" letterSpacing=\"0.000000\" kerning=\"0\">Effects:</font></p>", 37.900000f, 221.850000f, 184.600000f, 23.500000f, 14.000000f, 2.000000f, 1, 0, 213, 102, 102 },
+    { "menu", "options", "@9", "tit_3", "ON", 229.500000f, 185.850000f, 119.000000f, 30.850000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "options", "@10", "tit_4", "HIGH", 229.500000f, 221.850000f, 121.000000f, 30.850000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "options", "@15", "", "<p align=\"center\"><font face=\"Tahoma\" size=\"16\" color=\"#ffffff\" letterSpacing=\"0.000000\" kerning=\"0\"><b>Game Settings</b></font></p>", 127.700000f, 121.100000f, 195.650000f, 26.200000f, 16.000000f, 2.000000f, 2, 0, 255, 255, 255 },
+    { "menu", "options", "@16", "", "<p align=\"center\"><font face=\"Tahoma\" size=\"16\" color=\"#ffffff\" letterSpacing=\"0.000000\" kerning=\"0\"><b>Gameplay Stats</b></font></p>", 437.200000f, 121.100000f, 195.650000f, 26.200000f, 16.000000f, 2.000000f, 2, 0, 255, 255, 255 },
+    { "menu", "options", "@17", "", "<p align=\"right\"><font face=\"Tahoma\" size=\"14\" color=\"#d56666\" letterSpacing=\"0.000000\" kerning=\"0\">Autosave:</font></p>", 37.900000f, 257.850000f, 184.600000f, 23.500000f, 14.000000f, 2.000000f, 1, 0, 213, 102, 102 },
+    { "menu", "options", "@18", "tit_7", "HIGH", 229.500000f, 257.850000f, 121.000000f, 30.850000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "options", "@21", "", "<p align=\"right\"><font face=\"Tahoma\" size=\"14\" color=\"#d56666\" letterSpacing=\"0.000000\" kerning=\"0\">Graphics:</font></p>", 37.900000f, 293.850000f, 184.600000f, 23.500000f, 14.000000f, 2.000000f, 1, 0, 213, 102, 102 },
+    { "menu", "options", "@22", "tit_11", "HIGH", 229.500000f, 293.850000f, 121.000000f, 30.850000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "options", "@25", "", "<p align=\"right\"><font face=\"Tahoma\" size=\"12\" color=\"#cccccc\" letterSpacing=\"0.000000\" kerning=\"0\">Zones Cleared</font></p>", 409.950000f, 169.200000f, 179.150000f, 20.800000f, 12.000000f, 2.000000f, 1, 0, 204, 204, 204 },
+    { "menu", "options", "@26", "gs_zone_cleared", "123456", 599.300000f, 169.200000f, 80.200000f, 20.900000f, 12.000000f, 2.000000f, 0, 0, 255, 255, 255 },
+    { "menu", "options", "@27", "", "<p align=\"right\"><font face=\"Tahoma\" size=\"12\" color=\"#cccccc\" letterSpacing=\"0.000000\" kerning=\"0\">Respecs Used</font></p>", 409.950000f, 199.200000f, 179.150000f, 20.800000f, 12.000000f, 2.000000f, 1, 0, 204, 204, 204 },
+    { "menu", "options", "@28", "gs_respec_used", "123456", 599.300000f, 199.200000f, 80.200000f, 20.900000f, 12.000000f, 2.000000f, 0, 0, 255, 255, 255 },
+    { "menu", "options", "@29", "", "<p align=\"right\"><font face=\"Tahoma\" size=\"12\" color=\"#cccccc\" letterSpacing=\"0.000000\" kerning=\"0\">Training Fights Used</font></p>", 409.950000f, 229.200000f, 179.150000f, 20.800000f, 12.000000f, 2.000000f, 1, 0, 204, 204, 204 },
+    { "menu", "options", "@30", "gs_training_used", "123456", 599.300000f, 229.200000f, 80.200000f, 20.900000f, 12.000000f, 2.000000f, 0, 0, 255, 255, 255 },
+    { "menu", "options", "@31", "", "<p align=\"right\"><font face=\"Tahoma\" size=\"12\" color=\"#cccccc\" letterSpacing=\"0.000000\" kerning=\"0\">Top Damage (Physical)</font></p>", 409.950000f, 259.200000f, 179.150000f, 20.800000f, 12.000000f, 2.000000f, 1, 0, 204, 204, 204 },
+    { "menu", "options", "@32", "gs_top_dmg_physical", "123456", 599.300000f, 259.200000f, 80.200000f, 20.900000f, 12.000000f, 2.000000f, 0, 0, 255, 255, 255 },
+    { "menu", "options", "@33", "", "<p align=\"right\"><font face=\"Tahoma\" size=\"12\" color=\"#cccccc\" letterSpacing=\"0.000000\" kerning=\"0\">Top Damage (Elemental)</font></p>", 409.950000f, 289.200000f, 179.150000f, 20.800000f, 12.000000f, 2.000000f, 1, 0, 204, 204, 204 },
+    { "menu", "options", "@34", "gs_top_dmg_elemental", "123456", 599.300000f, 289.200000f, 80.200000f, 20.900000f, 12.000000f, 2.000000f, 0, 0, 255, 255, 255 },
+    { "menu", "options", "@35", "", "<p align=\"right\"><font face=\"Tahoma\" size=\"12\" color=\"#cccccc\" letterSpacing=\"0.000000\" kerning=\"0\">Background Elements Found</font></p>", 409.950000f, 319.200000f, 179.150000f, 20.800000f, 12.000000f, 2.000000f, 1, 0, 204, 204, 204 },
+    { "menu", "options", "@36", "gs_bg_found", "123456", 599.300000f, 319.200000f, 80.200000f, 20.900000f, 12.000000f, 2.000000f, 0, 0, 255, 255, 255 },
+    { "menu", "shop", "@895", "vb2", "", 54.200000f, 257.150000f, 194.400000f, 138.100000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "shop", "@896", "vb1", "", 288.200000f, 235.600000f, 187.300000f, 55.000000f, 12.000000f, 2.000000f, 0, 1, 102, 102, 102 },
+    { "menu", "shop", "@1052", "dumbEuro", "99999", 537.100000f, 368.550000f, 105.400000f, 30.550000f, 22.000000f, 2.000000f, 0, 0, 250, 217, 90 },
+    { "menu", "shop", "@1053", "", "<p align=\"right\"><font face=\"_sans\" size=\"31\" color=\"#fad95a\" letterSpacing=\"0.000000\" kerning=\"0\">\342\202\254</font></p><p align=\"right\"></p>", 501.450000f, 364.900000f, 34.200000f, 84.600000f, 31.000000f, 2.000000f, 1, 1, 250, 217, 90 },
+    { "menu", "shop", "@1059", "vbbc0", "titlehere", 512.300000f, 87.100000f, 233.750000f, 21.900000f, 13.000000f, 2.000000f, 2, 1, 94, 94, 94 },
+    { "menu", "skills", "@1", "numShow", "90", 144.750000f, 130.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
+    { "menu", "skills", "@2", "numShow2", "90", 166.300000f, 130.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "menu", "skills", "@3", "numShow", "90", 143.750000f, 128.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "skills", "@4", "numShow2", "90", 165.300000f, 128.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "skills", "@1", "numShow", "90", 144.750000f, 170.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
+    { "menu", "skills", "@2", "numShow2", "90", 166.300000f, 170.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "menu", "skills", "@3", "numShow", "90", 143.750000f, 168.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "skills", "@4", "numShow2", "90", 165.300000f, 168.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "skills", "@1", "numShow", "90", 196.750000f, 130.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
+    { "menu", "skills", "@2", "numShow2", "90", 218.300000f, 130.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "menu", "skills", "@3", "numShow", "90", 195.750000f, 128.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "skills", "@4", "numShow2", "90", 217.300000f, 128.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "skills", "@1", "numShow", "90", 92.750000f, 250.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
+    { "menu", "skills", "@2", "numShow2", "90", 114.300000f, 250.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "menu", "skills", "@3", "numShow", "90", 91.750000f, 248.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "skills", "@4", "numShow2", "90", 113.300000f, 248.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "skills", "@1", "numShow", "90", 144.750000f, 210.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
+    { "menu", "skills", "@2", "numShow2", "90", 166.300000f, 210.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "menu", "skills", "@3", "numShow", "90", 143.750000f, 208.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "skills", "@4", "numShow2", "90", 165.300000f, 208.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "skills", "@1", "numShow", "90", 144.750000f, 250.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
+    { "menu", "skills", "@2", "numShow2", "90", 166.300000f, 250.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "menu", "skills", "@3", "numShow", "90", 143.750000f, 248.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "skills", "@4", "numShow2", "90", 165.300000f, 248.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "skills", "@1", "numShow", "90", 196.750000f, 290.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
+    { "menu", "skills", "@2", "numShow2", "90", 218.300000f, 290.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "menu", "skills", "@3", "numShow", "90", 195.750000f, 288.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "skills", "@4", "numShow2", "90", 217.300000f, 288.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "skills", "@1", "numShow", "90", 196.750000f, 170.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
+    { "menu", "skills", "@2", "numShow2", "90", 218.300000f, 170.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "menu", "skills", "@3", "numShow", "90", 195.750000f, 168.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "skills", "@4", "numShow2", "90", 217.300000f, 168.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "skills", "@1", "numShow", "90", 92.750000f, 330.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
+    { "menu", "skills", "@2", "numShow2", "90", 114.300000f, 330.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "menu", "skills", "@3", "numShow", "90", 91.750000f, 328.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "skills", "@4", "numShow2", "90", 113.300000f, 328.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "skills", "@1", "numShow", "90", 92.750000f, 370.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
+    { "menu", "skills", "@2", "numShow2", "90", 114.300000f, 370.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "menu", "skills", "@3", "numShow", "90", 91.750000f, 368.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "skills", "@4", "numShow2", "90", 113.300000f, 368.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "skills", "@1", "numShow", "90", 92.750000f, 290.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
+    { "menu", "skills", "@2", "numShow2", "90", 114.300000f, 290.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "menu", "skills", "@3", "numShow", "90", 91.750000f, 288.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "skills", "@4", "numShow2", "90", 113.300000f, 288.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "skills", "@1", "numShow", "90", 196.750000f, 330.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
+    { "menu", "skills", "@2", "numShow2", "90", 218.300000f, 330.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "menu", "skills", "@3", "numShow", "90", 195.750000f, 328.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "skills", "@4", "numShow2", "90", 217.300000f, 328.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "skills", "@1", "numShow", "90", 144.750000f, 370.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
+    { "menu", "skills", "@2", "numShow2", "90", 166.300000f, 370.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "menu", "skills", "@3", "numShow", "90", 143.750000f, 368.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "skills", "@4", "numShow2", "90", 165.300000f, 368.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "skills", "@1", "numShow", "90", 92.750000f, 130.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
+    { "menu", "skills", "@2", "numShow2", "90", 114.300000f, 130.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "menu", "skills", "@3", "numShow", "90", 91.750000f, 128.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "skills", "@4", "numShow2", "90", 113.300000f, 128.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "skills", "@1", "numShow", "90", 92.750000f, 170.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
+    { "menu", "skills", "@2", "numShow2", "90", 114.300000f, 170.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "menu", "skills", "@3", "numShow", "90", 91.750000f, 168.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "skills", "@4", "numShow2", "90", 113.300000f, 168.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "skills", "@1", "numShow", "90", 92.750000f, 210.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
+    { "menu", "skills", "@2", "numShow2", "90", 114.300000f, 210.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "menu", "skills", "@3", "numShow", "90", 91.750000f, 208.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "skills", "@4", "numShow2", "90", 113.300000f, 208.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "skills", "@1", "numShow", "90", 196.750000f, 210.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
+    { "menu", "skills", "@2", "numShow2", "90", 218.300000f, 210.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "menu", "skills", "@3", "numShow", "90", 195.750000f, 208.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "skills", "@4", "numShow2", "90", 217.300000f, 208.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "skills", "@1", "numShow", "90", 196.750000f, 250.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
+    { "menu", "skills", "@2", "numShow2", "90", 218.300000f, 250.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "menu", "skills", "@3", "numShow", "90", 195.750000f, 248.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "skills", "@4", "numShow2", "90", 217.300000f, 248.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "skills", "@1", "numShow", "90", 144.750000f, 290.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
+    { "menu", "skills", "@2", "numShow2", "90", 166.300000f, 290.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "menu", "skills", "@3", "numShow", "90", 143.750000f, 288.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "skills", "@4", "numShow2", "90", 165.300000f, 288.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "skills", "@1", "numShow", "90", 144.750000f, 330.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
+    { "menu", "skills", "@2", "numShow2", "90", 166.300000f, 330.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "menu", "skills", "@3", "numShow", "90", 143.750000f, 328.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "skills", "@4", "numShow2", "90", 165.300000f, 328.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "skills", "@1", "numShow", "90", 248.750000f, 130.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
+    { "menu", "skills", "@2", "numShow2", "90", 270.300000f, 130.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "menu", "skills", "@3", "numShow", "90", 247.750000f, 128.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "skills", "@4", "numShow2", "90", 269.300000f, 128.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "skills", "@1", "numShow", "90", 248.750000f, 290.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
+    { "menu", "skills", "@2", "numShow2", "90", 270.300000f, 290.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "menu", "skills", "@3", "numShow", "90", 247.750000f, 288.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "skills", "@4", "numShow2", "90", 269.300000f, 288.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "skills", "@1", "numShow", "90", 248.750000f, 170.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
+    { "menu", "skills", "@2", "numShow2", "90", 270.300000f, 170.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "menu", "skills", "@3", "numShow", "90", 247.750000f, 168.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "skills", "@4", "numShow2", "90", 269.300000f, 168.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "skills", "@1", "numShow", "90", 248.750000f, 330.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
+    { "menu", "skills", "@2", "numShow2", "90", 270.300000f, 330.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "menu", "skills", "@3", "numShow", "90", 247.750000f, 328.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "skills", "@4", "numShow2", "90", 269.300000f, 328.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "skills", "@1", "numShow", "90", 248.750000f, 370.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
+    { "menu", "skills", "@2", "numShow2", "90", 270.300000f, 370.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "menu", "skills", "@3", "numShow", "90", 247.750000f, 368.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "skills", "@4", "numShow2", "90", 269.300000f, 368.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "skills", "@1", "numShow", "90", 248.750000f, 210.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
+    { "menu", "skills", "@2", "numShow2", "90", 270.300000f, 210.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "menu", "skills", "@3", "numShow", "90", 247.750000f, 208.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "skills", "@4", "numShow2", "90", 269.300000f, 208.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "skills", "@1", "numShow", "90", 248.750000f, 250.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
+    { "menu", "skills", "@2", "numShow2", "90", 270.300000f, 250.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "menu", "skills", "@3", "numShow", "90", 247.750000f, 248.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "skills", "@4", "numShow2", "90", 269.300000f, 248.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "skills", "@1", "numShow", "90", 196.750000f, 370.250000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 0, 0, 0 },
+    { "menu", "skills", "@2", "numShow2", "90", 218.300000f, 370.250000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 0, 0, 0 },
+    { "menu", "skills", "@3", "numShow", "90", 195.750000f, 368.750000f, 18.300000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "skills", "@4", "numShow2", "90", 217.300000f, 368.750000f, 18.000000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "skills", "@573", "yut_lif", "strength", 356.900000f, 338.450000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 103, 147, 57 },
+    { "menu", "skills", "@574", "yut_str", "strength", 356.900000f, 355.900000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 153, 51, 51 },
+    { "menu", "skills", "@575", "yut_mag", "strength", 356.900000f, 374.050000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 196, 140, 60 },
+    { "menu", "skills", "@576", "yut_spd", "strength", 356.900000f, 392.200000f, 85.350000f, 21.900000f, 12.000000f, 2.000000f, 0, 1, 115, 85, 136 },
+    { "menu", "skills", "@577", "yut_lif2", "0000", 393.900000f, 338.450000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 103, 147, 57 },
+    { "menu", "skills", "@578", "yut_str2", "0000", 393.900000f, 355.900000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 153, 51, 51 },
+    { "menu", "skills", "@579", "yut_mag2", "0000", 393.900000f, 374.050000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 196, 140, 60 },
+    { "menu", "skills", "@580", "yut_spd2", "0000", 393.900000f, 392.200000f, 85.350000f, 19.600000f, 12.000000f, 2.000000f, 1, 1, 115, 85, 136 },
+    { "menu", "skills", "@581", "skLoadKrin", "skill points", 312.300000f, 120.150000f, 104.250000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "skills", "@582", "spLoadKrin", "stat points", 312.300000f, 139.150000f, 104.250000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "skills", "@583", "yut_name", "Player name here", 315.250000f, 77.700000f, 166.950000f, 20.200000f, 14.000000f, 2.000000f, 2, 1, 204, 204, 204 },
+    { "menu", "skills", "@584", "yut_info", "Player name here", 315.250000f, 97.500000f, 166.950000f, 19.600000f, 12.000000f, 2.000000f, 2, 1, 204, 204, 204 },
+    { "menu", "skills", "@585", "skillPoints", "00", 378.800000f, 120.150000f, 104.250000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "skills", "@586", "statPoints", "00", 378.800000f, 139.150000f, 104.250000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "skills", "@601", "k_title2", "titlehere", 311.000000f, 304.800000f, 164.450000f, 21.900000f, 13.000000f, 2.000000f, 2, 1, 51, 51, 51 },
+    { "menu", "skills", "@602", "k_title3", "titlehere", 514.300000f, 78.100000f, 233.750000f, 21.900000f, 13.000000f, 2.000000f, 2, 1, 94, 94, 94 },
+    { "menu", "skills", "@603", "k_title1", "titlehere", 51.650000f, 78.100000f, 232.700000f, 22.100000f, 13.000000f, 2.000000f, 2, 1, 94, 94, 94 },
+    { "menu", "skills", "@604", "k_title4", "titlehere", 514.300000f, 248.100000f, 233.750000f, 21.900000f, 13.000000f, 2.000000f, 2, 1, 94, 94, 94 },
+    { "menu", "skills", "@1", "reader", "conwofnewo fewoi fewf efew fiwehfiowe fiewhoifewhiof ewiofhewoifhiewhfoiewhfiowehfi ehifwephfipwehfipehfipwe", 317.950000f, 169.700000f, 159.700000f, 104.800000f, 12.000000f, 2.000000f, 0, 1, 153, 153, 153 },
+    { "menu", "win", "@23", "vb8", "proceed me!", 293.300000f, 379.400000f, 173.800000f, 24.100000f, 18.000000f, 2.000000f, 2, 1, 102, 255, 0 },
+    { "menu", "win", "@895", "vb3", "skill points", 296.200000f, 287.200000f, 139.300000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 250, 217, 90 },
+    { "menu", "win", "@896", "vb5", "\342\202\25400", 362.700000f, 287.200000f, 104.250000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 250, 217, 90 },
+    { "menu", "win", "@897", "vb4", "skill points", 296.200000f, 304.800000f, 140.300000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 255, 255, 255 },
+    { "menu", "win", "@898", "vb6", "\342\202\25400", 362.700000f, 304.800000f, 104.250000f, 19.050000f, 12.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "win", "@899", "vb2", "", 289.200000f, 244.800000f, 184.300000f, 44.600000f, 12.000000f, 2.000000f, 0, 1, 102, 102, 102 },
+    { "menu", "win", "@900", "vb7", "", 290.200000f, 327.200000f, 180.300000f, 49.200000f, 12.000000f, 2.000000f, 0, 1, 102, 102, 102 },
+    { "menu", "win", "@901", "vb1", "", 288.200000f, 90.400000f, 187.300000f, 55.000000f, 12.000000f, 2.000000f, 0, 1, 102, 102, 102 },
+    { "menu", "win", "@904", "vb99", "No Items Found ewhfewhewoew", 291.200000f, 163.800000f, 180.300000f, 70.600000f, 19.000000f, 2.000000f, 2, 1, 165, 48, 48 },
+    { "menu", "win", "@12", "namerI", "Name Text", 109.100000f, 234.900000f, 128.900000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 204, 204, 204 },
+    { "menu", "win", "@13", "levelI", "Name Text", 109.100000f, 252.900000f, 128.900000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 204, 204, 204 },
+    { "menu", "win", "@17", "exp2", "100%", 107.200000f, 277.000000f, 34.800000f, 17.700000f, 10.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "win", "@12", "namerI", "Name Text", 109.100000f, 327.400000f, 128.900000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 204, 204, 204 },
+    { "menu", "win", "@13", "levelI", "Name Text", 109.100000f, 345.400000f, 128.900000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 204, 204, 204 },
+    { "menu", "win", "@17", "exp2", "100%", 107.200000f, 369.500000f, 34.800000f, 17.700000f, 10.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "win", "@12", "namerI", "Name Text", 109.100000f, 142.400000f, 128.900000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 204, 204, 204 },
+    { "menu", "win", "@13", "levelI", "Name Text", 109.100000f, 160.400000f, 128.900000f, 19.050000f, 12.000000f, 2.000000f, 0, 1, 204, 204, 204 },
+    { "menu", "win", "@17", "exp2", "100%", 107.200000f, 184.500000f, 34.800000f, 17.700000f, 10.000000f, 2.000000f, 1, 1, 255, 255, 255 },
+    { "menu", "win", "@959", "vbbc1", "titlehere", 41.300000f, 87.100000f, 213.150000f, 19.000000f, 13.000000f, 2.000000f, 2, 1, 94, 94, 94 },
+    { "menu", "win", "@1052", "dumbEuro", "99999", 537.100000f, 368.550000f, 105.400000f, 30.550000f, 22.000000f, 2.000000f, 0, 0, 250, 217, 90 },
+    { "menu", "win", "@1053", "", "<p align=\"right\"><font face=\"_sans\" size=\"31\" color=\"#fad95a\" letterSpacing=\"0.000000\" kerning=\"0\">\342\202\254</font></p><p align=\"right\"></p>", 501.450000f, 364.900000f, 34.200000f, 84.600000f, 31.000000f, 2.000000f, 1, 1, 250, 217, 90 },
+    { "menu", "win", "@1059", "vbbc0", "titlehere", 512.300000f, 87.100000f, 233.750000f, 21.900000f, 13.000000f, 2.000000f, 2, 1, 94, 94, 94 },
 };
 const int SONNY_TEXT_FIELD_COUNT = (int)(sizeof(SONNY_TEXT_FIELDS) / sizeof(SONNY_TEXT_FIELDS[0]));
 
@@ -3793,6 +3922,15 @@ const TextField *text_field(const char *screen, const char *owner,
     for (int i = 0; i < SONNY_TEXT_FIELD_COUNT; i++)
         if (strcmp(SONNY_TEXT_FIELDS[i].screen, screen) == 0
             && strcmp(SONNY_TEXT_FIELDS[i].owner, owner) == 0 && index-- == 0)
+            return &SONNY_TEXT_FIELDS[i];
+    return NULL;
+}
+
+const TextField *text_field_var(const char *screen, const char *variable)
+{
+    for (int i = 0; i < SONNY_TEXT_FIELD_COUNT; i++)
+        if (strcmp(SONNY_TEXT_FIELDS[i].screen, screen) == 0
+            && strcmp(SONNY_TEXT_FIELDS[i].variable, variable) == 0)
             return &SONNY_TEXT_FIELDS[i];
     return NULL;
 }
@@ -3980,16 +4118,37 @@ const int SONNY_LIFE_COLOUR_COUNT = (int)(sizeof(SONNY_LIFE_COLOURS) / sizeof(SO
 const StageButton SONNY_BUTTONS[] = {
     { "mainMenu", "@9", "@9", 1108, 242.013000f, 335.100000f, 302.274000f, 39.999000f },
     { "mainMenu", "@11", "@11", 1109, 242.013000f, 405.608000f, 302.274000f, 20.784000f },
-    { "KRINBATTLESCENE", "krinToMove2", "krinToMove2", 1597, 383.917000f, 491.667000f, 32.167000f, 32.167000f },
-    { "KRINBATTLESCENE", "selector", "thingo2", 1598, 438.464000f, 286.931000f, 27.165000f, 27.165000f },
-    { "KRINBATTLESCENE", "selector", "thingo6", 1599, 335.619000f, 286.931000f, 27.165000f, 27.165000f },
-    { "KRINBATTLESCENE", "selector", "thingo0", 1600, 387.068000f, 235.534000f, 27.165000f, 27.165000f },
-    { "KRINBATTLESCENE", "selector", "thingo4", 1601, 387.068000f, 338.379000f, 27.165000f, 27.165000f },
-    { "KRINBATTLESCENE", "selector", "thingo3", 1602, 423.409000f, 323.324000f, 27.165000f, 27.165000f },
-    { "KRINBATTLESCENE", "selector", "thingo7", 1603, 350.675000f, 250.590000f, 27.165000f, 27.165000f },
-    { "KRINBATTLESCENE", "selector", "thingo1", 1604, 423.409000f, 250.642000f, 27.165000f, 27.165000f },
-    { "KRINBATTLESCENE", "selector", "thingo5", 1605, 350.675000f, 323.376000f, 27.165000f, 27.165000f },
-    { "KRINBATTLESCENE", "@572", "@572", 1641, 435.988000f, 463.350000f, 18.224000f, 19.901000f },
+    { "subMenu", "@8", "@8", 1113, 241.063000f, 320.700000f, 302.274000f, 39.999000f },
+    { "subMenu", "@11", "@11", 1115, 241.063000f, 380.700000f, 302.274000f, 39.999000f },
+    { "subMenu", "@28", "@28", 1117, 604.439000f, 534.450000f, 188.122000f, 26.800000f },
+    { "nameMenu", "@7", "@7", 1120, 368.334000f, 336.600000f, 61.831000f, 30.000000f },
+    { "nameMenu", "@28", "@28", 1117, 604.439000f, 534.450000f, 188.122000f, 26.800000f },
+    { "dataMenu", "@18", "@18", 1135, 213.000000f, 193.200000f, 113.800000f, 30.000000f },
+    { "dataMenu", "@20", "@20", 1136, 213.000000f, 248.700000f, 113.800000f, 30.000000f },
+    { "dataMenu", "@22", "@22", 1137, 213.000000f, 304.200000f, 113.800000f, 30.000000f },
+    { "dataMenu", "@24", "@24", 1138, 213.000000f, 359.700000f, 113.800000f, 30.000000f },
+    { "dataMenu", "@28", "@28", 1117, 604.439000f, 534.450000f, 188.122000f, 26.800000f },
+    { "classMenu", "@10", "@10", 1148, 281.457000f, 259.450000f, 236.585000f, 30.000000f },
+    { "classMenu", "@12", "@12", 1149, 281.457000f, 309.450000f, 236.585000f, 30.000000f },
+    { "classMenu", "@14", "@14", 1150, 281.457000f, 359.450000f, 236.585000f, 30.000000f },
+    { "classMenu", "@16", "@16", 1151, 281.457000f, 409.450000f, 236.585000f, 30.000000f },
+    { "classMenu", "@28", "@28", 1117, 604.439000f, 534.450000f, 188.122000f, 26.800000f },
+    { "optionsMenu", "@9", "@9", 1156, 406.632000f, 129.950000f, 66.335000f, 30.000000f },
+    { "optionsMenu", "@11", "@11", 1157, 405.982000f, 170.950000f, 66.335000f, 30.000000f },
+    { "optionsMenu", "@17", "@17", 1162, 405.982000f, 210.950000f, 66.335000f, 30.000000f },
+    { "optionsMenu", "@21", "@21", 1165, 203.686000f, 456.800000f, 391.227000f, 26.800000f },
+    { "optionsMenu", "@25", "@25", 1168, 405.982000f, 250.950000f, 66.335000f, 30.000000f },
+    { "optionsMenu", "@28", "@28", 1117, 604.439000f, 534.450000f, 188.122000f, 26.800000f },
+    { "gameOverMenu", "@7", "@7", 1171, 255.536000f, 204.000000f, 288.927000f, 30.000000f },
+    { "gameOverMenu", "@28", "@28", 1117, 604.439000f, 534.450000f, 188.122000f, 26.800000f },
+    { "endMenu", "@6", "@6", 1175, 340.432000f, 412.400000f, 104.037000f, 39.999000f },
+    { "endMenu", "@9", "@9", 1177, 275.965000f, 470.518000f, 236.270000f, 26.465000f },
+    { "designMenu", "@13", "@13", 1117, 604.439000f, 534.450000f, 188.122000f, 26.800000f },
+    { "designMenu", "@15", "@15", 1187, 121.056000f, 208.200000f, 228.888000f, 26.000000f },
+    { "designMenu", "@17", "@17", 1188, 121.056000f, 260.700000f, 228.888000f, 26.000000f },
+    { "designMenu", "@19", "@19", 1189, 121.056000f, 313.200000f, 228.888000f, 26.000000f },
+    { "designMenu", "@21", "@21", 1190, 121.056000f, 365.700000f, 228.888000f, 26.000000f },
+    { "designMenu", "@23", "@23", 1191, 121.056000f, 155.700000f, 228.888000f, 26.000000f },
     { "Navigation", "KrinScreen", "@29", 1208, 485.650000f, 209.350000f, 30.000000f, 30.000000f },
     { "Navigation", "KrinScreen", "@31", 1209, 481.750000f, 150.500000f, 30.000000f, 30.000000f },
     { "Navigation", "KrinScreen", "@33", 1210, 26.950000f, 145.750000f, 218.500000f, 30.000000f },
@@ -4060,6 +4219,19 @@ const StageButton SONNY_BUTTONS[] = {
     { "Navigation", "KRINMENU", "@1057", 1360, 707.600000f, 368.750000f, 31.000000f, 31.000000f },
     { "Navigation", "KRINMENU", "@1063", 1364, 740.600000f, 27.200000f, 30.000000f, 30.000000f },
     { "Navigation", "krinNavFadeSpeech", "@6", 1512, 273.200000f, 304.000000f, 241.300000f, 30.000000f },
+    { "KRINBATTLESCENE", "krinToMove2", "krinToMove2", 1597, 383.917000f, 491.667000f, 32.167000f, 32.167000f },
+    { "KRINBATTLESCENE", "selector", "thingo2", 1598, 438.464000f, 286.931000f, 27.165000f, 27.165000f },
+    { "KRINBATTLESCENE", "selector", "thingo6", 1599, 335.619000f, 286.931000f, 27.165000f, 27.165000f },
+    { "KRINBATTLESCENE", "selector", "thingo0", 1600, 387.068000f, 235.534000f, 27.165000f, 27.165000f },
+    { "KRINBATTLESCENE", "selector", "thingo4", 1601, 387.068000f, 338.379000f, 27.165000f, 27.165000f },
+    { "KRINBATTLESCENE", "selector", "thingo3", 1602, 423.409000f, 323.324000f, 27.165000f, 27.165000f },
+    { "KRINBATTLESCENE", "selector", "thingo7", 1603, 350.675000f, 250.590000f, 27.165000f, 27.165000f },
+    { "KRINBATTLESCENE", "selector", "thingo1", 1604, 423.409000f, 250.642000f, 27.165000f, 27.165000f },
+    { "KRINBATTLESCENE", "selector", "thingo5", 1605, 350.675000f, 323.376000f, 27.165000f, 27.165000f },
+    { "KRINBATTLESCENE", "@572", "@572", 1641, 435.988000f, 463.350000f, 18.224000f, 19.901000f },
+    { "CS_INTRO", "@22", "@22", 1697, 720.045000f, 541.550000f, 79.011000f, 26.800000f },
+    { "CS_BRIDGE", "@22", "@22", 1697, 720.045000f, 541.550000f, 79.011000f, 26.800000f },
+    { "CS_OUTRO", "@22", "@22", 1697, 720.045000f, 541.550000f, 79.011000f, 26.800000f },
     { "overMap", "krinMapper", "@3", 1724, 361.650000f, 407.250000f, 30.000000f, 30.000000f },
     { "overMap", "krinMapper", "@3", 1724, 464.150000f, 150.000000f, 30.000000f, 30.000000f },
     { "overMap", "krinMapper", "@3", 1724, 701.150000f, 411.050000f, 30.000000f, 30.000000f },

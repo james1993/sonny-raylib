@@ -30,51 +30,13 @@ static const Vector2 NO_OFFSET = {0, 0};
    numbers a first zone reaches fill about half of it. */
 #define ELEMENT_BAR_FULL 200.0
 
-/* Pieces of the hub the game drives rather than simply draws: the scene
-   itself, the menu that covers it, the tooltip and the fade, and the progress
-   bar, whose width says how far through the zone the player is. */
-static int chrome_is_hub_runtime(const char *name)
-{
-    static const char *const driven[] = {
-        "KrinScreen", "KRINMENU", "KrinToolTipper", "KrinCombatText",
-        "krinNavFadeSpeech", "@1242", "krinXbarPro",
-    };
-    for (size_t i = 0; i < sizeof(driven) / sizeof(driven[0]); i++)
-        if (strcmp(name, driven[i]) == 0)
-            return 1;
-    return 0;
-}
-
 /* The root frame the hub is laid out from. */
 #define HUB_SCREEN "Navigation"
 
 /* One of the hub's fields, by the name the frame gives it. */
 static const TextField *hub_field(const char *name)
 {
-    return text_field_named(HUB_SCREEN, name, name, 0);
-}
-
-/* Everything a screen's frame places that is a picture, in its own depth
-   order. Anything the engine fills itself is drawn by the screen. */
-static void draw_screen_chrome(const char *screen)
-{
-    for (int i = 0; i < SONNY_STAGE_CHROME_COUNT; i++) {
-        const StageChrome *c = &SONNY_STAGE_CHROME[i];
-        if (strcmp(c->screen, screen) != 0 || c->width <= 0)
-            continue;
-        if (chrome_is_hub_runtime(c->name))
-            continue;
-        const Texture2D *tex = asset_texture(TextFormat("#%d", c->character),
-                                             1);
-        if (!tex)
-            continue;
-        Rectangle dst = placed_rect(c->x, c->y, c->scale_x, c->scale_y,
-                                    c->width, c->height, c->origin_x,
-                                    c->origin_y);
-        DrawTexturePro(*tex, (Rectangle){0, 0, (float)tex->width,
-                                         (float)tex->height},
-                       dst, (Vector2){0, 0}, 0.0f, WHITE);
-    }
+    return chrome_field(HUB_SCREEN, name);
 }
 
 /* The cross the menu screens close with, which the original places once on
@@ -223,7 +185,8 @@ void screen_zone_update(Game *g, Vector2 mouse)
         g->screen = SCREEN_MAP;
     } else if (hub_pressed(HUB_BUTTON_SAVE, mouse)) {
         audio_play("Click3pickup");
-        if (save_write(&g->campaign, SONNY_SAVE_PATH) != 0)
+        if (save_write(&g->campaign,
+                       save_slot_path(g->campaign.slot)) != 0)
             game_notice(g, "Could not write the save file.");
     }
 }

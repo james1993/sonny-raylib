@@ -1064,8 +1064,10 @@ void battle_screen_update(Game *g, Vector2 mouse, int headless)
             g->boss_fight = 0;
             g->screen = SCREEN_VICTORY;
         } else {
-            game_notice(g, "Defeated.");
-            g->screen = SCREEN_ZONE;
+            g->progress_fight = 0;
+            g->boss_fight = 0;
+            g->lost_timer = 0;
+            g->screen = SCREEN_LOST;
         }
         if (audio_ready())
             audio_music(NULL);

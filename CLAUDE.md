@@ -151,6 +151,17 @@ What the original settled that guesswork had got wrong:
   it cannot be taken from the zone.
 * The store's picture is a clip with a frame per store, pointed at shopId + 1
   by number rather than by name.
+* A field says which variable it is bound to, and a frame fills its screen by
+  setting those variables. That binding is the only reliable way to tell which
+  string a field shows -- its instance name says nothing.
+* A field with no variable is never set at run time: what it was authored with
+  is what it shows, as the HTML it was authored in.
+* The front end is a chain of root frames -- mainMenu, subMenu, dataMenu,
+  classMenu, optionsMenu -- and nameMenu sits between them without ever being
+  reached, so the game never asks for a name.
+* Losing stops on loseCombat for a moment and then goes to gameOverMenu,
+  where the only way on is to load the slot the run was in.
+
 * Every marker on a zone's scene is a button and nothing else says what it is
   for: one starts the next story fight, one rolls a practice fight out of the
   zone's training list, one opens a store, and the rest are scenery. The

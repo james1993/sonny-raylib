@@ -66,8 +66,11 @@ BATTLE_SCREEN = 'BATTLESCREEN'
 BATTLE_FRAME_LABEL = 'KRINBATTLESCENE'
 # The root frames worth recording: each is a screen the game stops on, and
 # its display list is that screen's layout.
-SCREEN_FRAMES = ('mainMenu', 'KRINBATTLESCENE', 'Navigation', 'winCombat',
-                 'loseCombat', 'overMap')
+SCREEN_FRAMES = ('mainMenu', 'subMenu', 'nameMenu', 'dataMenu', 'classMenu',
+                 'optionsMenu', 'gameOverMenu', 'endMenu', 'designMenu',
+                 'IntroSeq', 'Navigation', 'LOADBATTLESCENE',
+                 'KRINBATTLESCENE', 'winCombat', 'loseCombat', 'drawCombat',
+                 'CS_INTRO', 'CS_BRIDGE', 'CS_OUTRO', 'overMap')
 # A sky the battle table names, so the sky container can be told apart from
 # the rest of the furniture by what its timeline is labelled with.
 SKY_FRAME = 'NIGHT'
@@ -193,14 +196,18 @@ def edit_text_boxes(body):
             # between lines.
             leading = struct.unpack_from('<h', body, p + 7)[0] / 20.0
             p += 9
-        _, p = read_string(body, p)      # variable name
+        # The variable the field is bound to. A frame's script sets these by
+        # name, so this is what says which string a field shows -- the field's
+        # own instance name says nothing.
+        variable, p = read_string(body, p)
         initial = ''
         if f1 & 0x80:                    # HasText: a label the game never sets
             initial = read_string(body, p)[0]
         out[cid] = {'xmin': round(xmin, 3), 'ymin': round(ymin, 3),
                     'xmax': round(xmax, 3), 'ymax': round(ymax, 3),
                     'height': height, 'color': color, 'align': align,
-                    'leading': leading, 'font': font, 'text': initial}
+                    'leading': leading, 'font': font, 'text': initial,
+                    'variable': variable}
     return out
 
 
@@ -427,6 +434,7 @@ def text_fields(body, character, texts, fonts, at=(1.0, 1.0, 0.0, 0.0),
                           'size': box['height'], 'align': box['align'],
                           'leading': box['leading'],
                           'text': box['text'],
+                          'variable': box['variable'],
                           'font': (fonts.get(box['font']) or ('', 0))[0],
                           'device': (fonts.get(box['font']) or ('', 0))[1] == 0,
                           'color': box['color']})
@@ -1182,6 +1190,7 @@ def main(path, raw_dir=None):
                 'height': round(entry['scale_y'] * (box['ymax'] - box['ymin']), 3),
                 'size': box['height'], 'align': box['align'],
                 'leading': box['leading'], 'text': box['text'],
+                'variable': box['variable'],
                 'font': (fonts.get(box['font']) or ('', 0))[0],
                 'device': (fonts.get(box['font']) or ('', 0))[1] == 0,
                 'color': box['color']})

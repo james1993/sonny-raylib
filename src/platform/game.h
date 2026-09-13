@@ -23,7 +23,15 @@
 #define RESOLVE_FRAMES 14
 
 typedef enum {
-    SCREEN_ZONE = 0,
+    SCREEN_TITLE = 0,
+    SCREEN_START,
+    SCREEN_SLOTS,
+    SCREEN_CLASS,
+    SCREEN_OPTIONS,
+    SCREEN_MANUAL,
+    SCREEN_LOST,
+    SCREEN_GAMEOVER,
+    SCREEN_ZONE,
     SCREEN_BATTLE,
     SCREEN_VICTORY,
     SCREEN_TALENTS,
@@ -107,6 +115,15 @@ typedef struct {
     int32_t   progress_fight;
     /* How far through the original's four-track battle playlist we are. */
     int32_t   music_turn;
+    /* Which way the slot screen was opened: a new game writes over the slot,
+       a load reads it. */
+    enum { SLOT_SAVE = 0, SLOT_LOAD } slot_mode;
+    /* The settings the original asks for once, before the story starts. */
+    struct {
+        int32_t sound, graphics, quality, autosave;
+    } options;
+    int32_t   lost_timer;
+    int32_t   gameover_tip;
     char      notice[128];
     int32_t   notice_timer;
 
@@ -153,6 +170,19 @@ void draw_orb(const char *icon, Vector2 centre, float scale, int32_t dim,
 /* A button's own art, which is nowhere else in the file. */
 void draw_button_art(const StageButton *b, Color tint);
 
+/* Everything a root frame places that is a picture, in its own depth order,
+   and the art the buttons on it carry. Anything the engine fills itself is
+   left to the screen. */
+void draw_screen_chrome(const char *screen);
+void draw_screen_buttons(const char *screen, Vector2 mouse);
+/* The text a frame bakes into its own fields, which the game never sets. */
+void draw_screen_text(const char *screen);
+/* One of a root frame's own text fields, by the name the frame gives it. */
+const TextField *chrome_field(const char *screen, const char *name);
+/* Whether the pointer has just pressed the button with this character. */
+int screen_button_pressed(const char *screen, int32_t character,
+                          Vector2 mouse);
+
 void game_draw_notice(const Game *g);
 void ui_text(const char *text, float x, float y, float size, Color color);
 float ui_text_width(const char *text, float size);
@@ -183,12 +213,31 @@ void screen_victory_update(Game *g, Vector2 mouse);
 void screen_victory_draw(Game *g, Vector2 mouse);
 void screen_map_update(Game *g, Vector2 mouse);
 void screen_map_draw(Game *g, Vector2 mouse);
+void screen_title_update(Game *g, Vector2 mouse);
+void screen_title_draw(Game *g, Vector2 mouse);
+void screen_start_update(Game *g, Vector2 mouse);
+void screen_start_draw(Game *g, Vector2 mouse);
+void screen_slots_update(Game *g, Vector2 mouse);
+void screen_slots_draw(Game *g, Vector2 mouse);
+void screen_class_update(Game *g, Vector2 mouse);
+void screen_class_draw(Game *g, Vector2 mouse);
+void screen_options_update(Game *g, Vector2 mouse);
+void screen_options_draw(Game *g, Vector2 mouse);
+void screen_manual_update(Game *g, Vector2 mouse);
+void screen_manual_draw(Game *g, Vector2 mouse);
+void screen_lost_update(Game *g, Vector2 mouse);
+void screen_lost_draw(Game *g, Vector2 mouse);
+void screen_gameover_update(Game *g, Vector2 mouse);
+void screen_gameover_draw(Game *g, Vector2 mouse);
+
+/* Leave the settings for the story, which is where a new game begins. */
+void game_begin_story(Game *g);
 
 void battle_screen_start(Game *g, int32_t battle_id);
 void battle_screen_update(Game *g, Vector2 mouse, int headless);
 void battle_screen_draw(Game *g);
 
 /* Where the player's save lives. */
-#define SONNY_SAVE_PATH "sonny-save.txt"
+
 
 #endif

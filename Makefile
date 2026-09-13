@@ -19,6 +19,7 @@ game: $(BUILD)
 	$(CC) $(CFLAGS) -o $(BUILD)/sonny src/platform/main.c \
 	    src/platform/assets.c src/platform/audio.c src/platform/ui.c \
 	    src/platform/screens.c src/platform/screen_battle.c \
+	    src/platform/screen_menu.c \
 	    src/gen/assets_gen.c \
 	    $(CORE_SRC) $(RAYLIB_LIBS)
 

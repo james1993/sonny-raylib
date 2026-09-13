@@ -18,13 +18,14 @@ static void game_start(Game *g, uint64_t seed)
     rng_seed(&g->rng, seed);
     rng_refill_krs(&g->rng);
 
-    /* Continue a saved game when there is one, otherwise start a new one.
-       Neither says anything about it: the original announces nothing here. */
-    if (save_read(&g->campaign, SONNY_SAVE_PATH) != 0)
-        campaign_new(&g->campaign, 1);
-    /* A save from before a story point still gets whoever it has reached. */
-    campaign_story_joins(&g->campaign);
-    g->screen = SCREEN_ZONE;
+    /* The original opens on its title screen, and nothing is loaded until a
+       slot is picked. */
+    campaign_new(&g->campaign, 1);
+    g->options.sound = 1;
+    g->options.graphics = 1;
+    g->options.quality = 1;
+    g->options.autosave = 1;
+    g->screen = SCREEN_TITLE;
     g->selected = -1;
     g->hovered_unit = -1;
     g->ring_unit = -1;
@@ -78,6 +79,22 @@ int main(int argc, char **argv)
             game.screen = SCREEN_MAP;
         else if (strcmp(want_screen, "victory") == 0)
             game.screen = SCREEN_VICTORY;
+        else if (strcmp(want_screen, "title") == 0)
+            game.screen = SCREEN_TITLE;
+        else if (strcmp(want_screen, "start") == 0)
+            game.screen = SCREEN_START;
+        else if (strcmp(want_screen, "slots") == 0)
+            game.screen = SCREEN_SLOTS;
+        else if (strcmp(want_screen, "class") == 0)
+            game.screen = SCREEN_CLASS;
+        else if (strcmp(want_screen, "options") == 0)
+            game.screen = SCREEN_OPTIONS;
+        else if (strcmp(want_screen, "manual") == 0)
+            game.screen = SCREEN_MANUAL;
+        else if (strcmp(want_screen, "gameover") == 0)
+            game.screen = SCREEN_GAMEOVER;
+        else if (strcmp(want_screen, "hub") == 0)
+            game.screen = SCREEN_ZONE;
     }
 
     while (!WindowShouldClose()) {
@@ -113,6 +130,38 @@ int main(int argc, char **argv)
         case SCREEN_MAP:
             screen_map_draw(&game, mouse);
             screen_map_update(&game, mouse);
+            break;
+        case SCREEN_TITLE:
+            screen_title_draw(&game, mouse);
+            screen_title_update(&game, mouse);
+            break;
+        case SCREEN_START:
+            screen_start_draw(&game, mouse);
+            screen_start_update(&game, mouse);
+            break;
+        case SCREEN_SLOTS:
+            screen_slots_draw(&game, mouse);
+            screen_slots_update(&game, mouse);
+            break;
+        case SCREEN_CLASS:
+            screen_class_draw(&game, mouse);
+            screen_class_update(&game, mouse);
+            break;
+        case SCREEN_OPTIONS:
+            screen_options_draw(&game, mouse);
+            screen_options_update(&game, mouse);
+            break;
+        case SCREEN_MANUAL:
+            screen_manual_draw(&game, mouse);
+            screen_manual_update(&game, mouse);
+            break;
+        case SCREEN_LOST:
+            screen_lost_draw(&game, mouse);
+            screen_lost_update(&game, mouse);
+            break;
+        case SCREEN_GAMEOVER:
+            screen_gameover_draw(&game, mouse);
+            screen_gameover_update(&game, mouse);
             break;
         default:
             screen_zone_draw(&game, mouse);

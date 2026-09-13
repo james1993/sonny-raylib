@@ -648,3 +648,129 @@ void draw_button_art(const StageButton *b, Color tint)
                        dst, (Vector2){0, 0}, 0.0f, tint);
     }
 }
+
+/* --------------------------------------------------------- screen chrome */
+
+/* Pieces of a screen the game drives rather than simply draws: the zone
+   scene, the menu that covers it, the tooltip and the fade, and the progress
+   bar, whose width says how far through the zone the player is. Each is put
+   on the stage by whatever screen owns it, so none of them is furniture. */
+static int chrome_is_runtime(const char *name)
+{
+    static const char *const driven[] = {
+        "KrinScreen", "KRINMENU", "KrinToolTipper", "KrinCombatText",
+        "krinNavFadeSpeech", "@1242", "krinXbarPro",
+    };
+    for (size_t i = 0; i < sizeof(driven) / sizeof(driven[0]); i++)
+        if (strcmp(name, driven[i]) == 0)
+            return 1;
+    return 0;
+}
+
+void draw_screen_chrome(const char *screen)
+{
+    for (int i = 0; i < SONNY_STAGE_CHROME_COUNT; i++) {
+        const StageChrome *c = &SONNY_STAGE_CHROME[i];
+        if (strcmp(c->screen, screen) != 0 || c->width <= 0)
+            continue;
+        if (chrome_is_runtime(c->name))
+            continue;
+        const Texture2D *tex = asset_texture(TextFormat("#%d", c->character),
+                                             1);
+        if (!tex)
+            continue;
+        Rectangle dst = placed_rect(c->x, c->y, c->scale_x, c->scale_y,
+                                    c->width, c->height, c->origin_x,
+                                    c->origin_y);
+        DrawTexturePro(*tex, (Rectangle){0, 0, (float)tex->width,
+                                         (float)tex->height},
+                       dst, (Vector2){0, 0}, 0.0f, WHITE);
+    }
+}
+
+void draw_screen_buttons(const char *screen, Vector2 mouse)
+{
+    for (int i = 0; i < SONNY_BUTTON_COUNT; i++) {
+        const StageButton *b = &SONNY_BUTTONS[i];
+        if (strcmp(b->screen, screen) != 0)
+            continue;
+        draw_button_art(b, WHITE);
+        /* The original's buttons light their own over state; ours marks the
+           box, which is all the art gives us for most of them. */
+        Rectangle box = {b->x, b->y, b->width, b->height};
+        if (CheckCollisionPointRec(mouse, box))
+            DrawRectangleLinesEx(box, 1.0f, (Color){235, 200, 90, 90});
+    }
+}
+
+const TextField *chrome_field(const char *screen, const char *name)
+{
+    return text_field_named(screen, name, name, 0);
+}
+
+int screen_button_pressed(const char *screen, int32_t character,
+                          Vector2 mouse)
+{
+    const StageButton *b = stage_button(screen, character, 0);
+    return b && IsMouseButtonPressed(MOUSE_BUTTON_LEFT)
+        && CheckCollisionPointRec(mouse, (Rectangle){b->x, b->y, b->width,
+                                                     b->height});
+}
+
+/* The text a frame bakes into a field rather than setting at run time: the
+   "Back" on every menu, the slot numbers, the copyright line. The decompiler
+   hands these back as the HTML the field was authored with, so the markup is
+   stripped and what is left is drawn with the field's own size and colour. */
+static const char *strip_markup(const char *html, char *out, size_t max)
+{
+    size_t n = 0;
+    int in_tag = 0;
+    for (const char *p = html; *p && n + 1 < max; p++) {
+        if (*p == '<') {
+            in_tag = 1;
+            continue;
+        }
+        if (*p == '>') {
+            in_tag = 0;
+            continue;
+        }
+        if (in_tag)
+            continue;
+        if (*p == '&') {
+            static const struct { const char *name; char ch; } ENTITY[] = {
+                {"amp;", '&'}, {"lt;", '<'}, {"gt;", '>'},
+                {"quot;", '"'}, {"apos;", '\''}, {"nbsp;", ' '},
+            };
+            size_t i = 0;
+            for (; i < sizeof(ENTITY) / sizeof(ENTITY[0]); i++) {
+                size_t len = strlen(ENTITY[i].name);
+                if (strncmp(p + 1, ENTITY[i].name, len) == 0) {
+                    out[n++] = ENTITY[i].ch;
+                    p += len;
+                    break;
+                }
+            }
+            if (i < sizeof(ENTITY) / sizeof(ENTITY[0]))
+                continue;
+        }
+        out[n++] = *p;
+    }
+    out[n] = 0;
+    return out;
+}
+
+void draw_screen_text(const char *screen)
+{
+    for (int i = 0; i < SONNY_TEXT_FIELD_COUNT; i++) {
+        const TextField *f = &SONNY_TEXT_FIELDS[i];
+        if (strcmp(f->screen, screen) != 0)
+            continue;
+        /* A field the frame's script fills is the screen's to draw. */
+        if (f->variable[0] || !f->text || !f->text[0])
+            continue;
+        char plain[512];
+        strip_markup(f->text, plain, sizeof(plain));
+        if (plain[0])
+            draw_field_wrapped(f, (Vector2){0, 0}, plain);
+    }
+}
