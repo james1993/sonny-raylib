@@ -1065,9 +1065,75 @@ static const TextField *inv_field(const char *name)
 /* The character sheet, laid out from the menu clip's "inventory" frame: who
    the character is and what they are wearing on the left, their stats and
    their piercing and defense in the middle, and the bag on the right. */
+/* The row of six along the bottom of the character screen: everyone the story
+   has handed over, the ones not in the fighting line dimmed, and a frame
+   round whoever is being looked at. The portrait clip is the same one the
+   speech box uses, pointed at a frame by number. */
+#define AVATAR_DIM   "#1314"
+#define AVATAR_FRAME "#1317"
+
+static void draw_party_row(Game *g, const char *menu, Vector2 mouse)
+{
+    Campaign *c = &g->campaign;
+    for (int32_t i = 0; i < SONNY_PARTY_SIZE; i++) {
+        const MenuSlot *slot = menu_slot(menu, TextFormat("fa%d", i));
+        if (!slot || !campaign_has_friend(c, i))
+            continue;
+        Vector2 at = {slot->x, slot->y};
+        /* gotoAndStop(friendArray[i]) by number: the first place is the
+           player, and nothing moves the clip off him. */
+        asset_draw_placed(TextFormat("#1312@%d", i == 0 ? 6 : i), 1, at,
+                          slot->scale, WHITE);
+        /* The player is always in the fight, so the dim only ever goes over
+           the other five -- updateFriends starts its loop at one. */
+        int in_line = (i == 0 || c->line[0] == i || c->line[1] == i);
+        if (!in_line)
+            asset_draw_placed(AVATAR_DIM, 1, at, slot->scale, WHITE);
+        if (g->menu_member == i)
+            asset_draw_placed(AVATAR_FRAME, 1, at, slot->scale, WHITE);
+
+        Rectangle box = {at.x - slot->width / 2, at.y - slot->height / 2,
+                         slot->width, slot->height};
+        if (!hit(box, mouse))
+            continue;
+        game_tooltip(g, SONNY_PARTY[i].name,
+                     lang_text("MENU", i != 0 ? 48 : 49));
+        if (!IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+            continue;
+        /* Holding shift moves someone in or out of the fighting line; a
+           plain press turns the sheet over to them. */
+        if (IsKeyDown(KEY_LEFT_SHIFT) || IsKeyDown(KEY_RIGHT_SHIFT)) {
+            if (i == 0)
+                continue;       /* the player is always in it */
+            if (c->line[0] == i)
+                c->line[0] = 0;
+            else if (c->line[1] == i)
+                c->line[1] = 0;
+            else if (c->line[0] == 0)
+                c->line[0] = i;
+            else
+                c->line[1] = i;
+        } else {
+            g->menu_member = i;
+        }
+    }
+}
+
+/* Whoever the sheet is turned to: the player, or one of the party built from
+   the table. */
+static const Character *menu_character(Game *g, Character *scratch)
+{
+    if (g->menu_member <= 0)
+        return &g->campaign.player;
+    campaign_ally(&g->campaign, g->menu_member, scratch);
+    return scratch;
+}
+
 void screen_inventory_draw(Game *g, Vector2 mouse)
 {
     const Campaign *c = &g->campaign;
+    Character scratch;
+    const Character *who = menu_character(g, &scratch);
 
     ClearBackground(BLACK);
     /* The hub's own furniture stays behind the menu, as it does in the
@@ -1075,13 +1141,15 @@ void screen_inventory_draw(Game *g, Vector2 mouse)
     draw_screen_chrome(HUB_SCREEN);
     draw_clip_parts(MENU_SCREEN, MENU_INVENTORY, NO_OFFSET, NULL, WHITE);
 
-    draw_field(inv_field("@881"), NO_OFFSET, lang_text("NAVTITLE2", 3));
+    draw_field(inv_field("@881"), NO_OFFSET,
+               g->menu_member > 0 ? SONNY_PARTY[g->menu_member].name
+                                  : lang_text("NAVTITLE2", 3));
     draw_field(inv_field("@882"), NO_OFFSET,
-               TextFormat("%s%d %s", lang_text("MENU", 0), c->player.level,
+               TextFormat("%s%d %s", lang_text("MENU", 0), who->level,
                           /* Krin.ClassStats[0] is Krin.Class + 1, so the
                              name the class menu offered is one back. */
-                          lang_text("CLASS", c->player.class_template
-                                    ? c->player.class_template->id - 1 : 0)));
+                          lang_text("CLASS", who->class_template
+                                    ? who->class_template->id - 1 : 0)));
 
     /* The five stats. The frame gives each its own label and value field, in
        its own colour, and the names come from the game's text table. */
@@ -1089,7 +1157,7 @@ void screen_inventory_draw(Game *g, Vector2 mouse)
                                               "@887"};
     static const char *const STAT_VALUE[5] = {"@888", "@889", "@890", "@891",
                                               "@892"};
-    DerivedStats stats = character_derive(&c->player);
+    DerivedStats stats = character_derive(who);
     const double shown[5] = {stats.life, stats.strength, stats.magic,
                              stats.speed, stats.focus};
     for (int i = 0; i < 5; i++) {
@@ -1122,7 +1190,7 @@ void screen_inventory_draw(Game *g, Vector2 mouse)
         spec.hair = "ONE";
         char looks[SONNY_EQUIP_SLOTS][24];
         for (int i = 0; i < SONNY_EQUIP_SLOTS; i++) {
-            const ItemDef *item = item_by_id(c->player.equip[i]);
+            const ItemDef *item = item_by_id(who->equip[i]);
             snprintf(looks[i], sizeof(looks[i]), "%s",
                      (item && item->looks) ? item->looks : "");
             spec.looks[i] = looks[i];
@@ -1134,10 +1202,12 @@ void screen_inventory_draw(Game *g, Vector2 mouse)
     for (int i = 0; i < SONNY_EQUIP_SLOTS; i++) {
         Rectangle r = slot_rect(i);
         draw_slot_art(MENU_INVENTORY, "playerSlot", i);
-        draw_item_icon(item_by_id(c->player.equip[i]), r, WHITE);
+        draw_item_icon(item_by_id(who->equip[i]), r, WHITE);
         if (hit(r, mouse))
             DrawRectangleLinesEx(r, 1.0f, (Color){235, 200, 90, 255});
     }
+
+    draw_party_row(g, MENU_INVENTORY, mouse);
 
     for (int32_t i = 0; i < MENU_BAG_SLOTS; i++) {
         Rectangle r = bag_rect(i);
@@ -1273,6 +1343,8 @@ void screen_shop_draw(Game *g, Vector2 mouse)
         doll_draw(&spec, doll_animation_frame("stand", g->anim_tick / 3, 1),
                   (Vector2){doll->x - 6.0f, doll->y + 10.0f}, 1.3f, 0, WHITE);
     }
+
+    draw_party_row(g, MENU_SHOP, mouse);
 
     for (int i = 0; i < SONNY_EQUIP_SLOTS; i++) {
         Rectangle r = shop_equip_rect(i);

@@ -147,6 +147,9 @@ typedef struct {
     /* Krin.bossJustPwned: the fight just won was the one that finishes a
        zone, which is what sends the player out to the map. */
     int32_t   boss_beaten;
+    /* Krin.MenuPlayerSelect: which of the party the character screen is
+       turned to. */
+    int32_t   menu_member;
     char      notice[128];
     int32_t   notice_timer;
 

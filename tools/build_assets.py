@@ -327,6 +327,11 @@ def collect_names(data_dir):
     for part in ((stage.get('talent_row') or {}).get('parts') or []):
         if part.get('width') and not part.get('frames'):
             want['chrome'].add('#%d' % part['character'])
+    # The row of party portraits on the character screen, which the original
+    # points at a frame by number rather than by name.
+    for frame in range(1, 7):
+        want['chrome'].add('#1312@%d' % frame)
+    want['chrome'].update(('#1314', '#1317'))
     # The three cutscenes, each one long animation the screen plays through.
     for scr in ('CS_INTRO', 'CS_BRIDGE', 'CS_OUTRO'):
         for entry in (stage.get('chrome') or []):

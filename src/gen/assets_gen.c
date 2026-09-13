@@ -51,1448 +51,1464 @@ static const char *const FRAMES_22[] = { "assets/art/chrome/#1282.png" };
 static const AssetOffset OFFSETS_22[] = { { 49.000000f, 68.700000f } };
 static const char *const FRAMES_23[] = { "assets/art/chrome/#1283.png" };
 static const AssetOffset OFFSETS_23[] = { { 78.750000f, 132.950000f } };
-static const char *const FRAMES_24[] = { "assets/art/chrome/#1313.png" };
-static const AssetOffset OFFSETS_24[] = { { 13.000000f, 18.000000f } };
-static const char *const FRAMES_25[] = { "assets/art/chrome/#1316.png" };
-static const AssetOffset OFFSETS_25[] = { { 14.750000f, 19.750000f } };
-static const char *const FRAMES_26[] = { "assets/art/chrome/#1318.png" };
+static const char *const FRAMES_24[] = { "assets/art/chrome/#1312@1.png" };
+static const AssetOffset OFFSETS_24[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_25[] = { "assets/art/chrome/#1312@2.png" };
+static const AssetOffset OFFSETS_25[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_26[] = { "assets/art/chrome/#1312@3.png" };
 static const AssetOffset OFFSETS_26[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_27[] = { "assets/art/chrome/#1333.png" };
-static const AssetOffset OFFSETS_27[] = { { 69.500000f, 35.000000f } };
-static const char *const FRAMES_28[] = { "assets/art/chrome/#1334.png" };
-static const AssetOffset OFFSETS_28[] = { { 125.000000f, 75.000000f } };
-static const char *const FRAMES_29[] = { "assets/art/chrome/#1337.png" };
-static const AssetOffset OFFSETS_29[] = { { 68.500000f, 34.250000f } };
-static const char *const FRAMES_30[] = { "assets/art/chrome/#1339.png" };
-static const AssetOffset OFFSETS_30[] = { { 69.500000f, 35.000000f } };
-static const char *const FRAMES_31[] = { "assets/art/chrome/#1341.png" };
-static const AssetOffset OFFSETS_31[] = { { 262.050000f, -60.450000f } };
-static const char *const FRAMES_32[] = { "assets/art/chrome/#1344.png" };
-static const AssetOffset OFFSETS_32[] = { { 0.000000f, 9.350000f } };
-static const char *const FRAMES_33[] = { "assets/art/chrome/#1344@2.png" };
-static const AssetOffset OFFSETS_33[] = { { 0.000000f, 9.350000f } };
-static const char *const FRAMES_34[] = { "assets/art/chrome/#1345.png" };
-static const AssetOffset OFFSETS_34[] = { { 262.000000f, -60.750000f } };
-static const char *const FRAMES_35[] = { "assets/art/chrome/#1358.png" };
-static const AssetOffset OFFSETS_35[] = { { 15.500000f, 15.500000f } };
-static const char *const FRAMES_36[] = { "assets/art/chrome/#1362.png" };
-static const AssetOffset OFFSETS_36[] = { { 18.350000f, 18.200000f } };
-static const char *const FRAMES_37[] = { "assets/art/chrome/#1367.png" };
-static const AssetOffset OFFSETS_37[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_38[] = { "assets/art/chrome/#1377.png" };
-static const AssetOffset OFFSETS_38[] = { { 98.400000f, 41.600000f } };
-static const char *const FRAMES_39[] = { "assets/art/chrome/#1380.png" };
-static const AssetOffset OFFSETS_39[] = { { 21.550000f, 7.700000f } };
-static const char *const FRAMES_40[] = { "assets/art/chrome/#1390@1.png" };
-static const AssetOffset OFFSETS_40[] = { { 93.500000f, 70.500000f } };
-static const char *const FRAMES_41[] = { "assets/art/chrome/#1390@2.png" };
-static const AssetOffset OFFSETS_41[] = { { 93.500000f, 70.500000f } };
-static const char *const FRAMES_42[] = { "assets/art/chrome/#1390@3.png" };
-static const AssetOffset OFFSETS_42[] = { { 93.500000f, 70.500000f } };
-static const char *const FRAMES_43[] = { "assets/art/chrome/#1390@4.png" };
-static const AssetOffset OFFSETS_43[] = { { 93.500000f, 70.500000f } };
-static const char *const FRAMES_44[] = { "assets/art/chrome/#1390@5.png" };
-static const AssetOffset OFFSETS_44[] = { { 93.500000f, 70.500000f } };
-static const char *const FRAMES_45[] = { "assets/art/chrome/#1390@6.png" };
-static const AssetOffset OFFSETS_45[] = { { 93.500000f, 70.500000f } };
-static const char *const FRAMES_46[] = { "assets/art/chrome/#1393.png" };
-static const AssetOffset OFFSETS_46[] = { { 15.500000f, 15.500000f } };
-static const char *const FRAMES_47[] = { "assets/art/chrome/#1400.png" };
-static const AssetOffset OFFSETS_47[] = { { 12.250000f, 30.500000f } };
-static const char *const FRAMES_48[] = { "assets/art/chrome/#1401.png" };
-static const AssetOffset OFFSETS_48[] = { { 5.500000f, 22.500000f } };
-static const char *const FRAMES_49[] = { "assets/art/chrome/#1403.png" };
-static const AssetOffset OFFSETS_49[] = { { 5.500000f, 20.250000f } };
-static const char *const FRAMES_50[] = { "assets/art/chrome/#1406.png" };
-static const AssetOffset OFFSETS_50[] = { { 0.550000f, 1.000000f } };
-static const char *const FRAMES_51[] = { "assets/art/chrome/#1415.png" };
-static const AssetOffset OFFSETS_51[] = { { 82.000000f, 77.900000f } };
-static const char *const FRAMES_52[] = { "assets/art/chrome/#1426.png" };
-static const AssetOffset OFFSETS_52[] = { { -0.500000f, 0.500000f } };
-static const char *const FRAMES_53[] = { "assets/art/chrome/#1426@1.png" };
-static const AssetOffset OFFSETS_53[] = { { -0.500000f, 0.500000f } };
-static const char *const FRAMES_54[] = { "assets/art/chrome/#1444.png" };
-static const AssetOffset OFFSETS_54[] = { { 22.050000f, 35.200000f } };
-static const char *const FRAMES_55[] = { "assets/art/chrome/#1444@8.png" };
-static const AssetOffset OFFSETS_55[] = { { 22.050000f, 35.200000f } };
-static const char *const FRAMES_56[] = { "assets/art/chrome/#1445.png" };
-static const AssetOffset OFFSETS_56[] = { { 22.050000f, 8.200000f } };
-static const char *const FRAMES_57[] = { "assets/art/chrome/#1446.png" };
-static const AssetOffset OFFSETS_57[] = { { 22.550000f, 8.700000f } };
-static const char *const FRAMES_58[] = { "assets/art/chrome/#1503.png" };
-static const AssetOffset OFFSETS_58[] = { { 384.500000f, 208.400000f } };
-static const char *const FRAMES_59[] = { "assets/art/chrome/#1507.png" };
-static const AssetOffset OFFSETS_59[] = { { 375.000000f, 13.500000f } };
-static const char *const FRAMES_60[] = { "assets/art/chrome/#1508.png" };
-static const AssetOffset OFFSETS_60[] = { { 100.000000f, 12.000000f } };
-static const char *const FRAMES_61[] = { "assets/art/chrome/#1509.png" };
-static const AssetOffset OFFSETS_61[] = { { 237.250000f, 124.100000f } };
-static const char *const FRAMES_62[] = { "assets/art/chrome/#1513.png" };
-static const AssetOffset OFFSETS_62[] = { { 406.450000f, 288.050000f } };
-static const char *const FRAMES_63[] = { "assets/art/chrome/#1516.png" };
-static const AssetOffset OFFSETS_63[] = { { 402.800000f, 288.500000f } };
-static const char *const FRAMES_64[] = { "assets/art/chrome/#1531.png" };
-static const AssetOffset OFFSETS_64[] = { { 395.000000f, 107.750000f } };
-static const char *const FRAMES_65[] = { "assets/art/chrome/#1536.png" };
-static const AssetOffset OFFSETS_65[] = { { 15.000000f, 15.000000f } };
-static const char *const FRAMES_66[] = { "assets/art/chrome/#1537.png" };
-static const AssetOffset OFFSETS_66[] = { { 385.000000f, 157.000000f } };
-static const char *const FRAMES_67[] = { "assets/art/chrome/#1560.png" };
-static const AssetOffset OFFSETS_67[] = { { 0.000000f, 0.000000f } };
-static const char *const FRAMES_68[] = { "assets/art/chrome/#1561.png" };
-static const AssetOffset OFFSETS_68[] = { { 0.000000f, 0.000000f } };
-static const char *const FRAMES_69[] = { "assets/art/chrome/#1562.png" };
-static const AssetOffset OFFSETS_69[] = { { 0.000000f, 0.000000f } };
-static const char *const FRAMES_70[] = { "assets/art/chrome/#1563.png" };
-static const AssetOffset OFFSETS_70[] = { { 0.000000f, 0.000000f } };
-static const char *const FRAMES_71[] = { "assets/art/chrome/#1564.png" };
-static const AssetOffset OFFSETS_71[] = { { 0.000000f, 0.000000f } };
-static const char *const FRAMES_72[] = { "assets/art/chrome/#1565.png" };
-static const AssetOffset OFFSETS_72[] = { { -14.500000f, -129.900000f } };
-static const char *const FRAMES_73[] = { "assets/art/chrome/#1566.png" };
-static const AssetOffset OFFSETS_73[] = { { 0.000000f, 6.500000f } };
-static const char *const FRAMES_74[] = { "assets/art/chrome/#1567.png" };
-static const AssetOffset OFFSETS_74[] = { { 0.000000f, 6.500000f } };
-static const char *const FRAMES_75[] = { "assets/art/chrome/#1568.png" };
-static const AssetOffset OFFSETS_75[] = { { 0.000000f, 6.500000f } };
-static const char *const FRAMES_76[] = { "assets/art/chrome/#1570.png" };
-static const AssetOffset OFFSETS_76[] = { { 100.500000f, 12.950000f } };
-static const char *const FRAMES_77[] = { "assets/art/chrome/#1585.png" };
-static const AssetOffset OFFSETS_77[] = { { 100.500000f, 13.950000f } };
-static const char *const FRAMES_78[] = { "assets/art/chrome/#1586.png" };
-static const AssetOffset OFFSETS_78[] = { { 35.000000f, 35.000000f } };
-static const char *const FRAMES_79[] = { "assets/art/chrome/#1590.png" };
-static const AssetOffset OFFSETS_79[] = { { 183.250000f, 35.150000f } };
-static const char *const FRAMES_80[] = { "assets/art/chrome/#1596.png" };
-static const AssetOffset OFFSETS_80[] = { { 47.150000f, 41.900000f } };
-static const char *const FRAMES_81[] = { "assets/art/chrome/#1606.png" };
-static const AssetOffset OFFSETS_81[] = { { 82.000000f, 77.900000f } };
-static const char *const FRAMES_82[] = { "assets/art/chrome/#1610.png" };
-static const AssetOffset OFFSETS_82[] = { { 62.850000f, 62.850000f } };
-static const char *const FRAMES_83[] = { "assets/art/chrome/#1613.png" };
-static const AssetOffset OFFSETS_83[] = { { 95.950000f, 35.700000f } };
-static const char *const FRAMES_84[] = { "assets/art/chrome/#1632.png" };
-static const AssetOffset OFFSETS_84[] = { { 95.950000f, 35.700000f } };
-static const char *const FRAMES_85[] = { "assets/art/chrome/#1633.png" };
-static const AssetOffset OFFSETS_85[] = { { 0.500000f, 0.500000f } };
-static const char *const FRAMES_86[] = { "assets/art/chrome/#1640.png" };
-static const AssetOffset OFFSETS_86[] = { { 14.050000f, 42.000000f } };
-static const char *const FRAMES_87[] = { "assets/art/chrome/#1642.png" };
-static const AssetOffset OFFSETS_87[] = { { 404.100000f, 291.050000f } };
-static const char *const FRAMES_88[] = { "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_2.png", "assets/art/cutscene/#1695_3.png", "assets/art/cutscene/#1695_4.png", "assets/art/cutscene/#1695_5.png", "assets/art/cutscene/#1695_6.png", "assets/art/cutscene/#1695_7.png", "assets/art/cutscene/#1695_8.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_8.png", "assets/art/cutscene/#1695_7.png", "assets/art/cutscene/#1695_6.png", "assets/art/cutscene/#1695_5.png", "assets/art/cutscene/#1695_4.png", "assets/art/cutscene/#1695_3.png", "assets/art/cutscene/#1695_2.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_91.png", "assets/art/cutscene/#1695_92.png", "assets/art/cutscene/#1695_93.png", "assets/art/cutscene/#1695_94.png", "assets/art/cutscene/#1695_95.png", "assets/art/cutscene/#1695_96.png", "assets/art/cutscene/#1695_97.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_97.png", "assets/art/cutscene/#1695_96.png", "assets/art/cutscene/#1695_95.png", "assets/art/cutscene/#1695_94.png", "assets/art/cutscene/#1695_93.png", "assets/art/cutscene/#1695_92.png", "assets/art/cutscene/#1695_91.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_178.png", "assets/art/cutscene/#1695_179.png", "assets/art/cutscene/#1695_180.png", "assets/art/cutscene/#1695_181.png", "assets/art/cutscene/#1695_182.png", "assets/art/cutscene/#1695_183.png", "assets/art/cutscene/#1695_184.png", "assets/art/cutscene/#1695_185.png", "assets/art/cutscene/#1695_186.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_273.png", "assets/art/cutscene/#1695_273.png", "assets/art/cutscene/#1695_273.png", "assets/art/cutscene/#1695_273.png", "assets/art/cutscene/#1695_273.png", "assets/art/cutscene/#1695_273.png", "assets/art/cutscene/#1695_273.png", "assets/art/cutscene/#1695_273.png", "assets/art/cutscene/#1695_273.png", "assets/art/cutscene/#1695_282.png", "assets/art/cutscene/#1695_283.png", "assets/art/cutscene/#1695_284.png", "assets/art/cutscene/#1695_285.png", "assets/art/cutscene/#1695_286.png", "assets/art/cutscene/#1695_287.png", "assets/art/cutscene/#1695_288.png", "assets/art/cutscene/#1695_289.png", "assets/art/cutscene/#1695_290.png", "assets/art/cutscene/#1695_290.png", "assets/art/cutscene/#1695_290.png", "assets/art/cutscene/#1695_290.png", "assets/art/cutscene/#1695_290.png", "assets/art/cutscene/#1695_290.png", "assets/art/cutscene/#1695_290.png", "assets/art/cutscene/#1695_297.png", "assets/art/cutscene/#1695_298.png", "assets/art/cutscene/#1695_299.png", "assets/art/cutscene/#1695_300.png", "assets/art/cutscene/#1695_301.png", "assets/art/cutscene/#1695_302.png", "assets/art/cutscene/#1695_303.png", "assets/art/cutscene/#1695_304.png", "assets/art/cutscene/#1695_305.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_374.png", "assets/art/cutscene/#1695_375.png", "assets/art/cutscene/#1695_376.png", "assets/art/cutscene/#1695_377.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_396.png", "assets/art/cutscene/#1695_397.png", "assets/art/cutscene/#1695_398.png", "assets/art/cutscene/#1695_399.png", "assets/art/cutscene/#1695_400.png", "assets/art/cutscene/#1695_401.png", "assets/art/cutscene/#1695_402.png", "assets/art/cutscene/#1695_403.png", "assets/art/cutscene/#1695_404.png", "assets/art/cutscene/#1695_405.png", "assets/art/cutscene/#1695_405.png", "assets/art/cutscene/#1695_405.png", "assets/art/cutscene/#1695_408.png", "assets/art/cutscene/#1695_409.png", "assets/art/cutscene/#1695_410.png", "assets/art/cutscene/#1695_411.png", "assets/art/cutscene/#1695_412.png", "assets/art/cutscene/#1695_413.png", "assets/art/cutscene/#1695_414.png", "assets/art/cutscene/#1695_415.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_441.png", "assets/art/cutscene/#1695_442.png", "assets/art/cutscene/#1695_443.png", "assets/art/cutscene/#1695_444.png", "assets/art/cutscene/#1695_445.png", "assets/art/cutscene/#1695_446.png", "assets/art/cutscene/#1695_447.png", "assets/art/cutscene/#1695_448.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_474.png", "assets/art/cutscene/#1695_475.png", "assets/art/cutscene/#1695_476.png", "assets/art/cutscene/#1695_477.png", "assets/art/cutscene/#1695_478.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_496.png", "assets/art/cutscene/#1695_497.png", "assets/art/cutscene/#1695_498.png", "assets/art/cutscene/#1695_499.png", "assets/art/cutscene/#1695_500.png", "assets/art/cutscene/#1695_501.png", "assets/art/cutscene/#1695_502.png", "assets/art/cutscene/#1695_503.png", "assets/art/cutscene/#1695_504.png", "assets/art/cutscene/#1695_505.png", "assets/art/cutscene/#1695_506.png", "assets/art/cutscene/#1695_507.png", "assets/art/cutscene/#1695_508.png", "assets/art/cutscene/#1695_509.png", "assets/art/cutscene/#1695_510.png", "assets/art/cutscene/#1695_511.png", "assets/art/cutscene/#1695_512.png", "assets/art/cutscene/#1695_513.png", "assets/art/cutscene/#1695_514.png", "assets/art/cutscene/#1695_515.png", "assets/art/cutscene/#1695_505.png", "assets/art/cutscene/#1695_506.png", "assets/art/cutscene/#1695_507.png", "assets/art/cutscene/#1695_519.png", "assets/art/cutscene/#1695_509.png", "assets/art/cutscene/#1695_510.png", "assets/art/cutscene/#1695_511.png", "assets/art/cutscene/#1695_523.png", "assets/art/cutscene/#1695_524.png", "assets/art/cutscene/#1695_519.png", "assets/art/cutscene/#1695_519.png", "assets/art/cutscene/#1695_527.png", "assets/art/cutscene/#1695_528.png", "assets/art/cutscene/#1695_529.png", "assets/art/cutscene/#1695_530.png", "assets/art/cutscene/#1695_531.png", "assets/art/cutscene/#1695_532.png", "assets/art/cutscene/#1695_533.png", "assets/art/cutscene/#1695_534.png", "assets/art/cutscene/#1695_535.png", "assets/art/cutscene/#1695_536.png", "assets/art/cutscene/#1695_537.png", "assets/art/cutscene/#1695_538.png", "assets/art/cutscene/#1695_539.png", "assets/art/cutscene/#1695_540.png", "assets/art/cutscene/#1695_541.png", "assets/art/cutscene/#1695_542.png", "assets/art/cutscene/#1695_543.png", "assets/art/cutscene/#1695_544.png", "assets/art/cutscene/#1695_545.png", "assets/art/cutscene/#1695_546.png", "assets/art/cutscene/#1695_547.png", "assets/art/cutscene/#1695_548.png", "assets/art/cutscene/#1695_549.png", "assets/art/cutscene/#1695_550.png", "assets/art/cutscene/#1695_551.png", "assets/art/cutscene/#1695_552.png", "assets/art/cutscene/#1695_553.png", "assets/art/cutscene/#1695_554.png", "assets/art/cutscene/#1695_555.png", "assets/art/cutscene/#1695_556.png", "assets/art/cutscene/#1695_557.png", "assets/art/cutscene/#1695_558.png", "assets/art/cutscene/#1695_559.png", "assets/art/cutscene/#1695_560.png", "assets/art/cutscene/#1695_561.png", "assets/art/cutscene/#1695_562.png", "assets/art/cutscene/#1695_563.png", "assets/art/cutscene/#1695_564.png", "assets/art/cutscene/#1695_565.png", "assets/art/cutscene/#1695_566.png", "assets/art/cutscene/#1695_567.png", "assets/art/cutscene/#1695_568.png", "assets/art/cutscene/#1695_569.png", "assets/art/cutscene/#1695_570.png", "assets/art/cutscene/#1695_571.png", "assets/art/cutscene/#1695_572.png", "assets/art/cutscene/#1695_573.png", "assets/art/cutscene/#1695_574.png", "assets/art/cutscene/#1695_575.png", "assets/art/cutscene/#1695_576.png", "assets/art/cutscene/#1695_577.png", "assets/art/cutscene/#1695_578.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_580.png", "assets/art/cutscene/#1695_580.png", "assets/art/cutscene/#1695_580.png", "assets/art/cutscene/#1695_580.png", "assets/art/cutscene/#1695_580.png", "assets/art/cutscene/#1695_580.png", "assets/art/cutscene/#1695_580.png", "assets/art/cutscene/#1695_580.png", "assets/art/cutscene/#1695_580.png", "assets/art/cutscene/#1695_580.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_580.png", "assets/art/cutscene/#1695_580.png", "assets/art/cutscene/#1695_580.png", "assets/art/cutscene/#1695_580.png", "assets/art/cutscene/#1695_580.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png" };
-static const AssetOffset OFFSETS_88[] = { { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f } };
-static const char *const FRAMES_89[] = { "assets/art/cutscene/#1699.png" };
-static const AssetOffset OFFSETS_89[] = { { 407.200000f, 296.800000f } };
-static const char *const FRAMES_90[] = { "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_76.png", "assets/art/cutscene/#1710_77.png", "assets/art/cutscene/#1710_78.png", "assets/art/cutscene/#1710_79.png", "assets/art/cutscene/#1710_80.png", "assets/art/cutscene/#1710_81.png", "assets/art/cutscene/#1710_82.png", "assets/art/cutscene/#1710_83.png", "assets/art/cutscene/#1710_84.png", "assets/art/cutscene/#1710_85.png", "assets/art/cutscene/#1710_86.png", "assets/art/cutscene/#1710_87.png", "assets/art/cutscene/#1710_88.png", "assets/art/cutscene/#1710_89.png", "assets/art/cutscene/#1710_90.png", "assets/art/cutscene/#1710_91.png", "assets/art/cutscene/#1710_92.png", "assets/art/cutscene/#1710_93.png", "assets/art/cutscene/#1710_94.png", "assets/art/cutscene/#1710_95.png", "assets/art/cutscene/#1710_96.png", "assets/art/cutscene/#1710_97.png", "assets/art/cutscene/#1710_98.png", "assets/art/cutscene/#1710_99.png", "assets/art/cutscene/#1710_100.png", "assets/art/cutscene/#1710_101.png", "assets/art/cutscene/#1710_102.png", "assets/art/cutscene/#1710_103.png", "assets/art/cutscene/#1710_104.png", "assets/art/cutscene/#1710_105.png", "assets/art/cutscene/#1710_106.png", "assets/art/cutscene/#1710_107.png", "assets/art/cutscene/#1710_108.png", "assets/art/cutscene/#1710_109.png", "assets/art/cutscene/#1710_110.png", "assets/art/cutscene/#1710_111.png", "assets/art/cutscene/#1710_112.png", "assets/art/cutscene/#1710_113.png", "assets/art/cutscene/#1710_114.png", "assets/art/cutscene/#1710_115.png", "assets/art/cutscene/#1710_116.png", "assets/art/cutscene/#1710_117.png", "assets/art/cutscene/#1710_118.png", "assets/art/cutscene/#1710_119.png", "assets/art/cutscene/#1710_120.png", "assets/art/cutscene/#1710_121.png", "assets/art/cutscene/#1710_122.png", "assets/art/cutscene/#1710_123.png", "assets/art/cutscene/#1710_124.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_241.png", "assets/art/cutscene/#1710_242.png", "assets/art/cutscene/#1710_243.png", "assets/art/cutscene/#1710_244.png", "assets/art/cutscene/#1710_245.png", "assets/art/cutscene/#1710_246.png", "assets/art/cutscene/#1710_247.png", "assets/art/cutscene/#1710_248.png", "assets/art/cutscene/#1710_249.png", "assets/art/cutscene/#1710_250.png", "assets/art/cutscene/#1710_251.png", "assets/art/cutscene/#1710_252.png", "assets/art/cutscene/#1710_253.png", "assets/art/cutscene/#1710_254.png", "assets/art/cutscene/#1710_255.png", "assets/art/cutscene/#1710_256.png", "assets/art/cutscene/#1710_257.png", "assets/art/cutscene/#1710_258.png", "assets/art/cutscene/#1710_259.png", "assets/art/cutscene/#1710_260.png", "assets/art/cutscene/#1710_261.png", "assets/art/cutscene/#1710_262.png", "assets/art/cutscene/#1710_263.png", "assets/art/cutscene/#1710_264.png", "assets/art/cutscene/#1710_265.png", "assets/art/cutscene/#1710_266.png", "assets/art/cutscene/#1710_267.png", "assets/art/cutscene/#1710_268.png", "assets/art/cutscene/#1710_269.png", "assets/art/cutscene/#1710_270.png", "assets/art/cutscene/#1710_271.png", "assets/art/cutscene/#1710_272.png", "assets/art/cutscene/#1710_273.png", "assets/art/cutscene/#1710_274.png", "assets/art/cutscene/#1710_275.png", "assets/art/cutscene/#1710_276.png", "assets/art/cutscene/#1710_277.png", "assets/art/cutscene/#1710_278.png", "assets/art/cutscene/#1710_279.png", "assets/art/cutscene/#1710_280.png", "assets/art/cutscene/#1710_281.png", "assets/art/cutscene/#1710_282.png", "assets/art/cutscene/#1710_283.png", "assets/art/cutscene/#1710_284.png", "assets/art/cutscene/#1710_285.png", "assets/art/cutscene/#1710_286.png", "assets/art/cutscene/#1710_287.png", "assets/art/cutscene/#1710_288.png", "assets/art/cutscene/#1710_289.png", "assets/art/cutscene/#1710_290.png", "assets/art/cutscene/#1710_291.png", "assets/art/cutscene/#1710_292.png", "assets/art/cutscene/#1710_293.png", "assets/art/cutscene/#1710_294.png", "assets/art/cutscene/#1710_295.png", "assets/art/cutscene/#1710_296.png", "assets/art/cutscene/#1710_297.png", "assets/art/cutscene/#1710_298.png", "assets/art/cutscene/#1710_299.png", "assets/art/cutscene/#1710_300.png", "assets/art/cutscene/#1710_301.png", "assets/art/cutscene/#1710_302.png", "assets/art/cutscene/#1710_303.png", "assets/art/cutscene/#1710_304.png", "assets/art/cutscene/#1710_305.png", "assets/art/cutscene/#1710_306.png", "assets/art/cutscene/#1710_307.png", "assets/art/cutscene/#1710_308.png", "assets/art/cutscene/#1710_309.png", "assets/art/cutscene/#1710_310.png", "assets/art/cutscene/#1710_311.png", "assets/art/cutscene/#1710_312.png", "assets/art/cutscene/#1710_313.png", "assets/art/cutscene/#1710_314.png", "assets/art/cutscene/#1710_315.png", "assets/art/cutscene/#1710_316.png", "assets/art/cutscene/#1710_317.png", "assets/art/cutscene/#1710_318.png", "assets/art/cutscene/#1710_319.png", "assets/art/cutscene/#1710_320.png", "assets/art/cutscene/#1710_321.png", "assets/art/cutscene/#1710_322.png", "assets/art/cutscene/#1710_323.png", "assets/art/cutscene/#1710_324.png", "assets/art/cutscene/#1710_325.png", "assets/art/cutscene/#1710_326.png", "assets/art/cutscene/#1710_327.png", "assets/art/cutscene/#1710_328.png", "assets/art/cutscene/#1710_329.png", "assets/art/cutscene/#1710_330.png", "assets/art/cutscene/#1710_331.png", "assets/art/cutscene/#1710_332.png", "assets/art/cutscene/#1710_333.png", "assets/art/cutscene/#1710_334.png", "assets/art/cutscene/#1710_335.png", "assets/art/cutscene/#1710_336.png", "assets/art/cutscene/#1710_337.png", "assets/art/cutscene/#1710_338.png", "assets/art/cutscene/#1710_339.png", "assets/art/cutscene/#1710_340.png", "assets/art/cutscene/#1710_341.png", "assets/art/cutscene/#1710_342.png", "assets/art/cutscene/#1710_343.png", "assets/art/cutscene/#1710_344.png", "assets/art/cutscene/#1710_345.png", "assets/art/cutscene/#1710_346.png", "assets/art/cutscene/#1710_347.png", "assets/art/cutscene/#1710_348.png", "assets/art/cutscene/#1710_349.png", "assets/art/cutscene/#1710_350.png", "assets/art/cutscene/#1710_351.png", "assets/art/cutscene/#1710_352.png", "assets/art/cutscene/#1710_353.png", "assets/art/cutscene/#1710_354.png", "assets/art/cutscene/#1710_355.png", "assets/art/cutscene/#1710_356.png", "assets/art/cutscene/#1710_357.png", "assets/art/cutscene/#1710_358.png", "assets/art/cutscene/#1710_359.png", "assets/art/cutscene/#1710_360.png", "assets/art/cutscene/#1710_361.png", "assets/art/cutscene/#1710_362.png", "assets/art/cutscene/#1710_363.png", "assets/art/cutscene/#1710_364.png", "assets/art/cutscene/#1710_365.png", "assets/art/cutscene/#1710_366.png", "assets/art/cutscene/#1710_367.png", "assets/art/cutscene/#1710_368.png", "assets/art/cutscene/#1710_369.png", "assets/art/cutscene/#1710_370.png", "assets/art/cutscene/#1710_371.png", "assets/art/cutscene/#1710_372.png", "assets/art/cutscene/#1710_373.png", "assets/art/cutscene/#1710_374.png", "assets/art/cutscene/#1710_375.png", "assets/art/cutscene/#1710_376.png", "assets/art/cutscene/#1710_377.png", "assets/art/cutscene/#1710_378.png", "assets/art/cutscene/#1710_379.png", "assets/art/cutscene/#1710_380.png", "assets/art/cutscene/#1710_381.png", "assets/art/cutscene/#1710_382.png", "assets/art/cutscene/#1710_383.png", "assets/art/cutscene/#1710_384.png", "assets/art/cutscene/#1710_385.png", "assets/art/cutscene/#1710_386.png", "assets/art/cutscene/#1710_387.png", "assets/art/cutscene/#1710_388.png", "assets/art/cutscene/#1710_389.png", "assets/art/cutscene/#1710_390.png", "assets/art/cutscene/#1710_391.png", "assets/art/cutscene/#1710_392.png", "assets/art/cutscene/#1710_393.png", "assets/art/cutscene/#1710_394.png", "assets/art/cutscene/#1710_395.png", "assets/art/cutscene/#1710_396.png", "assets/art/cutscene/#1710_397.png", "assets/art/cutscene/#1710_398.png", "assets/art/cutscene/#1710_399.png", "assets/art/cutscene/#1710_400.png", "assets/art/cutscene/#1710_401.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png" };
-static const AssetOffset OFFSETS_90[] = { { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f } };
-static const char *const FRAMES_91[] = { "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_474.png", "assets/art/cutscene/#1719_474.png", "assets/art/cutscene/#1719_474.png", "assets/art/cutscene/#1719_474.png", "assets/art/cutscene/#1719_474.png", "assets/art/cutscene/#1719_474.png", "assets/art/cutscene/#1719_474.png", "assets/art/cutscene/#1719_474.png", "assets/art/cutscene/#1719_474.png", "assets/art/cutscene/#1719_474.png", "assets/art/cutscene/#1719_474.png", "assets/art/cutscene/#1719_474.png", "assets/art/cutscene/#1719_474.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_474.png", "assets/art/cutscene/#1719_474.png", "assets/art/cutscene/#1719_474.png" };
-static const AssetOffset OFFSETS_91[] = { { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f } };
-static const char *const FRAMES_92[] = { "assets/art/chrome/#1720.png" };
-static const AssetOffset OFFSETS_92[] = { { 31.250000f, 20.000000f } };
-static const char *const FRAMES_93[] = { "assets/art/chrome/#1722.png" };
-static const AssetOffset OFFSETS_93[] = { { 0.000000f, 0.000000f } };
-static const char *const FRAMES_94[] = { "assets/art/chrome/#1725.png" };
-static const AssetOffset OFFSETS_94[] = { { 15.500000f, 15.500000f } };
-static const char *const FRAMES_95[] = { "assets/art/chrome/#1726.png" };
-static const AssetOffset OFFSETS_95[] = { { 31.250000f, 20.000000f } };
-static const char *const FRAMES_96[] = { "assets/art/chrome/#368.png" };
-static const AssetOffset OFFSETS_96[] = { { 32.500000f, 9.950000f } };
-static const char *const FRAMES_97[] = { "assets/art/chrome/#821.png" };
-static const AssetOffset OFFSETS_97[] = { { 92.400000f, 16.000000f } };
-static const char *const FRAMES_98[] = { "assets/art/chrome/#823.png" };
-static const AssetOffset OFFSETS_98[] = { { -13.900000f, 14.950000f } };
-static const char *const FRAMES_99[] = { "assets/art/chrome/#824.png" };
-static const AssetOffset OFFSETS_99[] = { { 11.500000f, 11.500000f } };
-static const char *const FRAMES_100[] = { "assets/art/chrome/#826.png" };
-static const AssetOffset OFFSETS_100[] = { { 11.500000f, 11.500000f } };
-static const char *const FRAMES_101[] = { "assets/art/chrome/#828.png" };
-static const AssetOffset OFFSETS_101[] = { { 11.500000f, 11.500000f } };
-static const char *const FRAMES_102[] = { "assets/art/chrome/#830.png" };
-static const AssetOffset OFFSETS_102[] = { { 11.650000f, 11.750000f } };
-static const char *const FRAMES_103[] = { "assets/art/chrome/#866.png" };
-static const AssetOffset OFFSETS_103[] = { { 32.500000f, 28.700000f } };
-static const char *const FRAMES_104[] = { "assets/art/chrome/#867.png" };
-static const AssetOffset OFFSETS_104[] = { { 10.500000f, 10.500000f } };
-static const char *const FRAMES_105[] = { "assets/art/chrome/#868.png" };
-static const AssetOffset OFFSETS_105[] = { { 11.250000f, 11.250000f } };
-static const char *const FRAMES_106[] = { "assets/art/chrome/#903.png" };
-static const AssetOffset OFFSETS_106[] = { { 4.000000f, 4.250000f } };
-static const char *const FRAMES_107[] = { "assets/art/chrome/#905.png" };
-static const AssetOffset OFFSETS_107[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_108[] = { "assets/art/chrome/#907.png" };
-static const AssetOffset OFFSETS_108[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_109[] = { "assets/art/chrome/#909.png" };
-static const AssetOffset OFFSETS_109[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_110[] = { "assets/art/chrome/#911.png" };
-static const AssetOffset OFFSETS_110[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_111[] = { "assets/art/chrome/#913.png" };
-static const AssetOffset OFFSETS_111[] = { { 3.750000f, 41.150000f } };
-static const char *const FRAMES_112[] = { "assets/art/chrome/#915.png" };
-static const AssetOffset OFFSETS_112[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_113[] = { "assets/art/chrome/#917.png" };
-static const AssetOffset OFFSETS_113[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_114[] = { "assets/art/chrome/#919.png" };
-static const AssetOffset OFFSETS_114[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_115[] = { "assets/art/chrome/#920.png" };
-static const AssetOffset OFFSETS_115[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_116[] = { "assets/art/chrome/#921.png" };
-static const AssetOffset OFFSETS_116[] = { { 5.200000f, 36.900000f } };
-static const char *const FRAMES_117[] = { "assets/art/chrome/#922.png" };
-static const AssetOffset OFFSETS_117[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_118[] = { "assets/art/chrome/#923.png" };
-static const AssetOffset OFFSETS_118[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_119[] = { "assets/art/chrome/#924.png" };
-static const AssetOffset OFFSETS_119[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_120[] = { "assets/art/chrome/#925.png" };
-static const AssetOffset OFFSETS_120[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_121[] = { "assets/art/chrome/#926.png" };
-static const AssetOffset OFFSETS_121[] = { { 4.000000f, 4.250000f } };
-static const char *const FRAMES_122[] = { "assets/art/chrome/#944.png" };
-static const AssetOffset OFFSETS_122[] = { { 103.150000f, 24.100000f } };
-static const char *const FRAMES_123[] = { "assets/art/chrome/#951.png" };
-static const AssetOffset OFFSETS_123[] = { { 274.850000f, 41.100000f } };
-static const char *const FRAMES_124[] = { "assets/art/cutscene/#963.png" };
-static const AssetOffset OFFSETS_124[] = { { -0.450000f, -0.500000f } };
-static const char *const FRAMES_125[] = { "assets/art/item/A_Broken_Pipe.png" };
-static const AssetOffset OFFSETS_125[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_126[] = { "assets/art/item/A_Sword.png" };
-static const AssetOffset OFFSETS_126[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_127[] = { "assets/art/portrait/Amber.png" };
-static const AssetOffset OFFSETS_127[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_128[] = { "assets/art/portrait/Argalla_the_Mender.png" };
-static const AssetOffset OFFSETS_128[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_129[] = { "assets/art/item/Armor_of_the_Fallen.png" };
-static const AssetOffset OFFSETS_129[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_130[] = { "assets/art/item/Armor_of_the_Teacher.png" };
-static const AssetOffset OFFSETS_130[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_131[] = { "assets/art/item/Assasin's_Tunic.png" };
-static const AssetOffset OFFSETS_131[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_132[] = { "assets/art/item/Assassin's_Armor.png" };
-static const AssetOffset OFFSETS_132[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_133[] = { "assets/art/item/Assassin's_Boots.png" };
+static const char *const FRAMES_27[] = { "assets/art/chrome/#1312@4.png" };
+static const AssetOffset OFFSETS_27[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_28[] = { "assets/art/chrome/#1312@5.png" };
+static const AssetOffset OFFSETS_28[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_29[] = { "assets/art/chrome/#1312@6.png" };
+static const AssetOffset OFFSETS_29[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_30[] = { "assets/art/chrome/#1313.png" };
+static const AssetOffset OFFSETS_30[] = { { 13.000000f, 18.000000f } };
+static const char *const FRAMES_31[] = { "assets/art/chrome/#1314.png" };
+static const AssetOffset OFFSETS_31[] = { { 13.500000f, 18.000000f } };
+static const char *const FRAMES_32[] = { "assets/art/chrome/#1316.png" };
+static const AssetOffset OFFSETS_32[] = { { 14.750000f, 19.750000f } };
+static const char *const FRAMES_33[] = { "assets/art/chrome/#1317.png" };
+static const AssetOffset OFFSETS_33[] = { { 14.750000f, 19.750000f } };
+static const char *const FRAMES_34[] = { "assets/art/chrome/#1318.png" };
+static const AssetOffset OFFSETS_34[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_35[] = { "assets/art/chrome/#1333.png" };
+static const AssetOffset OFFSETS_35[] = { { 69.500000f, 35.000000f } };
+static const char *const FRAMES_36[] = { "assets/art/chrome/#1334.png" };
+static const AssetOffset OFFSETS_36[] = { { 125.000000f, 75.000000f } };
+static const char *const FRAMES_37[] = { "assets/art/chrome/#1337.png" };
+static const AssetOffset OFFSETS_37[] = { { 68.500000f, 34.250000f } };
+static const char *const FRAMES_38[] = { "assets/art/chrome/#1339.png" };
+static const AssetOffset OFFSETS_38[] = { { 69.500000f, 35.000000f } };
+static const char *const FRAMES_39[] = { "assets/art/chrome/#1341.png" };
+static const AssetOffset OFFSETS_39[] = { { 262.050000f, -60.450000f } };
+static const char *const FRAMES_40[] = { "assets/art/chrome/#1344.png" };
+static const AssetOffset OFFSETS_40[] = { { 0.000000f, 9.350000f } };
+static const char *const FRAMES_41[] = { "assets/art/chrome/#1344@2.png" };
+static const AssetOffset OFFSETS_41[] = { { 0.000000f, 9.350000f } };
+static const char *const FRAMES_42[] = { "assets/art/chrome/#1345.png" };
+static const AssetOffset OFFSETS_42[] = { { 262.000000f, -60.750000f } };
+static const char *const FRAMES_43[] = { "assets/art/chrome/#1358.png" };
+static const AssetOffset OFFSETS_43[] = { { 15.500000f, 15.500000f } };
+static const char *const FRAMES_44[] = { "assets/art/chrome/#1362.png" };
+static const AssetOffset OFFSETS_44[] = { { 18.350000f, 18.200000f } };
+static const char *const FRAMES_45[] = { "assets/art/chrome/#1367.png" };
+static const AssetOffset OFFSETS_45[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_46[] = { "assets/art/chrome/#1377.png" };
+static const AssetOffset OFFSETS_46[] = { { 98.400000f, 41.600000f } };
+static const char *const FRAMES_47[] = { "assets/art/chrome/#1380.png" };
+static const AssetOffset OFFSETS_47[] = { { 21.550000f, 7.700000f } };
+static const char *const FRAMES_48[] = { "assets/art/chrome/#1390@1.png" };
+static const AssetOffset OFFSETS_48[] = { { 93.500000f, 70.500000f } };
+static const char *const FRAMES_49[] = { "assets/art/chrome/#1390@2.png" };
+static const AssetOffset OFFSETS_49[] = { { 93.500000f, 70.500000f } };
+static const char *const FRAMES_50[] = { "assets/art/chrome/#1390@3.png" };
+static const AssetOffset OFFSETS_50[] = { { 93.500000f, 70.500000f } };
+static const char *const FRAMES_51[] = { "assets/art/chrome/#1390@4.png" };
+static const AssetOffset OFFSETS_51[] = { { 93.500000f, 70.500000f } };
+static const char *const FRAMES_52[] = { "assets/art/chrome/#1390@5.png" };
+static const AssetOffset OFFSETS_52[] = { { 93.500000f, 70.500000f } };
+static const char *const FRAMES_53[] = { "assets/art/chrome/#1390@6.png" };
+static const AssetOffset OFFSETS_53[] = { { 93.500000f, 70.500000f } };
+static const char *const FRAMES_54[] = { "assets/art/chrome/#1393.png" };
+static const AssetOffset OFFSETS_54[] = { { 15.500000f, 15.500000f } };
+static const char *const FRAMES_55[] = { "assets/art/chrome/#1400.png" };
+static const AssetOffset OFFSETS_55[] = { { 12.250000f, 30.500000f } };
+static const char *const FRAMES_56[] = { "assets/art/chrome/#1401.png" };
+static const AssetOffset OFFSETS_56[] = { { 5.500000f, 22.500000f } };
+static const char *const FRAMES_57[] = { "assets/art/chrome/#1403.png" };
+static const AssetOffset OFFSETS_57[] = { { 5.500000f, 20.250000f } };
+static const char *const FRAMES_58[] = { "assets/art/chrome/#1406.png" };
+static const AssetOffset OFFSETS_58[] = { { 0.550000f, 1.000000f } };
+static const char *const FRAMES_59[] = { "assets/art/chrome/#1415.png" };
+static const AssetOffset OFFSETS_59[] = { { 82.000000f, 77.900000f } };
+static const char *const FRAMES_60[] = { "assets/art/chrome/#1426.png" };
+static const AssetOffset OFFSETS_60[] = { { -0.500000f, 0.500000f } };
+static const char *const FRAMES_61[] = { "assets/art/chrome/#1426@1.png" };
+static const AssetOffset OFFSETS_61[] = { { -0.500000f, 0.500000f } };
+static const char *const FRAMES_62[] = { "assets/art/chrome/#1444.png" };
+static const AssetOffset OFFSETS_62[] = { { 22.050000f, 35.200000f } };
+static const char *const FRAMES_63[] = { "assets/art/chrome/#1444@8.png" };
+static const AssetOffset OFFSETS_63[] = { { 22.050000f, 35.200000f } };
+static const char *const FRAMES_64[] = { "assets/art/chrome/#1445.png" };
+static const AssetOffset OFFSETS_64[] = { { 22.050000f, 8.200000f } };
+static const char *const FRAMES_65[] = { "assets/art/chrome/#1446.png" };
+static const AssetOffset OFFSETS_65[] = { { 22.550000f, 8.700000f } };
+static const char *const FRAMES_66[] = { "assets/art/chrome/#1503.png" };
+static const AssetOffset OFFSETS_66[] = { { 384.500000f, 208.400000f } };
+static const char *const FRAMES_67[] = { "assets/art/chrome/#1507.png" };
+static const AssetOffset OFFSETS_67[] = { { 375.000000f, 13.500000f } };
+static const char *const FRAMES_68[] = { "assets/art/chrome/#1508.png" };
+static const AssetOffset OFFSETS_68[] = { { 100.000000f, 12.000000f } };
+static const char *const FRAMES_69[] = { "assets/art/chrome/#1509.png" };
+static const AssetOffset OFFSETS_69[] = { { 237.250000f, 124.100000f } };
+static const char *const FRAMES_70[] = { "assets/art/chrome/#1513.png" };
+static const AssetOffset OFFSETS_70[] = { { 406.450000f, 288.050000f } };
+static const char *const FRAMES_71[] = { "assets/art/chrome/#1516.png" };
+static const AssetOffset OFFSETS_71[] = { { 402.800000f, 288.500000f } };
+static const char *const FRAMES_72[] = { "assets/art/chrome/#1531.png" };
+static const AssetOffset OFFSETS_72[] = { { 395.000000f, 107.750000f } };
+static const char *const FRAMES_73[] = { "assets/art/chrome/#1536.png" };
+static const AssetOffset OFFSETS_73[] = { { 15.000000f, 15.000000f } };
+static const char *const FRAMES_74[] = { "assets/art/chrome/#1537.png" };
+static const AssetOffset OFFSETS_74[] = { { 385.000000f, 157.000000f } };
+static const char *const FRAMES_75[] = { "assets/art/chrome/#1560.png" };
+static const AssetOffset OFFSETS_75[] = { { 0.000000f, 0.000000f } };
+static const char *const FRAMES_76[] = { "assets/art/chrome/#1561.png" };
+static const AssetOffset OFFSETS_76[] = { { 0.000000f, 0.000000f } };
+static const char *const FRAMES_77[] = { "assets/art/chrome/#1562.png" };
+static const AssetOffset OFFSETS_77[] = { { 0.000000f, 0.000000f } };
+static const char *const FRAMES_78[] = { "assets/art/chrome/#1563.png" };
+static const AssetOffset OFFSETS_78[] = { { 0.000000f, 0.000000f } };
+static const char *const FRAMES_79[] = { "assets/art/chrome/#1564.png" };
+static const AssetOffset OFFSETS_79[] = { { 0.000000f, 0.000000f } };
+static const char *const FRAMES_80[] = { "assets/art/chrome/#1565.png" };
+static const AssetOffset OFFSETS_80[] = { { -14.500000f, -129.900000f } };
+static const char *const FRAMES_81[] = { "assets/art/chrome/#1566.png" };
+static const AssetOffset OFFSETS_81[] = { { 0.000000f, 6.500000f } };
+static const char *const FRAMES_82[] = { "assets/art/chrome/#1567.png" };
+static const AssetOffset OFFSETS_82[] = { { 0.000000f, 6.500000f } };
+static const char *const FRAMES_83[] = { "assets/art/chrome/#1568.png" };
+static const AssetOffset OFFSETS_83[] = { { 0.000000f, 6.500000f } };
+static const char *const FRAMES_84[] = { "assets/art/chrome/#1570.png" };
+static const AssetOffset OFFSETS_84[] = { { 100.500000f, 12.950000f } };
+static const char *const FRAMES_85[] = { "assets/art/chrome/#1585.png" };
+static const AssetOffset OFFSETS_85[] = { { 100.500000f, 13.950000f } };
+static const char *const FRAMES_86[] = { "assets/art/chrome/#1586.png" };
+static const AssetOffset OFFSETS_86[] = { { 35.000000f, 35.000000f } };
+static const char *const FRAMES_87[] = { "assets/art/chrome/#1590.png" };
+static const AssetOffset OFFSETS_87[] = { { 183.250000f, 35.150000f } };
+static const char *const FRAMES_88[] = { "assets/art/chrome/#1596.png" };
+static const AssetOffset OFFSETS_88[] = { { 47.150000f, 41.900000f } };
+static const char *const FRAMES_89[] = { "assets/art/chrome/#1606.png" };
+static const AssetOffset OFFSETS_89[] = { { 82.000000f, 77.900000f } };
+static const char *const FRAMES_90[] = { "assets/art/chrome/#1610.png" };
+static const AssetOffset OFFSETS_90[] = { { 62.850000f, 62.850000f } };
+static const char *const FRAMES_91[] = { "assets/art/chrome/#1613.png" };
+static const AssetOffset OFFSETS_91[] = { { 95.950000f, 35.700000f } };
+static const char *const FRAMES_92[] = { "assets/art/chrome/#1632.png" };
+static const AssetOffset OFFSETS_92[] = { { 95.950000f, 35.700000f } };
+static const char *const FRAMES_93[] = { "assets/art/chrome/#1633.png" };
+static const AssetOffset OFFSETS_93[] = { { 0.500000f, 0.500000f } };
+static const char *const FRAMES_94[] = { "assets/art/chrome/#1640.png" };
+static const AssetOffset OFFSETS_94[] = { { 14.050000f, 42.000000f } };
+static const char *const FRAMES_95[] = { "assets/art/chrome/#1642.png" };
+static const AssetOffset OFFSETS_95[] = { { 404.100000f, 291.050000f } };
+static const char *const FRAMES_96[] = { "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_2.png", "assets/art/cutscene/#1695_3.png", "assets/art/cutscene/#1695_4.png", "assets/art/cutscene/#1695_5.png", "assets/art/cutscene/#1695_6.png", "assets/art/cutscene/#1695_7.png", "assets/art/cutscene/#1695_8.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_9.png", "assets/art/cutscene/#1695_8.png", "assets/art/cutscene/#1695_7.png", "assets/art/cutscene/#1695_6.png", "assets/art/cutscene/#1695_5.png", "assets/art/cutscene/#1695_4.png", "assets/art/cutscene/#1695_3.png", "assets/art/cutscene/#1695_2.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_91.png", "assets/art/cutscene/#1695_92.png", "assets/art/cutscene/#1695_93.png", "assets/art/cutscene/#1695_94.png", "assets/art/cutscene/#1695_95.png", "assets/art/cutscene/#1695_96.png", "assets/art/cutscene/#1695_97.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_98.png", "assets/art/cutscene/#1695_97.png", "assets/art/cutscene/#1695_96.png", "assets/art/cutscene/#1695_95.png", "assets/art/cutscene/#1695_94.png", "assets/art/cutscene/#1695_93.png", "assets/art/cutscene/#1695_92.png", "assets/art/cutscene/#1695_91.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_1.png", "assets/art/cutscene/#1695_178.png", "assets/art/cutscene/#1695_179.png", "assets/art/cutscene/#1695_180.png", "assets/art/cutscene/#1695_181.png", "assets/art/cutscene/#1695_182.png", "assets/art/cutscene/#1695_183.png", "assets/art/cutscene/#1695_184.png", "assets/art/cutscene/#1695_185.png", "assets/art/cutscene/#1695_186.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_187.png", "assets/art/cutscene/#1695_273.png", "assets/art/cutscene/#1695_273.png", "assets/art/cutscene/#1695_273.png", "assets/art/cutscene/#1695_273.png", "assets/art/cutscene/#1695_273.png", "assets/art/cutscene/#1695_273.png", "assets/art/cutscene/#1695_273.png", "assets/art/cutscene/#1695_273.png", "assets/art/cutscene/#1695_273.png", "assets/art/cutscene/#1695_282.png", "assets/art/cutscene/#1695_283.png", "assets/art/cutscene/#1695_284.png", "assets/art/cutscene/#1695_285.png", "assets/art/cutscene/#1695_286.png", "assets/art/cutscene/#1695_287.png", "assets/art/cutscene/#1695_288.png", "assets/art/cutscene/#1695_289.png", "assets/art/cutscene/#1695_290.png", "assets/art/cutscene/#1695_290.png", "assets/art/cutscene/#1695_290.png", "assets/art/cutscene/#1695_290.png", "assets/art/cutscene/#1695_290.png", "assets/art/cutscene/#1695_290.png", "assets/art/cutscene/#1695_290.png", "assets/art/cutscene/#1695_297.png", "assets/art/cutscene/#1695_298.png", "assets/art/cutscene/#1695_299.png", "assets/art/cutscene/#1695_300.png", "assets/art/cutscene/#1695_301.png", "assets/art/cutscene/#1695_302.png", "assets/art/cutscene/#1695_303.png", "assets/art/cutscene/#1695_304.png", "assets/art/cutscene/#1695_305.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_306.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_374.png", "assets/art/cutscene/#1695_375.png", "assets/art/cutscene/#1695_376.png", "assets/art/cutscene/#1695_377.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_344.png", "assets/art/cutscene/#1695_396.png", "assets/art/cutscene/#1695_397.png", "assets/art/cutscene/#1695_398.png", "assets/art/cutscene/#1695_399.png", "assets/art/cutscene/#1695_400.png", "assets/art/cutscene/#1695_401.png", "assets/art/cutscene/#1695_402.png", "assets/art/cutscene/#1695_403.png", "assets/art/cutscene/#1695_404.png", "assets/art/cutscene/#1695_405.png", "assets/art/cutscene/#1695_405.png", "assets/art/cutscene/#1695_405.png", "assets/art/cutscene/#1695_408.png", "assets/art/cutscene/#1695_409.png", "assets/art/cutscene/#1695_410.png", "assets/art/cutscene/#1695_411.png", "assets/art/cutscene/#1695_412.png", "assets/art/cutscene/#1695_413.png", "assets/art/cutscene/#1695_414.png", "assets/art/cutscene/#1695_415.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_441.png", "assets/art/cutscene/#1695_442.png", "assets/art/cutscene/#1695_443.png", "assets/art/cutscene/#1695_444.png", "assets/art/cutscene/#1695_445.png", "assets/art/cutscene/#1695_446.png", "assets/art/cutscene/#1695_447.png", "assets/art/cutscene/#1695_448.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_416.png", "assets/art/cutscene/#1695_474.png", "assets/art/cutscene/#1695_475.png", "assets/art/cutscene/#1695_476.png", "assets/art/cutscene/#1695_477.png", "assets/art/cutscene/#1695_478.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_479.png", "assets/art/cutscene/#1695_496.png", "assets/art/cutscene/#1695_497.png", "assets/art/cutscene/#1695_498.png", "assets/art/cutscene/#1695_499.png", "assets/art/cutscene/#1695_500.png", "assets/art/cutscene/#1695_501.png", "assets/art/cutscene/#1695_502.png", "assets/art/cutscene/#1695_503.png", "assets/art/cutscene/#1695_504.png", "assets/art/cutscene/#1695_505.png", "assets/art/cutscene/#1695_506.png", "assets/art/cutscene/#1695_507.png", "assets/art/cutscene/#1695_508.png", "assets/art/cutscene/#1695_509.png", "assets/art/cutscene/#1695_510.png", "assets/art/cutscene/#1695_511.png", "assets/art/cutscene/#1695_512.png", "assets/art/cutscene/#1695_513.png", "assets/art/cutscene/#1695_514.png", "assets/art/cutscene/#1695_515.png", "assets/art/cutscene/#1695_505.png", "assets/art/cutscene/#1695_506.png", "assets/art/cutscene/#1695_507.png", "assets/art/cutscene/#1695_519.png", "assets/art/cutscene/#1695_509.png", "assets/art/cutscene/#1695_510.png", "assets/art/cutscene/#1695_511.png", "assets/art/cutscene/#1695_523.png", "assets/art/cutscene/#1695_524.png", "assets/art/cutscene/#1695_519.png", "assets/art/cutscene/#1695_519.png", "assets/art/cutscene/#1695_527.png", "assets/art/cutscene/#1695_528.png", "assets/art/cutscene/#1695_529.png", "assets/art/cutscene/#1695_530.png", "assets/art/cutscene/#1695_531.png", "assets/art/cutscene/#1695_532.png", "assets/art/cutscene/#1695_533.png", "assets/art/cutscene/#1695_534.png", "assets/art/cutscene/#1695_535.png", "assets/art/cutscene/#1695_536.png", "assets/art/cutscene/#1695_537.png", "assets/art/cutscene/#1695_538.png", "assets/art/cutscene/#1695_539.png", "assets/art/cutscene/#1695_540.png", "assets/art/cutscene/#1695_541.png", "assets/art/cutscene/#1695_542.png", "assets/art/cutscene/#1695_543.png", "assets/art/cutscene/#1695_544.png", "assets/art/cutscene/#1695_545.png", "assets/art/cutscene/#1695_546.png", "assets/art/cutscene/#1695_547.png", "assets/art/cutscene/#1695_548.png", "assets/art/cutscene/#1695_549.png", "assets/art/cutscene/#1695_550.png", "assets/art/cutscene/#1695_551.png", "assets/art/cutscene/#1695_552.png", "assets/art/cutscene/#1695_553.png", "assets/art/cutscene/#1695_554.png", "assets/art/cutscene/#1695_555.png", "assets/art/cutscene/#1695_556.png", "assets/art/cutscene/#1695_557.png", "assets/art/cutscene/#1695_558.png", "assets/art/cutscene/#1695_559.png", "assets/art/cutscene/#1695_560.png", "assets/art/cutscene/#1695_561.png", "assets/art/cutscene/#1695_562.png", "assets/art/cutscene/#1695_563.png", "assets/art/cutscene/#1695_564.png", "assets/art/cutscene/#1695_565.png", "assets/art/cutscene/#1695_566.png", "assets/art/cutscene/#1695_567.png", "assets/art/cutscene/#1695_568.png", "assets/art/cutscene/#1695_569.png", "assets/art/cutscene/#1695_570.png", "assets/art/cutscene/#1695_571.png", "assets/art/cutscene/#1695_572.png", "assets/art/cutscene/#1695_573.png", "assets/art/cutscene/#1695_574.png", "assets/art/cutscene/#1695_575.png", "assets/art/cutscene/#1695_576.png", "assets/art/cutscene/#1695_577.png", "assets/art/cutscene/#1695_578.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_580.png", "assets/art/cutscene/#1695_580.png", "assets/art/cutscene/#1695_580.png", "assets/art/cutscene/#1695_580.png", "assets/art/cutscene/#1695_580.png", "assets/art/cutscene/#1695_580.png", "assets/art/cutscene/#1695_580.png", "assets/art/cutscene/#1695_580.png", "assets/art/cutscene/#1695_580.png", "assets/art/cutscene/#1695_580.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_580.png", "assets/art/cutscene/#1695_580.png", "assets/art/cutscene/#1695_580.png", "assets/art/cutscene/#1695_580.png", "assets/art/cutscene/#1695_580.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_579.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_649.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_613.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_969.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png", "assets/art/cutscene/#1695_1110.png" };
+static const AssetOffset OFFSETS_96[] = { { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f }, { 345.650000f, 188.400000f } };
+static const char *const FRAMES_97[] = { "assets/art/cutscene/#1699.png" };
+static const AssetOffset OFFSETS_97[] = { { 407.200000f, 296.800000f } };
+static const char *const FRAMES_98[] = { "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_1.png", "assets/art/cutscene/#1710_76.png", "assets/art/cutscene/#1710_77.png", "assets/art/cutscene/#1710_78.png", "assets/art/cutscene/#1710_79.png", "assets/art/cutscene/#1710_80.png", "assets/art/cutscene/#1710_81.png", "assets/art/cutscene/#1710_82.png", "assets/art/cutscene/#1710_83.png", "assets/art/cutscene/#1710_84.png", "assets/art/cutscene/#1710_85.png", "assets/art/cutscene/#1710_86.png", "assets/art/cutscene/#1710_87.png", "assets/art/cutscene/#1710_88.png", "assets/art/cutscene/#1710_89.png", "assets/art/cutscene/#1710_90.png", "assets/art/cutscene/#1710_91.png", "assets/art/cutscene/#1710_92.png", "assets/art/cutscene/#1710_93.png", "assets/art/cutscene/#1710_94.png", "assets/art/cutscene/#1710_95.png", "assets/art/cutscene/#1710_96.png", "assets/art/cutscene/#1710_97.png", "assets/art/cutscene/#1710_98.png", "assets/art/cutscene/#1710_99.png", "assets/art/cutscene/#1710_100.png", "assets/art/cutscene/#1710_101.png", "assets/art/cutscene/#1710_102.png", "assets/art/cutscene/#1710_103.png", "assets/art/cutscene/#1710_104.png", "assets/art/cutscene/#1710_105.png", "assets/art/cutscene/#1710_106.png", "assets/art/cutscene/#1710_107.png", "assets/art/cutscene/#1710_108.png", "assets/art/cutscene/#1710_109.png", "assets/art/cutscene/#1710_110.png", "assets/art/cutscene/#1710_111.png", "assets/art/cutscene/#1710_112.png", "assets/art/cutscene/#1710_113.png", "assets/art/cutscene/#1710_114.png", "assets/art/cutscene/#1710_115.png", "assets/art/cutscene/#1710_116.png", "assets/art/cutscene/#1710_117.png", "assets/art/cutscene/#1710_118.png", "assets/art/cutscene/#1710_119.png", "assets/art/cutscene/#1710_120.png", "assets/art/cutscene/#1710_121.png", "assets/art/cutscene/#1710_122.png", "assets/art/cutscene/#1710_123.png", "assets/art/cutscene/#1710_124.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_125.png", "assets/art/cutscene/#1710_241.png", "assets/art/cutscene/#1710_242.png", "assets/art/cutscene/#1710_243.png", "assets/art/cutscene/#1710_244.png", "assets/art/cutscene/#1710_245.png", "assets/art/cutscene/#1710_246.png", "assets/art/cutscene/#1710_247.png", "assets/art/cutscene/#1710_248.png", "assets/art/cutscene/#1710_249.png", "assets/art/cutscene/#1710_250.png", "assets/art/cutscene/#1710_251.png", "assets/art/cutscene/#1710_252.png", "assets/art/cutscene/#1710_253.png", "assets/art/cutscene/#1710_254.png", "assets/art/cutscene/#1710_255.png", "assets/art/cutscene/#1710_256.png", "assets/art/cutscene/#1710_257.png", "assets/art/cutscene/#1710_258.png", "assets/art/cutscene/#1710_259.png", "assets/art/cutscene/#1710_260.png", "assets/art/cutscene/#1710_261.png", "assets/art/cutscene/#1710_262.png", "assets/art/cutscene/#1710_263.png", "assets/art/cutscene/#1710_264.png", "assets/art/cutscene/#1710_265.png", "assets/art/cutscene/#1710_266.png", "assets/art/cutscene/#1710_267.png", "assets/art/cutscene/#1710_268.png", "assets/art/cutscene/#1710_269.png", "assets/art/cutscene/#1710_270.png", "assets/art/cutscene/#1710_271.png", "assets/art/cutscene/#1710_272.png", "assets/art/cutscene/#1710_273.png", "assets/art/cutscene/#1710_274.png", "assets/art/cutscene/#1710_275.png", "assets/art/cutscene/#1710_276.png", "assets/art/cutscene/#1710_277.png", "assets/art/cutscene/#1710_278.png", "assets/art/cutscene/#1710_279.png", "assets/art/cutscene/#1710_280.png", "assets/art/cutscene/#1710_281.png", "assets/art/cutscene/#1710_282.png", "assets/art/cutscene/#1710_283.png", "assets/art/cutscene/#1710_284.png", "assets/art/cutscene/#1710_285.png", "assets/art/cutscene/#1710_286.png", "assets/art/cutscene/#1710_287.png", "assets/art/cutscene/#1710_288.png", "assets/art/cutscene/#1710_289.png", "assets/art/cutscene/#1710_290.png", "assets/art/cutscene/#1710_291.png", "assets/art/cutscene/#1710_292.png", "assets/art/cutscene/#1710_293.png", "assets/art/cutscene/#1710_294.png", "assets/art/cutscene/#1710_295.png", "assets/art/cutscene/#1710_296.png", "assets/art/cutscene/#1710_297.png", "assets/art/cutscene/#1710_298.png", "assets/art/cutscene/#1710_299.png", "assets/art/cutscene/#1710_300.png", "assets/art/cutscene/#1710_301.png", "assets/art/cutscene/#1710_302.png", "assets/art/cutscene/#1710_303.png", "assets/art/cutscene/#1710_304.png", "assets/art/cutscene/#1710_305.png", "assets/art/cutscene/#1710_306.png", "assets/art/cutscene/#1710_307.png", "assets/art/cutscene/#1710_308.png", "assets/art/cutscene/#1710_309.png", "assets/art/cutscene/#1710_310.png", "assets/art/cutscene/#1710_311.png", "assets/art/cutscene/#1710_312.png", "assets/art/cutscene/#1710_313.png", "assets/art/cutscene/#1710_314.png", "assets/art/cutscene/#1710_315.png", "assets/art/cutscene/#1710_316.png", "assets/art/cutscene/#1710_317.png", "assets/art/cutscene/#1710_318.png", "assets/art/cutscene/#1710_319.png", "assets/art/cutscene/#1710_320.png", "assets/art/cutscene/#1710_321.png", "assets/art/cutscene/#1710_322.png", "assets/art/cutscene/#1710_323.png", "assets/art/cutscene/#1710_324.png", "assets/art/cutscene/#1710_325.png", "assets/art/cutscene/#1710_326.png", "assets/art/cutscene/#1710_327.png", "assets/art/cutscene/#1710_328.png", "assets/art/cutscene/#1710_329.png", "assets/art/cutscene/#1710_330.png", "assets/art/cutscene/#1710_331.png", "assets/art/cutscene/#1710_332.png", "assets/art/cutscene/#1710_333.png", "assets/art/cutscene/#1710_334.png", "assets/art/cutscene/#1710_335.png", "assets/art/cutscene/#1710_336.png", "assets/art/cutscene/#1710_337.png", "assets/art/cutscene/#1710_338.png", "assets/art/cutscene/#1710_339.png", "assets/art/cutscene/#1710_340.png", "assets/art/cutscene/#1710_341.png", "assets/art/cutscene/#1710_342.png", "assets/art/cutscene/#1710_343.png", "assets/art/cutscene/#1710_344.png", "assets/art/cutscene/#1710_345.png", "assets/art/cutscene/#1710_346.png", "assets/art/cutscene/#1710_347.png", "assets/art/cutscene/#1710_348.png", "assets/art/cutscene/#1710_349.png", "assets/art/cutscene/#1710_350.png", "assets/art/cutscene/#1710_351.png", "assets/art/cutscene/#1710_352.png", "assets/art/cutscene/#1710_353.png", "assets/art/cutscene/#1710_354.png", "assets/art/cutscene/#1710_355.png", "assets/art/cutscene/#1710_356.png", "assets/art/cutscene/#1710_357.png", "assets/art/cutscene/#1710_358.png", "assets/art/cutscene/#1710_359.png", "assets/art/cutscene/#1710_360.png", "assets/art/cutscene/#1710_361.png", "assets/art/cutscene/#1710_362.png", "assets/art/cutscene/#1710_363.png", "assets/art/cutscene/#1710_364.png", "assets/art/cutscene/#1710_365.png", "assets/art/cutscene/#1710_366.png", "assets/art/cutscene/#1710_367.png", "assets/art/cutscene/#1710_368.png", "assets/art/cutscene/#1710_369.png", "assets/art/cutscene/#1710_370.png", "assets/art/cutscene/#1710_371.png", "assets/art/cutscene/#1710_372.png", "assets/art/cutscene/#1710_373.png", "assets/art/cutscene/#1710_374.png", "assets/art/cutscene/#1710_375.png", "assets/art/cutscene/#1710_376.png", "assets/art/cutscene/#1710_377.png", "assets/art/cutscene/#1710_378.png", "assets/art/cutscene/#1710_379.png", "assets/art/cutscene/#1710_380.png", "assets/art/cutscene/#1710_381.png", "assets/art/cutscene/#1710_382.png", "assets/art/cutscene/#1710_383.png", "assets/art/cutscene/#1710_384.png", "assets/art/cutscene/#1710_385.png", "assets/art/cutscene/#1710_386.png", "assets/art/cutscene/#1710_387.png", "assets/art/cutscene/#1710_388.png", "assets/art/cutscene/#1710_389.png", "assets/art/cutscene/#1710_390.png", "assets/art/cutscene/#1710_391.png", "assets/art/cutscene/#1710_392.png", "assets/art/cutscene/#1710_393.png", "assets/art/cutscene/#1710_394.png", "assets/art/cutscene/#1710_395.png", "assets/art/cutscene/#1710_396.png", "assets/art/cutscene/#1710_397.png", "assets/art/cutscene/#1710_398.png", "assets/art/cutscene/#1710_399.png", "assets/art/cutscene/#1710_400.png", "assets/art/cutscene/#1710_401.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_402.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_656.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_711.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_838.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png", "assets/art/cutscene/#1710_907.png" };
+static const AssetOffset OFFSETS_98[] = { { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f }, { 448.700000f, 335.400000f } };
+static const char *const FRAMES_99[] = { "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_1.png", "assets/art/cutscene/#1719_474.png", "assets/art/cutscene/#1719_474.png", "assets/art/cutscene/#1719_474.png", "assets/art/cutscene/#1719_474.png", "assets/art/cutscene/#1719_474.png", "assets/art/cutscene/#1719_474.png", "assets/art/cutscene/#1719_474.png", "assets/art/cutscene/#1719_474.png", "assets/art/cutscene/#1719_474.png", "assets/art/cutscene/#1719_474.png", "assets/art/cutscene/#1719_474.png", "assets/art/cutscene/#1719_474.png", "assets/art/cutscene/#1719_474.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_487.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_523.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_569.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_614.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_652.png", "assets/art/cutscene/#1719_474.png", "assets/art/cutscene/#1719_474.png", "assets/art/cutscene/#1719_474.png" };
+static const AssetOffset OFFSETS_99[] = { { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f }, { 146.350000f, 90.000000f } };
+static const char *const FRAMES_100[] = { "assets/art/chrome/#1720.png" };
+static const AssetOffset OFFSETS_100[] = { { 31.250000f, 20.000000f } };
+static const char *const FRAMES_101[] = { "assets/art/chrome/#1722.png" };
+static const AssetOffset OFFSETS_101[] = { { 0.000000f, 0.000000f } };
+static const char *const FRAMES_102[] = { "assets/art/chrome/#1725.png" };
+static const AssetOffset OFFSETS_102[] = { { 15.500000f, 15.500000f } };
+static const char *const FRAMES_103[] = { "assets/art/chrome/#1726.png" };
+static const AssetOffset OFFSETS_103[] = { { 31.250000f, 20.000000f } };
+static const char *const FRAMES_104[] = { "assets/art/chrome/#368.png" };
+static const AssetOffset OFFSETS_104[] = { { 32.500000f, 9.950000f } };
+static const char *const FRAMES_105[] = { "assets/art/chrome/#821.png" };
+static const AssetOffset OFFSETS_105[] = { { 92.400000f, 16.000000f } };
+static const char *const FRAMES_106[] = { "assets/art/chrome/#823.png" };
+static const AssetOffset OFFSETS_106[] = { { -13.900000f, 14.950000f } };
+static const char *const FRAMES_107[] = { "assets/art/chrome/#824.png" };
+static const AssetOffset OFFSETS_107[] = { { 11.500000f, 11.500000f } };
+static const char *const FRAMES_108[] = { "assets/art/chrome/#826.png" };
+static const AssetOffset OFFSETS_108[] = { { 11.500000f, 11.500000f } };
+static const char *const FRAMES_109[] = { "assets/art/chrome/#828.png" };
+static const AssetOffset OFFSETS_109[] = { { 11.500000f, 11.500000f } };
+static const char *const FRAMES_110[] = { "assets/art/chrome/#830.png" };
+static const AssetOffset OFFSETS_110[] = { { 11.650000f, 11.750000f } };
+static const char *const FRAMES_111[] = { "assets/art/chrome/#866.png" };
+static const AssetOffset OFFSETS_111[] = { { 32.500000f, 28.700000f } };
+static const char *const FRAMES_112[] = { "assets/art/chrome/#867.png" };
+static const AssetOffset OFFSETS_112[] = { { 10.500000f, 10.500000f } };
+static const char *const FRAMES_113[] = { "assets/art/chrome/#868.png" };
+static const AssetOffset OFFSETS_113[] = { { 11.250000f, 11.250000f } };
+static const char *const FRAMES_114[] = { "assets/art/chrome/#903.png" };
+static const AssetOffset OFFSETS_114[] = { { 4.000000f, 4.250000f } };
+static const char *const FRAMES_115[] = { "assets/art/chrome/#905.png" };
+static const AssetOffset OFFSETS_115[] = { { 2.550000f, 6.700000f } };
+static const char *const FRAMES_116[] = { "assets/art/chrome/#907.png" };
+static const AssetOffset OFFSETS_116[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_117[] = { "assets/art/chrome/#909.png" };
+static const AssetOffset OFFSETS_117[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_118[] = { "assets/art/chrome/#911.png" };
+static const AssetOffset OFFSETS_118[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_119[] = { "assets/art/chrome/#913.png" };
+static const AssetOffset OFFSETS_119[] = { { 3.750000f, 41.150000f } };
+static const char *const FRAMES_120[] = { "assets/art/chrome/#915.png" };
+static const AssetOffset OFFSETS_120[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_121[] = { "assets/art/chrome/#917.png" };
+static const AssetOffset OFFSETS_121[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_122[] = { "assets/art/chrome/#919.png" };
+static const AssetOffset OFFSETS_122[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_123[] = { "assets/art/chrome/#920.png" };
+static const AssetOffset OFFSETS_123[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_124[] = { "assets/art/chrome/#921.png" };
+static const AssetOffset OFFSETS_124[] = { { 5.200000f, 36.900000f } };
+static const char *const FRAMES_125[] = { "assets/art/chrome/#922.png" };
+static const AssetOffset OFFSETS_125[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_126[] = { "assets/art/chrome/#923.png" };
+static const AssetOffset OFFSETS_126[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_127[] = { "assets/art/chrome/#924.png" };
+static const AssetOffset OFFSETS_127[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_128[] = { "assets/art/chrome/#925.png" };
+static const AssetOffset OFFSETS_128[] = { { 2.550000f, 6.700000f } };
+static const char *const FRAMES_129[] = { "assets/art/chrome/#926.png" };
+static const AssetOffset OFFSETS_129[] = { { 4.000000f, 4.250000f } };
+static const char *const FRAMES_130[] = { "assets/art/chrome/#944.png" };
+static const AssetOffset OFFSETS_130[] = { { 103.150000f, 24.100000f } };
+static const char *const FRAMES_131[] = { "assets/art/chrome/#951.png" };
+static const AssetOffset OFFSETS_131[] = { { 274.850000f, 41.100000f } };
+static const char *const FRAMES_132[] = { "assets/art/cutscene/#963.png" };
+static const AssetOffset OFFSETS_132[] = { { -0.450000f, -0.500000f } };
+static const char *const FRAMES_133[] = { "assets/art/item/A_Broken_Pipe.png" };
 static const AssetOffset OFFSETS_133[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_134[] = { "assets/art/item/Assassin's_Gloves.png" };
+static const char *const FRAMES_134[] = { "assets/art/item/A_Sword.png" };
 static const AssetOffset OFFSETS_134[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_135[] = { "assets/art/item/Assassin's_Helm.png" };
-static const AssetOffset OFFSETS_135[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_136[] = { "assets/art/item/Assassin's_Leggings.png" };
-static const AssetOffset OFFSETS_136[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_137[] = { "assets/art/item/Assassination.png" };
+static const char *const FRAMES_135[] = { "assets/art/portrait/Amber.png" };
+static const AssetOffset OFFSETS_135[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_136[] = { "assets/art/portrait/Argalla_the_Mender.png" };
+static const AssetOffset OFFSETS_136[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_137[] = { "assets/art/item/Armor_of_the_Fallen.png" };
 static const AssetOffset OFFSETS_137[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_138[] = { "assets/art/buff/BLACKOUT.png" };
-static const AssetOffset OFFSETS_138[] = { { 5.950000f, 10.950000f } };
-static const char *const FRAMES_139[] = { "assets/art/buff/BLOCK1.png" };
-static const AssetOffset OFFSETS_139[] = { { 7.050000f, 11.600000f } };
-static const char *const FRAMES_140[] = { "assets/art/effect/BOOM1_1.png", "assets/art/effect/BOOM1_2.png", "assets/art/effect/BOOM1_3.png", "assets/art/effect/BOOM1_4.png", "assets/art/effect/BOOM1_5.png", "assets/art/effect/BOOM1_6.png", "assets/art/effect/BOOM1_7.png", "assets/art/effect/BOOM1_8.png", "assets/art/effect/BOOM1_9.png", "assets/art/effect/BOOM1_10.png", "assets/art/effect/BOOM1_11.png", "assets/art/effect/BOOM1_12.png", "assets/art/effect/BOOM1_13.png", "assets/art/effect/BOOM1_14.png", "assets/art/effect/BOOM1_15.png", "assets/art/effect/BOOM1_16.png", "assets/art/effect/BOOM1_17.png", "assets/art/effect/BOOM1_18.png", "assets/art/effect/BOOM1_19.png", "assets/art/effect/BOOM1_20.png", "assets/art/effect/BOOM1_21.png", "assets/art/effect/BOOM1_22.png", "assets/art/effect/BOOM1_23.png", "assets/art/effect/BOOM1_24.png", "assets/art/effect/BOOM1_25.png", "assets/art/effect/BOOM1_26.png", "assets/art/effect/BOOM1_27.png", "assets/art/effect/BOOM1_28.png", "assets/art/effect/BOOM1_29.png", "assets/art/effect/BOOM1_30.png", "assets/art/effect/BOOM1_31.png", "assets/art/effect/BOOM1_32.png", "assets/art/effect/BOOM1_33.png", "assets/art/effect/BOOM1_34.png", "assets/art/effect/BOOM1_34.png", "assets/art/effect/BOOM1_34.png" };
-static const AssetOffset OFFSETS_140[] = { { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f } };
-static const char *const FRAMES_141[] = { "assets/art/effect/BOOM2_1.png", "assets/art/effect/BOOM2_2.png", "assets/art/effect/BOOM2_3.png", "assets/art/effect/BOOM2_4.png", "assets/art/effect/BOOM2_5.png", "assets/art/effect/BOOM2_6.png", "assets/art/effect/BOOM2_7.png", "assets/art/effect/BOOM2_8.png", "assets/art/effect/BOOM2_9.png", "assets/art/effect/BOOM2_10.png", "assets/art/effect/BOOM2_11.png", "assets/art/effect/BOOM2_12.png", "assets/art/effect/BOOM2_13.png", "assets/art/effect/BOOM2_14.png", "assets/art/effect/BOOM2_15.png", "assets/art/effect/BOOM2_16.png", "assets/art/effect/BOOM2_17.png", "assets/art/effect/BOOM2_18.png", "assets/art/effect/BOOM2_19.png", "assets/art/effect/BOOM2_20.png", "assets/art/effect/BOOM2_21.png", "assets/art/effect/BOOM2_22.png", "assets/art/effect/BOOM2_23.png", "assets/art/effect/BOOM2_24.png", "assets/art/effect/BOOM2_25.png", "assets/art/effect/BOOM2_26.png", "assets/art/effect/BOOM2_27.png", "assets/art/effect/BOOM2_28.png", "assets/art/effect/BOOM2_29.png", "assets/art/effect/BOOM2_30.png", "assets/art/effect/BOOM2_31.png", "assets/art/effect/BOOM2_32.png", "assets/art/effect/BOOM2_33.png", "assets/art/effect/BOOM2_33.png", "assets/art/effect/BOOM2_33.png", "assets/art/effect/BOOM2_33.png" };
-static const AssetOffset OFFSETS_141[] = { { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f } };
-static const char *const FRAMES_142[] = { "assets/art/effect/BOOM3_1.png", "assets/art/effect/BOOM3_2.png", "assets/art/effect/BOOM3_3.png", "assets/art/effect/BOOM3_4.png", "assets/art/effect/BOOM3_5.png", "assets/art/effect/BOOM3_6.png", "assets/art/effect/BOOM3_7.png", "assets/art/effect/BOOM3_8.png", "assets/art/effect/BOOM3_9.png", "assets/art/effect/BOOM3_10.png", "assets/art/effect/BOOM3_11.png", "assets/art/effect/BOOM3_12.png", "assets/art/effect/BOOM3_13.png", "assets/art/effect/BOOM3_14.png", "assets/art/effect/BOOM3_15.png", "assets/art/effect/BOOM3_16.png", "assets/art/effect/BOOM3_17.png", "assets/art/effect/BOOM3_18.png", "assets/art/effect/BOOM3_18.png", "assets/art/effect/BOOM3_18.png", "assets/art/effect/BOOM3_1.png", "assets/art/effect/BOOM3_2.png", "assets/art/effect/BOOM3_3.png", "assets/art/effect/BOOM3_4.png", "assets/art/effect/BOOM3_18.png" };
-static const AssetOffset OFFSETS_142[] = { { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f } };
-static const char *const FRAMES_143[] = { "assets/art/effect/BOOM_DARK_1.png", "assets/art/effect/BOOM_DARK_2.png", "assets/art/effect/BOOM_DARK_3.png", "assets/art/effect/BOOM_DARK_4.png", "assets/art/effect/BOOM_DARK_5.png", "assets/art/effect/BOOM_DARK_6.png", "assets/art/effect/BOOM_DARK_7.png", "assets/art/effect/BOOM_DARK_8.png", "assets/art/effect/BOOM_DARK_9.png", "assets/art/effect/BOOM_DARK_10.png", "assets/art/effect/BOOM_DARK_11.png", "assets/art/effect/BOOM_DARK_12.png", "assets/art/effect/BOOM_DARK_13.png", "assets/art/effect/BOOM_DARK_14.png", "assets/art/effect/BOOM_DARK_15.png", "assets/art/effect/BOOM_DARK_16.png", "assets/art/effect/BOOM_DARK_17.png", "assets/art/effect/BOOM_DARK_18.png", "assets/art/effect/BOOM_DARK_18.png", "assets/art/effect/BOOM_DARK_18.png", "assets/art/effect/BOOM_DARK_1.png", "assets/art/effect/BOOM_DARK_2.png", "assets/art/effect/BOOM_DARK_3.png", "assets/art/effect/BOOM_DARK_4.png", "assets/art/effect/BOOM_DARK_18.png" };
-static const AssetOffset OFFSETS_143[] = { { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f } };
-static const char *const FRAMES_144[] = { "assets/art/effect/BOOM_HEAL_1.png", "assets/art/effect/BOOM_HEAL_2.png", "assets/art/effect/BOOM_HEAL_3.png", "assets/art/effect/BOOM_HEAL_4.png", "assets/art/effect/BOOM_HEAL_5.png", "assets/art/effect/BOOM_HEAL_6.png", "assets/art/effect/BOOM_HEAL_7.png", "assets/art/effect/BOOM_HEAL_8.png", "assets/art/effect/BOOM_HEAL_9.png", "assets/art/effect/BOOM_HEAL_10.png", "assets/art/effect/BOOM_HEAL_11.png", "assets/art/effect/BOOM_HEAL_12.png", "assets/art/effect/BOOM_HEAL_13.png", "assets/art/effect/BOOM_HEAL_14.png", "assets/art/effect/BOOM_HEAL_15.png", "assets/art/effect/BOOM_HEAL_15.png" };
-static const AssetOffset OFFSETS_144[] = { { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f } };
-static const char *const FRAMES_145[] = { "assets/art/effect/BOOM_HEAL2_1.png", "assets/art/effect/BOOM_HEAL2_2.png", "assets/art/effect/BOOM_HEAL2_3.png", "assets/art/effect/BOOM_HEAL2_4.png", "assets/art/effect/BOOM_HEAL2_5.png", "assets/art/effect/BOOM_HEAL2_6.png", "assets/art/effect/BOOM_HEAL2_7.png", "assets/art/effect/BOOM_HEAL2_8.png", "assets/art/effect/BOOM_HEAL2_9.png", "assets/art/effect/BOOM_HEAL2_10.png", "assets/art/effect/BOOM_HEAL2_11.png", "assets/art/effect/BOOM_HEAL2_12.png", "assets/art/effect/BOOM_HEAL2_13.png", "assets/art/effect/BOOM_HEAL2_14.png", "assets/art/effect/BOOM_HEAL2_15.png", "assets/art/effect/BOOM_HEAL2_16.png", "assets/art/effect/BOOM_HEAL2_17.png", "assets/art/effect/BOOM_HEAL2_18.png", "assets/art/effect/BOOM_HEAL2_18.png", "assets/art/effect/BOOM_HEAL2_18.png", "assets/art/effect/BOOM_HEAL2_1.png", "assets/art/effect/BOOM_HEAL2_2.png", "assets/art/effect/BOOM_HEAL2_3.png", "assets/art/effect/BOOM_HEAL2_4.png", "assets/art/effect/BOOM_HEAL2_18.png" };
-static const AssetOffset OFFSETS_145[] = { { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f } };
-static const char *const FRAMES_146[] = { "assets/art/effect/BOOM_POWERUP_1.png", "assets/art/effect/BOOM_POWERUP_2.png", "assets/art/effect/BOOM_POWERUP_3.png", "assets/art/effect/BOOM_POWERUP_4.png", "assets/art/effect/BOOM_POWERUP_5.png", "assets/art/effect/BOOM_POWERUP_6.png", "assets/art/effect/BOOM_POWERUP_7.png", "assets/art/effect/BOOM_POWERUP_8.png", "assets/art/effect/BOOM_POWERUP_9.png", "assets/art/effect/BOOM_POWERUP_10.png", "assets/art/effect/BOOM_POWERUP_11.png", "assets/art/effect/BOOM_POWERUP_12.png", "assets/art/effect/BOOM_POWERUP_13.png", "assets/art/effect/BOOM_POWERUP_14.png", "assets/art/effect/BOOM_POWERUP_15.png", "assets/art/effect/BOOM_POWERUP_15.png" };
-static const AssetOffset OFFSETS_146[] = { { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f } };
-static const char *const FRAMES_147[] = { "assets/art/effect/BOOM_RED_1.png", "assets/art/effect/BOOM_RED_2.png", "assets/art/effect/BOOM_RED_3.png", "assets/art/effect/BOOM_RED_4.png", "assets/art/effect/BOOM_RED_5.png", "assets/art/effect/BOOM_RED_6.png", "assets/art/effect/BOOM_RED_7.png", "assets/art/effect/BOOM_RED_8.png", "assets/art/effect/BOOM_RED_9.png", "assets/art/effect/BOOM_RED_10.png", "assets/art/effect/BOOM_RED_11.png", "assets/art/effect/BOOM_RED_12.png", "assets/art/effect/BOOM_RED_13.png", "assets/art/effect/BOOM_RED_14.png", "assets/art/effect/BOOM_RED_15.png", "assets/art/effect/BOOM_RED_16.png", "assets/art/effect/BOOM_RED_17.png", "assets/art/effect/BOOM_RED_18.png", "assets/art/effect/BOOM_RED_18.png", "assets/art/effect/BOOM_RED_18.png", "assets/art/effect/BOOM_RED_1.png", "assets/art/effect/BOOM_RED_2.png", "assets/art/effect/BOOM_RED_3.png", "assets/art/effect/BOOM_RED_4.png", "assets/art/effect/BOOM_RED_18.png" };
-static const AssetOffset OFFSETS_147[] = { { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f } };
-static const char *const FRAMES_148[] = { "assets/art/effect/BOOM_SHIELD_1.png", "assets/art/effect/BOOM_SHIELD_2.png", "assets/art/effect/BOOM_SHIELD_3.png", "assets/art/effect/BOOM_SHIELD_4.png", "assets/art/effect/BOOM_SHIELD_5.png", "assets/art/effect/BOOM_SHIELD_6.png", "assets/art/effect/BOOM_SHIELD_7.png", "assets/art/effect/BOOM_SHIELD_8.png", "assets/art/effect/BOOM_SHIELD_9.png", "assets/art/effect/BOOM_SHIELD_10.png", "assets/art/effect/BOOM_SHIELD_11.png", "assets/art/effect/BOOM_SHIELD_12.png", "assets/art/effect/BOOM_SHIELD_13.png", "assets/art/effect/BOOM_SHIELD_14.png", "assets/art/effect/BOOM_SHIELD_15.png", "assets/art/effect/BOOM_SHIELD_16.png", "assets/art/effect/BOOM_SHIELD_17.png", "assets/art/effect/BOOM_SHIELD_18.png", "assets/art/effect/BOOM_SHIELD_19.png", "assets/art/effect/BOOM_SHIELD_19.png" };
-static const AssetOffset OFFSETS_148[] = { { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f } };
-static const char *const FRAMES_149[] = { "assets/art/effect/BOOM_SLASH_1.png", "assets/art/effect/BOOM_SLASH_2.png", "assets/art/effect/BOOM_SLASH_3.png", "assets/art/effect/BOOM_SLASH_4.png", "assets/art/effect/BOOM_SLASH_5.png", "assets/art/effect/BOOM_SLASH_6.png", "assets/art/effect/BOOM_SLASH_7.png", "assets/art/effect/BOOM_SLASH_8.png", "assets/art/effect/BOOM_SLASH_9.png", "assets/art/effect/BOOM_SLASH_10.png", "assets/art/effect/BOOM_SLASH_11.png", "assets/art/effect/BOOM_SLASH_12.png", "assets/art/effect/BOOM_SLASH_13.png", "assets/art/effect/BOOM_SLASH_14.png", "assets/art/effect/BOOM_SLASH_15.png", "assets/art/effect/BOOM_SLASH_1.png", "assets/art/effect/BOOM_SLASH_2.png", "assets/art/effect/BOOM_SLASH_3.png", "assets/art/effect/BOOM_SLASH_4.png", "assets/art/effect/BOOM_SLASH_5.png", "assets/art/effect/BOOM_SLASH_6.png", "assets/art/effect/BOOM_SLASH_7.png", "assets/art/effect/BOOM_SLASH_8.png", "assets/art/effect/BOOM_SLASH_9.png", "assets/art/effect/BOOM_SLASH_10.png" };
-static const AssetOffset OFFSETS_149[] = { { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f } };
-static const char *const FRAMES_150[] = { "assets/art/effect/BOOM_SLASH2_1.png", "assets/art/effect/BOOM_SLASH2_2.png", "assets/art/effect/BOOM_SLASH2_3.png", "assets/art/effect/BOOM_SLASH2_4.png", "assets/art/effect/BOOM_SLASH2_5.png", "assets/art/effect/BOOM_SLASH2_6.png", "assets/art/effect/BOOM_SLASH2_7.png", "assets/art/effect/BOOM_SLASH2_8.png", "assets/art/effect/BOOM_SLASH2_9.png", "assets/art/effect/BOOM_SLASH2_10.png", "assets/art/effect/BOOM_SLASH2_11.png", "assets/art/effect/BOOM_SLASH2_11.png", "assets/art/effect/BOOM_SLASH2_13.png", "assets/art/effect/BOOM_SLASH2_1.png", "assets/art/effect/BOOM_SLASH2_2.png", "assets/art/effect/BOOM_SLASH2_3.png", "assets/art/effect/BOOM_SLASH2_4.png", "assets/art/effect/BOOM_SLASH2_5.png", "assets/art/effect/BOOM_SLASH2_6.png", "assets/art/effect/BOOM_SLASH2_7.png", "assets/art/effect/BOOM_SLASH2_8.png", "assets/art/effect/BOOM_SLASH2_9.png", "assets/art/effect/BOOM_SLASH2_10.png", "assets/art/effect/BOOM_SLASH2_11.png", "assets/art/effect/BOOM_SLASH2_13.png" };
-static const AssetOffset OFFSETS_150[] = { { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f } };
-static const char *const FRAMES_151[] = { "assets/art/effect/BOOM_SLASHBLUE_1.png", "assets/art/effect/BOOM_SLASHBLUE_2.png", "assets/art/effect/BOOM_SLASHBLUE_3.png", "assets/art/effect/BOOM_SLASHBLUE_4.png", "assets/art/effect/BOOM_SLASHBLUE_5.png", "assets/art/effect/BOOM_SLASHBLUE_6.png", "assets/art/effect/BOOM_SLASHBLUE_7.png", "assets/art/effect/BOOM_SLASHBLUE_8.png", "assets/art/effect/BOOM_SLASHBLUE_9.png", "assets/art/effect/BOOM_SLASHBLUE_10.png", "assets/art/effect/BOOM_SLASHBLUE_11.png", "assets/art/effect/BOOM_SLASHBLUE_12.png", "assets/art/effect/BOOM_SLASHBLUE_13.png", "assets/art/effect/BOOM_SLASHBLUE_14.png", "assets/art/effect/BOOM_SLASHBLUE_15.png", "assets/art/effect/BOOM_SLASHBLUE_1.png", "assets/art/effect/BOOM_SLASHBLUE_2.png", "assets/art/effect/BOOM_SLASHBLUE_3.png", "assets/art/effect/BOOM_SLASHBLUE_4.png", "assets/art/effect/BOOM_SLASHBLUE_5.png", "assets/art/effect/BOOM_SLASHBLUE_6.png", "assets/art/effect/BOOM_SLASHBLUE_7.png", "assets/art/effect/BOOM_SLASHBLUE_8.png", "assets/art/effect/BOOM_SLASHBLUE_9.png", "assets/art/effect/BOOM_SLASHBLUE_10.png" };
-static const AssetOffset OFFSETS_151[] = { { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f } };
-static const char *const FRAMES_152[] = { "assets/art/effect/BOOM_SLASHGREEN_1.png", "assets/art/effect/BOOM_SLASHGREEN_2.png", "assets/art/effect/BOOM_SLASHGREEN_3.png", "assets/art/effect/BOOM_SLASHGREEN_4.png", "assets/art/effect/BOOM_SLASHGREEN_5.png", "assets/art/effect/BOOM_SLASHGREEN_6.png", "assets/art/effect/BOOM_SLASHGREEN_7.png", "assets/art/effect/BOOM_SLASHGREEN_8.png", "assets/art/effect/BOOM_SLASHGREEN_9.png", "assets/art/effect/BOOM_SLASHGREEN_10.png", "assets/art/effect/BOOM_SLASHGREEN_11.png", "assets/art/effect/BOOM_SLASHGREEN_12.png", "assets/art/effect/BOOM_SLASHGREEN_13.png", "assets/art/effect/BOOM_SLASHGREEN_14.png", "assets/art/effect/BOOM_SLASHGREEN_15.png", "assets/art/effect/BOOM_SLASHGREEN_1.png", "assets/art/effect/BOOM_SLASHGREEN_2.png", "assets/art/effect/BOOM_SLASHGREEN_3.png", "assets/art/effect/BOOM_SLASHGREEN_4.png", "assets/art/effect/BOOM_SLASHGREEN_5.png", "assets/art/effect/BOOM_SLASHGREEN_6.png", "assets/art/effect/BOOM_SLASHGREEN_7.png", "assets/art/effect/BOOM_SLASHGREEN_8.png", "assets/art/effect/BOOM_SLASHGREEN_9.png", "assets/art/effect/BOOM_SLASHGREEN_10.png" };
-static const AssetOffset OFFSETS_152[] = { { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f } };
-static const char *const FRAMES_153[] = { "assets/art/effect/BOOM_SLASHORANGE_1.png", "assets/art/effect/BOOM_SLASHORANGE_2.png", "assets/art/effect/BOOM_SLASHORANGE_3.png", "assets/art/effect/BOOM_SLASHORANGE_4.png", "assets/art/effect/BOOM_SLASHORANGE_5.png", "assets/art/effect/BOOM_SLASHORANGE_6.png", "assets/art/effect/BOOM_SLASHORANGE_7.png", "assets/art/effect/BOOM_SLASHORANGE_8.png", "assets/art/effect/BOOM_SLASHORANGE_9.png", "assets/art/effect/BOOM_SLASHORANGE_10.png", "assets/art/effect/BOOM_SLASHORANGE_11.png", "assets/art/effect/BOOM_SLASHORANGE_12.png", "assets/art/effect/BOOM_SLASHORANGE_13.png", "assets/art/effect/BOOM_SLASHORANGE_14.png", "assets/art/effect/BOOM_SLASHORANGE_15.png", "assets/art/effect/BOOM_SLASHORANGE_1.png", "assets/art/effect/BOOM_SLASHORANGE_2.png", "assets/art/effect/BOOM_SLASHORANGE_3.png", "assets/art/effect/BOOM_SLASHORANGE_4.png", "assets/art/effect/BOOM_SLASHORANGE_5.png", "assets/art/effect/BOOM_SLASHORANGE_6.png", "assets/art/effect/BOOM_SLASHORANGE_7.png", "assets/art/effect/BOOM_SLASHORANGE_8.png", "assets/art/effect/BOOM_SLASHORANGE_9.png", "assets/art/effect/BOOM_SLASHORANGE_10.png" };
-static const AssetOffset OFFSETS_153[] = { { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f } };
-static const char *const FRAMES_154[] = { "assets/art/effect/BOOM_SLASHRED_1.png", "assets/art/effect/BOOM_SLASHRED_2.png", "assets/art/effect/BOOM_SLASHRED_3.png", "assets/art/effect/BOOM_SLASHRED_4.png", "assets/art/effect/BOOM_SLASHRED_5.png", "assets/art/effect/BOOM_SLASHRED_6.png", "assets/art/effect/BOOM_SLASHRED_7.png", "assets/art/effect/BOOM_SLASHRED_8.png", "assets/art/effect/BOOM_SLASHRED_9.png", "assets/art/effect/BOOM_SLASHRED_10.png", "assets/art/effect/BOOM_SLASHRED_11.png", "assets/art/effect/BOOM_SLASHRED_12.png", "assets/art/effect/BOOM_SLASHRED_13.png", "assets/art/effect/BOOM_SLASHRED_14.png", "assets/art/effect/BOOM_SLASHRED_15.png", "assets/art/effect/BOOM_SLASHRED_1.png", "assets/art/effect/BOOM_SLASHRED_2.png", "assets/art/effect/BOOM_SLASHRED_3.png", "assets/art/effect/BOOM_SLASHRED_4.png", "assets/art/effect/BOOM_SLASHRED_5.png", "assets/art/effect/BOOM_SLASHRED_6.png", "assets/art/effect/BOOM_SLASHRED_7.png", "assets/art/effect/BOOM_SLASHRED_8.png", "assets/art/effect/BOOM_SLASHRED_9.png", "assets/art/effect/BOOM_SLASHRED_10.png" };
-static const AssetOffset OFFSETS_154[] = { { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f } };
-static const char *const FRAMES_155[] = { "assets/art/effect/BOOM_SPARK_1.png", "assets/art/effect/BOOM_SPARK_2.png", "assets/art/effect/BOOM_SPARK_3.png", "assets/art/effect/BOOM_SPARK_4.png", "assets/art/effect/BOOM_SPARK_5.png", "assets/art/effect/BOOM_SPARK_6.png", "assets/art/effect/BOOM_SPARK_7.png", "assets/art/effect/BOOM_SPARK_8.png", "assets/art/effect/BOOM_SPARK_9.png", "assets/art/effect/BOOM_SPARK_10.png", "assets/art/effect/BOOM_SPARK_11.png", "assets/art/effect/BOOM_SPARK_12.png", "assets/art/effect/BOOM_SPARK_13.png", "assets/art/effect/BOOM_SPARK_14.png", "assets/art/effect/BOOM_SPARK_15.png", "assets/art/effect/BOOM_SPARK_16.png", "assets/art/effect/BOOM_SPARK_17.png", "assets/art/effect/BOOM_SPARK_18.png", "assets/art/effect/BOOM_SPARK_18.png", "assets/art/effect/BOOM_SPARK_18.png", "assets/art/effect/BOOM_SPARK_1.png", "assets/art/effect/BOOM_SPARK_2.png", "assets/art/effect/BOOM_SPARK_3.png", "assets/art/effect/BOOM_SPARK_4.png", "assets/art/effect/BOOM_SPARK_18.png" };
+static const char *const FRAMES_138[] = { "assets/art/item/Armor_of_the_Teacher.png" };
+static const AssetOffset OFFSETS_138[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_139[] = { "assets/art/item/Assasin's_Tunic.png" };
+static const AssetOffset OFFSETS_139[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_140[] = { "assets/art/item/Assassin's_Armor.png" };
+static const AssetOffset OFFSETS_140[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_141[] = { "assets/art/item/Assassin's_Boots.png" };
+static const AssetOffset OFFSETS_141[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_142[] = { "assets/art/item/Assassin's_Gloves.png" };
+static const AssetOffset OFFSETS_142[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_143[] = { "assets/art/item/Assassin's_Helm.png" };
+static const AssetOffset OFFSETS_143[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_144[] = { "assets/art/item/Assassin's_Leggings.png" };
+static const AssetOffset OFFSETS_144[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_145[] = { "assets/art/item/Assassination.png" };
+static const AssetOffset OFFSETS_145[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_146[] = { "assets/art/buff/BLACKOUT.png" };
+static const AssetOffset OFFSETS_146[] = { { 5.950000f, 10.950000f } };
+static const char *const FRAMES_147[] = { "assets/art/buff/BLOCK1.png" };
+static const AssetOffset OFFSETS_147[] = { { 7.050000f, 11.600000f } };
+static const char *const FRAMES_148[] = { "assets/art/effect/BOOM1_1.png", "assets/art/effect/BOOM1_2.png", "assets/art/effect/BOOM1_3.png", "assets/art/effect/BOOM1_4.png", "assets/art/effect/BOOM1_5.png", "assets/art/effect/BOOM1_6.png", "assets/art/effect/BOOM1_7.png", "assets/art/effect/BOOM1_8.png", "assets/art/effect/BOOM1_9.png", "assets/art/effect/BOOM1_10.png", "assets/art/effect/BOOM1_11.png", "assets/art/effect/BOOM1_12.png", "assets/art/effect/BOOM1_13.png", "assets/art/effect/BOOM1_14.png", "assets/art/effect/BOOM1_15.png", "assets/art/effect/BOOM1_16.png", "assets/art/effect/BOOM1_17.png", "assets/art/effect/BOOM1_18.png", "assets/art/effect/BOOM1_19.png", "assets/art/effect/BOOM1_20.png", "assets/art/effect/BOOM1_21.png", "assets/art/effect/BOOM1_22.png", "assets/art/effect/BOOM1_23.png", "assets/art/effect/BOOM1_24.png", "assets/art/effect/BOOM1_25.png", "assets/art/effect/BOOM1_26.png", "assets/art/effect/BOOM1_27.png", "assets/art/effect/BOOM1_28.png", "assets/art/effect/BOOM1_29.png", "assets/art/effect/BOOM1_30.png", "assets/art/effect/BOOM1_31.png", "assets/art/effect/BOOM1_32.png", "assets/art/effect/BOOM1_33.png", "assets/art/effect/BOOM1_34.png", "assets/art/effect/BOOM1_34.png", "assets/art/effect/BOOM1_34.png" };
+static const AssetOffset OFFSETS_148[] = { { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f }, { 279.150000f, 63.450000f } };
+static const char *const FRAMES_149[] = { "assets/art/effect/BOOM2_1.png", "assets/art/effect/BOOM2_2.png", "assets/art/effect/BOOM2_3.png", "assets/art/effect/BOOM2_4.png", "assets/art/effect/BOOM2_5.png", "assets/art/effect/BOOM2_6.png", "assets/art/effect/BOOM2_7.png", "assets/art/effect/BOOM2_8.png", "assets/art/effect/BOOM2_9.png", "assets/art/effect/BOOM2_10.png", "assets/art/effect/BOOM2_11.png", "assets/art/effect/BOOM2_12.png", "assets/art/effect/BOOM2_13.png", "assets/art/effect/BOOM2_14.png", "assets/art/effect/BOOM2_15.png", "assets/art/effect/BOOM2_16.png", "assets/art/effect/BOOM2_17.png", "assets/art/effect/BOOM2_18.png", "assets/art/effect/BOOM2_19.png", "assets/art/effect/BOOM2_20.png", "assets/art/effect/BOOM2_21.png", "assets/art/effect/BOOM2_22.png", "assets/art/effect/BOOM2_23.png", "assets/art/effect/BOOM2_24.png", "assets/art/effect/BOOM2_25.png", "assets/art/effect/BOOM2_26.png", "assets/art/effect/BOOM2_27.png", "assets/art/effect/BOOM2_28.png", "assets/art/effect/BOOM2_29.png", "assets/art/effect/BOOM2_30.png", "assets/art/effect/BOOM2_31.png", "assets/art/effect/BOOM2_32.png", "assets/art/effect/BOOM2_33.png", "assets/art/effect/BOOM2_33.png", "assets/art/effect/BOOM2_33.png", "assets/art/effect/BOOM2_33.png" };
+static const AssetOffset OFFSETS_149[] = { { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f }, { 172.200000f, 88.800000f } };
+static const char *const FRAMES_150[] = { "assets/art/effect/BOOM3_1.png", "assets/art/effect/BOOM3_2.png", "assets/art/effect/BOOM3_3.png", "assets/art/effect/BOOM3_4.png", "assets/art/effect/BOOM3_5.png", "assets/art/effect/BOOM3_6.png", "assets/art/effect/BOOM3_7.png", "assets/art/effect/BOOM3_8.png", "assets/art/effect/BOOM3_9.png", "assets/art/effect/BOOM3_10.png", "assets/art/effect/BOOM3_11.png", "assets/art/effect/BOOM3_12.png", "assets/art/effect/BOOM3_13.png", "assets/art/effect/BOOM3_14.png", "assets/art/effect/BOOM3_15.png", "assets/art/effect/BOOM3_16.png", "assets/art/effect/BOOM3_17.png", "assets/art/effect/BOOM3_18.png", "assets/art/effect/BOOM3_18.png", "assets/art/effect/BOOM3_18.png", "assets/art/effect/BOOM3_1.png", "assets/art/effect/BOOM3_2.png", "assets/art/effect/BOOM3_3.png", "assets/art/effect/BOOM3_4.png", "assets/art/effect/BOOM3_18.png" };
+static const AssetOffset OFFSETS_150[] = { { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f } };
+static const char *const FRAMES_151[] = { "assets/art/effect/BOOM_DARK_1.png", "assets/art/effect/BOOM_DARK_2.png", "assets/art/effect/BOOM_DARK_3.png", "assets/art/effect/BOOM_DARK_4.png", "assets/art/effect/BOOM_DARK_5.png", "assets/art/effect/BOOM_DARK_6.png", "assets/art/effect/BOOM_DARK_7.png", "assets/art/effect/BOOM_DARK_8.png", "assets/art/effect/BOOM_DARK_9.png", "assets/art/effect/BOOM_DARK_10.png", "assets/art/effect/BOOM_DARK_11.png", "assets/art/effect/BOOM_DARK_12.png", "assets/art/effect/BOOM_DARK_13.png", "assets/art/effect/BOOM_DARK_14.png", "assets/art/effect/BOOM_DARK_15.png", "assets/art/effect/BOOM_DARK_16.png", "assets/art/effect/BOOM_DARK_17.png", "assets/art/effect/BOOM_DARK_18.png", "assets/art/effect/BOOM_DARK_18.png", "assets/art/effect/BOOM_DARK_18.png", "assets/art/effect/BOOM_DARK_1.png", "assets/art/effect/BOOM_DARK_2.png", "assets/art/effect/BOOM_DARK_3.png", "assets/art/effect/BOOM_DARK_4.png", "assets/art/effect/BOOM_DARK_18.png" };
+static const AssetOffset OFFSETS_151[] = { { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f } };
+static const char *const FRAMES_152[] = { "assets/art/effect/BOOM_HEAL_1.png", "assets/art/effect/BOOM_HEAL_2.png", "assets/art/effect/BOOM_HEAL_3.png", "assets/art/effect/BOOM_HEAL_4.png", "assets/art/effect/BOOM_HEAL_5.png", "assets/art/effect/BOOM_HEAL_6.png", "assets/art/effect/BOOM_HEAL_7.png", "assets/art/effect/BOOM_HEAL_8.png", "assets/art/effect/BOOM_HEAL_9.png", "assets/art/effect/BOOM_HEAL_10.png", "assets/art/effect/BOOM_HEAL_11.png", "assets/art/effect/BOOM_HEAL_12.png", "assets/art/effect/BOOM_HEAL_13.png", "assets/art/effect/BOOM_HEAL_14.png", "assets/art/effect/BOOM_HEAL_15.png", "assets/art/effect/BOOM_HEAL_15.png" };
+static const AssetOffset OFFSETS_152[] = { { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f } };
+static const char *const FRAMES_153[] = { "assets/art/effect/BOOM_HEAL2_1.png", "assets/art/effect/BOOM_HEAL2_2.png", "assets/art/effect/BOOM_HEAL2_3.png", "assets/art/effect/BOOM_HEAL2_4.png", "assets/art/effect/BOOM_HEAL2_5.png", "assets/art/effect/BOOM_HEAL2_6.png", "assets/art/effect/BOOM_HEAL2_7.png", "assets/art/effect/BOOM_HEAL2_8.png", "assets/art/effect/BOOM_HEAL2_9.png", "assets/art/effect/BOOM_HEAL2_10.png", "assets/art/effect/BOOM_HEAL2_11.png", "assets/art/effect/BOOM_HEAL2_12.png", "assets/art/effect/BOOM_HEAL2_13.png", "assets/art/effect/BOOM_HEAL2_14.png", "assets/art/effect/BOOM_HEAL2_15.png", "assets/art/effect/BOOM_HEAL2_16.png", "assets/art/effect/BOOM_HEAL2_17.png", "assets/art/effect/BOOM_HEAL2_18.png", "assets/art/effect/BOOM_HEAL2_18.png", "assets/art/effect/BOOM_HEAL2_18.png", "assets/art/effect/BOOM_HEAL2_1.png", "assets/art/effect/BOOM_HEAL2_2.png", "assets/art/effect/BOOM_HEAL2_3.png", "assets/art/effect/BOOM_HEAL2_4.png", "assets/art/effect/BOOM_HEAL2_18.png" };
+static const AssetOffset OFFSETS_153[] = { { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f } };
+static const char *const FRAMES_154[] = { "assets/art/effect/BOOM_POWERUP_1.png", "assets/art/effect/BOOM_POWERUP_2.png", "assets/art/effect/BOOM_POWERUP_3.png", "assets/art/effect/BOOM_POWERUP_4.png", "assets/art/effect/BOOM_POWERUP_5.png", "assets/art/effect/BOOM_POWERUP_6.png", "assets/art/effect/BOOM_POWERUP_7.png", "assets/art/effect/BOOM_POWERUP_8.png", "assets/art/effect/BOOM_POWERUP_9.png", "assets/art/effect/BOOM_POWERUP_10.png", "assets/art/effect/BOOM_POWERUP_11.png", "assets/art/effect/BOOM_POWERUP_12.png", "assets/art/effect/BOOM_POWERUP_13.png", "assets/art/effect/BOOM_POWERUP_14.png", "assets/art/effect/BOOM_POWERUP_15.png", "assets/art/effect/BOOM_POWERUP_15.png" };
+static const AssetOffset OFFSETS_154[] = { { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f }, { 50.000000f, 50.000000f } };
+static const char *const FRAMES_155[] = { "assets/art/effect/BOOM_RED_1.png", "assets/art/effect/BOOM_RED_2.png", "assets/art/effect/BOOM_RED_3.png", "assets/art/effect/BOOM_RED_4.png", "assets/art/effect/BOOM_RED_5.png", "assets/art/effect/BOOM_RED_6.png", "assets/art/effect/BOOM_RED_7.png", "assets/art/effect/BOOM_RED_8.png", "assets/art/effect/BOOM_RED_9.png", "assets/art/effect/BOOM_RED_10.png", "assets/art/effect/BOOM_RED_11.png", "assets/art/effect/BOOM_RED_12.png", "assets/art/effect/BOOM_RED_13.png", "assets/art/effect/BOOM_RED_14.png", "assets/art/effect/BOOM_RED_15.png", "assets/art/effect/BOOM_RED_16.png", "assets/art/effect/BOOM_RED_17.png", "assets/art/effect/BOOM_RED_18.png", "assets/art/effect/BOOM_RED_18.png", "assets/art/effect/BOOM_RED_18.png", "assets/art/effect/BOOM_RED_1.png", "assets/art/effect/BOOM_RED_2.png", "assets/art/effect/BOOM_RED_3.png", "assets/art/effect/BOOM_RED_4.png", "assets/art/effect/BOOM_RED_18.png" };
 static const AssetOffset OFFSETS_155[] = { { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f } };
-static const char *const FRAMES_156[] = { "assets/art/effect/BOOM_SPARKBLUE_1.png", "assets/art/effect/BOOM_SPARKBLUE_2.png", "assets/art/effect/BOOM_SPARKBLUE_3.png", "assets/art/effect/BOOM_SPARKBLUE_4.png", "assets/art/effect/BOOM_SPARKBLUE_5.png", "assets/art/effect/BOOM_SPARKBLUE_6.png", "assets/art/effect/BOOM_SPARKBLUE_7.png", "assets/art/effect/BOOM_SPARKBLUE_8.png", "assets/art/effect/BOOM_SPARKBLUE_9.png", "assets/art/effect/BOOM_SPARKBLUE_10.png", "assets/art/effect/BOOM_SPARKBLUE_11.png", "assets/art/effect/BOOM_SPARKBLUE_12.png", "assets/art/effect/BOOM_SPARKBLUE_13.png", "assets/art/effect/BOOM_SPARKBLUE_14.png", "assets/art/effect/BOOM_SPARKBLUE_15.png", "assets/art/effect/BOOM_SPARKBLUE_16.png", "assets/art/effect/BOOM_SPARKBLUE_17.png", "assets/art/effect/BOOM_SPARKBLUE_18.png", "assets/art/effect/BOOM_SPARKBLUE_18.png", "assets/art/effect/BOOM_SPARKBLUE_18.png", "assets/art/effect/BOOM_SPARKBLUE_1.png", "assets/art/effect/BOOM_SPARKBLUE_2.png", "assets/art/effect/BOOM_SPARKBLUE_3.png", "assets/art/effect/BOOM_SPARKBLUE_4.png", "assets/art/effect/BOOM_SPARKBLUE_18.png" };
-static const AssetOffset OFFSETS_156[] = { { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f } };
-static const char *const FRAMES_157[] = { "assets/art/buff/BURNING.png" };
-static const AssetOffset OFFSETS_157[] = { { 5.950000f, 10.950000f } };
-static const char *const FRAMES_158[] = { "assets/art/buff/BURNS.png" };
-static const AssetOffset OFFSETS_158[] = { { 5.000000f, 9.300000f } };
-static const char *const FRAMES_159[] = { "assets/art/item/Balance.png" };
-static const AssetOffset OFFSETS_159[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_160[] = { "assets/art/portrait/Baron_Brixius.png" };
-static const AssetOffset OFFSETS_160[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_161[] = { "assets/art/sound/BaronDie.mp3" };
-static const char *const FRAMES_162[] = { "assets/art/sound/BaronHit1.mp3" };
-static const char *const FRAMES_163[] = { "assets/art/sound/BaronHit2.mp3" };
-static const char *const FRAMES_164[] = { "assets/art/sound/BaronHit3.mp3" };
-static const char *const FRAMES_165[] = { "assets/art/sound/BattleMusic1loopable.mp3" };
-static const char *const FRAMES_166[] = { "assets/art/sound/BattleMusic2loopable.mp3" };
-static const char *const FRAMES_167[] = { "assets/art/item/Blade_of_Light.png" };
+static const char *const FRAMES_156[] = { "assets/art/effect/BOOM_SHIELD_1.png", "assets/art/effect/BOOM_SHIELD_2.png", "assets/art/effect/BOOM_SHIELD_3.png", "assets/art/effect/BOOM_SHIELD_4.png", "assets/art/effect/BOOM_SHIELD_5.png", "assets/art/effect/BOOM_SHIELD_6.png", "assets/art/effect/BOOM_SHIELD_7.png", "assets/art/effect/BOOM_SHIELD_8.png", "assets/art/effect/BOOM_SHIELD_9.png", "assets/art/effect/BOOM_SHIELD_10.png", "assets/art/effect/BOOM_SHIELD_11.png", "assets/art/effect/BOOM_SHIELD_12.png", "assets/art/effect/BOOM_SHIELD_13.png", "assets/art/effect/BOOM_SHIELD_14.png", "assets/art/effect/BOOM_SHIELD_15.png", "assets/art/effect/BOOM_SHIELD_16.png", "assets/art/effect/BOOM_SHIELD_17.png", "assets/art/effect/BOOM_SHIELD_18.png", "assets/art/effect/BOOM_SHIELD_19.png", "assets/art/effect/BOOM_SHIELD_19.png" };
+static const AssetOffset OFFSETS_156[] = { { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f }, { 85.500000f, 89.000000f } };
+static const char *const FRAMES_157[] = { "assets/art/effect/BOOM_SLASH_1.png", "assets/art/effect/BOOM_SLASH_2.png", "assets/art/effect/BOOM_SLASH_3.png", "assets/art/effect/BOOM_SLASH_4.png", "assets/art/effect/BOOM_SLASH_5.png", "assets/art/effect/BOOM_SLASH_6.png", "assets/art/effect/BOOM_SLASH_7.png", "assets/art/effect/BOOM_SLASH_8.png", "assets/art/effect/BOOM_SLASH_9.png", "assets/art/effect/BOOM_SLASH_10.png", "assets/art/effect/BOOM_SLASH_11.png", "assets/art/effect/BOOM_SLASH_12.png", "assets/art/effect/BOOM_SLASH_13.png", "assets/art/effect/BOOM_SLASH_14.png", "assets/art/effect/BOOM_SLASH_15.png", "assets/art/effect/BOOM_SLASH_1.png", "assets/art/effect/BOOM_SLASH_2.png", "assets/art/effect/BOOM_SLASH_3.png", "assets/art/effect/BOOM_SLASH_4.png", "assets/art/effect/BOOM_SLASH_5.png", "assets/art/effect/BOOM_SLASH_6.png", "assets/art/effect/BOOM_SLASH_7.png", "assets/art/effect/BOOM_SLASH_8.png", "assets/art/effect/BOOM_SLASH_9.png", "assets/art/effect/BOOM_SLASH_10.png" };
+static const AssetOffset OFFSETS_157[] = { { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f } };
+static const char *const FRAMES_158[] = { "assets/art/effect/BOOM_SLASH2_1.png", "assets/art/effect/BOOM_SLASH2_2.png", "assets/art/effect/BOOM_SLASH2_3.png", "assets/art/effect/BOOM_SLASH2_4.png", "assets/art/effect/BOOM_SLASH2_5.png", "assets/art/effect/BOOM_SLASH2_6.png", "assets/art/effect/BOOM_SLASH2_7.png", "assets/art/effect/BOOM_SLASH2_8.png", "assets/art/effect/BOOM_SLASH2_9.png", "assets/art/effect/BOOM_SLASH2_10.png", "assets/art/effect/BOOM_SLASH2_11.png", "assets/art/effect/BOOM_SLASH2_11.png", "assets/art/effect/BOOM_SLASH2_13.png", "assets/art/effect/BOOM_SLASH2_1.png", "assets/art/effect/BOOM_SLASH2_2.png", "assets/art/effect/BOOM_SLASH2_3.png", "assets/art/effect/BOOM_SLASH2_4.png", "assets/art/effect/BOOM_SLASH2_5.png", "assets/art/effect/BOOM_SLASH2_6.png", "assets/art/effect/BOOM_SLASH2_7.png", "assets/art/effect/BOOM_SLASH2_8.png", "assets/art/effect/BOOM_SLASH2_9.png", "assets/art/effect/BOOM_SLASH2_10.png", "assets/art/effect/BOOM_SLASH2_11.png", "assets/art/effect/BOOM_SLASH2_13.png" };
+static const AssetOffset OFFSETS_158[] = { { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f }, { 105.550000f, 97.250000f } };
+static const char *const FRAMES_159[] = { "assets/art/effect/BOOM_SLASHBLUE_1.png", "assets/art/effect/BOOM_SLASHBLUE_2.png", "assets/art/effect/BOOM_SLASHBLUE_3.png", "assets/art/effect/BOOM_SLASHBLUE_4.png", "assets/art/effect/BOOM_SLASHBLUE_5.png", "assets/art/effect/BOOM_SLASHBLUE_6.png", "assets/art/effect/BOOM_SLASHBLUE_7.png", "assets/art/effect/BOOM_SLASHBLUE_8.png", "assets/art/effect/BOOM_SLASHBLUE_9.png", "assets/art/effect/BOOM_SLASHBLUE_10.png", "assets/art/effect/BOOM_SLASHBLUE_11.png", "assets/art/effect/BOOM_SLASHBLUE_12.png", "assets/art/effect/BOOM_SLASHBLUE_13.png", "assets/art/effect/BOOM_SLASHBLUE_14.png", "assets/art/effect/BOOM_SLASHBLUE_15.png", "assets/art/effect/BOOM_SLASHBLUE_1.png", "assets/art/effect/BOOM_SLASHBLUE_2.png", "assets/art/effect/BOOM_SLASHBLUE_3.png", "assets/art/effect/BOOM_SLASHBLUE_4.png", "assets/art/effect/BOOM_SLASHBLUE_5.png", "assets/art/effect/BOOM_SLASHBLUE_6.png", "assets/art/effect/BOOM_SLASHBLUE_7.png", "assets/art/effect/BOOM_SLASHBLUE_8.png", "assets/art/effect/BOOM_SLASHBLUE_9.png", "assets/art/effect/BOOM_SLASHBLUE_10.png" };
+static const AssetOffset OFFSETS_159[] = { { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f } };
+static const char *const FRAMES_160[] = { "assets/art/effect/BOOM_SLASHGREEN_1.png", "assets/art/effect/BOOM_SLASHGREEN_2.png", "assets/art/effect/BOOM_SLASHGREEN_3.png", "assets/art/effect/BOOM_SLASHGREEN_4.png", "assets/art/effect/BOOM_SLASHGREEN_5.png", "assets/art/effect/BOOM_SLASHGREEN_6.png", "assets/art/effect/BOOM_SLASHGREEN_7.png", "assets/art/effect/BOOM_SLASHGREEN_8.png", "assets/art/effect/BOOM_SLASHGREEN_9.png", "assets/art/effect/BOOM_SLASHGREEN_10.png", "assets/art/effect/BOOM_SLASHGREEN_11.png", "assets/art/effect/BOOM_SLASHGREEN_12.png", "assets/art/effect/BOOM_SLASHGREEN_13.png", "assets/art/effect/BOOM_SLASHGREEN_14.png", "assets/art/effect/BOOM_SLASHGREEN_15.png", "assets/art/effect/BOOM_SLASHGREEN_1.png", "assets/art/effect/BOOM_SLASHGREEN_2.png", "assets/art/effect/BOOM_SLASHGREEN_3.png", "assets/art/effect/BOOM_SLASHGREEN_4.png", "assets/art/effect/BOOM_SLASHGREEN_5.png", "assets/art/effect/BOOM_SLASHGREEN_6.png", "assets/art/effect/BOOM_SLASHGREEN_7.png", "assets/art/effect/BOOM_SLASHGREEN_8.png", "assets/art/effect/BOOM_SLASHGREEN_9.png", "assets/art/effect/BOOM_SLASHGREEN_10.png" };
+static const AssetOffset OFFSETS_160[] = { { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f } };
+static const char *const FRAMES_161[] = { "assets/art/effect/BOOM_SLASHORANGE_1.png", "assets/art/effect/BOOM_SLASHORANGE_2.png", "assets/art/effect/BOOM_SLASHORANGE_3.png", "assets/art/effect/BOOM_SLASHORANGE_4.png", "assets/art/effect/BOOM_SLASHORANGE_5.png", "assets/art/effect/BOOM_SLASHORANGE_6.png", "assets/art/effect/BOOM_SLASHORANGE_7.png", "assets/art/effect/BOOM_SLASHORANGE_8.png", "assets/art/effect/BOOM_SLASHORANGE_9.png", "assets/art/effect/BOOM_SLASHORANGE_10.png", "assets/art/effect/BOOM_SLASHORANGE_11.png", "assets/art/effect/BOOM_SLASHORANGE_12.png", "assets/art/effect/BOOM_SLASHORANGE_13.png", "assets/art/effect/BOOM_SLASHORANGE_14.png", "assets/art/effect/BOOM_SLASHORANGE_15.png", "assets/art/effect/BOOM_SLASHORANGE_1.png", "assets/art/effect/BOOM_SLASHORANGE_2.png", "assets/art/effect/BOOM_SLASHORANGE_3.png", "assets/art/effect/BOOM_SLASHORANGE_4.png", "assets/art/effect/BOOM_SLASHORANGE_5.png", "assets/art/effect/BOOM_SLASHORANGE_6.png", "assets/art/effect/BOOM_SLASHORANGE_7.png", "assets/art/effect/BOOM_SLASHORANGE_8.png", "assets/art/effect/BOOM_SLASHORANGE_9.png", "assets/art/effect/BOOM_SLASHORANGE_10.png" };
+static const AssetOffset OFFSETS_161[] = { { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f } };
+static const char *const FRAMES_162[] = { "assets/art/effect/BOOM_SLASHRED_1.png", "assets/art/effect/BOOM_SLASHRED_2.png", "assets/art/effect/BOOM_SLASHRED_3.png", "assets/art/effect/BOOM_SLASHRED_4.png", "assets/art/effect/BOOM_SLASHRED_5.png", "assets/art/effect/BOOM_SLASHRED_6.png", "assets/art/effect/BOOM_SLASHRED_7.png", "assets/art/effect/BOOM_SLASHRED_8.png", "assets/art/effect/BOOM_SLASHRED_9.png", "assets/art/effect/BOOM_SLASHRED_10.png", "assets/art/effect/BOOM_SLASHRED_11.png", "assets/art/effect/BOOM_SLASHRED_12.png", "assets/art/effect/BOOM_SLASHRED_13.png", "assets/art/effect/BOOM_SLASHRED_14.png", "assets/art/effect/BOOM_SLASHRED_15.png", "assets/art/effect/BOOM_SLASHRED_1.png", "assets/art/effect/BOOM_SLASHRED_2.png", "assets/art/effect/BOOM_SLASHRED_3.png", "assets/art/effect/BOOM_SLASHRED_4.png", "assets/art/effect/BOOM_SLASHRED_5.png", "assets/art/effect/BOOM_SLASHRED_6.png", "assets/art/effect/BOOM_SLASHRED_7.png", "assets/art/effect/BOOM_SLASHRED_8.png", "assets/art/effect/BOOM_SLASHRED_9.png", "assets/art/effect/BOOM_SLASHRED_10.png" };
+static const AssetOffset OFFSETS_162[] = { { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f }, { 127.100000f, 93.500000f } };
+static const char *const FRAMES_163[] = { "assets/art/effect/BOOM_SPARK_1.png", "assets/art/effect/BOOM_SPARK_2.png", "assets/art/effect/BOOM_SPARK_3.png", "assets/art/effect/BOOM_SPARK_4.png", "assets/art/effect/BOOM_SPARK_5.png", "assets/art/effect/BOOM_SPARK_6.png", "assets/art/effect/BOOM_SPARK_7.png", "assets/art/effect/BOOM_SPARK_8.png", "assets/art/effect/BOOM_SPARK_9.png", "assets/art/effect/BOOM_SPARK_10.png", "assets/art/effect/BOOM_SPARK_11.png", "assets/art/effect/BOOM_SPARK_12.png", "assets/art/effect/BOOM_SPARK_13.png", "assets/art/effect/BOOM_SPARK_14.png", "assets/art/effect/BOOM_SPARK_15.png", "assets/art/effect/BOOM_SPARK_16.png", "assets/art/effect/BOOM_SPARK_17.png", "assets/art/effect/BOOM_SPARK_18.png", "assets/art/effect/BOOM_SPARK_18.png", "assets/art/effect/BOOM_SPARK_18.png", "assets/art/effect/BOOM_SPARK_1.png", "assets/art/effect/BOOM_SPARK_2.png", "assets/art/effect/BOOM_SPARK_3.png", "assets/art/effect/BOOM_SPARK_4.png", "assets/art/effect/BOOM_SPARK_18.png" };
+static const AssetOffset OFFSETS_163[] = { { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f } };
+static const char *const FRAMES_164[] = { "assets/art/effect/BOOM_SPARKBLUE_1.png", "assets/art/effect/BOOM_SPARKBLUE_2.png", "assets/art/effect/BOOM_SPARKBLUE_3.png", "assets/art/effect/BOOM_SPARKBLUE_4.png", "assets/art/effect/BOOM_SPARKBLUE_5.png", "assets/art/effect/BOOM_SPARKBLUE_6.png", "assets/art/effect/BOOM_SPARKBLUE_7.png", "assets/art/effect/BOOM_SPARKBLUE_8.png", "assets/art/effect/BOOM_SPARKBLUE_9.png", "assets/art/effect/BOOM_SPARKBLUE_10.png", "assets/art/effect/BOOM_SPARKBLUE_11.png", "assets/art/effect/BOOM_SPARKBLUE_12.png", "assets/art/effect/BOOM_SPARKBLUE_13.png", "assets/art/effect/BOOM_SPARKBLUE_14.png", "assets/art/effect/BOOM_SPARKBLUE_15.png", "assets/art/effect/BOOM_SPARKBLUE_16.png", "assets/art/effect/BOOM_SPARKBLUE_17.png", "assets/art/effect/BOOM_SPARKBLUE_18.png", "assets/art/effect/BOOM_SPARKBLUE_18.png", "assets/art/effect/BOOM_SPARKBLUE_18.png", "assets/art/effect/BOOM_SPARKBLUE_1.png", "assets/art/effect/BOOM_SPARKBLUE_2.png", "assets/art/effect/BOOM_SPARKBLUE_3.png", "assets/art/effect/BOOM_SPARKBLUE_4.png", "assets/art/effect/BOOM_SPARKBLUE_18.png" };
+static const AssetOffset OFFSETS_164[] = { { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f }, { 82.750000f, 69.900000f } };
+static const char *const FRAMES_165[] = { "assets/art/buff/BURNING.png" };
+static const AssetOffset OFFSETS_165[] = { { 5.950000f, 10.950000f } };
+static const char *const FRAMES_166[] = { "assets/art/buff/BURNS.png" };
+static const AssetOffset OFFSETS_166[] = { { 5.000000f, 9.300000f } };
+static const char *const FRAMES_167[] = { "assets/art/item/Balance.png" };
 static const AssetOffset OFFSETS_167[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_168[] = { "assets/art/icon/Blessing_of_Light.png" };
-static const AssetOffset OFFSETS_168[] = { { 15.650000f, 17.100000f } };
-static const char *const FRAMES_169[] = { "assets/art/icon/Block.png" };
-static const AssetOffset OFFSETS_169[] = { { 16.350000f, 13.450000f } };
-static const char *const FRAMES_170[] = { "assets/art/icon/Blood_Focus.png" };
-static const AssetOffset OFFSETS_170[] = { { 12.850000f, 12.200000f } };
-static const char *const FRAMES_171[] = { "assets/art/icon/Blood_Strike.png" };
-static const AssetOffset OFFSETS_171[] = { { 17.150000f, 14.550000f } };
-static const char *const FRAMES_172[] = { "assets/art/item/Bloody_Blade.png" };
-static const AssetOffset OFFSETS_172[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_173[] = { "assets/art/item/Bloody_Dagger.png" };
-static const AssetOffset OFFSETS_173[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_174[] = { "assets/art/item/Boots_of_Stealth.png" };
-static const AssetOffset OFFSETS_174[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_175[] = { "assets/art/icon/Break.png" };
-static const AssetOffset OFFSETS_175[] = { { 24.150000f, 10.450000f } };
-static const char *const FRAMES_176[] = { "assets/art/item/Breaker's_Armor.png" };
-static const AssetOffset OFFSETS_176[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_177[] = { "assets/art/item/Breaker's_Axe.png" };
-static const AssetOffset OFFSETS_177[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_178[] = { "assets/art/item/Breaker's_Boots.png" };
-static const AssetOffset OFFSETS_178[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_179[] = { "assets/art/item/Breaker's_Gloves.png" };
-static const AssetOffset OFFSETS_179[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_180[] = { "assets/art/item/Breaker's_Mask.png" };
+static const char *const FRAMES_168[] = { "assets/art/portrait/Baron_Brixius.png" };
+static const AssetOffset OFFSETS_168[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_169[] = { "assets/art/sound/BaronDie.mp3" };
+static const char *const FRAMES_170[] = { "assets/art/sound/BaronHit1.mp3" };
+static const char *const FRAMES_171[] = { "assets/art/sound/BaronHit2.mp3" };
+static const char *const FRAMES_172[] = { "assets/art/sound/BaronHit3.mp3" };
+static const char *const FRAMES_173[] = { "assets/art/sound/BattleMusic1loopable.mp3" };
+static const char *const FRAMES_174[] = { "assets/art/sound/BattleMusic2loopable.mp3" };
+static const char *const FRAMES_175[] = { "assets/art/item/Blade_of_Light.png" };
+static const AssetOffset OFFSETS_175[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_176[] = { "assets/art/icon/Blessing_of_Light.png" };
+static const AssetOffset OFFSETS_176[] = { { 15.650000f, 17.100000f } };
+static const char *const FRAMES_177[] = { "assets/art/icon/Block.png" };
+static const AssetOffset OFFSETS_177[] = { { 16.350000f, 13.450000f } };
+static const char *const FRAMES_178[] = { "assets/art/icon/Blood_Focus.png" };
+static const AssetOffset OFFSETS_178[] = { { 12.850000f, 12.200000f } };
+static const char *const FRAMES_179[] = { "assets/art/icon/Blood_Strike.png" };
+static const AssetOffset OFFSETS_179[] = { { 17.150000f, 14.550000f } };
+static const char *const FRAMES_180[] = { "assets/art/item/Bloody_Blade.png" };
 static const AssetOffset OFFSETS_180[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_181[] = { "assets/art/item/Breaker's_Pantyhose.png" };
+static const char *const FRAMES_181[] = { "assets/art/item/Bloody_Dagger.png" };
 static const AssetOffset OFFSETS_181[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_182[] = { "assets/art/item/Broken_Totem.png" };
+static const char *const FRAMES_182[] = { "assets/art/item/Boots_of_Stealth.png" };
 static const AssetOffset OFFSETS_182[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_183[] = { "assets/art/buff/COLDSOUL.png" };
-static const AssetOffset OFFSETS_183[] = { { 6.100000f, 14.350000f } };
-static const char *const FRAMES_184[] = { "assets/art/buff/CRIPPLE1.png" };
-static const AssetOffset OFFSETS_184[] = { { 6.100000f, 14.350000f } };
-static const char *const FRAMES_185[] = { "assets/art/buff/CRIPPLE2.png" };
-static const AssetOffset OFFSETS_185[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_186[] = { "assets/art/buff/CRIPPLE3.png" };
-static const AssetOffset OFFSETS_186[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_187[] = { "assets/art/item/Cannibal's_Hunger.png" };
+static const char *const FRAMES_183[] = { "assets/art/icon/Break.png" };
+static const AssetOffset OFFSETS_183[] = { { 24.150000f, 10.450000f } };
+static const char *const FRAMES_184[] = { "assets/art/item/Breaker's_Armor.png" };
+static const AssetOffset OFFSETS_184[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_185[] = { "assets/art/item/Breaker's_Axe.png" };
+static const AssetOffset OFFSETS_185[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_186[] = { "assets/art/item/Breaker's_Boots.png" };
+static const AssetOffset OFFSETS_186[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_187[] = { "assets/art/item/Breaker's_Gloves.png" };
 static const AssetOffset OFFSETS_187[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_188[] = { "assets/art/icon/Cell_Reformation.png" };
-static const AssetOffset OFFSETS_188[] = { { 27.100000f, 28.700000f } };
-static const char *const FRAMES_189[] = { "assets/art/item/Champion's_Trophy.png" };
+static const char *const FRAMES_188[] = { "assets/art/item/Breaker's_Mask.png" };
+static const AssetOffset OFFSETS_188[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_189[] = { "assets/art/item/Breaker's_Pantyhose.png" };
 static const AssetOffset OFFSETS_189[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_190[] = { "assets/art/sound/Click2putdown.mp3" };
-static const char *const FRAMES_191[] = { "assets/art/sound/Click3pickup.mp3" };
-static const char *const FRAMES_192[] = { "assets/art/item/Cold_Steel_Leggings.png" };
-static const AssetOffset OFFSETS_192[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_193[] = { "assets/art/item/Convoy_Package.png" };
-static const AssetOffset OFFSETS_193[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_194[] = { "assets/art/icon/Coup_De_Grace.png" };
-static const AssetOffset OFFSETS_194[] = { { 19.700000f, 20.200000f } };
-static const char *const FRAMES_195[] = { "assets/art/icon/Cripple.png" };
-static const AssetOffset OFFSETS_195[] = { { 13.000000f, 12.200000f } };
-static const char *const FRAMES_196[] = { "assets/art/item/Crow_Bar.png" };
-static const AssetOffset OFFSETS_196[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_197[] = { "assets/art/item/Crown_of_Frozen_Shadows.png" };
+static const char *const FRAMES_190[] = { "assets/art/item/Broken_Totem.png" };
+static const AssetOffset OFFSETS_190[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_191[] = { "assets/art/buff/COLDSOUL.png" };
+static const AssetOffset OFFSETS_191[] = { { 6.100000f, 14.350000f } };
+static const char *const FRAMES_192[] = { "assets/art/buff/CRIPPLE1.png" };
+static const AssetOffset OFFSETS_192[] = { { 6.100000f, 14.350000f } };
+static const char *const FRAMES_193[] = { "assets/art/buff/CRIPPLE2.png" };
+static const AssetOffset OFFSETS_193[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_194[] = { "assets/art/buff/CRIPPLE3.png" };
+static const AssetOffset OFFSETS_194[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_195[] = { "assets/art/item/Cannibal's_Hunger.png" };
+static const AssetOffset OFFSETS_195[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_196[] = { "assets/art/icon/Cell_Reformation.png" };
+static const AssetOffset OFFSETS_196[] = { { 27.100000f, 28.700000f } };
+static const char *const FRAMES_197[] = { "assets/art/item/Champion's_Trophy.png" };
 static const AssetOffset OFFSETS_197[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_198[] = { "assets/art/buff/DARKREGEN.png" };
-static const AssetOffset OFFSETS_198[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_199[] = { "assets/art/background/DAY.png" };
-static const AssetOffset OFFSETS_199[] = { { 403.250000f, 183.100000f } };
-static const char *const FRAMES_200[] = { "assets/art/background/DAY2.png" };
-static const AssetOffset OFFSETS_200[] = { { 403.250000f, 183.100000f } };
-static const char *const FRAMES_201[] = { "assets/art/buff/DECAY.png" };
-static const AssetOffset OFFSETS_201[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_202[] = { "assets/art/buff/DOCTOR.png" };
-static const AssetOffset OFFSETS_202[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_203[] = { "assets/art/item/Dead_Peacock.png" };
-static const AssetOffset OFFSETS_203[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_204[] = { "assets/art/item/Deep_Sea_Greaves.png" };
+static const char *const FRAMES_198[] = { "assets/art/sound/Click2putdown.mp3" };
+static const char *const FRAMES_199[] = { "assets/art/sound/Click3pickup.mp3" };
+static const char *const FRAMES_200[] = { "assets/art/item/Cold_Steel_Leggings.png" };
+static const AssetOffset OFFSETS_200[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_201[] = { "assets/art/item/Convoy_Package.png" };
+static const AssetOffset OFFSETS_201[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_202[] = { "assets/art/icon/Coup_De_Grace.png" };
+static const AssetOffset OFFSETS_202[] = { { 19.700000f, 20.200000f } };
+static const char *const FRAMES_203[] = { "assets/art/icon/Cripple.png" };
+static const AssetOffset OFFSETS_203[] = { { 13.000000f, 12.200000f } };
+static const char *const FRAMES_204[] = { "assets/art/item/Crow_Bar.png" };
 static const AssetOffset OFFSETS_204[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_205[] = { "assets/art/item/Destroyer's_Armor.png" };
+static const char *const FRAMES_205[] = { "assets/art/item/Crown_of_Frozen_Shadows.png" };
 static const AssetOffset OFFSETS_205[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_206[] = { "assets/art/item/Destroyer's_Boots.png" };
-static const AssetOffset OFFSETS_206[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_207[] = { "assets/art/item/Destroyer's_Gloves.png" };
-static const AssetOffset OFFSETS_207[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_208[] = { "assets/art/item/Destroyer's_Helm.png" };
-static const AssetOffset OFFSETS_208[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_209[] = { "assets/art/item/Destroyer's_Leggings.png" };
-static const AssetOffset OFFSETS_209[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_210[] = { "assets/art/item/Destruction.png" };
-static const AssetOffset OFFSETS_210[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_211[] = { "assets/art/sound/Die1.mp3" };
-static const char *const FRAMES_212[] = { "assets/art/icon/Disrupt.png" };
-static const AssetOffset OFFSETS_212[] = { { 12.600000f, 11.500000f } };
-static const char *const FRAMES_213[] = { "assets/art/portrait/Dokebi_the_Striker.png" };
-static const AssetOffset OFFSETS_213[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_214[] = { "assets/art/sound/DuxDie.mp3" };
-static const char *const FRAMES_215[] = { "assets/art/sound/DuxHit1.mp3" };
-static const char *const FRAMES_216[] = { "assets/art/sound/DuxHit2.mp3" };
-static const char *const FRAMES_217[] = { "assets/art/sound/DuxHit3.mp3" };
-static const char *const FRAMES_218[] = { "assets/art/sound/ElectricHit.mp3" };
-static const char *const FRAMES_219[] = { "assets/art/icon/Electro_Bolt.png" };
-static const AssetOffset OFFSETS_219[] = { { 12.850000f, 15.400000f } };
-static const char *const FRAMES_220[] = { "assets/art/portrait/Elite_Medic.png" };
-static const AssetOffset OFFSETS_220[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_221[] = { "assets/art/item/Engineering_Gloves.png" };
-static const AssetOffset OFFSETS_221[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_222[] = { "assets/art/item/Eternity.png" };
-static const AssetOffset OFFSETS_222[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_223[] = { "assets/art/sound/Explode.mp3" };
-static const char *const FRAMES_224[] = { "assets/art/buff/FATALFLAW.png" };
-static const AssetOffset OFFSETS_224[] = { { 5.950000f, 10.100000f } };
-static const char *const FRAMES_225[] = { "assets/art/buff/FATE.png" };
-static const AssetOffset OFFSETS_225[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_226[] = { "assets/art/buff/FIRESHOCK.png" };
-static const AssetOffset OFFSETS_226[] = { { 5.950000f, 10.950000f } };
-static const char *const FRAMES_227[] = { "assets/art/doll/F_SARM_SIX.png" };
-static const AssetOffset OFFSETS_227[] = { { 2.150000f, 8.700000f } };
-static const char *const FRAMES_228[] = { "assets/art/doll/F_SARM_THREE.png" };
-static const AssetOffset OFFSETS_228[] = { { 2.150000f, 8.700000f } };
-static const char *const FRAMES_229[] = { "assets/art/doll/F_SCHEST_SIX.png" };
-static const AssetOffset OFFSETS_229[] = { { 8.650000f, 17.700000f } };
-static const char *const FRAMES_230[] = { "assets/art/doll/F_SCHEST_THREE.png" };
-static const AssetOffset OFFSETS_230[] = { { 8.650000f, 16.400000f } };
-static const char *const FRAMES_231[] = { "assets/art/doll/F_SFOOT_SIX.png" };
-static const AssetOffset OFFSETS_231[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_232[] = { "assets/art/doll/F_SFOOT_THREE.png" };
-static const AssetOffset OFFSETS_232[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_233[] = { "assets/art/doll/F_SHAND_SIX.png" };
-static const AssetOffset OFFSETS_233[] = { { 2.700000f, 9.150000f } };
-static const char *const FRAMES_234[] = { "assets/art/doll/F_SHAND_THREE.png" };
-static const AssetOffset OFFSETS_234[] = { { 2.700000f, 9.150000f } };
-static const char *const FRAMES_235[] = { "assets/art/doll/F_SHEAD_SIX.png" };
-static const AssetOffset OFFSETS_235[] = { { 2.250000f, 6.250000f } };
-static const char *const FRAMES_236[] = { "assets/art/doll/F_SHEAD_THREE.png" };
-static const AssetOffset OFFSETS_236[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_237[] = { "assets/art/doll/F_SLEG2_SIX.png" };
-static const AssetOffset OFFSETS_237[] = { { 3.600000f, 15.200000f } };
-static const char *const FRAMES_238[] = { "assets/art/doll/F_SLEG2_THREE.png" };
-static const AssetOffset OFFSETS_238[] = { { 3.600000f, 15.200000f } };
-static const char *const FRAMES_239[] = { "assets/art/item/Fire_Axe.png" };
-static const AssetOffset OFFSETS_239[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_240[] = { "assets/art/icon/Flame_Blast.png" };
-static const AssetOffset OFFSETS_240[] = { { 12.850000f, 14.600000f } };
-static const char *const FRAMES_241[] = { "assets/art/icon/Flame_Strike.png" };
-static const AssetOffset OFFSETS_241[] = { { 12.850000f, 19.900000f } };
-static const char *const FRAMES_242[] = { "assets/art/item/Footguard_of_the_Shore.png" };
-static const AssetOffset OFFSETS_242[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_243[] = { "assets/art/sound/Forcefield.mp3" };
-static const char *const FRAMES_244[] = { "assets/art/icon/Frost_Bolt.png" };
-static const AssetOffset OFFSETS_244[] = { { 32.500000f, 28.700000f } };
-static const char *const FRAMES_245[] = { "assets/art/item/Frost_Lantern.png" };
-static const AssetOffset OFFSETS_245[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_246[] = { "assets/art/portrait/Frost_Zombie.png" };
-static const AssetOffset OFFSETS_246[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_247[] = { "assets/art/portrait/Galiant_the_Paladin.png" };
-static const AssetOffset OFFSETS_247[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_248[] = { "assets/art/sound/GaliantDie.mp3" };
-static const char *const FRAMES_249[] = { "assets/art/sound/GaliantHit1.mp3" };
-static const char *const FRAMES_250[] = { "assets/art/sound/GaliantHit2.mp3" };
-static const char *const FRAMES_251[] = { "assets/art/sound/GaliantHit3.mp3" };
-static const char *const FRAMES_252[] = { "assets/art/portrait/Ghost_Assassin.png" };
-static const AssetOffset OFFSETS_252[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_253[] = { "assets/art/item/Ghost_Medallion.png" };
+static const char *const FRAMES_206[] = { "assets/art/buff/DARKREGEN.png" };
+static const AssetOffset OFFSETS_206[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_207[] = { "assets/art/background/DAY.png" };
+static const AssetOffset OFFSETS_207[] = { { 403.250000f, 183.100000f } };
+static const char *const FRAMES_208[] = { "assets/art/background/DAY2.png" };
+static const AssetOffset OFFSETS_208[] = { { 403.250000f, 183.100000f } };
+static const char *const FRAMES_209[] = { "assets/art/buff/DECAY.png" };
+static const AssetOffset OFFSETS_209[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_210[] = { "assets/art/buff/DOCTOR.png" };
+static const AssetOffset OFFSETS_210[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_211[] = { "assets/art/item/Dead_Peacock.png" };
+static const AssetOffset OFFSETS_211[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_212[] = { "assets/art/item/Deep_Sea_Greaves.png" };
+static const AssetOffset OFFSETS_212[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_213[] = { "assets/art/item/Destroyer's_Armor.png" };
+static const AssetOffset OFFSETS_213[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_214[] = { "assets/art/item/Destroyer's_Boots.png" };
+static const AssetOffset OFFSETS_214[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_215[] = { "assets/art/item/Destroyer's_Gloves.png" };
+static const AssetOffset OFFSETS_215[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_216[] = { "assets/art/item/Destroyer's_Helm.png" };
+static const AssetOffset OFFSETS_216[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_217[] = { "assets/art/item/Destroyer's_Leggings.png" };
+static const AssetOffset OFFSETS_217[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_218[] = { "assets/art/item/Destruction.png" };
+static const AssetOffset OFFSETS_218[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_219[] = { "assets/art/sound/Die1.mp3" };
+static const char *const FRAMES_220[] = { "assets/art/icon/Disrupt.png" };
+static const AssetOffset OFFSETS_220[] = { { 12.600000f, 11.500000f } };
+static const char *const FRAMES_221[] = { "assets/art/portrait/Dokebi_the_Striker.png" };
+static const AssetOffset OFFSETS_221[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_222[] = { "assets/art/sound/DuxDie.mp3" };
+static const char *const FRAMES_223[] = { "assets/art/sound/DuxHit1.mp3" };
+static const char *const FRAMES_224[] = { "assets/art/sound/DuxHit2.mp3" };
+static const char *const FRAMES_225[] = { "assets/art/sound/DuxHit3.mp3" };
+static const char *const FRAMES_226[] = { "assets/art/sound/ElectricHit.mp3" };
+static const char *const FRAMES_227[] = { "assets/art/icon/Electro_Bolt.png" };
+static const AssetOffset OFFSETS_227[] = { { 12.850000f, 15.400000f } };
+static const char *const FRAMES_228[] = { "assets/art/portrait/Elite_Medic.png" };
+static const AssetOffset OFFSETS_228[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_229[] = { "assets/art/item/Engineering_Gloves.png" };
+static const AssetOffset OFFSETS_229[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_230[] = { "assets/art/item/Eternity.png" };
+static const AssetOffset OFFSETS_230[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_231[] = { "assets/art/sound/Explode.mp3" };
+static const char *const FRAMES_232[] = { "assets/art/buff/FATALFLAW.png" };
+static const AssetOffset OFFSETS_232[] = { { 5.950000f, 10.100000f } };
+static const char *const FRAMES_233[] = { "assets/art/buff/FATE.png" };
+static const AssetOffset OFFSETS_233[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_234[] = { "assets/art/buff/FIRESHOCK.png" };
+static const AssetOffset OFFSETS_234[] = { { 5.950000f, 10.950000f } };
+static const char *const FRAMES_235[] = { "assets/art/doll/F_SARM_SIX.png" };
+static const AssetOffset OFFSETS_235[] = { { 2.150000f, 8.700000f } };
+static const char *const FRAMES_236[] = { "assets/art/doll/F_SARM_THREE.png" };
+static const AssetOffset OFFSETS_236[] = { { 2.150000f, 8.700000f } };
+static const char *const FRAMES_237[] = { "assets/art/doll/F_SCHEST_SIX.png" };
+static const AssetOffset OFFSETS_237[] = { { 8.650000f, 17.700000f } };
+static const char *const FRAMES_238[] = { "assets/art/doll/F_SCHEST_THREE.png" };
+static const AssetOffset OFFSETS_238[] = { { 8.650000f, 16.400000f } };
+static const char *const FRAMES_239[] = { "assets/art/doll/F_SFOOT_SIX.png" };
+static const AssetOffset OFFSETS_239[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_240[] = { "assets/art/doll/F_SFOOT_THREE.png" };
+static const AssetOffset OFFSETS_240[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_241[] = { "assets/art/doll/F_SHAND_SIX.png" };
+static const AssetOffset OFFSETS_241[] = { { 2.700000f, 9.150000f } };
+static const char *const FRAMES_242[] = { "assets/art/doll/F_SHAND_THREE.png" };
+static const AssetOffset OFFSETS_242[] = { { 2.700000f, 9.150000f } };
+static const char *const FRAMES_243[] = { "assets/art/doll/F_SHEAD_SIX.png" };
+static const AssetOffset OFFSETS_243[] = { { 2.250000f, 6.250000f } };
+static const char *const FRAMES_244[] = { "assets/art/doll/F_SHEAD_THREE.png" };
+static const AssetOffset OFFSETS_244[] = { { 2.550000f, 6.700000f } };
+static const char *const FRAMES_245[] = { "assets/art/doll/F_SLEG2_SIX.png" };
+static const AssetOffset OFFSETS_245[] = { { 3.600000f, 15.200000f } };
+static const char *const FRAMES_246[] = { "assets/art/doll/F_SLEG2_THREE.png" };
+static const AssetOffset OFFSETS_246[] = { { 3.600000f, 15.200000f } };
+static const char *const FRAMES_247[] = { "assets/art/item/Fire_Axe.png" };
+static const AssetOffset OFFSETS_247[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_248[] = { "assets/art/icon/Flame_Blast.png" };
+static const AssetOffset OFFSETS_248[] = { { 12.850000f, 14.600000f } };
+static const char *const FRAMES_249[] = { "assets/art/icon/Flame_Strike.png" };
+static const AssetOffset OFFSETS_249[] = { { 12.850000f, 19.900000f } };
+static const char *const FRAMES_250[] = { "assets/art/item/Footguard_of_the_Shore.png" };
+static const AssetOffset OFFSETS_250[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_251[] = { "assets/art/sound/Forcefield.mp3" };
+static const char *const FRAMES_252[] = { "assets/art/icon/Frost_Bolt.png" };
+static const AssetOffset OFFSETS_252[] = { { 32.500000f, 28.700000f } };
+static const char *const FRAMES_253[] = { "assets/art/item/Frost_Lantern.png" };
 static const AssetOffset OFFSETS_253[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_254[] = { "assets/art/portrait/Ghost_Samurai.png" };
+static const char *const FRAMES_254[] = { "assets/art/portrait/Frost_Zombie.png" };
 static const AssetOffset OFFSETS_254[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_255[] = { "assets/art/sound/GhostDie.mp3" };
-static const char *const FRAMES_256[] = { "assets/art/sound/GhostHit1.mp3" };
-static const char *const FRAMES_257[] = { "assets/art/sound/GhostHit2.mp3" };
-static const char *const FRAMES_258[] = { "assets/art/sound/GhostHit3.mp3" };
-static const char *const FRAMES_259[] = { "assets/art/item/Ghostly_Mask.png" };
-static const AssetOffset OFFSETS_259[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_260[] = { "assets/art/item/Grand_Master's_Gloves.png" };
-static const AssetOffset OFFSETS_260[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_261[] = { "assets/art/item/Guardian's_Armor.png" };
+static const char *const FRAMES_255[] = { "assets/art/portrait/Galiant_the_Paladin.png" };
+static const AssetOffset OFFSETS_255[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_256[] = { "assets/art/sound/GaliantDie.mp3" };
+static const char *const FRAMES_257[] = { "assets/art/sound/GaliantHit1.mp3" };
+static const char *const FRAMES_258[] = { "assets/art/sound/GaliantHit2.mp3" };
+static const char *const FRAMES_259[] = { "assets/art/sound/GaliantHit3.mp3" };
+static const char *const FRAMES_260[] = { "assets/art/portrait/Ghost_Assassin.png" };
+static const AssetOffset OFFSETS_260[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_261[] = { "assets/art/item/Ghost_Medallion.png" };
 static const AssetOffset OFFSETS_261[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_262[] = { "assets/art/item/Guardian's_Boots.png" };
-static const AssetOffset OFFSETS_262[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_263[] = { "assets/art/item/Guardian's_Gloves.png" };
-static const AssetOffset OFFSETS_263[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_264[] = { "assets/art/item/Guardian's_Helm.png" };
-static const AssetOffset OFFSETS_264[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_265[] = { "assets/art/item/Guardian's_Leggings.png" };
-static const AssetOffset OFFSETS_265[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_266[] = { "assets/art/item/Gunslinger's_Armor.png" };
-static const AssetOffset OFFSETS_266[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_267[] = { "assets/art/item/Gunslinger's_Boots.png" };
+static const char *const FRAMES_262[] = { "assets/art/portrait/Ghost_Samurai.png" };
+static const AssetOffset OFFSETS_262[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_263[] = { "assets/art/sound/GhostDie.mp3" };
+static const char *const FRAMES_264[] = { "assets/art/sound/GhostHit1.mp3" };
+static const char *const FRAMES_265[] = { "assets/art/sound/GhostHit2.mp3" };
+static const char *const FRAMES_266[] = { "assets/art/sound/GhostHit3.mp3" };
+static const char *const FRAMES_267[] = { "assets/art/item/Ghostly_Mask.png" };
 static const AssetOffset OFFSETS_267[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_268[] = { "assets/art/item/Gunslinger's_Gloves.png" };
+static const char *const FRAMES_268[] = { "assets/art/item/Grand_Master's_Gloves.png" };
 static const AssetOffset OFFSETS_268[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_269[] = { "assets/art/item/Gunslinger's_Helm.png" };
+static const char *const FRAMES_269[] = { "assets/art/item/Guardian's_Armor.png" };
 static const AssetOffset OFFSETS_269[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_270[] = { "assets/art/item/Gunslinger's_Leggings.png" };
+static const char *const FRAMES_270[] = { "assets/art/item/Guardian's_Boots.png" };
 static const AssetOffset OFFSETS_270[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_271[] = { "assets/art/doll/HAIR_BART.png" };
-static const AssetOffset OFFSETS_271[] = { { 2.900000f, 7.650000f } };
-static const char *const FRAMES_272[] = { "assets/art/doll/HAIR_FIVE.png" };
-static const AssetOffset OFFSETS_272[] = { { 15.950000f, 11.800000f } };
-static const char *const FRAMES_273[] = { "assets/art/doll/HAIR_FOUR.png" };
-static const AssetOffset OFFSETS_273[] = { { 6.150000f, 12.900000f } };
-static const char *const FRAMES_274[] = { "assets/art/doll/HAIR_ONE.png" };
-static const AssetOffset OFFSETS_274[] = { { 3.550000f, 8.850000f } };
-static const char *const FRAMES_275[] = { "assets/art/doll/HAIR_SIX.png" };
-static const AssetOffset OFFSETS_275[] = { { 15.950000f, 11.800000f } };
-static const char *const FRAMES_276[] = { "assets/art/doll/HAIR_THREE.png" };
-static const AssetOffset OFFSETS_276[] = { { 8.300000f, 9.650000f } };
-static const char *const FRAMES_277[] = { "assets/art/doll/HAIR_TWO.png" };
-static const AssetOffset OFFSETS_277[] = { { 5.150000f, 9.450000f } };
-static const char *const FRAMES_278[] = { "assets/art/zone/HEW.png" };
-static const AssetOffset OFFSETS_278[] = { { 476.300000f, 260.950000f } };
-static const char *const FRAMES_279[] = { "assets/art/item/Handguards_of_Destiny.png" };
-static const AssetOffset OFFSETS_279[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_280[] = { "assets/art/item/Handwraps_of_Caution.png" };
-static const AssetOffset OFFSETS_280[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_281[] = { "assets/art/sound/Healing.mp3" };
-static const char *const FRAMES_282[] = { "assets/art/icon/Healing_Light.png" };
-static const AssetOffset OFFSETS_282[] = { { 32.500000f, 13.300000f } };
-static const char *const FRAMES_283[] = { "assets/art/item/Helm_of_Peril.png" };
-static const AssetOffset OFFSETS_283[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_284[] = { "assets/art/icon/Heroic_Motivation.png" };
-static const AssetOffset OFFSETS_284[] = { { 17.700000f, 12.200000f } };
-static const char *const FRAMES_285[] = { "assets/art/sound/Hit2.mp3" };
-static const char *const FRAMES_286[] = { "assets/art/sound/Hit3.mp3" };
-static const char *const FRAMES_287[] = { "assets/art/sound/Hit4.mp3" };
-static const char *const FRAMES_288[] = { "assets/art/sound/Hit5.mp3" };
-static const char *const FRAMES_289[] = { "assets/art/item/Hunter's_Armor.png" };
-static const AssetOffset OFFSETS_289[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_290[] = { "assets/art/item/Hunter's_Boots.png" };
-static const AssetOffset OFFSETS_290[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_291[] = { "assets/art/item/Hunter's_Handguards.png" };
+static const char *const FRAMES_271[] = { "assets/art/item/Guardian's_Gloves.png" };
+static const AssetOffset OFFSETS_271[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_272[] = { "assets/art/item/Guardian's_Helm.png" };
+static const AssetOffset OFFSETS_272[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_273[] = { "assets/art/item/Guardian's_Leggings.png" };
+static const AssetOffset OFFSETS_273[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_274[] = { "assets/art/item/Gunslinger's_Armor.png" };
+static const AssetOffset OFFSETS_274[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_275[] = { "assets/art/item/Gunslinger's_Boots.png" };
+static const AssetOffset OFFSETS_275[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_276[] = { "assets/art/item/Gunslinger's_Gloves.png" };
+static const AssetOffset OFFSETS_276[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_277[] = { "assets/art/item/Gunslinger's_Helm.png" };
+static const AssetOffset OFFSETS_277[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_278[] = { "assets/art/item/Gunslinger's_Leggings.png" };
+static const AssetOffset OFFSETS_278[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_279[] = { "assets/art/doll/HAIR_BART.png" };
+static const AssetOffset OFFSETS_279[] = { { 2.900000f, 7.650000f } };
+static const char *const FRAMES_280[] = { "assets/art/doll/HAIR_FIVE.png" };
+static const AssetOffset OFFSETS_280[] = { { 15.950000f, 11.800000f } };
+static const char *const FRAMES_281[] = { "assets/art/doll/HAIR_FOUR.png" };
+static const AssetOffset OFFSETS_281[] = { { 6.150000f, 12.900000f } };
+static const char *const FRAMES_282[] = { "assets/art/doll/HAIR_ONE.png" };
+static const AssetOffset OFFSETS_282[] = { { 3.550000f, 8.850000f } };
+static const char *const FRAMES_283[] = { "assets/art/doll/HAIR_SIX.png" };
+static const AssetOffset OFFSETS_283[] = { { 15.950000f, 11.800000f } };
+static const char *const FRAMES_284[] = { "assets/art/doll/HAIR_THREE.png" };
+static const AssetOffset OFFSETS_284[] = { { 8.300000f, 9.650000f } };
+static const char *const FRAMES_285[] = { "assets/art/doll/HAIR_TWO.png" };
+static const AssetOffset OFFSETS_285[] = { { 5.150000f, 9.450000f } };
+static const char *const FRAMES_286[] = { "assets/art/zone/HEW.png" };
+static const AssetOffset OFFSETS_286[] = { { 476.300000f, 260.950000f } };
+static const char *const FRAMES_287[] = { "assets/art/item/Handguards_of_Destiny.png" };
+static const AssetOffset OFFSETS_287[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_288[] = { "assets/art/item/Handwraps_of_Caution.png" };
+static const AssetOffset OFFSETS_288[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_289[] = { "assets/art/sound/Healing.mp3" };
+static const char *const FRAMES_290[] = { "assets/art/icon/Healing_Light.png" };
+static const AssetOffset OFFSETS_290[] = { { 32.500000f, 13.300000f } };
+static const char *const FRAMES_291[] = { "assets/art/item/Helm_of_Peril.png" };
 static const AssetOffset OFFSETS_291[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_292[] = { "assets/art/item/Hunter's_Helm.png" };
-static const AssetOffset OFFSETS_292[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_293[] = { "assets/art/item/Hunter's_Legplates.png" };
-static const AssetOffset OFFSETS_293[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_294[] = { "assets/art/buff/IGNITE.png" };
-static const AssetOffset OFFSETS_294[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_295[] = { "assets/art/buff/INTERVENTION1.png" };
-static const AssetOffset OFFSETS_295[] = { { 6.400000f, 10.450000f } };
-static const char *const FRAMES_296[] = { "assets/art/buff/INTERVENTION10.png" };
-static const AssetOffset OFFSETS_296[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_297[] = { "assets/art/buff/INTERVENTION2.png" };
-static const AssetOffset OFFSETS_297[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_298[] = { "assets/art/buff/INTERVENTION3.png" };
-static const AssetOffset OFFSETS_298[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_299[] = { "assets/art/buff/INTERVENTION4.png" };
-static const AssetOffset OFFSETS_299[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_300[] = { "assets/art/buff/INTERVENTION5.png" };
-static const AssetOffset OFFSETS_300[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_301[] = { "assets/art/buff/INTERVENTION6.png" };
-static const AssetOffset OFFSETS_301[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_302[] = { "assets/art/buff/INTERVENTION7.png" };
+static const char *const FRAMES_292[] = { "assets/art/icon/Heroic_Motivation.png" };
+static const AssetOffset OFFSETS_292[] = { { 17.700000f, 12.200000f } };
+static const char *const FRAMES_293[] = { "assets/art/sound/Hit2.mp3" };
+static const char *const FRAMES_294[] = { "assets/art/sound/Hit3.mp3" };
+static const char *const FRAMES_295[] = { "assets/art/sound/Hit4.mp3" };
+static const char *const FRAMES_296[] = { "assets/art/sound/Hit5.mp3" };
+static const char *const FRAMES_297[] = { "assets/art/item/Hunter's_Armor.png" };
+static const AssetOffset OFFSETS_297[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_298[] = { "assets/art/item/Hunter's_Boots.png" };
+static const AssetOffset OFFSETS_298[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_299[] = { "assets/art/item/Hunter's_Handguards.png" };
+static const AssetOffset OFFSETS_299[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_300[] = { "assets/art/item/Hunter's_Helm.png" };
+static const AssetOffset OFFSETS_300[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_301[] = { "assets/art/item/Hunter's_Legplates.png" };
+static const AssetOffset OFFSETS_301[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_302[] = { "assets/art/buff/IGNITE.png" };
 static const AssetOffset OFFSETS_302[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_303[] = { "assets/art/buff/INTERVENTION8.png" };
-static const AssetOffset OFFSETS_303[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_304[] = { "assets/art/buff/INTERVENTION9.png" };
+static const char *const FRAMES_303[] = { "assets/art/buff/INTERVENTION1.png" };
+static const AssetOffset OFFSETS_303[] = { { 6.400000f, 10.450000f } };
+static const char *const FRAMES_304[] = { "assets/art/buff/INTERVENTION10.png" };
 static const AssetOffset OFFSETS_304[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_305[] = { "assets/art/buff/IRONSKIN1.png" };
-static const AssetOffset OFFSETS_305[] = { { 5.950000f, 10.950000f } };
-static const char *const FRAMES_306[] = { "assets/art/buff/IRONSKIN2.png" };
+static const char *const FRAMES_305[] = { "assets/art/buff/INTERVENTION2.png" };
+static const AssetOffset OFFSETS_305[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_306[] = { "assets/art/buff/INTERVENTION3.png" };
 static const AssetOffset OFFSETS_306[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_307[] = { "assets/art/buff/IRONSKIN3.png" };
+static const char *const FRAMES_307[] = { "assets/art/buff/INTERVENTION4.png" };
 static const AssetOffset OFFSETS_307[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_308[] = { "assets/art/buff/IRONSKIN4.png" };
+static const char *const FRAMES_308[] = { "assets/art/buff/INTERVENTION5.png" };
 static const AssetOffset OFFSETS_308[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_309[] = { "assets/art/buff/IRONSKIN5.png" };
+static const char *const FRAMES_309[] = { "assets/art/buff/INTERVENTION6.png" };
 static const AssetOffset OFFSETS_309[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_310[] = { "assets/art/sound/IceShatter.mp3" };
-static const char *const FRAMES_311[] = { "assets/art/item/Icy_Katana.png" };
-static const AssetOffset OFFSETS_311[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_312[] = { "assets/art/portrait/Information.png" };
-static const AssetOffset OFFSETS_312[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_313[] = { "assets/art/icon/Intervention.png" };
-static const AssetOffset OFFSETS_313[] = { { 16.350000f, 13.450000f } };
-static const char *const FRAMES_314[] = { "assets/art/icon/Ironskin.png" };
-static const AssetOffset OFFSETS_314[] = { { 19.000000f, 13.400000f } };
-static const char *const FRAMES_315[] = { "assets/art/item/Ivory_Mace.png" };
-static const AssetOffset OFFSETS_315[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_316[] = { "assets/art/item/Ivory_Shield.png" };
-static const AssetOffset OFFSETS_316[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_317[] = { "assets/art/item/Judgement.png" };
-static const AssetOffset OFFSETS_317[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_318[] = { "assets/art/zone/KOJIS_REST.png" };
-static const AssetOffset OFFSETS_318[] = { { 476.300000f, 260.950000f } };
-static const char *const FRAMES_319[] = { "assets/art/item/Knight's_Armor.png" };
+static const char *const FRAMES_310[] = { "assets/art/buff/INTERVENTION7.png" };
+static const AssetOffset OFFSETS_310[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_311[] = { "assets/art/buff/INTERVENTION8.png" };
+static const AssetOffset OFFSETS_311[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_312[] = { "assets/art/buff/INTERVENTION9.png" };
+static const AssetOffset OFFSETS_312[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_313[] = { "assets/art/buff/IRONSKIN1.png" };
+static const AssetOffset OFFSETS_313[] = { { 5.950000f, 10.950000f } };
+static const char *const FRAMES_314[] = { "assets/art/buff/IRONSKIN2.png" };
+static const AssetOffset OFFSETS_314[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_315[] = { "assets/art/buff/IRONSKIN3.png" };
+static const AssetOffset OFFSETS_315[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_316[] = { "assets/art/buff/IRONSKIN4.png" };
+static const AssetOffset OFFSETS_316[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_317[] = { "assets/art/buff/IRONSKIN5.png" };
+static const AssetOffset OFFSETS_317[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_318[] = { "assets/art/sound/IceShatter.mp3" };
+static const char *const FRAMES_319[] = { "assets/art/item/Icy_Katana.png" };
 static const AssetOffset OFFSETS_319[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_320[] = { "assets/art/item/Knight's_Boots.png" };
-static const AssetOffset OFFSETS_320[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_321[] = { "assets/art/item/Knight's_Gloves.png" };
-static const AssetOffset OFFSETS_321[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_322[] = { "assets/art/item/Knight's_Helm.png" };
-static const AssetOffset OFFSETS_322[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_323[] = { "assets/art/item/Knight's_Leggings.png" };
+static const char *const FRAMES_320[] = { "assets/art/portrait/Information.png" };
+static const AssetOffset OFFSETS_320[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_321[] = { "assets/art/icon/Intervention.png" };
+static const AssetOffset OFFSETS_321[] = { { 16.350000f, 13.450000f } };
+static const char *const FRAMES_322[] = { "assets/art/icon/Ironskin.png" };
+static const AssetOffset OFFSETS_322[] = { { 19.000000f, 13.400000f } };
+static const char *const FRAMES_323[] = { "assets/art/item/Ivory_Mace.png" };
 static const AssetOffset OFFSETS_323[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_324[] = { "assets/art/ui/KrinBuffShower.png" };
-static const AssetOffset OFFSETS_324[] = { { 8.000000f, 17.350000f } };
-static const char *const FRAMES_325[] = { "assets/art/item/Legplates_of_Icy_Doom.png" };
+static const char *const FRAMES_324[] = { "assets/art/item/Ivory_Shield.png" };
+static const AssetOffset OFFSETS_324[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_325[] = { "assets/art/item/Judgement.png" };
 static const AssetOffset OFFSETS_325[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_326[] = { "assets/art/item/Levo_Jeans.png" };
-static const AssetOffset OFFSETS_326[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_327[] = { "assets/art/portrait/Louis_the_Blind.png" };
-static const AssetOffset OFFSETS_327[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_328[] = { "assets/art/sound/LouisDie.mp3" };
-static const char *const FRAMES_329[] = { "assets/art/portrait/Ludwig.png" };
-static const AssetOffset OFFSETS_329[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_330[] = { "assets/art/item/M7-V_Rifle.png" };
+static const char *const FRAMES_326[] = { "assets/art/zone/KOJIS_REST.png" };
+static const AssetOffset OFFSETS_326[] = { { 476.300000f, 260.950000f } };
+static const char *const FRAMES_327[] = { "assets/art/item/Knight's_Armor.png" };
+static const AssetOffset OFFSETS_327[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_328[] = { "assets/art/item/Knight's_Boots.png" };
+static const AssetOffset OFFSETS_328[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_329[] = { "assets/art/item/Knight's_Gloves.png" };
+static const AssetOffset OFFSETS_329[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_330[] = { "assets/art/item/Knight's_Helm.png" };
 static const AssetOffset OFFSETS_330[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_331[] = { "assets/art/buff/MAGICWOUND.png" };
-static const AssetOffset OFFSETS_331[] = { { 5.950000f, 10.100000f } };
-static const char *const FRAMES_332[] = { "assets/art/ui/MODEL1_1.png", "assets/art/ui/MODEL1_2.png", "assets/art/ui/MODEL1_3.png", "assets/art/ui/MODEL1_4.png", "assets/art/ui/MODEL1_5.png", "assets/art/ui/MODEL1_6.png", "assets/art/ui/MODEL1_7.png", "assets/art/ui/MODEL1_8.png", "assets/art/ui/MODEL1_9.png", "assets/art/ui/MODEL1_10.png", "assets/art/ui/MODEL1_11.png", "assets/art/ui/MODEL1_12.png", "assets/art/ui/MODEL1_13.png", "assets/art/ui/MODEL1_14.png", "assets/art/ui/MODEL1_15.png", "assets/art/ui/MODEL1_16.png", "assets/art/ui/MODEL1_17.png", "assets/art/ui/MODEL1_18.png", "assets/art/ui/MODEL1_19.png", "assets/art/ui/MODEL1_20.png", "assets/art/ui/MODEL1_21.png", "assets/art/ui/MODEL1_22.png", "assets/art/ui/MODEL1_23.png", "assets/art/ui/MODEL1_24.png", "assets/art/ui/MODEL1_25.png", "assets/art/ui/MODEL1_26.png", "assets/art/ui/MODEL1_27.png", "assets/art/ui/MODEL1_28.png", "assets/art/ui/MODEL1_29.png", "assets/art/ui/MODEL1_30.png", "assets/art/ui/MODEL1_31.png", "assets/art/ui/MODEL1_32.png", "assets/art/ui/MODEL1_33.png", "assets/art/ui/MODEL1_34.png", "assets/art/ui/MODEL1_35.png", "assets/art/ui/MODEL1_36.png", "assets/art/ui/MODEL1_37.png", "assets/art/ui/MODEL1_38.png", "assets/art/ui/MODEL1_39.png", "assets/art/ui/MODEL1_40.png", "assets/art/ui/MODEL1_41.png", "assets/art/ui/MODEL1_42.png", "assets/art/ui/MODEL1_43.png", "assets/art/ui/MODEL1_44.png", "assets/art/ui/MODEL1_1.png", "assets/art/ui/MODEL1_46.png", "assets/art/ui/MODEL1_47.png", "assets/art/ui/MODEL1_47.png", "assets/art/ui/MODEL1_47.png", "assets/art/ui/MODEL1_47.png", "assets/art/ui/MODEL1_47.png", "assets/art/ui/MODEL1_47.png", "assets/art/ui/MODEL1_47.png", "assets/art/ui/MODEL1_46.png", "assets/art/ui/MODEL1_55.png", "assets/art/ui/MODEL1_56.png", "assets/art/ui/MODEL1_57.png", "assets/art/ui/MODEL1_58.png", "assets/art/ui/MODEL1_59.png", "assets/art/ui/MODEL1_60.png", "assets/art/ui/MODEL1_61.png", "assets/art/ui/MODEL1_62.png", "assets/art/ui/MODEL1_63.png", "assets/art/ui/MODEL1_64.png" };
-static const AssetOffset OFFSETS_332[] = { { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f } };
-static const char *const FRAMES_333[] = { "assets/art/doll/M_ARM_FINAL1.png" };
-static const AssetOffset OFFSETS_333[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_334[] = { "assets/art/doll/M_ARM_FINAL2.png" };
-static const AssetOffset OFFSETS_334[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_335[] = { "assets/art/doll/M_ARM_FINAL3.png" };
-static const AssetOffset OFFSETS_335[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_336[] = { "assets/art/doll/M_ARM_FINAL4.png" };
-static const AssetOffset OFFSETS_336[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_337[] = { "assets/art/doll/M_ARM_GER.png" };
-static const AssetOffset OFFSETS_337[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_338[] = { "assets/art/doll/M_ARM_JEANS.png" };
-static const AssetOffset OFFSETS_338[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_339[] = { "assets/art/doll/M_ARM_KNIGHT.png" };
-static const AssetOffset OFFSETS_339[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_340[] = { "assets/art/doll/M_ARM_MEDIC.png" };
-static const AssetOffset OFFSETS_340[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_341[] = { "assets/art/doll/M_ARM_NINJA.png" };
+static const char *const FRAMES_331[] = { "assets/art/item/Knight's_Leggings.png" };
+static const AssetOffset OFFSETS_331[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_332[] = { "assets/art/ui/KrinBuffShower.png" };
+static const AssetOffset OFFSETS_332[] = { { 8.000000f, 17.350000f } };
+static const char *const FRAMES_333[] = { "assets/art/item/Legplates_of_Icy_Doom.png" };
+static const AssetOffset OFFSETS_333[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_334[] = { "assets/art/item/Levo_Jeans.png" };
+static const AssetOffset OFFSETS_334[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_335[] = { "assets/art/portrait/Louis_the_Blind.png" };
+static const AssetOffset OFFSETS_335[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_336[] = { "assets/art/sound/LouisDie.mp3" };
+static const char *const FRAMES_337[] = { "assets/art/portrait/Ludwig.png" };
+static const AssetOffset OFFSETS_337[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_338[] = { "assets/art/item/M7-V_Rifle.png" };
+static const AssetOffset OFFSETS_338[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_339[] = { "assets/art/buff/MAGICWOUND.png" };
+static const AssetOffset OFFSETS_339[] = { { 5.950000f, 10.100000f } };
+static const char *const FRAMES_340[] = { "assets/art/ui/MODEL1_1.png", "assets/art/ui/MODEL1_2.png", "assets/art/ui/MODEL1_3.png", "assets/art/ui/MODEL1_4.png", "assets/art/ui/MODEL1_5.png", "assets/art/ui/MODEL1_6.png", "assets/art/ui/MODEL1_7.png", "assets/art/ui/MODEL1_8.png", "assets/art/ui/MODEL1_9.png", "assets/art/ui/MODEL1_10.png", "assets/art/ui/MODEL1_11.png", "assets/art/ui/MODEL1_12.png", "assets/art/ui/MODEL1_13.png", "assets/art/ui/MODEL1_14.png", "assets/art/ui/MODEL1_15.png", "assets/art/ui/MODEL1_16.png", "assets/art/ui/MODEL1_17.png", "assets/art/ui/MODEL1_18.png", "assets/art/ui/MODEL1_19.png", "assets/art/ui/MODEL1_20.png", "assets/art/ui/MODEL1_21.png", "assets/art/ui/MODEL1_22.png", "assets/art/ui/MODEL1_23.png", "assets/art/ui/MODEL1_24.png", "assets/art/ui/MODEL1_25.png", "assets/art/ui/MODEL1_26.png", "assets/art/ui/MODEL1_27.png", "assets/art/ui/MODEL1_28.png", "assets/art/ui/MODEL1_29.png", "assets/art/ui/MODEL1_30.png", "assets/art/ui/MODEL1_31.png", "assets/art/ui/MODEL1_32.png", "assets/art/ui/MODEL1_33.png", "assets/art/ui/MODEL1_34.png", "assets/art/ui/MODEL1_35.png", "assets/art/ui/MODEL1_36.png", "assets/art/ui/MODEL1_37.png", "assets/art/ui/MODEL1_38.png", "assets/art/ui/MODEL1_39.png", "assets/art/ui/MODEL1_40.png", "assets/art/ui/MODEL1_41.png", "assets/art/ui/MODEL1_42.png", "assets/art/ui/MODEL1_43.png", "assets/art/ui/MODEL1_44.png", "assets/art/ui/MODEL1_1.png", "assets/art/ui/MODEL1_46.png", "assets/art/ui/MODEL1_47.png", "assets/art/ui/MODEL1_47.png", "assets/art/ui/MODEL1_47.png", "assets/art/ui/MODEL1_47.png", "assets/art/ui/MODEL1_47.png", "assets/art/ui/MODEL1_47.png", "assets/art/ui/MODEL1_47.png", "assets/art/ui/MODEL1_46.png", "assets/art/ui/MODEL1_55.png", "assets/art/ui/MODEL1_56.png", "assets/art/ui/MODEL1_57.png", "assets/art/ui/MODEL1_58.png", "assets/art/ui/MODEL1_59.png", "assets/art/ui/MODEL1_60.png", "assets/art/ui/MODEL1_61.png", "assets/art/ui/MODEL1_62.png", "assets/art/ui/MODEL1_63.png", "assets/art/ui/MODEL1_64.png" };
+static const AssetOffset OFFSETS_340[] = { { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f }, { 46.200000f, 83.650000f } };
+static const char *const FRAMES_341[] = { "assets/art/doll/M_ARM_FINAL1.png" };
 static const AssetOffset OFFSETS_341[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_342[] = { "assets/art/doll/M_ARM_ROCKSTAR.png" };
+static const char *const FRAMES_342[] = { "assets/art/doll/M_ARM_FINAL2.png" };
 static const AssetOffset OFFSETS_342[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_343[] = { "assets/art/doll/M_ARM_SAMURAI.png" };
-static const AssetOffset OFFSETS_343[] = { { 6.800000f, 9.700000f } };
-static const char *const FRAMES_344[] = { "assets/art/doll/M_ARM_SAMURAI2.png" };
-static const AssetOffset OFFSETS_344[] = { { 6.800000f, 9.700000f } };
-static const char *const FRAMES_345[] = { "assets/art/doll/M_ARM_SAMURAI3.png" };
-static const AssetOffset OFFSETS_345[] = { { 6.800000f, 9.700000f } };
-static const char *const FRAMES_346[] = { "assets/art/doll/M_ARM_SHAMAN1.png" };
+static const char *const FRAMES_343[] = { "assets/art/doll/M_ARM_FINAL3.png" };
+static const AssetOffset OFFSETS_343[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_344[] = { "assets/art/doll/M_ARM_FINAL4.png" };
+static const AssetOffset OFFSETS_344[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_345[] = { "assets/art/doll/M_ARM_GER.png" };
+static const AssetOffset OFFSETS_345[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_346[] = { "assets/art/doll/M_ARM_JEANS.png" };
 static const AssetOffset OFFSETS_346[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_347[] = { "assets/art/doll/M_ARM_SHAMAN2.png" };
+static const char *const FRAMES_347[] = { "assets/art/doll/M_ARM_KNIGHT.png" };
 static const AssetOffset OFFSETS_347[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_348[] = { "assets/art/doll/M_ARM_SHAMAN3.png" };
+static const char *const FRAMES_348[] = { "assets/art/doll/M_ARM_MEDIC.png" };
 static const AssetOffset OFFSETS_348[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_349[] = { "assets/art/doll/M_ARM_SHAMAN4.png" };
+static const char *const FRAMES_349[] = { "assets/art/doll/M_ARM_NINJA.png" };
 static const AssetOffset OFFSETS_349[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_350[] = { "assets/art/doll/M_ARM_SHIRT.png" };
+static const char *const FRAMES_350[] = { "assets/art/doll/M_ARM_ROCKSTAR.png" };
 static const AssetOffset OFFSETS_350[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_351[] = { "assets/art/doll/M_ARM_SINJID.png" };
-static const AssetOffset OFFSETS_351[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_352[] = { "assets/art/doll/M_ARM_SURVIVOR.png" };
-static const AssetOffset OFFSETS_352[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_353[] = { "assets/art/doll/M_ARM_USA1.png" };
-static const AssetOffset OFFSETS_353[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_354[] = { "assets/art/doll/M_ARM_USA2.png" };
+static const char *const FRAMES_351[] = { "assets/art/doll/M_ARM_SAMURAI.png" };
+static const AssetOffset OFFSETS_351[] = { { 6.800000f, 9.700000f } };
+static const char *const FRAMES_352[] = { "assets/art/doll/M_ARM_SAMURAI2.png" };
+static const AssetOffset OFFSETS_352[] = { { 6.800000f, 9.700000f } };
+static const char *const FRAMES_353[] = { "assets/art/doll/M_ARM_SAMURAI3.png" };
+static const AssetOffset OFFSETS_353[] = { { 6.800000f, 9.700000f } };
+static const char *const FRAMES_354[] = { "assets/art/doll/M_ARM_SHAMAN1.png" };
 static const AssetOffset OFFSETS_354[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_355[] = { "assets/art/doll/M_ARM_USA3.png" };
+static const char *const FRAMES_355[] = { "assets/art/doll/M_ARM_SHAMAN2.png" };
 static const AssetOffset OFFSETS_355[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_356[] = { "assets/art/doll/M_ARM_USA4.png" };
+static const char *const FRAMES_356[] = { "assets/art/doll/M_ARM_SHAMAN3.png" };
 static const AssetOffset OFFSETS_356[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_357[] = { "assets/art/doll/M_ARM_USA5.png" };
+static const char *const FRAMES_357[] = { "assets/art/doll/M_ARM_SHAMAN4.png" };
 static const AssetOffset OFFSETS_357[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_358[] = { "assets/art/doll/M_CHEST_FINAL1.png" };
-static const AssetOffset OFFSETS_358[] = { { 9.900000f, 17.900000f } };
-static const char *const FRAMES_359[] = { "assets/art/doll/M_CHEST_FINAL2.png" };
-static const AssetOffset OFFSETS_359[] = { { 9.900000f, 17.900000f } };
-static const char *const FRAMES_360[] = { "assets/art/doll/M_CHEST_FINAL3.png" };
-static const AssetOffset OFFSETS_360[] = { { 9.900000f, 17.900000f } };
-static const char *const FRAMES_361[] = { "assets/art/doll/M_CHEST_FINAL4.png" };
-static const AssetOffset OFFSETS_361[] = { { 9.900000f, 17.900000f } };
-static const char *const FRAMES_362[] = { "assets/art/doll/M_CHEST_GER.png" };
-static const AssetOffset OFFSETS_362[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_363[] = { "assets/art/doll/M_CHEST_KNIGHT.png" };
-static const AssetOffset OFFSETS_363[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_364[] = { "assets/art/doll/M_CHEST_MEDIC.png" };
-static const AssetOffset OFFSETS_364[] = { { 9.900000f, 20.800000f } };
-static const char *const FRAMES_365[] = { "assets/art/doll/M_CHEST_NINJA.png" };
-static const AssetOffset OFFSETS_365[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_366[] = { "assets/art/doll/M_CHEST_ROCKSTAR.png" };
-static const AssetOffset OFFSETS_366[] = { { 11.300000f, 17.750000f } };
-static const char *const FRAMES_367[] = { "assets/art/doll/M_CHEST_SAMURAI.png" };
-static const AssetOffset OFFSETS_367[] = { { 17.800000f, 17.850000f } };
-static const char *const FRAMES_368[] = { "assets/art/doll/M_CHEST_SAMURAI2.png" };
-static const AssetOffset OFFSETS_368[] = { { 17.800000f, 23.650000f } };
-static const char *const FRAMES_369[] = { "assets/art/doll/M_CHEST_SAMURAI3.png" };
-static const AssetOffset OFFSETS_369[] = { { 17.800000f, 23.650000f } };
-static const char *const FRAMES_370[] = { "assets/art/doll/M_CHEST_SHAMAN1.png" };
-static const AssetOffset OFFSETS_370[] = { { 9.300000f, 21.100000f } };
-static const char *const FRAMES_371[] = { "assets/art/doll/M_CHEST_SHAMAN2.png" };
-static const AssetOffset OFFSETS_371[] = { { 9.300000f, 21.100000f } };
-static const char *const FRAMES_372[] = { "assets/art/doll/M_CHEST_SHAMAN3.png" };
-static const AssetOffset OFFSETS_372[] = { { 9.300000f, 21.100000f } };
-static const char *const FRAMES_373[] = { "assets/art/doll/M_CHEST_SHAMAN4.png" };
-static const AssetOffset OFFSETS_373[] = { { 9.300000f, 21.100000f } };
-static const char *const FRAMES_374[] = { "assets/art/doll/M_CHEST_SHIRT.png" };
-static const AssetOffset OFFSETS_374[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_375[] = { "assets/art/doll/M_CHEST_SINJID.png" };
-static const AssetOffset OFFSETS_375[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_376[] = { "assets/art/doll/M_CHEST_SURVIVOR.png" };
-static const AssetOffset OFFSETS_376[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_377[] = { "assets/art/doll/M_CHEST_USA1.png" };
-static const AssetOffset OFFSETS_377[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_378[] = { "assets/art/doll/M_CHEST_USA2.png" };
-static const AssetOffset OFFSETS_378[] = { { 9.900000f, 17.900000f } };
-static const char *const FRAMES_379[] = { "assets/art/doll/M_CHEST_USA3.png" };
-static const AssetOffset OFFSETS_379[] = { { 9.900000f, 17.900000f } };
-static const char *const FRAMES_380[] = { "assets/art/doll/M_CHEST_USA4.png" };
-static const AssetOffset OFFSETS_380[] = { { 9.900000f, 17.900000f } };
-static const char *const FRAMES_381[] = { "assets/art/doll/M_CHEST_USA5.png" };
-static const AssetOffset OFFSETS_381[] = { { 9.900000f, 17.900000f } };
-static const char *const FRAMES_382[] = { "assets/art/doll/M_FOOT_FINAL1.png" };
-static const AssetOffset OFFSETS_382[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_383[] = { "assets/art/doll/M_FOOT_FINAL2.png" };
-static const AssetOffset OFFSETS_383[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_384[] = { "assets/art/doll/M_FOOT_FINAL3.png" };
-static const AssetOffset OFFSETS_384[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_385[] = { "assets/art/doll/M_FOOT_FINAL4.png" };
-static const AssetOffset OFFSETS_385[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_386[] = { "assets/art/doll/M_FOOT_GER.png" };
-static const AssetOffset OFFSETS_386[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_387[] = { "assets/art/doll/M_FOOT_JEANS.png" };
-static const AssetOffset OFFSETS_387[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_388[] = { "assets/art/doll/M_FOOT_KNIGHT.png" };
-static const AssetOffset OFFSETS_388[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_389[] = { "assets/art/doll/M_FOOT_MEDIC.png" };
-static const AssetOffset OFFSETS_389[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_390[] = { "assets/art/doll/M_FOOT_NAVY.png" };
+static const char *const FRAMES_358[] = { "assets/art/doll/M_ARM_SHIRT.png" };
+static const AssetOffset OFFSETS_358[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_359[] = { "assets/art/doll/M_ARM_SINJID.png" };
+static const AssetOffset OFFSETS_359[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_360[] = { "assets/art/doll/M_ARM_SURVIVOR.png" };
+static const AssetOffset OFFSETS_360[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_361[] = { "assets/art/doll/M_ARM_USA1.png" };
+static const AssetOffset OFFSETS_361[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_362[] = { "assets/art/doll/M_ARM_USA2.png" };
+static const AssetOffset OFFSETS_362[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_363[] = { "assets/art/doll/M_ARM_USA3.png" };
+static const AssetOffset OFFSETS_363[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_364[] = { "assets/art/doll/M_ARM_USA4.png" };
+static const AssetOffset OFFSETS_364[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_365[] = { "assets/art/doll/M_ARM_USA5.png" };
+static const AssetOffset OFFSETS_365[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_366[] = { "assets/art/doll/M_CHEST_FINAL1.png" };
+static const AssetOffset OFFSETS_366[] = { { 9.900000f, 17.900000f } };
+static const char *const FRAMES_367[] = { "assets/art/doll/M_CHEST_FINAL2.png" };
+static const AssetOffset OFFSETS_367[] = { { 9.900000f, 17.900000f } };
+static const char *const FRAMES_368[] = { "assets/art/doll/M_CHEST_FINAL3.png" };
+static const AssetOffset OFFSETS_368[] = { { 9.900000f, 17.900000f } };
+static const char *const FRAMES_369[] = { "assets/art/doll/M_CHEST_FINAL4.png" };
+static const AssetOffset OFFSETS_369[] = { { 9.900000f, 17.900000f } };
+static const char *const FRAMES_370[] = { "assets/art/doll/M_CHEST_GER.png" };
+static const AssetOffset OFFSETS_370[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_371[] = { "assets/art/doll/M_CHEST_KNIGHT.png" };
+static const AssetOffset OFFSETS_371[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_372[] = { "assets/art/doll/M_CHEST_MEDIC.png" };
+static const AssetOffset OFFSETS_372[] = { { 9.900000f, 20.800000f } };
+static const char *const FRAMES_373[] = { "assets/art/doll/M_CHEST_NINJA.png" };
+static const AssetOffset OFFSETS_373[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_374[] = { "assets/art/doll/M_CHEST_ROCKSTAR.png" };
+static const AssetOffset OFFSETS_374[] = { { 11.300000f, 17.750000f } };
+static const char *const FRAMES_375[] = { "assets/art/doll/M_CHEST_SAMURAI.png" };
+static const AssetOffset OFFSETS_375[] = { { 17.800000f, 17.850000f } };
+static const char *const FRAMES_376[] = { "assets/art/doll/M_CHEST_SAMURAI2.png" };
+static const AssetOffset OFFSETS_376[] = { { 17.800000f, 23.650000f } };
+static const char *const FRAMES_377[] = { "assets/art/doll/M_CHEST_SAMURAI3.png" };
+static const AssetOffset OFFSETS_377[] = { { 17.800000f, 23.650000f } };
+static const char *const FRAMES_378[] = { "assets/art/doll/M_CHEST_SHAMAN1.png" };
+static const AssetOffset OFFSETS_378[] = { { 9.300000f, 21.100000f } };
+static const char *const FRAMES_379[] = { "assets/art/doll/M_CHEST_SHAMAN2.png" };
+static const AssetOffset OFFSETS_379[] = { { 9.300000f, 21.100000f } };
+static const char *const FRAMES_380[] = { "assets/art/doll/M_CHEST_SHAMAN3.png" };
+static const AssetOffset OFFSETS_380[] = { { 9.300000f, 21.100000f } };
+static const char *const FRAMES_381[] = { "assets/art/doll/M_CHEST_SHAMAN4.png" };
+static const AssetOffset OFFSETS_381[] = { { 9.300000f, 21.100000f } };
+static const char *const FRAMES_382[] = { "assets/art/doll/M_CHEST_SHIRT.png" };
+static const AssetOffset OFFSETS_382[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_383[] = { "assets/art/doll/M_CHEST_SINJID.png" };
+static const AssetOffset OFFSETS_383[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_384[] = { "assets/art/doll/M_CHEST_SURVIVOR.png" };
+static const AssetOffset OFFSETS_384[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_385[] = { "assets/art/doll/M_CHEST_USA1.png" };
+static const AssetOffset OFFSETS_385[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_386[] = { "assets/art/doll/M_CHEST_USA2.png" };
+static const AssetOffset OFFSETS_386[] = { { 9.900000f, 17.900000f } };
+static const char *const FRAMES_387[] = { "assets/art/doll/M_CHEST_USA3.png" };
+static const AssetOffset OFFSETS_387[] = { { 9.900000f, 17.900000f } };
+static const char *const FRAMES_388[] = { "assets/art/doll/M_CHEST_USA4.png" };
+static const AssetOffset OFFSETS_388[] = { { 9.900000f, 17.900000f } };
+static const char *const FRAMES_389[] = { "assets/art/doll/M_CHEST_USA5.png" };
+static const AssetOffset OFFSETS_389[] = { { 9.900000f, 17.900000f } };
+static const char *const FRAMES_390[] = { "assets/art/doll/M_FOOT_FINAL1.png" };
 static const AssetOffset OFFSETS_390[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_391[] = { "assets/art/doll/M_FOOT_NINJA.png" };
+static const char *const FRAMES_391[] = { "assets/art/doll/M_FOOT_FINAL2.png" };
 static const AssetOffset OFFSETS_391[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_392[] = { "assets/art/doll/M_FOOT_ROCKSTAR.png" };
+static const char *const FRAMES_392[] = { "assets/art/doll/M_FOOT_FINAL3.png" };
 static const AssetOffset OFFSETS_392[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_393[] = { "assets/art/doll/M_FOOT_SAMURAI.png" };
+static const char *const FRAMES_393[] = { "assets/art/doll/M_FOOT_FINAL4.png" };
 static const AssetOffset OFFSETS_393[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_394[] = { "assets/art/doll/M_FOOT_SAMURAI2.png" };
+static const char *const FRAMES_394[] = { "assets/art/doll/M_FOOT_GER.png" };
 static const AssetOffset OFFSETS_394[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_395[] = { "assets/art/doll/M_FOOT_SAMURAI3.png" };
+static const char *const FRAMES_395[] = { "assets/art/doll/M_FOOT_JEANS.png" };
 static const AssetOffset OFFSETS_395[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_396[] = { "assets/art/doll/M_FOOT_SHAMAN1.png" };
-static const AssetOffset OFFSETS_396[] = { { 0.000000f, 0.000000f } };
-static const char *const FRAMES_397[] = { "assets/art/doll/M_FOOT_SINJID.png" };
+static const char *const FRAMES_396[] = { "assets/art/doll/M_FOOT_KNIGHT.png" };
+static const AssetOffset OFFSETS_396[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_397[] = { "assets/art/doll/M_FOOT_MEDIC.png" };
 static const AssetOffset OFFSETS_397[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_398[] = { "assets/art/doll/M_FOOT_SURVIVOR.png" };
+static const char *const FRAMES_398[] = { "assets/art/doll/M_FOOT_NAVY.png" };
 static const AssetOffset OFFSETS_398[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_399[] = { "assets/art/doll/M_FOOT_USA1.png" };
+static const char *const FRAMES_399[] = { "assets/art/doll/M_FOOT_NINJA.png" };
 static const AssetOffset OFFSETS_399[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_400[] = { "assets/art/doll/M_FOOT_USA2.png" };
+static const char *const FRAMES_400[] = { "assets/art/doll/M_FOOT_ROCKSTAR.png" };
 static const AssetOffset OFFSETS_400[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_401[] = { "assets/art/doll/M_FOOT_USA3.png" };
+static const char *const FRAMES_401[] = { "assets/art/doll/M_FOOT_SAMURAI.png" };
 static const AssetOffset OFFSETS_401[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_402[] = { "assets/art/doll/M_FOOT_USA4.png" };
+static const char *const FRAMES_402[] = { "assets/art/doll/M_FOOT_SAMURAI2.png" };
 static const AssetOffset OFFSETS_402[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_403[] = { "assets/art/doll/M_FOOT_USA5.png" };
+static const char *const FRAMES_403[] = { "assets/art/doll/M_FOOT_SAMURAI3.png" };
 static const AssetOffset OFFSETS_403[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_404[] = { "assets/art/doll/M_HAND_ENGINEERINGGLOVES.png" };
-static const AssetOffset OFFSETS_404[] = { { 3.550000f, 2.450000f } };
-static const char *const FRAMES_405[] = { "assets/art/doll/M_HAND_FINAL1.png" };
-static const AssetOffset OFFSETS_405[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_406[] = { "assets/art/doll/M_HAND_FINAL2.png" };
-static const AssetOffset OFFSETS_406[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_407[] = { "assets/art/doll/M_HAND_FINAL3.png" };
-static const AssetOffset OFFSETS_407[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_408[] = { "assets/art/doll/M_HAND_FINAL4.png" };
-static const AssetOffset OFFSETS_408[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_409[] = { "assets/art/doll/M_HAND_GER.png" };
-static const AssetOffset OFFSETS_409[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_410[] = { "assets/art/doll/M_HAND_KNIGHT.png" };
-static const AssetOffset OFFSETS_410[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_411[] = { "assets/art/doll/M_HAND_MEDIC.png" };
-static const AssetOffset OFFSETS_411[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_412[] = { "assets/art/doll/M_HAND_NINJA.png" };
-static const AssetOffset OFFSETS_412[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_413[] = { "assets/art/doll/M_HAND_ROCKSTAR.png" };
-static const AssetOffset OFFSETS_413[] = { { 5.750000f, 9.950000f } };
-static const char *const FRAMES_414[] = { "assets/art/doll/M_HAND_SAMURAI.png" };
-static const AssetOffset OFFSETS_414[] = { { 3.550000f, 2.450000f } };
-static const char *const FRAMES_415[] = { "assets/art/doll/M_HAND_SAMURAI2.png" };
-static const AssetOffset OFFSETS_415[] = { { 3.550000f, 2.450000f } };
-static const char *const FRAMES_416[] = { "assets/art/doll/M_HAND_SAMURAI3.png" };
-static const AssetOffset OFFSETS_416[] = { { 3.550000f, 2.450000f } };
-static const char *const FRAMES_417[] = { "assets/art/doll/M_HAND_SHAMAN1.png" };
-static const AssetOffset OFFSETS_417[] = { { 3.550000f, 8.950000f } };
-static const char *const FRAMES_418[] = { "assets/art/doll/M_HAND_SHAMAN2.png" };
-static const AssetOffset OFFSETS_418[] = { { 3.550000f, 8.950000f } };
-static const char *const FRAMES_419[] = { "assets/art/doll/M_HAND_SHAMAN3.png" };
-static const AssetOffset OFFSETS_419[] = { { 3.550000f, 8.950000f } };
-static const char *const FRAMES_420[] = { "assets/art/doll/M_HAND_SHAMAN4.png" };
-static const AssetOffset OFFSETS_420[] = { { 3.550000f, 8.950000f } };
-static const char *const FRAMES_421[] = { "assets/art/doll/M_HAND_SINJID.png" };
-static const AssetOffset OFFSETS_421[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_422[] = { "assets/art/doll/M_HAND_SURVIVOR.png" };
-static const AssetOffset OFFSETS_422[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_423[] = { "assets/art/doll/M_HAND_USA1.png" };
-static const AssetOffset OFFSETS_423[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_424[] = { "assets/art/doll/M_HAND_USA2.png" };
-static const AssetOffset OFFSETS_424[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_425[] = { "assets/art/doll/M_HAND_USA3.png" };
-static const AssetOffset OFFSETS_425[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_426[] = { "assets/art/doll/M_HAND_USA4.png" };
-static const AssetOffset OFFSETS_426[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_427[] = { "assets/art/doll/M_HAND_USA5.png" };
-static const AssetOffset OFFSETS_427[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_428[] = { "assets/art/doll/M_HEAD_FINAL1.png" };
-static const AssetOffset OFFSETS_428[] = { { 10.400000f, 13.500000f } };
-static const char *const FRAMES_429[] = { "assets/art/doll/M_HEAD_FINAL2.png" };
-static const AssetOffset OFFSETS_429[] = { { 10.400000f, 13.500000f } };
-static const char *const FRAMES_430[] = { "assets/art/doll/M_HEAD_FINAL3.png" };
-static const AssetOffset OFFSETS_430[] = { { 10.400000f, 13.500000f } };
-static const char *const FRAMES_431[] = { "assets/art/doll/M_HEAD_FINAL4.png" };
-static const AssetOffset OFFSETS_431[] = { { 10.400000f, 13.500000f } };
-static const char *const FRAMES_432[] = { "assets/art/doll/M_HEAD_GER.png" };
-static const AssetOffset OFFSETS_432[] = { { 3.850000f, 8.350000f } };
-static const char *const FRAMES_433[] = { "assets/art/doll/M_HEAD_KNIGHT.png" };
-static const AssetOffset OFFSETS_433[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_434[] = { "assets/art/doll/M_HEAD_MEDIC.png" };
-static const AssetOffset OFFSETS_434[] = { { 10.450000f, 13.650000f } };
-static const char *const FRAMES_435[] = { "assets/art/doll/M_HEAD_NINJA.png" };
-static const AssetOffset OFFSETS_435[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_436[] = { "assets/art/doll/M_HEAD_ROCKSTAR.png" };
-static const AssetOffset OFFSETS_436[] = { { 6.150000f, 12.900000f } };
-static const char *const FRAMES_437[] = { "assets/art/doll/M_HEAD_SAMURAI.png" };
-static const AssetOffset OFFSETS_437[] = { { 9.500000f, 28.050000f } };
-static const char *const FRAMES_438[] = { "assets/art/doll/M_HEAD_SAMURAI2.png" };
-static const AssetOffset OFFSETS_438[] = { { 9.500000f, 28.050000f } };
-static const char *const FRAMES_439[] = { "assets/art/doll/M_HEAD_SAMURAI3.png" };
-static const AssetOffset OFFSETS_439[] = { { 9.500000f, 28.050000f } };
-static const char *const FRAMES_440[] = { "assets/art/doll/M_HEAD_SHAMAN1.png" };
-static const AssetOffset OFFSETS_440[] = { { 6.000000f, 30.350000f } };
-static const char *const FRAMES_441[] = { "assets/art/doll/M_HEAD_SHAMAN2.png" };
-static const AssetOffset OFFSETS_441[] = { { 6.000000f, 30.350000f } };
-static const char *const FRAMES_442[] = { "assets/art/doll/M_HEAD_SHAMAN3.png" };
-static const AssetOffset OFFSETS_442[] = { { 6.000000f, 30.350000f } };
-static const char *const FRAMES_443[] = { "assets/art/doll/M_HEAD_SHAMAN4.png" };
-static const AssetOffset OFFSETS_443[] = { { 6.000000f, 30.350000f } };
-static const char *const FRAMES_444[] = { "assets/art/doll/M_HEAD_SINJID.png" };
-static const AssetOffset OFFSETS_444[] = { { 5.300000f, 7.200000f } };
-static const char *const FRAMES_445[] = { "assets/art/doll/M_HEAD_SURVIVOR.png" };
-static const AssetOffset OFFSETS_445[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_446[] = { "assets/art/doll/M_HEAD_USA1.png" };
-static const AssetOffset OFFSETS_446[] = { { 2.550000f, 2.800000f } };
-static const char *const FRAMES_447[] = { "assets/art/doll/M_HEAD_USA2.png" };
-static const AssetOffset OFFSETS_447[] = { { 10.400000f, 13.500000f } };
-static const char *const FRAMES_448[] = { "assets/art/doll/M_HEAD_USA3.png" };
-static const AssetOffset OFFSETS_448[] = { { 10.400000f, 13.500000f } };
-static const char *const FRAMES_449[] = { "assets/art/doll/M_HEAD_USA4.png" };
-static const AssetOffset OFFSETS_449[] = { { 10.400000f, 13.500000f } };
-static const char *const FRAMES_450[] = { "assets/art/doll/M_HEAD_USA5.png" };
-static const AssetOffset OFFSETS_450[] = { { 10.400000f, 13.500000f } };
-static const char *const FRAMES_451[] = { "assets/art/doll/M_LEG2_FINAL1.png" };
-static const AssetOffset OFFSETS_451[] = { { 15.950000f, 15.200000f } };
-static const char *const FRAMES_452[] = { "assets/art/doll/M_LEG2_FINAL2.png" };
-static const AssetOffset OFFSETS_452[] = { { 15.950000f, 15.200000f } };
-static const char *const FRAMES_453[] = { "assets/art/doll/M_LEG2_FINAL3.png" };
-static const AssetOffset OFFSETS_453[] = { { 15.950000f, 15.200000f } };
-static const char *const FRAMES_454[] = { "assets/art/doll/M_LEG2_FINAL4.png" };
-static const AssetOffset OFFSETS_454[] = { { 15.950000f, 15.200000f } };
-static const char *const FRAMES_455[] = { "assets/art/doll/M_LEG2_GER.png" };
-static const AssetOffset OFFSETS_455[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_456[] = { "assets/art/doll/M_LEG2_JEANS.png" };
-static const AssetOffset OFFSETS_456[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_457[] = { "assets/art/doll/M_LEG2_KNIGHT.png" };
-static const AssetOffset OFFSETS_457[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_458[] = { "assets/art/doll/M_LEG2_MEDIC.png" };
-static const AssetOffset OFFSETS_458[] = { { 15.000000f, 15.200000f } };
-static const char *const FRAMES_459[] = { "assets/art/doll/M_LEG2_NAVY.png" };
-static const AssetOffset OFFSETS_459[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_460[] = { "assets/art/doll/M_LEG2_NINJA.png" };
-static const AssetOffset OFFSETS_460[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_461[] = { "assets/art/doll/M_LEG2_ROCKSTAR.png" };
-static const AssetOffset OFFSETS_461[] = { { 7.900000f, 15.200000f } };
-static const char *const FRAMES_462[] = { "assets/art/doll/M_LEG2_SAMURAI.png" };
-static const AssetOffset OFFSETS_462[] = { { 6.200000f, 8.650000f } };
-static const char *const FRAMES_463[] = { "assets/art/doll/M_LEG2_SAMURAI2.png" };
-static const AssetOffset OFFSETS_463[] = { { 15.800000f, 20.050000f } };
-static const char *const FRAMES_464[] = { "assets/art/doll/M_LEG2_SAMURAI3.png" };
-static const AssetOffset OFFSETS_464[] = { { 15.800000f, 20.050000f } };
-static const char *const FRAMES_465[] = { "assets/art/doll/M_LEG2_SHAMAN1.png" };
-static const AssetOffset OFFSETS_465[] = { { 5.450000f, 10.400000f } };
-static const char *const FRAMES_466[] = { "assets/art/doll/M_LEG2_SHAMAN2.png" };
-static const AssetOffset OFFSETS_466[] = { { 5.450000f, 10.400000f } };
-static const char *const FRAMES_467[] = { "assets/art/doll/M_LEG2_SHAMAN3.png" };
-static const AssetOffset OFFSETS_467[] = { { 5.450000f, 10.400000f } };
-static const char *const FRAMES_468[] = { "assets/art/doll/M_LEG2_SHAMAN4.png" };
-static const AssetOffset OFFSETS_468[] = { { 5.450000f, 10.400000f } };
-static const char *const FRAMES_469[] = { "assets/art/doll/M_LEG2_SINJID.png" };
-static const AssetOffset OFFSETS_469[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_470[] = { "assets/art/doll/M_LEG2_SURVIVOR.png" };
-static const AssetOffset OFFSETS_470[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_471[] = { "assets/art/doll/M_LEG2_USA1.png" };
-static const AssetOffset OFFSETS_471[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_472[] = { "assets/art/doll/M_LEG2_USA2.png" };
-static const AssetOffset OFFSETS_472[] = { { 15.950000f, 15.200000f } };
-static const char *const FRAMES_473[] = { "assets/art/doll/M_LEG2_USA3.png" };
-static const AssetOffset OFFSETS_473[] = { { 15.950000f, 15.200000f } };
-static const char *const FRAMES_474[] = { "assets/art/doll/M_LEG2_USA4.png" };
-static const AssetOffset OFFSETS_474[] = { { 15.950000f, 15.200000f } };
-static const char *const FRAMES_475[] = { "assets/art/doll/M_LEG2_USA5.png" };
-static const AssetOffset OFFSETS_475[] = { { 15.950000f, 15.200000f } };
-static const char *const FRAMES_476[] = { "assets/art/doll/M_SARM_FIVE.png" };
-static const AssetOffset OFFSETS_476[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_477[] = { "assets/art/doll/M_SARM_FOUR.png" };
-static const AssetOffset OFFSETS_477[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_478[] = { "assets/art/doll/M_SARM_GHOST.png" };
-static const AssetOffset OFFSETS_478[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_479[] = { "assets/art/doll/M_SARM_MAN.png" };
-static const AssetOffset OFFSETS_479[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_480[] = { "assets/art/doll/M_SARM_MAN2.png" };
-static const AssetOffset OFFSETS_480[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_481[] = { "assets/art/doll/M_SARM_MAN3.png" };
-static const AssetOffset OFFSETS_481[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_482[] = { "assets/art/doll/M_SARM_METABII.png" };
-static const AssetOffset OFFSETS_482[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_483[] = { "assets/art/doll/M_SARM_ONE.png" };
-static const AssetOffset OFFSETS_483[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_484[] = { "assets/art/doll/M_SARM_TWO.png" };
+static const char *const FRAMES_404[] = { "assets/art/doll/M_FOOT_SHAMAN1.png" };
+static const AssetOffset OFFSETS_404[] = { { 0.000000f, 0.000000f } };
+static const char *const FRAMES_405[] = { "assets/art/doll/M_FOOT_SINJID.png" };
+static const AssetOffset OFFSETS_405[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_406[] = { "assets/art/doll/M_FOOT_SURVIVOR.png" };
+static const AssetOffset OFFSETS_406[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_407[] = { "assets/art/doll/M_FOOT_USA1.png" };
+static const AssetOffset OFFSETS_407[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_408[] = { "assets/art/doll/M_FOOT_USA2.png" };
+static const AssetOffset OFFSETS_408[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_409[] = { "assets/art/doll/M_FOOT_USA3.png" };
+static const AssetOffset OFFSETS_409[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_410[] = { "assets/art/doll/M_FOOT_USA4.png" };
+static const AssetOffset OFFSETS_410[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_411[] = { "assets/art/doll/M_FOOT_USA5.png" };
+static const AssetOffset OFFSETS_411[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_412[] = { "assets/art/doll/M_HAND_ENGINEERINGGLOVES.png" };
+static const AssetOffset OFFSETS_412[] = { { 3.550000f, 2.450000f } };
+static const char *const FRAMES_413[] = { "assets/art/doll/M_HAND_FINAL1.png" };
+static const AssetOffset OFFSETS_413[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_414[] = { "assets/art/doll/M_HAND_FINAL2.png" };
+static const AssetOffset OFFSETS_414[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_415[] = { "assets/art/doll/M_HAND_FINAL3.png" };
+static const AssetOffset OFFSETS_415[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_416[] = { "assets/art/doll/M_HAND_FINAL4.png" };
+static const AssetOffset OFFSETS_416[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_417[] = { "assets/art/doll/M_HAND_GER.png" };
+static const AssetOffset OFFSETS_417[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_418[] = { "assets/art/doll/M_HAND_KNIGHT.png" };
+static const AssetOffset OFFSETS_418[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_419[] = { "assets/art/doll/M_HAND_MEDIC.png" };
+static const AssetOffset OFFSETS_419[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_420[] = { "assets/art/doll/M_HAND_NINJA.png" };
+static const AssetOffset OFFSETS_420[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_421[] = { "assets/art/doll/M_HAND_ROCKSTAR.png" };
+static const AssetOffset OFFSETS_421[] = { { 5.750000f, 9.950000f } };
+static const char *const FRAMES_422[] = { "assets/art/doll/M_HAND_SAMURAI.png" };
+static const AssetOffset OFFSETS_422[] = { { 3.550000f, 2.450000f } };
+static const char *const FRAMES_423[] = { "assets/art/doll/M_HAND_SAMURAI2.png" };
+static const AssetOffset OFFSETS_423[] = { { 3.550000f, 2.450000f } };
+static const char *const FRAMES_424[] = { "assets/art/doll/M_HAND_SAMURAI3.png" };
+static const AssetOffset OFFSETS_424[] = { { 3.550000f, 2.450000f } };
+static const char *const FRAMES_425[] = { "assets/art/doll/M_HAND_SHAMAN1.png" };
+static const AssetOffset OFFSETS_425[] = { { 3.550000f, 8.950000f } };
+static const char *const FRAMES_426[] = { "assets/art/doll/M_HAND_SHAMAN2.png" };
+static const AssetOffset OFFSETS_426[] = { { 3.550000f, 8.950000f } };
+static const char *const FRAMES_427[] = { "assets/art/doll/M_HAND_SHAMAN3.png" };
+static const AssetOffset OFFSETS_427[] = { { 3.550000f, 8.950000f } };
+static const char *const FRAMES_428[] = { "assets/art/doll/M_HAND_SHAMAN4.png" };
+static const AssetOffset OFFSETS_428[] = { { 3.550000f, 8.950000f } };
+static const char *const FRAMES_429[] = { "assets/art/doll/M_HAND_SINJID.png" };
+static const AssetOffset OFFSETS_429[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_430[] = { "assets/art/doll/M_HAND_SURVIVOR.png" };
+static const AssetOffset OFFSETS_430[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_431[] = { "assets/art/doll/M_HAND_USA1.png" };
+static const AssetOffset OFFSETS_431[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_432[] = { "assets/art/doll/M_HAND_USA2.png" };
+static const AssetOffset OFFSETS_432[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_433[] = { "assets/art/doll/M_HAND_USA3.png" };
+static const AssetOffset OFFSETS_433[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_434[] = { "assets/art/doll/M_HAND_USA4.png" };
+static const AssetOffset OFFSETS_434[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_435[] = { "assets/art/doll/M_HAND_USA5.png" };
+static const AssetOffset OFFSETS_435[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_436[] = { "assets/art/doll/M_HEAD_FINAL1.png" };
+static const AssetOffset OFFSETS_436[] = { { 10.400000f, 13.500000f } };
+static const char *const FRAMES_437[] = { "assets/art/doll/M_HEAD_FINAL2.png" };
+static const AssetOffset OFFSETS_437[] = { { 10.400000f, 13.500000f } };
+static const char *const FRAMES_438[] = { "assets/art/doll/M_HEAD_FINAL3.png" };
+static const AssetOffset OFFSETS_438[] = { { 10.400000f, 13.500000f } };
+static const char *const FRAMES_439[] = { "assets/art/doll/M_HEAD_FINAL4.png" };
+static const AssetOffset OFFSETS_439[] = { { 10.400000f, 13.500000f } };
+static const char *const FRAMES_440[] = { "assets/art/doll/M_HEAD_GER.png" };
+static const AssetOffset OFFSETS_440[] = { { 3.850000f, 8.350000f } };
+static const char *const FRAMES_441[] = { "assets/art/doll/M_HEAD_KNIGHT.png" };
+static const AssetOffset OFFSETS_441[] = { { 2.550000f, 6.700000f } };
+static const char *const FRAMES_442[] = { "assets/art/doll/M_HEAD_MEDIC.png" };
+static const AssetOffset OFFSETS_442[] = { { 10.450000f, 13.650000f } };
+static const char *const FRAMES_443[] = { "assets/art/doll/M_HEAD_NINJA.png" };
+static const AssetOffset OFFSETS_443[] = { { 2.550000f, 6.700000f } };
+static const char *const FRAMES_444[] = { "assets/art/doll/M_HEAD_ROCKSTAR.png" };
+static const AssetOffset OFFSETS_444[] = { { 6.150000f, 12.900000f } };
+static const char *const FRAMES_445[] = { "assets/art/doll/M_HEAD_SAMURAI.png" };
+static const AssetOffset OFFSETS_445[] = { { 9.500000f, 28.050000f } };
+static const char *const FRAMES_446[] = { "assets/art/doll/M_HEAD_SAMURAI2.png" };
+static const AssetOffset OFFSETS_446[] = { { 9.500000f, 28.050000f } };
+static const char *const FRAMES_447[] = { "assets/art/doll/M_HEAD_SAMURAI3.png" };
+static const AssetOffset OFFSETS_447[] = { { 9.500000f, 28.050000f } };
+static const char *const FRAMES_448[] = { "assets/art/doll/M_HEAD_SHAMAN1.png" };
+static const AssetOffset OFFSETS_448[] = { { 6.000000f, 30.350000f } };
+static const char *const FRAMES_449[] = { "assets/art/doll/M_HEAD_SHAMAN2.png" };
+static const AssetOffset OFFSETS_449[] = { { 6.000000f, 30.350000f } };
+static const char *const FRAMES_450[] = { "assets/art/doll/M_HEAD_SHAMAN3.png" };
+static const AssetOffset OFFSETS_450[] = { { 6.000000f, 30.350000f } };
+static const char *const FRAMES_451[] = { "assets/art/doll/M_HEAD_SHAMAN4.png" };
+static const AssetOffset OFFSETS_451[] = { { 6.000000f, 30.350000f } };
+static const char *const FRAMES_452[] = { "assets/art/doll/M_HEAD_SINJID.png" };
+static const AssetOffset OFFSETS_452[] = { { 5.300000f, 7.200000f } };
+static const char *const FRAMES_453[] = { "assets/art/doll/M_HEAD_SURVIVOR.png" };
+static const AssetOffset OFFSETS_453[] = { { 2.550000f, 6.700000f } };
+static const char *const FRAMES_454[] = { "assets/art/doll/M_HEAD_USA1.png" };
+static const AssetOffset OFFSETS_454[] = { { 2.550000f, 2.800000f } };
+static const char *const FRAMES_455[] = { "assets/art/doll/M_HEAD_USA2.png" };
+static const AssetOffset OFFSETS_455[] = { { 10.400000f, 13.500000f } };
+static const char *const FRAMES_456[] = { "assets/art/doll/M_HEAD_USA3.png" };
+static const AssetOffset OFFSETS_456[] = { { 10.400000f, 13.500000f } };
+static const char *const FRAMES_457[] = { "assets/art/doll/M_HEAD_USA4.png" };
+static const AssetOffset OFFSETS_457[] = { { 10.400000f, 13.500000f } };
+static const char *const FRAMES_458[] = { "assets/art/doll/M_HEAD_USA5.png" };
+static const AssetOffset OFFSETS_458[] = { { 10.400000f, 13.500000f } };
+static const char *const FRAMES_459[] = { "assets/art/doll/M_LEG2_FINAL1.png" };
+static const AssetOffset OFFSETS_459[] = { { 15.950000f, 15.200000f } };
+static const char *const FRAMES_460[] = { "assets/art/doll/M_LEG2_FINAL2.png" };
+static const AssetOffset OFFSETS_460[] = { { 15.950000f, 15.200000f } };
+static const char *const FRAMES_461[] = { "assets/art/doll/M_LEG2_FINAL3.png" };
+static const AssetOffset OFFSETS_461[] = { { 15.950000f, 15.200000f } };
+static const char *const FRAMES_462[] = { "assets/art/doll/M_LEG2_FINAL4.png" };
+static const AssetOffset OFFSETS_462[] = { { 15.950000f, 15.200000f } };
+static const char *const FRAMES_463[] = { "assets/art/doll/M_LEG2_GER.png" };
+static const AssetOffset OFFSETS_463[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_464[] = { "assets/art/doll/M_LEG2_JEANS.png" };
+static const AssetOffset OFFSETS_464[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_465[] = { "assets/art/doll/M_LEG2_KNIGHT.png" };
+static const AssetOffset OFFSETS_465[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_466[] = { "assets/art/doll/M_LEG2_MEDIC.png" };
+static const AssetOffset OFFSETS_466[] = { { 15.000000f, 15.200000f } };
+static const char *const FRAMES_467[] = { "assets/art/doll/M_LEG2_NAVY.png" };
+static const AssetOffset OFFSETS_467[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_468[] = { "assets/art/doll/M_LEG2_NINJA.png" };
+static const AssetOffset OFFSETS_468[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_469[] = { "assets/art/doll/M_LEG2_ROCKSTAR.png" };
+static const AssetOffset OFFSETS_469[] = { { 7.900000f, 15.200000f } };
+static const char *const FRAMES_470[] = { "assets/art/doll/M_LEG2_SAMURAI.png" };
+static const AssetOffset OFFSETS_470[] = { { 6.200000f, 8.650000f } };
+static const char *const FRAMES_471[] = { "assets/art/doll/M_LEG2_SAMURAI2.png" };
+static const AssetOffset OFFSETS_471[] = { { 15.800000f, 20.050000f } };
+static const char *const FRAMES_472[] = { "assets/art/doll/M_LEG2_SAMURAI3.png" };
+static const AssetOffset OFFSETS_472[] = { { 15.800000f, 20.050000f } };
+static const char *const FRAMES_473[] = { "assets/art/doll/M_LEG2_SHAMAN1.png" };
+static const AssetOffset OFFSETS_473[] = { { 5.450000f, 10.400000f } };
+static const char *const FRAMES_474[] = { "assets/art/doll/M_LEG2_SHAMAN2.png" };
+static const AssetOffset OFFSETS_474[] = { { 5.450000f, 10.400000f } };
+static const char *const FRAMES_475[] = { "assets/art/doll/M_LEG2_SHAMAN3.png" };
+static const AssetOffset OFFSETS_475[] = { { 5.450000f, 10.400000f } };
+static const char *const FRAMES_476[] = { "assets/art/doll/M_LEG2_SHAMAN4.png" };
+static const AssetOffset OFFSETS_476[] = { { 5.450000f, 10.400000f } };
+static const char *const FRAMES_477[] = { "assets/art/doll/M_LEG2_SINJID.png" };
+static const AssetOffset OFFSETS_477[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_478[] = { "assets/art/doll/M_LEG2_SURVIVOR.png" };
+static const AssetOffset OFFSETS_478[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_479[] = { "assets/art/doll/M_LEG2_USA1.png" };
+static const AssetOffset OFFSETS_479[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_480[] = { "assets/art/doll/M_LEG2_USA2.png" };
+static const AssetOffset OFFSETS_480[] = { { 15.950000f, 15.200000f } };
+static const char *const FRAMES_481[] = { "assets/art/doll/M_LEG2_USA3.png" };
+static const AssetOffset OFFSETS_481[] = { { 15.950000f, 15.200000f } };
+static const char *const FRAMES_482[] = { "assets/art/doll/M_LEG2_USA4.png" };
+static const AssetOffset OFFSETS_482[] = { { 15.950000f, 15.200000f } };
+static const char *const FRAMES_483[] = { "assets/art/doll/M_LEG2_USA5.png" };
+static const AssetOffset OFFSETS_483[] = { { 15.950000f, 15.200000f } };
+static const char *const FRAMES_484[] = { "assets/art/doll/M_SARM_FIVE.png" };
 static const AssetOffset OFFSETS_484[] = { { 3.550000f, 9.800000f } };
-static const char *const FRAMES_485[] = { "assets/art/doll/M_SARM_ZOMBIE.png" };
-static const AssetOffset OFFSETS_485[] = { { 3.800000f, 9.800000f } };
-static const char *const FRAMES_486[] = { "assets/art/doll/M_SARM_ZOMBIE1.png" };
-static const AssetOffset OFFSETS_486[] = { { 3.800000f, 9.800000f } };
-static const char *const FRAMES_487[] = { "assets/art/doll/M_SARM_ZOMBIE2.png" };
-static const AssetOffset OFFSETS_487[] = { { 3.800000f, 9.800000f } };
-static const char *const FRAMES_488[] = { "assets/art/doll/M_SCHEST_FIVE.png" };
-static const AssetOffset OFFSETS_488[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_489[] = { "assets/art/doll/M_SCHEST_FOUR.png" };
-static const AssetOffset OFFSETS_489[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_490[] = { "assets/art/doll/M_SCHEST_GHOST.png" };
-static const AssetOffset OFFSETS_490[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_491[] = { "assets/art/doll/M_SCHEST_MAN.png" };
-static const AssetOffset OFFSETS_491[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_492[] = { "assets/art/doll/M_SCHEST_MAN2.png" };
-static const AssetOffset OFFSETS_492[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_493[] = { "assets/art/doll/M_SCHEST_MAN3.png" };
-static const AssetOffset OFFSETS_493[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_494[] = { "assets/art/doll/M_SCHEST_METABII.png" };
-static const AssetOffset OFFSETS_494[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_495[] = { "assets/art/doll/M_SCHEST_ONE.png" };
-static const AssetOffset OFFSETS_495[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_496[] = { "assets/art/doll/M_SCHEST_TWO.png" };
+static const char *const FRAMES_485[] = { "assets/art/doll/M_SARM_FOUR.png" };
+static const AssetOffset OFFSETS_485[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_486[] = { "assets/art/doll/M_SARM_GHOST.png" };
+static const AssetOffset OFFSETS_486[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_487[] = { "assets/art/doll/M_SARM_MAN.png" };
+static const AssetOffset OFFSETS_487[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_488[] = { "assets/art/doll/M_SARM_MAN2.png" };
+static const AssetOffset OFFSETS_488[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_489[] = { "assets/art/doll/M_SARM_MAN3.png" };
+static const AssetOffset OFFSETS_489[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_490[] = { "assets/art/doll/M_SARM_METABII.png" };
+static const AssetOffset OFFSETS_490[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_491[] = { "assets/art/doll/M_SARM_ONE.png" };
+static const AssetOffset OFFSETS_491[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_492[] = { "assets/art/doll/M_SARM_TWO.png" };
+static const AssetOffset OFFSETS_492[] = { { 3.550000f, 9.800000f } };
+static const char *const FRAMES_493[] = { "assets/art/doll/M_SARM_ZOMBIE.png" };
+static const AssetOffset OFFSETS_493[] = { { 3.800000f, 9.800000f } };
+static const char *const FRAMES_494[] = { "assets/art/doll/M_SARM_ZOMBIE1.png" };
+static const AssetOffset OFFSETS_494[] = { { 3.800000f, 9.800000f } };
+static const char *const FRAMES_495[] = { "assets/art/doll/M_SARM_ZOMBIE2.png" };
+static const AssetOffset OFFSETS_495[] = { { 3.800000f, 9.800000f } };
+static const char *const FRAMES_496[] = { "assets/art/doll/M_SCHEST_FIVE.png" };
 static const AssetOffset OFFSETS_496[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_497[] = { "assets/art/doll/M_SCHEST_ZOMBIE.png" };
+static const char *const FRAMES_497[] = { "assets/art/doll/M_SCHEST_FOUR.png" };
 static const AssetOffset OFFSETS_497[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_498[] = { "assets/art/doll/M_SCHEST_ZOMBIE1.png" };
+static const char *const FRAMES_498[] = { "assets/art/doll/M_SCHEST_GHOST.png" };
 static const AssetOffset OFFSETS_498[] = { { 9.900000f, 16.400000f } };
-static const char *const FRAMES_499[] = { "assets/art/doll/M_SCHEST_ZOMBIE2.png" };
-static const AssetOffset OFFSETS_499[] = { { 48.450000f, 37.200000f } };
-static const char *const FRAMES_500[] = { "assets/art/doll/M_SFOOT_FIVE.png" };
-static const AssetOffset OFFSETS_500[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_501[] = { "assets/art/doll/M_SFOOT_FOUR.png" };
-static const AssetOffset OFFSETS_501[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_502[] = { "assets/art/doll/M_SFOOT_GHOST.png" };
-static const AssetOffset OFFSETS_502[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_503[] = { "assets/art/doll/M_SFOOT_MAN.png" };
-static const AssetOffset OFFSETS_503[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_504[] = { "assets/art/doll/M_SFOOT_MAN2.png" };
-static const AssetOffset OFFSETS_504[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_505[] = { "assets/art/doll/M_SFOOT_MAN3.png" };
-static const AssetOffset OFFSETS_505[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_506[] = { "assets/art/doll/M_SFOOT_METABII.png" };
-static const AssetOffset OFFSETS_506[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_507[] = { "assets/art/doll/M_SFOOT_ONE.png" };
-static const AssetOffset OFFSETS_507[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_508[] = { "assets/art/doll/M_SFOOT_TWO.png" };
+static const char *const FRAMES_499[] = { "assets/art/doll/M_SCHEST_MAN.png" };
+static const AssetOffset OFFSETS_499[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_500[] = { "assets/art/doll/M_SCHEST_MAN2.png" };
+static const AssetOffset OFFSETS_500[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_501[] = { "assets/art/doll/M_SCHEST_MAN3.png" };
+static const AssetOffset OFFSETS_501[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_502[] = { "assets/art/doll/M_SCHEST_METABII.png" };
+static const AssetOffset OFFSETS_502[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_503[] = { "assets/art/doll/M_SCHEST_ONE.png" };
+static const AssetOffset OFFSETS_503[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_504[] = { "assets/art/doll/M_SCHEST_TWO.png" };
+static const AssetOffset OFFSETS_504[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_505[] = { "assets/art/doll/M_SCHEST_ZOMBIE.png" };
+static const AssetOffset OFFSETS_505[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_506[] = { "assets/art/doll/M_SCHEST_ZOMBIE1.png" };
+static const AssetOffset OFFSETS_506[] = { { 9.900000f, 16.400000f } };
+static const char *const FRAMES_507[] = { "assets/art/doll/M_SCHEST_ZOMBIE2.png" };
+static const AssetOffset OFFSETS_507[] = { { 48.450000f, 37.200000f } };
+static const char *const FRAMES_508[] = { "assets/art/doll/M_SFOOT_FIVE.png" };
 static const AssetOffset OFFSETS_508[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_509[] = { "assets/art/doll/M_SFOOT_ZOMBIE.png" };
+static const char *const FRAMES_509[] = { "assets/art/doll/M_SFOOT_FOUR.png" };
 static const AssetOffset OFFSETS_509[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_510[] = { "assets/art/doll/M_SFOOT_ZOMBIE1.png" };
+static const char *const FRAMES_510[] = { "assets/art/doll/M_SFOOT_GHOST.png" };
 static const AssetOffset OFFSETS_510[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_511[] = { "assets/art/doll/M_SFOOT_ZOMBIE2.png" };
+static const char *const FRAMES_511[] = { "assets/art/doll/M_SFOOT_MAN.png" };
 static const AssetOffset OFFSETS_511[] = { { 5.850000f, 2.650000f } };
-static const char *const FRAMES_512[] = { "assets/art/doll/M_SHAND_FIVE.png" };
-static const AssetOffset OFFSETS_512[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_513[] = { "assets/art/doll/M_SHAND_FOUR.png" };
-static const AssetOffset OFFSETS_513[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_514[] = { "assets/art/doll/M_SHAND_GHOST.png" };
-static const AssetOffset OFFSETS_514[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_515[] = { "assets/art/doll/M_SHAND_MAN.png" };
-static const AssetOffset OFFSETS_515[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_516[] = { "assets/art/doll/M_SHAND_MAN2.png" };
-static const AssetOffset OFFSETS_516[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_517[] = { "assets/art/doll/M_SHAND_MAN3.png" };
-static const AssetOffset OFFSETS_517[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_518[] = { "assets/art/doll/M_SHAND_METABII.png" };
-static const AssetOffset OFFSETS_518[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_519[] = { "assets/art/doll/M_SHAND_ONE.png" };
-static const AssetOffset OFFSETS_519[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_520[] = { "assets/art/doll/M_SHAND_TWO.png" };
+static const char *const FRAMES_512[] = { "assets/art/doll/M_SFOOT_MAN2.png" };
+static const AssetOffset OFFSETS_512[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_513[] = { "assets/art/doll/M_SFOOT_MAN3.png" };
+static const AssetOffset OFFSETS_513[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_514[] = { "assets/art/doll/M_SFOOT_METABII.png" };
+static const AssetOffset OFFSETS_514[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_515[] = { "assets/art/doll/M_SFOOT_ONE.png" };
+static const AssetOffset OFFSETS_515[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_516[] = { "assets/art/doll/M_SFOOT_TWO.png" };
+static const AssetOffset OFFSETS_516[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_517[] = { "assets/art/doll/M_SFOOT_ZOMBIE.png" };
+static const AssetOffset OFFSETS_517[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_518[] = { "assets/art/doll/M_SFOOT_ZOMBIE1.png" };
+static const AssetOffset OFFSETS_518[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_519[] = { "assets/art/doll/M_SFOOT_ZOMBIE2.png" };
+static const AssetOffset OFFSETS_519[] = { { 5.850000f, 2.650000f } };
+static const char *const FRAMES_520[] = { "assets/art/doll/M_SHAND_FIVE.png" };
 static const AssetOffset OFFSETS_520[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_521[] = { "assets/art/doll/M_SHAND_ZOMBIE.png" };
+static const char *const FRAMES_521[] = { "assets/art/doll/M_SHAND_FOUR.png" };
 static const AssetOffset OFFSETS_521[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_522[] = { "assets/art/doll/M_SHAND_ZOMBIE1.png" };
+static const char *const FRAMES_522[] = { "assets/art/doll/M_SHAND_GHOST.png" };
 static const AssetOffset OFFSETS_522[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_523[] = { "assets/art/doll/M_SHAND_ZOMBIE2.png" };
+static const char *const FRAMES_523[] = { "assets/art/doll/M_SHAND_MAN.png" };
 static const AssetOffset OFFSETS_523[] = { { 3.550000f, 9.150000f } };
-static const char *const FRAMES_524[] = { "assets/art/doll/M_SHEAD_FIVE.png" };
-static const AssetOffset OFFSETS_524[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_525[] = { "assets/art/doll/M_SHEAD_FOUR.png" };
-static const AssetOffset OFFSETS_525[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_526[] = { "assets/art/doll/M_SHEAD_GHOST.png" };
-static const AssetOffset OFFSETS_526[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_527[] = { "assets/art/doll/M_SHEAD_MAN.png" };
-static const AssetOffset OFFSETS_527[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_528[] = { "assets/art/doll/M_SHEAD_MAN2.png" };
-static const AssetOffset OFFSETS_528[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_529[] = { "assets/art/doll/M_SHEAD_MAN3.png" };
-static const AssetOffset OFFSETS_529[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_530[] = { "assets/art/doll/M_SHEAD_METABII.png" };
-static const AssetOffset OFFSETS_530[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_531[] = { "assets/art/doll/M_SHEAD_ONE.png" };
-static const AssetOffset OFFSETS_531[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_532[] = { "assets/art/doll/M_SHEAD_TWO.png" };
+static const char *const FRAMES_524[] = { "assets/art/doll/M_SHAND_MAN2.png" };
+static const AssetOffset OFFSETS_524[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_525[] = { "assets/art/doll/M_SHAND_MAN3.png" };
+static const AssetOffset OFFSETS_525[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_526[] = { "assets/art/doll/M_SHAND_METABII.png" };
+static const AssetOffset OFFSETS_526[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_527[] = { "assets/art/doll/M_SHAND_ONE.png" };
+static const AssetOffset OFFSETS_527[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_528[] = { "assets/art/doll/M_SHAND_TWO.png" };
+static const AssetOffset OFFSETS_528[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_529[] = { "assets/art/doll/M_SHAND_ZOMBIE.png" };
+static const AssetOffset OFFSETS_529[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_530[] = { "assets/art/doll/M_SHAND_ZOMBIE1.png" };
+static const AssetOffset OFFSETS_530[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_531[] = { "assets/art/doll/M_SHAND_ZOMBIE2.png" };
+static const AssetOffset OFFSETS_531[] = { { 3.550000f, 9.150000f } };
+static const char *const FRAMES_532[] = { "assets/art/doll/M_SHEAD_FIVE.png" };
 static const AssetOffset OFFSETS_532[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_533[] = { "assets/art/doll/M_SHEAD_USA1.png" };
-static const AssetOffset OFFSETS_533[] = { { 3.150000f, 8.150000f } };
-static const char *const FRAMES_534[] = { "assets/art/doll/M_SHEAD_ZOMBIE.png" };
+static const char *const FRAMES_533[] = { "assets/art/doll/M_SHEAD_FOUR.png" };
+static const AssetOffset OFFSETS_533[] = { { 2.550000f, 6.700000f } };
+static const char *const FRAMES_534[] = { "assets/art/doll/M_SHEAD_GHOST.png" };
 static const AssetOffset OFFSETS_534[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_535[] = { "assets/art/doll/M_SHEAD_ZOMBIE1.png" };
+static const char *const FRAMES_535[] = { "assets/art/doll/M_SHEAD_MAN.png" };
 static const AssetOffset OFFSETS_535[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_536[] = { "assets/art/doll/M_SHEAD_ZOMBIE2.png" };
+static const char *const FRAMES_536[] = { "assets/art/doll/M_SHEAD_MAN2.png" };
 static const AssetOffset OFFSETS_536[] = { { 2.550000f, 6.700000f } };
-static const char *const FRAMES_537[] = { "assets/art/doll/M_SHOULDER_FINAL1.png" };
-static const AssetOffset OFFSETS_537[] = { { 19.550000f, 9.200000f } };
-static const char *const FRAMES_538[] = { "assets/art/doll/M_SHOULDER_FINAL2.png" };
-static const AssetOffset OFFSETS_538[] = { { 19.550000f, 9.200000f } };
-static const char *const FRAMES_539[] = { "assets/art/doll/M_SHOULDER_FINAL3.png" };
-static const AssetOffset OFFSETS_539[] = { { 19.550000f, 9.200000f } };
-static const char *const FRAMES_540[] = { "assets/art/doll/M_SHOULDER_FINAL4.png" };
-static const AssetOffset OFFSETS_540[] = { { 19.550000f, 9.200000f } };
-static const char *const FRAMES_541[] = { "assets/art/doll/M_SHOULDER_KNIGHT.png" };
-static const AssetOffset OFFSETS_541[] = { { 4.000000f, 4.250000f } };
-static const char *const FRAMES_542[] = { "assets/art/doll/M_SHOULDER_MEDIC.png" };
-static const AssetOffset OFFSETS_542[] = { { 24.150000f, 20.200000f } };
-static const char *const FRAMES_543[] = { "assets/art/doll/M_SHOULDER_NINJA.png" };
-static const AssetOffset OFFSETS_543[] = { { 4.000000f, 4.250000f } };
-static const char *const FRAMES_544[] = { "assets/art/doll/M_SHOULDER_ROCKSTAR.png" };
-static const AssetOffset OFFSETS_544[] = { { 0.000000f, 0.000000f } };
-static const char *const FRAMES_545[] = { "assets/art/doll/M_SHOULDER_SAMURAI.png" };
-static const AssetOffset OFFSETS_545[] = { { 17.900000f, 7.000000f } };
-static const char *const FRAMES_546[] = { "assets/art/doll/M_SHOULDER_SAMURAI2.png" };
-static const AssetOffset OFFSETS_546[] = { { 27.900000f, 26.050000f } };
-static const char *const FRAMES_547[] = { "assets/art/doll/M_SHOULDER_SAMURAI3.png" };
-static const AssetOffset OFFSETS_547[] = { { 27.900000f, 26.050000f } };
-static const char *const FRAMES_548[] = { "assets/art/doll/M_SHOULDER_SHAMAN1.png" };
-static const AssetOffset OFFSETS_548[] = { { 18.650000f, 17.800000f } };
-static const char *const FRAMES_549[] = { "assets/art/doll/M_SHOULDER_SHAMAN2.png" };
-static const AssetOffset OFFSETS_549[] = { { 18.650000f, 17.800000f } };
-static const char *const FRAMES_550[] = { "assets/art/doll/M_SHOULDER_SHAMAN3.png" };
-static const AssetOffset OFFSETS_550[] = { { 18.650000f, 17.800000f } };
-static const char *const FRAMES_551[] = { "assets/art/doll/M_SHOULDER_SHAMAN4.png" };
-static const AssetOffset OFFSETS_551[] = { { 18.650000f, 17.800000f } };
-static const char *const FRAMES_552[] = { "assets/art/doll/M_SHOULDER_SINJID.png" };
-static const AssetOffset OFFSETS_552[] = { { 4.000000f, 4.250000f } };
-static const char *const FRAMES_553[] = { "assets/art/doll/M_SHOULDER_SURVIVOR.png" };
-static const AssetOffset OFFSETS_553[] = { { 4.000000f, 4.250000f } };
-static const char *const FRAMES_554[] = { "assets/art/doll/M_SHOULDER_USA1.png" };
-static const AssetOffset OFFSETS_554[] = { { 0.000000f, 0.000000f } };
-static const char *const FRAMES_555[] = { "assets/art/doll/M_SHOULDER_USA2.png" };
-static const AssetOffset OFFSETS_555[] = { { 19.550000f, 9.200000f } };
-static const char *const FRAMES_556[] = { "assets/art/doll/M_SHOULDER_USA3.png" };
-static const AssetOffset OFFSETS_556[] = { { 19.550000f, 9.200000f } };
-static const char *const FRAMES_557[] = { "assets/art/doll/M_SHOULDER_USA4.png" };
-static const AssetOffset OFFSETS_557[] = { { 19.550000f, 9.200000f } };
-static const char *const FRAMES_558[] = { "assets/art/doll/M_SHOULDER_USA5.png" };
-static const AssetOffset OFFSETS_558[] = { { 19.550000f, 9.200000f } };
-static const char *const FRAMES_559[] = { "assets/art/doll/M_SLEG2_FIVE.png" };
-static const AssetOffset OFFSETS_559[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_560[] = { "assets/art/doll/M_SLEG2_FOUR.png" };
-static const AssetOffset OFFSETS_560[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_561[] = { "assets/art/doll/M_SLEG2_GHOST.png" };
-static const AssetOffset OFFSETS_561[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_562[] = { "assets/art/doll/M_SLEG2_MAN.png" };
-static const AssetOffset OFFSETS_562[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_563[] = { "assets/art/doll/M_SLEG2_MAN2.png" };
-static const AssetOffset OFFSETS_563[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_564[] = { "assets/art/doll/M_SLEG2_MAN3.png" };
-static const AssetOffset OFFSETS_564[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_565[] = { "assets/art/doll/M_SLEG2_METABII.png" };
-static const AssetOffset OFFSETS_565[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_566[] = { "assets/art/doll/M_SLEG2_ONE.png" };
-static const AssetOffset OFFSETS_566[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_567[] = { "assets/art/doll/M_SLEG2_TWO.png" };
+static const char *const FRAMES_537[] = { "assets/art/doll/M_SHEAD_MAN3.png" };
+static const AssetOffset OFFSETS_537[] = { { 2.550000f, 6.700000f } };
+static const char *const FRAMES_538[] = { "assets/art/doll/M_SHEAD_METABII.png" };
+static const AssetOffset OFFSETS_538[] = { { 2.550000f, 6.700000f } };
+static const char *const FRAMES_539[] = { "assets/art/doll/M_SHEAD_ONE.png" };
+static const AssetOffset OFFSETS_539[] = { { 2.550000f, 6.700000f } };
+static const char *const FRAMES_540[] = { "assets/art/doll/M_SHEAD_TWO.png" };
+static const AssetOffset OFFSETS_540[] = { { 2.550000f, 6.700000f } };
+static const char *const FRAMES_541[] = { "assets/art/doll/M_SHEAD_USA1.png" };
+static const AssetOffset OFFSETS_541[] = { { 3.150000f, 8.150000f } };
+static const char *const FRAMES_542[] = { "assets/art/doll/M_SHEAD_ZOMBIE.png" };
+static const AssetOffset OFFSETS_542[] = { { 2.550000f, 6.700000f } };
+static const char *const FRAMES_543[] = { "assets/art/doll/M_SHEAD_ZOMBIE1.png" };
+static const AssetOffset OFFSETS_543[] = { { 2.550000f, 6.700000f } };
+static const char *const FRAMES_544[] = { "assets/art/doll/M_SHEAD_ZOMBIE2.png" };
+static const AssetOffset OFFSETS_544[] = { { 2.550000f, 6.700000f } };
+static const char *const FRAMES_545[] = { "assets/art/doll/M_SHOULDER_FINAL1.png" };
+static const AssetOffset OFFSETS_545[] = { { 19.550000f, 9.200000f } };
+static const char *const FRAMES_546[] = { "assets/art/doll/M_SHOULDER_FINAL2.png" };
+static const AssetOffset OFFSETS_546[] = { { 19.550000f, 9.200000f } };
+static const char *const FRAMES_547[] = { "assets/art/doll/M_SHOULDER_FINAL3.png" };
+static const AssetOffset OFFSETS_547[] = { { 19.550000f, 9.200000f } };
+static const char *const FRAMES_548[] = { "assets/art/doll/M_SHOULDER_FINAL4.png" };
+static const AssetOffset OFFSETS_548[] = { { 19.550000f, 9.200000f } };
+static const char *const FRAMES_549[] = { "assets/art/doll/M_SHOULDER_KNIGHT.png" };
+static const AssetOffset OFFSETS_549[] = { { 4.000000f, 4.250000f } };
+static const char *const FRAMES_550[] = { "assets/art/doll/M_SHOULDER_MEDIC.png" };
+static const AssetOffset OFFSETS_550[] = { { 24.150000f, 20.200000f } };
+static const char *const FRAMES_551[] = { "assets/art/doll/M_SHOULDER_NINJA.png" };
+static const AssetOffset OFFSETS_551[] = { { 4.000000f, 4.250000f } };
+static const char *const FRAMES_552[] = { "assets/art/doll/M_SHOULDER_ROCKSTAR.png" };
+static const AssetOffset OFFSETS_552[] = { { 0.000000f, 0.000000f } };
+static const char *const FRAMES_553[] = { "assets/art/doll/M_SHOULDER_SAMURAI.png" };
+static const AssetOffset OFFSETS_553[] = { { 17.900000f, 7.000000f } };
+static const char *const FRAMES_554[] = { "assets/art/doll/M_SHOULDER_SAMURAI2.png" };
+static const AssetOffset OFFSETS_554[] = { { 27.900000f, 26.050000f } };
+static const char *const FRAMES_555[] = { "assets/art/doll/M_SHOULDER_SAMURAI3.png" };
+static const AssetOffset OFFSETS_555[] = { { 27.900000f, 26.050000f } };
+static const char *const FRAMES_556[] = { "assets/art/doll/M_SHOULDER_SHAMAN1.png" };
+static const AssetOffset OFFSETS_556[] = { { 18.650000f, 17.800000f } };
+static const char *const FRAMES_557[] = { "assets/art/doll/M_SHOULDER_SHAMAN2.png" };
+static const AssetOffset OFFSETS_557[] = { { 18.650000f, 17.800000f } };
+static const char *const FRAMES_558[] = { "assets/art/doll/M_SHOULDER_SHAMAN3.png" };
+static const AssetOffset OFFSETS_558[] = { { 18.650000f, 17.800000f } };
+static const char *const FRAMES_559[] = { "assets/art/doll/M_SHOULDER_SHAMAN4.png" };
+static const AssetOffset OFFSETS_559[] = { { 18.650000f, 17.800000f } };
+static const char *const FRAMES_560[] = { "assets/art/doll/M_SHOULDER_SINJID.png" };
+static const AssetOffset OFFSETS_560[] = { { 4.000000f, 4.250000f } };
+static const char *const FRAMES_561[] = { "assets/art/doll/M_SHOULDER_SURVIVOR.png" };
+static const AssetOffset OFFSETS_561[] = { { 4.000000f, 4.250000f } };
+static const char *const FRAMES_562[] = { "assets/art/doll/M_SHOULDER_USA1.png" };
+static const AssetOffset OFFSETS_562[] = { { 0.000000f, 0.000000f } };
+static const char *const FRAMES_563[] = { "assets/art/doll/M_SHOULDER_USA2.png" };
+static const AssetOffset OFFSETS_563[] = { { 19.550000f, 9.200000f } };
+static const char *const FRAMES_564[] = { "assets/art/doll/M_SHOULDER_USA3.png" };
+static const AssetOffset OFFSETS_564[] = { { 19.550000f, 9.200000f } };
+static const char *const FRAMES_565[] = { "assets/art/doll/M_SHOULDER_USA4.png" };
+static const AssetOffset OFFSETS_565[] = { { 19.550000f, 9.200000f } };
+static const char *const FRAMES_566[] = { "assets/art/doll/M_SHOULDER_USA5.png" };
+static const AssetOffset OFFSETS_566[] = { { 19.550000f, 9.200000f } };
+static const char *const FRAMES_567[] = { "assets/art/doll/M_SLEG2_FIVE.png" };
 static const AssetOffset OFFSETS_567[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_568[] = { "assets/art/doll/M_SLEG2_ZOMBIE.png" };
+static const char *const FRAMES_568[] = { "assets/art/doll/M_SLEG2_FOUR.png" };
 static const AssetOffset OFFSETS_568[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_569[] = { "assets/art/doll/M_SLEG2_ZOMBIE1.png" };
+static const char *const FRAMES_569[] = { "assets/art/doll/M_SLEG2_GHOST.png" };
 static const AssetOffset OFFSETS_569[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_570[] = { "assets/art/doll/M_SLEG2_ZOMBIE2.png" };
+static const char *const FRAMES_570[] = { "assets/art/doll/M_SLEG2_MAN.png" };
 static const AssetOffset OFFSETS_570[] = { { 4.600000f, 15.200000f } };
-static const char *const FRAMES_571[] = { "assets/art/doll/M_SSHOULDER_ONE.png" };
-static const AssetOffset OFFSETS_571[] = { { 0.000000f, 0.000000f } };
-static const char *const FRAMES_572[] = { "assets/art/doll/M_WEAPON_BROAD.png" };
-static const AssetOffset OFFSETS_572[] = { { 15.950000f, 48.550000f } };
-static const char *const FRAMES_573[] = { "assets/art/doll/M_WEAPON_CLUB.png" };
-static const AssetOffset OFFSETS_573[] = { { 2.650000f, 23.150000f } };
-static const char *const FRAMES_574[] = { "assets/art/doll/M_WEAPON_CROWBAR.png" };
-static const AssetOffset OFFSETS_574[] = { { 1.350000f, 17.400000f } };
-static const char *const FRAMES_575[] = { "assets/art/doll/M_WEAPON_FIREAXE.png" };
-static const AssetOffset OFFSETS_575[] = { { 2.200000f, 20.650000f } };
-static const char *const FRAMES_576[] = { "assets/art/doll/M_WEAPON_KATANA.png" };
-static const AssetOffset OFFSETS_576[] = { { 3.750000f, 41.150000f } };
-static const char *const FRAMES_577[] = { "assets/art/doll/M_WEAPON_M4.png" };
-static const AssetOffset OFFSETS_577[] = { { 15.600000f, 56.200000f } };
-static const char *const FRAMES_578[] = { "assets/art/doll/M_WEAPON_MOON.png" };
-static const AssetOffset OFFSETS_578[] = { { 10.200000f, 57.900000f } };
-static const char *const FRAMES_579[] = { "assets/art/doll/M_WEAPON_PALADINSWORD.png" };
-static const AssetOffset OFFSETS_579[] = { { 18.900000f, 89.650000f } };
-static const char *const FRAMES_580[] = { "assets/art/doll/M_WEAPON_PIPE.png" };
-static const AssetOffset OFFSETS_580[] = { { 5.300000f, 27.500000f } };
-static const char *const FRAMES_581[] = { "assets/art/doll/M_WEAPON_SHAMANKNIFE.png" };
-static const AssetOffset OFFSETS_581[] = { { 8.350000f, 31.000000f } };
-static const char *const FRAMES_582[] = { "assets/art/doll/M_WEAPON_SHAMANMAGIC.png" };
-static const AssetOffset OFFSETS_582[] = { { 13.300000f, 30.800000f } };
-static const char *const FRAMES_583[] = { "assets/art/doll/M_WEAPON_SHAMANMED.png" };
-static const AssetOffset OFFSETS_583[] = { { 13.300000f, 30.800000f } };
-static const char *const FRAMES_584[] = { "assets/art/doll/M_WEAPON_SHAMANSWORD.png" };
-static const AssetOffset OFFSETS_584[] = { { 8.800000f, 57.500000f } };
-static const char *const FRAMES_585[] = { "assets/art/doll/M_WEAPON_SHANK.png" };
-static const AssetOffset OFFSETS_585[] = { { 13.800000f, 39.350000f } };
-static const char *const FRAMES_586[] = { "assets/art/doll/M_WEAPON_SHIELD2.png" };
-static const AssetOffset OFFSETS_586[] = { { 17.950000f, 10.300000f } };
-static const char *const FRAMES_587[] = { "assets/art/doll/M_WEAPON_SPELLMACE.png" };
-static const AssetOffset OFFSETS_587[] = { { 14.400000f, 39.300000f } };
-static const char *const FRAMES_588[] = { "assets/art/doll/M_WEAPON_SPELLSTAFF.png" };
-static const AssetOffset OFFSETS_588[] = { { 13.150000f, 49.800000f } };
-static const char *const FRAMES_589[] = { "assets/art/doll/M_WEAPON_STICK.png" };
-static const AssetOffset OFFSETS_589[] = { { 2.650000f, 23.150000f } };
-static const char *const FRAMES_590[] = { "assets/art/doll/M_WEAPON_SWATSWORD.png" };
-static const AssetOffset OFFSETS_590[] = { { 7.050000f, 48.000000f } };
-static const char *const FRAMES_591[] = { "assets/art/doll/M_WEAPON_SWIFT.png" };
-static const AssetOffset OFFSETS_591[] = { { 2.600000f, 36.950000f } };
-static const char *const FRAMES_592[] = { "assets/art/doll/M_WEAPON_SWORD1.png" };
-static const AssetOffset OFFSETS_592[] = { { 4.350000f, 35.150000f } };
-static const char *const FRAMES_593[] = { "assets/art/doll/M_WEAPON_UBER1.png" };
-static const AssetOffset OFFSETS_593[] = { { 40.800000f, 65.450000f } };
-static const char *const FRAMES_594[] = { "assets/art/doll/M_WEAPON_UBER10.png" };
-static const AssetOffset OFFSETS_594[] = { { 14.400000f, 39.300000f } };
-static const char *const FRAMES_595[] = { "assets/art/doll/M_WEAPON_UBER11.png" };
-static const AssetOffset OFFSETS_595[] = { { 12.950000f, 36.850000f } };
-static const char *const FRAMES_596[] = { "assets/art/doll/M_WEAPON_UBER2.png" };
-static const AssetOffset OFFSETS_596[] = { { 12.950000f, 36.850000f } };
-static const char *const FRAMES_597[] = { "assets/art/doll/M_WEAPON_UBER3.png" };
-static const AssetOffset OFFSETS_597[] = { { 15.600000f, 56.200000f } };
-static const char *const FRAMES_598[] = { "assets/art/doll/M_WEAPON_UBER4.png" };
-static const AssetOffset OFFSETS_598[] = { { 15.600000f, 56.200000f } };
-static const char *const FRAMES_599[] = { "assets/art/doll/M_WEAPON_UBER5.png" };
-static const AssetOffset OFFSETS_599[] = { { 17.950000f, 10.300000f } };
-static const char *const FRAMES_600[] = { "assets/art/doll/M_WEAPON_UBER6.png" };
-static const AssetOffset OFFSETS_600[] = { { 17.950000f, 10.300000f } };
-static const char *const FRAMES_601[] = { "assets/art/doll/M_WEAPON_UBER7.png" };
-static const AssetOffset OFFSETS_601[] = { { 17.950000f, 10.300000f } };
-static const char *const FRAMES_602[] = { "assets/art/doll/M_WEAPON_UBER8.png" };
+static const char *const FRAMES_571[] = { "assets/art/doll/M_SLEG2_MAN2.png" };
+static const AssetOffset OFFSETS_571[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_572[] = { "assets/art/doll/M_SLEG2_MAN3.png" };
+static const AssetOffset OFFSETS_572[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_573[] = { "assets/art/doll/M_SLEG2_METABII.png" };
+static const AssetOffset OFFSETS_573[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_574[] = { "assets/art/doll/M_SLEG2_ONE.png" };
+static const AssetOffset OFFSETS_574[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_575[] = { "assets/art/doll/M_SLEG2_TWO.png" };
+static const AssetOffset OFFSETS_575[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_576[] = { "assets/art/doll/M_SLEG2_ZOMBIE.png" };
+static const AssetOffset OFFSETS_576[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_577[] = { "assets/art/doll/M_SLEG2_ZOMBIE1.png" };
+static const AssetOffset OFFSETS_577[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_578[] = { "assets/art/doll/M_SLEG2_ZOMBIE2.png" };
+static const AssetOffset OFFSETS_578[] = { { 4.600000f, 15.200000f } };
+static const char *const FRAMES_579[] = { "assets/art/doll/M_SSHOULDER_ONE.png" };
+static const AssetOffset OFFSETS_579[] = { { 0.000000f, 0.000000f } };
+static const char *const FRAMES_580[] = { "assets/art/doll/M_WEAPON_BROAD.png" };
+static const AssetOffset OFFSETS_580[] = { { 15.950000f, 48.550000f } };
+static const char *const FRAMES_581[] = { "assets/art/doll/M_WEAPON_CLUB.png" };
+static const AssetOffset OFFSETS_581[] = { { 2.650000f, 23.150000f } };
+static const char *const FRAMES_582[] = { "assets/art/doll/M_WEAPON_CROWBAR.png" };
+static const AssetOffset OFFSETS_582[] = { { 1.350000f, 17.400000f } };
+static const char *const FRAMES_583[] = { "assets/art/doll/M_WEAPON_FIREAXE.png" };
+static const AssetOffset OFFSETS_583[] = { { 2.200000f, 20.650000f } };
+static const char *const FRAMES_584[] = { "assets/art/doll/M_WEAPON_KATANA.png" };
+static const AssetOffset OFFSETS_584[] = { { 3.750000f, 41.150000f } };
+static const char *const FRAMES_585[] = { "assets/art/doll/M_WEAPON_M4.png" };
+static const AssetOffset OFFSETS_585[] = { { 15.600000f, 56.200000f } };
+static const char *const FRAMES_586[] = { "assets/art/doll/M_WEAPON_MOON.png" };
+static const AssetOffset OFFSETS_586[] = { { 10.200000f, 57.900000f } };
+static const char *const FRAMES_587[] = { "assets/art/doll/M_WEAPON_PALADINSWORD.png" };
+static const AssetOffset OFFSETS_587[] = { { 18.900000f, 89.650000f } };
+static const char *const FRAMES_588[] = { "assets/art/doll/M_WEAPON_PIPE.png" };
+static const AssetOffset OFFSETS_588[] = { { 5.300000f, 27.500000f } };
+static const char *const FRAMES_589[] = { "assets/art/doll/M_WEAPON_SHAMANKNIFE.png" };
+static const AssetOffset OFFSETS_589[] = { { 8.350000f, 31.000000f } };
+static const char *const FRAMES_590[] = { "assets/art/doll/M_WEAPON_SHAMANMAGIC.png" };
+static const AssetOffset OFFSETS_590[] = { { 13.300000f, 30.800000f } };
+static const char *const FRAMES_591[] = { "assets/art/doll/M_WEAPON_SHAMANMED.png" };
+static const AssetOffset OFFSETS_591[] = { { 13.300000f, 30.800000f } };
+static const char *const FRAMES_592[] = { "assets/art/doll/M_WEAPON_SHAMANSWORD.png" };
+static const AssetOffset OFFSETS_592[] = { { 8.800000f, 57.500000f } };
+static const char *const FRAMES_593[] = { "assets/art/doll/M_WEAPON_SHANK.png" };
+static const AssetOffset OFFSETS_593[] = { { 13.800000f, 39.350000f } };
+static const char *const FRAMES_594[] = { "assets/art/doll/M_WEAPON_SHIELD2.png" };
+static const AssetOffset OFFSETS_594[] = { { 17.950000f, 10.300000f } };
+static const char *const FRAMES_595[] = { "assets/art/doll/M_WEAPON_SPELLMACE.png" };
+static const AssetOffset OFFSETS_595[] = { { 14.400000f, 39.300000f } };
+static const char *const FRAMES_596[] = { "assets/art/doll/M_WEAPON_SPELLSTAFF.png" };
+static const AssetOffset OFFSETS_596[] = { { 13.150000f, 49.800000f } };
+static const char *const FRAMES_597[] = { "assets/art/doll/M_WEAPON_STICK.png" };
+static const AssetOffset OFFSETS_597[] = { { 2.650000f, 23.150000f } };
+static const char *const FRAMES_598[] = { "assets/art/doll/M_WEAPON_SWATSWORD.png" };
+static const AssetOffset OFFSETS_598[] = { { 7.050000f, 48.000000f } };
+static const char *const FRAMES_599[] = { "assets/art/doll/M_WEAPON_SWIFT.png" };
+static const AssetOffset OFFSETS_599[] = { { 2.600000f, 36.950000f } };
+static const char *const FRAMES_600[] = { "assets/art/doll/M_WEAPON_SWORD1.png" };
+static const AssetOffset OFFSETS_600[] = { { 4.350000f, 35.150000f } };
+static const char *const FRAMES_601[] = { "assets/art/doll/M_WEAPON_UBER1.png" };
+static const AssetOffset OFFSETS_601[] = { { 40.800000f, 65.450000f } };
+static const char *const FRAMES_602[] = { "assets/art/doll/M_WEAPON_UBER10.png" };
 static const AssetOffset OFFSETS_602[] = { { 14.400000f, 39.300000f } };
-static const char *const FRAMES_603[] = { "assets/art/doll/M_WEAPON_UBER9.png" };
-static const AssetOffset OFFSETS_603[] = { { 14.400000f, 39.300000f } };
-static const char *const FRAMES_604[] = { "assets/art/icon/Magic_Bolt.png" };
-static const AssetOffset OFFSETS_604[] = { { 12.850000f, 15.400000f } };
-static const char *const FRAMES_605[] = { "assets/art/item/Magic_Lantern.png" };
-static const AssetOffset OFFSETS_605[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_606[] = { "assets/art/sound/MagicCast.mp3" };
-static const char *const FRAMES_607[] = { "assets/art/icon/Master_Strike.png" };
-static const AssetOffset OFFSETS_607[] = { { 20.400000f, 15.500000f } };
-static const char *const FRAMES_608[] = { "assets/art/item/Mender's_Armor.png" };
-static const AssetOffset OFFSETS_608[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_609[] = { "assets/art/item/Mender's_Axe.png" };
-static const AssetOffset OFFSETS_609[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_610[] = { "assets/art/item/Mender's_Boots.png" };
-static const AssetOffset OFFSETS_610[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_611[] = { "assets/art/item/Mender's_Gloves.png" };
-static const AssetOffset OFFSETS_611[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_612[] = { "assets/art/item/Mender's_Leggings.png" };
-static const AssetOffset OFFSETS_612[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_613[] = { "assets/art/item/Moon-Struck_Horrors.png" };
+static const char *const FRAMES_603[] = { "assets/art/doll/M_WEAPON_UBER11.png" };
+static const AssetOffset OFFSETS_603[] = { { 12.950000f, 36.850000f } };
+static const char *const FRAMES_604[] = { "assets/art/doll/M_WEAPON_UBER2.png" };
+static const AssetOffset OFFSETS_604[] = { { 12.950000f, 36.850000f } };
+static const char *const FRAMES_605[] = { "assets/art/doll/M_WEAPON_UBER3.png" };
+static const AssetOffset OFFSETS_605[] = { { 15.600000f, 56.200000f } };
+static const char *const FRAMES_606[] = { "assets/art/doll/M_WEAPON_UBER4.png" };
+static const AssetOffset OFFSETS_606[] = { { 15.600000f, 56.200000f } };
+static const char *const FRAMES_607[] = { "assets/art/doll/M_WEAPON_UBER5.png" };
+static const AssetOffset OFFSETS_607[] = { { 17.950000f, 10.300000f } };
+static const char *const FRAMES_608[] = { "assets/art/doll/M_WEAPON_UBER6.png" };
+static const AssetOffset OFFSETS_608[] = { { 17.950000f, 10.300000f } };
+static const char *const FRAMES_609[] = { "assets/art/doll/M_WEAPON_UBER7.png" };
+static const AssetOffset OFFSETS_609[] = { { 17.950000f, 10.300000f } };
+static const char *const FRAMES_610[] = { "assets/art/doll/M_WEAPON_UBER8.png" };
+static const AssetOffset OFFSETS_610[] = { { 14.400000f, 39.300000f } };
+static const char *const FRAMES_611[] = { "assets/art/doll/M_WEAPON_UBER9.png" };
+static const AssetOffset OFFSETS_611[] = { { 14.400000f, 39.300000f } };
+static const char *const FRAMES_612[] = { "assets/art/icon/Magic_Bolt.png" };
+static const AssetOffset OFFSETS_612[] = { { 12.850000f, 15.400000f } };
+static const char *const FRAMES_613[] = { "assets/art/item/Magic_Lantern.png" };
 static const AssetOffset OFFSETS_613[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_614[] = { "assets/art/item/Murder.png" };
-static const AssetOffset OFFSETS_614[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_615[] = { "assets/art/background/NIGHT.png" };
-static const AssetOffset OFFSETS_615[] = { { 403.250000f, 183.100000f } };
-static const char *const FRAMES_616[] = { "assets/art/item/Nature's_Fury.png" };
+static const char *const FRAMES_614[] = { "assets/art/sound/MagicCast.mp3" };
+static const char *const FRAMES_615[] = { "assets/art/icon/Master_Strike.png" };
+static const AssetOffset OFFSETS_615[] = { { 20.400000f, 15.500000f } };
+static const char *const FRAMES_616[] = { "assets/art/item/Mender's_Armor.png" };
 static const AssetOffset OFFSETS_616[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_617[] = { "assets/art/item/Navy_Boots.png" };
+static const char *const FRAMES_617[] = { "assets/art/item/Mender's_Axe.png" };
 static const AssetOffset OFFSETS_617[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_618[] = { "assets/art/item/Nike_Head_Wear.png" };
+static const char *const FRAMES_618[] = { "assets/art/item/Mender's_Boots.png" };
 static const AssetOffset OFFSETS_618[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_619[] = { "assets/art/item/None.png" };
+static const char *const FRAMES_619[] = { "assets/art/item/Mender's_Gloves.png" };
 static const AssetOffset OFFSETS_619[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_620[] = { "assets/art/orb/ORB_BRUTALITY.png" };
-static const AssetOffset OFFSETS_620[] = { { 12.850000f, 19.750000f } };
-static const char *const FRAMES_621[] = { "assets/art/orb/ORB_Blessing_of_Light.png" };
-static const AssetOffset OFFSETS_621[] = { { 15.650000f, 17.100000f } };
-static const char *const FRAMES_622[] = { "assets/art/orb/ORB_Block.png" };
-static const AssetOffset OFFSETS_622[] = { { 16.350000f, 13.450000f } };
-static const char *const FRAMES_623[] = { "assets/art/orb/ORB_Blood_Focus.png" };
-static const AssetOffset OFFSETS_623[] = { { 12.850000f, 12.200000f } };
-static const char *const FRAMES_624[] = { "assets/art/orb/ORB_Blood_Strike.png" };
-static const AssetOffset OFFSETS_624[] = { { 17.150000f, 14.550000f } };
-static const char *const FRAMES_625[] = { "assets/art/orb/ORB_Break.png" };
-static const AssetOffset OFFSETS_625[] = { { 24.150000f, 10.450000f } };
-static const char *const FRAMES_626[] = { "assets/art/orb/ORB_Cell_Reformation.png" };
-static const AssetOffset OFFSETS_626[] = { { 27.100000f, 28.700000f } };
-static const char *const FRAMES_627[] = { "assets/art/orb/ORB_Coup_De_Grace.png" };
-static const AssetOffset OFFSETS_627[] = { { 19.700000f, 20.200000f } };
-static const char *const FRAMES_628[] = { "assets/art/orb/ORB_Cripple.png" };
-static const AssetOffset OFFSETS_628[] = { { 13.000000f, 12.200000f } };
-static const char *const FRAMES_629[] = { "assets/art/orb/ORB_Disrupt.png" };
-static const AssetOffset OFFSETS_629[] = { { 12.600000f, 11.500000f } };
-static const char *const FRAMES_630[] = { "assets/art/orb/ORB_ENDURANCE.png" };
-static const AssetOffset OFFSETS_630[] = { { 12.850000f, 19.950000f } };
-static const char *const FRAMES_631[] = { "assets/art/orb/ORB_Electro_Bolt.png" };
-static const AssetOffset OFFSETS_631[] = { { 12.850000f, 15.400000f } };
-static const char *const FRAMES_632[] = { "assets/art/orb/ORB_Empty.png" };
-static const AssetOffset OFFSETS_632[] = { { 11.500000f, 11.500000f } };
-static const char *const FRAMES_633[] = { "assets/art/orb/ORB_Flame_Blast.png" };
-static const AssetOffset OFFSETS_633[] = { { 12.850000f, 14.600000f } };
-static const char *const FRAMES_634[] = { "assets/art/orb/ORB_Flame_Strike.png" };
-static const AssetOffset OFFSETS_634[] = { { 12.850000f, 19.900000f } };
-static const char *const FRAMES_635[] = { "assets/art/orb/ORB_Frost_Bolt.png" };
-static const AssetOffset OFFSETS_635[] = { { 14.850000f, 9.300000f } };
-static const char *const FRAMES_636[] = { "assets/art/orb/ORB_Healing_Light.png" };
-static const AssetOffset OFFSETS_636[] = { { 32.500000f, 13.300000f } };
-static const char *const FRAMES_637[] = { "assets/art/orb/ORB_Heroic_Motivation.png" };
-static const AssetOffset OFFSETS_637[] = { { 17.700000f, 12.200000f } };
-static const char *const FRAMES_638[] = { "assets/art/orb/ORB_Intervention.png" };
-static const AssetOffset OFFSETS_638[] = { { 16.350000f, 13.450000f } };
-static const char *const FRAMES_639[] = { "assets/art/orb/ORB_Ironskin.png" };
-static const AssetOffset OFFSETS_639[] = { { 19.000000f, 13.400000f } };
-static const char *const FRAMES_640[] = { "assets/art/orb/ORB_Magic_Bolt.png" };
-static const AssetOffset OFFSETS_640[] = { { 12.850000f, 15.400000f } };
-static const char *const FRAMES_641[] = { "assets/art/orb/ORB_Master_Strike.png" };
-static const AssetOffset OFFSETS_641[] = { { 20.400000f, 15.500000f } };
-static const char *const FRAMES_642[] = { "assets/art/orb/ORB_Quick_Strike.png" };
-static const AssetOffset OFFSETS_642[] = { { 12.850000f, 15.400000f } };
-static const char *const FRAMES_643[] = { "assets/art/orb/ORB_REGENERATION.png" };
-static const AssetOffset OFFSETS_643[] = { { 13.000000f, 14.500000f } };
-static const char *const FRAMES_644[] = { "assets/art/orb/ORB_Rage.png" };
-static const AssetOffset OFFSETS_644[] = { { 27.100000f, 28.700000f } };
-static const char *const FRAMES_645[] = { "assets/art/orb/ORB_Re-Energize.png" };
-static const AssetOffset OFFSETS_645[] = { { 12.850000f, 12.200000f } };
-static const char *const FRAMES_646[] = { "assets/art/orb/ORB_SOLIDITY.png" };
-static const AssetOffset OFFSETS_646[] = { { 12.850000f, 12.200000f } };
-static const char *const FRAMES_647[] = { "assets/art/orb/ORB_Shatter_Bolt.png" };
-static const AssetOffset OFFSETS_647[] = { { 16.150000f, 17.000000f } };
-static const char *const FRAMES_648[] = { "assets/art/orb/ORB_Smash.png" };
-static const AssetOffset OFFSETS_648[] = { { 28.700000f, 26.200000f } };
-static const char *const FRAMES_649[] = { "assets/art/orb/ORB_Strike.png" };
-static const AssetOffset OFFSETS_649[] = { { 6.300000f, 15.300000f } };
-static const char *const FRAMES_650[] = { "assets/art/orb/ORB_Subversion.png" };
-static const AssetOffset OFFSETS_650[] = { { 12.000000f, 11.250000f } };
-static const char *const FRAMES_651[] = { "assets/art/orb/ORB_Sunder.png" };
-static const AssetOffset OFFSETS_651[] = { { 12.850000f, 12.200000f } };
-static const char *const FRAMES_652[] = { "assets/art/orb/ORB_Suppression.png" };
-static const AssetOffset OFFSETS_652[] = { { 12.350000f, 22.600000f } };
-static const char *const FRAMES_653[] = { "assets/art/orb/ORB_Void.png" };
-static const AssetOffset OFFSETS_653[] = { { 12.850000f, 15.000000f } };
-static const char *const FRAMES_654[] = { "assets/art/orb/ORB_Wound.png" };
-static const AssetOffset OFFSETS_654[] = { { 13.500000f, 20.750000f } };
-static const char *const FRAMES_655[] = { "assets/art/zone/PLAINS.png" };
-static const AssetOffset OFFSETS_655[] = { { 476.300000f, 260.950000f } };
-static const char *const FRAMES_656[] = { "assets/art/background/PLAINS2.png" };
-static const AssetOffset OFFSETS_656[] = { { 570.450000f, 136.450000f } };
-static const char *const FRAMES_657[] = { "assets/art/buff/POISON.png" };
-static const AssetOffset OFFSETS_657[] = { { 5.950000f, 10.950000f } };
-static const char *const FRAMES_658[] = { "assets/art/buff/POISONZOMBIE.png" };
-static const AssetOffset OFFSETS_658[] = { { 5.950000f, 10.950000f } };
-static const char *const FRAMES_659[] = { "assets/art/buff/POWERUP.png" };
-static const AssetOffset OFFSETS_659[] = { { 5.950000f, 10.950000f } };
-static const char *const FRAMES_660[] = { "assets/art/item/Paladin's_Armor.png" };
-static const AssetOffset OFFSETS_660[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_661[] = { "assets/art/item/Paladin's_Boots.png" };
-static const AssetOffset OFFSETS_661[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_662[] = { "assets/art/item/Paladin's_Gloves.png" };
-static const AssetOffset OFFSETS_662[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_663[] = { "assets/art/item/Paladin's_Helm.png" };
-static const AssetOffset OFFSETS_663[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_664[] = { "assets/art/item/Paladin's_Leggings.png" };
-static const AssetOffset OFFSETS_664[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_665[] = { "assets/art/sound/PoisonHit.mp3" };
-static const char *const FRAMES_666[] = { "assets/art/item/Power_Lantern.png" };
-static const AssetOffset OFFSETS_666[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_667[] = { "assets/art/sound/PowerupDefense.mp3" };
-static const char *const FRAMES_668[] = { "assets/art/sound/PowerupOffense.mp3" };
-static const char *const FRAMES_669[] = { "assets/art/item/Proverse_All_Stars.png" };
+static const char *const FRAMES_620[] = { "assets/art/item/Mender's_Leggings.png" };
+static const AssetOffset OFFSETS_620[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_621[] = { "assets/art/item/Moon-Struck_Horrors.png" };
+static const AssetOffset OFFSETS_621[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_622[] = { "assets/art/item/Murder.png" };
+static const AssetOffset OFFSETS_622[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_623[] = { "assets/art/background/NIGHT.png" };
+static const AssetOffset OFFSETS_623[] = { { 403.250000f, 183.100000f } };
+static const char *const FRAMES_624[] = { "assets/art/item/Nature's_Fury.png" };
+static const AssetOffset OFFSETS_624[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_625[] = { "assets/art/item/Navy_Boots.png" };
+static const AssetOffset OFFSETS_625[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_626[] = { "assets/art/item/Nike_Head_Wear.png" };
+static const AssetOffset OFFSETS_626[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_627[] = { "assets/art/item/None.png" };
+static const AssetOffset OFFSETS_627[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_628[] = { "assets/art/orb/ORB_BRUTALITY.png" };
+static const AssetOffset OFFSETS_628[] = { { 12.850000f, 19.750000f } };
+static const char *const FRAMES_629[] = { "assets/art/orb/ORB_Blessing_of_Light.png" };
+static const AssetOffset OFFSETS_629[] = { { 15.650000f, 17.100000f } };
+static const char *const FRAMES_630[] = { "assets/art/orb/ORB_Block.png" };
+static const AssetOffset OFFSETS_630[] = { { 16.350000f, 13.450000f } };
+static const char *const FRAMES_631[] = { "assets/art/orb/ORB_Blood_Focus.png" };
+static const AssetOffset OFFSETS_631[] = { { 12.850000f, 12.200000f } };
+static const char *const FRAMES_632[] = { "assets/art/orb/ORB_Blood_Strike.png" };
+static const AssetOffset OFFSETS_632[] = { { 17.150000f, 14.550000f } };
+static const char *const FRAMES_633[] = { "assets/art/orb/ORB_Break.png" };
+static const AssetOffset OFFSETS_633[] = { { 24.150000f, 10.450000f } };
+static const char *const FRAMES_634[] = { "assets/art/orb/ORB_Cell_Reformation.png" };
+static const AssetOffset OFFSETS_634[] = { { 27.100000f, 28.700000f } };
+static const char *const FRAMES_635[] = { "assets/art/orb/ORB_Coup_De_Grace.png" };
+static const AssetOffset OFFSETS_635[] = { { 19.700000f, 20.200000f } };
+static const char *const FRAMES_636[] = { "assets/art/orb/ORB_Cripple.png" };
+static const AssetOffset OFFSETS_636[] = { { 13.000000f, 12.200000f } };
+static const char *const FRAMES_637[] = { "assets/art/orb/ORB_Disrupt.png" };
+static const AssetOffset OFFSETS_637[] = { { 12.600000f, 11.500000f } };
+static const char *const FRAMES_638[] = { "assets/art/orb/ORB_ENDURANCE.png" };
+static const AssetOffset OFFSETS_638[] = { { 12.850000f, 19.950000f } };
+static const char *const FRAMES_639[] = { "assets/art/orb/ORB_Electro_Bolt.png" };
+static const AssetOffset OFFSETS_639[] = { { 12.850000f, 15.400000f } };
+static const char *const FRAMES_640[] = { "assets/art/orb/ORB_Empty.png" };
+static const AssetOffset OFFSETS_640[] = { { 11.500000f, 11.500000f } };
+static const char *const FRAMES_641[] = { "assets/art/orb/ORB_Flame_Blast.png" };
+static const AssetOffset OFFSETS_641[] = { { 12.850000f, 14.600000f } };
+static const char *const FRAMES_642[] = { "assets/art/orb/ORB_Flame_Strike.png" };
+static const AssetOffset OFFSETS_642[] = { { 12.850000f, 19.900000f } };
+static const char *const FRAMES_643[] = { "assets/art/orb/ORB_Frost_Bolt.png" };
+static const AssetOffset OFFSETS_643[] = { { 14.850000f, 9.300000f } };
+static const char *const FRAMES_644[] = { "assets/art/orb/ORB_Healing_Light.png" };
+static const AssetOffset OFFSETS_644[] = { { 32.500000f, 13.300000f } };
+static const char *const FRAMES_645[] = { "assets/art/orb/ORB_Heroic_Motivation.png" };
+static const AssetOffset OFFSETS_645[] = { { 17.700000f, 12.200000f } };
+static const char *const FRAMES_646[] = { "assets/art/orb/ORB_Intervention.png" };
+static const AssetOffset OFFSETS_646[] = { { 16.350000f, 13.450000f } };
+static const char *const FRAMES_647[] = { "assets/art/orb/ORB_Ironskin.png" };
+static const AssetOffset OFFSETS_647[] = { { 19.000000f, 13.400000f } };
+static const char *const FRAMES_648[] = { "assets/art/orb/ORB_Magic_Bolt.png" };
+static const AssetOffset OFFSETS_648[] = { { 12.850000f, 15.400000f } };
+static const char *const FRAMES_649[] = { "assets/art/orb/ORB_Master_Strike.png" };
+static const AssetOffset OFFSETS_649[] = { { 20.400000f, 15.500000f } };
+static const char *const FRAMES_650[] = { "assets/art/orb/ORB_Quick_Strike.png" };
+static const AssetOffset OFFSETS_650[] = { { 12.850000f, 15.400000f } };
+static const char *const FRAMES_651[] = { "assets/art/orb/ORB_REGENERATION.png" };
+static const AssetOffset OFFSETS_651[] = { { 13.000000f, 14.500000f } };
+static const char *const FRAMES_652[] = { "assets/art/orb/ORB_Rage.png" };
+static const AssetOffset OFFSETS_652[] = { { 27.100000f, 28.700000f } };
+static const char *const FRAMES_653[] = { "assets/art/orb/ORB_Re-Energize.png" };
+static const AssetOffset OFFSETS_653[] = { { 12.850000f, 12.200000f } };
+static const char *const FRAMES_654[] = { "assets/art/orb/ORB_SOLIDITY.png" };
+static const AssetOffset OFFSETS_654[] = { { 12.850000f, 12.200000f } };
+static const char *const FRAMES_655[] = { "assets/art/orb/ORB_Shatter_Bolt.png" };
+static const AssetOffset OFFSETS_655[] = { { 16.150000f, 17.000000f } };
+static const char *const FRAMES_656[] = { "assets/art/orb/ORB_Smash.png" };
+static const AssetOffset OFFSETS_656[] = { { 28.700000f, 26.200000f } };
+static const char *const FRAMES_657[] = { "assets/art/orb/ORB_Strike.png" };
+static const AssetOffset OFFSETS_657[] = { { 6.300000f, 15.300000f } };
+static const char *const FRAMES_658[] = { "assets/art/orb/ORB_Subversion.png" };
+static const AssetOffset OFFSETS_658[] = { { 12.000000f, 11.250000f } };
+static const char *const FRAMES_659[] = { "assets/art/orb/ORB_Sunder.png" };
+static const AssetOffset OFFSETS_659[] = { { 12.850000f, 12.200000f } };
+static const char *const FRAMES_660[] = { "assets/art/orb/ORB_Suppression.png" };
+static const AssetOffset OFFSETS_660[] = { { 12.350000f, 22.600000f } };
+static const char *const FRAMES_661[] = { "assets/art/orb/ORB_Void.png" };
+static const AssetOffset OFFSETS_661[] = { { 12.850000f, 15.000000f } };
+static const char *const FRAMES_662[] = { "assets/art/orb/ORB_Wound.png" };
+static const AssetOffset OFFSETS_662[] = { { 13.500000f, 20.750000f } };
+static const char *const FRAMES_663[] = { "assets/art/zone/PLAINS.png" };
+static const AssetOffset OFFSETS_663[] = { { 476.300000f, 260.950000f } };
+static const char *const FRAMES_664[] = { "assets/art/background/PLAINS2.png" };
+static const AssetOffset OFFSETS_664[] = { { 570.450000f, 136.450000f } };
+static const char *const FRAMES_665[] = { "assets/art/buff/POISON.png" };
+static const AssetOffset OFFSETS_665[] = { { 5.950000f, 10.950000f } };
+static const char *const FRAMES_666[] = { "assets/art/buff/POISONZOMBIE.png" };
+static const AssetOffset OFFSETS_666[] = { { 5.950000f, 10.950000f } };
+static const char *const FRAMES_667[] = { "assets/art/buff/POWERUP.png" };
+static const AssetOffset OFFSETS_667[] = { { 5.950000f, 10.950000f } };
+static const char *const FRAMES_668[] = { "assets/art/item/Paladin's_Armor.png" };
+static const AssetOffset OFFSETS_668[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_669[] = { "assets/art/item/Paladin's_Boots.png" };
 static const AssetOffset OFFSETS_669[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_670[] = { "assets/art/item/Pulse_Rifle.png" };
+static const char *const FRAMES_670[] = { "assets/art/item/Paladin's_Gloves.png" };
 static const AssetOffset OFFSETS_670[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_671[] = { "assets/art/icon/Quick_Strike.png" };
-static const AssetOffset OFFSETS_671[] = { { 12.850000f, 15.400000f } };
-static const char *const FRAMES_672[] = { "assets/art/buff/RAGE1.png" };
-static const AssetOffset OFFSETS_672[] = { { 5.950000f, 10.950000f } };
-static const char *const FRAMES_673[] = { "assets/art/buff/RAGE2.png" };
-static const AssetOffset OFFSETS_673[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_674[] = { "assets/art/buff/RAGE3.png" };
-static const AssetOffset OFFSETS_674[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_675[] = { "assets/art/buff/REGEN.png" };
-static const AssetOffset OFFSETS_675[] = { { 5.750000f, 10.050000f } };
-static const char *const FRAMES_676[] = { "assets/art/buff/REGENFOC.png" };
-static const AssetOffset OFFSETS_676[] = { { 5.750000f, 10.050000f } };
-static const char *const FRAMES_677[] = { "assets/art/buff/REGENSHAMAN.png" };
-static const AssetOffset OFFSETS_677[] = { { 5.750000f, 10.050000f } };
-static const char *const FRAMES_678[] = { "assets/art/icon/Rage.png" };
-static const AssetOffset OFFSETS_678[] = { { 27.100000f, 28.700000f } };
-static const char *const FRAMES_679[] = { "assets/art/icon/Re-Energize.png" };
-static const AssetOffset OFFSETS_679[] = { { 12.850000f, 12.200000f } };
-static const char *const FRAMES_680[] = { "assets/art/item/Reckoning.png" };
-static const AssetOffset OFFSETS_680[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_681[] = { "assets/art/portrait/Rockstar.png" };
-static const AssetOffset OFFSETS_681[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_682[] = { "assets/art/background/SEA.png" };
-static const AssetOffset OFFSETS_682[] = { { 385.950000f, 157.650000f } };
-static const char *const FRAMES_683[] = { "assets/art/buff/SHATTER.png" };
-static const AssetOffset OFFSETS_683[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_684[] = { "assets/art/buff/SHATTER2.png" };
-static const AssetOffset OFFSETS_684[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_685[] = { "assets/art/background/SHORE.png" };
-static const AssetOffset OFFSETS_685[] = { { 523.200000f, 166.550000f } };
-static const char *const FRAMES_686[] = { "assets/art/buff/SPEEDUP.png" };
-static const AssetOffset OFFSETS_686[] = { { 6.150000f, 9.800000f } };
-static const char *const FRAMES_687[] = { "assets/art/buff/STUN1.png" };
-static const AssetOffset OFFSETS_687[] = { { 5.950000f, 10.950000f } };
-static const char *const FRAMES_688[] = { "assets/art/buff/SUBVERSION.png" };
-static const AssetOffset OFFSETS_688[] = { { 6.050000f, 10.700000f } };
-static const char *const FRAMES_689[] = { "assets/art/buff/SUNDER1.png" };
-static const AssetOffset OFFSETS_689[] = { { 5.950000f, 10.100000f } };
-static const char *const FRAMES_690[] = { "assets/art/buff/SUNDER2.png" };
-static const AssetOffset OFFSETS_690[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_691[] = { "assets/art/buff/SUNDER3.png" };
+static const char *const FRAMES_671[] = { "assets/art/item/Paladin's_Helm.png" };
+static const AssetOffset OFFSETS_671[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_672[] = { "assets/art/item/Paladin's_Leggings.png" };
+static const AssetOffset OFFSETS_672[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_673[] = { "assets/art/sound/PoisonHit.mp3" };
+static const char *const FRAMES_674[] = { "assets/art/item/Power_Lantern.png" };
+static const AssetOffset OFFSETS_674[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_675[] = { "assets/art/sound/PowerupDefense.mp3" };
+static const char *const FRAMES_676[] = { "assets/art/sound/PowerupOffense.mp3" };
+static const char *const FRAMES_677[] = { "assets/art/item/Proverse_All_Stars.png" };
+static const AssetOffset OFFSETS_677[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_678[] = { "assets/art/item/Pulse_Rifle.png" };
+static const AssetOffset OFFSETS_678[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_679[] = { "assets/art/icon/Quick_Strike.png" };
+static const AssetOffset OFFSETS_679[] = { { 12.850000f, 15.400000f } };
+static const char *const FRAMES_680[] = { "assets/art/buff/RAGE1.png" };
+static const AssetOffset OFFSETS_680[] = { { 5.950000f, 10.950000f } };
+static const char *const FRAMES_681[] = { "assets/art/buff/RAGE2.png" };
+static const AssetOffset OFFSETS_681[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_682[] = { "assets/art/buff/RAGE3.png" };
+static const AssetOffset OFFSETS_682[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_683[] = { "assets/art/buff/REGEN.png" };
+static const AssetOffset OFFSETS_683[] = { { 5.750000f, 10.050000f } };
+static const char *const FRAMES_684[] = { "assets/art/buff/REGENFOC.png" };
+static const AssetOffset OFFSETS_684[] = { { 5.750000f, 10.050000f } };
+static const char *const FRAMES_685[] = { "assets/art/buff/REGENSHAMAN.png" };
+static const AssetOffset OFFSETS_685[] = { { 5.750000f, 10.050000f } };
+static const char *const FRAMES_686[] = { "assets/art/icon/Rage.png" };
+static const AssetOffset OFFSETS_686[] = { { 27.100000f, 28.700000f } };
+static const char *const FRAMES_687[] = { "assets/art/icon/Re-Energize.png" };
+static const AssetOffset OFFSETS_687[] = { { 12.850000f, 12.200000f } };
+static const char *const FRAMES_688[] = { "assets/art/item/Reckoning.png" };
+static const AssetOffset OFFSETS_688[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_689[] = { "assets/art/portrait/Rockstar.png" };
+static const AssetOffset OFFSETS_689[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_690[] = { "assets/art/background/SEA.png" };
+static const AssetOffset OFFSETS_690[] = { { 385.950000f, 157.650000f } };
+static const char *const FRAMES_691[] = { "assets/art/buff/SHATTER.png" };
 static const AssetOffset OFFSETS_691[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_692[] = { "assets/art/buff/SUNDER4.png" };
+static const char *const FRAMES_692[] = { "assets/art/buff/SHATTER2.png" };
 static const AssetOffset OFFSETS_692[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_693[] = { "assets/art/buff/SUNDER5.png" };
-static const AssetOffset OFFSETS_693[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_694[] = { "assets/art/buff/SUPRESSION.png" };
-static const AssetOffset OFFSETS_694[] = { { 3.850000f, 17.350000f } };
-static const char *const FRAMES_695[] = { "assets/art/portrait/Scarlett.png" };
-static const AssetOffset OFFSETS_695[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_696[] = { "assets/art/portrait/Sensei_Ishiguro.png" };
-static const AssetOffset OFFSETS_696[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_697[] = { "assets/art/item/Shadow_Legwraps.png" };
-static const AssetOffset OFFSETS_697[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_698[] = { "assets/art/portrait/Shaman_of_Blades.png" };
-static const AssetOffset OFFSETS_698[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_699[] = { "assets/art/portrait/Shaman_of_Death.png" };
-static const AssetOffset OFFSETS_699[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_700[] = { "assets/art/sound/ShamanDie.mp3" };
-static const char *const FRAMES_701[] = { "assets/art/sound/ShamanHit1.mp3" };
-static const char *const FRAMES_702[] = { "assets/art/sound/ShamanHit2.mp3" };
-static const char *const FRAMES_703[] = { "assets/art/icon/Shatter_Bolt.png" };
-static const AssetOffset OFFSETS_703[] = { { 16.150000f, 17.000000f } };
-static const char *const FRAMES_704[] = { "assets/art/icon/Smash.png" };
-static const AssetOffset OFFSETS_704[] = { { 28.700000f, 26.200000f } };
-static const char *const FRAMES_705[] = { "assets/art/portrait/Sonny.png" };
-static const AssetOffset OFFSETS_705[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_706[] = { "assets/art/item/Steel_Slicer.png" };
-static const AssetOffset OFFSETS_706[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_707[] = { "assets/art/item/Stone_Club.png" };
-static const AssetOffset OFFSETS_707[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_708[] = { "assets/art/icon/Strike.png" };
-static const AssetOffset OFFSETS_708[] = { { 6.300000f, 15.300000f } };
-static const char *const FRAMES_709[] = { "assets/art/item/Striker's_Armor.png" };
-static const AssetOffset OFFSETS_709[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_710[] = { "assets/art/item/Striker's_Flip-Flops.png" };
-static const AssetOffset OFFSETS_710[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_711[] = { "assets/art/item/Striker's_Gloves.png" };
-static const AssetOffset OFFSETS_711[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_712[] = { "assets/art/item/Striker's_Leggings.png" };
-static const AssetOffset OFFSETS_712[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_713[] = { "assets/art/item/Striker's_Mask.png" };
-static const AssetOffset OFFSETS_713[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_714[] = { "assets/art/icon/Subversion.png" };
-static const AssetOffset OFFSETS_714[] = { { 12.000000f, 11.250000f } };
-static const char *const FRAMES_715[] = { "assets/art/icon/Sunder.png" };
-static const AssetOffset OFFSETS_715[] = { { 12.850000f, 12.200000f } };
-static const char *const FRAMES_716[] = { "assets/art/icon/Suppression.png" };
-static const AssetOffset OFFSETS_716[] = { { 12.350000f, 22.600000f } };
-static const char *const FRAMES_717[] = { "assets/art/item/Survivor's_Armor.png" };
+static const char *const FRAMES_693[] = { "assets/art/background/SHORE.png" };
+static const AssetOffset OFFSETS_693[] = { { 523.200000f, 166.550000f } };
+static const char *const FRAMES_694[] = { "assets/art/buff/SPEEDUP.png" };
+static const AssetOffset OFFSETS_694[] = { { 6.150000f, 9.800000f } };
+static const char *const FRAMES_695[] = { "assets/art/buff/STUN1.png" };
+static const AssetOffset OFFSETS_695[] = { { 5.950000f, 10.950000f } };
+static const char *const FRAMES_696[] = { "assets/art/buff/SUBVERSION.png" };
+static const AssetOffset OFFSETS_696[] = { { 6.050000f, 10.700000f } };
+static const char *const FRAMES_697[] = { "assets/art/buff/SUNDER1.png" };
+static const AssetOffset OFFSETS_697[] = { { 5.950000f, 10.100000f } };
+static const char *const FRAMES_698[] = { "assets/art/buff/SUNDER2.png" };
+static const AssetOffset OFFSETS_698[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_699[] = { "assets/art/buff/SUNDER3.png" };
+static const AssetOffset OFFSETS_699[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_700[] = { "assets/art/buff/SUNDER4.png" };
+static const AssetOffset OFFSETS_700[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_701[] = { "assets/art/buff/SUNDER5.png" };
+static const AssetOffset OFFSETS_701[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_702[] = { "assets/art/buff/SUPRESSION.png" };
+static const AssetOffset OFFSETS_702[] = { { 3.850000f, 17.350000f } };
+static const char *const FRAMES_703[] = { "assets/art/portrait/Scarlett.png" };
+static const AssetOffset OFFSETS_703[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_704[] = { "assets/art/portrait/Sensei_Ishiguro.png" };
+static const AssetOffset OFFSETS_704[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_705[] = { "assets/art/item/Shadow_Legwraps.png" };
+static const AssetOffset OFFSETS_705[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_706[] = { "assets/art/portrait/Shaman_of_Blades.png" };
+static const AssetOffset OFFSETS_706[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_707[] = { "assets/art/portrait/Shaman_of_Death.png" };
+static const AssetOffset OFFSETS_707[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_708[] = { "assets/art/sound/ShamanDie.mp3" };
+static const char *const FRAMES_709[] = { "assets/art/sound/ShamanHit1.mp3" };
+static const char *const FRAMES_710[] = { "assets/art/sound/ShamanHit2.mp3" };
+static const char *const FRAMES_711[] = { "assets/art/icon/Shatter_Bolt.png" };
+static const AssetOffset OFFSETS_711[] = { { 16.150000f, 17.000000f } };
+static const char *const FRAMES_712[] = { "assets/art/icon/Smash.png" };
+static const AssetOffset OFFSETS_712[] = { { 28.700000f, 26.200000f } };
+static const char *const FRAMES_713[] = { "assets/art/portrait/Sonny.png" };
+static const AssetOffset OFFSETS_713[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_714[] = { "assets/art/item/Steel_Slicer.png" };
+static const AssetOffset OFFSETS_714[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_715[] = { "assets/art/item/Stone_Club.png" };
+static const AssetOffset OFFSETS_715[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_716[] = { "assets/art/icon/Strike.png" };
+static const AssetOffset OFFSETS_716[] = { { 6.300000f, 15.300000f } };
+static const char *const FRAMES_717[] = { "assets/art/item/Striker's_Armor.png" };
 static const AssetOffset OFFSETS_717[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_718[] = { "assets/art/item/Survivor's_Boots.png" };
+static const char *const FRAMES_718[] = { "assets/art/item/Striker's_Flip-Flops.png" };
 static const AssetOffset OFFSETS_718[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_719[] = { "assets/art/item/Survivor's_Gloves.png" };
+static const char *const FRAMES_719[] = { "assets/art/item/Striker's_Gloves.png" };
 static const AssetOffset OFFSETS_719[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_720[] = { "assets/art/item/Survivor's_Helm.png" };
+static const char *const FRAMES_720[] = { "assets/art/item/Striker's_Leggings.png" };
 static const AssetOffset OFFSETS_720[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_721[] = { "assets/art/item/Survivor's_Leggings.png" };
+static const char *const FRAMES_721[] = { "assets/art/item/Striker's_Mask.png" };
 static const AssetOffset OFFSETS_721[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_722[] = { "assets/art/item/Swift_Blade.png" };
-static const AssetOffset OFFSETS_722[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_723[] = { "assets/art/sound/Swing.mp3" };
-static const char *const FRAMES_724[] = { "assets/art/item/The_Grand_Rifle.png" };
-static const AssetOffset OFFSETS_724[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_725[] = { "assets/art/item/Tool.png" };
+static const char *const FRAMES_722[] = { "assets/art/icon/Subversion.png" };
+static const AssetOffset OFFSETS_722[] = { { 12.000000f, 11.250000f } };
+static const char *const FRAMES_723[] = { "assets/art/icon/Sunder.png" };
+static const AssetOffset OFFSETS_723[] = { { 12.850000f, 12.200000f } };
+static const char *const FRAMES_724[] = { "assets/art/icon/Suppression.png" };
+static const AssetOffset OFFSETS_724[] = { { 12.350000f, 22.600000f } };
+static const char *const FRAMES_725[] = { "assets/art/item/Survivor's_Armor.png" };
 static const AssetOffset OFFSETS_725[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_726[] = { "assets/art/item/Torment.png" };
+static const char *const FRAMES_726[] = { "assets/art/item/Survivor's_Boots.png" };
 static const AssetOffset OFFSETS_726[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_727[] = { "assets/art/item/Tribal_Blade.png" };
+static const char *const FRAMES_727[] = { "assets/art/item/Survivor's_Gloves.png" };
 static const AssetOffset OFFSETS_727[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_728[] = { "assets/art/item/Tribal_Dagger.png" };
+static const char *const FRAMES_728[] = { "assets/art/item/Survivor's_Helm.png" };
 static const AssetOffset OFFSETS_728[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_729[] = { "assets/art/buff/VOID1.png" };
-static const AssetOffset OFFSETS_729[] = { { 5.950000f, 10.950000f } };
-static const char *const FRAMES_730[] = { "assets/art/buff/VOID2.png" };
-static const AssetOffset OFFSETS_730[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_731[] = { "assets/art/buff/VOID3.png" };
-static const AssetOffset OFFSETS_731[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_732[] = { "assets/art/buff/VOID4.png" };
-static const AssetOffset OFFSETS_732[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_733[] = { "assets/art/buff/VOID5.png" };
-static const AssetOffset OFFSETS_733[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_734[] = { "assets/art/buff/VOIDMOB.png" };
-static const AssetOffset OFFSETS_734[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_735[] = { "assets/art/portrait/Vendetta_the_Breaker.png" };
-static const AssetOffset OFFSETS_735[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_736[] = { "assets/art/portrait/Veradux.png" };
-static const AssetOffset OFFSETS_736[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_737[] = { "assets/art/icon/Void.png" };
-static const AssetOffset OFFSETS_737[] = { { 12.850000f, 15.000000f } };
-static const char *const FRAMES_738[] = { "assets/art/buff/WASHED.png" };
-static const AssetOffset OFFSETS_738[] = { { 7.050000f, 11.600000f } };
-static const char *const FRAMES_739[] = { "assets/art/background/WHITE_NOVEMBER.png" };
-static const AssetOffset OFFSETS_739[] = { { 528.500000f, 118.900000f } };
-static const char *const FRAMES_740[] = { "assets/art/zone/WHITE_NOVEMBER.png" };
-static const AssetOffset OFFSETS_740[] = { { 476.300000f, 260.950000f } };
-static const char *const FRAMES_741[] = { "assets/art/buff/WOUND1.png" };
-static const AssetOffset OFFSETS_741[] = { { 5.950000f, 10.950000f } };
-static const char *const FRAMES_742[] = { "assets/art/buff/WOUND2.png" };
+static const char *const FRAMES_729[] = { "assets/art/item/Survivor's_Leggings.png" };
+static const AssetOffset OFFSETS_729[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_730[] = { "assets/art/item/Swift_Blade.png" };
+static const AssetOffset OFFSETS_730[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_731[] = { "assets/art/sound/Swing.mp3" };
+static const char *const FRAMES_732[] = { "assets/art/item/The_Grand_Rifle.png" };
+static const AssetOffset OFFSETS_732[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_733[] = { "assets/art/item/Tool.png" };
+static const AssetOffset OFFSETS_733[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_734[] = { "assets/art/item/Torment.png" };
+static const AssetOffset OFFSETS_734[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_735[] = { "assets/art/item/Tribal_Blade.png" };
+static const AssetOffset OFFSETS_735[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_736[] = { "assets/art/item/Tribal_Dagger.png" };
+static const AssetOffset OFFSETS_736[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_737[] = { "assets/art/buff/VOID1.png" };
+static const AssetOffset OFFSETS_737[] = { { 5.950000f, 10.950000f } };
+static const char *const FRAMES_738[] = { "assets/art/buff/VOID2.png" };
+static const AssetOffset OFFSETS_738[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_739[] = { "assets/art/buff/VOID3.png" };
+static const AssetOffset OFFSETS_739[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_740[] = { "assets/art/buff/VOID4.png" };
+static const AssetOffset OFFSETS_740[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_741[] = { "assets/art/buff/VOID5.png" };
+static const AssetOffset OFFSETS_741[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_742[] = { "assets/art/buff/VOIDMOB.png" };
 static const AssetOffset OFFSETS_742[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_743[] = { "assets/art/buff/WOUND3.png" };
-static const AssetOffset OFFSETS_743[] = { { 7.050000f, 17.350000f } };
-static const char *const FRAMES_744[] = { "assets/art/item/White_T-Shirt.png" };
-static const AssetOffset OFFSETS_744[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_745[] = { "assets/art/portrait/Wolfgang.png" };
-static const AssetOffset OFFSETS_745[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_746[] = { "assets/art/icon/Wound.png" };
-static const AssetOffset OFFSETS_746[] = { { 13.500000f, 20.750000f } };
-static const char *const FRAMES_747[] = { "assets/art/item/ZPCI_Blade.png" };
-static const AssetOffset OFFSETS_747[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_748[] = { "assets/art/portrait/ZPCI_Captain.png" };
-static const AssetOffset OFFSETS_748[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_749[] = { "assets/art/item/ZPCI_Dog_Tag.png" };
-static const AssetOffset OFFSETS_749[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_750[] = { "assets/art/portrait/ZPCI_Elite.png" };
-static const AssetOffset OFFSETS_750[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_751[] = { "assets/art/portrait/ZPCI_Hunter.png" };
-static const AssetOffset OFFSETS_751[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_752[] = { "assets/art/item/ZPCI_Med-Wear_A.png" };
+static const char *const FRAMES_743[] = { "assets/art/portrait/Vendetta_the_Breaker.png" };
+static const AssetOffset OFFSETS_743[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_744[] = { "assets/art/portrait/Veradux.png" };
+static const AssetOffset OFFSETS_744[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_745[] = { "assets/art/icon/Void.png" };
+static const AssetOffset OFFSETS_745[] = { { 12.850000f, 15.000000f } };
+static const char *const FRAMES_746[] = { "assets/art/buff/WASHED.png" };
+static const AssetOffset OFFSETS_746[] = { { 7.050000f, 11.600000f } };
+static const char *const FRAMES_747[] = { "assets/art/background/WHITE_NOVEMBER.png" };
+static const AssetOffset OFFSETS_747[] = { { 528.500000f, 118.900000f } };
+static const char *const FRAMES_748[] = { "assets/art/zone/WHITE_NOVEMBER.png" };
+static const AssetOffset OFFSETS_748[] = { { 476.300000f, 260.950000f } };
+static const char *const FRAMES_749[] = { "assets/art/buff/WOUND1.png" };
+static const AssetOffset OFFSETS_749[] = { { 5.950000f, 10.950000f } };
+static const char *const FRAMES_750[] = { "assets/art/buff/WOUND2.png" };
+static const AssetOffset OFFSETS_750[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_751[] = { "assets/art/buff/WOUND3.png" };
+static const AssetOffset OFFSETS_751[] = { { 7.050000f, 17.350000f } };
+static const char *const FRAMES_752[] = { "assets/art/item/White_T-Shirt.png" };
 static const AssetOffset OFFSETS_752[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_753[] = { "assets/art/item/ZPCI_Med-Wear_B.png" };
-static const AssetOffset OFFSETS_753[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_754[] = { "assets/art/item/ZPCI_Med-Wear_C.png" };
-static const AssetOffset OFFSETS_754[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_755[] = { "assets/art/item/ZPCI_Med-Wear_D.png" };
+static const char *const FRAMES_753[] = { "assets/art/portrait/Wolfgang.png" };
+static const AssetOffset OFFSETS_753[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_754[] = { "assets/art/icon/Wound.png" };
+static const AssetOffset OFFSETS_754[] = { { 13.500000f, 20.750000f } };
+static const char *const FRAMES_755[] = { "assets/art/item/ZPCI_Blade.png" };
 static const AssetOffset OFFSETS_755[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_756[] = { "assets/art/item/ZPCI_Med-Wear_E.png" };
-static const AssetOffset OFFSETS_756[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_757[] = { "assets/art/portrait/ZPCI_Medic.png" };
-static const AssetOffset OFFSETS_757[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_758[] = { "assets/art/portrait/ZPCI_Sniper.png" };
+static const char *const FRAMES_756[] = { "assets/art/portrait/ZPCI_Captain.png" };
+static const AssetOffset OFFSETS_756[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_757[] = { "assets/art/item/ZPCI_Dog_Tag.png" };
+static const AssetOffset OFFSETS_757[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_758[] = { "assets/art/portrait/ZPCI_Elite.png" };
 static const AssetOffset OFFSETS_758[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_759[] = { "assets/art/sound/ZPCIHit1.mp3" };
-static const char *const FRAMES_760[] = { "assets/art/sound/ZPCIHit2.mp3" };
-static const char *const FRAMES_761[] = { "assets/art/portrait/Zombie_Ambassador.png" };
-static const AssetOffset OFFSETS_761[] = { { 26.800000f, 45.500000f } };
-static const char *const FRAMES_762[] = { "assets/art/item/Zombie_Fingers.png" };
+static const char *const FRAMES_759[] = { "assets/art/portrait/ZPCI_Hunter.png" };
+static const AssetOffset OFFSETS_759[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_760[] = { "assets/art/item/ZPCI_Med-Wear_A.png" };
+static const AssetOffset OFFSETS_760[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_761[] = { "assets/art/item/ZPCI_Med-Wear_B.png" };
+static const AssetOffset OFFSETS_761[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_762[] = { "assets/art/item/ZPCI_Med-Wear_C.png" };
 static const AssetOffset OFFSETS_762[] = { { 49.000000f, 68.700000f } };
-static const char *const FRAMES_763[] = { "assets/art/sound/ZombieDie.mp3" };
-static const char *const FRAMES_764[] = { "assets/art/sound/ZombieHit1.mp3" };
-static const char *const FRAMES_765[] = { "assets/art/sound/ZombieHit2.mp3" };
-static const char *const FRAMES_766[] = { "assets/art/portrait/mainPlayer.png" };
+static const char *const FRAMES_763[] = { "assets/art/item/ZPCI_Med-Wear_D.png" };
+static const AssetOffset OFFSETS_763[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_764[] = { "assets/art/item/ZPCI_Med-Wear_E.png" };
+static const AssetOffset OFFSETS_764[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_765[] = { "assets/art/portrait/ZPCI_Medic.png" };
+static const AssetOffset OFFSETS_765[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_766[] = { "assets/art/portrait/ZPCI_Sniper.png" };
 static const AssetOffset OFFSETS_766[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_767[] = { "assets/art/sound/ZPCIHit1.mp3" };
+static const char *const FRAMES_768[] = { "assets/art/sound/ZPCIHit2.mp3" };
+static const char *const FRAMES_769[] = { "assets/art/portrait/Zombie_Ambassador.png" };
+static const AssetOffset OFFSETS_769[] = { { 26.800000f, 45.500000f } };
+static const char *const FRAMES_770[] = { "assets/art/item/Zombie_Fingers.png" };
+static const AssetOffset OFFSETS_770[] = { { 49.000000f, 68.700000f } };
+static const char *const FRAMES_771[] = { "assets/art/sound/ZombieDie.mp3" };
+static const char *const FRAMES_772[] = { "assets/art/sound/ZombieHit1.mp3" };
+static const char *const FRAMES_773[] = { "assets/art/sound/ZombieHit2.mp3" };
+static const char *const FRAMES_774[] = { "assets/art/portrait/mainPlayer.png" };
+static const AssetOffset OFFSETS_774[] = { { 26.800000f, 45.500000f } };
 
 const AssetEntry SONNY_ASSETS[] = {
     { "#1104", "chrome", FRAMES_0, OFFSETS_0, 1, 1, -30.500000f, -37.900000f, 826.100000f, 602.500000f },
@@ -1519,749 +1535,757 @@ const AssetEntry SONNY_ASSETS[] = {
     { "#1280", "chrome", FRAMES_21, OFFSETS_21, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
     { "#1282", "chrome", FRAMES_22, OFFSETS_22, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
     { "#1283", "chrome", FRAMES_23, OFFSETS_23, 1, 1, -78.750000f, -132.950000f, 79.600000f, 180.250000f },
-    { "#1313", "chrome", FRAMES_24, OFFSETS_24, 1, 1, -13.000000f, -18.000000f, 13.000000f, 18.000000f },
-    { "#1316", "chrome", FRAMES_25, OFFSETS_25, 1, 1, -14.750000f, -19.750000f, 14.750000f, 19.750000f },
-    { "#1318", "chrome", FRAMES_26, OFFSETS_26, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1333", "chrome", FRAMES_27, OFFSETS_27, 1, 1, -69.500000f, -35.000000f, 69.500000f, 35.000000f },
-    { "#1334", "chrome", FRAMES_28, OFFSETS_28, 1, 1, -125.000000f, -75.000000f, 125.000000f, 75.000000f },
-    { "#1337", "chrome", FRAMES_29, OFFSETS_29, 1, 1, -68.500000f, -34.250000f, 68.500000f, 33.750000f },
-    { "#1339", "chrome", FRAMES_30, OFFSETS_30, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1341", "chrome", FRAMES_31, OFFSETS_31, 1, 1, -262.050000f, 60.450000f, -227.750000f, 79.250000f },
-    { "#1344", "chrome", FRAMES_32, OFFSETS_32, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1344@2", "chrome", FRAMES_33, OFFSETS_33, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1345", "chrome", FRAMES_34, OFFSETS_34, 1, 1, -262.000000f, 60.750000f, -132.750000f, 79.850000f },
-    { "#1358", "chrome", FRAMES_35, OFFSETS_35, 1, 1, -15.500000f, -15.500000f, 15.500000f, 15.500000f },
-    { "#1362", "chrome", FRAMES_36, OFFSETS_36, 1, 1, -18.350000f, -18.200000f, 18.350000f, 18.200000f },
-    { "#1367", "chrome", FRAMES_37, OFFSETS_37, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1377", "chrome", FRAMES_38, OFFSETS_38, 1, 1, -98.400000f, -41.600000f, 98.400000f, 41.600000f },
-    { "#1380", "chrome", FRAMES_39, OFFSETS_39, 1, 1, -21.550000f, -7.700000f, 21.550000f, 7.750000f },
-    { "#1390@1", "chrome", FRAMES_40, OFFSETS_40, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1390@2", "chrome", FRAMES_41, OFFSETS_41, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1390@3", "chrome", FRAMES_42, OFFSETS_42, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1390@4", "chrome", FRAMES_43, OFFSETS_43, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1390@5", "chrome", FRAMES_44, OFFSETS_44, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1390@6", "chrome", FRAMES_45, OFFSETS_45, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1393", "chrome", FRAMES_46, OFFSETS_46, 1, 1, -15.500000f, -15.500000f, 15.500000f, 15.500000f },
-    { "#1400", "chrome", FRAMES_47, OFFSETS_47, 1, 1, -12.250000f, -30.500000f, 12.250000f, 30.550000f },
-    { "#1401", "chrome", FRAMES_48, OFFSETS_48, 1, 1, -5.500000f, -22.500000f, 5.500000f, 18.000000f },
-    { "#1403", "chrome", FRAMES_49, OFFSETS_49, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1406", "chrome", FRAMES_50, OFFSETS_50, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1415", "chrome", FRAMES_51, OFFSETS_51, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1426", "chrome", FRAMES_52, OFFSETS_52, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1426@1", "chrome", FRAMES_53, OFFSETS_53, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1444", "chrome", FRAMES_54, OFFSETS_54, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1444@8", "chrome", FRAMES_55, OFFSETS_55, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1445", "chrome", FRAMES_56, OFFSETS_56, 1, 1, -22.050000f, -8.200000f, 22.050000f, 8.250000f },
-    { "#1446", "chrome", FRAMES_57, OFFSETS_57, 1, 1, -22.550000f, -8.700000f, 22.550000f, 8.750000f },
-    { "#1503", "chrome", FRAMES_58, OFFSETS_58, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1507", "chrome", FRAMES_59, OFFSETS_59, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1508", "chrome", FRAMES_60, OFFSETS_60, 1, 1, -100.000000f, -12.000000f, 57.400000f, 12.000000f },
-    { "#1509", "chrome", FRAMES_61, OFFSETS_61, 1, 1, -237.250000f, -124.100000f, 237.250000f, 124.100000f },
-    { "#1513", "chrome", FRAMES_62, OFFSETS_62, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1516", "chrome", FRAMES_63, OFFSETS_63, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1531", "chrome", FRAMES_64, OFFSETS_64, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1536", "chrome", FRAMES_65, OFFSETS_65, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1537", "chrome", FRAMES_66, OFFSETS_66, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1560", "chrome", FRAMES_67, OFFSETS_67, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1561", "chrome", FRAMES_68, OFFSETS_68, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1562", "chrome", FRAMES_69, OFFSETS_69, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1563", "chrome", FRAMES_70, OFFSETS_70, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1564", "chrome", FRAMES_71, OFFSETS_71, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1565", "chrome", FRAMES_72, OFFSETS_72, 1, 1, 14.500000f, 129.900000f, 785.500000f, 444.950000f },
-    { "#1566", "chrome", FRAMES_73, OFFSETS_73, 1, 1, 0.000000f, -6.500000f, 200.000000f, 5.500000f },
-    { "#1567", "chrome", FRAMES_74, OFFSETS_74, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1568", "chrome", FRAMES_75, OFFSETS_75, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1570", "chrome", FRAMES_76, OFFSETS_76, 1, 1, -100.500000f, -12.950000f, 100.500000f, 13.000000f },
-    { "#1585", "chrome", FRAMES_77, OFFSETS_77, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1586", "chrome", FRAMES_78, OFFSETS_78, 1, 1, -35.000000f, -35.000000f, 35.000000f, 35.000000f },
-    { "#1590", "chrome", FRAMES_79, OFFSETS_79, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1596", "chrome", FRAMES_80, OFFSETS_80, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1606", "chrome", FRAMES_81, OFFSETS_81, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1610", "chrome", FRAMES_82, OFFSETS_82, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1613", "chrome", FRAMES_83, OFFSETS_83, 1, 1, -95.950000f, -35.700000f, 96.000000f, 112.300000f },
-    { "#1632", "chrome", FRAMES_84, OFFSETS_84, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1633", "chrome", FRAMES_85, OFFSETS_85, 1, 1, -0.500000f, -0.500000f, 306.000000f, 94.500000f },
-    { "#1640", "chrome", FRAMES_86, OFFSETS_86, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1642", "chrome", FRAMES_87, OFFSETS_87, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1695", "cutscene", FRAMES_88, OFFSETS_88, 1306, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1699", "cutscene", FRAMES_89, OFFSETS_89, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1710", "cutscene", FRAMES_90, OFFSETS_90, 1074, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1719", "cutscene", FRAMES_91, OFFSETS_91, 742, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1720", "chrome", FRAMES_92, OFFSETS_92, 1, 1, -31.250000f, -20.000000f, 733.600000f, 487.500000f },
-    { "#1722", "chrome", FRAMES_93, OFFSETS_93, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1725", "chrome", FRAMES_94, OFFSETS_94, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1726", "chrome", FRAMES_95, OFFSETS_95, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#368", "chrome", FRAMES_96, OFFSETS_96, 1, 1, -32.500000f, -9.950000f, 32.550000f, 10.000000f },
-    { "#821", "chrome", FRAMES_97, OFFSETS_97, 1, 1, -92.400000f, -16.000000f, -28.500000f, 16.000000f },
-    { "#823", "chrome", FRAMES_98, OFFSETS_98, 1, 1, 13.900000f, -14.950000f, 75.850000f, 15.050000f },
-    { "#824", "chrome", FRAMES_99, OFFSETS_99, 1, 1, -11.500000f, -11.500000f, 11.500000f, 11.500000f },
-    { "#826", "chrome", FRAMES_100, OFFSETS_100, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#828", "chrome", FRAMES_101, OFFSETS_101, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#830", "chrome", FRAMES_102, OFFSETS_102, 1, 1, -11.650000f, -11.750000f, 12.100000f, 12.000000f },
-    { "#866", "chrome", FRAMES_103, OFFSETS_103, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#867", "chrome", FRAMES_104, OFFSETS_104, 1, 1, -10.500000f, -10.500000f, 10.500000f, 10.500000f },
-    { "#868", "chrome", FRAMES_105, OFFSETS_105, 1, 1, -11.250000f, -11.250000f, 11.250000f, 11.250000f },
-    { "#903", "chrome", FRAMES_106, OFFSETS_106, 1, 1, -4.000000f, -4.250000f, 4.000000f, 4.200000f },
-    { "#905", "chrome", FRAMES_107, OFFSETS_107, 1, 1, -2.550000f, -6.700000f, 5.350000f, 4.650000f },
-    { "#907", "chrome", FRAMES_108, OFFSETS_108, 1, 1, -9.900000f, -16.400000f, 9.950000f, 16.450000f },
-    { "#909", "chrome", FRAMES_109, OFFSETS_109, 1, 1, -4.600000f, -15.200000f, 4.650000f, 15.200000f },
-    { "#911", "chrome", FRAMES_110, OFFSETS_110, 1, 1, -5.850000f, -2.650000f, 5.900000f, 2.650000f },
-    { "#913", "chrome", FRAMES_111, OFFSETS_111, 1, 1, -3.750000f, -41.150000f, 2.250000f, 27.800000f },
-    { "#915", "chrome", FRAMES_112, OFFSETS_112, 1, 1, -3.550000f, -9.150000f, 3.500000f, 9.200000f },
-    { "#917", "chrome", FRAMES_113, OFFSETS_113, 1, 1, -3.550000f, -9.800000f, 3.550000f, 9.850000f },
-    { "#919", "chrome", FRAMES_114, OFFSETS_114, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#920", "chrome", FRAMES_115, OFFSETS_115, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#921", "chrome", FRAMES_116, OFFSETS_116, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#922", "chrome", FRAMES_117, OFFSETS_117, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#923", "chrome", FRAMES_118, OFFSETS_118, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#924", "chrome", FRAMES_119, OFFSETS_119, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#925", "chrome", FRAMES_120, OFFSETS_120, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#926", "chrome", FRAMES_121, OFFSETS_121, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#944", "chrome", FRAMES_122, OFFSETS_122, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#951", "chrome", FRAMES_123, OFFSETS_123, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#963", "cutscene", FRAMES_124, OFFSETS_124, 1, 1, 0.450000f, 0.500000f, 720.150000f, 457.500000f },
-    { "A Broken Pipe", "item", FRAMES_125, OFFSETS_125, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "A Sword", "item", FRAMES_126, OFFSETS_126, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Amber", "portrait", FRAMES_127, OFFSETS_127, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Argalla the Mender", "portrait", FRAMES_128, OFFSETS_128, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Armor of the Fallen", "item", FRAMES_129, OFFSETS_129, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Armor of the Teacher", "item", FRAMES_130, OFFSETS_130, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Assasin's Tunic", "item", FRAMES_131, OFFSETS_131, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Assassin's Armor", "item", FRAMES_132, OFFSETS_132, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Assassin's Boots", "item", FRAMES_133, OFFSETS_133, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Assassin's Gloves", "item", FRAMES_134, OFFSETS_134, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Assassin's Helm", "item", FRAMES_135, OFFSETS_135, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Assassin's Leggings", "item", FRAMES_136, OFFSETS_136, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Assassination", "item", FRAMES_137, OFFSETS_137, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BLACKOUT", "buff", FRAMES_138, OFFSETS_138, 1, 1, -5.950000f, -10.950000f, 5.950000f, 10.950000f },
-    { "BLOCK1", "buff", FRAMES_139, OFFSETS_139, 1, 1, -7.050000f, -11.600000f, 1.850000f, 7.000000f },
-    { "BOOM1", "effect", FRAMES_140, OFFSETS_140, 36, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM2", "effect", FRAMES_141, OFFSETS_141, 36, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM3", "effect", FRAMES_142, OFFSETS_142, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM_DARK", "effect", FRAMES_143, OFFSETS_143, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM_HEAL", "effect", FRAMES_144, OFFSETS_144, 16, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM_HEAL2", "effect", FRAMES_145, OFFSETS_145, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM_POWERUP", "effect", FRAMES_146, OFFSETS_146, 16, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM_RED", "effect", FRAMES_147, OFFSETS_147, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM_SHIELD", "effect", FRAMES_148, OFFSETS_148, 20, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM_SLASH", "effect", FRAMES_149, OFFSETS_149, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM_SLASH2", "effect", FRAMES_150, OFFSETS_150, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM_SLASHBLUE", "effect", FRAMES_151, OFFSETS_151, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM_SLASHGREEN", "effect", FRAMES_152, OFFSETS_152, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM_SLASHORANGE", "effect", FRAMES_153, OFFSETS_153, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM_SLASHRED", "effect", FRAMES_154, OFFSETS_154, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM_SPARK", "effect", FRAMES_155, OFFSETS_155, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BOOM_SPARKBLUE", "effect", FRAMES_156, OFFSETS_156, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BURNING", "buff", FRAMES_157, OFFSETS_157, 1, 1, -5.950000f, -10.950000f, 6.050000f, 10.950000f },
-    { "BURNS", "buff", FRAMES_158, OFFSETS_158, 1, 1, -5.000000f, -9.300000f, 5.000000f, 10.500000f },
-    { "Balance", "item", FRAMES_159, OFFSETS_159, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Baron Brixius", "portrait", FRAMES_160, OFFSETS_160, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BaronDie", "sound", FRAMES_161, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BaronHit1", "sound", FRAMES_162, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BaronHit2", "sound", FRAMES_163, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BaronHit3", "sound", FRAMES_164, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BattleMusic1loopable", "sound", FRAMES_165, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "BattleMusic2loopable", "sound", FRAMES_166, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Blade of Light", "item", FRAMES_167, OFFSETS_167, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Blessing of Light", "icon", FRAMES_168, OFFSETS_168, 1, 1, -15.650000f, -17.100000f, 21.850000f, 17.850000f },
-    { "Block", "icon", FRAMES_169, OFFSETS_169, 1, 1, -16.350000f, -13.450000f, 14.400000f, 16.100000f },
-    { "Blood Focus", "icon", FRAMES_170, OFFSETS_170, 1, 1, -12.850000f, -12.200000f, 13.850000f, 12.800000f },
-    { "Blood Strike", "icon", FRAMES_171, OFFSETS_171, 1, 1, -17.150000f, -14.550000f, 12.150000f, 12.800000f },
-    { "Bloody Blade", "item", FRAMES_172, OFFSETS_172, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Bloody Dagger", "item", FRAMES_173, OFFSETS_173, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Boots of Stealth", "item", FRAMES_174, OFFSETS_174, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Break", "icon", FRAMES_175, OFFSETS_175, 1, 1, -24.150000f, -10.450000f, 31.650000f, 12.050000f },
-    { "Breaker's Armor", "item", FRAMES_176, OFFSETS_176, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Breaker's Axe", "item", FRAMES_177, OFFSETS_177, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Breaker's Boots", "item", FRAMES_178, OFFSETS_178, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Breaker's Gloves", "item", FRAMES_179, OFFSETS_179, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Breaker's Mask", "item", FRAMES_180, OFFSETS_180, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Breaker's Pantyhose", "item", FRAMES_181, OFFSETS_181, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Broken Totem", "item", FRAMES_182, OFFSETS_182, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "COLDSOUL", "buff", FRAMES_183, OFFSETS_183, 1, 1, -6.100000f, -14.350000f, 6.150000f, 2.900000f },
-    { "CRIPPLE1", "buff", FRAMES_184, OFFSETS_184, 1, 1, -6.100000f, -14.350000f, 6.150000f, 2.900000f },
-    { "CRIPPLE2", "buff", FRAMES_185, OFFSETS_185, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "CRIPPLE3", "buff", FRAMES_186, OFFSETS_186, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Cannibal's Hunger", "item", FRAMES_187, OFFSETS_187, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Cell Reformation", "icon", FRAMES_188, OFFSETS_188, 1, 1, -27.100000f, -28.700000f, 21.950000f, 18.250000f },
-    { "Champion's Trophy", "item", FRAMES_189, OFFSETS_189, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Click2putdown", "sound", FRAMES_190, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Click3pickup", "sound", FRAMES_191, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Cold Steel Leggings", "item", FRAMES_192, OFFSETS_192, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Convoy Package", "item", FRAMES_193, OFFSETS_193, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Coup De Grace", "icon", FRAMES_194, OFFSETS_194, 1, 1, -19.700000f, -20.200000f, 24.900000f, 21.500000f },
-    { "Cripple", "icon", FRAMES_195, OFFSETS_195, 1, 1, -13.000000f, -12.200000f, 12.150000f, 18.400000f },
-    { "Crow Bar", "item", FRAMES_196, OFFSETS_196, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Crown of Frozen Shadows", "item", FRAMES_197, OFFSETS_197, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "DARKREGEN", "buff", FRAMES_198, OFFSETS_198, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "DAY", "background", FRAMES_199, OFFSETS_199, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "DAY2", "background", FRAMES_200, OFFSETS_200, 1, 1, -403.250000f, -183.100000f, 411.200000f, 155.150000f },
-    { "DECAY", "buff", FRAMES_201, OFFSETS_201, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "DOCTOR", "buff", FRAMES_202, OFFSETS_202, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Dead Peacock", "item", FRAMES_203, OFFSETS_203, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Deep Sea Greaves", "item", FRAMES_204, OFFSETS_204, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Destroyer's Armor", "item", FRAMES_205, OFFSETS_205, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Destroyer's Boots", "item", FRAMES_206, OFFSETS_206, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Destroyer's Gloves", "item", FRAMES_207, OFFSETS_207, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Destroyer's Helm", "item", FRAMES_208, OFFSETS_208, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Destroyer's Leggings", "item", FRAMES_209, OFFSETS_209, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Destruction", "item", FRAMES_210, OFFSETS_210, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Die1", "sound", FRAMES_211, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Disrupt", "icon", FRAMES_212, OFFSETS_212, 1, 1, -12.600000f, -11.500000f, 12.800000f, 16.000000f },
-    { "Dokebi the Striker", "portrait", FRAMES_213, OFFSETS_213, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "DuxDie", "sound", FRAMES_214, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "DuxHit1", "sound", FRAMES_215, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "DuxHit2", "sound", FRAMES_216, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "DuxHit3", "sound", FRAMES_217, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ElectricHit", "sound", FRAMES_218, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Electro Bolt", "icon", FRAMES_219, OFFSETS_219, 1, 1, -12.850000f, -15.400000f, 12.150000f, 12.800000f },
-    { "Elite Medic", "portrait", FRAMES_220, OFFSETS_220, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Engineering Gloves", "item", FRAMES_221, OFFSETS_221, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Eternity", "item", FRAMES_222, OFFSETS_222, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Explode", "sound", FRAMES_223, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "FATALFLAW", "buff", FRAMES_224, OFFSETS_224, 1, 1, -5.950000f, -10.100000f, 5.950000f, 0.700000f },
-    { "FATE", "buff", FRAMES_225, OFFSETS_225, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "FIRESHOCK", "buff", FRAMES_226, OFFSETS_226, 1, 1, -5.950000f, -10.950000f, 5.950000f, 10.950000f },
-    { "F_SARM_SIX", "doll", FRAMES_227, OFFSETS_227, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "F_SARM_THREE", "doll", FRAMES_228, OFFSETS_228, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "F_SCHEST_SIX", "doll", FRAMES_229, OFFSETS_229, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "F_SCHEST_THREE", "doll", FRAMES_230, OFFSETS_230, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "F_SFOOT_SIX", "doll", FRAMES_231, OFFSETS_231, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "F_SFOOT_THREE", "doll", FRAMES_232, OFFSETS_232, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "F_SHAND_SIX", "doll", FRAMES_233, OFFSETS_233, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "F_SHAND_THREE", "doll", FRAMES_234, OFFSETS_234, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "F_SHEAD_SIX", "doll", FRAMES_235, OFFSETS_235, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "F_SHEAD_THREE", "doll", FRAMES_236, OFFSETS_236, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "F_SLEG2_SIX", "doll", FRAMES_237, OFFSETS_237, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "F_SLEG2_THREE", "doll", FRAMES_238, OFFSETS_238, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Fire Axe", "item", FRAMES_239, OFFSETS_239, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Flame Blast", "icon", FRAMES_240, OFFSETS_240, 1, 1, -12.850000f, -14.600000f, 12.150000f, 12.800000f },
-    { "Flame Strike", "icon", FRAMES_241, OFFSETS_241, 1, 1, -12.850000f, -19.900000f, 18.500000f, 14.300000f },
-    { "Footguard of the Shore", "item", FRAMES_242, OFFSETS_242, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Forcefield", "sound", FRAMES_243, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Frost Bolt", "icon", FRAMES_244, OFFSETS_244, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Frost Lantern", "item", FRAMES_245, OFFSETS_245, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Frost Zombie", "portrait", FRAMES_246, OFFSETS_246, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Galiant the Paladin", "portrait", FRAMES_247, OFFSETS_247, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "GaliantDie", "sound", FRAMES_248, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "GaliantHit1", "sound", FRAMES_249, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "GaliantHit2", "sound", FRAMES_250, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "GaliantHit3", "sound", FRAMES_251, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Ghost Assassin", "portrait", FRAMES_252, OFFSETS_252, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Ghost Medallion", "item", FRAMES_253, OFFSETS_253, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Ghost Samurai", "portrait", FRAMES_254, OFFSETS_254, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "GhostDie", "sound", FRAMES_255, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "GhostHit1", "sound", FRAMES_256, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "GhostHit2", "sound", FRAMES_257, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "GhostHit3", "sound", FRAMES_258, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Ghostly Mask", "item", FRAMES_259, OFFSETS_259, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Grand Master's Gloves", "item", FRAMES_260, OFFSETS_260, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Guardian's Armor", "item", FRAMES_261, OFFSETS_261, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Guardian's Boots", "item", FRAMES_262, OFFSETS_262, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Guardian's Gloves", "item", FRAMES_263, OFFSETS_263, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Guardian's Helm", "item", FRAMES_264, OFFSETS_264, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Guardian's Leggings", "item", FRAMES_265, OFFSETS_265, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Gunslinger's Armor", "item", FRAMES_266, OFFSETS_266, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Gunslinger's Boots", "item", FRAMES_267, OFFSETS_267, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Gunslinger's Gloves", "item", FRAMES_268, OFFSETS_268, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Gunslinger's Helm", "item", FRAMES_269, OFFSETS_269, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Gunslinger's Leggings", "item", FRAMES_270, OFFSETS_270, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "HAIR_BART", "doll", FRAMES_271, OFFSETS_271, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "HAIR_FIVE", "doll", FRAMES_272, OFFSETS_272, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "HAIR_FOUR", "doll", FRAMES_273, OFFSETS_273, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "HAIR_ONE", "doll", FRAMES_274, OFFSETS_274, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "HAIR_SIX", "doll", FRAMES_275, OFFSETS_275, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "HAIR_THREE", "doll", FRAMES_276, OFFSETS_276, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "HAIR_TWO", "doll", FRAMES_277, OFFSETS_277, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "HEW", "zone", FRAMES_278, OFFSETS_278, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Handguards of Destiny", "item", FRAMES_279, OFFSETS_279, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Handwraps of Caution", "item", FRAMES_280, OFFSETS_280, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Healing", "sound", FRAMES_281, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Healing Light", "icon", FRAMES_282, OFFSETS_282, 1, 1, -32.500000f, -13.300000f, 13.900000f, 14.900000f },
-    { "Helm of Peril", "item", FRAMES_283, OFFSETS_283, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Heroic Motivation", "icon", FRAMES_284, OFFSETS_284, 1, 1, -17.700000f, -12.200000f, 20.700000f, 17.850000f },
-    { "Hit2", "sound", FRAMES_285, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Hit3", "sound", FRAMES_286, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Hit4", "sound", FRAMES_287, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Hit5", "sound", FRAMES_288, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Hunter's Armor", "item", FRAMES_289, OFFSETS_289, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Hunter's Boots", "item", FRAMES_290, OFFSETS_290, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Hunter's Handguards", "item", FRAMES_291, OFFSETS_291, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Hunter's Helm", "item", FRAMES_292, OFFSETS_292, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Hunter's Legplates", "item", FRAMES_293, OFFSETS_293, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "IGNITE", "buff", FRAMES_294, OFFSETS_294, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "INTERVENTION1", "buff", FRAMES_295, OFFSETS_295, 1, 1, -6.400000f, -10.450000f, 5.850000f, 6.450000f },
-    { "INTERVENTION10", "buff", FRAMES_296, OFFSETS_296, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "INTERVENTION2", "buff", FRAMES_297, OFFSETS_297, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "INTERVENTION3", "buff", FRAMES_298, OFFSETS_298, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "INTERVENTION4", "buff", FRAMES_299, OFFSETS_299, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "INTERVENTION5", "buff", FRAMES_300, OFFSETS_300, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "INTERVENTION6", "buff", FRAMES_301, OFFSETS_301, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "INTERVENTION7", "buff", FRAMES_302, OFFSETS_302, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "INTERVENTION8", "buff", FRAMES_303, OFFSETS_303, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "INTERVENTION9", "buff", FRAMES_304, OFFSETS_304, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "IRONSKIN1", "buff", FRAMES_305, OFFSETS_305, 1, 1, -5.950000f, -10.950000f, 6.050000f, 11.000000f },
-    { "IRONSKIN2", "buff", FRAMES_306, OFFSETS_306, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "IRONSKIN3", "buff", FRAMES_307, OFFSETS_307, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "IRONSKIN4", "buff", FRAMES_308, OFFSETS_308, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "IRONSKIN5", "buff", FRAMES_309, OFFSETS_309, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "IceShatter", "sound", FRAMES_310, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Icy Katana", "item", FRAMES_311, OFFSETS_311, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Information", "portrait", FRAMES_312, OFFSETS_312, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Intervention", "icon", FRAMES_313, OFFSETS_313, 1, 1, -16.350000f, -13.450000f, 14.400000f, 16.100000f },
-    { "Ironskin", "icon", FRAMES_314, OFFSETS_314, 1, 1, -19.000000f, -13.400000f, 12.600000f, 12.250000f },
-    { "Ivory Mace", "item", FRAMES_315, OFFSETS_315, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Ivory Shield", "item", FRAMES_316, OFFSETS_316, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Judgement", "item", FRAMES_317, OFFSETS_317, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "KOJIS_REST", "zone", FRAMES_318, OFFSETS_318, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Knight's Armor", "item", FRAMES_319, OFFSETS_319, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Knight's Boots", "item", FRAMES_320, OFFSETS_320, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Knight's Gloves", "item", FRAMES_321, OFFSETS_321, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Knight's Helm", "item", FRAMES_322, OFFSETS_322, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Knight's Leggings", "item", FRAMES_323, OFFSETS_323, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "KrinBuffShower", "ui", FRAMES_324, OFFSETS_324, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Legplates of Icy Doom", "item", FRAMES_325, OFFSETS_325, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Levo Jeans", "item", FRAMES_326, OFFSETS_326, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Louis the Blind", "portrait", FRAMES_327, OFFSETS_327, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "LouisDie", "sound", FRAMES_328, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Ludwig", "portrait", FRAMES_329, OFFSETS_329, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M7-V Rifle", "item", FRAMES_330, OFFSETS_330, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "MAGICWOUND", "buff", FRAMES_331, OFFSETS_331, 1, 1, -5.950000f, -10.100000f, 5.950000f, 0.700000f },
-    { "MODEL1", "ui", FRAMES_332, OFFSETS_332, 64, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_FINAL1", "doll", FRAMES_333, OFFSETS_333, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_FINAL2", "doll", FRAMES_334, OFFSETS_334, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_FINAL3", "doll", FRAMES_335, OFFSETS_335, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_FINAL4", "doll", FRAMES_336, OFFSETS_336, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_GER", "doll", FRAMES_337, OFFSETS_337, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_JEANS", "doll", FRAMES_338, OFFSETS_338, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_KNIGHT", "doll", FRAMES_339, OFFSETS_339, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_MEDIC", "doll", FRAMES_340, OFFSETS_340, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_NINJA", "doll", FRAMES_341, OFFSETS_341, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_ROCKSTAR", "doll", FRAMES_342, OFFSETS_342, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_SAMURAI", "doll", FRAMES_343, OFFSETS_343, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_SAMURAI2", "doll", FRAMES_344, OFFSETS_344, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_SAMURAI3", "doll", FRAMES_345, OFFSETS_345, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_SHAMAN1", "doll", FRAMES_346, OFFSETS_346, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_SHAMAN2", "doll", FRAMES_347, OFFSETS_347, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_SHAMAN3", "doll", FRAMES_348, OFFSETS_348, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_SHAMAN4", "doll", FRAMES_349, OFFSETS_349, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_SHIRT", "doll", FRAMES_350, OFFSETS_350, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_SINJID", "doll", FRAMES_351, OFFSETS_351, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_SURVIVOR", "doll", FRAMES_352, OFFSETS_352, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_USA1", "doll", FRAMES_353, OFFSETS_353, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_USA2", "doll", FRAMES_354, OFFSETS_354, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_USA3", "doll", FRAMES_355, OFFSETS_355, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_USA4", "doll", FRAMES_356, OFFSETS_356, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_ARM_USA5", "doll", FRAMES_357, OFFSETS_357, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_FINAL1", "doll", FRAMES_358, OFFSETS_358, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_FINAL2", "doll", FRAMES_359, OFFSETS_359, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_FINAL3", "doll", FRAMES_360, OFFSETS_360, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_FINAL4", "doll", FRAMES_361, OFFSETS_361, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_GER", "doll", FRAMES_362, OFFSETS_362, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_KNIGHT", "doll", FRAMES_363, OFFSETS_363, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_MEDIC", "doll", FRAMES_364, OFFSETS_364, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_NINJA", "doll", FRAMES_365, OFFSETS_365, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_ROCKSTAR", "doll", FRAMES_366, OFFSETS_366, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_SAMURAI", "doll", FRAMES_367, OFFSETS_367, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_SAMURAI2", "doll", FRAMES_368, OFFSETS_368, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_SAMURAI3", "doll", FRAMES_369, OFFSETS_369, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_SHAMAN1", "doll", FRAMES_370, OFFSETS_370, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_SHAMAN2", "doll", FRAMES_371, OFFSETS_371, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_SHAMAN3", "doll", FRAMES_372, OFFSETS_372, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_SHAMAN4", "doll", FRAMES_373, OFFSETS_373, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_SHIRT", "doll", FRAMES_374, OFFSETS_374, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_SINJID", "doll", FRAMES_375, OFFSETS_375, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_SURVIVOR", "doll", FRAMES_376, OFFSETS_376, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_USA1", "doll", FRAMES_377, OFFSETS_377, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_USA2", "doll", FRAMES_378, OFFSETS_378, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_USA3", "doll", FRAMES_379, OFFSETS_379, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_USA4", "doll", FRAMES_380, OFFSETS_380, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_CHEST_USA5", "doll", FRAMES_381, OFFSETS_381, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_FINAL1", "doll", FRAMES_382, OFFSETS_382, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_FINAL2", "doll", FRAMES_383, OFFSETS_383, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_FINAL3", "doll", FRAMES_384, OFFSETS_384, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_FINAL4", "doll", FRAMES_385, OFFSETS_385, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_GER", "doll", FRAMES_386, OFFSETS_386, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_JEANS", "doll", FRAMES_387, OFFSETS_387, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_KNIGHT", "doll", FRAMES_388, OFFSETS_388, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_MEDIC", "doll", FRAMES_389, OFFSETS_389, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_NAVY", "doll", FRAMES_390, OFFSETS_390, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_NINJA", "doll", FRAMES_391, OFFSETS_391, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_ROCKSTAR", "doll", FRAMES_392, OFFSETS_392, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_SAMURAI", "doll", FRAMES_393, OFFSETS_393, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_SAMURAI2", "doll", FRAMES_394, OFFSETS_394, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_SAMURAI3", "doll", FRAMES_395, OFFSETS_395, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_SHAMAN1", "doll", FRAMES_396, OFFSETS_396, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_SINJID", "doll", FRAMES_397, OFFSETS_397, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_SURVIVOR", "doll", FRAMES_398, OFFSETS_398, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_USA1", "doll", FRAMES_399, OFFSETS_399, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_USA2", "doll", FRAMES_400, OFFSETS_400, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_USA3", "doll", FRAMES_401, OFFSETS_401, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_USA4", "doll", FRAMES_402, OFFSETS_402, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_FOOT_USA5", "doll", FRAMES_403, OFFSETS_403, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_ENGINEERINGGLOVES", "doll", FRAMES_404, OFFSETS_404, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_FINAL1", "doll", FRAMES_405, OFFSETS_405, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_FINAL2", "doll", FRAMES_406, OFFSETS_406, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_FINAL3", "doll", FRAMES_407, OFFSETS_407, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_FINAL4", "doll", FRAMES_408, OFFSETS_408, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_GER", "doll", FRAMES_409, OFFSETS_409, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_KNIGHT", "doll", FRAMES_410, OFFSETS_410, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_MEDIC", "doll", FRAMES_411, OFFSETS_411, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_NINJA", "doll", FRAMES_412, OFFSETS_412, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_ROCKSTAR", "doll", FRAMES_413, OFFSETS_413, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_SAMURAI", "doll", FRAMES_414, OFFSETS_414, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_SAMURAI2", "doll", FRAMES_415, OFFSETS_415, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_SAMURAI3", "doll", FRAMES_416, OFFSETS_416, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_SHAMAN1", "doll", FRAMES_417, OFFSETS_417, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_SHAMAN2", "doll", FRAMES_418, OFFSETS_418, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_SHAMAN3", "doll", FRAMES_419, OFFSETS_419, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_SHAMAN4", "doll", FRAMES_420, OFFSETS_420, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_SINJID", "doll", FRAMES_421, OFFSETS_421, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_SURVIVOR", "doll", FRAMES_422, OFFSETS_422, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_USA1", "doll", FRAMES_423, OFFSETS_423, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_USA2", "doll", FRAMES_424, OFFSETS_424, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_USA3", "doll", FRAMES_425, OFFSETS_425, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_USA4", "doll", FRAMES_426, OFFSETS_426, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HAND_USA5", "doll", FRAMES_427, OFFSETS_427, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_FINAL1", "doll", FRAMES_428, OFFSETS_428, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_FINAL2", "doll", FRAMES_429, OFFSETS_429, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_FINAL3", "doll", FRAMES_430, OFFSETS_430, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_FINAL4", "doll", FRAMES_431, OFFSETS_431, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_GER", "doll", FRAMES_432, OFFSETS_432, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_KNIGHT", "doll", FRAMES_433, OFFSETS_433, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_MEDIC", "doll", FRAMES_434, OFFSETS_434, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_NINJA", "doll", FRAMES_435, OFFSETS_435, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_ROCKSTAR", "doll", FRAMES_436, OFFSETS_436, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_SAMURAI", "doll", FRAMES_437, OFFSETS_437, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_SAMURAI2", "doll", FRAMES_438, OFFSETS_438, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_SAMURAI3", "doll", FRAMES_439, OFFSETS_439, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_SHAMAN1", "doll", FRAMES_440, OFFSETS_440, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_SHAMAN2", "doll", FRAMES_441, OFFSETS_441, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_SHAMAN3", "doll", FRAMES_442, OFFSETS_442, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_SHAMAN4", "doll", FRAMES_443, OFFSETS_443, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_SINJID", "doll", FRAMES_444, OFFSETS_444, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_SURVIVOR", "doll", FRAMES_445, OFFSETS_445, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_USA1", "doll", FRAMES_446, OFFSETS_446, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_USA2", "doll", FRAMES_447, OFFSETS_447, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_USA3", "doll", FRAMES_448, OFFSETS_448, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_USA4", "doll", FRAMES_449, OFFSETS_449, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_HEAD_USA5", "doll", FRAMES_450, OFFSETS_450, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_FINAL1", "doll", FRAMES_451, OFFSETS_451, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_FINAL2", "doll", FRAMES_452, OFFSETS_452, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_FINAL3", "doll", FRAMES_453, OFFSETS_453, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_FINAL4", "doll", FRAMES_454, OFFSETS_454, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_GER", "doll", FRAMES_455, OFFSETS_455, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_JEANS", "doll", FRAMES_456, OFFSETS_456, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_KNIGHT", "doll", FRAMES_457, OFFSETS_457, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_MEDIC", "doll", FRAMES_458, OFFSETS_458, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_NAVY", "doll", FRAMES_459, OFFSETS_459, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_NINJA", "doll", FRAMES_460, OFFSETS_460, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_ROCKSTAR", "doll", FRAMES_461, OFFSETS_461, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_SAMURAI", "doll", FRAMES_462, OFFSETS_462, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_SAMURAI2", "doll", FRAMES_463, OFFSETS_463, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_SAMURAI3", "doll", FRAMES_464, OFFSETS_464, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_SHAMAN1", "doll", FRAMES_465, OFFSETS_465, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_SHAMAN2", "doll", FRAMES_466, OFFSETS_466, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_SHAMAN3", "doll", FRAMES_467, OFFSETS_467, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_SHAMAN4", "doll", FRAMES_468, OFFSETS_468, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_SINJID", "doll", FRAMES_469, OFFSETS_469, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_SURVIVOR", "doll", FRAMES_470, OFFSETS_470, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_USA1", "doll", FRAMES_471, OFFSETS_471, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_USA2", "doll", FRAMES_472, OFFSETS_472, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_USA3", "doll", FRAMES_473, OFFSETS_473, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_USA4", "doll", FRAMES_474, OFFSETS_474, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_LEG2_USA5", "doll", FRAMES_475, OFFSETS_475, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SARM_FIVE", "doll", FRAMES_476, OFFSETS_476, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SARM_FOUR", "doll", FRAMES_477, OFFSETS_477, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SARM_GHOST", "doll", FRAMES_478, OFFSETS_478, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SARM_MAN", "doll", FRAMES_479, OFFSETS_479, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SARM_MAN2", "doll", FRAMES_480, OFFSETS_480, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SARM_MAN3", "doll", FRAMES_481, OFFSETS_481, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SARM_METABII", "doll", FRAMES_482, OFFSETS_482, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SARM_ONE", "doll", FRAMES_483, OFFSETS_483, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SARM_TWO", "doll", FRAMES_484, OFFSETS_484, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SARM_ZOMBIE", "doll", FRAMES_485, OFFSETS_485, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SARM_ZOMBIE1", "doll", FRAMES_486, OFFSETS_486, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SARM_ZOMBIE2", "doll", FRAMES_487, OFFSETS_487, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SCHEST_FIVE", "doll", FRAMES_488, OFFSETS_488, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SCHEST_FOUR", "doll", FRAMES_489, OFFSETS_489, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SCHEST_GHOST", "doll", FRAMES_490, OFFSETS_490, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SCHEST_MAN", "doll", FRAMES_491, OFFSETS_491, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SCHEST_MAN2", "doll", FRAMES_492, OFFSETS_492, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SCHEST_MAN3", "doll", FRAMES_493, OFFSETS_493, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SCHEST_METABII", "doll", FRAMES_494, OFFSETS_494, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SCHEST_ONE", "doll", FRAMES_495, OFFSETS_495, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SCHEST_TWO", "doll", FRAMES_496, OFFSETS_496, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SCHEST_ZOMBIE", "doll", FRAMES_497, OFFSETS_497, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SCHEST_ZOMBIE1", "doll", FRAMES_498, OFFSETS_498, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SCHEST_ZOMBIE2", "doll", FRAMES_499, OFFSETS_499, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SFOOT_FIVE", "doll", FRAMES_500, OFFSETS_500, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SFOOT_FOUR", "doll", FRAMES_501, OFFSETS_501, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SFOOT_GHOST", "doll", FRAMES_502, OFFSETS_502, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SFOOT_MAN", "doll", FRAMES_503, OFFSETS_503, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SFOOT_MAN2", "doll", FRAMES_504, OFFSETS_504, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SFOOT_MAN3", "doll", FRAMES_505, OFFSETS_505, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SFOOT_METABII", "doll", FRAMES_506, OFFSETS_506, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SFOOT_ONE", "doll", FRAMES_507, OFFSETS_507, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SFOOT_TWO", "doll", FRAMES_508, OFFSETS_508, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SFOOT_ZOMBIE", "doll", FRAMES_509, OFFSETS_509, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SFOOT_ZOMBIE1", "doll", FRAMES_510, OFFSETS_510, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SFOOT_ZOMBIE2", "doll", FRAMES_511, OFFSETS_511, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHAND_FIVE", "doll", FRAMES_512, OFFSETS_512, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHAND_FOUR", "doll", FRAMES_513, OFFSETS_513, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHAND_GHOST", "doll", FRAMES_514, OFFSETS_514, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHAND_MAN", "doll", FRAMES_515, OFFSETS_515, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHAND_MAN2", "doll", FRAMES_516, OFFSETS_516, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHAND_MAN3", "doll", FRAMES_517, OFFSETS_517, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHAND_METABII", "doll", FRAMES_518, OFFSETS_518, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHAND_ONE", "doll", FRAMES_519, OFFSETS_519, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHAND_TWO", "doll", FRAMES_520, OFFSETS_520, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHAND_ZOMBIE", "doll", FRAMES_521, OFFSETS_521, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHAND_ZOMBIE1", "doll", FRAMES_522, OFFSETS_522, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHAND_ZOMBIE2", "doll", FRAMES_523, OFFSETS_523, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHEAD_FIVE", "doll", FRAMES_524, OFFSETS_524, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHEAD_FOUR", "doll", FRAMES_525, OFFSETS_525, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHEAD_GHOST", "doll", FRAMES_526, OFFSETS_526, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHEAD_MAN", "doll", FRAMES_527, OFFSETS_527, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHEAD_MAN2", "doll", FRAMES_528, OFFSETS_528, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHEAD_MAN3", "doll", FRAMES_529, OFFSETS_529, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHEAD_METABII", "doll", FRAMES_530, OFFSETS_530, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHEAD_ONE", "doll", FRAMES_531, OFFSETS_531, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHEAD_TWO", "doll", FRAMES_532, OFFSETS_532, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHEAD_USA1", "doll", FRAMES_533, OFFSETS_533, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHEAD_ZOMBIE", "doll", FRAMES_534, OFFSETS_534, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHEAD_ZOMBIE1", "doll", FRAMES_535, OFFSETS_535, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHEAD_ZOMBIE2", "doll", FRAMES_536, OFFSETS_536, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_FINAL1", "doll", FRAMES_537, OFFSETS_537, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_FINAL2", "doll", FRAMES_538, OFFSETS_538, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_FINAL3", "doll", FRAMES_539, OFFSETS_539, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_FINAL4", "doll", FRAMES_540, OFFSETS_540, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_KNIGHT", "doll", FRAMES_541, OFFSETS_541, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_MEDIC", "doll", FRAMES_542, OFFSETS_542, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_NINJA", "doll", FRAMES_543, OFFSETS_543, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_ROCKSTAR", "doll", FRAMES_544, OFFSETS_544, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_SAMURAI", "doll", FRAMES_545, OFFSETS_545, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_SAMURAI2", "doll", FRAMES_546, OFFSETS_546, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_SAMURAI3", "doll", FRAMES_547, OFFSETS_547, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_SHAMAN1", "doll", FRAMES_548, OFFSETS_548, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_SHAMAN2", "doll", FRAMES_549, OFFSETS_549, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_SHAMAN3", "doll", FRAMES_550, OFFSETS_550, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_SHAMAN4", "doll", FRAMES_551, OFFSETS_551, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_SINJID", "doll", FRAMES_552, OFFSETS_552, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_SURVIVOR", "doll", FRAMES_553, OFFSETS_553, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_USA1", "doll", FRAMES_554, OFFSETS_554, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_USA2", "doll", FRAMES_555, OFFSETS_555, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_USA3", "doll", FRAMES_556, OFFSETS_556, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_USA4", "doll", FRAMES_557, OFFSETS_557, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SHOULDER_USA5", "doll", FRAMES_558, OFFSETS_558, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SLEG2_FIVE", "doll", FRAMES_559, OFFSETS_559, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SLEG2_FOUR", "doll", FRAMES_560, OFFSETS_560, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SLEG2_GHOST", "doll", FRAMES_561, OFFSETS_561, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SLEG2_MAN", "doll", FRAMES_562, OFFSETS_562, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SLEG2_MAN2", "doll", FRAMES_563, OFFSETS_563, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SLEG2_MAN3", "doll", FRAMES_564, OFFSETS_564, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SLEG2_METABII", "doll", FRAMES_565, OFFSETS_565, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SLEG2_ONE", "doll", FRAMES_566, OFFSETS_566, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SLEG2_TWO", "doll", FRAMES_567, OFFSETS_567, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SLEG2_ZOMBIE", "doll", FRAMES_568, OFFSETS_568, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SLEG2_ZOMBIE1", "doll", FRAMES_569, OFFSETS_569, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SLEG2_ZOMBIE2", "doll", FRAMES_570, OFFSETS_570, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_SSHOULDER_ONE", "doll", FRAMES_571, OFFSETS_571, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_BROAD", "doll", FRAMES_572, OFFSETS_572, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_CLUB", "doll", FRAMES_573, OFFSETS_573, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_CROWBAR", "doll", FRAMES_574, OFFSETS_574, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_FIREAXE", "doll", FRAMES_575, OFFSETS_575, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_KATANA", "doll", FRAMES_576, OFFSETS_576, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_M4", "doll", FRAMES_577, OFFSETS_577, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_MOON", "doll", FRAMES_578, OFFSETS_578, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_PALADINSWORD", "doll", FRAMES_579, OFFSETS_579, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_PIPE", "doll", FRAMES_580, OFFSETS_580, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_SHAMANKNIFE", "doll", FRAMES_581, OFFSETS_581, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_SHAMANMAGIC", "doll", FRAMES_582, OFFSETS_582, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_SHAMANMED", "doll", FRAMES_583, OFFSETS_583, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_SHAMANSWORD", "doll", FRAMES_584, OFFSETS_584, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_SHANK", "doll", FRAMES_585, OFFSETS_585, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_SHIELD2", "doll", FRAMES_586, OFFSETS_586, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_SPELLMACE", "doll", FRAMES_587, OFFSETS_587, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_SPELLSTAFF", "doll", FRAMES_588, OFFSETS_588, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_STICK", "doll", FRAMES_589, OFFSETS_589, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_SWATSWORD", "doll", FRAMES_590, OFFSETS_590, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_SWIFT", "doll", FRAMES_591, OFFSETS_591, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_SWORD1", "doll", FRAMES_592, OFFSETS_592, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_UBER1", "doll", FRAMES_593, OFFSETS_593, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_UBER10", "doll", FRAMES_594, OFFSETS_594, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_UBER11", "doll", FRAMES_595, OFFSETS_595, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_UBER2", "doll", FRAMES_596, OFFSETS_596, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_UBER3", "doll", FRAMES_597, OFFSETS_597, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_UBER4", "doll", FRAMES_598, OFFSETS_598, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_UBER5", "doll", FRAMES_599, OFFSETS_599, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_UBER6", "doll", FRAMES_600, OFFSETS_600, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_UBER7", "doll", FRAMES_601, OFFSETS_601, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_UBER8", "doll", FRAMES_602, OFFSETS_602, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "M_WEAPON_UBER9", "doll", FRAMES_603, OFFSETS_603, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Magic Bolt", "icon", FRAMES_604, OFFSETS_604, 1, 1, -12.850000f, -15.400000f, 12.150000f, 12.800000f },
-    { "Magic Lantern", "item", FRAMES_605, OFFSETS_605, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "MagicCast", "sound", FRAMES_606, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Master Strike", "icon", FRAMES_607, OFFSETS_607, 1, 1, -20.400000f, -15.500000f, 12.150000f, 12.800000f },
-    { "Mender's Armor", "item", FRAMES_608, OFFSETS_608, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Mender's Axe", "item", FRAMES_609, OFFSETS_609, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Mender's Boots", "item", FRAMES_610, OFFSETS_610, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Mender's Gloves", "item", FRAMES_611, OFFSETS_611, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Mender's Leggings", "item", FRAMES_612, OFFSETS_612, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Moon-Struck Horrors", "item", FRAMES_613, OFFSETS_613, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Murder", "item", FRAMES_614, OFFSETS_614, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "NIGHT", "background", FRAMES_615, OFFSETS_615, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Nature's Fury", "item", FRAMES_616, OFFSETS_616, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Navy Boots", "item", FRAMES_617, OFFSETS_617, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Nike Head Wear", "item", FRAMES_618, OFFSETS_618, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "None", "item", FRAMES_619, OFFSETS_619, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ORB BRUTALITY", "orb", FRAMES_620, OFFSETS_620, 1, 1, -12.850000f, -19.750000f, 12.150000f, 12.800000f },
-    { "ORB Blessing of Light", "orb", FRAMES_621, OFFSETS_621, 1, 1, -15.650000f, -17.100000f, 21.850000f, 17.850000f },
-    { "ORB Block", "orb", FRAMES_622, OFFSETS_622, 1, 1, -16.350000f, -13.450000f, 14.400000f, 16.100000f },
-    { "ORB Blood Focus", "orb", FRAMES_623, OFFSETS_623, 1, 1, -12.850000f, -12.200000f, 13.850000f, 12.800000f },
-    { "ORB Blood Strike", "orb", FRAMES_624, OFFSETS_624, 1, 1, -17.150000f, -14.550000f, 12.150000f, 12.800000f },
-    { "ORB Break", "orb", FRAMES_625, OFFSETS_625, 1, 1, -24.150000f, -10.450000f, 31.650000f, 12.050000f },
-    { "ORB Cell Reformation", "orb", FRAMES_626, OFFSETS_626, 1, 1, -27.100000f, -28.700000f, 21.950000f, 18.250000f },
-    { "ORB Coup De Grace", "orb", FRAMES_627, OFFSETS_627, 1, 1, -19.700000f, -20.200000f, 24.900000f, 21.500000f },
-    { "ORB Cripple", "orb", FRAMES_628, OFFSETS_628, 1, 1, -13.000000f, -12.200000f, 12.150000f, 18.400000f },
-    { "ORB Disrupt", "orb", FRAMES_629, OFFSETS_629, 1, 1, -12.600000f, -11.500000f, 12.800000f, 16.000000f },
-    { "ORB ENDURANCE", "orb", FRAMES_630, OFFSETS_630, 1, 1, -12.850000f, -19.950000f, 12.150000f, 31.400000f },
-    { "ORB Electro Bolt", "orb", FRAMES_631, OFFSETS_631, 1, 1, -12.850000f, -15.400000f, 12.150000f, 12.800000f },
-    { "ORB Empty", "orb", FRAMES_632, OFFSETS_632, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ORB Flame Blast", "orb", FRAMES_633, OFFSETS_633, 1, 1, -12.850000f, -14.600000f, 12.150000f, 12.800000f },
-    { "ORB Flame Strike", "orb", FRAMES_634, OFFSETS_634, 1, 1, -12.850000f, -19.900000f, 18.500000f, 14.300000f },
-    { "ORB Frost Bolt", "orb", FRAMES_635, OFFSETS_635, 1, 1, -14.850000f, -9.300000f, 12.450000f, 8.900000f },
-    { "ORB Healing Light", "orb", FRAMES_636, OFFSETS_636, 1, 1, -32.500000f, -13.300000f, 13.900000f, 14.900000f },
-    { "ORB Heroic Motivation", "orb", FRAMES_637, OFFSETS_637, 1, 1, -17.700000f, -12.200000f, 20.700000f, 17.850000f },
-    { "ORB Intervention", "orb", FRAMES_638, OFFSETS_638, 1, 1, -16.350000f, -13.450000f, 14.400000f, 16.100000f },
-    { "ORB Ironskin", "orb", FRAMES_639, OFFSETS_639, 1, 1, -19.000000f, -13.400000f, 12.600000f, 12.250000f },
-    { "ORB Magic Bolt", "orb", FRAMES_640, OFFSETS_640, 1, 1, -12.850000f, -15.400000f, 12.150000f, 12.800000f },
-    { "ORB Master Strike", "orb", FRAMES_641, OFFSETS_641, 1, 1, -20.400000f, -15.500000f, 12.150000f, 12.800000f },
-    { "ORB Quick Strike", "orb", FRAMES_642, OFFSETS_642, 1, 1, -12.850000f, -15.400000f, 12.150000f, 12.800000f },
-    { "ORB REGENERATION", "orb", FRAMES_643, OFFSETS_643, 1, 1, -13.000000f, -14.500000f, 17.550000f, 14.000000f },
-    { "ORB Rage", "orb", FRAMES_644, OFFSETS_644, 1, 1, -27.100000f, -28.700000f, 21.950000f, 18.250000f },
-    { "ORB Re-Energize", "orb", FRAMES_645, OFFSETS_645, 1, 1, -12.850000f, -12.200000f, 12.800000f, 12.800000f },
-    { "ORB SOLIDITY", "orb", FRAMES_646, OFFSETS_646, 1, 1, -12.850000f, -12.200000f, 12.150000f, 12.800000f },
-    { "ORB Shatter Bolt", "orb", FRAMES_647, OFFSETS_647, 1, 1, -16.150000f, -17.000000f, 12.150000f, 13.700000f },
-    { "ORB Smash", "orb", FRAMES_648, OFFSETS_648, 1, 1, -28.700000f, -26.200000f, 11.750000f, 12.400000f },
-    { "ORB Strike", "orb", FRAMES_649, OFFSETS_649, 1, 1, -6.300000f, -15.300000f, 10.700000f, 15.200000f },
-    { "ORB Subversion", "orb", FRAMES_650, OFFSETS_650, 1, 1, -12.000000f, -11.250000f, 12.300000f, 11.250000f },
-    { "ORB Sunder", "orb", FRAMES_651, OFFSETS_651, 1, 1, -12.850000f, -12.200000f, 16.300000f, 23.350000f },
-    { "ORB Suppression", "orb", FRAMES_652, OFFSETS_652, 1, 1, -12.350000f, -22.600000f, 12.150000f, 22.000000f },
-    { "ORB Void", "orb", FRAMES_653, OFFSETS_653, 1, 1, -12.850000f, -15.000000f, 12.550000f, 14.050000f },
-    { "ORB Wound", "orb", FRAMES_654, OFFSETS_654, 1, 1, -13.500000f, -20.750000f, 41.950000f, 11.700000f },
-    { "PLAINS", "zone", FRAMES_655, OFFSETS_655, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "PLAINS2", "background", FRAMES_656, OFFSETS_656, 1, 1, -570.450000f, -136.450000f, 535.700000f, 256.950000f },
-    { "POISON", "buff", FRAMES_657, OFFSETS_657, 1, 1, -5.950000f, -10.950000f, 5.950000f, 10.950000f },
-    { "POISONZOMBIE", "buff", FRAMES_658, OFFSETS_658, 1, 1, -5.950000f, -10.950000f, 5.950000f, 10.950000f },
-    { "POWERUP", "buff", FRAMES_659, OFFSETS_659, 1, 1, -5.950000f, -10.950000f, 6.050000f, 10.950000f },
-    { "Paladin's Armor", "item", FRAMES_660, OFFSETS_660, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Paladin's Boots", "item", FRAMES_661, OFFSETS_661, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Paladin's Gloves", "item", FRAMES_662, OFFSETS_662, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Paladin's Helm", "item", FRAMES_663, OFFSETS_663, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Paladin's Leggings", "item", FRAMES_664, OFFSETS_664, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "PoisonHit", "sound", FRAMES_665, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Power Lantern", "item", FRAMES_666, OFFSETS_666, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "PowerupDefense", "sound", FRAMES_667, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "PowerupOffense", "sound", FRAMES_668, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Proverse All Stars", "item", FRAMES_669, OFFSETS_669, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Pulse Rifle", "item", FRAMES_670, OFFSETS_670, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Quick Strike", "icon", FRAMES_671, OFFSETS_671, 1, 1, -12.850000f, -15.400000f, 12.150000f, 12.800000f },
-    { "RAGE1", "buff", FRAMES_672, OFFSETS_672, 1, 1, -5.950000f, -10.950000f, 6.050000f, 10.950000f },
-    { "RAGE2", "buff", FRAMES_673, OFFSETS_673, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "RAGE3", "buff", FRAMES_674, OFFSETS_674, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "REGEN", "buff", FRAMES_675, OFFSETS_675, 1, 1, -5.750000f, -10.050000f, 6.550000f, 11.000000f },
-    { "REGENFOC", "buff", FRAMES_676, OFFSETS_676, 1, 1, -5.750000f, -10.050000f, 6.550000f, 11.000000f },
-    { "REGENSHAMAN", "buff", FRAMES_677, OFFSETS_677, 1, 1, -5.750000f, -10.050000f, 6.550000f, 11.000000f },
-    { "Rage", "icon", FRAMES_678, OFFSETS_678, 1, 1, -27.100000f, -28.700000f, 21.950000f, 18.250000f },
-    { "Re-Energize", "icon", FRAMES_679, OFFSETS_679, 1, 1, -12.850000f, -12.200000f, 12.800000f, 12.800000f },
-    { "Reckoning", "item", FRAMES_680, OFFSETS_680, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Rockstar", "portrait", FRAMES_681, OFFSETS_681, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "SEA", "background", FRAMES_682, OFFSETS_682, 1, 1, -385.950000f, -157.650000f, 394.500000f, 158.200000f },
-    { "SHATTER", "buff", FRAMES_683, OFFSETS_683, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "SHATTER2", "buff", FRAMES_684, OFFSETS_684, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "SHORE", "background", FRAMES_685, OFFSETS_685, 1, 1, -523.200000f, -166.550000f, 523.250000f, 215.050000f },
-    { "SPEEDUP", "buff", FRAMES_686, OFFSETS_686, 1, 1, -6.150000f, -9.800000f, 5.850000f, 3.200000f },
-    { "STUN1", "buff", FRAMES_687, OFFSETS_687, 1, 1, -5.950000f, -10.950000f, 5.950000f, 10.950000f },
-    { "SUBVERSION", "buff", FRAMES_688, OFFSETS_688, 1, 1, -6.050000f, -10.700000f, 5.700000f, 6.950000f },
-    { "SUNDER1", "buff", FRAMES_689, OFFSETS_689, 1, 1, -5.950000f, -10.100000f, 5.950000f, 0.700000f },
-    { "SUNDER2", "buff", FRAMES_690, OFFSETS_690, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "SUNDER3", "buff", FRAMES_691, OFFSETS_691, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "SUNDER4", "buff", FRAMES_692, OFFSETS_692, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "SUNDER5", "buff", FRAMES_693, OFFSETS_693, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "SUPRESSION", "buff", FRAMES_694, OFFSETS_694, 1, 1, -3.850000f, -17.350000f, 3.850000f, 17.250000f },
-    { "Scarlett", "portrait", FRAMES_695, OFFSETS_695, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Sensei Ishiguro", "portrait", FRAMES_696, OFFSETS_696, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Shadow Legwraps", "item", FRAMES_697, OFFSETS_697, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Shaman of Blades", "portrait", FRAMES_698, OFFSETS_698, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Shaman of Death", "portrait", FRAMES_699, OFFSETS_699, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ShamanDie", "sound", FRAMES_700, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ShamanHit1", "sound", FRAMES_701, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ShamanHit2", "sound", FRAMES_702, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Shatter Bolt", "icon", FRAMES_703, OFFSETS_703, 1, 1, -16.150000f, -17.000000f, 12.150000f, 13.700000f },
-    { "Smash", "icon", FRAMES_704, OFFSETS_704, 1, 1, -28.700000f, -26.200000f, 11.750000f, 12.400000f },
-    { "Sonny", "portrait", FRAMES_705, OFFSETS_705, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Steel Slicer", "item", FRAMES_706, OFFSETS_706, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Stone Club", "item", FRAMES_707, OFFSETS_707, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Strike", "icon", FRAMES_708, OFFSETS_708, 1, 1, -6.300000f, -15.300000f, 10.700000f, 15.200000f },
-    { "Striker's Armor", "item", FRAMES_709, OFFSETS_709, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Striker's Flip-Flops", "item", FRAMES_710, OFFSETS_710, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Striker's Gloves", "item", FRAMES_711, OFFSETS_711, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Striker's Leggings", "item", FRAMES_712, OFFSETS_712, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Striker's Mask", "item", FRAMES_713, OFFSETS_713, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Subversion", "icon", FRAMES_714, OFFSETS_714, 1, 1, -12.000000f, -11.250000f, 12.300000f, 11.250000f },
-    { "Sunder", "icon", FRAMES_715, OFFSETS_715, 1, 1, -12.850000f, -12.200000f, 16.300000f, 23.350000f },
-    { "Suppression", "icon", FRAMES_716, OFFSETS_716, 1, 1, -12.350000f, -22.600000f, 12.150000f, 22.000000f },
-    { "Survivor's Armor", "item", FRAMES_717, OFFSETS_717, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Survivor's Boots", "item", FRAMES_718, OFFSETS_718, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Survivor's Gloves", "item", FRAMES_719, OFFSETS_719, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Survivor's Helm", "item", FRAMES_720, OFFSETS_720, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Survivor's Leggings", "item", FRAMES_721, OFFSETS_721, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Swift Blade", "item", FRAMES_722, OFFSETS_722, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Swing", "sound", FRAMES_723, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "The Grand Rifle", "item", FRAMES_724, OFFSETS_724, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Tool", "item", FRAMES_725, OFFSETS_725, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Torment", "item", FRAMES_726, OFFSETS_726, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Tribal Blade", "item", FRAMES_727, OFFSETS_727, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Tribal Dagger", "item", FRAMES_728, OFFSETS_728, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "VOID1", "buff", FRAMES_729, OFFSETS_729, 1, 1, -5.950000f, -10.950000f, 5.950000f, 10.950000f },
-    { "VOID2", "buff", FRAMES_730, OFFSETS_730, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "VOID3", "buff", FRAMES_731, OFFSETS_731, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "VOID4", "buff", FRAMES_732, OFFSETS_732, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "VOID5", "buff", FRAMES_733, OFFSETS_733, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "VOIDMOB", "buff", FRAMES_734, OFFSETS_734, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Vendetta the Breaker", "portrait", FRAMES_735, OFFSETS_735, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Veradux", "portrait", FRAMES_736, OFFSETS_736, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Void", "icon", FRAMES_737, OFFSETS_737, 1, 1, -12.850000f, -15.000000f, 12.550000f, 14.050000f },
-    { "WASHED", "buff", FRAMES_738, OFFSETS_738, 1, 1, -7.050000f, -11.600000f, 1.850000f, 7.000000f },
-    { "WHITE NOVEMBER", "background", FRAMES_739, OFFSETS_739, 1, 1, -528.500000f, -118.900000f, 551.450000f, 246.050000f },
-    { "WHITE_NOVEMBER", "zone", FRAMES_740, OFFSETS_740, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "WOUND1", "buff", FRAMES_741, OFFSETS_741, 1, 1, -5.950000f, -10.950000f, 5.950000f, 10.950000f },
-    { "WOUND2", "buff", FRAMES_742, OFFSETS_742, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "WOUND3", "buff", FRAMES_743, OFFSETS_743, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "White T-Shirt", "item", FRAMES_744, OFFSETS_744, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Wolfgang", "portrait", FRAMES_745, OFFSETS_745, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Wound", "icon", FRAMES_746, OFFSETS_746, 1, 1, -13.500000f, -20.750000f, 41.950000f, 11.700000f },
-    { "ZPCI Blade", "item", FRAMES_747, OFFSETS_747, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZPCI Captain", "portrait", FRAMES_748, OFFSETS_748, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZPCI Dog Tag", "item", FRAMES_749, OFFSETS_749, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZPCI Elite", "portrait", FRAMES_750, OFFSETS_750, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZPCI Hunter", "portrait", FRAMES_751, OFFSETS_751, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZPCI Med-Wear A", "item", FRAMES_752, OFFSETS_752, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZPCI Med-Wear B", "item", FRAMES_753, OFFSETS_753, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZPCI Med-Wear C", "item", FRAMES_754, OFFSETS_754, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZPCI Med-Wear D", "item", FRAMES_755, OFFSETS_755, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZPCI Med-Wear E", "item", FRAMES_756, OFFSETS_756, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZPCI Medic", "portrait", FRAMES_757, OFFSETS_757, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZPCI Sniper", "portrait", FRAMES_758, OFFSETS_758, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZPCIHit1", "sound", FRAMES_759, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZPCIHit2", "sound", FRAMES_760, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Zombie Ambassador", "portrait", FRAMES_761, OFFSETS_761, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "Zombie Fingers", "item", FRAMES_762, OFFSETS_762, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZombieDie", "sound", FRAMES_763, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZombieHit1", "sound", FRAMES_764, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "ZombieHit2", "sound", FRAMES_765, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "mainPlayer", "portrait", FRAMES_766, OFFSETS_766, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1312@1", "chrome", FRAMES_24, OFFSETS_24, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1312@2", "chrome", FRAMES_25, OFFSETS_25, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1312@3", "chrome", FRAMES_26, OFFSETS_26, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1312@4", "chrome", FRAMES_27, OFFSETS_27, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1312@5", "chrome", FRAMES_28, OFFSETS_28, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1312@6", "chrome", FRAMES_29, OFFSETS_29, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1313", "chrome", FRAMES_30, OFFSETS_30, 1, 1, -13.000000f, -18.000000f, 13.000000f, 18.000000f },
+    { "#1314", "chrome", FRAMES_31, OFFSETS_31, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1316", "chrome", FRAMES_32, OFFSETS_32, 1, 1, -14.750000f, -19.750000f, 14.750000f, 19.750000f },
+    { "#1317", "chrome", FRAMES_33, OFFSETS_33, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1318", "chrome", FRAMES_34, OFFSETS_34, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1333", "chrome", FRAMES_35, OFFSETS_35, 1, 1, -69.500000f, -35.000000f, 69.500000f, 35.000000f },
+    { "#1334", "chrome", FRAMES_36, OFFSETS_36, 1, 1, -125.000000f, -75.000000f, 125.000000f, 75.000000f },
+    { "#1337", "chrome", FRAMES_37, OFFSETS_37, 1, 1, -68.500000f, -34.250000f, 68.500000f, 33.750000f },
+    { "#1339", "chrome", FRAMES_38, OFFSETS_38, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1341", "chrome", FRAMES_39, OFFSETS_39, 1, 1, -262.050000f, 60.450000f, -227.750000f, 79.250000f },
+    { "#1344", "chrome", FRAMES_40, OFFSETS_40, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1344@2", "chrome", FRAMES_41, OFFSETS_41, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1345", "chrome", FRAMES_42, OFFSETS_42, 1, 1, -262.000000f, 60.750000f, -132.750000f, 79.850000f },
+    { "#1358", "chrome", FRAMES_43, OFFSETS_43, 1, 1, -15.500000f, -15.500000f, 15.500000f, 15.500000f },
+    { "#1362", "chrome", FRAMES_44, OFFSETS_44, 1, 1, -18.350000f, -18.200000f, 18.350000f, 18.200000f },
+    { "#1367", "chrome", FRAMES_45, OFFSETS_45, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1377", "chrome", FRAMES_46, OFFSETS_46, 1, 1, -98.400000f, -41.600000f, 98.400000f, 41.600000f },
+    { "#1380", "chrome", FRAMES_47, OFFSETS_47, 1, 1, -21.550000f, -7.700000f, 21.550000f, 7.750000f },
+    { "#1390@1", "chrome", FRAMES_48, OFFSETS_48, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1390@2", "chrome", FRAMES_49, OFFSETS_49, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1390@3", "chrome", FRAMES_50, OFFSETS_50, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1390@4", "chrome", FRAMES_51, OFFSETS_51, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1390@5", "chrome", FRAMES_52, OFFSETS_52, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1390@6", "chrome", FRAMES_53, OFFSETS_53, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1393", "chrome", FRAMES_54, OFFSETS_54, 1, 1, -15.500000f, -15.500000f, 15.500000f, 15.500000f },
+    { "#1400", "chrome", FRAMES_55, OFFSETS_55, 1, 1, -12.250000f, -30.500000f, 12.250000f, 30.550000f },
+    { "#1401", "chrome", FRAMES_56, OFFSETS_56, 1, 1, -5.500000f, -22.500000f, 5.500000f, 18.000000f },
+    { "#1403", "chrome", FRAMES_57, OFFSETS_57, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1406", "chrome", FRAMES_58, OFFSETS_58, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1415", "chrome", FRAMES_59, OFFSETS_59, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1426", "chrome", FRAMES_60, OFFSETS_60, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1426@1", "chrome", FRAMES_61, OFFSETS_61, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1444", "chrome", FRAMES_62, OFFSETS_62, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1444@8", "chrome", FRAMES_63, OFFSETS_63, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1445", "chrome", FRAMES_64, OFFSETS_64, 1, 1, -22.050000f, -8.200000f, 22.050000f, 8.250000f },
+    { "#1446", "chrome", FRAMES_65, OFFSETS_65, 1, 1, -22.550000f, -8.700000f, 22.550000f, 8.750000f },
+    { "#1503", "chrome", FRAMES_66, OFFSETS_66, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1507", "chrome", FRAMES_67, OFFSETS_67, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1508", "chrome", FRAMES_68, OFFSETS_68, 1, 1, -100.000000f, -12.000000f, 57.400000f, 12.000000f },
+    { "#1509", "chrome", FRAMES_69, OFFSETS_69, 1, 1, -237.250000f, -124.100000f, 237.250000f, 124.100000f },
+    { "#1513", "chrome", FRAMES_70, OFFSETS_70, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1516", "chrome", FRAMES_71, OFFSETS_71, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1531", "chrome", FRAMES_72, OFFSETS_72, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1536", "chrome", FRAMES_73, OFFSETS_73, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1537", "chrome", FRAMES_74, OFFSETS_74, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1560", "chrome", FRAMES_75, OFFSETS_75, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1561", "chrome", FRAMES_76, OFFSETS_76, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1562", "chrome", FRAMES_77, OFFSETS_77, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1563", "chrome", FRAMES_78, OFFSETS_78, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1564", "chrome", FRAMES_79, OFFSETS_79, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1565", "chrome", FRAMES_80, OFFSETS_80, 1, 1, 14.500000f, 129.900000f, 785.500000f, 444.950000f },
+    { "#1566", "chrome", FRAMES_81, OFFSETS_81, 1, 1, 0.000000f, -6.500000f, 200.000000f, 5.500000f },
+    { "#1567", "chrome", FRAMES_82, OFFSETS_82, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1568", "chrome", FRAMES_83, OFFSETS_83, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1570", "chrome", FRAMES_84, OFFSETS_84, 1, 1, -100.500000f, -12.950000f, 100.500000f, 13.000000f },
+    { "#1585", "chrome", FRAMES_85, OFFSETS_85, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1586", "chrome", FRAMES_86, OFFSETS_86, 1, 1, -35.000000f, -35.000000f, 35.000000f, 35.000000f },
+    { "#1590", "chrome", FRAMES_87, OFFSETS_87, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1596", "chrome", FRAMES_88, OFFSETS_88, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1606", "chrome", FRAMES_89, OFFSETS_89, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1610", "chrome", FRAMES_90, OFFSETS_90, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1613", "chrome", FRAMES_91, OFFSETS_91, 1, 1, -95.950000f, -35.700000f, 96.000000f, 112.300000f },
+    { "#1632", "chrome", FRAMES_92, OFFSETS_92, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1633", "chrome", FRAMES_93, OFFSETS_93, 1, 1, -0.500000f, -0.500000f, 306.000000f, 94.500000f },
+    { "#1640", "chrome", FRAMES_94, OFFSETS_94, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1642", "chrome", FRAMES_95, OFFSETS_95, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1695", "cutscene", FRAMES_96, OFFSETS_96, 1306, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1699", "cutscene", FRAMES_97, OFFSETS_97, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1710", "cutscene", FRAMES_98, OFFSETS_98, 1074, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1719", "cutscene", FRAMES_99, OFFSETS_99, 742, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1720", "chrome", FRAMES_100, OFFSETS_100, 1, 1, -31.250000f, -20.000000f, 733.600000f, 487.500000f },
+    { "#1722", "chrome", FRAMES_101, OFFSETS_101, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1725", "chrome", FRAMES_102, OFFSETS_102, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1726", "chrome", FRAMES_103, OFFSETS_103, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#368", "chrome", FRAMES_104, OFFSETS_104, 1, 1, -32.500000f, -9.950000f, 32.550000f, 10.000000f },
+    { "#821", "chrome", FRAMES_105, OFFSETS_105, 1, 1, -92.400000f, -16.000000f, -28.500000f, 16.000000f },
+    { "#823", "chrome", FRAMES_106, OFFSETS_106, 1, 1, 13.900000f, -14.950000f, 75.850000f, 15.050000f },
+    { "#824", "chrome", FRAMES_107, OFFSETS_107, 1, 1, -11.500000f, -11.500000f, 11.500000f, 11.500000f },
+    { "#826", "chrome", FRAMES_108, OFFSETS_108, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#828", "chrome", FRAMES_109, OFFSETS_109, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#830", "chrome", FRAMES_110, OFFSETS_110, 1, 1, -11.650000f, -11.750000f, 12.100000f, 12.000000f },
+    { "#866", "chrome", FRAMES_111, OFFSETS_111, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#867", "chrome", FRAMES_112, OFFSETS_112, 1, 1, -10.500000f, -10.500000f, 10.500000f, 10.500000f },
+    { "#868", "chrome", FRAMES_113, OFFSETS_113, 1, 1, -11.250000f, -11.250000f, 11.250000f, 11.250000f },
+    { "#903", "chrome", FRAMES_114, OFFSETS_114, 1, 1, -4.000000f, -4.250000f, 4.000000f, 4.200000f },
+    { "#905", "chrome", FRAMES_115, OFFSETS_115, 1, 1, -2.550000f, -6.700000f, 5.350000f, 4.650000f },
+    { "#907", "chrome", FRAMES_116, OFFSETS_116, 1, 1, -9.900000f, -16.400000f, 9.950000f, 16.450000f },
+    { "#909", "chrome", FRAMES_117, OFFSETS_117, 1, 1, -4.600000f, -15.200000f, 4.650000f, 15.200000f },
+    { "#911", "chrome", FRAMES_118, OFFSETS_118, 1, 1, -5.850000f, -2.650000f, 5.900000f, 2.650000f },
+    { "#913", "chrome", FRAMES_119, OFFSETS_119, 1, 1, -3.750000f, -41.150000f, 2.250000f, 27.800000f },
+    { "#915", "chrome", FRAMES_120, OFFSETS_120, 1, 1, -3.550000f, -9.150000f, 3.500000f, 9.200000f },
+    { "#917", "chrome", FRAMES_121, OFFSETS_121, 1, 1, -3.550000f, -9.800000f, 3.550000f, 9.850000f },
+    { "#919", "chrome", FRAMES_122, OFFSETS_122, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#920", "chrome", FRAMES_123, OFFSETS_123, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#921", "chrome", FRAMES_124, OFFSETS_124, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#922", "chrome", FRAMES_125, OFFSETS_125, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#923", "chrome", FRAMES_126, OFFSETS_126, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#924", "chrome", FRAMES_127, OFFSETS_127, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#925", "chrome", FRAMES_128, OFFSETS_128, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#926", "chrome", FRAMES_129, OFFSETS_129, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#944", "chrome", FRAMES_130, OFFSETS_130, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#951", "chrome", FRAMES_131, OFFSETS_131, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#963", "cutscene", FRAMES_132, OFFSETS_132, 1, 1, 0.450000f, 0.500000f, 720.150000f, 457.500000f },
+    { "A Broken Pipe", "item", FRAMES_133, OFFSETS_133, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "A Sword", "item", FRAMES_134, OFFSETS_134, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Amber", "portrait", FRAMES_135, OFFSETS_135, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Argalla the Mender", "portrait", FRAMES_136, OFFSETS_136, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Armor of the Fallen", "item", FRAMES_137, OFFSETS_137, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Armor of the Teacher", "item", FRAMES_138, OFFSETS_138, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Assasin's Tunic", "item", FRAMES_139, OFFSETS_139, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Assassin's Armor", "item", FRAMES_140, OFFSETS_140, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Assassin's Boots", "item", FRAMES_141, OFFSETS_141, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Assassin's Gloves", "item", FRAMES_142, OFFSETS_142, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Assassin's Helm", "item", FRAMES_143, OFFSETS_143, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Assassin's Leggings", "item", FRAMES_144, OFFSETS_144, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Assassination", "item", FRAMES_145, OFFSETS_145, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BLACKOUT", "buff", FRAMES_146, OFFSETS_146, 1, 1, -5.950000f, -10.950000f, 5.950000f, 10.950000f },
+    { "BLOCK1", "buff", FRAMES_147, OFFSETS_147, 1, 1, -7.050000f, -11.600000f, 1.850000f, 7.000000f },
+    { "BOOM1", "effect", FRAMES_148, OFFSETS_148, 36, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM2", "effect", FRAMES_149, OFFSETS_149, 36, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM3", "effect", FRAMES_150, OFFSETS_150, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM_DARK", "effect", FRAMES_151, OFFSETS_151, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM_HEAL", "effect", FRAMES_152, OFFSETS_152, 16, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM_HEAL2", "effect", FRAMES_153, OFFSETS_153, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM_POWERUP", "effect", FRAMES_154, OFFSETS_154, 16, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM_RED", "effect", FRAMES_155, OFFSETS_155, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM_SHIELD", "effect", FRAMES_156, OFFSETS_156, 20, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM_SLASH", "effect", FRAMES_157, OFFSETS_157, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM_SLASH2", "effect", FRAMES_158, OFFSETS_158, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM_SLASHBLUE", "effect", FRAMES_159, OFFSETS_159, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM_SLASHGREEN", "effect", FRAMES_160, OFFSETS_160, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM_SLASHORANGE", "effect", FRAMES_161, OFFSETS_161, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM_SLASHRED", "effect", FRAMES_162, OFFSETS_162, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM_SPARK", "effect", FRAMES_163, OFFSETS_163, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BOOM_SPARKBLUE", "effect", FRAMES_164, OFFSETS_164, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BURNING", "buff", FRAMES_165, OFFSETS_165, 1, 1, -5.950000f, -10.950000f, 6.050000f, 10.950000f },
+    { "BURNS", "buff", FRAMES_166, OFFSETS_166, 1, 1, -5.000000f, -9.300000f, 5.000000f, 10.500000f },
+    { "Balance", "item", FRAMES_167, OFFSETS_167, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Baron Brixius", "portrait", FRAMES_168, OFFSETS_168, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BaronDie", "sound", FRAMES_169, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BaronHit1", "sound", FRAMES_170, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BaronHit2", "sound", FRAMES_171, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BaronHit3", "sound", FRAMES_172, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BattleMusic1loopable", "sound", FRAMES_173, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "BattleMusic2loopable", "sound", FRAMES_174, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Blade of Light", "item", FRAMES_175, OFFSETS_175, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Blessing of Light", "icon", FRAMES_176, OFFSETS_176, 1, 1, -15.650000f, -17.100000f, 21.850000f, 17.850000f },
+    { "Block", "icon", FRAMES_177, OFFSETS_177, 1, 1, -16.350000f, -13.450000f, 14.400000f, 16.100000f },
+    { "Blood Focus", "icon", FRAMES_178, OFFSETS_178, 1, 1, -12.850000f, -12.200000f, 13.850000f, 12.800000f },
+    { "Blood Strike", "icon", FRAMES_179, OFFSETS_179, 1, 1, -17.150000f, -14.550000f, 12.150000f, 12.800000f },
+    { "Bloody Blade", "item", FRAMES_180, OFFSETS_180, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Bloody Dagger", "item", FRAMES_181, OFFSETS_181, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Boots of Stealth", "item", FRAMES_182, OFFSETS_182, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Break", "icon", FRAMES_183, OFFSETS_183, 1, 1, -24.150000f, -10.450000f, 31.650000f, 12.050000f },
+    { "Breaker's Armor", "item", FRAMES_184, OFFSETS_184, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Breaker's Axe", "item", FRAMES_185, OFFSETS_185, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Breaker's Boots", "item", FRAMES_186, OFFSETS_186, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Breaker's Gloves", "item", FRAMES_187, OFFSETS_187, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Breaker's Mask", "item", FRAMES_188, OFFSETS_188, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Breaker's Pantyhose", "item", FRAMES_189, OFFSETS_189, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Broken Totem", "item", FRAMES_190, OFFSETS_190, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "COLDSOUL", "buff", FRAMES_191, OFFSETS_191, 1, 1, -6.100000f, -14.350000f, 6.150000f, 2.900000f },
+    { "CRIPPLE1", "buff", FRAMES_192, OFFSETS_192, 1, 1, -6.100000f, -14.350000f, 6.150000f, 2.900000f },
+    { "CRIPPLE2", "buff", FRAMES_193, OFFSETS_193, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "CRIPPLE3", "buff", FRAMES_194, OFFSETS_194, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Cannibal's Hunger", "item", FRAMES_195, OFFSETS_195, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Cell Reformation", "icon", FRAMES_196, OFFSETS_196, 1, 1, -27.100000f, -28.700000f, 21.950000f, 18.250000f },
+    { "Champion's Trophy", "item", FRAMES_197, OFFSETS_197, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Click2putdown", "sound", FRAMES_198, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Click3pickup", "sound", FRAMES_199, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Cold Steel Leggings", "item", FRAMES_200, OFFSETS_200, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Convoy Package", "item", FRAMES_201, OFFSETS_201, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Coup De Grace", "icon", FRAMES_202, OFFSETS_202, 1, 1, -19.700000f, -20.200000f, 24.900000f, 21.500000f },
+    { "Cripple", "icon", FRAMES_203, OFFSETS_203, 1, 1, -13.000000f, -12.200000f, 12.150000f, 18.400000f },
+    { "Crow Bar", "item", FRAMES_204, OFFSETS_204, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Crown of Frozen Shadows", "item", FRAMES_205, OFFSETS_205, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "DARKREGEN", "buff", FRAMES_206, OFFSETS_206, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "DAY", "background", FRAMES_207, OFFSETS_207, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "DAY2", "background", FRAMES_208, OFFSETS_208, 1, 1, -403.250000f, -183.100000f, 411.200000f, 155.150000f },
+    { "DECAY", "buff", FRAMES_209, OFFSETS_209, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "DOCTOR", "buff", FRAMES_210, OFFSETS_210, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Dead Peacock", "item", FRAMES_211, OFFSETS_211, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Deep Sea Greaves", "item", FRAMES_212, OFFSETS_212, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Destroyer's Armor", "item", FRAMES_213, OFFSETS_213, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Destroyer's Boots", "item", FRAMES_214, OFFSETS_214, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Destroyer's Gloves", "item", FRAMES_215, OFFSETS_215, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Destroyer's Helm", "item", FRAMES_216, OFFSETS_216, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Destroyer's Leggings", "item", FRAMES_217, OFFSETS_217, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Destruction", "item", FRAMES_218, OFFSETS_218, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Die1", "sound", FRAMES_219, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Disrupt", "icon", FRAMES_220, OFFSETS_220, 1, 1, -12.600000f, -11.500000f, 12.800000f, 16.000000f },
+    { "Dokebi the Striker", "portrait", FRAMES_221, OFFSETS_221, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "DuxDie", "sound", FRAMES_222, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "DuxHit1", "sound", FRAMES_223, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "DuxHit2", "sound", FRAMES_224, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "DuxHit3", "sound", FRAMES_225, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ElectricHit", "sound", FRAMES_226, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Electro Bolt", "icon", FRAMES_227, OFFSETS_227, 1, 1, -12.850000f, -15.400000f, 12.150000f, 12.800000f },
+    { "Elite Medic", "portrait", FRAMES_228, OFFSETS_228, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Engineering Gloves", "item", FRAMES_229, OFFSETS_229, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Eternity", "item", FRAMES_230, OFFSETS_230, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Explode", "sound", FRAMES_231, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "FATALFLAW", "buff", FRAMES_232, OFFSETS_232, 1, 1, -5.950000f, -10.100000f, 5.950000f, 0.700000f },
+    { "FATE", "buff", FRAMES_233, OFFSETS_233, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "FIRESHOCK", "buff", FRAMES_234, OFFSETS_234, 1, 1, -5.950000f, -10.950000f, 5.950000f, 10.950000f },
+    { "F_SARM_SIX", "doll", FRAMES_235, OFFSETS_235, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "F_SARM_THREE", "doll", FRAMES_236, OFFSETS_236, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "F_SCHEST_SIX", "doll", FRAMES_237, OFFSETS_237, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "F_SCHEST_THREE", "doll", FRAMES_238, OFFSETS_238, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "F_SFOOT_SIX", "doll", FRAMES_239, OFFSETS_239, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "F_SFOOT_THREE", "doll", FRAMES_240, OFFSETS_240, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "F_SHAND_SIX", "doll", FRAMES_241, OFFSETS_241, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "F_SHAND_THREE", "doll", FRAMES_242, OFFSETS_242, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "F_SHEAD_SIX", "doll", FRAMES_243, OFFSETS_243, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "F_SHEAD_THREE", "doll", FRAMES_244, OFFSETS_244, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "F_SLEG2_SIX", "doll", FRAMES_245, OFFSETS_245, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "F_SLEG2_THREE", "doll", FRAMES_246, OFFSETS_246, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Fire Axe", "item", FRAMES_247, OFFSETS_247, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Flame Blast", "icon", FRAMES_248, OFFSETS_248, 1, 1, -12.850000f, -14.600000f, 12.150000f, 12.800000f },
+    { "Flame Strike", "icon", FRAMES_249, OFFSETS_249, 1, 1, -12.850000f, -19.900000f, 18.500000f, 14.300000f },
+    { "Footguard of the Shore", "item", FRAMES_250, OFFSETS_250, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Forcefield", "sound", FRAMES_251, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Frost Bolt", "icon", FRAMES_252, OFFSETS_252, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Frost Lantern", "item", FRAMES_253, OFFSETS_253, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Frost Zombie", "portrait", FRAMES_254, OFFSETS_254, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Galiant the Paladin", "portrait", FRAMES_255, OFFSETS_255, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "GaliantDie", "sound", FRAMES_256, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "GaliantHit1", "sound", FRAMES_257, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "GaliantHit2", "sound", FRAMES_258, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "GaliantHit3", "sound", FRAMES_259, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Ghost Assassin", "portrait", FRAMES_260, OFFSETS_260, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Ghost Medallion", "item", FRAMES_261, OFFSETS_261, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Ghost Samurai", "portrait", FRAMES_262, OFFSETS_262, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "GhostDie", "sound", FRAMES_263, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "GhostHit1", "sound", FRAMES_264, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "GhostHit2", "sound", FRAMES_265, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "GhostHit3", "sound", FRAMES_266, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Ghostly Mask", "item", FRAMES_267, OFFSETS_267, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Grand Master's Gloves", "item", FRAMES_268, OFFSETS_268, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Guardian's Armor", "item", FRAMES_269, OFFSETS_269, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Guardian's Boots", "item", FRAMES_270, OFFSETS_270, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Guardian's Gloves", "item", FRAMES_271, OFFSETS_271, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Guardian's Helm", "item", FRAMES_272, OFFSETS_272, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Guardian's Leggings", "item", FRAMES_273, OFFSETS_273, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Gunslinger's Armor", "item", FRAMES_274, OFFSETS_274, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Gunslinger's Boots", "item", FRAMES_275, OFFSETS_275, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Gunslinger's Gloves", "item", FRAMES_276, OFFSETS_276, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Gunslinger's Helm", "item", FRAMES_277, OFFSETS_277, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Gunslinger's Leggings", "item", FRAMES_278, OFFSETS_278, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "HAIR_BART", "doll", FRAMES_279, OFFSETS_279, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "HAIR_FIVE", "doll", FRAMES_280, OFFSETS_280, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "HAIR_FOUR", "doll", FRAMES_281, OFFSETS_281, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "HAIR_ONE", "doll", FRAMES_282, OFFSETS_282, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "HAIR_SIX", "doll", FRAMES_283, OFFSETS_283, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "HAIR_THREE", "doll", FRAMES_284, OFFSETS_284, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "HAIR_TWO", "doll", FRAMES_285, OFFSETS_285, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "HEW", "zone", FRAMES_286, OFFSETS_286, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Handguards of Destiny", "item", FRAMES_287, OFFSETS_287, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Handwraps of Caution", "item", FRAMES_288, OFFSETS_288, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Healing", "sound", FRAMES_289, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Healing Light", "icon", FRAMES_290, OFFSETS_290, 1, 1, -32.500000f, -13.300000f, 13.900000f, 14.900000f },
+    { "Helm of Peril", "item", FRAMES_291, OFFSETS_291, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Heroic Motivation", "icon", FRAMES_292, OFFSETS_292, 1, 1, -17.700000f, -12.200000f, 20.700000f, 17.850000f },
+    { "Hit2", "sound", FRAMES_293, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Hit3", "sound", FRAMES_294, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Hit4", "sound", FRAMES_295, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Hit5", "sound", FRAMES_296, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Hunter's Armor", "item", FRAMES_297, OFFSETS_297, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Hunter's Boots", "item", FRAMES_298, OFFSETS_298, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Hunter's Handguards", "item", FRAMES_299, OFFSETS_299, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Hunter's Helm", "item", FRAMES_300, OFFSETS_300, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Hunter's Legplates", "item", FRAMES_301, OFFSETS_301, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "IGNITE", "buff", FRAMES_302, OFFSETS_302, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "INTERVENTION1", "buff", FRAMES_303, OFFSETS_303, 1, 1, -6.400000f, -10.450000f, 5.850000f, 6.450000f },
+    { "INTERVENTION10", "buff", FRAMES_304, OFFSETS_304, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "INTERVENTION2", "buff", FRAMES_305, OFFSETS_305, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "INTERVENTION3", "buff", FRAMES_306, OFFSETS_306, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "INTERVENTION4", "buff", FRAMES_307, OFFSETS_307, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "INTERVENTION5", "buff", FRAMES_308, OFFSETS_308, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "INTERVENTION6", "buff", FRAMES_309, OFFSETS_309, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "INTERVENTION7", "buff", FRAMES_310, OFFSETS_310, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "INTERVENTION8", "buff", FRAMES_311, OFFSETS_311, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "INTERVENTION9", "buff", FRAMES_312, OFFSETS_312, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "IRONSKIN1", "buff", FRAMES_313, OFFSETS_313, 1, 1, -5.950000f, -10.950000f, 6.050000f, 11.000000f },
+    { "IRONSKIN2", "buff", FRAMES_314, OFFSETS_314, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "IRONSKIN3", "buff", FRAMES_315, OFFSETS_315, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "IRONSKIN4", "buff", FRAMES_316, OFFSETS_316, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "IRONSKIN5", "buff", FRAMES_317, OFFSETS_317, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "IceShatter", "sound", FRAMES_318, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Icy Katana", "item", FRAMES_319, OFFSETS_319, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Information", "portrait", FRAMES_320, OFFSETS_320, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Intervention", "icon", FRAMES_321, OFFSETS_321, 1, 1, -16.350000f, -13.450000f, 14.400000f, 16.100000f },
+    { "Ironskin", "icon", FRAMES_322, OFFSETS_322, 1, 1, -19.000000f, -13.400000f, 12.600000f, 12.250000f },
+    { "Ivory Mace", "item", FRAMES_323, OFFSETS_323, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Ivory Shield", "item", FRAMES_324, OFFSETS_324, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Judgement", "item", FRAMES_325, OFFSETS_325, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "KOJIS_REST", "zone", FRAMES_326, OFFSETS_326, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Knight's Armor", "item", FRAMES_327, OFFSETS_327, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Knight's Boots", "item", FRAMES_328, OFFSETS_328, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Knight's Gloves", "item", FRAMES_329, OFFSETS_329, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Knight's Helm", "item", FRAMES_330, OFFSETS_330, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Knight's Leggings", "item", FRAMES_331, OFFSETS_331, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "KrinBuffShower", "ui", FRAMES_332, OFFSETS_332, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Legplates of Icy Doom", "item", FRAMES_333, OFFSETS_333, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Levo Jeans", "item", FRAMES_334, OFFSETS_334, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Louis the Blind", "portrait", FRAMES_335, OFFSETS_335, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "LouisDie", "sound", FRAMES_336, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Ludwig", "portrait", FRAMES_337, OFFSETS_337, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M7-V Rifle", "item", FRAMES_338, OFFSETS_338, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "MAGICWOUND", "buff", FRAMES_339, OFFSETS_339, 1, 1, -5.950000f, -10.100000f, 5.950000f, 0.700000f },
+    { "MODEL1", "ui", FRAMES_340, OFFSETS_340, 64, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_FINAL1", "doll", FRAMES_341, OFFSETS_341, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_FINAL2", "doll", FRAMES_342, OFFSETS_342, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_FINAL3", "doll", FRAMES_343, OFFSETS_343, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_FINAL4", "doll", FRAMES_344, OFFSETS_344, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_GER", "doll", FRAMES_345, OFFSETS_345, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_JEANS", "doll", FRAMES_346, OFFSETS_346, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_KNIGHT", "doll", FRAMES_347, OFFSETS_347, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_MEDIC", "doll", FRAMES_348, OFFSETS_348, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_NINJA", "doll", FRAMES_349, OFFSETS_349, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_ROCKSTAR", "doll", FRAMES_350, OFFSETS_350, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_SAMURAI", "doll", FRAMES_351, OFFSETS_351, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_SAMURAI2", "doll", FRAMES_352, OFFSETS_352, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_SAMURAI3", "doll", FRAMES_353, OFFSETS_353, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_SHAMAN1", "doll", FRAMES_354, OFFSETS_354, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_SHAMAN2", "doll", FRAMES_355, OFFSETS_355, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_SHAMAN3", "doll", FRAMES_356, OFFSETS_356, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_SHAMAN4", "doll", FRAMES_357, OFFSETS_357, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_SHIRT", "doll", FRAMES_358, OFFSETS_358, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_SINJID", "doll", FRAMES_359, OFFSETS_359, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_SURVIVOR", "doll", FRAMES_360, OFFSETS_360, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_USA1", "doll", FRAMES_361, OFFSETS_361, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_USA2", "doll", FRAMES_362, OFFSETS_362, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_USA3", "doll", FRAMES_363, OFFSETS_363, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_USA4", "doll", FRAMES_364, OFFSETS_364, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_ARM_USA5", "doll", FRAMES_365, OFFSETS_365, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_FINAL1", "doll", FRAMES_366, OFFSETS_366, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_FINAL2", "doll", FRAMES_367, OFFSETS_367, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_FINAL3", "doll", FRAMES_368, OFFSETS_368, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_FINAL4", "doll", FRAMES_369, OFFSETS_369, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_GER", "doll", FRAMES_370, OFFSETS_370, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_KNIGHT", "doll", FRAMES_371, OFFSETS_371, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_MEDIC", "doll", FRAMES_372, OFFSETS_372, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_NINJA", "doll", FRAMES_373, OFFSETS_373, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_ROCKSTAR", "doll", FRAMES_374, OFFSETS_374, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_SAMURAI", "doll", FRAMES_375, OFFSETS_375, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_SAMURAI2", "doll", FRAMES_376, OFFSETS_376, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_SAMURAI3", "doll", FRAMES_377, OFFSETS_377, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_SHAMAN1", "doll", FRAMES_378, OFFSETS_378, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_SHAMAN2", "doll", FRAMES_379, OFFSETS_379, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_SHAMAN3", "doll", FRAMES_380, OFFSETS_380, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_SHAMAN4", "doll", FRAMES_381, OFFSETS_381, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_SHIRT", "doll", FRAMES_382, OFFSETS_382, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_SINJID", "doll", FRAMES_383, OFFSETS_383, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_SURVIVOR", "doll", FRAMES_384, OFFSETS_384, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_USA1", "doll", FRAMES_385, OFFSETS_385, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_USA2", "doll", FRAMES_386, OFFSETS_386, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_USA3", "doll", FRAMES_387, OFFSETS_387, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_USA4", "doll", FRAMES_388, OFFSETS_388, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_CHEST_USA5", "doll", FRAMES_389, OFFSETS_389, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_FINAL1", "doll", FRAMES_390, OFFSETS_390, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_FINAL2", "doll", FRAMES_391, OFFSETS_391, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_FINAL3", "doll", FRAMES_392, OFFSETS_392, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_FINAL4", "doll", FRAMES_393, OFFSETS_393, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_GER", "doll", FRAMES_394, OFFSETS_394, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_JEANS", "doll", FRAMES_395, OFFSETS_395, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_KNIGHT", "doll", FRAMES_396, OFFSETS_396, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_MEDIC", "doll", FRAMES_397, OFFSETS_397, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_NAVY", "doll", FRAMES_398, OFFSETS_398, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_NINJA", "doll", FRAMES_399, OFFSETS_399, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_ROCKSTAR", "doll", FRAMES_400, OFFSETS_400, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_SAMURAI", "doll", FRAMES_401, OFFSETS_401, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_SAMURAI2", "doll", FRAMES_402, OFFSETS_402, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_SAMURAI3", "doll", FRAMES_403, OFFSETS_403, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_SHAMAN1", "doll", FRAMES_404, OFFSETS_404, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_SINJID", "doll", FRAMES_405, OFFSETS_405, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_SURVIVOR", "doll", FRAMES_406, OFFSETS_406, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_USA1", "doll", FRAMES_407, OFFSETS_407, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_USA2", "doll", FRAMES_408, OFFSETS_408, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_USA3", "doll", FRAMES_409, OFFSETS_409, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_USA4", "doll", FRAMES_410, OFFSETS_410, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_FOOT_USA5", "doll", FRAMES_411, OFFSETS_411, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_ENGINEERINGGLOVES", "doll", FRAMES_412, OFFSETS_412, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_FINAL1", "doll", FRAMES_413, OFFSETS_413, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_FINAL2", "doll", FRAMES_414, OFFSETS_414, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_FINAL3", "doll", FRAMES_415, OFFSETS_415, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_FINAL4", "doll", FRAMES_416, OFFSETS_416, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_GER", "doll", FRAMES_417, OFFSETS_417, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_KNIGHT", "doll", FRAMES_418, OFFSETS_418, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_MEDIC", "doll", FRAMES_419, OFFSETS_419, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_NINJA", "doll", FRAMES_420, OFFSETS_420, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_ROCKSTAR", "doll", FRAMES_421, OFFSETS_421, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_SAMURAI", "doll", FRAMES_422, OFFSETS_422, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_SAMURAI2", "doll", FRAMES_423, OFFSETS_423, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_SAMURAI3", "doll", FRAMES_424, OFFSETS_424, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_SHAMAN1", "doll", FRAMES_425, OFFSETS_425, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_SHAMAN2", "doll", FRAMES_426, OFFSETS_426, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_SHAMAN3", "doll", FRAMES_427, OFFSETS_427, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_SHAMAN4", "doll", FRAMES_428, OFFSETS_428, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_SINJID", "doll", FRAMES_429, OFFSETS_429, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_SURVIVOR", "doll", FRAMES_430, OFFSETS_430, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_USA1", "doll", FRAMES_431, OFFSETS_431, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_USA2", "doll", FRAMES_432, OFFSETS_432, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_USA3", "doll", FRAMES_433, OFFSETS_433, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_USA4", "doll", FRAMES_434, OFFSETS_434, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HAND_USA5", "doll", FRAMES_435, OFFSETS_435, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_FINAL1", "doll", FRAMES_436, OFFSETS_436, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_FINAL2", "doll", FRAMES_437, OFFSETS_437, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_FINAL3", "doll", FRAMES_438, OFFSETS_438, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_FINAL4", "doll", FRAMES_439, OFFSETS_439, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_GER", "doll", FRAMES_440, OFFSETS_440, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_KNIGHT", "doll", FRAMES_441, OFFSETS_441, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_MEDIC", "doll", FRAMES_442, OFFSETS_442, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_NINJA", "doll", FRAMES_443, OFFSETS_443, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_ROCKSTAR", "doll", FRAMES_444, OFFSETS_444, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_SAMURAI", "doll", FRAMES_445, OFFSETS_445, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_SAMURAI2", "doll", FRAMES_446, OFFSETS_446, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_SAMURAI3", "doll", FRAMES_447, OFFSETS_447, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_SHAMAN1", "doll", FRAMES_448, OFFSETS_448, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_SHAMAN2", "doll", FRAMES_449, OFFSETS_449, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_SHAMAN3", "doll", FRAMES_450, OFFSETS_450, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_SHAMAN4", "doll", FRAMES_451, OFFSETS_451, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_SINJID", "doll", FRAMES_452, OFFSETS_452, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_SURVIVOR", "doll", FRAMES_453, OFFSETS_453, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_USA1", "doll", FRAMES_454, OFFSETS_454, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_USA2", "doll", FRAMES_455, OFFSETS_455, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_USA3", "doll", FRAMES_456, OFFSETS_456, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_USA4", "doll", FRAMES_457, OFFSETS_457, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_HEAD_USA5", "doll", FRAMES_458, OFFSETS_458, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_FINAL1", "doll", FRAMES_459, OFFSETS_459, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_FINAL2", "doll", FRAMES_460, OFFSETS_460, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_FINAL3", "doll", FRAMES_461, OFFSETS_461, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_FINAL4", "doll", FRAMES_462, OFFSETS_462, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_GER", "doll", FRAMES_463, OFFSETS_463, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_JEANS", "doll", FRAMES_464, OFFSETS_464, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_KNIGHT", "doll", FRAMES_465, OFFSETS_465, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_MEDIC", "doll", FRAMES_466, OFFSETS_466, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_NAVY", "doll", FRAMES_467, OFFSETS_467, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_NINJA", "doll", FRAMES_468, OFFSETS_468, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_ROCKSTAR", "doll", FRAMES_469, OFFSETS_469, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_SAMURAI", "doll", FRAMES_470, OFFSETS_470, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_SAMURAI2", "doll", FRAMES_471, OFFSETS_471, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_SAMURAI3", "doll", FRAMES_472, OFFSETS_472, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_SHAMAN1", "doll", FRAMES_473, OFFSETS_473, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_SHAMAN2", "doll", FRAMES_474, OFFSETS_474, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_SHAMAN3", "doll", FRAMES_475, OFFSETS_475, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_SHAMAN4", "doll", FRAMES_476, OFFSETS_476, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_SINJID", "doll", FRAMES_477, OFFSETS_477, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_SURVIVOR", "doll", FRAMES_478, OFFSETS_478, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_USA1", "doll", FRAMES_479, OFFSETS_479, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_USA2", "doll", FRAMES_480, OFFSETS_480, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_USA3", "doll", FRAMES_481, OFFSETS_481, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_USA4", "doll", FRAMES_482, OFFSETS_482, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_LEG2_USA5", "doll", FRAMES_483, OFFSETS_483, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SARM_FIVE", "doll", FRAMES_484, OFFSETS_484, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SARM_FOUR", "doll", FRAMES_485, OFFSETS_485, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SARM_GHOST", "doll", FRAMES_486, OFFSETS_486, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SARM_MAN", "doll", FRAMES_487, OFFSETS_487, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SARM_MAN2", "doll", FRAMES_488, OFFSETS_488, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SARM_MAN3", "doll", FRAMES_489, OFFSETS_489, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SARM_METABII", "doll", FRAMES_490, OFFSETS_490, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SARM_ONE", "doll", FRAMES_491, OFFSETS_491, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SARM_TWO", "doll", FRAMES_492, OFFSETS_492, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SARM_ZOMBIE", "doll", FRAMES_493, OFFSETS_493, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SARM_ZOMBIE1", "doll", FRAMES_494, OFFSETS_494, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SARM_ZOMBIE2", "doll", FRAMES_495, OFFSETS_495, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SCHEST_FIVE", "doll", FRAMES_496, OFFSETS_496, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SCHEST_FOUR", "doll", FRAMES_497, OFFSETS_497, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SCHEST_GHOST", "doll", FRAMES_498, OFFSETS_498, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SCHEST_MAN", "doll", FRAMES_499, OFFSETS_499, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SCHEST_MAN2", "doll", FRAMES_500, OFFSETS_500, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SCHEST_MAN3", "doll", FRAMES_501, OFFSETS_501, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SCHEST_METABII", "doll", FRAMES_502, OFFSETS_502, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SCHEST_ONE", "doll", FRAMES_503, OFFSETS_503, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SCHEST_TWO", "doll", FRAMES_504, OFFSETS_504, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SCHEST_ZOMBIE", "doll", FRAMES_505, OFFSETS_505, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SCHEST_ZOMBIE1", "doll", FRAMES_506, OFFSETS_506, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SCHEST_ZOMBIE2", "doll", FRAMES_507, OFFSETS_507, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SFOOT_FIVE", "doll", FRAMES_508, OFFSETS_508, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SFOOT_FOUR", "doll", FRAMES_509, OFFSETS_509, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SFOOT_GHOST", "doll", FRAMES_510, OFFSETS_510, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SFOOT_MAN", "doll", FRAMES_511, OFFSETS_511, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SFOOT_MAN2", "doll", FRAMES_512, OFFSETS_512, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SFOOT_MAN3", "doll", FRAMES_513, OFFSETS_513, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SFOOT_METABII", "doll", FRAMES_514, OFFSETS_514, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SFOOT_ONE", "doll", FRAMES_515, OFFSETS_515, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SFOOT_TWO", "doll", FRAMES_516, OFFSETS_516, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SFOOT_ZOMBIE", "doll", FRAMES_517, OFFSETS_517, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SFOOT_ZOMBIE1", "doll", FRAMES_518, OFFSETS_518, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SFOOT_ZOMBIE2", "doll", FRAMES_519, OFFSETS_519, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHAND_FIVE", "doll", FRAMES_520, OFFSETS_520, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHAND_FOUR", "doll", FRAMES_521, OFFSETS_521, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHAND_GHOST", "doll", FRAMES_522, OFFSETS_522, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHAND_MAN", "doll", FRAMES_523, OFFSETS_523, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHAND_MAN2", "doll", FRAMES_524, OFFSETS_524, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHAND_MAN3", "doll", FRAMES_525, OFFSETS_525, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHAND_METABII", "doll", FRAMES_526, OFFSETS_526, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHAND_ONE", "doll", FRAMES_527, OFFSETS_527, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHAND_TWO", "doll", FRAMES_528, OFFSETS_528, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHAND_ZOMBIE", "doll", FRAMES_529, OFFSETS_529, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHAND_ZOMBIE1", "doll", FRAMES_530, OFFSETS_530, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHAND_ZOMBIE2", "doll", FRAMES_531, OFFSETS_531, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHEAD_FIVE", "doll", FRAMES_532, OFFSETS_532, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHEAD_FOUR", "doll", FRAMES_533, OFFSETS_533, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHEAD_GHOST", "doll", FRAMES_534, OFFSETS_534, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHEAD_MAN", "doll", FRAMES_535, OFFSETS_535, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHEAD_MAN2", "doll", FRAMES_536, OFFSETS_536, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHEAD_MAN3", "doll", FRAMES_537, OFFSETS_537, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHEAD_METABII", "doll", FRAMES_538, OFFSETS_538, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHEAD_ONE", "doll", FRAMES_539, OFFSETS_539, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHEAD_TWO", "doll", FRAMES_540, OFFSETS_540, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHEAD_USA1", "doll", FRAMES_541, OFFSETS_541, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHEAD_ZOMBIE", "doll", FRAMES_542, OFFSETS_542, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHEAD_ZOMBIE1", "doll", FRAMES_543, OFFSETS_543, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHEAD_ZOMBIE2", "doll", FRAMES_544, OFFSETS_544, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_FINAL1", "doll", FRAMES_545, OFFSETS_545, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_FINAL2", "doll", FRAMES_546, OFFSETS_546, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_FINAL3", "doll", FRAMES_547, OFFSETS_547, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_FINAL4", "doll", FRAMES_548, OFFSETS_548, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_KNIGHT", "doll", FRAMES_549, OFFSETS_549, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_MEDIC", "doll", FRAMES_550, OFFSETS_550, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_NINJA", "doll", FRAMES_551, OFFSETS_551, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_ROCKSTAR", "doll", FRAMES_552, OFFSETS_552, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_SAMURAI", "doll", FRAMES_553, OFFSETS_553, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_SAMURAI2", "doll", FRAMES_554, OFFSETS_554, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_SAMURAI3", "doll", FRAMES_555, OFFSETS_555, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_SHAMAN1", "doll", FRAMES_556, OFFSETS_556, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_SHAMAN2", "doll", FRAMES_557, OFFSETS_557, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_SHAMAN3", "doll", FRAMES_558, OFFSETS_558, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_SHAMAN4", "doll", FRAMES_559, OFFSETS_559, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_SINJID", "doll", FRAMES_560, OFFSETS_560, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_SURVIVOR", "doll", FRAMES_561, OFFSETS_561, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_USA1", "doll", FRAMES_562, OFFSETS_562, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_USA2", "doll", FRAMES_563, OFFSETS_563, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_USA3", "doll", FRAMES_564, OFFSETS_564, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_USA4", "doll", FRAMES_565, OFFSETS_565, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SHOULDER_USA5", "doll", FRAMES_566, OFFSETS_566, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SLEG2_FIVE", "doll", FRAMES_567, OFFSETS_567, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SLEG2_FOUR", "doll", FRAMES_568, OFFSETS_568, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SLEG2_GHOST", "doll", FRAMES_569, OFFSETS_569, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SLEG2_MAN", "doll", FRAMES_570, OFFSETS_570, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SLEG2_MAN2", "doll", FRAMES_571, OFFSETS_571, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SLEG2_MAN3", "doll", FRAMES_572, OFFSETS_572, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SLEG2_METABII", "doll", FRAMES_573, OFFSETS_573, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SLEG2_ONE", "doll", FRAMES_574, OFFSETS_574, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SLEG2_TWO", "doll", FRAMES_575, OFFSETS_575, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SLEG2_ZOMBIE", "doll", FRAMES_576, OFFSETS_576, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SLEG2_ZOMBIE1", "doll", FRAMES_577, OFFSETS_577, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SLEG2_ZOMBIE2", "doll", FRAMES_578, OFFSETS_578, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_SSHOULDER_ONE", "doll", FRAMES_579, OFFSETS_579, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_BROAD", "doll", FRAMES_580, OFFSETS_580, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_CLUB", "doll", FRAMES_581, OFFSETS_581, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_CROWBAR", "doll", FRAMES_582, OFFSETS_582, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_FIREAXE", "doll", FRAMES_583, OFFSETS_583, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_KATANA", "doll", FRAMES_584, OFFSETS_584, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_M4", "doll", FRAMES_585, OFFSETS_585, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_MOON", "doll", FRAMES_586, OFFSETS_586, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_PALADINSWORD", "doll", FRAMES_587, OFFSETS_587, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_PIPE", "doll", FRAMES_588, OFFSETS_588, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_SHAMANKNIFE", "doll", FRAMES_589, OFFSETS_589, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_SHAMANMAGIC", "doll", FRAMES_590, OFFSETS_590, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_SHAMANMED", "doll", FRAMES_591, OFFSETS_591, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_SHAMANSWORD", "doll", FRAMES_592, OFFSETS_592, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_SHANK", "doll", FRAMES_593, OFFSETS_593, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_SHIELD2", "doll", FRAMES_594, OFFSETS_594, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_SPELLMACE", "doll", FRAMES_595, OFFSETS_595, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_SPELLSTAFF", "doll", FRAMES_596, OFFSETS_596, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_STICK", "doll", FRAMES_597, OFFSETS_597, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_SWATSWORD", "doll", FRAMES_598, OFFSETS_598, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_SWIFT", "doll", FRAMES_599, OFFSETS_599, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_SWORD1", "doll", FRAMES_600, OFFSETS_600, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_UBER1", "doll", FRAMES_601, OFFSETS_601, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_UBER10", "doll", FRAMES_602, OFFSETS_602, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_UBER11", "doll", FRAMES_603, OFFSETS_603, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_UBER2", "doll", FRAMES_604, OFFSETS_604, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_UBER3", "doll", FRAMES_605, OFFSETS_605, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_UBER4", "doll", FRAMES_606, OFFSETS_606, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_UBER5", "doll", FRAMES_607, OFFSETS_607, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_UBER6", "doll", FRAMES_608, OFFSETS_608, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_UBER7", "doll", FRAMES_609, OFFSETS_609, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_UBER8", "doll", FRAMES_610, OFFSETS_610, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "M_WEAPON_UBER9", "doll", FRAMES_611, OFFSETS_611, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Magic Bolt", "icon", FRAMES_612, OFFSETS_612, 1, 1, -12.850000f, -15.400000f, 12.150000f, 12.800000f },
+    { "Magic Lantern", "item", FRAMES_613, OFFSETS_613, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "MagicCast", "sound", FRAMES_614, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Master Strike", "icon", FRAMES_615, OFFSETS_615, 1, 1, -20.400000f, -15.500000f, 12.150000f, 12.800000f },
+    { "Mender's Armor", "item", FRAMES_616, OFFSETS_616, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Mender's Axe", "item", FRAMES_617, OFFSETS_617, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Mender's Boots", "item", FRAMES_618, OFFSETS_618, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Mender's Gloves", "item", FRAMES_619, OFFSETS_619, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Mender's Leggings", "item", FRAMES_620, OFFSETS_620, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Moon-Struck Horrors", "item", FRAMES_621, OFFSETS_621, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Murder", "item", FRAMES_622, OFFSETS_622, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "NIGHT", "background", FRAMES_623, OFFSETS_623, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Nature's Fury", "item", FRAMES_624, OFFSETS_624, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Navy Boots", "item", FRAMES_625, OFFSETS_625, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Nike Head Wear", "item", FRAMES_626, OFFSETS_626, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "None", "item", FRAMES_627, OFFSETS_627, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ORB BRUTALITY", "orb", FRAMES_628, OFFSETS_628, 1, 1, -12.850000f, -19.750000f, 12.150000f, 12.800000f },
+    { "ORB Blessing of Light", "orb", FRAMES_629, OFFSETS_629, 1, 1, -15.650000f, -17.100000f, 21.850000f, 17.850000f },
+    { "ORB Block", "orb", FRAMES_630, OFFSETS_630, 1, 1, -16.350000f, -13.450000f, 14.400000f, 16.100000f },
+    { "ORB Blood Focus", "orb", FRAMES_631, OFFSETS_631, 1, 1, -12.850000f, -12.200000f, 13.850000f, 12.800000f },
+    { "ORB Blood Strike", "orb", FRAMES_632, OFFSETS_632, 1, 1, -17.150000f, -14.550000f, 12.150000f, 12.800000f },
+    { "ORB Break", "orb", FRAMES_633, OFFSETS_633, 1, 1, -24.150000f, -10.450000f, 31.650000f, 12.050000f },
+    { "ORB Cell Reformation", "orb", FRAMES_634, OFFSETS_634, 1, 1, -27.100000f, -28.700000f, 21.950000f, 18.250000f },
+    { "ORB Coup De Grace", "orb", FRAMES_635, OFFSETS_635, 1, 1, -19.700000f, -20.200000f, 24.900000f, 21.500000f },
+    { "ORB Cripple", "orb", FRAMES_636, OFFSETS_636, 1, 1, -13.000000f, -12.200000f, 12.150000f, 18.400000f },
+    { "ORB Disrupt", "orb", FRAMES_637, OFFSETS_637, 1, 1, -12.600000f, -11.500000f, 12.800000f, 16.000000f },
+    { "ORB ENDURANCE", "orb", FRAMES_638, OFFSETS_638, 1, 1, -12.850000f, -19.950000f, 12.150000f, 31.400000f },
+    { "ORB Electro Bolt", "orb", FRAMES_639, OFFSETS_639, 1, 1, -12.850000f, -15.400000f, 12.150000f, 12.800000f },
+    { "ORB Empty", "orb", FRAMES_640, OFFSETS_640, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ORB Flame Blast", "orb", FRAMES_641, OFFSETS_641, 1, 1, -12.850000f, -14.600000f, 12.150000f, 12.800000f },
+    { "ORB Flame Strike", "orb", FRAMES_642, OFFSETS_642, 1, 1, -12.850000f, -19.900000f, 18.500000f, 14.300000f },
+    { "ORB Frost Bolt", "orb", FRAMES_643, OFFSETS_643, 1, 1, -14.850000f, -9.300000f, 12.450000f, 8.900000f },
+    { "ORB Healing Light", "orb", FRAMES_644, OFFSETS_644, 1, 1, -32.500000f, -13.300000f, 13.900000f, 14.900000f },
+    { "ORB Heroic Motivation", "orb", FRAMES_645, OFFSETS_645, 1, 1, -17.700000f, -12.200000f, 20.700000f, 17.850000f },
+    { "ORB Intervention", "orb", FRAMES_646, OFFSETS_646, 1, 1, -16.350000f, -13.450000f, 14.400000f, 16.100000f },
+    { "ORB Ironskin", "orb", FRAMES_647, OFFSETS_647, 1, 1, -19.000000f, -13.400000f, 12.600000f, 12.250000f },
+    { "ORB Magic Bolt", "orb", FRAMES_648, OFFSETS_648, 1, 1, -12.850000f, -15.400000f, 12.150000f, 12.800000f },
+    { "ORB Master Strike", "orb", FRAMES_649, OFFSETS_649, 1, 1, -20.400000f, -15.500000f, 12.150000f, 12.800000f },
+    { "ORB Quick Strike", "orb", FRAMES_650, OFFSETS_650, 1, 1, -12.850000f, -15.400000f, 12.150000f, 12.800000f },
+    { "ORB REGENERATION", "orb", FRAMES_651, OFFSETS_651, 1, 1, -13.000000f, -14.500000f, 17.550000f, 14.000000f },
+    { "ORB Rage", "orb", FRAMES_652, OFFSETS_652, 1, 1, -27.100000f, -28.700000f, 21.950000f, 18.250000f },
+    { "ORB Re-Energize", "orb", FRAMES_653, OFFSETS_653, 1, 1, -12.850000f, -12.200000f, 12.800000f, 12.800000f },
+    { "ORB SOLIDITY", "orb", FRAMES_654, OFFSETS_654, 1, 1, -12.850000f, -12.200000f, 12.150000f, 12.800000f },
+    { "ORB Shatter Bolt", "orb", FRAMES_655, OFFSETS_655, 1, 1, -16.150000f, -17.000000f, 12.150000f, 13.700000f },
+    { "ORB Smash", "orb", FRAMES_656, OFFSETS_656, 1, 1, -28.700000f, -26.200000f, 11.750000f, 12.400000f },
+    { "ORB Strike", "orb", FRAMES_657, OFFSETS_657, 1, 1, -6.300000f, -15.300000f, 10.700000f, 15.200000f },
+    { "ORB Subversion", "orb", FRAMES_658, OFFSETS_658, 1, 1, -12.000000f, -11.250000f, 12.300000f, 11.250000f },
+    { "ORB Sunder", "orb", FRAMES_659, OFFSETS_659, 1, 1, -12.850000f, -12.200000f, 16.300000f, 23.350000f },
+    { "ORB Suppression", "orb", FRAMES_660, OFFSETS_660, 1, 1, -12.350000f, -22.600000f, 12.150000f, 22.000000f },
+    { "ORB Void", "orb", FRAMES_661, OFFSETS_661, 1, 1, -12.850000f, -15.000000f, 12.550000f, 14.050000f },
+    { "ORB Wound", "orb", FRAMES_662, OFFSETS_662, 1, 1, -13.500000f, -20.750000f, 41.950000f, 11.700000f },
+    { "PLAINS", "zone", FRAMES_663, OFFSETS_663, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "PLAINS2", "background", FRAMES_664, OFFSETS_664, 1, 1, -570.450000f, -136.450000f, 535.700000f, 256.950000f },
+    { "POISON", "buff", FRAMES_665, OFFSETS_665, 1, 1, -5.950000f, -10.950000f, 5.950000f, 10.950000f },
+    { "POISONZOMBIE", "buff", FRAMES_666, OFFSETS_666, 1, 1, -5.950000f, -10.950000f, 5.950000f, 10.950000f },
+    { "POWERUP", "buff", FRAMES_667, OFFSETS_667, 1, 1, -5.950000f, -10.950000f, 6.050000f, 10.950000f },
+    { "Paladin's Armor", "item", FRAMES_668, OFFSETS_668, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Paladin's Boots", "item", FRAMES_669, OFFSETS_669, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Paladin's Gloves", "item", FRAMES_670, OFFSETS_670, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Paladin's Helm", "item", FRAMES_671, OFFSETS_671, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Paladin's Leggings", "item", FRAMES_672, OFFSETS_672, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "PoisonHit", "sound", FRAMES_673, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Power Lantern", "item", FRAMES_674, OFFSETS_674, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "PowerupDefense", "sound", FRAMES_675, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "PowerupOffense", "sound", FRAMES_676, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Proverse All Stars", "item", FRAMES_677, OFFSETS_677, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Pulse Rifle", "item", FRAMES_678, OFFSETS_678, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Quick Strike", "icon", FRAMES_679, OFFSETS_679, 1, 1, -12.850000f, -15.400000f, 12.150000f, 12.800000f },
+    { "RAGE1", "buff", FRAMES_680, OFFSETS_680, 1, 1, -5.950000f, -10.950000f, 6.050000f, 10.950000f },
+    { "RAGE2", "buff", FRAMES_681, OFFSETS_681, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "RAGE3", "buff", FRAMES_682, OFFSETS_682, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "REGEN", "buff", FRAMES_683, OFFSETS_683, 1, 1, -5.750000f, -10.050000f, 6.550000f, 11.000000f },
+    { "REGENFOC", "buff", FRAMES_684, OFFSETS_684, 1, 1, -5.750000f, -10.050000f, 6.550000f, 11.000000f },
+    { "REGENSHAMAN", "buff", FRAMES_685, OFFSETS_685, 1, 1, -5.750000f, -10.050000f, 6.550000f, 11.000000f },
+    { "Rage", "icon", FRAMES_686, OFFSETS_686, 1, 1, -27.100000f, -28.700000f, 21.950000f, 18.250000f },
+    { "Re-Energize", "icon", FRAMES_687, OFFSETS_687, 1, 1, -12.850000f, -12.200000f, 12.800000f, 12.800000f },
+    { "Reckoning", "item", FRAMES_688, OFFSETS_688, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Rockstar", "portrait", FRAMES_689, OFFSETS_689, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "SEA", "background", FRAMES_690, OFFSETS_690, 1, 1, -385.950000f, -157.650000f, 394.500000f, 158.200000f },
+    { "SHATTER", "buff", FRAMES_691, OFFSETS_691, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "SHATTER2", "buff", FRAMES_692, OFFSETS_692, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "SHORE", "background", FRAMES_693, OFFSETS_693, 1, 1, -523.200000f, -166.550000f, 523.250000f, 215.050000f },
+    { "SPEEDUP", "buff", FRAMES_694, OFFSETS_694, 1, 1, -6.150000f, -9.800000f, 5.850000f, 3.200000f },
+    { "STUN1", "buff", FRAMES_695, OFFSETS_695, 1, 1, -5.950000f, -10.950000f, 5.950000f, 10.950000f },
+    { "SUBVERSION", "buff", FRAMES_696, OFFSETS_696, 1, 1, -6.050000f, -10.700000f, 5.700000f, 6.950000f },
+    { "SUNDER1", "buff", FRAMES_697, OFFSETS_697, 1, 1, -5.950000f, -10.100000f, 5.950000f, 0.700000f },
+    { "SUNDER2", "buff", FRAMES_698, OFFSETS_698, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "SUNDER3", "buff", FRAMES_699, OFFSETS_699, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "SUNDER4", "buff", FRAMES_700, OFFSETS_700, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "SUNDER5", "buff", FRAMES_701, OFFSETS_701, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "SUPRESSION", "buff", FRAMES_702, OFFSETS_702, 1, 1, -3.850000f, -17.350000f, 3.850000f, 17.250000f },
+    { "Scarlett", "portrait", FRAMES_703, OFFSETS_703, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Sensei Ishiguro", "portrait", FRAMES_704, OFFSETS_704, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Shadow Legwraps", "item", FRAMES_705, OFFSETS_705, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Shaman of Blades", "portrait", FRAMES_706, OFFSETS_706, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Shaman of Death", "portrait", FRAMES_707, OFFSETS_707, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ShamanDie", "sound", FRAMES_708, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ShamanHit1", "sound", FRAMES_709, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ShamanHit2", "sound", FRAMES_710, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Shatter Bolt", "icon", FRAMES_711, OFFSETS_711, 1, 1, -16.150000f, -17.000000f, 12.150000f, 13.700000f },
+    { "Smash", "icon", FRAMES_712, OFFSETS_712, 1, 1, -28.700000f, -26.200000f, 11.750000f, 12.400000f },
+    { "Sonny", "portrait", FRAMES_713, OFFSETS_713, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Steel Slicer", "item", FRAMES_714, OFFSETS_714, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Stone Club", "item", FRAMES_715, OFFSETS_715, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Strike", "icon", FRAMES_716, OFFSETS_716, 1, 1, -6.300000f, -15.300000f, 10.700000f, 15.200000f },
+    { "Striker's Armor", "item", FRAMES_717, OFFSETS_717, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Striker's Flip-Flops", "item", FRAMES_718, OFFSETS_718, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Striker's Gloves", "item", FRAMES_719, OFFSETS_719, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Striker's Leggings", "item", FRAMES_720, OFFSETS_720, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Striker's Mask", "item", FRAMES_721, OFFSETS_721, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Subversion", "icon", FRAMES_722, OFFSETS_722, 1, 1, -12.000000f, -11.250000f, 12.300000f, 11.250000f },
+    { "Sunder", "icon", FRAMES_723, OFFSETS_723, 1, 1, -12.850000f, -12.200000f, 16.300000f, 23.350000f },
+    { "Suppression", "icon", FRAMES_724, OFFSETS_724, 1, 1, -12.350000f, -22.600000f, 12.150000f, 22.000000f },
+    { "Survivor's Armor", "item", FRAMES_725, OFFSETS_725, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Survivor's Boots", "item", FRAMES_726, OFFSETS_726, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Survivor's Gloves", "item", FRAMES_727, OFFSETS_727, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Survivor's Helm", "item", FRAMES_728, OFFSETS_728, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Survivor's Leggings", "item", FRAMES_729, OFFSETS_729, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Swift Blade", "item", FRAMES_730, OFFSETS_730, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Swing", "sound", FRAMES_731, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "The Grand Rifle", "item", FRAMES_732, OFFSETS_732, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Tool", "item", FRAMES_733, OFFSETS_733, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Torment", "item", FRAMES_734, OFFSETS_734, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Tribal Blade", "item", FRAMES_735, OFFSETS_735, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Tribal Dagger", "item", FRAMES_736, OFFSETS_736, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "VOID1", "buff", FRAMES_737, OFFSETS_737, 1, 1, -5.950000f, -10.950000f, 5.950000f, 10.950000f },
+    { "VOID2", "buff", FRAMES_738, OFFSETS_738, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "VOID3", "buff", FRAMES_739, OFFSETS_739, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "VOID4", "buff", FRAMES_740, OFFSETS_740, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "VOID5", "buff", FRAMES_741, OFFSETS_741, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "VOIDMOB", "buff", FRAMES_742, OFFSETS_742, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Vendetta the Breaker", "portrait", FRAMES_743, OFFSETS_743, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Veradux", "portrait", FRAMES_744, OFFSETS_744, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Void", "icon", FRAMES_745, OFFSETS_745, 1, 1, -12.850000f, -15.000000f, 12.550000f, 14.050000f },
+    { "WASHED", "buff", FRAMES_746, OFFSETS_746, 1, 1, -7.050000f, -11.600000f, 1.850000f, 7.000000f },
+    { "WHITE NOVEMBER", "background", FRAMES_747, OFFSETS_747, 1, 1, -528.500000f, -118.900000f, 551.450000f, 246.050000f },
+    { "WHITE_NOVEMBER", "zone", FRAMES_748, OFFSETS_748, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "WOUND1", "buff", FRAMES_749, OFFSETS_749, 1, 1, -5.950000f, -10.950000f, 5.950000f, 10.950000f },
+    { "WOUND2", "buff", FRAMES_750, OFFSETS_750, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "WOUND3", "buff", FRAMES_751, OFFSETS_751, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "White T-Shirt", "item", FRAMES_752, OFFSETS_752, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Wolfgang", "portrait", FRAMES_753, OFFSETS_753, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Wound", "icon", FRAMES_754, OFFSETS_754, 1, 1, -13.500000f, -20.750000f, 41.950000f, 11.700000f },
+    { "ZPCI Blade", "item", FRAMES_755, OFFSETS_755, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZPCI Captain", "portrait", FRAMES_756, OFFSETS_756, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZPCI Dog Tag", "item", FRAMES_757, OFFSETS_757, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZPCI Elite", "portrait", FRAMES_758, OFFSETS_758, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZPCI Hunter", "portrait", FRAMES_759, OFFSETS_759, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZPCI Med-Wear A", "item", FRAMES_760, OFFSETS_760, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZPCI Med-Wear B", "item", FRAMES_761, OFFSETS_761, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZPCI Med-Wear C", "item", FRAMES_762, OFFSETS_762, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZPCI Med-Wear D", "item", FRAMES_763, OFFSETS_763, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZPCI Med-Wear E", "item", FRAMES_764, OFFSETS_764, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZPCI Medic", "portrait", FRAMES_765, OFFSETS_765, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZPCI Sniper", "portrait", FRAMES_766, OFFSETS_766, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZPCIHit1", "sound", FRAMES_767, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZPCIHit2", "sound", FRAMES_768, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Zombie Ambassador", "portrait", FRAMES_769, OFFSETS_769, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "Zombie Fingers", "item", FRAMES_770, OFFSETS_770, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZombieDie", "sound", FRAMES_771, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZombieHit1", "sound", FRAMES_772, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "ZombieHit2", "sound", FRAMES_773, NULL, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "mainPlayer", "portrait", FRAMES_774, OFFSETS_774, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
 };
 const int SONNY_ASSET_COUNT = (int)(sizeof(SONNY_ASSETS) / sizeof(SONNY_ASSETS[0]));
 
