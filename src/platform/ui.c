@@ -37,9 +37,19 @@ static const char *const DEVICE_SANS[] = {
     "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
 };
 
+/* The bold weight of the same device face. The tooltip's title asks for it
+   outright -- my_fmt2.bold -- and nothing else in the game does. */
+static const char *const DEVICE_SANS_BOLD[] = {
+    "/usr/share/fonts/truetype/msttcorefonts/Arial_Bold.ttf",
+    "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf",
+    "/usr/share/fonts/liberation-sans/LiberationSans-Bold.ttf",
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+};
+
 #define UI_FACE_GAME   0
 #define UI_FACE_SANS   1
-#define UI_FACES       2
+#define UI_FACE_BOLD   2
+#define UI_FACES       3
 #define UI_SIZE_CACHE  32
 /* How much bigger the measuring bake is than the one drawn from. */
 #define UI_METRIC_SCALE 8
@@ -175,6 +185,11 @@ void ui_font_load(void)
         TraceLog(LOG_WARNING, "UI font %s unusable; using the default",
                  UI_FONT_PATH);
 
+    for (size_t i = 0; i < sizeof(DEVICE_SANS_BOLD)
+                           / sizeof(DEVICE_SANS_BOLD[0]); i++)
+        if (FileExists(DEVICE_SANS_BOLD[i])
+            && face_open(UI_FACE_BOLD, DEVICE_SANS_BOLD[i]))
+            break;
     for (size_t i = 0; i < sizeof(DEVICE_SANS) / sizeof(DEVICE_SANS[0]); i++)
         if (FileExists(DEVICE_SANS[i])
             && face_open(UI_FACE_SANS, DEVICE_SANS[i]))
@@ -255,6 +270,10 @@ static void face_draw(int face, const char *text, float x, float y, float size,
     if (face_run(face, text, size, floorf(x + 0.5f), floorf(y + 0.5f), color,
                  1) >= 0.0f)
         return;
+    if (face == UI_FACE_BOLD) {
+        face_draw(UI_FACE_SANS, text, x, y, size, color);
+        return;
+    }
     if (face == UI_FACE_SANS) {
         face_draw(UI_FACE_GAME, text, x, y, size, color);
         return;
@@ -269,6 +288,8 @@ static float face_width(int face, const char *text, float size)
     float width = face_run(face, text, size, 0.0f, 0.0f, BLANK, 0);
     if (width >= 0.0f)
         return width;
+    if (face == UI_FACE_BOLD)
+        return face_width(UI_FACE_SANS, text, size);
     if (face == UI_FACE_SANS)
         return face_width(UI_FACE_GAME, text, size);
     return (float)MeasureText(text, (int)size);
@@ -806,6 +827,17 @@ void draw_screen_text(const char *screen)
 
 /* ---------------------------------------------------------- the tooltip */
 
+void ui_sans_bold_text(const char *text, float x, float y, float size,
+                       Color color)
+{
+    face_draw(UI_FACE_BOLD, text, x, y, size, color);
+}
+
+float ui_sans_bold_width(const char *text, float size)
+{
+    return face_width(UI_FACE_BOLD, text, size);
+}
+
 /* The box the original parks under the pointer wherever something has a name.
  * KrinToolTipper builds it at run time rather than laying it out: two text
  * fields it creates on the spot, each with a backing stretched to fit, in the
@@ -835,7 +867,6 @@ void game_tooltip(Game *g, const char *title, const char *body)
 static float tip_block(const char *text, float x, float y, Color backing,
                        Color ink, int bold)
 {
-    (void)bold;
     char line[256];
     float height = 0;
     /* Measure first: the backing is stretched to the text, not the other way
@@ -852,8 +883,10 @@ static float tip_block(const char *text, float x, float y, Color backing,
                         count = (int)sizeof(line) - 1;
                     memcpy(line, text + start, count);
                     line[count] = 0;
-                    if (ui_sans_text_width(line, TOOLTIP_SIZE)
-                            <= TOOLTIP_WIDTH - TOOLTIP_INDENT * 2
+                    float measured = bold
+                    ? ui_sans_bold_width(line, TOOLTIP_SIZE)
+                    : ui_sans_text_width(line, TOOLTIP_SIZE);
+                if (measured <= TOOLTIP_WIDTH - TOOLTIP_INDENT * 2
                         || !last_fit)
                         last_fit = i;
                     else
@@ -869,8 +902,14 @@ static float tip_block(const char *text, float x, float y, Color backing,
                 count = (int)sizeof(line) - 1;
             memcpy(line, text + start, count);
             line[count] = 0;
-            if (pass == 1)
-                ui_sans_text(line, x + TOOLTIP_INDENT, at, TOOLTIP_SIZE, ink);
+            if (pass == 1) {
+                if (bold)
+                    ui_sans_bold_text(line, x + TOOLTIP_INDENT, at,
+                                      TOOLTIP_SIZE, ink);
+                else
+                    ui_sans_text(line, x + TOOLTIP_INDENT, at, TOOLTIP_SIZE,
+                                 ink);
+            }
             at += TOOLTIP_SIZE + 4.0f;
             start = text[take] ? take + 1 : take;
         }

@@ -230,6 +230,10 @@ float ui_text_width(const char *text, float size);
    has nothing suitable. */
 void ui_sans_text(const char *text, float x, float y, float size, Color color);
 float ui_sans_text_width(const char *text, float size);
+/* The bold weight of the same face, which the tooltip's title asks for. */
+void ui_sans_bold_text(const char *text, float x, float y, float size,
+                       Color color);
+float ui_sans_bold_width(const char *text, float size);
 
 /* Shared helpers. */
 void game_log(Game *g, const char *fmt, ...);

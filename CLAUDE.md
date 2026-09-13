@@ -221,7 +221,14 @@ play button of its own, only the sponsor's link.
 
 Known to differ: text is rasterised by stb_truetype without hinting, so stems
 land between pixels where Flash's device-font rendering snaps them onto one.
-Size, spacing, wrap and colour match; the weight reads lighter.
+Size, spacing, wrap and colour match; the weight reads lighter. Bold is only
+ever asked for in one place -- the tooltip's title, my_fmt2.bold -- and that
+is drawn in the bold weight of the same face.
+
+Known to differ, and not ours: the reference is Ruffle, which substitutes its
+own face for Flash's device fonts. Its euro sign is half again as wide as
+Arial's, so the purse reads wider there than here. Everything measured around
+it -- the cap heights, the baselines, the field boxes -- matches.
 
 Known to differ: an orb under the "cannot use this" disc comes out darker here
 than the reference renders it -- 43/255 against 52/255 on a white icon at the

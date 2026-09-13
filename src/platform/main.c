@@ -73,6 +73,9 @@ int main(int argc, char **argv)
     /* SONNY_CLICKS drives the game without a pointer: "frame:x:y" triples,
        so a whole run through the menus can be checked from a script. */
     const char *clicks = getenv("SONNY_CLICKS");
+    /* SONNY_MOUSE=x:y parks the pointer there for the whole run, so what a
+       screen does on hover can be photographed. */
+    const char *parked = getenv("SONNY_MOUSE");
     int steps = getenv("SONNY_STEPS") ? atoi(getenv("SONNY_STEPS")) : 0;
     const char *want_screen = getenv("SONNY_SCREEN");
     int frames = 0;
@@ -119,6 +122,11 @@ int main(int argc, char **argv)
 
     while (!WindowShouldClose()) {
         Vector2 mouse = stage_mouse();
+        if (parked) {
+            const char *y = strchr(parked, ':');
+            if (y)
+                mouse = (Vector2){(float)atof(parked), (float)atof(y + 1)};
+        }
         int synthetic = 0;
         if (clicks) {
             /* Each triple fires on its own frame. */
