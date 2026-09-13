@@ -49,6 +49,16 @@ typedef struct {
     const char *effect;
     int32_t   effect_slot;
     int32_t   effect_tick;
+
+    /* Floating damage numbers, spawned on the unit they landed on. */
+    struct {
+        char    text[16];
+        float   x, y;
+        int32_t life;
+        int32_t crit;
+        Color   color;
+    } numbers[12];
+    int32_t number_count;
     char      log[LOG_LINES][128];
     int32_t   log_count;
 

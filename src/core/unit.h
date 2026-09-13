@@ -35,6 +35,8 @@ typedef enum {
 const char *element_name(Element e);
 /* Returns -1 for an unknown name. */
 int element_from_name(const char *name);
+/* The colour the game paints damage of this element, as 0xRRGGBB. */
+uint32_t element_color(Element e);
 
 /* One slot of BUFFARRAYK. CD 0 means the slot is free. */
 typedef struct {

@@ -11,6 +11,17 @@ const char *element_name(Element e)
     return (e >= 0 && e < SONNY_ELEMENTS) ? ELEMENT_NAMES[e] : "?";
 }
 
+/* elementColorArray, in element order. */
+static const uint32_t ELEMENT_COLORS[SONNY_ELEMENTS] = {
+    0xC40000, 0xFB95C8, 0x68CBF4, 0xFF6600,
+    0xFFCC00, 0x856B47, 0x664D80, 0x508349
+};
+
+uint32_t element_color(Element e)
+{
+    return (e >= 0 && e < SONNY_ELEMENTS) ? ELEMENT_COLORS[e] : 0xFFFFFF;
+}
+
 int element_from_name(const char *name)
 {
     if (!name)

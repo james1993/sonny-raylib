@@ -284,6 +284,72 @@ static void draw_backdrop(const Game *g)
                   STAGE_H - (int)(BAR_CENTER_Y - 34), (Color){12, 13, 17, 190});
 }
 
+/* ---------------------------------------------------------------- numbers */
+
+#define NUMBER_LIFE 34
+
+static Color color_from_rgb(uint32_t rgb)
+{
+    return (Color){(unsigned char)(rgb >> 16), (unsigned char)(rgb >> 8),
+                   (unsigned char)rgb, 255};
+}
+
+/* KrinNumberShow: a number rises from the unit it applied to, coloured by the
+   element that caused it -- green for healing -- and shown larger when the
+   hit pierced. "miss" and "shield" come through the same way. */
+static void number_show(Game *g, int32_t slot, const char *text,
+                        uint32_t rgb, int crit)
+{
+    if (slot <= 0 || slot >= SONNY_SLOTS)
+        return;
+    if (g->number_count >= (int32_t)(sizeof(g->numbers) / sizeof(g->numbers[0]))) {
+        /* Drop the oldest rather than the newest. */
+        memmove(&g->numbers[0], &g->numbers[1],
+                sizeof(g->numbers[0]) * (g->number_count - 1));
+        g->number_count--;
+    }
+    Vector2 at = unit_stage_pos(&g->battle, slot);
+    int32_t i = g->number_count++;
+    snprintf(g->numbers[i].text, sizeof(g->numbers[i].text), "%s", text);
+    /* A little scatter so several numbers on one unit stay readable. */
+    g->numbers[i].x = at.x + (float)GetRandomValue(-12, 12);
+    g->numbers[i].y = at.y - 30;
+    g->numbers[i].life = NUMBER_LIFE;
+    g->numbers[i].crit = crit;
+    g->numbers[i].color = color_from_rgb(rgb);
+}
+
+static void numbers_update(Game *g)
+{
+    for (int32_t i = 0; i < g->number_count; ) {
+        g->numbers[i].y -= 0.9f;
+        if (--g->numbers[i].life > 0) {
+            i++;
+            continue;
+        }
+        g->numbers[i] = g->numbers[g->number_count - 1];
+        g->number_count--;
+    }
+}
+
+static void draw_numbers(const Game *g)
+{
+    for (int32_t i = 0; i < g->number_count; i++) {
+        float size = g->numbers[i].crit ? 22.0f : 16.0f;
+        Color c = g->numbers[i].color;
+        /* Fade out over the last third of its life. */
+        if (g->numbers[i].life < NUMBER_LIFE / 3)
+            c.a = (unsigned char)(255 * g->numbers[i].life
+                                  / (NUMBER_LIFE / 3));
+        float w = ui_text_width(g->numbers[i].text, size);
+        /* A dark pass behind it keeps it readable over the backdrop. */
+        ui_text(g->numbers[i].text, g->numbers[i].x - w / 2 + 1,
+                g->numbers[i].y + 1, size, (Color){0, 0, 0, c.a});
+        ui_text(g->numbers[i].text, g->numbers[i].x - w / 2, g->numbers[i].y,
+                size, c);
+    }
+}
+
 /* --------------------------------------------------------------- dialogue */
 
 /* Show the next line whose turn and sequence have come up, if its speaker is
@@ -385,6 +451,7 @@ static void draw_battle(const Game *g)
         draw_unit(g, slot);
     draw_effect(g);
 
+    draw_numbers(g);
     draw_ability_bar(g);
     draw_tooltip(g);
     draw_speech(g);
@@ -433,6 +500,23 @@ static void present(Game *g, const MoveEvent *e)
     if (a->model && a->model[0] && asset_frame_count(a->model) > 0) {
         g->effect = a->model;
         g->effect_slot = e->target;
+    }
+
+    /* The number for what just happened, in the ability's own element. */
+    uint32_t rgb = element_color((Element)a->coefs.element);
+    if (e->missed) {
+        number_show(g, e->target, "miss", rgb, 0);
+    } else if (e->kind == KIND_HEAL && e->amount > 0) {
+        number_show(g, e->target, TextFormat("%d", e->amount), 0x66FF00,
+                    e->pierced);
+    } else if (e->kind == KIND_FOCUS && e->amount != 0) {
+        number_show(g, e->target, TextFormat("%d", e->amount), 0x66CCFF, 0);
+    } else if (e->kind == KIND_FULL_DAMAGE) {
+        if (e->absorbed > 0 && e->amount == 0)
+            number_show(g, e->target, "shield", rgb, 0);
+        else if (e->amount > 0)
+            number_show(g, e->target, TextFormat("%d", e->amount), rgb,
+                        e->pierced);
     }
 
     const Unit *target = &b->units[e->target];
@@ -615,6 +699,7 @@ void battle_screen_start(Game *g, int32_t battle_id)
     g->speech_index = 0;
     g->speech_timer = 0;
     g->speech = NULL;
+    g->number_count = 0;
 
     game_log(g, "%s%d. Team %d is faster and acts first.",
              lang_text("SYSTEM", 10), g->campaign.progress_battle - 1,
@@ -636,6 +721,7 @@ void battle_screen_update(Game *g, Vector2 mouse, int headless)
     g->anim_tick++;
     if (g->effect)
         g->effect_tick++;
+    numbers_update(g);
 
     /* Dialogue holds the fight, as speechDone does in the original. */
     if (speech_update(g))
