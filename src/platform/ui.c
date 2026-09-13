@@ -288,7 +288,7 @@ void game_draw_notice(const Game *g)
     if (!g->notice[0])
         return;
     const StageChrome *banner = (g->screen == SCREEN_BATTLE)
-                              ? stage_chrome("KrinCombatText") : NULL;
+                              ? stage_chrome("KRINBATTLESCENE", "KrinCombatText") : NULL;
     Color colour = {235, 200, 90, 255};
     if (!banner) {
         ui_text(g->notice, 22, STAGE_H - 20, 10, colour);

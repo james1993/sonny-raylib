@@ -130,6 +130,9 @@ static void draw_doll(const Game *g, int32_t slot)
 #define BAR_CENTER_Y 508.0f
 #define BAR_SLOT     46.0f
 
+/* The root frame whose display list is the battle screen. */
+#define BATTLE_SCREEN_NAME "KRINBATTLESCENE"
+
 /* The gutter Flash leaves inside every text field before the text starts,
    and how much taller than its size a line box is. */
 #define TEXT_GUTTER 2.0f
@@ -204,11 +207,13 @@ static void draw_chrome_art(const StageChrome *c)
                    dst, (Vector2){0, 0}, 0.0f, WHITE);
 }
 
-/* Draw every piece whose depth falls in [from, to). */
+/* Draw every piece of the battle screen whose depth falls in [from, to). */
 static void draw_chrome(int32_t from, int32_t to)
 {
     for (int i = 0; i < SONNY_STAGE_CHROME_COUNT; i++) {
         const StageChrome *c = &SONNY_STAGE_CHROME[i];
+        if (strcmp(c->screen, BATTLE_SCREEN_NAME) != 0)
+            continue;
         if (c->depth < from || c->depth >= to || c->width <= 0)
             continue;
         if (chrome_is_runtime(c->name))
@@ -223,7 +228,8 @@ static void draw_chrome(int32_t from, int32_t to)
 static const StageChrome *battlefield_mask(void)
 {
     for (int i = 0; i < SONNY_STAGE_CHROME_COUNT; i++)
-        if (SONNY_STAGE_CHROME[i].clip_depth > 0)
+        if (SONNY_STAGE_CHROME[i].clip_depth > 0
+            && strcmp(SONNY_STAGE_CHROME[i].screen, BATTLE_SCREEN_NAME) == 0)
             return &SONNY_STAGE_CHROME[i];
     return NULL;
 }
@@ -494,7 +500,7 @@ static void draw_reticle(const Game *g)
     if (g->hovered_unit <= 0)
         return;
     const Unit *u = &g->battle.units[g->hovered_unit];
-    const StageChrome *art = stage_chrome(RETICLE_INSTANCE);
+    const StageChrome *art = stage_chrome(BATTLE_SCREEN_NAME, RETICLE_INSTANCE);
     if (!art)
         return;
     Vector2 at = unit_stage_pos(&g->battle, g->hovered_unit);
@@ -515,8 +521,8 @@ static void draw_reticle(const Game *g)
        follow it by the same amount it moved. The name is the lower of the
        two, the level the upper. */
     Vector2 moved = {at.x - art->x, at.y - art->y};
-    const TextField *name = text_field(RETICLE_INSTANCE, 0);
-    const TextField *level = text_field(RETICLE_INSTANCE, 1);
+    const TextField *name = text_field(BATTLE_SCREEN_NAME, RETICLE_INSTANCE, 0);
+    const TextField *level = text_field(BATTLE_SCREEN_NAME, RETICLE_INSTANCE, 1);
     if (name && level && name->y < level->y) {
         const TextField *swap = name;
         name = level;
@@ -530,8 +536,8 @@ static void draw_reticle(const Game *g)
    battlefield: a label and a number, two fields of its own. */
 static void draw_frame_rate(void)
 {
-    draw_field(text_field("@535", 0), (Vector2){0, 0}, "FPS:");
-    draw_field(text_field("@536", 0), (Vector2){0, 0},
+    draw_field(text_field(BATTLE_SCREEN_NAME, "@535", 0), (Vector2){0, 0}, "FPS:");
+    draw_field(text_field(BATTLE_SCREEN_NAME, "@536", 0), (Vector2){0, 0},
                TextFormat("%d", GetFPS()));
 }
 
@@ -736,7 +742,7 @@ static void draw_speech(const Game *g)
     if (!g->speech)
         return;
     const Unit *speaker = &g->battle.units[g->speech->speaker];
-    const StageChrome *box = stage_chrome("combatScript");
+    const StageChrome *box = stage_chrome(BATTLE_SCREEN_NAME, "combatScript");
     if (!box)
         return;
 
@@ -777,8 +783,8 @@ static void draw_speech(const Game *g)
     /* The fields are recorded where the clip is placed, so they follow it by
        however far it moved. */
     Vector2 moved = {at.x - box->x, at.y - box->y};
-    draw_field_wrapped(text_field("combatScript", 0), moved, g->speech->say);
-    draw_field(text_field("combatScript", 1), moved, speaker->name);
+    draw_field_wrapped(text_field(BATTLE_SCREEN_NAME, "combatScript", 0), moved, g->speech->say);
+    draw_field(text_field(BATTLE_SCREEN_NAME, "combatScript", 1), moved, speaker->name);
 }
 
 static void draw_battle(const Game *g)
@@ -825,7 +831,7 @@ static void draw_battle(const Game *g)
    parked on the unit itself, not its bar, so the test is that ring. */
 static int32_t unit_at(const Game *g, Vector2 p)
 {
-    const StageChrome *art = stage_chrome("KrinSelector1");
+    const StageChrome *art = stage_chrome(BATTLE_SCREEN_NAME, "KrinSelector1");
     float radius = art ? art->height * art->scale_y / 3.0f : 30.0f;
     for (int32_t slot = 1; slot < SONNY_SLOTS; slot++) {
         if (!g->battle.units[slot].active)
@@ -962,7 +968,7 @@ static void handle_input(Game *g)
 
     /* The turn indicator in the middle of the bottom panel: clicking it ends
        the turn with the null move, which is how the original passes. */
-    const StageChrome *pass = stage_chrome("krinToMove2");
+    const StageChrome *pass = stage_chrome(BATTLE_SCREEN_NAME, "krinToMove2");
     if (pass && IsMouseButtonPressed(MOUSE_BUTTON_LEFT)
         && CheckCollisionPointCircle(stage, (Vector2){pass->x, pass->y},
                                      PASS_BUTTON_RADIUS)) {

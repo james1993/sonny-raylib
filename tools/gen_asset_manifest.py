@@ -98,6 +98,7 @@ typedef struct {
    art is asset "#<character>", whose exported canvas is width x height with
    the piece's own origin at (origin_x, origin_y) inside it. */
 typedef struct {
+    const char *screen;    /* the root frame that places it */
     const char *name;
     int32_t     depth;
     int32_t     character;
@@ -195,6 +196,7 @@ typedef struct {
    moves around -- a target's reticle, the speech box -- are taken relative to
    where that instance is placed. */
 typedef struct {
+    const char *screen;    /* the root frame that places its owner */
     const char *owner;     /* which clip it belongs to */
     const char *name;      /* the instance name inside that clip */
     float       x, y;
@@ -244,7 +246,8 @@ extern const int SONNY_CLIP_PART_COUNT;
 extern const TextField SONNY_TEXT_FIELDS[];
 extern const int SONNY_TEXT_FIELD_COUNT;
 /* The `index`-th field of `owner`, in the order the clip stacks them. */
-const TextField *text_field(const char *owner, int32_t index);
+const TextField *text_field(const char *screen, const char *owner,
+                            int32_t index);
 
 extern const RingSlot SONNY_RING_SLOTS[];
 extern const int SONNY_RING_SLOT_COUNT;
@@ -270,7 +273,7 @@ extern const int SONNY_LIFE_COLOUR_COUNT;
 
 extern const StageChrome SONNY_STAGE_CHROME[];
 extern const int SONNY_STAGE_CHROME_COUNT;
-const StageChrome *stage_chrome(const char *name);
+const StageChrome *stage_chrome(const char *screen, const char *name);
 
 extern const StageLayer SONNY_STAGE_LAYERS[];
 extern const int SONNY_STAGE_LAYER_COUNT;
@@ -472,8 +475,9 @@ const StageBar *stage_bar(int32_t slot)
     for c in chrome:
         if 'width' not in c:
             continue
-        lines.append('    { %s, %d, %d, %d, %s, %s, %s, %s, %s, %s, %s, %s },'
-                     % (c_string(c['name']), c['depth'], c['character'],
+        lines.append('    { %s, %s, %d, %d, %d, %s, %s, %s, %s, %s, %s, %s, %s },'
+                     % (c_string(c['screen']), c_string(c['name']),
+                        c['depth'], c['character'],
                         c.get('clip_depth') or 0,
                         c_float(c['x']), c_float(c['y']),
                         c_float(c['scale_x']), c_float(c['scale_y']),
@@ -483,10 +487,11 @@ const StageBar *stage_bar(int32_t slot)
     lines.append('const int SONNY_STAGE_CHROME_COUNT = '
                  '(int)(sizeof(SONNY_STAGE_CHROME) / sizeof(SONNY_STAGE_CHROME[0]));')
     lines.append("""
-const StageChrome *stage_chrome(const char *name)
+const StageChrome *stage_chrome(const char *screen, const char *name)
 {
     for (int i = 0; i < SONNY_STAGE_CHROME_COUNT; i++)
-        if (strcmp(SONNY_STAGE_CHROME[i].name, name) == 0)
+        if (strcmp(SONNY_STAGE_CHROME[i].screen, screen) == 0
+            && strcmp(SONNY_STAGE_CHROME[i].name, name) == 0)
             return &SONNY_STAGE_CHROME[i];
     return NULL;
 }""")
@@ -512,8 +517,9 @@ const StageChrome *stage_chrome(const char *name)
     lines.append('const TextField SONNY_TEXT_FIELDS[] = {')
     for f in chrome_text:
         colour = f.get('color') or [255, 255, 255, 255]
-        lines.append('    { %s, %s, %s, %s, %s, %s, %s, %s, %d, %d, %d, %d, %d },'
-                     % (c_string(f['owner']), c_string(f['name']),
+        lines.append('    { %s, %s, %s, %s, %s, %s, %s, %s, %s, %d, %d, %d, %d, %d },'
+                     % (c_string(f['screen']), c_string(f['owner']),
+                        c_string(f['name']),
                         c_float(f['x']), c_float(f['y']),
                         c_float(f['width']), c_float(f['height']),
                         c_float(f.get('size') or 10.0),
@@ -524,10 +530,12 @@ const StageChrome *stage_chrome(const char *name)
     lines.append('const int SONNY_TEXT_FIELD_COUNT = '
                  '(int)(sizeof(SONNY_TEXT_FIELDS) / sizeof(SONNY_TEXT_FIELDS[0]));')
     lines.append('''
-const TextField *text_field(const char *owner, int32_t index)
+const TextField *text_field(const char *screen, const char *owner,
+                            int32_t index)
 {
     for (int i = 0; i < SONNY_TEXT_FIELD_COUNT; i++)
-        if (strcmp(SONNY_TEXT_FIELDS[i].owner, owner) == 0 && index-- == 0)
+        if (strcmp(SONNY_TEXT_FIELDS[i].screen, screen) == 0
+            && strcmp(SONNY_TEXT_FIELDS[i].owner, owner) == 0 && index-- == 0)
             return &SONNY_TEXT_FIELDS[i];
     return NULL;
 }''')

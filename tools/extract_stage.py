@@ -62,6 +62,10 @@ TAG_DEFINE_FONT3 = 75
 BATTLE_SCREEN = 'BATTLESCREEN'
 # The root frame the game stops on during a fight.
 BATTLE_FRAME_LABEL = 'KRINBATTLESCENE'
+# The root frames worth recording: each is a screen the game stops on, and
+# its display list is that screen's layout.
+SCREEN_FRAMES = ('mainMenu', 'KRINBATTLESCENE', 'Navigation', 'winCombat',
+                 'loseCombat', 'overMap')
 # A sky the battle table names, so the sky container can be told apart from
 # the rest of the furniture by what its timeline is labelled with.
 SKY_FRAME = 'NIGHT'
@@ -633,13 +637,15 @@ def main(path, raw_dir=None):
     # rather than by eye; the engine picks the pieces it draws out of this by
     # depth, and everything carries its exported canvas geometry so the
     # trimmed PNG lines back up with the coordinate the game draws at.
-    chrome = []
-    frame_index = root_label_frame(body, BATTLE_FRAME_LABEL) - 1
-    if frame_index < len(root):
-        for name, info in sorted(root[frame_index].items(),
+    def frame_chrome(label):
+        entries = []
+        index = root_label_frame(body, label) - 1
+        if index >= len(root):
+            return entries
+        for name, info in sorted(root[index].items(),
                                  key=lambda kv: kv[1]['depth']):
-            a, b, c, d, x, y = info['matrix']
-            entry = {'name': name, 'depth': info['depth'],
+            a, _, _, d, x, y = info['matrix']
+            entry = {'screen': label, 'name': name, 'depth': info['depth'],
                      'character': info['character'],
                      'x': round(x, 3), 'y': round(y, 3),
                      'scale_x': round(a, 6), 'scale_y': round(d, 6)}
@@ -652,7 +658,11 @@ def main(path, raw_dir=None):
             if geom:
                 entry['width'], entry['height'] = geom[0], geom[1]
                 entry['origin_x'], entry['origin_y'] = geom[2], geom[3]
-            chrome.append(entry)
+            entries.append(entry)
+        return entries
+
+    screens = {label: frame_chrome(label) for label in SCREEN_FRAMES}
+    chrome = screens[BATTLE_FRAME_LABEL]
 
     # Which root-level clip is the sky is not something to guess at: it is
     # the one whose own timeline is labelled with the sky names, the frames
@@ -676,10 +686,11 @@ def main(path, raw_dir=None):
     # field in their own right -- the frame-rate readout is two of them --
     # and some are clips with fields inside.
     chrome_fields = []
-    for entry in chrome:
+    for entry in [e for group in screens.values() for e in group]:
         box = texts.get(entry['character'])
         if box:
             chrome_fields.append({
+                'screen': entry['screen'],
                 'owner': entry['name'], 'name': entry['name'],
                 'x': round(entry['x'] + entry['scale_x'] * box['xmin'], 3),
                 'y': round(entry['y'] + entry['scale_y'] * box['ymin'], 3),
@@ -692,6 +703,7 @@ def main(path, raw_dir=None):
                 'color': box['color']})
             continue
         for field in text_fields(body, entry['character'], texts, fonts):
+            field['screen'] = entry['screen']
             field['owner'] = entry['name']
             field['x'] = round(entry['x'] + entry['scale_x'] * field['x'], 3)
             field['y'] = round(entry['y'] + entry['scale_y'] * field['y'], 3)
@@ -699,7 +711,8 @@ def main(path, raw_dir=None):
 
     json.dump({'screen': {'x': sx, 'y': sy, 'character': screen['character']},
                'slots': slots, 'backdrop': backdrop, 'bars': bars,
-               'layers': layers, 'chrome': chrome,
+               'layers': layers, 'chrome': [e for group in screens.values()
+                                            for e in group],
                'bar': widget, 'life_colours': colour_ramp(body, raw_dir),
                'selector': selector_ring(body, raw_dir, chrome),
                'chrome_text': chrome_fields,
