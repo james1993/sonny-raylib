@@ -124,6 +124,1360 @@
    "origin_y": 13.95
   }
  },
+ "layers": {
+  "zone": {
+   "x": 400.0,
+   "y": 294.5,
+   "character": 1559,
+   "scale_x": 1.0,
+   "scale_y": 1.0
+  },
+  "sky": {
+   "x": 399.5,
+   "y": 287.1,
+   "character": 1553,
+   "scale_x": 1.0,
+   "scale_y": 1.0
+  }
+ },
+ "chrome": [
+  {
+   "name": "@1",
+   "depth": 1,
+   "character": 1198,
+   "x": 400.0,
+   "y": 508.0,
+   "scale_x": 1.0,
+   "scale_y": 1.0,
+   "width": 829.25,
+   "height": 177.4,
+   "origin_x": 409.75,
+   "origin_y": 108.25
+  },
+  {
+   "name": "@12",
+   "depth": 12,
+   "character": 1531,
+   "x": 400.0,
+   "y": 73.3,
+   "scale_x": 1.0,
+   "scale_y": 1.0,
+   "width": 803.75,
+   "height": 212.0,
+   "origin_x": 395.0,
+   "origin_y": 107.75
+  },
+  {
+   "name": "@18",
+   "depth": 18,
+   "character": 1536,
+   "x": 400.0,
+   "y": 507.9,
+   "scale_x": 1.0,
+   "scale_y": 1.0,
+   "width": 30.0,
+   "height": 30.0,
+   "origin_x": 15.0,
+   "origin_y": 15.0
+  },
+  {
+   "name": "@23",
+   "depth": 23,
+   "character": 1537,
+   "x": 400.0,
+   "y": 287.0,
+   "scale_x": 1.0,
+   "scale_y": 1.0,
+   "width": 770.0,
+   "height": 314.05,
+   "origin_x": 385.0,
+   "origin_y": 157.0
+  },
+  {
+   "name": "@25",
+   "depth": 25,
+   "character": 963,
+   "x": 14.5,
+   "y": 130.05,
+   "scale_x": 1.069885,
+   "scale_y": 0.687195,
+   "clip_depth": 261,
+   "width": 719.7,
+   "height": 457.0,
+   "origin_x": -0.45,
+   "origin_y": -0.5
+  },
+  {
+   "name": "@26",
+   "depth": 26,
+   "character": 1553,
+   "x": 399.5,
+   "y": 287.1,
+   "scale_x": 1.0,
+   "scale_y": 1.0,
+   "width": 955.0,
+   "height": 341.3,
+   "origin_x": 403.25,
+   "origin_y": 183.1
+  },
+  {
+   "name": "BATTLESCREEN",
+   "depth": 42,
+   "character": 1559,
+   "x": 400.0,
+   "y": 294.5,
+   "scale_x": 1.0,
+   "scale_y": 1.0,
+   "width": 1152.9,
+   "height": 445.4,
+   "origin_x": 570.45,
+   "origin_y": 188.45
+  },
+  {
+   "name": "GridShaker",
+   "depth": 251,
+   "character": 1560,
+   "x": 0.0,
+   "y": 0.0,
+   "scale_x": 1.0,
+   "scale_y": 1.0,
+   "width": 0.0,
+   "height": 0.0,
+   "origin_x": 0.0,
+   "origin_y": 0.0
+  },
+  {
+   "name": "GridZoomer",
+   "depth": 253,
+   "character": 1561,
+   "x": 0.0,
+   "y": 18.0,
+   "scale_x": 1.0,
+   "scale_y": 1.0,
+   "width": 0.0,
+   "height": 0.0,
+   "origin_x": 0.0,
+   "origin_y": 0.0
+  },
+  {
+   "name": "@255",
+   "depth": 255,
+   "character": 1562,
+   "x": 800.0,
+   "y": 0.0,
+   "scale_x": 1.0,
+   "scale_y": 1.0,
+   "width": 0.0,
+   "height": 0.0,
+   "origin_x": 0.0,
+   "origin_y": 0.0
+  },
+  {
+   "name": "BATTLEBLUR",
+   "depth": 257,
+   "character": 1563,
+   "x": 0.0,
+   "y": 34.25,
+   "scale_x": 1.0,
+   "scale_y": 1.0,
+   "width": 0.0,
+   "height": 0.0,
+   "origin_x": 0.0,
+   "origin_y": 0.0
+  },
+  {
+   "name": "BATTLEFLASH",
+   "depth": 259,
+   "character": 1564,
+   "x": 0.0,
+   "y": 52.95,
+   "scale_x": 1.0,
+   "scale_y": 1.0,
+   "width": 0.0,
+   "height": 0.0,
+   "origin_x": 0.0,
+   "origin_y": 0.0
+  },
+  {
+   "name": "@262",
+   "depth": 262,
+   "character": 1565,
+   "x": 0.0,
+   "y": 0.0,
+   "scale_x": 1.0,
+   "scale_y": 1.0,
+   "width": 771.0,
+   "height": 315.05,
+   "origin_x": -14.5,
+   "origin_y": -129.9
+  },
+  {
+   "name": "p5BAR",
+   "depth": 263,
+   "character": 1585,
+   "x": 136.15,
+   "y": 28.55,
+   "scale_x": 1.085327,
+   "scale_y": 1.160553,
+   "width": 201.0,
+   "height": 28.75,
+   "origin_x": 100.5,
+   "origin_y": 13.95
+  },
+  {
+   "name": "p1BAR",
+   "depth": 281,
+   "character": 1585,
+   "x": 136.15,
+   "y": 63.6,
+   "scale_x": 1.085327,
+   "scale_y": 1.160553,
+   "width": 201.0,
+   "height": 28.75,
+   "origin_x": 100.5,
+   "origin_y": 13.95
+  },
+  {
+   "name": "p3BAR",
+   "depth": 299,
+   "character": 1585,
+   "x": 136.15,
+   "y": 98.4,
+   "scale_x": 1.085327,
+   "scale_y": 1.160553,
+   "width": 201.0,
+   "height": 28.75,
+   "origin_x": 100.5,
+   "origin_y": 13.95
+  },
+  {
+   "name": "p6BAR",
+   "depth": 317,
+   "character": 1585,
+   "x": 664.9,
+   "y": 28.55,
+   "scale_x": 1.085327,
+   "scale_y": 1.160553,
+   "width": 201.0,
+   "height": 28.75,
+   "origin_x": 100.5,
+   "origin_y": 13.95
+  },
+  {
+   "name": "p2BAR",
+   "depth": 335,
+   "character": 1585,
+   "x": 664.9,
+   "y": 63.6,
+   "scale_x": 1.085327,
+   "scale_y": 1.160553,
+   "width": 201.0,
+   "height": 28.75,
+   "origin_x": 100.5,
+   "origin_y": 13.95
+  },
+  {
+   "name": "p4BAR",
+   "depth": 353,
+   "character": 1585,
+   "x": 664.9,
+   "y": 98.4,
+   "scale_x": 1.085327,
+   "scale_y": 1.160553,
+   "width": 201.0,
+   "height": 28.75,
+   "origin_x": 100.5,
+   "origin_y": 13.95
+  },
+  {
+   "name": "KrinSelector3",
+   "depth": 371,
+   "character": 1590,
+   "x": -64.9,
+   "y": 192.15,
+   "scale_x": 0.899994,
+   "scale_y": 0.899994,
+   "width": 366.5,
+   "height": 103.8,
+   "origin_x": 183.25,
+   "origin_y": 35.15
+  },
+  {
+   "name": "KrinSelector5",
+   "depth": 376,
+   "character": 1590,
+   "x": -64.9,
+   "y": 621.75,
+   "scale_x": 0.899994,
+   "scale_y": 0.899994,
+   "width": 366.5,
+   "height": 103.8,
+   "origin_x": 183.25,
+   "origin_y": 35.15
+  },
+  {
+   "name": "KrinSelector6",
+   "depth": 381,
+   "character": 1590,
+   "x": -54.9,
+   "y": 84.6,
+   "scale_x": 0.899994,
+   "scale_y": 0.899994,
+   "width": 366.5,
+   "height": 103.8,
+   "origin_x": 183.25,
+   "origin_y": 35.15
+  },
+  {
+   "name": "KrinSelector4",
+   "depth": 386,
+   "character": 1590,
+   "x": -64.9,
+   "y": 406.95,
+   "scale_x": 0.899994,
+   "scale_y": 0.899994,
+   "width": 366.5,
+   "height": 103.8,
+   "origin_x": 183.25,
+   "origin_y": 35.15
+  },
+  {
+   "name": "KrinSelector2",
+   "depth": 391,
+   "character": 1590,
+   "x": -64.9,
+   "y": 299.55,
+   "scale_x": 0.899994,
+   "scale_y": 0.899994,
+   "width": 366.5,
+   "height": 103.8,
+   "origin_x": 183.25,
+   "origin_y": 35.15
+  },
+  {
+   "name": "KrinSelector1",
+   "depth": 396,
+   "character": 1590,
+   "x": -64.9,
+   "y": 514.35,
+   "scale_x": 0.899994,
+   "scale_y": 0.899994,
+   "width": 366.5,
+   "height": 103.8,
+   "origin_x": 183.25,
+   "origin_y": 35.15
+  },
+  {
+   "name": "battleClocker",
+   "depth": 401,
+   "character": 1596,
+   "x": 400.0,
+   "y": 507.25,
+   "scale_x": 1.0,
+   "scale_y": 1.0,
+   "width": 95.15,
+   "height": 79.8,
+   "origin_x": 47.15,
+   "origin_y": 41.9
+  },
+  {
+   "name": "krinToMove",
+   "depth": 405,
+   "character": 866,
+   "x": 400.0,
+   "y": 507.5,
+   "scale_x": 1.229477,
+   "scale_y": 1.229477,
+   "width": 74.45,
+   "height": 60.1,
+   "origin_x": 32.5,
+   "origin_y": 28.7
+  },
+  {
+   "name": "krinToMove2",
+   "depth": 417,
+   "character": 1597,
+   "x": 400.0,
+   "y": 507.75,
+   "scale_x": 1.429626,
+   "scale_y": 1.429626
+  },
+  {
+   "name": "selector",
+   "depth": 419,
+   "character": 1606,
+   "x": 400.65,
+   "y": 300.15,
+   "scale_x": 1.038315,
+   "scale_y": 1.038315,
+   "width": 173.45,
+   "height": 159.1,
+   "origin_x": 82.0,
+   "origin_y": 77.9
+  },
+  {
+   "name": "moveSelectBoomer",
+   "depth": 531,
+   "character": 1610,
+   "x": 400.0,
+   "y": 508.1,
+   "scale_x": 1.0,
+   "scale_y": 1.0,
+   "width": 125.7,
+   "height": 125.7,
+   "origin_x": 62.85,
+   "origin_y": 62.85
+  },
+  {
+   "name": "KrinCombatText",
+   "depth": 533,
+   "character": 1507,
+   "x": 400.0,
+   "y": 148.5,
+   "scale_x": 1.0,
+   "scale_y": 1.0,
+   "width": 749.95,
+   "height": 37.0,
+   "origin_x": 375.0,
+   "origin_y": 13.5
+  },
+  {
+   "name": "@535",
+   "depth": 535,
+   "character": 1611,
+   "x": 20.3,
+   "y": 134.6,
+   "scale_x": 1.0,
+   "scale_y": 1.0
+  },
+  {
+   "name": "@536",
+   "depth": 536,
+   "character": 1612,
+   "x": 42.3,
+   "y": 134.6,
+   "scale_x": 1.0,
+   "scale_y": 1.0
+  },
+  {
+   "name": "@537",
+   "depth": 537,
+   "character": 1632,
+   "x": 679.8,
+   "y": 349.95,
+   "scale_x": 1.0,
+   "scale_y": 1.0,
+   "width": 191.95,
+   "height": 148.0,
+   "origin_x": 95.95,
+   "origin_y": 35.7
+  },
+  {
+   "name": "combatScript",
+   "depth": 558,
+   "character": 1640,
+   "x": 473.05,
+   "y": 460.55,
+   "scale_x": 1.0,
+   "scale_y": 1.0,
+   "width": 320.05,
+   "height": 143.1,
+   "origin_x": 14.05,
+   "origin_y": 42.0
+  },
+  {
+   "name": "@567",
+   "depth": 567,
+   "character": 1248,
+   "x": 445.1,
+   "y": 473.25,
+   "scale_x": 1.0,
+   "scale_y": 1.0,
+   "width": 27.2,
+   "height": 26.4,
+   "origin_x": 13.6,
+   "origin_y": 12.2
+  },
+  {
+   "name": "@572",
+   "depth": 572,
+   "character": 1641,
+   "x": 445.1,
+   "y": 473.3,
+   "scale_x": 0.303726,
+   "scale_y": 0.33168
+  },
+  {
+   "name": "KrinToolTipper",
+   "depth": 577,
+   "character": 1142,
+   "x": 800.0,
+   "y": 600.0,
+   "scale_x": 1.0,
+   "scale_y": 1.0,
+   "width": 169.0,
+   "height": 177.1,
+   "origin_x": 49.0,
+   "origin_y": 68.7
+  },
+  {
+   "name": "blacker5",
+   "depth": 610,
+   "character": 1642,
+   "x": 398.1,
+   "y": 287.05,
+   "scale_x": 1.0,
+   "scale_y": 1.0,
+   "width": 808.2,
+   "height": 582.15,
+   "origin_x": 404.1,
+   "origin_y": 291.05
+  }
+ ],
+ "bar": {
+  "character": 1585,
+  "graphics": [
+   {
+    "name": "fB2",
+    "character": 1567,
+    "depth": 1,
+    "clip_depth": 0,
+    "x": -100.0,
+    "y": 6.5,
+    "scale_x": 0.787003,
+    "scale_y": 1.0,
+    "width": 200.0,
+    "height": 12.0,
+    "origin_x": 0.0,
+    "origin_y": 6.5
+   },
+   {
+    "name": "lB2",
+    "character": 1568,
+    "depth": 3,
+    "clip_depth": 0,
+    "x": -100.0,
+    "y": -5.5,
+    "scale_x": 0.787003,
+    "scale_y": 1.0,
+    "width": 200.0,
+    "height": 12.0,
+    "origin_x": 0.0,
+    "origin_y": 6.5
+   },
+   {
+    "name": "@5",
+    "character": 1508,
+    "depth": 5,
+    "clip_depth": 0,
+    "x": 0.0,
+    "y": 0.0,
+    "scale_x": 1.0,
+    "scale_y": 1.0,
+    "width": 157.4,
+    "height": 24.0,
+    "origin_x": 100.0,
+    "origin_y": 12.0
+   },
+   {
+    "name": "fB",
+    "character": 1567,
+    "depth": 6,
+    "clip_depth": 0,
+    "x": -100.0,
+    "y": 6.5,
+    "scale_x": 0.787003,
+    "scale_y": 1.0,
+    "width": 200.0,
+    "height": 12.0,
+    "origin_x": 0.0,
+    "origin_y": 6.5
+   },
+   {
+    "name": "fB3",
+    "character": 1569,
+    "depth": 8,
+    "clip_depth": 0,
+    "x": -100.0,
+    "y": 6.5,
+    "scale_x": 0.787003,
+    "scale_y": 1.0,
+    "width": 0.0,
+    "height": 0.0,
+    "origin_x": 0.0,
+    "origin_y": 0.0
+   },
+   {
+    "name": "@10",
+    "character": 963,
+    "depth": 10,
+    "clip_depth": 0,
+    "x": 57.45,
+    "y": -12.2,
+    "scale_x": 0.058838,
+    "scale_y": 0.053177,
+    "width": 719.7,
+    "height": 457.0,
+    "origin_x": -0.45,
+    "origin_y": -0.5
+   },
+   {
+    "name": "lB",
+    "character": 1568,
+    "depth": 11,
+    "clip_depth": 0,
+    "x": -100.0,
+    "y": -5.5,
+    "scale_x": 0.787003,
+    "scale_y": 1.0,
+    "width": 200.0,
+    "height": 12.0,
+    "origin_x": 0.0,
+    "origin_y": 6.5
+   },
+   {
+    "name": "lB3",
+    "character": 1569,
+    "depth": 13,
+    "clip_depth": 0,
+    "x": -100.0,
+    "y": -5.5,
+    "scale_x": 0.787003,
+    "scale_y": 1.0,
+    "width": 0.0,
+    "height": 0.0,
+    "origin_x": 0.0,
+    "origin_y": 0.0
+   },
+   {
+    "name": "@15",
+    "character": 1570,
+    "depth": 15,
+    "clip_depth": 0,
+    "x": 0.0,
+    "y": 0.0,
+    "scale_x": 1.0,
+    "scale_y": 1.0,
+    "width": 201.0,
+    "height": 25.95,
+    "origin_x": 100.5,
+    "origin_y": 12.95
+   }
+  ],
+  "text": {
+   "left": [
+    {
+     "role": "lifeMax",
+     "character": 1573,
+     "depth": 2,
+     "x": 57.45,
+     "y": -13.2,
+     "width": 42.9,
+     "height": 16.0,
+     "size": 9.0,
+     "align": 0,
+     "leading": 2.0,
+     "font": "_sans",
+     "device": true,
+     "color": [
+      157,
+      157,
+      157,
+      255
+     ]
+    },
+    {
+     "role": "lifeNow",
+     "character": 1574,
+     "depth": 3,
+     "x": 14.45,
+     "y": -13.2,
+     "width": 42.9,
+     "height": 16.0,
+     "size": 9.0,
+     "align": 1,
+     "leading": 2.0,
+     "font": "_sans",
+     "device": true,
+     "color": [
+      255,
+      255,
+      255,
+      255
+     ]
+    },
+    {
+     "role": "focusMax",
+     "character": 1575,
+     "depth": 4,
+     "x": 57.45,
+     "y": -1.2,
+     "width": 42.9,
+     "height": 16.0,
+     "size": 9.0,
+     "align": 0,
+     "leading": 2.0,
+     "font": "_sans",
+     "device": true,
+     "color": [
+      157,
+      157,
+      157,
+      255
+     ]
+    },
+    {
+     "role": "focusNow",
+     "character": 1576,
+     "depth": 5,
+     "x": 14.45,
+     "y": -1.2,
+     "width": 42.9,
+     "height": 16.0,
+     "size": 9.0,
+     "align": 1,
+     "leading": 2.0,
+     "font": "_sans",
+     "device": true,
+     "color": [
+      255,
+      255,
+      255,
+      255
+     ]
+    },
+    {
+     "role": "name",
+     "character": 1577,
+     "depth": 6,
+     "x": -98.05,
+     "y": -13.95,
+     "width": 100.2,
+     "height": 16.0,
+     "size": 9.0,
+     "align": 0,
+     "leading": 2.0,
+     "font": "_sans",
+     "device": true,
+     "color": [
+      255,
+      255,
+      255,
+      255
+     ]
+    }
+   ],
+   "right": [
+    {
+     "role": "name",
+     "character": 1579,
+     "depth": 2,
+     "x": -0.7,
+     "y": -13.95,
+     "width": 100.2,
+     "height": 16.0,
+     "size": 9.0,
+     "align": 1,
+     "leading": 2.0,
+     "font": "_sans",
+     "device": true,
+     "color": [
+      255,
+      255,
+      255,
+      255
+     ]
+    },
+    {
+     "role": "lifeMax",
+     "character": 1580,
+     "depth": 3,
+     "x": -100.1,
+     "y": -13.2,
+     "width": 42.9,
+     "height": 16.0,
+     "size": 9.0,
+     "align": 1,
+     "leading": 2.0,
+     "font": "_sans",
+     "device": true,
+     "color": [
+      157,
+      157,
+      157,
+      255
+     ]
+    },
+    {
+     "role": "focusMax",
+     "character": 1581,
+     "depth": 4,
+     "x": -100.1,
+     "y": -1.2,
+     "width": 42.9,
+     "height": 16.0,
+     "size": 9.0,
+     "align": 1,
+     "leading": 2.0,
+     "font": "_sans",
+     "device": true,
+     "color": [
+      157,
+      157,
+      157,
+      255
+     ]
+    },
+    {
+     "role": "lifeNow",
+     "character": 1582,
+     "depth": 5,
+     "x": -56.75,
+     "y": -13.2,
+     "width": 42.9,
+     "height": 16.0,
+     "size": 9.0,
+     "align": 0,
+     "leading": 2.0,
+     "font": "_sans",
+     "device": true,
+     "color": [
+      255,
+      255,
+      255,
+      255
+     ]
+    },
+    {
+     "role": "focusNow",
+     "character": 1583,
+     "depth": 6,
+     "x": -56.75,
+     "y": -1.2,
+     "width": 42.9,
+     "height": 16.0,
+     "size": 9.0,
+     "align": 0,
+     "leading": 2.0,
+     "font": "_sans",
+     "device": true,
+     "color": [
+      255,
+      255,
+      255,
+      255
+     ]
+    }
+   ]
+  }
+ },
+ "life_colours": [
+  [
+   153,
+   0,
+   0
+  ],
+  [
+   155,
+   4,
+   0
+  ],
+  [
+   157,
+   8,
+   0
+  ],
+  [
+   159,
+   12,
+   0
+  ],
+  [
+   161,
+   17,
+   0
+  ],
+  [
+   163,
+   21,
+   0
+  ],
+  [
+   165,
+   25,
+   0
+  ],
+  [
+   168,
+   29,
+   0
+  ],
+  [
+   170,
+   33,
+   0
+  ],
+  [
+   172,
+   37,
+   0
+  ],
+  [
+   174,
+   42,
+   0
+  ],
+  [
+   176,
+   46,
+   0
+  ],
+  [
+   178,
+   50,
+   0
+  ],
+  [
+   180,
+   54,
+   0
+  ],
+  [
+   182,
+   58,
+   0
+  ],
+  [
+   184,
+   62,
+   0
+  ],
+  [
+   186,
+   67,
+   0
+  ],
+  [
+   188,
+   71,
+   0
+  ],
+  [
+   190,
+   75,
+   0
+  ],
+  [
+   193,
+   79,
+   0
+  ],
+  [
+   195,
+   83,
+   0
+  ],
+  [
+   197,
+   87,
+   0
+  ],
+  [
+   199,
+   92,
+   0
+  ],
+  [
+   201,
+   96,
+   0
+  ],
+  [
+   203,
+   100,
+   0
+  ],
+  [
+   205,
+   104,
+   0
+  ],
+  [
+   207,
+   108,
+   0
+  ],
+  [
+   209,
+   112,
+   0
+  ],
+  [
+   211,
+   117,
+   0
+  ],
+  [
+   213,
+   121,
+   0
+  ],
+  [
+   215,
+   125,
+   0
+  ],
+  [
+   218,
+   129,
+   0
+  ],
+  [
+   220,
+   133,
+   0
+  ],
+  [
+   222,
+   137,
+   0
+  ],
+  [
+   224,
+   142,
+   0
+  ],
+  [
+   226,
+   146,
+   0
+  ],
+  [
+   228,
+   150,
+   0
+  ],
+  [
+   230,
+   154,
+   0
+  ],
+  [
+   232,
+   158,
+   0
+  ],
+  [
+   234,
+   162,
+   0
+  ],
+  [
+   236,
+   167,
+   0
+  ],
+  [
+   238,
+   171,
+   0
+  ],
+  [
+   240,
+   175,
+   0
+  ],
+  [
+   243,
+   179,
+   0
+  ],
+  [
+   245,
+   183,
+   0
+  ],
+  [
+   247,
+   187,
+   0
+  ],
+  [
+   249,
+   192,
+   0
+  ],
+  [
+   251,
+   196,
+   0
+  ],
+  [
+   253,
+   200,
+   0
+  ],
+  [
+   255,
+   204,
+   0
+  ],
+  [
+   252,
+   203,
+   1
+  ],
+  [
+   249,
+   203,
+   2
+  ],
+  [
+   247,
+   203,
+   3
+  ],
+  [
+   244,
+   202,
+   4
+  ],
+  [
+   241,
+   201,
+   5
+  ],
+  [
+   238,
+   201,
+   6
+  ],
+  [
+   236,
+   201,
+   7
+  ],
+  [
+   233,
+   200,
+   8
+  ],
+  [
+   230,
+   200,
+   10
+  ],
+  [
+   227,
+   199,
+   11
+  ],
+  [
+   224,
+   198,
+   12
+  ],
+  [
+   222,
+   198,
+   13
+  ],
+  [
+   219,
+   198,
+   14
+  ],
+  [
+   216,
+   197,
+   15
+  ],
+  [
+   213,
+   196,
+   16
+  ],
+  [
+   211,
+   196,
+   17
+  ],
+  [
+   208,
+   196,
+   18
+  ],
+  [
+   205,
+   195,
+   19
+  ],
+  [
+   202,
+   194,
+   20
+  ],
+  [
+   199,
+   194,
+   21
+  ],
+  [
+   197,
+   194,
+   22
+  ],
+  [
+   194,
+   193,
+   23
+  ],
+  [
+   191,
+   192,
+   24
+  ],
+  [
+   188,
+   192,
+   25
+  ],
+  [
+   186,
+   192,
+   27
+  ],
+  [
+   183,
+   191,
+   28
+  ],
+  [
+   180,
+   191,
+   29
+  ],
+  [
+   177,
+   190,
+   30
+  ],
+  [
+   174,
+   189,
+   31
+  ],
+  [
+   172,
+   189,
+   32
+  ],
+  [
+   169,
+   189,
+   33
+  ],
+  [
+   166,
+   188,
+   34
+  ],
+  [
+   163,
+   187,
+   35
+  ],
+  [
+   160,
+   187,
+   36
+  ],
+  [
+   158,
+   187,
+   37
+  ],
+  [
+   155,
+   186,
+   38
+  ],
+  [
+   152,
+   185,
+   39
+  ],
+  [
+   149,
+   185,
+   40
+  ],
+  [
+   147,
+   185,
+   41
+  ],
+  [
+   144,
+   184,
+   42
+  ],
+  [
+   141,
+   183,
+   43
+  ],
+  [
+   138,
+   183,
+   45
+  ],
+  [
+   135,
+   182,
+   46
+  ],
+  [
+   133,
+   182,
+   47
+  ],
+  [
+   130,
+   182,
+   48
+  ],
+  [
+   127,
+   181,
+   49
+  ],
+  [
+   124,
+   180,
+   50
+  ],
+  [
+   122,
+   180,
+   51
+  ],
+  [
+   119,
+   180,
+   52
+  ],
+  [
+   116,
+   179,
+   53
+  ],
+  [
+   116,
+   179,
+   53
+  ]
+ ],
  "talents": {
   "4": {
    "x": 138.8,

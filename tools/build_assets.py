@@ -139,7 +139,8 @@ def collect_names(data_dir):
     doll = load('doll', data_dir)
 
     want = {'icon': set(), 'effect': set(), 'background': set(),
-            'doll': set(), 'buff': set(), 'ui': set(), 'sound': set()}
+            'doll': set(), 'buff': set(), 'ui': set(), 'sound': set(),
+            'chrome': set()}
     speculative = set()
     # Expected to have no art: enemy ability icons (never on the player's
     # bar), permanent passive-talent buffs, and the doll cross-product below,
@@ -230,6 +231,31 @@ def collect_names(data_dir):
 
     # UI pieces the battle screen attaches by name.
     want['ui'].update(['KrinBuffShower', 'MODEL1'])
+
+    # The battle screen's furniture. Most of it is never exported under a
+    # name -- the root timeline just places the character -- so it is asked
+    # for by id, as "#1531". extract_stage.py recorded the display list; this
+    # takes the art for every entry in it that has any.
+    try:
+        stage = load('stage', data_dir)
+    except (OSError, ValueError):
+        stage = {}
+    # Two entries are containers the engine fills itself rather than pictures
+    # to draw: the sky and the ground, each of which the game retargets with
+    # gotoAndStop to the zone's own art. Their design-time frames are not the
+    # battle's backdrop and copying all 54 of them would cost 13 MB.
+    skip_ids = {(stage.get('backdrop') or {}).get('character')}
+    skip_ids.update(layer['character']
+                    for layer in (stage.get('layers') or {}).values())
+    for entry in (stage.get('chrome') or []):
+        if (entry.get('character') and 'width' in entry
+                and entry['character'] not in skip_ids):
+            want['chrome'].add('#%d' % entry['character'])
+    # The bar widget is drawn from its pieces rather than as a whole, because
+    # its own frame has the design-time name and numbers baked into it.
+    for part in ((stage.get('bar') or {}).get('graphics') or []):
+        if part.get('character') and part.get('width'):
+            want['chrome'].add('#%d' % part['character'])
     return want, speculative
 
 
@@ -261,6 +287,18 @@ def main():
                 path = sound_file(args.raw, exports, name)
                 if path:
                     entries = [(1, path)]
+            elif name.startswith('#') and name[1:].isdigit():
+                # Asked for by character id: a sprite keeps its frames, a
+                # shape is one picture carrying its own bounds.
+                cid = int(name[1:])
+                frames = frame_files(args.raw, cid)[:args.max_frames]
+                if frames:
+                    entries = list(frames)
+                else:
+                    png = shape_png(args.raw, cid)
+                    if png:
+                        entries = [(1, png)]
+                        origin = shape_origin(exports, cid)
             elif name in by_name:
                 # A whole exported character: a sprite keeps its frames as an
                 # animation, a shape is a single picture.

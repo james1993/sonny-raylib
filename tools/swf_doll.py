@@ -80,7 +80,11 @@ def read_matrix(body, pos):
 
 
 def parse_place(body, pos, length, tag):
-    """-> (depth, character or None, name or None, matrix or None, is_move)"""
+    """-> (depth, character, name, matrix, is_move, clip_depth)
+
+    clip_depth is set when the placement is a mask: the object is not drawn,
+    it clips everything placed above it up to that depth. The battle screen
+    uses one to keep the backdrop inside the battlefield frame."""
     flags = body[pos]
     p = pos + 1
     if tag == TAG_PLACE_OBJECT3:
@@ -92,6 +96,7 @@ def parse_place(body, pos, length, tag):
     character = None
     matrix = None
     name = None
+    clip_depth = None
 
     if flags & 2:
         character = struct.unpack_from('<H', body, p)[0]
@@ -115,7 +120,10 @@ def parse_place(body, pos, length, tag):
         p += 2          # ratio
     if flags & 32:
         name, p = read_string(body, p)
-    return depth, character, name, matrix, is_move
+    if flags & 64:
+        clip_depth = struct.unpack_from('<H', body, p)[0]
+        p += 2
+    return depth, character, name, matrix, is_move, clip_depth
 
 
 def timeline_frames(body, pos, end):
@@ -124,7 +132,7 @@ def timeline_frames(body, pos, end):
     frames = []
     for t2, s2, l2 in walk_tags(body, pos, end):
         if t2 in (TAG_PLACE_OBJECT2, TAG_PLACE_OBJECT3):
-            depth, character, name, matrix, is_move = parse_place(
+            depth, character, name, matrix, is_move, clip_depth = parse_place(
                 body, s2, l2, t2)
             slot = depths.setdefault(depth, {})
             if character is not None and not is_move:
@@ -134,6 +142,8 @@ def timeline_frames(body, pos, end):
                 slot['name'] = name
             if matrix:
                 slot['matrix'] = matrix
+            if clip_depth is not None:
+                slot['clip_depth'] = clip_depth
         elif t2 in (TAG_REMOVE_OBJECT, TAG_REMOVE_OBJECT2):
             depth = struct.unpack_from(
                 '<H', body, s2 + (2 if t2 == TAG_REMOVE_OBJECT else 0))[0]
@@ -152,6 +162,8 @@ def timeline_frames(body, pos, end):
                     'matrix': [round(v, 6) for v in slot['matrix']],
                     'character': slot.get('character'),
                 }
+                if slot.get('clip_depth') is not None:
+                    snapshot[key]['clip_depth'] = slot['clip_depth']
             frames.append(snapshot)
     return frames
 

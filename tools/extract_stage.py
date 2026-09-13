@@ -11,6 +11,7 @@ horizontal scale, which is how the game mirrors them to face left.
 import json
 import os
 import re
+import struct
 import sys
 
 # The root <g> of an exported SVG says where the art's own origin sits inside
@@ -21,7 +22,10 @@ SVG_ROOT_TRANSFORM = re.compile(
 
 
 def sprite_geometry(raw_dir, character):
-    """(width, height, origin x, origin y) of an exported sprite frame."""
+    """(width, height, origin x, origin y) of an exported sprite frame.
+
+    Falls back to the shape export, because the battle screen's furniture is a
+    mix of the two and both carry the same root transform."""
     if not raw_dir:
         return None
     import glob
@@ -29,6 +33,7 @@ def sprite_geometry(raw_dir, character):
                                      'DefineSprite_%d' % character, '1.svg'))
     matches += glob.glob(os.path.join(raw_dir, 'sprite_svg',
                                       'DefineSprite_%d_*' % character, '1.svg'))
+    matches += glob.glob(os.path.join(raw_dir, 'shape', '%d.svg' % character))
     if not matches:
         return None
     with open(matches[0], encoding='utf-8', errors='replace') as fh:
@@ -42,9 +47,234 @@ def sprite_geometry(raw_dir, character):
 
 sys.path.insert(0, __file__.rsplit('/', 1)[0])
 from swfinfo import read_swf                       # noqa: E402
-from swf_doll import model_frames, exports_table   # noqa: E402
+from swf_doll import model_frames, header_end      # noqa: E402
+from swf_exports import (walk_tags, read_string,   # noqa: E402
+                         TAG_SHOW_FRAME, TAG_FRAME_LABEL,
+                         TAG_DEFINE_SPRITE)
+from swf_doll import Bits                         # noqa: E402
+
+TAG_DEFINE_EDIT_TEXT = 37
+TAG_DEFINE_FONT2 = 48
+TAG_DEFINE_FONT3 = 75
 
 BATTLE_SCREEN = 'BATTLESCREEN'
+# The root frame the game stops on during a fight.
+BATTLE_FRAME_LABEL = 'KRINBATTLESCENE'
+# A sky the battle table names, so the sky container can be told apart from
+# the rest of the furniture by what its timeline is labelled with.
+SKY_FRAME = 'NIGHT'
+# The health/focus bar widget, and the flat-colour clip the bar points at
+# round(percent * 100) to colour its fill.
+BAR_CHARACTER = 1585
+RAMP_CHARACTER = 91
+# The bar's name field is much wider than its number fields.
+NAME_FIELD_WIDTH = 60
+
+
+def sprite_labels(body, sprite_id):
+    """The frame labels on one sprite's own timeline."""
+    for tag, start, length in walk_tags(body, header_end(body)):
+        if tag != TAG_DEFINE_SPRITE or length < 4:
+            continue
+        if struct.unpack_from('<H', body, start)[0] != sprite_id:
+            continue
+        out = []
+        for t2, s2, l2 in walk_tags(body, start + 4, start + length):
+            if t2 == TAG_FRAME_LABEL and l2 >= 1:
+                out.append(read_string(body, s2)[0])
+        return out
+    return []
+
+
+def root_label_frame(body, label):
+    """The 1-based root frame a label names."""
+    frame = 1
+    pending = []
+    for tag, start, length in walk_tags(body, header_end(body)):
+        if tag == TAG_FRAME_LABEL and length >= 1:
+            pending.append(read_string(body, start)[0])
+        elif tag == TAG_SHOW_FRAME:
+            if label in pending:
+                return frame
+            pending = []
+            frame += 1
+    raise SystemExit('no root frame labelled %s' % label)
+
+
+def font_table(body):
+    """id -> (name, glyph count) for every font in the file.
+
+    A font with no glyphs is one of Flash's device fonts -- "_sans" and the
+    like -- which the player renders with a system face rather than with
+    anything in the SWF. Knowing which fields use one is the difference
+    between drawing the game's own Tahoma and drawing what the original
+    actually showed."""
+    out = {}
+    for tag, start, length in walk_tags(body, header_end(body)):
+        if tag not in (TAG_DEFINE_FONT2, TAG_DEFINE_FONT3) or length < 6:
+            continue
+        cid = struct.unpack_from('<H', body, start)[0]
+        name_length = body[start + 4]
+        name = body[start + 5:start + 5 + name_length].decode('latin1')
+        glyphs = struct.unpack_from('<H', body, start + 5 + name_length)[0]
+        out[cid] = (name.rstrip('\x00'), glyphs)
+    return out
+
+
+def edit_text_boxes(body):
+    """Every DefineEditText's box and colour, by character id.
+
+    The bar's numbers and names are text fields, so where each one sits and
+    what colour it is only exists in these tags."""
+    out = {}
+    for tag, start, length in walk_tags(body, header_end(body)):
+        if tag != TAG_DEFINE_EDIT_TEXT or length < 3:
+            continue
+        cid = struct.unpack_from('<H', body, start)[0]
+        bits = Bits(body, start + 2)
+        n = bits.ub(5)
+        # A SWF RECT is Xmin, Xmax, Ymin, Ymax -- not the corner pairs the
+        # order reads like.
+        xmin, xmax, ymin, ymax = (bits.sb(n) / 20.0 for _ in range(4))
+        p = bits.align()
+        f1, f2 = body[p], body[p + 1]
+        p += 2
+        height = None
+        color = None
+        align = 0
+        font = None
+        if f2 & 0x80:                    # HasFontClass
+            _, p = read_string(body, p)
+            height = struct.unpack_from('<H', body, p)[0] / 20.0
+            p += 2
+        elif f1 & 0x01:                  # HasFont
+            font = struct.unpack_from('<H', body, p)[0]
+            height = struct.unpack_from('<H', body, p + 2)[0] / 20.0
+            p += 4
+        if f1 & 0x04:                    # HasTextColor
+            color = list(body[p:p + 4])
+            p += 4
+        if f1 & 0x02:                    # HasMaxLength
+            p += 2
+        leading = 0.0
+        if f2 & 0x20:                    # HasLayout: 0 left, 1 right, 2 centre
+            align = body[p]
+            # align, left and right margin, indent, then the leading, which
+            # is the gap the player puts above the first line as well as
+            # between lines.
+            leading = struct.unpack_from('<h', body, p + 7)[0] / 20.0
+            p += 9
+        out[cid] = {'xmin': round(xmin, 3), 'ymin': round(ymin, 3),
+                    'xmax': round(xmax, 3), 'ymax': round(ymax, 3),
+                    'height': height, 'color': color, 'align': align,
+                    'leading': leading, 'font': font}
+    return out
+
+
+def bar_widget(body, raw_dir, texts, fonts):
+    """The health/focus bar taken apart.
+
+    One sprite holds two children: inner2, the graphics -- a black panel, the
+    two fills, and a translucent gloss over them -- and inner, the text, whose
+    frame 1 is the left-hand team's layout and frame 2 ("second") the
+    right-hand team's mirror of it. The right-hand bars set
+    inner2._xscale = -100 and inner.gotoAndStop("second"), so one widget
+    serves both sides."""
+    frames = model_frames(body, BAR_CHARACTER)
+    if not frames:
+        return None
+    top = frames[0]
+    widget = {'character': BAR_CHARACTER, 'graphics': [], 'text': {}}
+    for key, info in top.items():
+        name = info.get('name') or key
+        a, _, _, d, x, y = info['matrix']
+        if name == 'inner2':
+            for part, pinfo in sorted(model_frames(body, info['character'])[0].items(),
+                                      key=lambda kv: kv[1]['depth']):
+                pa, _, _, pd, px, py = pinfo['matrix']
+                entry = {'name': part, 'character': pinfo['character'],
+                         'depth': pinfo['depth'],
+                         # A mask rather than a picture: it stops the fill
+                         # overflowing into the maximum's box.
+                         'clip_depth': pinfo.get('clip_depth') or 0,
+                         'x': round(x + a * px, 3), 'y': round(y + d * py, 3),
+                         'scale_x': round(a * pa, 6), 'scale_y': round(d * pd, 6)}
+                geom = sprite_geometry(raw_dir, pinfo['character'])
+                if geom:
+                    (entry['width'], entry['height'],
+                     entry['origin_x'], entry['origin_y']) = geom
+                widget['graphics'].append(entry)
+        elif name == 'inner':
+            inner = model_frames(body, info['character'])
+            for index, label in ((0, 'left'), (1, 'right')):
+                fields = []
+                # The two number rows, by where the widget places them:
+                # life above, focus below.
+                rows = sorted({round(f['matrix'][5], 2)
+                               for f in inner[index].values()
+                               if f['character'] in texts
+                               and texts[f['character']]['xmax']
+                               - texts[f['character']]['xmin']
+                               <= NAME_FIELD_WIDTH})
+                for _, finfo in sorted(inner[index].items(),
+                                       key=lambda kv: kv[1]['depth']):
+                    box = texts.get(finfo['character'])
+                    if not box:
+                        continue
+                    fa, _, _, fd, fx, fy = finfo['matrix']
+                    # What each field is, from the widget itself rather than
+                    # from a table: the wide one is the name, and of the
+                    # narrow ones the grey are the maxima and the white the
+                    # current values, on the upper row for life and the lower
+                    # for focus.
+                    if box['xmax'] - box['xmin'] > NAME_FIELD_WIDTH:
+                        role = 'name'
+                    else:
+                        stat = ('life' if round(fy, 2) == rows[0]
+                                else 'focus')
+                        role = stat + ('Max' if box['color'][:3] != [255, 255, 255]
+                                       else 'Now')
+                    fields.append({'role': role,
+                                   'character': finfo['character'],
+                                   'depth': finfo['depth'],
+                                   'x': round(x + a * (fx + fa * box['xmin']), 3),
+                                   'y': round(y + d * (fy + fd * box['ymin']), 3),
+                                   'width': round(a * fa * (box['xmax'] - box['xmin']), 3),
+                                   'height': round(d * fd * (box['ymax'] - box['ymin']), 3),
+                                   'size': box['height'],
+                                   'align': box['align'],
+                                   'leading': round(d * fd * box['leading'], 3),
+                                   'font': (fonts.get(box['font']) or ('', 0))[0],
+                                   'device': (fonts.get(box['font'])
+                                              or ('', 0))[1] == 0,
+                                   'color': box['color']})
+                widget['text'][label] = fields
+    return widget
+
+
+def colour_ramp(body, raw_dir):
+    """The hundred colours the health bar runs through.
+
+    The bar does not tint its fill: it points a hundred-frame clip at
+    round(percent * 100), and each of those frames is one flat colour. Reading
+    them off is the only way to get the original's red-to-green curve."""
+    import glob
+    frames = sorted(glob.glob(os.path.join(raw_dir or '', 'sprite',
+                                           'DefineSprite_%d' % RAMP_CHARACTER,
+                                           '*.png')),
+                    key=lambda f: int(os.path.basename(f)[:-4]))
+    if not frames:
+        return []
+    try:
+        from PIL import Image
+    except ImportError:
+        return []
+    out = []
+    for path in frames:
+        image = Image.open(path).convert('RGBA')
+        w, h = image.size
+        out.append(list(image.getpixel((w // 2, h // 2))[:3]))
+    return out
 
 
 def last_seen(frames, name):
@@ -82,6 +312,15 @@ def main(path, raw_dir=None):
             # right-hand team so it faces the other way.
             'flip': a < 0,
         }
+
+    # The battlefield has two backdrop layers, and each is a container the
+    # game retargets by name on load: the sky sits behind everything as its
+    # own root-level clip doing gotoAndStop(Krin.SkyBG), and the ground is
+    # BATTLESCREEN itself doing gotoAndStop(Krin.ZoneBG) before it places the
+    # six units over it. Recording both placements is what lets a zone's own
+    # art land where the original puts it.
+    layers = {'zone': {'x': sx, 'y': sy, 'character': screen['character'],
+                       'scale_x': round(sa, 6), 'scale_y': round(sd, 6)}}
 
     # The backdrop: the zone frames each place one unnamed child, and its
     # matrix is where the artwork actually sits on the stage.
@@ -169,8 +408,56 @@ def main(path, raw_dir=None):
                                  'scale': round(ma * a, 6)}
             menu_screens[label] = entries
 
+    # The battle screen's own furniture. The root timeline places the whole
+    # thing on the KRINBATTLESCENE frame: the top stats panel, the black
+    # battlefield backing, the three panels along the bottom, the turn
+    # indicator and so on, each at its own depth. Recording the display list
+    # verbatim is what lets the battle screen be laid out by the original
+    # rather than by eye; the engine picks the pieces it draws out of this by
+    # depth, and everything carries its exported canvas geometry so the
+    # trimmed PNG lines back up with the coordinate the game draws at.
+    chrome = []
+    frame_index = root_label_frame(body, BATTLE_FRAME_LABEL) - 1
+    if frame_index < len(root):
+        for name, info in sorted(root[frame_index].items(),
+                                 key=lambda kv: kv[1]['depth']):
+            a, b, c, d, x, y = info['matrix']
+            entry = {'name': name, 'depth': info['depth'],
+                     'character': info['character'],
+                     'x': round(x, 3), 'y': round(y, 3),
+                     'scale_x': round(a, 6), 'scale_y': round(d, 6)}
+            if info.get('clip_depth') is not None:
+                # A mask, not a picture: it clips everything above it up to
+                # this depth. The battlefield's is what keeps the backdrop
+                # inside its frame.
+                entry['clip_depth'] = info['clip_depth']
+            geom = sprite_geometry(raw_dir, info['character'])
+            if geom:
+                entry['width'], entry['height'] = geom[0], geom[1]
+                entry['origin_x'], entry['origin_y'] = geom[2], geom[3]
+            chrome.append(entry)
+
+    # Which root-level clip is the sky is not something to guess at: it is
+    # the one whose own timeline is labelled with the sky names, the frames
+    # gotoAndStop(Krin.SkyBG) selects between.
+    for entry in chrome:
+        if entry['character'] in (screen['character'], None):
+            continue
+        labels = sprite_labels(body, entry['character'])
+        if labels and SKY_FRAME in labels:
+            layers['sky'] = {'x': entry['x'], 'y': entry['y'],
+                             'character': entry['character'],
+                             'scale_x': entry['scale_x'],
+                             'scale_y': entry['scale_y']}
+            break
+
+    widget = bar_widget(body, raw_dir, edit_text_boxes(body),
+                        font_table(body))
+
     json.dump({'screen': {'x': sx, 'y': sy, 'character': screen['character']},
                'slots': slots, 'backdrop': backdrop, 'bars': bars,
+               'layers': layers, 'chrome': chrome,
+               'bar': widget, 'life_colours': colour_ramp(body, raw_dir),
                'talents': talents, 'menu': menu_screens}, sys.stdout, indent=1)
     print()
 

@@ -58,3 +58,36 @@ that is not automated: setting up the same fight in the real game and comparing.
 - `src/gen/` is generated. Do not edit it; change the generator.
 - Text is drawn with `ui_text`, never raylib's `DrawText`, so it uses the
   game's own font.
+
+## Checking against the original
+
+The original runs here. `tools/refcap.py` starts Ruffle on a virtual X display,
+drives the game with synthetic clicks and keys, and saves PNGs, so any screen
+can be put side by side with the replica's own `SONNY_SHOT` capture.
+
+Two things are needed to get past the title:
+
+* The Legacy Collection's SWF is a client of the Adobe AIR shell around it.
+  Root frame 65 runs `if (!isDebugMode) stop();` and waits for the shell to
+  tell it to go on, which never comes when the SWF is run on its own. Frame 2
+  sets `isDebugMode = false` outright, so a flashvar cannot override it; the
+  capture script patches that one boolean in the bytecode and writes an
+  uncompressed copy to run.
+* There is no audio device, so the intro cutscene -- which advances on the
+  narration's playhead -- never moves. Click SKIP.
+
+What the original settled that guesswork had got wrong:
+
+* The battle screen's furniture is the root timeline's own display list on the
+  KRINBATTLESCENE frame, including a clip-depth mask that is why the backdrop
+  stops at the battlefield frame instead of filling the stage.
+* Its two backdrop layers are containers the game retargets on load, the sky
+  with `gotoAndStop(Krin.SkyBG)` and the ground with `gotoAndStop(Krin.ZoneBG)`.
+* The health bar does not tint its fill. It points a hundred-frame flat-colour
+  clip at `round(percent * 100)`, red through yellow to green.
+* The bars' text is set in `_sans`, one of Flash's device fonts, so the player
+  draws it in a system face -- Arial on Windows -- not in the Tahoma the SWF
+  embeds. Alignment, leading and colour are all in the DefineEditText tags.
+* Flash sizes text by the em square; raylib bakes a font so its ascent plus
+  descent comes to the size asked for. Text is a fifth too small until the
+  request is scaled by the face's own ratio between the two.

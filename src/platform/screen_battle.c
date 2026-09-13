@@ -1,7 +1,9 @@
 /* The battle screen: the fight itself, drawn over the zone's backdrop with the
  * characters standing where the original stands them.
  */
+#include <math.h>
 #include <stdarg.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -136,20 +138,221 @@ static Rectangle ability_rect(int i)
                        BAR_SLOT - 4};
 }
 
-static void draw_bar(Rectangle r, int32_t cur, int32_t max, Color fill,
-                     const char *label)
+/* The gutter Flash leaves inside every text field before the text starts. */
+#define TEXT_GUTTER 2.0f
+
+/* ------------------------------------------------------------------ chrome */
+
+/* The battle screen's furniture is not laid out here: it is the display list
+   the original places on its KRINBATTLESCENE frame, drawn in the same depth
+   order, each piece at the coordinate and scale the SWF gives it. The pieces
+   named below are the ones the game drives at runtime and leaves hidden or
+   parked off stage on a quiet turn, so drawing them from the display list
+   would show furniture the original does not. */
+static int chrome_is_runtime(const char *name)
 {
-    DrawRectangleRec(r, (Color){18, 18, 22, 255});
-    if (max > 0 && cur > 0) {
-        Rectangle f = r;
-        f.width = r.width * ((float)cur / (float)max);
-        if (f.width > r.width)
-            f.width = r.width;
-        DrawRectangleRec(f, fill);
+    static const char *const hidden[] = {
+        /* The two backdrop containers; the zone's own art is drawn for them. */
+        "BATTLESCREEN", "@26",
+        /* A mask and an invisible hit area, neither of which is a picture. */
+        "@25", "@262",
+        /* The full-screen fade, transparent except between screens. */
+        "blacker5",
+        /* The tooltip, parked off stage until something is hovered. */
+        "KrinToolTipper", "@537",
+        /* The target reticles, parked off stage until a target is picked. */
+        "KrinSelector1", "KrinSelector2", "KrinSelector3",
+        "KrinSelector4", "KrinSelector5", "KrinSelector6",
+        /* The spinner shown while the other side is deciding. */
+        "selector",
+        /* The floating combat text and the speech box, both empty until
+           something happens. */
+        "KrinCombatText", "combatScript",
+    };
+    for (size_t i = 0; i < sizeof(hidden) / sizeof(hidden[0]); i++)
+        if (strcmp(name, hidden[i]) == 0)
+            return 1;
+    return strncmp(name, "p", 1) == 0 && strstr(name, "BAR") != NULL;
+}
+
+/* Where a piece of art goes, given the placement the original recorded: its
+   exported canvas carries the piece's own origin inside it, so the top-left
+   is the placement point less that origin. */
+static Rectangle placed_rect(float x, float y, float scale_x, float scale_y,
+                             float w, float h, float ox, float oy)
+{
+    return (Rectangle){x - ox * scale_x, y - oy * scale_y,
+                       w * scale_x, h * scale_y};
+}
+
+static void draw_chrome_art(const StageChrome *c)
+{
+    const Texture2D *tex = asset_texture(TextFormat("#%d", c->character), 1);
+    if (!tex)
+        return;
+    Rectangle dst = placed_rect(c->x, c->y, c->scale_x, c->scale_y,
+                                c->width, c->height, c->origin_x, c->origin_y);
+    DrawTexturePro(*tex, (Rectangle){0, 0, (float)tex->width,
+                                     (float)tex->height},
+                   dst, (Vector2){0, 0}, 0.0f, WHITE);
+}
+
+/* Draw every piece whose depth falls in [from, to). */
+static void draw_chrome(int32_t from, int32_t to)
+{
+    for (int i = 0; i < SONNY_STAGE_CHROME_COUNT; i++) {
+        const StageChrome *c = &SONNY_STAGE_CHROME[i];
+        if (c->depth < from || c->depth >= to || c->width <= 0)
+            continue;
+        if (chrome_is_runtime(c->name))
+            continue;
+        draw_chrome_art(c);
     }
-    DrawRectangleLinesEx(r, 1.0f, (Color){90, 90, 100, 255});
-    ui_text(TextFormat("%s %d/%d", label, cur, max), (int)r.x + 4,
-             (int)r.y + 1, 10, RAYWHITE);
+}
+
+/* The battlefield viewport: the original masks the backdrop and the units to
+   this box, which is why its art stops at the frame instead of running to the
+   edges of the stage. */
+static const StageChrome *battlefield_mask(void)
+{
+    for (int i = 0; i < SONNY_STAGE_CHROME_COUNT; i++)
+        if (SONNY_STAGE_CHROME[i].clip_depth > 0)
+            return &SONNY_STAGE_CHROME[i];
+    return NULL;
+}
+
+/* -------------------------------------------------------------------- bars */
+
+/* The health colour the original would be showing: it points a hundred-frame
+   flat-colour clip at round(percent * 100), red at the bottom through yellow
+   to green at the top. */
+static Color life_colour(int32_t now, int32_t max)
+{
+    if (SONNY_LIFE_COLOUR_COUNT <= 0)
+        return (Color){116, 179, 53, 255};
+    int index = (max > 0) ? (int)floorf((float)now / (float)max * 100.0f + 0.5f)
+                          : 0;
+    if (index < 0)
+        index = 0;
+    if (index >= SONNY_LIFE_COLOUR_COUNT)
+        index = SONNY_LIFE_COLOUR_COUNT - 1;
+    const unsigned char *c = SONNY_LIFE_COLOURS[index];
+    return (Color){c[0], c[1], c[2], 255};
+}
+
+/* One bar part, drawn in the bar's own coordinates. `fill` cuts the part down
+   to a fraction of its width, which is how the two fills show a value --
+   the original sets _width on the same clips. `mirror` is the right-hand
+   team, whose bars run the other way because the game gives their graphics a
+   negative horizontal scale. `recolour`, when given, replaces the part's
+   colour rather than tinting it: the life fill is one flat colour and the
+   original swaps that colour outright as health drops. */
+static void draw_bar_part(const BarPart *part, const StageBar *bar, int mirror,
+                          float fill, const Color *recolour)
+{
+    const Texture2D *tex = asset_texture(TextFormat("#%d", part->character), 1);
+    if (!tex)
+        return;
+    float left = part->x - part->origin_x * part->scale_x;
+    float w = part->width * part->scale_x * fill;
+    float h = part->height * part->scale_y;
+    float top = part->y - part->origin_y * part->scale_y;
+
+    float x = mirror ? bar->x - (left + w) * bar->scale
+                     : bar->x + left * bar->scale;
+    Rectangle dst = {x, bar->y + top * bar->scale, w * bar->scale, h * bar->scale};
+    if (recolour) {
+        DrawRectangleRec(dst, *recolour);
+        return;
+    }
+    Rectangle src = {0, 0, (float)tex->width * fill, (float)tex->height};
+    if (mirror)
+        src.width = -src.width;
+    DrawTexturePro(*tex, src, dst, (Vector2){0, 0}, 0.0f, WHITE);
+}
+
+/* One of the bar's text fields, laid out the way the SWF lays it out: its box
+   in the bar's own coordinates, its own alignment, its own colour. */
+static void draw_bar_field(const BarField *f, const StageBar *bar, int mirror,
+                           const char *text)
+{
+    if (!f || !text || !text[0])
+        return;
+    float x0 = mirror ? bar->x - (f->x + f->width) * bar->scale
+                      : bar->x + f->x * bar->scale;
+    float w = f->width * bar->scale;
+    float size = f->size * bar->scale;
+    float tw = f->device ? ui_sans_text_width(text, size)
+                         : ui_text_width(text, size);
+    float x = (f->align == 1) ? x0 + w - tw
+            : (f->align == 2) ? x0 + (w - tw) / 2.0f
+                              : x0;
+    /* The field's box is taller than the line; the original's text sits at
+       its top with the usual couple of pixels of leading. */
+    /* The widget is placed with a different vertical scale to its horizontal
+       one, so the row is found with that and only the glyph size follows the
+       horizontal. Inside the field the player leaves its two-pixel gutter and
+       then the field's own leading before the line starts. */
+    float y = bar->y + (f->y + TEXT_GUTTER + f->leading) * bar->scale_y;
+    Color c = {f->r, f->g, f->b, 255};
+    if (f->device)
+        ui_sans_text(text, x, y, size, c);
+    else
+        ui_text(text, x, y, size, c);
+}
+
+/* A unit's bar, assembled from the widget the original uses for all six:
+   the black panel, the life and focus fills, the gloss over them, then the
+   name and the four numbers. */
+static void draw_unit_bar(const Game *g, int32_t slot)
+{
+    const Unit *u = &g->battle.units[slot];
+    const StageBar *bar = stage_bar(slot);
+    if (!bar || u->LIFEU == 0)
+        return;
+
+    /* Slots 2, 4 and 6 are the right-hand team, and the original mirrors
+       their bars rather than using a second widget. */
+    int mirror = (slot % 2) == 0;
+    const char *side = mirror ? "right" : "left";
+
+    float life = (u->LIFEU > 0) ? (float)u->LIFEN / (float)u->LIFEU : 0.0f;
+    float focus = (u->FOCUSU > 0) ? (float)u->FOCUSN / (float)u->FOCUSU : 0.0f;
+    if (life < 0) life = 0;
+    if (life > 1) life = 1;
+    if (focus < 0) focus = 0;
+    if (focus > 1) focus = 1;
+
+    for (int i = 0; i < SONNY_BAR_PART_COUNT; i++) {
+        const BarPart *part = &SONNY_BAR_PARTS[i];
+        /* The "2" parts are the lagging ghost bars the original slides down
+           after a hit, and the "3" parts are the one-pixel smoother it
+           stretches along the way; neither shows on a settled bar. A part
+           with a clip depth is a mask, which stops the fill overflowing into
+           the maximum's box rather than drawing anything. */
+        if (part->clip_depth > 0
+            || part->name[strlen(part->name) - 1] == '2'
+            || part->name[strlen(part->name) - 1] == '3')
+            continue;
+        if (strcmp(part->name, "lB") == 0) {
+            Color c = life_colour(u->LIFEN, u->LIFEU);
+            draw_bar_part(part, bar, mirror, life, &c);
+        } else if (strcmp(part->name, "fB") == 0) {
+            draw_bar_part(part, bar, mirror, focus, NULL);
+        } else {
+            draw_bar_part(part, bar, mirror, 1.0f, NULL);
+        }
+    }
+
+    draw_bar_field(bar_field(side, "name"), bar, mirror, u->name);
+    draw_bar_field(bar_field(side, "lifeNow"), bar, mirror,
+                   TextFormat("%d", u->LIFEN));
+    draw_bar_field(bar_field(side, "lifeMax"), bar, mirror,
+                   TextFormat("%d", u->LIFEU));
+    draw_bar_field(bar_field(side, "focusNow"), bar, mirror,
+                   TextFormat("%d", u->FOCUSN));
+    draw_bar_field(bar_field(side, "focusMax"), bar, mirror,
+                   TextFormat("%d", u->FOCUSU));
 }
 
 static void draw_unit(const Game *g, int32_t slot)
@@ -160,26 +363,7 @@ static void draw_unit(const Game *g, int32_t slot)
         return;
 
     Rectangle r = unit_rect(b, slot);
-    int is_acting = (b->phase == PHASE_RESOLVE && g->has_last
-                     && g->last.caster == slot);
-    int is_target = (g->hovered_unit == slot);
-
-    Color frame = is_acting ? (Color){235, 200, 90, 255}
-                : is_target ? (Color){120, 200, 255, 255}
-                            : (Color){70, 74, 86, 255};
-
-    DrawRectangleRec(r, (Color){20, 22, 28, u->active ? 200 : 120});
-    DrawRectangleLinesEx(r, (is_acting || is_target) ? 2.0f : 1.0f, frame);
-
-    ui_text(u->name, (int)r.x + 6, (int)r.y + 2, 10,
-             u->active ? RAYWHITE : GRAY);
-    ui_text(TextFormat("Lv%d", u->plevel), (int)(r.x + r.width - 30),
-             (int)r.y + 2, 10, (Color){150, 155, 165, 255});
-
-    draw_bar((Rectangle){r.x + 6, r.y + 14, r.width - 12, 8}, u->LIFEN,
-             u->LIFEU, (Color){170, 55, 60, 255}, "HP");
-    draw_bar((Rectangle){r.x + 6, r.y + 23, r.width - 12, 8}, u->FOCUSN,
-             u->FOCUSU, (Color){60, 105, 180, 255}, "FP");
+    draw_unit_bar(g, slot);
 
     /* Active buffs, with their remaining turns. */
     int shown = 0;
@@ -262,26 +446,21 @@ static void draw_tooltip(const Game *g)
              (Color){200, 205, 215, 255});
 }
 
-/* The battle backdrop: the roster names a sky and a zone graphic, drawn in
-   that order as the original layers them. */
+/* The battle backdrop. The battlefield has two layers and each is a container
+   the game points at the zone's own art on load -- the sky with
+   gotoAndStop(Krin.SkyBG) and the ground with gotoAndStop(Krin.ZoneBG) -- so
+   each is drawn where the original places that container. */
 static void draw_backdrop(const Game *g)
 {
-    /* The battle screen's own origin, which everything inside it is placed
-       relative to. */
-    Vector2 screen = {400.0f, 294.5f};
-    int drew = 0;
+    const StageLayer *sky = stage_layer("sky");
+    const StageLayer *zone = stage_layer("zone");
 
-    if (g->def && g->def->sky_bg[0])
-        drew |= asset_draw_placed(g->def->sky_bg, 1, screen, 1.0f, WHITE);
-    if (g->def && g->def->zone_bg[0])
-        drew |= asset_draw_placed(g->def->zone_bg, 1, screen, 1.0f, WHITE);
-    if (!drew)
-        ClearBackground((Color){24, 26, 32, 255});
-
-    /* Keep the bars legible over the art: they sit in a band across the top. */
-    DrawRectangle(0, 0, STAGE_W, 120, (Color){12, 13, 17, 150});
-    DrawRectangle(0, (int)(BAR_CENTER_Y - 34), STAGE_W,
-                  STAGE_H - (int)(BAR_CENTER_Y - 34), (Color){12, 13, 17, 190});
+    if (g->def && g->def->sky_bg[0] && sky)
+        asset_draw_placed(g->def->sky_bg, 1, (Vector2){sky->x, sky->y}, 1.0f,
+                          WHITE);
+    if (g->def && g->def->zone_bg[0] && zone)
+        asset_draw_placed(g->def->zone_bg, 1, (Vector2){zone->x, zone->y},
+                          1.0f, WHITE);
 }
 
 /* ---------------------------------------------------------------- numbers */
@@ -431,25 +610,34 @@ static void draw_speech(const Game *g)
 
 static void draw_battle(const Game *g)
 {
-    const Battle *b = &g->battle;
+    const StageChrome *mask = battlefield_mask();
 
-    ClearBackground((Color){24, 26, 32, 255});
+    ClearBackground(BLACK);
+    /* The furniture below the battlefield mask: the stats panel across the
+       top, the black the battlefield sits on, the panels along the bottom. */
+    draw_chrome(0, mask ? mask->depth : SONNY_STAGE_CHROME_COUNT);
+
+    /* Everything the mask clips -- the two backdrop layers and the six units
+       over them -- inside the battlefield frame, which is what stops the
+       zone's art at the frame instead of running to the edge of the stage. */
+    if (mask) {
+        Rectangle box = placed_rect(mask->x, mask->y, mask->scale_x,
+                                    mask->scale_y, mask->width, mask->height,
+                                    mask->origin_x, mask->origin_y);
+        BeginScissorMode((int)box.x, (int)box.y, (int)box.width,
+                         (int)box.height);
+    }
     draw_backdrop(g);
-    ui_text("SONNY", 330, 8, 18, (Color){210, 215, 225, 255});
-
-    const char *state = b->phase == PHASE_OVER
-        ? (b->winCondition == 1 ? "victory"
-           : b->winCondition == 0 ? "defeat" : "draw")
-        : player_turn(g) ? "your move" : "enemy phase";
-    ui_text(TextFormat("Round %d   %s", b->round, state), 330, 30, 10,
-             (Color){150, 155, 165, 255});
-
-    /* The models first, then the information panels over them. */
     for (int32_t slot = 1; slot < SONNY_SLOTS; slot++)
         draw_doll(g, slot);
+    draw_effect(g);
+    if (mask)
+        EndScissorMode();
+
+    /* The furniture above it: the bars, the turn indicator, the ring. */
+    draw_chrome(mask ? mask->clip_depth + 1 : 0, INT32_MAX);
     for (int32_t slot = 1; slot < SONNY_SLOTS; slot++)
         draw_unit(g, slot);
-    draw_effect(g);
 
     draw_numbers(g);
     draw_ability_bar(g);

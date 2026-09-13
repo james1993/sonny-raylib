@@ -96,6 +96,11 @@ void ui_font_load(void);
 void ui_font_unload(void);
 void ui_text(const char *text, float x, float y, float size, Color color);
 float ui_text_width(const char *text, float size);
+/* The same, in the system sans face the original's "_sans" device-font text
+   fields are rendered with. Falls back to the embedded font when the system
+   has nothing suitable. */
+void ui_sans_text(const char *text, float x, float y, float size, Color color);
+float ui_sans_text_width(const char *text, float size);
 
 /* Shared helpers. */
 void game_log(Game *g, const char *fmt, ...);

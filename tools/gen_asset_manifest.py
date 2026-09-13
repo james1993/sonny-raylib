@@ -84,10 +84,74 @@ typedef struct {
 typedef struct {
     int32_t slot;
     float   x, y;          /* where the bar is placed */
-    float   scale;
+    float   scale;         /* horizontal; the original's is not uniform */
+    float   scale_y;
     float   width, height; /* the bar art's size */
     float   origin_x, origin_y;  /* where its own origin sits inside it */
 } StageBar;
+
+/* One piece of the battle screen's furniture, as the root timeline places it
+   on the KRINBATTLESCENE frame: the top stats panel, the black battlefield
+   backing, the three panels along the bottom, the turn indicator. `name` is
+   the instance name where the original gave it one and "@<depth>" where it
+   did not, and `depth` is the stacking order the original draws them in. The
+   art is asset "#<character>", whose exported canvas is width x height with
+   the piece's own origin at (origin_x, origin_y) inside it. */
+typedef struct {
+    const char *name;
+    int32_t     depth;
+    int32_t     character;
+    /* Non-zero when the placement is a mask rather than a picture: it clips
+       everything above it up to this depth. The battle screen has one, which
+       is what keeps the backdrop inside the battlefield frame. */
+    int32_t     clip_depth;
+    float       x, y;
+    float       scale_x, scale_y;
+    float       width, height;
+    float       origin_x, origin_y;
+} StageChrome;
+
+/* One piece of the health/focus bar widget, in the bar's own coordinates.
+   The parts in depth order are the black panel, the two fills, and a
+   translucent gloss over them; the fills are drawn to a fraction of their
+   width, which is how the bar shows a value. */
+typedef struct {
+    const char *name;
+    int32_t     character;
+    int32_t     depth;
+    int32_t     clip_depth;   /* non-zero when the part is a mask */
+    float       x, y;
+    float       scale_x, scale_y;
+    float       width, height;
+    float       origin_x, origin_y;
+} BarPart;
+
+/* One of the bar's text fields, also in the bar's own coordinates. `side` is
+   "left" or "right": the right-hand team's bars mirror the widget, and the
+   original does that by running the text on its own second layout. `align` is
+   the SWF's: 0 left, 1 right, 2 centre. `device` marks a field set in one of
+   Flash's device fonts ("_sans"), which the player renders with a system face
+   rather than with anything embedded in the file. */
+typedef struct {
+    const char *side;
+    const char *role;      /* name, lifeNow, lifeMax, focusNow, focusMax */
+    float       x, y;
+    float       width, height;
+    float       size;
+    float       leading;   /* the gap the player leaves above the line */
+    int32_t     align;
+    int32_t     device;
+    unsigned char r, g, b;
+} BarField;
+
+/* The two backdrop layers, which are containers rather than pictures: the
+   game points each at the zone's own art on load, the sky with
+   gotoAndStop(Krin.SkyBG) and the ground with gotoAndStop(Krin.ZoneBG). */
+typedef struct {
+    const char *name;      /* "sky" or "zone" */
+    float       x, y;
+    float       scale_x, scale_y;
+} StageLayer;
 
 /* Where a talent tree node sits on the stage. */
 typedef struct {
@@ -111,6 +175,27 @@ const MenuSlot *menu_slot(const char *name);
 extern const TalentSlot SONNY_TALENT_SLOTS[];
 extern const int SONNY_TALENT_SLOT_COUNT;
 const TalentSlot *talent_slot(int32_t node);
+
+extern const BarPart SONNY_BAR_PARTS[];
+extern const int SONNY_BAR_PART_COUNT;
+
+extern const BarField SONNY_BAR_FIELDS[];
+extern const int SONNY_BAR_FIELD_COUNT;
+const BarField *bar_field(const char *side, const char *role);
+
+/* The colours the health bar runs through, indexed by round(percent * 100).
+   The original does not tint its fill: it points a hundred-frame clip at that
+   index, and each frame is one flat colour. */
+extern const unsigned char SONNY_LIFE_COLOURS[][3];
+extern const int SONNY_LIFE_COLOUR_COUNT;
+
+extern const StageChrome SONNY_STAGE_CHROME[];
+extern const int SONNY_STAGE_CHROME_COUNT;
+const StageChrome *stage_chrome(const char *name);
+
+extern const StageLayer SONNY_STAGE_LAYERS[];
+extern const int SONNY_STAGE_LAYER_COUNT;
+const StageLayer *stage_layer(const char *name);
 
 extern const StageBar SONNY_STAGE_BARS[];
 extern const int SONNY_STAGE_BAR_COUNT;
@@ -277,9 +362,9 @@ const StageSlot *stage_slot(int32_t slot)
     lines.append('const StageBar SONNY_STAGE_BARS[] = {')
     for slot in sorted(bars, key=int):
         b_ = bars[slot]
-        lines.append('    { %s, %s, %s, %s, %s, %s, %s, %s },'
+        lines.append('    { %s, %s, %s, %s, %s, %s, %s, %s, %s },'
                      % (slot, c_float(b_['x']), c_float(b_['y']),
-                        c_float(b_['scale_x']),
+                        c_float(b_['scale_x']), c_float(b_['scale_y']),
                         c_float(b_.get('width', 201.0)),
                         c_float(b_.get('height', 28.75)),
                         c_float(b_.get('origin_x', 100.5)),
@@ -295,6 +380,107 @@ const StageBar *stage_bar(int32_t slot)
             return &SONNY_STAGE_BARS[i];
     return NULL;
 }''')
+    chrome = []
+    layers = {}
+    stage_json = {}
+    if os.path.exists(args.stage):
+        with open(args.stage, encoding='utf-8') as fh:
+            stage_json = json.load(fh)
+        chrome = stage_json.get('chrome') or []
+        layers = stage_json.get('layers') or {}
+    lines.append('')
+    lines.append('const StageChrome SONNY_STAGE_CHROME[] = {')
+    for c in chrome:
+        if 'width' not in c:
+            continue
+        lines.append('    { %s, %d, %d, %d, %s, %s, %s, %s, %s, %s, %s, %s },'
+                     % (c_string(c['name']), c['depth'], c['character'],
+                        c.get('clip_depth') or 0,
+                        c_float(c['x']), c_float(c['y']),
+                        c_float(c['scale_x']), c_float(c['scale_y']),
+                        c_float(c['width']), c_float(c['height']),
+                        c_float(c['origin_x']), c_float(c['origin_y'])))
+    lines.append('};')
+    lines.append('const int SONNY_STAGE_CHROME_COUNT = '
+                 '(int)(sizeof(SONNY_STAGE_CHROME) / sizeof(SONNY_STAGE_CHROME[0]));')
+    lines.append("""
+const StageChrome *stage_chrome(const char *name)
+{
+    for (int i = 0; i < SONNY_STAGE_CHROME_COUNT; i++)
+        if (strcmp(SONNY_STAGE_CHROME[i].name, name) == 0)
+            return &SONNY_STAGE_CHROME[i];
+    return NULL;
+}""")
+    bar = stage_json.get('bar') or {}
+    lines.append('')
+    lines.append('const BarPart SONNY_BAR_PARTS[] = {')
+    for part in (bar.get('graphics') or []):
+        if not part.get('width'):
+            continue
+        lines.append('    { %s, %d, %d, %d, %s, %s, %s, %s, %s, %s, %s, %s },'
+                     % (c_string(part['name']), part['character'],
+                        part['depth'], part.get('clip_depth') or 0,
+                        c_float(part['x']), c_float(part['y']),
+                        c_float(part['scale_x']), c_float(part['scale_y']),
+                        c_float(part['width']), c_float(part['height']),
+                        c_float(part['origin_x']), c_float(part['origin_y'])))
+    lines.append('};')
+    lines.append('const int SONNY_BAR_PART_COUNT = '
+                 '(int)(sizeof(SONNY_BAR_PARTS) / sizeof(SONNY_BAR_PARTS[0]));')
+    lines.append('')
+    lines.append('const BarField SONNY_BAR_FIELDS[] = {')
+    for side in ('left', 'right'):
+        for f in ((bar.get('text') or {}).get(side) or []):
+            colour = f.get('color') or [255, 255, 255, 255]
+            lines.append('    { %s, %s, %s, %s, %s, %s, %s, %s, %d, %d, %d, %d, %d },'
+                         % (c_string(side), c_string(f['role']),
+                            c_float(f['x']), c_float(f['y']),
+                            c_float(f['width']), c_float(f['height']),
+                            c_float(f.get('size') or 9.0),
+                            c_float(f.get('leading') or 0.0),
+                            f.get('align', 0),
+                            1 if f.get('device') else 0,
+                            colour[0], colour[1], colour[2]))
+    lines.append('};')
+    lines.append('const int SONNY_BAR_FIELD_COUNT = '
+                 '(int)(sizeof(SONNY_BAR_FIELDS) / sizeof(SONNY_BAR_FIELDS[0]));')
+    lines.append('''
+const BarField *bar_field(const char *side, const char *role)
+{
+    for (int i = 0; i < SONNY_BAR_FIELD_COUNT; i++)
+        if (strcmp(SONNY_BAR_FIELDS[i].side, side) == 0
+            && strcmp(SONNY_BAR_FIELDS[i].role, role) == 0)
+            return &SONNY_BAR_FIELDS[i];
+    return NULL;
+}''')
+    ramp = stage_json.get('life_colours') or []
+    lines.append('')
+    lines.append('const unsigned char SONNY_LIFE_COLOURS[][3] = {')
+    for rgb in ramp:
+        lines.append('    { %d, %d, %d },' % tuple(rgb))
+    lines.append('};')
+    lines.append('const int SONNY_LIFE_COLOUR_COUNT = '
+                 '(int)(sizeof(SONNY_LIFE_COLOURS) / sizeof(SONNY_LIFE_COLOURS[0]));')
+
+    lines.append('')
+    lines.append('const StageLayer SONNY_STAGE_LAYERS[] = {')
+    for name in sorted(layers):
+        l_ = layers[name]
+        lines.append('    { %s, %s, %s, %s, %s },'
+                     % (c_string(name), c_float(l_['x']), c_float(l_['y']),
+                        c_float(l_['scale_x']), c_float(l_['scale_y'])))
+    lines.append('};')
+    lines.append('const int SONNY_STAGE_LAYER_COUNT = '
+                 '(int)(sizeof(SONNY_STAGE_LAYERS) / sizeof(SONNY_STAGE_LAYERS[0]));')
+    lines.append("""
+const StageLayer *stage_layer(const char *name)
+{
+    for (int i = 0; i < SONNY_STAGE_LAYER_COUNT; i++)
+        if (strcmp(SONNY_STAGE_LAYERS[i].name, name) == 0)
+            return &SONNY_STAGE_LAYERS[i];
+    return NULL;
+}""")
+
     talent_slots = {}
     if os.path.exists(args.stage):
         with open(args.stage, encoding='utf-8') as fh:

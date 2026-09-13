@@ -72,10 +72,74 @@ typedef struct {
 typedef struct {
     int32_t slot;
     float   x, y;          /* where the bar is placed */
-    float   scale;
+    float   scale;         /* horizontal; the original's is not uniform */
+    float   scale_y;
     float   width, height; /* the bar art's size */
     float   origin_x, origin_y;  /* where its own origin sits inside it */
 } StageBar;
+
+/* One piece of the battle screen's furniture, as the root timeline places it
+   on the KRINBATTLESCENE frame: the top stats panel, the black battlefield
+   backing, the three panels along the bottom, the turn indicator. `name` is
+   the instance name where the original gave it one and "@<depth>" where it
+   did not, and `depth` is the stacking order the original draws them in. The
+   art is asset "#<character>", whose exported canvas is width x height with
+   the piece's own origin at (origin_x, origin_y) inside it. */
+typedef struct {
+    const char *name;
+    int32_t     depth;
+    int32_t     character;
+    /* Non-zero when the placement is a mask rather than a picture: it clips
+       everything above it up to this depth. The battle screen has one, which
+       is what keeps the backdrop inside the battlefield frame. */
+    int32_t     clip_depth;
+    float       x, y;
+    float       scale_x, scale_y;
+    float       width, height;
+    float       origin_x, origin_y;
+} StageChrome;
+
+/* One piece of the health/focus bar widget, in the bar's own coordinates.
+   The parts in depth order are the black panel, the two fills, and a
+   translucent gloss over them; the fills are drawn to a fraction of their
+   width, which is how the bar shows a value. */
+typedef struct {
+    const char *name;
+    int32_t     character;
+    int32_t     depth;
+    int32_t     clip_depth;   /* non-zero when the part is a mask */
+    float       x, y;
+    float       scale_x, scale_y;
+    float       width, height;
+    float       origin_x, origin_y;
+} BarPart;
+
+/* One of the bar's text fields, also in the bar's own coordinates. `side` is
+   "left" or "right": the right-hand team's bars mirror the widget, and the
+   original does that by running the text on its own second layout. `align` is
+   the SWF's: 0 left, 1 right, 2 centre. `device` marks a field set in one of
+   Flash's device fonts ("_sans"), which the player renders with a system face
+   rather than with anything embedded in the file. */
+typedef struct {
+    const char *side;
+    const char *role;      /* name, lifeNow, lifeMax, focusNow, focusMax */
+    float       x, y;
+    float       width, height;
+    float       size;
+    float       leading;   /* the gap the player leaves above the line */
+    int32_t     align;
+    int32_t     device;
+    unsigned char r, g, b;
+} BarField;
+
+/* The two backdrop layers, which are containers rather than pictures: the
+   game points each at the zone's own art on load, the sky with
+   gotoAndStop(Krin.SkyBG) and the ground with gotoAndStop(Krin.ZoneBG). */
+typedef struct {
+    const char *name;      /* "sky" or "zone" */
+    float       x, y;
+    float       scale_x, scale_y;
+} StageLayer;
 
 /* Where a talent tree node sits on the stage. */
 typedef struct {
@@ -99,6 +163,27 @@ const MenuSlot *menu_slot(const char *name);
 extern const TalentSlot SONNY_TALENT_SLOTS[];
 extern const int SONNY_TALENT_SLOT_COUNT;
 const TalentSlot *talent_slot(int32_t node);
+
+extern const BarPart SONNY_BAR_PARTS[];
+extern const int SONNY_BAR_PART_COUNT;
+
+extern const BarField SONNY_BAR_FIELDS[];
+extern const int SONNY_BAR_FIELD_COUNT;
+const BarField *bar_field(const char *side, const char *role);
+
+/* The colours the health bar runs through, indexed by round(percent * 100).
+   The original does not tint its fill: it points a hundred-frame clip at that
+   index, and each frame is one flat colour. */
+extern const unsigned char SONNY_LIFE_COLOURS[][3];
+extern const int SONNY_LIFE_COLOUR_COUNT;
+
+extern const StageChrome SONNY_STAGE_CHROME[];
+extern const int SONNY_STAGE_CHROME_COUNT;
+const StageChrome *stage_chrome(const char *name);
+
+extern const StageLayer SONNY_STAGE_LAYERS[];
+extern const int SONNY_STAGE_LAYER_COUNT;
+const StageLayer *stage_layer(const char *name);
 
 extern const StageBar SONNY_STAGE_BARS[];
 extern const int SONNY_STAGE_BAR_COUNT;
