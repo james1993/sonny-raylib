@@ -25,6 +25,11 @@ typedef struct {
     int32_t    friends[SONNY_PARTY_SIZE];
     /* Krin.friendArrayX: which two of them stand in the fighting line. */
     int32_t    line[SONNY_MAX_ALLIES];
+    /* Krin.equipArrayN and StatSetsN for everyone but the player, who keeps
+       his own. The character screen turns over to any of them and their gear
+       can be changed there, so it cannot live in the table. */
+    int32_t    ally_equip[SONNY_PARTY_SIZE][SONNY_EQUIP_SLOTS];
+    double     ally_stat_sets[SONNY_PARTY_SIZE][SONNY_STATS];
     int32_t    progress_battle;   /* Krin.progressLevelOn */
     int32_t    zone;              /* Krin.sectionIn */
     int32_t    euros;

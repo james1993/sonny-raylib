@@ -17,6 +17,18 @@ int main(void)
     Character ally;
     campaign_ally(&c, c.line[0], &ally);
     if (!ally.class_template || ally.level <= 0) { puts("ally has no class"); fails++; }
+    /* Their gear is their own: changing one leaves the others alone. */
+    int32_t member = c.line[1];
+    c.ally_equip[member][0] = 0;
+    Character changed;
+    campaign_ally(&c, member, &changed);
+    if (changed.equip[0] != 0) { puts("ally gear did not follow"); fails++; }
+    campaign_ally(&c, c.line[0], &ally);
+    if (ally.equip[0] != SONNY_PARTY[c.line[0]].equip[0]) {
+        puts("changing one ally changed another");
+        fails++;
+    }
+
     printf("party: %d joined by battle %d, line is %s and %s, %d failures\n",
            SONNY_PARTY_SIZE, c.progress_battle,
            SONNY_PARTY[c.line[0]].name, SONNY_PARTY[c.line[1]].name, fails);

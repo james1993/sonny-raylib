@@ -13,6 +13,13 @@ void campaign_new(Campaign *c, int32_t class_id)
         c->friends[i] = SONNY_PARTY_START[i];
     for (int32_t i = 0; i < SONNY_MAX_ALLIES; i++)
         c->line[i] = SONNY_PARTY_TEAM[i];
+    /* Each of them starts wearing and carrying what the table gives them. */
+    for (int32_t m = 0; m < SONNY_PARTY_SIZE && m < SONNY_PARTY_COUNT; m++) {
+        for (int32_t i = 0; i < SONNY_EQUIP_SLOTS; i++)
+            c->ally_equip[m][i] = SONNY_PARTY[m].equip[i];
+        for (int32_t i = 0; i < SONNY_STATS; i++)
+            c->ally_stat_sets[m][i] = SONNY_PARTY[m].stat[i];
+    }
 }
 
 int campaign_has_friend(const Campaign *c, int32_t member)
@@ -27,7 +34,6 @@ int campaign_has_friend(const Campaign *c, int32_t member)
 
 void campaign_ally(const Campaign *c, int32_t member, Character *out)
 {
-    (void)c;
     memset(out, 0, sizeof(*out));
     if (member < 0 || member >= SONNY_PARTY_COUNT)
         return;
@@ -37,17 +43,16 @@ void campaign_ally(const Campaign *c, int32_t member, Character *out)
     out->class_template = unit_template_by_id(m->class_id);
     out->level = m->level;
     for (int32_t i = 0; i < SONNY_EQUIP_SLOTS; i++)
-        out->equip[i] = m->equip[i];
+        out->equip[i] = c->ally_equip[member][i];
     for (int32_t i = 0; i < SONNY_STATS; i++)
         out->spent[i] = m->stat[i];
     for (int32_t e = 0; e < SONNY_ELEMENTS; e++) {
         out->per_sets[e] = m->per[e];
         out->def_sets[e] = m->def_[e];
     }
-    /* A party member's numbers are the table's outright: the bonuses stand
-       in for what they are wearing, so nothing is folded in on top. */
+    /* Their running total is theirs, and it moves as their gear does. */
     for (int32_t i = 0; i < SONNY_STATS; i++)
-        out->stat_sets[i] = m->stat[i];
+        out->stat_sets[i] = c->ally_stat_sets[member][i];
 }
 
 void campaign_story_joins(Campaign *c)

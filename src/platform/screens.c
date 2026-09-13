@@ -853,6 +853,17 @@ void screen_talents_update(Game *g, Vector2 mouse)
 
 /* ----------------------------------------------------------- inventory */
 
+/* Whoever the sheet is turned to: the player, or one of the party built from
+   the table. */
+static const Character *menu_character(Game *g, Character *scratch)
+{
+    if (g->menu_member <= 0)
+        return &g->campaign.player;
+    campaign_ally(&g->campaign, g->menu_member, scratch);
+    return scratch;
+}
+
+
 /* Whether this item may go in that equipment row. The original checks three
    things: the row takes that kind of item -- a row's kind is its own index
    plus two -- the item is for this class or for any, and the character is
@@ -881,15 +892,38 @@ static void swap_carried(Game *g, int32_t *slot)
     g->carried_item = held;
 }
 
-/* The same, for an equipment row: what comes off stops counting and what
-   goes on starts, which is the only way anything ever enters the running
-   total the character carries. */
+/* The same, for an equipment row of whoever the sheet is turned to: what
+   comes off stops counting and what goes on starts, which is the only way
+   anything ever enters the running total a character carries. */
 static void swap_equipped(Game *g, int32_t row)
 {
-    Character *p = &g->campaign.player;
-    character_apply_item(p, item_by_id(p->equip[row]), 0);
-    swap_carried(g, &p->equip[row]);
-    character_apply_item(p, item_by_id(p->equip[row]), 1);
+    Campaign *c = &g->campaign;
+    int32_t member = g->menu_member;
+    int32_t *worn = (member <= 0) ? &c->player.equip[row]
+                                  : &c->ally_equip[member][row];
+    double *sets = (member <= 0) ? c->player.stat_sets
+                                 : c->ally_stat_sets[member];
+    const ItemDef *off = item_by_id(*worn);
+    swap_carried(g, worn);
+    const ItemDef *on = item_by_id(*worn);
+    for (int32_t i = 0; i < SONNY_STATS; i++) {
+        if (off)
+            sets[i] -= off->stat[i];
+        if (on)
+            sets[i] += on->stat[i];
+    }
+    if (member <= 0) {
+        for (int32_t e = 0; e < SONNY_ELEMENTS; e++) {
+            if (off) {
+                c->player.per_sets[e] -= off->per[e];
+                c->player.def_sets[e] -= off->def[e];
+            }
+            if (on) {
+                c->player.per_sets[e] += on->per[e];
+                c->player.def_sets[e] += on->def[e];
+            }
+        }
+    }
 }
 
 /* The bag is a list rather than a grid of holes: the original keeps
@@ -1003,7 +1037,8 @@ static void draw_item_icon(const ItemDef *item, Rectangle r, Color tint)
 
 void screen_inventory_update(Game *g, Vector2 mouse)
 {
-    Campaign *c = &g->campaign;
+    Character scratch;
+    const Character *who = menu_character(g, &scratch);
     g->hovered_item = -1;
 
     for (int32_t i = 0; i < MENU_BAG_SLOTS; i++) {
@@ -1023,8 +1058,7 @@ void screen_inventory_update(Game *g, Vector2 mouse)
         g->hovered_item = i;
         /* A row only takes what belongs in it, and the row keeps what it has
            if the carried item does not fit. */
-        if (ui_clicked()
-            && item_fits(&c->player, g->carried_item, i))
+        if (ui_clicked() && item_fits(who, g->carried_item, i))
             swap_equipped(g, i);
         break;
     }
@@ -1128,16 +1162,6 @@ static void draw_party_row(Game *g, const char *menu, Vector2 mouse)
             g->menu_member = i;
         }
     }
-}
-
-/* Whoever the sheet is turned to: the player, or one of the party built from
-   the table. */
-static const Character *menu_character(Game *g, Character *scratch)
-{
-    if (g->menu_member <= 0)
-        return &g->campaign.player;
-    campaign_ally(&g->campaign, g->menu_member, scratch);
-    return scratch;
 }
 
 void screen_inventory_draw(Game *g, Vector2 mouse)
@@ -1406,6 +1430,8 @@ void screen_shop_update(Game *g, Vector2 mouse)
 {
     Campaign *c = &g->campaign;
     const ShopDef *shop = shop_for_button(g->shop_button);
+    Character scratch;
+    const Character *who = menu_character(g, &scratch);
     g->hovered_item = -1;
 
     /* Buying: a stock slot hands the item over for its price, and the store
@@ -1448,8 +1474,7 @@ void screen_shop_update(Game *g, Vector2 mouse)
         if (!hit(r, mouse))
             continue;
         g->hovered_item = i;
-        if (ui_clicked()
-            && item_fits(&c->player, g->carried_item, i))
+        if (ui_clicked() && item_fits(who, g->carried_item, i))
             swap_equipped(g, i);
         break;
     }

@@ -208,7 +208,10 @@ What the original settled that guesswork had got wrong:
   reached the battle before that zone's first, with the route drawn between
   the ones showing at run time. There is no way off it but to pick somewhere.
 * The map picture's export carries a margin its filter spread into, which the
-  original never shows; the black backing under it is its real extent.
+  original never shows. There is no clean edge to crop to -- the spread fades
+  through the canvas -- so the screen keeps the picture inside the black
+  backing behind it, which is the map's real extent and comes off the frame
+  like everything else.
 
 * The attribute swatches go grey the moment the last point is spent, and are
   coloured again the next time the screen opens -- the menu clip goes back to
