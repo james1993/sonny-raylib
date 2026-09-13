@@ -449,6 +449,10 @@ static void draw_slot_art(const char *menu, const char *prefix, int i);
    screen does gotoAndStop("Empty") on any such slot of the bar. */
 #define EMPTY_ORB "Empty"
 
+/* How wide an orb answers to the pointer, and how wide a pool row is. */
+#define ORB_HIT        24.0f
+#define POOL_ROW_WIDTH 64.0f
+
 /* The orb inside a tree node sits a fraction above the node's own point. */
 #define TREE_NODE_ORB_Y (-0.35f)
 
@@ -709,10 +713,79 @@ void screen_talents_draw(Game *g, Vector2 mouse)
     }
 }
 
+/* Put what the pointer is carrying on one of the eight slots, the way
+   addMoveForPlayer does: carrying nothing empties the slot, and a move can
+   only take as many slots at once as its own number allows. */
+static void place_on_bar(Game *g, int32_t slot)
+{
+    Character *c = &g->campaign.player;
+    if (g->carrying == 0) {
+        c->move_matrix[slot] = 0;
+        return;
+    }
+    const AbilityDef *a = ability_by_id(g->carrying);
+    int32_t already = 0;
+    for (int32_t i = 0; i < SONNY_MOVE_SLOTS; i++)
+        if (c->move_matrix[i] == g->carrying)
+            already++;
+    if (a && already < a->bar_copies)
+        c->move_matrix[slot] = g->carrying;
+    else
+        game_notice(g, "%s", lang_text("SKILLERROR", 0));
+    g->carrying = 0;
+}
+
 void screen_talents_update(Game *g, Vector2 mouse)
 {
     Character *c = &g->campaign.player;
     g->hovered_item = -1;
+
+    /* The action bar: pick an ability up off the pool or the tree, drop it on
+       a slot. */
+    for (int32_t i = 0; i < SONNY_MOVE_SLOTS; i++) {
+        const SlotPiece *piece = bar_slot(i);
+        if (!piece)
+            continue;
+        Rectangle box = {piece->x - ORB_HIT / 2, piece->y - ORB_HIT / 2,
+                         ORB_HIT, ORB_HIT};
+        if (!hit(box, mouse))
+            continue;
+        const AbilityDef *on = ability_by_id(c->move_matrix[i]);
+        if (on && on->id != 0)
+            game_tooltip(g, on->name, on->tooltip);
+        else
+            game_tooltip(g, lang_text("SKILLNONE", 0),
+                         lang_text("SKILLTUT", 0));
+        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
+            audio_play("Click2putdown");
+            place_on_bar(g, i);
+            return;
+        }
+    }
+
+    /* The pool below it: clicking a row picks that ability up. */
+    {
+        int32_t known[SONNY_TALENT_MAX + SONNY_MOVE_SLOTS];
+        int32_t count = character_known_abilities(c, known,
+                                                  (int32_t)(sizeof(known)
+                                                            / sizeof(known[0])));
+        for (int32_t i = 0; i < count; i++) {
+            Vector2 at = pool_row(i);
+            Rectangle box = {at.x, at.y - ORB_HIT / 2, POOL_ROW_WIDTH,
+                             ORB_HIT};
+            if (!hit(box, mouse))
+                continue;
+            const AbilityDef *a = ability_by_id(known[count - 1 - i]);
+            if (!a)
+                continue;
+            game_tooltip(g, a->name, a->tooltip);
+            if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
+                audio_play("Click3pickup");
+                g->carrying = a->id;
+                return;
+            }
+        }
+    }
 
     /* A point of an attribute, which the original buys one click at a time
        and stops offering the moment the last one is gone. */
@@ -737,6 +810,17 @@ void screen_talents_update(Game *g, Vector2 mouse)
         if (!hit(talent_rect(node), mouse))
             continue;
         g->hovered_item = node;
+        /* What the node calls itself: its rank out of its tier, then the
+           move's own name and what it does. */
+        const TalentDef *t = &SONNY_TALENTS[node];
+        int32_t rank = c->rank[node];
+        const AbilityDef *shown = ability_by_id(t->ability_id
+                                                + (rank > 0 ? rank - 1 : 0));
+        if (shown)
+            game_tooltip(g, TextFormat("(%d/%d)  %s", rank, t->max_rank,
+                                       shown->name),
+                         rank > 0 ? shown->tooltip
+                                  : lang_text("SKILLTALENTTIP2", 0));
         if (!IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
             break;
 
@@ -768,6 +852,56 @@ void screen_talents_update(Game *g, Vector2 mouse)
 }
 
 /* ----------------------------------------------------------- inventory */
+
+/* Whether this item may go in that equipment row. The original checks three
+   things: the row takes that kind of item -- a row's kind is its own index
+   plus two -- the item is for this class or for any, and the character is
+   high enough level for it. Carrying nothing always passes, which is how a
+   row is emptied. */
+static int item_fits(const Character *c, int32_t item_id, int32_t row)
+{
+    if (item_id == 0)
+        return 1;
+    const ItemDef *item = item_by_id(item_id);
+    if (!item || item->slot != row + 2)
+        return 0;
+    int32_t class_id = c->class_template ? c->class_template->id : 0;
+    if (item->class_req != 0 && item->class_req != class_id)
+        return 0;
+    return item->level_req <= c->level;
+}
+
+/* A slot the pointer pressed: what it holds and what the pointer is carrying
+   change places, which is all any of these slots ever does. */
+static void swap_carried(Game *g, int32_t *slot)
+{
+    audio_play(g->carried_item == 0 ? "Click3pickup" : "Click2putdown");
+    int32_t held = *slot;
+    *slot = g->carried_item;
+    g->carried_item = held;
+}
+
+/* The bag is a list rather than a grid of holes: the original keeps
+   itemArray dense, so an item put down past the end is appended and one
+   picked up off the end leaves nothing behind. */
+static void swap_bag(Game *g, int32_t index)
+{
+    Campaign *c = &g->campaign;
+    int32_t max = (int32_t)(sizeof(c->inventory) / sizeof(c->inventory[0]));
+    if (index < c->inventory_count) {
+        swap_carried(g, &c->inventory[index]);
+        if (c->inventory[index] == 0) {
+            for (int32_t i = index; i + 1 < c->inventory_count; i++)
+                c->inventory[i] = c->inventory[i + 1];
+            c->inventory_count--;
+        }
+    } else if (g->carried_item != 0 && c->inventory_count < max) {
+        c->inventory[c->inventory_count++] = g->carried_item;
+        g->carried_item = 0;
+        audio_play("Click2putdown");
+    }
+}
+
 
 /* The character screen's own layout: seven equipment slots either side of a
    doll preview, and a six-by-six bag grid to the right, all placed where the
@@ -855,66 +989,32 @@ static void draw_item_icon(const ItemDef *item, Rectangle r, Color tint)
                 tint);
 }
 
-/* An item can go in a slot when the slot matches and the requirements pass.
-   The original's slot numbering starts at 2, so slot index = slot - 2. */
-static int32_t item_slot_index(const ItemDef *item)
-{
-    return item && item->slot >= 2 ? item->slot - 2 : -1;
-}
 
 void screen_inventory_update(Game *g, Vector2 mouse)
 {
     Campaign *c = &g->campaign;
     g->hovered_item = -1;
 
-    for (int32_t i = 0; i < c->inventory_count && i < 36; i++) {
+    for (int32_t i = 0; i < MENU_BAG_SLOTS; i++) {
         Rectangle r = bag_rect(i);
-        if (hit(r, mouse))
-            g->hovered_item = 100 + i;
-        if (!hit(r, mouse) || !IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+        if (!hit(r, mouse))
             continue;
-
-        const ItemDef *item = item_by_id(c->inventory[i]);
-        int32_t slot = item_slot_index(item);
-        if (slot < 0 || slot >= SONNY_EQUIP_SLOTS) {
-            game_notice(g, "That cannot be equipped.");
-            break;
-        }
-        if (!character_can_equip(&c->player, item)) {
-            game_notice(g, "%s%d needed.", lang_text("MENU", 0),
-                        item->level_req);
-            break;
-        }
-        /* Swap: what was worn goes back to the bag. */
-        int32_t worn = c->player.equip[slot];
-        c->player.equip[slot] = item->id;
-        c->inventory[i] = worn;
-        if (worn == 0) {
-            for (int32_t k = i; k < c->inventory_count - 1; k++)
-                c->inventory[k] = c->inventory[k + 1];
-            c->inventory_count--;
-        }
-        audio_play("Click2putdown");
-        game_notice(g, "Equipped %s.", item->name);
+        g->hovered_item = 100 + i;
+        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+            swap_bag(g, i);
         break;
     }
 
     for (int i = 0; i < SONNY_EQUIP_SLOTS; i++) {
         Rectangle r = slot_rect(i);
-        if (hit(r, mouse))
-            g->hovered_item = i;
-        if (!hit(r, mouse) || !IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+        if (!hit(r, mouse))
             continue;
-        if (c->player.equip[i] == 0)
-            continue;
-        if (c->inventory_count >= (int32_t)(sizeof(c->inventory)
-                                            / sizeof(c->inventory[0]))) {
-            game_notice(g, "The bag is full.");
-            break;
-        }
-        c->inventory[c->inventory_count++] = c->player.equip[i];
-        c->player.equip[i] = 0;
-        audio_play("Click3pickup");
+        g->hovered_item = i;
+        /* A row only takes what belongs in it, and the row keeps what it has
+           if the carried item does not fit. */
+        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)
+            && item_fits(&c->player, g->carried_item, i))
+            swap_carried(g, &c->player.equip[i]);
         break;
     }
 
@@ -1074,6 +1174,9 @@ void screen_inventory_draw(Game *g, Vector2 mouse)
    the keeper says. */
 #define MENU_SHOP "shop"
 
+/* The slot that buys back what is dropped into it. */
+#define SHOP_RECYCLER 1395
+
 /* How many slots the store's grid has, and the bag's on this frame. */
 #define SHOP_STOCK_SLOTS SONNY_SHOP_SLOTS
 
@@ -1222,6 +1325,8 @@ void screen_shop_update(Game *g, Vector2 mouse)
     const ShopDef *shop = shop_for_button(g->shop_button);
     g->hovered_item = -1;
 
+    /* Buying: a stock slot hands the item over for its price, and the store
+       never runs out of it. */
     for (int32_t i = 0; shop && i < SHOP_STOCK_SLOTS; i++) {
         const ItemDef *item = item_by_id(shop->item[i]);
         if (!item || item->id == 0)
@@ -1245,9 +1350,41 @@ void screen_shop_update(Game *g, Vector2 mouse)
         break;
     }
 
-    for (int32_t i = 0; i < c->inventory_count; i++) {
-        if (hit(shop_bag_rect(i), mouse))
-            g->hovered_item = 100 + i;
+    for (int32_t i = 0; i < MENU_BAG_SLOTS; i++) {
+        Rectangle r = shop_bag_rect(i);
+        if (!hit(r, mouse))
+            continue;
+        g->hovered_item = 100 + i;
+        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+            swap_bag(g, i);
+        break;
+    }
+
+    for (int i = 0; i < SONNY_EQUIP_SLOTS; i++) {
+        Rectangle r = shop_equip_rect(i);
+        if (!hit(r, mouse))
+            continue;
+        g->hovered_item = i;
+        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)
+            && item_fits(&c->player, g->carried_item, i))
+            swap_carried(g, &c->player.equip[i]);
+        break;
+    }
+
+    /* The recycler: whatever the pointer is carrying goes in for a quarter of
+       what it is worth, rounded up. */
+    const StageButton *bin = stage_button(MENU_SHOP, SHOP_RECYCLER, 0);
+    if (bin && CheckCollisionPointRec(mouse, (Rectangle){bin->x, bin->y,
+                                                         bin->width,
+                                                         bin->height})) {
+        game_tooltip(g, lang_text("MENU", 5), lang_text("MENU", 5));
+        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && g->carried_item != 0) {
+            const ItemDef *item = item_by_id(g->carried_item);
+            if (item)
+                c->euros += (item->price + 3) / 4;
+            g->carried_item = 0;
+            audio_play("Click2putdown");
+        }
     }
 
     if (menu_close_pressed(mouse))

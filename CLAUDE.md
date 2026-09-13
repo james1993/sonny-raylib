@@ -169,6 +169,13 @@ What the original settled that guesswork had got wrong:
 * A button carries art for its resting state and its over state, and swapping
   between them is the only thing most of these buttons do to show they can be
   pressed.
+* Nothing in this game is dragged. The pointer carries one thing at a time --
+  Krin.mouseItem for an item, UITmouseHold for an ability -- and every slot
+  swaps what it holds with what is carried. An equipment row takes only its
+  own kind of item (its index plus two), for this class or any, at or below
+  the character's level. The recycler pays a quarter of an item's price,
+  rounded up. An ability can only take as many places on the action bar as
+  its own number allows.
 * The fifth button on the hub's row gives every point back, and the scenery on
   a zone's scene is clickable: the settings screen counts how many pieces of
   it have been found.

@@ -873,6 +873,18 @@ static float tip_block(const char *text, float x, float y, Color backing,
 
 void game_draw_tooltip(const Game *g, Vector2 mouse)
 {
+    /* What the pointer is carrying rides in the tooltip's own two holders:
+       an item's picture, or the orb of an ability on its way to the bar. */
+    if (g->carried_item != 0) {
+        const ItemDef *item = item_by_id(g->carried_item);
+        if (item)
+            asset_draw_placed(item->name, 1, mouse, 1.0f, WHITE);
+    }
+    if (g->carrying != 0) {
+        const AbilityDef *a = ability_by_id(g->carrying);
+        if (a)
+            draw_orb(a->icon, mouse, 1.0f, 0, 0);
+    }
     if (!g->tip_title[0] && !g->tip_body[0])
         return;
     float sx = (mouse.x < TOOLTIP_FLIP_X) ? TOOLTIP_NEAR_X : TOOLTIP_FAR_X;

@@ -35,6 +35,9 @@ typedef struct {
     int32_t      focus_cost;
     int32_t      health_cost;
     int32_t      cooldown;
+    /* How many places on the action bar this move may take at once. The
+       original checks it before it lets a move be dropped on a slot. */
+    int32_t      bar_copies;
     /* 0 when the original left the cost fields undefined (only the "None"
        placeholder). Comparing a number against undefined is false in
        ActionScript, so such a move fails every affordability test -- which is

@@ -129,6 +129,14 @@ typedef struct {
        these and every button fills it on roll-over. */
     char      tip_title[128];
     char      tip_body[256];
+    /* Krin.UITmouseHold: the ability the pointer is carrying. The original
+       does not drag -- clicking a node or a pool row picks one up, clicking
+       a slot of the action bar puts it down, and clicking a slot while
+       carrying nothing clears it. */
+    int32_t   carrying;
+    /* Krin.mouseItem: the item the pointer is carrying, which every slot
+       swaps with rather than moves. */
+    int32_t   carried_item;
     char      notice[128];
     int32_t   notice_timer;
 
