@@ -184,6 +184,28 @@ MOVECOUNT_RE = re.compile(r'^MoveCount\s*=\s*(\d+);$')
 #                       CLASSIFY:0,BUFFNAME:0};
 TALENT_RE = re.compile(r'^Krin\.abilityXer\[(\d+)\]\s*=\s*\{(.*)\};$')
 START_SKILL_RE = re.compile(r'^Krin\.startSkill([12])\s*=\s*(\d+);$')
+# The eight elements, and the colour the interface gives each of them.
+ELEMENT_RE = re.compile(r'^element(Main|Color)Array\s*=\s*\[(.*)\];$')
+
+
+def extract_elements(text):
+    """[{name, colour}] in the order everything else indexes them by."""
+    found = {}
+    for line in text.splitlines():
+        m = ELEMENT_RE.match(line.strip())
+        if m:
+            found[m.group(1)] = [parse_value(tok.strip())
+                                 for tok in split_args(m.group(2))]
+    names = found.get('Main') or []
+    colours = found.get('Color') or []
+    out = []
+    for index, name in enumerate(names):
+        colour = colours[index] if index < len(colours) else '0xFFFFFF'
+        out.append({'name': name,
+                    'colour': int(str(colour), 16)
+                    if str(colour).lower().startswith('0x')
+                    else int(colour)})
+    return out
 
 
 def parse_object(body):
@@ -442,6 +464,7 @@ def main():
     lang = langs.get(args.lang, {})
     talents, start_skills = extract_talents(lang_text)
     zones = extract_zones(lang_text)
+    elements = extract_elements(lang_text)
     doll = {}
     if os.path.exists(doll_as):
         doll = extract_doll(open(doll_as, encoding='utf-8',
@@ -532,7 +555,7 @@ def main():
                           ('units', unit_list), ('items', item_list),
                           ('buffs', buff_list), ('talents', talent_payload),
                           ('battles', battle_list), ('zones', zone_list),
-                          ('doll', doll)):
+                          ('elements', elements), ('doll', doll)):
         path = os.path.join(args.out, name + '.json')
         with open(path, 'w', encoding='utf-8') as fh:
             json.dump(payload, fh, indent=1, ensure_ascii=False)

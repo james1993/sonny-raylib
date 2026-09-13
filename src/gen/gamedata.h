@@ -120,6 +120,14 @@ typedef struct {
     int32_t     training_count;
 } ZoneDef;
 
+/* The eight elements, in the order everything else indexes them by, with the
+   colour the interface gives each -- the tint on a chosen ability's orb, and
+   on the number that floats off a hit. */
+typedef struct {
+    const char *name;
+    uint32_t    colour;
+} ElementDef;
+
 /* One node of the talent tree (Krin.abilityXer). A node's rank N uses ability
  * id `ability_id + N - 1`, which is why the ability table holds each move five
  * times in a row with rising coefficients. A passive node instead contributes
@@ -206,6 +214,9 @@ const char *lang_text(const char *array, int32_t index);
 
 extern const BattleDef SONNY_BATTLES[];
 extern const int SONNY_BATTLE_COUNT;
+extern const ElementDef SONNY_ELEMENT_DEFS[];
+extern const int SONNY_ELEMENT_DEF_COUNT;
+
 extern const ZoneDef SONNY_ZONES[];
 extern const int SONNY_ZONE_COUNT;
 

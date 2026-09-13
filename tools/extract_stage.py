@@ -51,7 +51,9 @@ from swf_doll import model_frames, header_end      # noqa: E402
 from swf_exports import (walk_tags, read_string,   # noqa: E402
                          TAG_SHOW_FRAME, TAG_FRAME_LABEL,
                          TAG_DEFINE_SPRITE)
-from swf_doll import Bits                         # noqa: E402
+from swf_doll import (Bits, parse_place,          # noqa: E402
+                      TAG_PLACE_OBJECT2, TAG_PLACE_OBJECT3,
+                      TAG_REMOVE_OBJECT, TAG_REMOVE_OBJECT2)
 
 TAG_DEFINE_EDIT_TEXT = 37
 TAG_DEFINE_FONT2 = 48
@@ -67,6 +69,14 @@ SKY_FRAME = 'NIGHT'
 # round(percent * 100) to colour its fill.
 BAR_CHARACTER = 1585
 RAMP_CHARACTER = 91
+# The ability ring the game parks on the hovered unit.
+SELECTOR_INSTANCE = 'selector'
+# The speech box, which the game slides to the speaker's side of the screen.
+SPEECH_INSTANCE = 'combatScript'
+# How far to look inside a clip for its text fields.
+TEXT_FIELD_DEPTH = 3
+# Inside the orb, the icon is whatever the frame places in this depth range.
+ICON_DEPTH = (4, 6)
 # The bar's name field is much wider than its number fields.
 NAME_FIELD_WIDTH = 60
 
@@ -250,6 +260,213 @@ def bar_widget(body, raw_dir, texts, fonts):
                                    'color': box['color']})
                 widget['text'][label] = fields
     return widget
+
+
+def selector_ring(body, raw_dir, chrome):
+    """The ability ring.
+
+    The player does not choose a move from a bar along the bottom. Hovering a
+    unit brings up a ring of eight orbs around it -- one per slot of the
+    player's own ability loadout -- and clicking one uses that ability on that
+    target. The ring is a single clip the game moves onto whichever unit is
+    under the pointer, and its eight orbs sit at fixed offsets inside it."""
+    placed = next((c for c in chrome if c['name'] == SELECTOR_INSTANCE), None)
+    if not placed:
+        return None
+    slots = []
+    orb = None
+    for name, info in model_frames(body, placed['character'])[0].items():
+        if not name.startswith('thing') or not name[5:].isdigit():
+            continue
+        a, _, _, d, x, y = info['matrix']
+        orb = info['character']
+        slots.append({'slot': int(name[5:]),
+                      'x': round(x, 3), 'y': round(y, 3),
+                      'scale_x': round(a, 6), 'scale_y': round(d, 6)})
+    if not slots:
+        return None
+    geom = sprite_geometry(raw_dir, orb)
+    ring = {'character': placed['character'], 'orb': orb,
+            'scale_x': placed['scale_x'], 'scale_y': placed['scale_y'],
+            'slots': sorted(slots, key=lambda s: s['slot'])}
+    if geom:
+        ring['width'], ring['height'], ring['origin_x'], ring['origin_y'] = geom
+    ring.update(orb_parts(body, raw_dir, orb))
+    return ring
+
+
+def orb_parts(body, raw_dir, orb):
+    """The orb taken apart.
+
+    One clip serves every ability: its frames are labelled by icon name, and a
+    frame only swaps the icon. Everything else is shared -- a ball whose colour
+    the game replaces once a move is chosen, a circular mask that cuts the icon
+    to the ball, a glass highlight over it, and a black disc shown while the
+    ability cannot be used. Exporting a labelled frame whole is no use, because
+    that black disc is in front of all of it, so the pieces are taken
+    separately and the screen puts them back together.
+
+    The display list has to be walked rather than read off one frame: the icon
+    lives at either of two depths depending on the ability, and the ball is
+    swapped out again further along the timeline."""
+    live = {}
+    icons = {}
+    shared = {}
+    frame = 1
+    pending = []
+    for tag, start, length in walk_tags(body, header_end(body)):
+        if tag != TAG_DEFINE_SPRITE or length < 4:
+            continue
+        if struct.unpack_from('<H', body, start)[0] != orb:
+            continue
+        for t2, s2, l2 in walk_tags(body, start + 4, start + length):
+            if t2 in (TAG_PLACE_OBJECT2, TAG_PLACE_OBJECT3):
+                depth, character, name, matrix, is_move, clip = parse_place(
+                    body, s2, l2, t2)
+                slot = live.setdefault(depth, {})
+                if character is not None:
+                    # A place with a character replaces whatever was at the
+                    # depth, whether or not it is flagged as a move; the orb
+                    # swaps its icon that way.
+                    if not is_move:
+                        slot.clear()
+                    slot['character'] = character
+                if name:
+                    slot['name'] = name
+                if matrix:
+                    slot['matrix'] = matrix
+                slot['clip'] = clip
+            elif t2 in (TAG_REMOVE_OBJECT, TAG_REMOVE_OBJECT2):
+                depth = struct.unpack_from(
+                    '<H', body, s2 + (2 if t2 == TAG_REMOVE_OBJECT else 0))[0]
+                live.pop(depth, None)
+            elif t2 == TAG_FRAME_LABEL and l2 >= 1:
+                pending.append(read_string(body, s2)[0])
+            elif t2 == TAG_SHOW_FRAME:
+                icon = max((d for d in live
+                            if ICON_DEPTH[0] <= d <= ICON_DEPTH[1]),
+                           default=None)
+                for label in pending:
+                    if icon is not None:
+                        icons[label] = live[icon]['character']
+                for depth, info in live.items():
+                    if ICON_DEPTH[0] <= depth <= ICON_DEPTH[1]:
+                        continue
+                    role = ('mask' if info.get('clip') else
+                            'ball' if info.get('name') == 'moveColor' else
+                            'filter' if info.get('name') == 'bfilter' else
+                            'glass' if depth > ICON_DEPTH[1] else None)
+                    if role and role not in shared:
+                        shared[role] = (depth, dict(info))
+                pending = []
+                frame += 1
+        break
+
+    parts = {}
+    for role, (depth, info) in sorted(shared.items()):
+        a, _, _, d, x, y = info.get('matrix') or (1, 0, 0, 1, 0, 0)
+        entry = {'character': info['character'], 'depth': depth,
+                 'x': round(x, 3), 'y': round(y, 3),
+                 'scale_x': round(a, 6), 'scale_y': round(d, 6)}
+        geom = sprite_geometry(raw_dir, info['character'])
+        if geom:
+            (entry['width'], entry['height'],
+             entry['origin_x'], entry['origin_y']) = geom
+        parts[role] = entry
+    return {'parts': parts, 'icons': icons}
+
+
+def text_fields(body, character, texts, fonts, at=(1.0, 1.0, 0.0, 0.0),
+                depth=0):
+    """Every text field under a clip, with its box in that clip's own
+    coordinates. Fields are often a container or two down, so this composes
+    the transforms on the way."""
+    if depth > TEXT_FIELD_DEPTH:
+        return []
+    sx, sy, tx, ty = at
+    found = []
+    frames = model_frames(body, character)
+    if not frames:
+        return []
+    for name, info in sorted(frames[0].items(), key=lambda kv: kv[1]['depth']):
+        a, _, _, d, x, y = info['matrix']
+        here = (sx * a, sy * d, tx + sx * x, ty + sy * y)
+        box = texts.get(info['character'])
+        if box:
+            found.append({'name': name, 'depth': info['depth'],
+                          'x': round(here[2] + here[0] * box['xmin'], 3),
+                          'y': round(here[3] + here[1] * box['ymin'], 3),
+                          'width': round(here[0] * (box['xmax'] - box['xmin']), 3),
+                          'height': round(here[1] * (box['ymax'] - box['ymin']), 3),
+                          'size': box['height'], 'align': box['align'],
+                          'leading': box['leading'],
+                          'font': (fonts.get(box['font']) or ('', 0))[0],
+                          'device': (fonts.get(box['font']) or ('', 0))[1] == 0,
+                          'color': box['color']})
+            continue
+        found.extend(text_fields(body, info['character'], texts, fonts, here,
+                                 depth + 1))
+    return found
+
+
+def graphic_parts(body, raw_dir, character, texts, at=(1.0, 1.0, 0.0, 0.0),
+                  depth=0):
+    """Every drawable piece under a clip, with its transform composed.
+
+    A clip cannot be exported whole when it carries text fields, because the
+    decompiler bakes their design-time contents into the picture. Taking the
+    graphics separately and drawing the text over them is what keeps the
+    placeholder copy out."""
+    if depth > TEXT_FIELD_DEPTH:
+        return []
+    sx, sy, tx, ty = at
+    found = []
+    frames = model_frames(body, character)
+    if not frames:
+        return []
+    for name, info in sorted(frames[0].items(), key=lambda kv: kv[1]['depth']):
+        if info['character'] in texts:
+            continue
+        a, _, _, d, x, y = info['matrix']
+        here = (sx * a, sy * d, tx + sx * x, ty + sy * y)
+        # A clip with more than one frame is one the game points at a frame
+        # of, by name -- the speaker's portrait, say -- so it stays one piece
+        # rather than being flattened into whatever its first frame holds.
+        child = model_frames(body, info['character'])
+        if len(child) <= 1:
+            inner = graphic_parts(body, raw_dir, info['character'], texts,
+                                  here, depth + 1)
+            if inner:
+                found.extend(inner)
+                continue
+        geom = sprite_geometry(raw_dir, info['character'])
+        entry = {'name': name, 'depth': info['depth'],
+                 'character': info['character'],
+                 'x': round(here[2], 3), 'y': round(here[3], 3),
+                 'scale_x': round(here[0], 6), 'scale_y': round(here[1], 6)}
+        if geom:
+            (entry['width'], entry['height'],
+             entry['origin_x'], entry['origin_y']) = geom
+        if len(child) > 1:
+            entry['frames'] = len(child)
+        found.append(entry)
+    return found
+
+
+def speech_box(body, raw_dir, chrome, texts, fonts):
+    """The box that carries what a character is saying.
+
+    The original places it once, on the right-hand side, and slides it over to
+    whichever side the speaker is on. Its portrait, name and line are text
+    fields inside the clip, so where each goes comes from the same tags the
+    bars' numbers do."""
+    placed = next((c for c in chrome if c['name'] == SPEECH_INSTANCE), None)
+    if not placed:
+        return None
+    out = dict(placed)
+    out['fields'] = text_fields(body, placed['character'], texts, fonts)
+    out['parts'] = graphic_parts(body, raw_dir, placed['character'], texts)
+    return out
 
 
 def colour_ramp(body, raw_dir):
@@ -451,13 +668,16 @@ def main(path, raw_dir=None):
                              'scale_y': entry['scale_y']}
             break
 
-    widget = bar_widget(body, raw_dir, edit_text_boxes(body),
-                        font_table(body))
+    texts = edit_text_boxes(body)
+    fonts = font_table(body)
+    widget = bar_widget(body, raw_dir, texts, fonts)
 
     json.dump({'screen': {'x': sx, 'y': sy, 'character': screen['character']},
                'slots': slots, 'backdrop': backdrop, 'bars': bars,
                'layers': layers, 'chrome': chrome,
                'bar': widget, 'life_colours': colour_ramp(body, raw_dir),
+               'selector': selector_ring(body, raw_dir, chrome),
+               'speech': speech_box(body, raw_dir, chrome, texts, fonts),
                'talents': talents, 'menu': menu_screens}, sys.stdout, indent=1)
     print()
 

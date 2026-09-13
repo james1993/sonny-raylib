@@ -2358,6 +2358,24 @@
     ]
    ]
   },
+  "#1633": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1633.png"
+   ],
+   "bounds": [
+    -0.5,
+    -0.5,
+    306.0,
+    94.5
+   ],
+   "offsets": [
+    [
+     0.5,
+     0.5
+    ]
+   ]
+  },
   "#1640": {
    "category": "chrome",
    "frames": [
@@ -2694,6 +2712,66 @@
     [
      404.1,
      291.05
+    ]
+   ]
+  },
+  "#824": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#824.png"
+   ],
+   "bounds": [
+    -11.5,
+    -11.5,
+    11.5,
+    11.5
+   ],
+   "offsets": [
+    [
+     11.5,
+     11.5
+    ]
+   ]
+  },
+  "#826": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#826.png"
+   ],
+   "offsets": [
+    [
+     11.5,
+     11.5
+    ]
+   ]
+  },
+  "#828": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#828.png"
+   ],
+   "offsets": [
+    [
+     11.5,
+     11.5
+    ]
+   ]
+  },
+  "#830": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#830.png"
+   ],
+   "bounds": [
+    -11.65,
+    -11.75,
+    12.1,
+    12.0
+   ],
+   "offsets": [
+    [
+     11.65,
+     11.75
     ]
    ]
   },
@@ -8762,9 +8840,9 @@
    ]
   },
   "Blessing of Light": {
-   "category": "icon",
+   "category": "orb",
    "frames": [
-    "assets/art/icon/Blessing_of_Light.png"
+    "assets/art/orb/Blessing_of_Light.png"
    ],
    "bounds": [
     -15.65,
@@ -8780,9 +8858,9 @@
    ]
   },
   "Block": {
-   "category": "icon",
+   "category": "orb",
    "frames": [
-    "assets/art/icon/Block.png"
+    "assets/art/orb/Block.png"
    ],
    "bounds": [
     -16.35,
@@ -8798,9 +8876,9 @@
    ]
   },
   "Blood Focus": {
-   "category": "icon",
+   "category": "orb",
    "frames": [
-    "assets/art/icon/Blood_Focus.png"
+    "assets/art/orb/Blood_Focus.png"
    ],
    "bounds": [
     -12.85,
@@ -8816,9 +8894,9 @@
    ]
   },
   "Blood Strike": {
-   "category": "icon",
+   "category": "orb",
    "frames": [
-    "assets/art/icon/Blood_Strike.png"
+    "assets/art/orb/Blood_Strike.png"
    ],
    "bounds": [
     -17.15,
@@ -8834,9 +8912,9 @@
    ]
   },
   "Break": {
-   "category": "icon",
+   "category": "orb",
    "frames": [
-    "assets/art/icon/Break.png"
+    "assets/art/orb/Break.png"
    ],
    "bounds": [
     -24.15,
@@ -8852,9 +8930,9 @@
    ]
   },
   "Cell Reformation": {
-   "category": "icon",
+   "category": "orb",
    "frames": [
-    "assets/art/icon/Cell_Reformation.png"
+    "assets/art/orb/Cell_Reformation.png"
    ],
    "bounds": [
     -27.1,
@@ -8870,9 +8948,9 @@
    ]
   },
   "Coup De Grace": {
-   "category": "icon",
+   "category": "orb",
    "frames": [
-    "assets/art/icon/Coup_De_Grace.png"
+    "assets/art/orb/Coup_De_Grace.png"
    ],
    "bounds": [
     -19.7,
@@ -8888,9 +8966,9 @@
    ]
   },
   "Cripple": {
-   "category": "icon",
+   "category": "orb",
    "frames": [
-    "assets/art/icon/Cripple.png"
+    "assets/art/orb/Cripple.png"
    ],
    "bounds": [
     -13.0,
@@ -8906,9 +8984,9 @@
    ]
   },
   "Disrupt": {
-   "category": "icon",
+   "category": "orb",
    "frames": [
-    "assets/art/icon/Disrupt.png"
+    "assets/art/orb/Disrupt.png"
    ],
    "bounds": [
     -12.6,
@@ -8924,9 +9002,9 @@
    ]
   },
   "Electro Bolt": {
-   "category": "icon",
+   "category": "orb",
    "frames": [
-    "assets/art/icon/Electro_Bolt.png"
+    "assets/art/orb/Electro_Bolt.png"
    ],
    "bounds": [
     -12.85,
@@ -8942,9 +9020,9 @@
    ]
   },
   "Flame Blast": {
-   "category": "icon",
+   "category": "orb",
    "frames": [
-    "assets/art/icon/Flame_Blast.png"
+    "assets/art/orb/Flame_Blast.png"
    ],
    "bounds": [
     -12.85,
@@ -8960,9 +9038,9 @@
    ]
   },
   "Flame Strike": {
-   "category": "icon",
+   "category": "orb",
    "frames": [
-    "assets/art/icon/Flame_Strike.png"
+    "assets/art/orb/Flame_Strike.png"
    ],
    "bounds": [
     -12.85,
@@ -8978,21 +9056,27 @@
    ]
   },
   "Frost Bolt": {
-   "category": "icon",
+   "category": "orb",
    "frames": [
-    "assets/art/icon/Frost_Bolt.png"
+    "assets/art/orb/Frost_Bolt.png"
+   ],
+   "bounds": [
+    -14.85,
+    -9.3,
+    12.45,
+    8.9
    ],
    "offsets": [
     [
-     32.5,
-     28.7
+     14.85,
+     9.3
     ]
    ]
   },
   "Healing Light": {
-   "category": "icon",
+   "category": "orb",
    "frames": [
-    "assets/art/icon/Healing_Light.png"
+    "assets/art/orb/Healing_Light.png"
    ],
    "bounds": [
     -32.5,
@@ -9008,9 +9092,9 @@
    ]
   },
   "Heroic Motivation": {
-   "category": "icon",
+   "category": "orb",
    "frames": [
-    "assets/art/icon/Heroic_Motivation.png"
+    "assets/art/orb/Heroic_Motivation.png"
    ],
    "bounds": [
     -17.7,
@@ -9026,9 +9110,9 @@
    ]
   },
   "Intervention": {
-   "category": "icon",
+   "category": "orb",
    "frames": [
-    "assets/art/icon/Intervention.png"
+    "assets/art/orb/Intervention.png"
    ],
    "bounds": [
     -16.35,
@@ -9044,9 +9128,9 @@
    ]
   },
   "Ironskin": {
-   "category": "icon",
+   "category": "orb",
    "frames": [
-    "assets/art/icon/Ironskin.png"
+    "assets/art/orb/Ironskin.png"
    ],
    "bounds": [
     -19.0,
@@ -9062,9 +9146,9 @@
    ]
   },
   "Magic Bolt": {
-   "category": "icon",
+   "category": "orb",
    "frames": [
-    "assets/art/icon/Magic_Bolt.png"
+    "assets/art/orb/Magic_Bolt.png"
    ],
    "bounds": [
     -12.85,
@@ -9080,9 +9164,9 @@
    ]
   },
   "Master Strike": {
-   "category": "icon",
+   "category": "orb",
    "frames": [
-    "assets/art/icon/Master_Strike.png"
+    "assets/art/orb/Master_Strike.png"
    ],
    "bounds": [
     -20.4,
@@ -9110,9 +9194,9 @@
    ]
   },
   "Quick Strike": {
-   "category": "icon",
+   "category": "orb",
    "frames": [
-    "assets/art/icon/Quick_Strike.png"
+    "assets/art/orb/Quick_Strike.png"
    ],
    "bounds": [
     -12.85,
@@ -9128,9 +9212,9 @@
    ]
   },
   "Rage": {
-   "category": "icon",
+   "category": "orb",
    "frames": [
-    "assets/art/icon/Rage.png"
+    "assets/art/orb/Rage.png"
    ],
    "bounds": [
     -27.1,
@@ -9146,9 +9230,9 @@
    ]
   },
   "Re-Energize": {
-   "category": "icon",
+   "category": "orb",
    "frames": [
-    "assets/art/icon/Re-Energize.png"
+    "assets/art/orb/Re-Energize.png"
    ],
    "bounds": [
     -12.85,
@@ -9164,9 +9248,9 @@
    ]
   },
   "Shatter Bolt": {
-   "category": "icon",
+   "category": "orb",
    "frames": [
-    "assets/art/icon/Shatter_Bolt.png"
+    "assets/art/orb/Shatter_Bolt.png"
    ],
    "bounds": [
     -16.15,
@@ -9182,9 +9266,9 @@
    ]
   },
   "Smash": {
-   "category": "icon",
+   "category": "orb",
    "frames": [
-    "assets/art/icon/Smash.png"
+    "assets/art/orb/Smash.png"
    ],
    "bounds": [
     -28.7,
@@ -9200,9 +9284,9 @@
    ]
   },
   "Strike": {
-   "category": "icon",
+   "category": "orb",
    "frames": [
-    "assets/art/icon/Strike.png"
+    "assets/art/orb/Strike.png"
    ],
    "bounds": [
     -6.3,
@@ -9218,9 +9302,9 @@
    ]
   },
   "Subversion": {
-   "category": "icon",
+   "category": "orb",
    "frames": [
-    "assets/art/icon/Subversion.png"
+    "assets/art/orb/Subversion.png"
    ],
    "bounds": [
     -12.0,
@@ -9236,9 +9320,9 @@
    ]
   },
   "Sunder": {
-   "category": "icon",
+   "category": "orb",
    "frames": [
-    "assets/art/icon/Sunder.png"
+    "assets/art/orb/Sunder.png"
    ],
    "bounds": [
     -12.85,
@@ -9254,9 +9338,9 @@
    ]
   },
   "Suppression": {
-   "category": "icon",
+   "category": "orb",
    "frames": [
-    "assets/art/icon/Suppression.png"
+    "assets/art/orb/Suppression.png"
    ],
    "bounds": [
     -12.35,
@@ -9272,9 +9356,9 @@
    ]
   },
   "Void": {
-   "category": "icon",
+   "category": "orb",
    "frames": [
-    "assets/art/icon/Void.png"
+    "assets/art/orb/Void.png"
    ],
    "bounds": [
     -12.85,
@@ -9290,9 +9374,9 @@
    ]
   },
   "Wound": {
-   "category": "icon",
+   "category": "orb",
    "frames": [
-    "assets/art/icon/Wound.png"
+    "assets/art/orb/Wound.png"
    ],
    "bounds": [
     -13.5,
@@ -9304,6 +9388,342 @@
     [
      13.5,
      20.75
+    ]
+   ]
+  },
+  "Amber": {
+   "category": "portrait",
+   "frames": [
+    "assets/art/portrait/Amber.png"
+   ],
+   "offsets": [
+    [
+     26.8,
+     45.5
+    ]
+   ]
+  },
+  "Argalla the Mender": {
+   "category": "portrait",
+   "frames": [
+    "assets/art/portrait/Argalla_the_Mender.png"
+   ],
+   "offsets": [
+    [
+     26.8,
+     45.5
+    ]
+   ]
+  },
+  "Baron Brixius": {
+   "category": "portrait",
+   "frames": [
+    "assets/art/portrait/Baron_Brixius.png"
+   ],
+   "offsets": [
+    [
+     26.8,
+     45.5
+    ]
+   ]
+  },
+  "Dokebi the Striker": {
+   "category": "portrait",
+   "frames": [
+    "assets/art/portrait/Dokebi_the_Striker.png"
+   ],
+   "offsets": [
+    [
+     26.8,
+     45.5
+    ]
+   ]
+  },
+  "Elite Medic": {
+   "category": "portrait",
+   "frames": [
+    "assets/art/portrait/Elite_Medic.png"
+   ],
+   "offsets": [
+    [
+     26.8,
+     45.5
+    ]
+   ]
+  },
+  "Frost Zombie": {
+   "category": "portrait",
+   "frames": [
+    "assets/art/portrait/Frost_Zombie.png"
+   ],
+   "offsets": [
+    [
+     26.8,
+     45.5
+    ]
+   ]
+  },
+  "Galiant the Paladin": {
+   "category": "portrait",
+   "frames": [
+    "assets/art/portrait/Galiant_the_Paladin.png"
+   ],
+   "offsets": [
+    [
+     26.8,
+     45.5
+    ]
+   ]
+  },
+  "Ghost Assassin": {
+   "category": "portrait",
+   "frames": [
+    "assets/art/portrait/Ghost_Assassin.png"
+   ],
+   "offsets": [
+    [
+     26.8,
+     45.5
+    ]
+   ]
+  },
+  "Ghost Samurai": {
+   "category": "portrait",
+   "frames": [
+    "assets/art/portrait/Ghost_Samurai.png"
+   ],
+   "offsets": [
+    [
+     26.8,
+     45.5
+    ]
+   ]
+  },
+  "Information": {
+   "category": "portrait",
+   "frames": [
+    "assets/art/portrait/Information.png"
+   ],
+   "offsets": [
+    [
+     26.8,
+     45.5
+    ]
+   ]
+  },
+  "Louis the Blind": {
+   "category": "portrait",
+   "frames": [
+    "assets/art/portrait/Louis_the_Blind.png"
+   ],
+   "offsets": [
+    [
+     26.8,
+     45.5
+    ]
+   ]
+  },
+  "Ludwig": {
+   "category": "portrait",
+   "frames": [
+    "assets/art/portrait/Ludwig.png"
+   ],
+   "offsets": [
+    [
+     26.8,
+     45.5
+    ]
+   ]
+  },
+  "Rockstar": {
+   "category": "portrait",
+   "frames": [
+    "assets/art/portrait/Rockstar.png"
+   ],
+   "offsets": [
+    [
+     26.8,
+     45.5
+    ]
+   ]
+  },
+  "Scarlett": {
+   "category": "portrait",
+   "frames": [
+    "assets/art/portrait/Scarlett.png"
+   ],
+   "offsets": [
+    [
+     26.8,
+     45.5
+    ]
+   ]
+  },
+  "Sensei Ishiguro": {
+   "category": "portrait",
+   "frames": [
+    "assets/art/portrait/Sensei_Ishiguro.png"
+   ],
+   "offsets": [
+    [
+     26.8,
+     45.5
+    ]
+   ]
+  },
+  "Shaman of Blades": {
+   "category": "portrait",
+   "frames": [
+    "assets/art/portrait/Shaman_of_Blades.png"
+   ],
+   "offsets": [
+    [
+     26.8,
+     45.5
+    ]
+   ]
+  },
+  "Shaman of Death": {
+   "category": "portrait",
+   "frames": [
+    "assets/art/portrait/Shaman_of_Death.png"
+   ],
+   "offsets": [
+    [
+     26.8,
+     45.5
+    ]
+   ]
+  },
+  "Sonny": {
+   "category": "portrait",
+   "frames": [
+    "assets/art/portrait/Sonny.png"
+   ],
+   "offsets": [
+    [
+     26.8,
+     45.5
+    ]
+   ]
+  },
+  "Vendetta the Breaker": {
+   "category": "portrait",
+   "frames": [
+    "assets/art/portrait/Vendetta_the_Breaker.png"
+   ],
+   "offsets": [
+    [
+     26.8,
+     45.5
+    ]
+   ]
+  },
+  "Veradux": {
+   "category": "portrait",
+   "frames": [
+    "assets/art/portrait/Veradux.png"
+   ],
+   "offsets": [
+    [
+     26.8,
+     45.5
+    ]
+   ]
+  },
+  "Wolfgang": {
+   "category": "portrait",
+   "frames": [
+    "assets/art/portrait/Wolfgang.png"
+   ],
+   "offsets": [
+    [
+     26.8,
+     45.5
+    ]
+   ]
+  },
+  "ZPCI Captain": {
+   "category": "portrait",
+   "frames": [
+    "assets/art/portrait/ZPCI_Captain.png"
+   ],
+   "offsets": [
+    [
+     26.8,
+     45.5
+    ]
+   ]
+  },
+  "ZPCI Elite": {
+   "category": "portrait",
+   "frames": [
+    "assets/art/portrait/ZPCI_Elite.png"
+   ],
+   "offsets": [
+    [
+     26.8,
+     45.5
+    ]
+   ]
+  },
+  "ZPCI Hunter": {
+   "category": "portrait",
+   "frames": [
+    "assets/art/portrait/ZPCI_Hunter.png"
+   ],
+   "offsets": [
+    [
+     26.8,
+     45.5
+    ]
+   ]
+  },
+  "ZPCI Medic": {
+   "category": "portrait",
+   "frames": [
+    "assets/art/portrait/ZPCI_Medic.png"
+   ],
+   "offsets": [
+    [
+     26.8,
+     45.5
+    ]
+   ]
+  },
+  "ZPCI Sniper": {
+   "category": "portrait",
+   "frames": [
+    "assets/art/portrait/ZPCI_Sniper.png"
+   ],
+   "offsets": [
+    [
+     26.8,
+     45.5
+    ]
+   ]
+  },
+  "Zombie Ambassador": {
+   "category": "portrait",
+   "frames": [
+    "assets/art/portrait/Zombie_Ambassador.png"
+   ],
+   "offsets": [
+    [
+     26.8,
+     45.5
+    ]
+   ]
+  },
+  "mainPlayer": {
+   "category": "portrait",
+   "frames": [
+    "assets/art/portrait/mainPlayer.png"
+   ],
+   "offsets": [
+    [
+     26.8,
+     45.5
     ]
    ]
   },

@@ -1478,6 +1478,271 @@
    53
   ]
  ],
+ "selector": {
+  "character": 1606,
+  "orb": 866,
+  "scale_x": 1.038315,
+  "scale_y": 1.038315,
+  "slots": [
+   {
+    "slot": 0,
+    "x": 0.0,
+    "y": -49.2,
+    "scale_x": 1.0,
+    "scale_y": 1.0
+   },
+   {
+    "slot": 1,
+    "x": 34.8,
+    "y": -34.9,
+    "scale_x": 0.999969,
+    "scale_y": 0.999969
+   },
+   {
+    "slot": 2,
+    "x": 49.5,
+    "y": 0.0,
+    "scale_x": 1.0,
+    "scale_y": 1.0
+   },
+   {
+    "slot": 3,
+    "x": 35.0,
+    "y": 35.3,
+    "scale_x": 0.999969,
+    "scale_y": 0.999969
+   },
+   {
+    "slot": 4,
+    "x": 0.0,
+    "y": 49.8,
+    "scale_x": 1.0,
+    "scale_y": 1.0
+   },
+   {
+    "slot": 5,
+    "x": -35.2,
+    "y": 35.1,
+    "scale_x": 0.999969,
+    "scale_y": 0.999969
+   },
+   {
+    "slot": 6,
+    "x": -49.5,
+    "y": 0.0,
+    "scale_x": 1.0,
+    "scale_y": 1.0
+   },
+   {
+    "slot": 7,
+    "x": -35.0,
+    "y": -34.7,
+    "scale_x": 0.999969,
+    "scale_y": 0.999969
+   }
+  ],
+  "width": 74.45,
+  "height": 60.1,
+  "origin_x": 32.5,
+  "origin_y": 28.7,
+  "parts": {
+   "ball": {
+    "character": 828,
+    "depth": 1,
+    "x": 0.0,
+    "y": 0.0,
+    "scale_x": 1.0,
+    "scale_y": 1.0,
+    "width": 23.0,
+    "height": 23.0,
+    "origin_x": 11.5,
+    "origin_y": 11.5
+   },
+   "filter": {
+    "character": 826,
+    "depth": 9,
+    "x": 0.0,
+    "y": 0.0,
+    "scale_x": 1.0,
+    "scale_y": 1.0,
+    "width": 23.0,
+    "height": 23.0,
+    "origin_x": 11.5,
+    "origin_y": 11.5
+   },
+   "glass": {
+    "character": 830,
+    "depth": 8,
+    "x": 0.0,
+    "y": 0.0,
+    "scale_x": 1.0,
+    "scale_y": 1.0,
+    "width": 23.75,
+    "height": 23.75,
+    "origin_x": 11.65,
+    "origin_y": 11.75
+   },
+   "mask": {
+    "character": 824,
+    "depth": 3,
+    "x": 0.0,
+    "y": 0.0,
+    "scale_x": 1.0,
+    "scale_y": 1.0,
+    "width": 23.0,
+    "height": 23.0,
+    "origin_x": 11.5,
+    "origin_y": 11.5
+   }
+  },
+  "icons": {
+   "Empty": 828,
+   "Frost Bolt": 829,
+   "REGEN": 832,
+   "Healing Light": 833,
+   "Strike": 834,
+   "Blessing of Light": 835,
+   "Smash": 836,
+   "Wound": 837,
+   "Break": 838,
+   "Disrupt": 839,
+   "Ironskin": 840,
+   "Cell Reformation": 841,
+   "Rage": 842,
+   "Heroic Motivation": 843,
+   "Block": 844,
+   "Cripple": 845,
+   "Blood Strike": 846,
+   "Blood Focus": 847,
+   "Master Strike": 848,
+   "Coup De Grace": 849,
+   "Flame Strike": 850,
+   "Sunder": 851,
+   "SOLIDITY": 852,
+   "ENDURANCE": 853,
+   "BRUTALITY": 854,
+   "REGENERATION": 855,
+   "Suppression": 856,
+   "Quick Strike": 857,
+   "Magic Bolt": 858,
+   "Electro Bolt": 859,
+   "Intervention": 860,
+   "Flame Blast": 861,
+   "Shatter Bolt": 862,
+   "Void": 863,
+   "Re-Energize": 864,
+   "Subversion": 865
+  }
+ },
+ "speech": {
+  "name": "combatScript",
+  "depth": 558,
+  "character": 1640,
+  "x": 473.05,
+  "y": 460.55,
+  "scale_x": 1.0,
+  "scale_y": 1.0,
+  "width": 320.05,
+  "height": 143.1,
+  "origin_x": 14.05,
+  "origin_y": 42.0,
+  "fields": [
+   {
+    "name": "@4",
+    "depth": 4,
+    "x": 73.023,
+    "y": 19.573,
+    "width": 227.716,
+    "height": 70.623,
+    "size": 11.0,
+    "align": 0,
+    "leading": 2.0,
+    "font": "_sans",
+    "device": true,
+    "color": [
+     0,
+     0,
+     0,
+     255
+    ]
+   },
+   {
+    "name": "@5",
+    "depth": 5,
+    "x": 73.0,
+    "y": 3.4,
+    "width": 226.7,
+    "height": 19.05,
+    "size": 12.0,
+    "align": 0,
+    "leading": 2.0,
+    "font": "_sans",
+    "device": true,
+    "color": [
+     102,
+     102,
+     102,
+     255
+    ]
+   }
+  ],
+  "parts": [
+   {
+    "name": "@1",
+    "depth": 1,
+    "character": 1633,
+    "x": 0.0,
+    "y": 0.0,
+    "scale_x": 1.0,
+    "scale_y": 1.0,
+    "width": 306.5,
+    "height": 95.0,
+    "origin_x": 0.5,
+    "origin_y": 0.5
+   },
+   {
+    "name": "@3",
+    "depth": 3,
+    "character": 963,
+    "x": 8.6,
+    "y": 7.9,
+    "scale_x": 0.083374,
+    "scale_y": 0.175049,
+    "width": 719.7,
+    "height": 457.0,
+    "origin_x": -0.45,
+    "origin_y": -0.5
+   },
+   {
+    "name": "inner2",
+    "depth": 6,
+    "character": 1312,
+    "x": 38.65,
+    "y": 48.2,
+    "scale_x": 1.966919,
+    "scale_y": 1.981918,
+    "width": 55.35,
+    "height": 72.2,
+    "origin_x": 26.8,
+    "origin_y": 45.5,
+    "frames": 125
+   },
+   {
+    "name": "@8",
+    "depth": 8,
+    "character": 1639,
+    "x": 33.0,
+    "y": -48.65,
+    "scale_x": 1.0,
+    "scale_y": 1.0,
+    "width": 188.15,
+    "height": 14.45,
+    "origin_x": -21.45,
+    "origin_y": -9.35,
+    "frames": 45
+   }
+  ]
+ },
  "talents": {
   "4": {
    "x": 138.8,

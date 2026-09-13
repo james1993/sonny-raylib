@@ -1,0 +1,34 @@
+[
+ {
+  "name": "Physical",
+  "colour": 12845056
+ },
+ {
+  "name": "Magic",
+  "colour": 16487880
+ },
+ {
+  "name": "Ice",
+  "colour": 6867956
+ },
+ {
+  "name": "Fire",
+  "colour": 16737792
+ },
+ {
+  "name": "Lightning",
+  "colour": 16763904
+ },
+ {
+  "name": "Earth",
+  "colour": 8743751
+ },
+ {
+  "name": "Shadow",
+  "colour": 6704512
+ },
+ {
+  "name": "Poison",
+  "colour": 5276489
+ }
+]

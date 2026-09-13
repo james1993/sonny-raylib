@@ -130,16 +130,14 @@ static void draw_doll(const Game *g, int32_t slot)
 #define BAR_CENTER_Y 508.0f
 #define BAR_SLOT     46.0f
 
-static Rectangle ability_rect(int i)
-{
-    float total = ABILITY_SLOTS * BAR_SLOT;
-    return (Rectangle){BAR_CENTER_X - total / 2 + i * BAR_SLOT,
-                       BAR_CENTER_Y - BAR_SLOT / 2, BAR_SLOT - 4,
-                       BAR_SLOT - 4};
-}
-
 /* The gutter Flash leaves inside every text field before the text starts. */
 #define TEXT_GUTTER 2.0f
+
+/* The turn indicator's clickable middle, which ends the turn. */
+#define PASS_BUTTON_RADIUS 30.0f
+
+/* Where the speech box goes when it is the left team talking. */
+#define SPEECH_LEFT_X 21.8f
 
 /* ------------------------------------------------------------------ chrome */
 
@@ -168,6 +166,9 @@ static int chrome_is_runtime(const char *name)
         /* The floating combat text and the speech box, both empty until
            something happens. */
         "KrinCombatText", "combatScript",
+        /* The chosen move's orb, which sits in the turn indicator once the
+           player has picked something and is hidden until then. */
+        "krinToMove",
     };
     for (size_t i = 0; i < sizeof(hidden) / sizeof(hidden[0]); i++)
         if (strcmp(name, hidden[i]) == 0)
@@ -355,6 +356,133 @@ static void draw_unit_bar(const Game *g, int32_t slot)
                    TextFormat("%d", u->FOCUSU));
 }
 
+/* -------------------------------------------------------------------- ring */
+
+/* The ability ring. The original does not put the player's moves on a bar
+   along the bottom: hovering a unit parks a ring of eight orbs around it, one
+   per slot of the loadout, and clicking an orb uses that ability on that unit.
+   The ring's own scale and its eight offsets come straight out of the SWF. */
+static Vector2 ring_slot_pos(const RingSlot *slot, Vector2 centre)
+{
+    return (Vector2){centre.x + slot->x * SONNY_RING_SCALE,
+                     centre.y + slot->y * SONNY_RING_SCALE};
+}
+
+/* An orb's circle, for hit-testing. */
+static float orb_radius(void)
+{
+    const OrbPart *ball = orb_part("ball");
+    return ball ? ball->width * SONNY_RING_SCALE / 2.0f : 12.0f;
+}
+
+/* Whether the player could use `a` on `target` right now, by the original's
+   own checks in addMoveForPlayer: enough focus, enough health, off cooldown,
+   and a move this kind of target can take at all. */
+static int move_usable(const Game *g, const AbilityDef *a, int32_t target)
+{
+    const Battle *b = &g->battle;
+    const Unit *self = &b->units[PLAYER_SLOT];
+    const Unit *t = &b->units[target];
+    if (!a || a->id == 0 || !t->active)
+        return 0;
+    if (self->FOCUSN < a->focus_cost)
+        return 0;
+    if (self->LIFEN <= a->health_cost
+                       + (int32_t)floorf(self->LIFEU * a->health_cost_pct + 0.5f))
+        return 0;
+    int enemy = t->teamSide != self->teamSide;
+    if (enemy)
+        return a->target_enemy != 0;
+    return (target == PLAYER_SLOT) ? a->target_self != 0 : a->target_ally != 0;
+}
+
+/* One piece of the orb, in the ring's coordinates around `centre`. */
+static void draw_orb_part(const OrbPart *part, Vector2 centre, Color tint)
+{
+    if (!part)
+        return;
+    const Texture2D *tex = asset_texture(TextFormat("#%d", part->character), 1);
+    if (!tex)
+        return;
+    float sx = part->scale_x * SONNY_RING_SCALE;
+    float sy = part->scale_y * SONNY_RING_SCALE;
+    Rectangle dst = {centre.x + (part->x - part->origin_x * part->scale_x)
+                     * SONNY_RING_SCALE,
+                     centre.y + (part->y - part->origin_y * part->scale_y)
+                     * SONNY_RING_SCALE,
+                     part->width * sx, part->height * sy};
+    DrawTexturePro(*tex, (Rectangle){0, 0, (float)tex->width,
+                                     (float)tex->height},
+                   dst, (Vector2){0, 0}, 0.0f, tint);
+}
+
+/* One orb: the ball, the ability's icon over it, the glass highlight, and --
+   only when the move cannot be used -- the black disc the original shows. */
+static void draw_orb(const AbilityDef *a, Vector2 centre, int usable)
+{
+    draw_orb_part(orb_part("ball"), centre, WHITE);
+    if (a && a->icon && a->icon[0]) {
+        const Texture2D *icon = asset_texture(a->icon, 1);
+        if (icon) {
+            float scale = SONNY_RING_SCALE;
+            DrawTextureEx(*icon, (Vector2){centre.x - icon->width * scale / 2,
+                                           centre.y - icon->height * scale / 2},
+                          0.0f, scale, WHITE);
+        }
+    }
+    draw_orb_part(orb_part("glass"), centre, WHITE);
+    if (!usable)
+        draw_orb_part(orb_part("filter"), centre, WHITE);
+}
+
+static void draw_ring(const Game *g)
+{
+    if (g->hovered_unit <= 0 || !player_turn(g) || g->queued)
+        return;
+    Vector2 centre = unit_stage_pos(&g->battle, g->hovered_unit);
+    for (int i = 0; i < SONNY_RING_SLOT_COUNT; i++) {
+        const RingSlot *slot = &SONNY_RING_SLOTS[i];
+        const AbilityDef *a = ability_by_id(g->ability_ids[slot->slot]);
+        /* A slot the player has left empty shows nothing at all: the original
+           hides the orb's button and marks the slot zero. */
+        if (!a || a->id == 0)
+            continue;
+        draw_orb(a, ring_slot_pos(slot, centre),
+                 move_usable(g, a, g->hovered_unit));
+    }
+}
+
+/* The reticle the original parks on every unit and shows under the pointer:
+   a ring in the target's own colour, with its name and level. */
+static void draw_reticle(const Game *g)
+{
+    if (g->hovered_unit <= 0)
+        return;
+    const Unit *u = &g->battle.units[g->hovered_unit];
+    const StageChrome *art = stage_chrome("KrinSelector1");
+    Vector2 at = unit_stage_pos(&g->battle, g->hovered_unit);
+    int enemy = u->teamSide != g->battle.units[PLAYER_SLOT].teamSide;
+    Color tint = enemy ? (Color){255, 90, 90, 255} : (Color){120, 200, 255, 255};
+
+    if (art) {
+        const Texture2D *tex = asset_texture(TextFormat("#%d", art->character),
+                                             1);
+        if (tex) {
+            Rectangle dst = placed_rect(at.x, at.y, art->scale_x, art->scale_y,
+                                        art->width, art->height,
+                                        art->origin_x, art->origin_y);
+            DrawTexturePro(*tex, (Rectangle){0, 0, (float)tex->width,
+                                             (float)tex->height},
+                           dst, (Vector2){0, 0}, 0.0f, tint);
+        }
+    }
+    const char *level = TextFormat("Lvl %d", u->plevel);
+    ui_sans_text(level, at.x - ui_sans_text_width(level, 10) / 2, at.y - 6,
+                 10, tint);
+    ui_sans_text(u->name, at.x - ui_sans_text_width(u->name, 10) / 2,
+                 at.y + 28, 10, tint);
+}
+
 static void draw_unit(const Game *g, int32_t slot)
 {
     const Battle *b = &g->battle;
@@ -392,58 +520,6 @@ static void draw_unit(const Game *g, int32_t slot)
     if (u->STUN > 0)
         ui_text("stunned", (int)r.x + (int)r.width - 48, (int)r.y + 68, 10,
                  (Color){225, 200, 120, 255});
-}
-
-static void draw_ability_bar(const Game *g)
-{
-    for (int i = 0; i < ABILITY_SLOTS; i++) {
-        Rectangle slot = ability_rect(i);
-        const AbilityDef *a = ability_by_id(g->ability_ids[i]);
-        int usable = a && g->ability_ids[i] != 0;
-        int affordable = usable
-            && g->battle.units[PLAYER_SLOT].FOCUSN >= a->focus_cost;
-
-        DrawRectangleRec(slot, (Color){44, 48, 58, 255});
-        if (!usable) {
-            DrawRectangleLinesEx(slot, 1.0f, (Color){80, 84, 96, 255});
-            continue;
-        }
-
-        Color text = affordable ? RAYWHITE : (Color){130, 100, 100, 255};
-        Color tint = affordable ? WHITE : (Color){150, 120, 120, 255};
-        /* The real icon, by the name the ability itself carries. */
-        Rectangle inner = {slot.x + 2, slot.y + 2, slot.width - 4,
-                           slot.height - 4};
-        if (!asset_draw_fit(a->icon, 1, inner, tint)) {
-            const char *label = (a->name && a->name[0]) ? a->name : a->icon;
-            ui_text(label, (int)slot.x + 4, (int)slot.y + 18, 10, text);
-        }
-        DrawRectangleLinesEx(slot, g->selected == i ? 2.0f : 1.0f,
-                             g->selected == i ? (Color){235, 200, 90, 255}
-                                              : (Color){80, 84, 96, 255});
-        ui_text(TextFormat("%d", i + 1), (int)slot.x + 3, (int)slot.y + 2, 10,
-                 (Color){235, 235, 245, 255});
-        ui_text(TextFormat("%d", a->focus_cost),
-                 (int)(slot.x + slot.width - 12), (int)slot.y + 2, 10,
-                 (Color){150, 200, 255, 255});
-    }
-}
-
-static void draw_tooltip(const Game *g)
-{
-    if (g->selected < 0)
-        return;
-    const AbilityDef *a = ability_by_id(g->ability_ids[g->selected]);
-    if (!a || !a->tooltip[0])
-        return;
-
-    Rectangle box = {22, 404, STAGE_W - 44, 40};
-    DrawRectangleRec(box, (Color){28, 30, 38, 240});
-    DrawRectangleLinesEx(box, 1.0f, (Color){80, 84, 96, 255});
-    ui_text((a->name && a->name[0]) ? a->name : a->icon, (int)box.x + 6,
-             (int)box.y + 5, 10, (Color){235, 200, 90, 255});
-    ui_text(a->tooltip, (int)box.x + 6, (int)box.y + 20, 10,
-             (Color){200, 205, 215, 255});
 }
 
 /* The battle backdrop. The battlefield has two layers and each is a container
@@ -561,51 +637,113 @@ static int speech_update(Game *g)
     return 1;
 }
 
+/* One text field, laid out as the SWF lays it out: its own box, alignment,
+   leading, size, colour and face, relative to the clip it belongs to. */
+static void draw_field(const TextField *f, Vector2 clip, const char *text)
+{
+    if (!f || !text || !text[0])
+        return;
+    float width = f->device ? ui_sans_text_width(text, f->size)
+                            : ui_text_width(text, f->size);
+    float x = clip.x + f->x;
+    if (f->align == 1)
+        x += f->width - width;
+    else if (f->align == 2)
+        x += (f->width - width) / 2.0f;
+    float y = clip.y + f->y + TEXT_GUTTER + f->leading;
+    Color c = {f->r, f->g, f->b, 255};
+    if (f->device)
+        ui_sans_text(text, x, y, f->size, c);
+    else
+        ui_text(text, x, y, f->size, c);
+}
+
+/* The same, wrapped to the field's width and its own line height. */
+static void draw_field_wrapped(const TextField *f, Vector2 clip,
+                               const char *text)
+{
+    if (!f || !text || !text[0])
+        return;
+    float line_height = f->size + f->leading;
+    int rows = (int)(f->height / line_height);
+    char line[160];
+    int start = 0, count = 0, row = 0;
+    while (text[start] && row < rows) {
+        int fit = 0, space = -1;
+        for (int i = 0; text[start + i]; i++) {
+            if (text[start + i] == ' ')
+                space = i;
+            line[i] = text[start + i];
+            line[i + 1] = 0;
+            if (ui_sans_text_width(line, f->size) > f->width) {
+                fit = (space > 0) ? space : i;
+                break;
+            }
+            fit = i + 1;
+        }
+        count = fit;
+        if (count > (int)sizeof(line) - 1)
+            count = (int)sizeof(line) - 1;
+        memcpy(line, text + start, count);
+        line[count] = 0;
+        TextField row_field = *f;
+        row_field.y = f->y + row * line_height;
+        draw_field(&row_field, clip, line);
+        start += count;
+        while (text[start] == ' ')
+            start++;
+        row++;
+    }
+}
+
+/* What a character is saying. The original places one box and slides it to
+   whichever side the speaker is on, so the art, the "<name> says:" line and
+   the line itself all come from that clip. */
 static void draw_speech(const Game *g)
 {
     if (!g->speech)
         return;
     const Unit *speaker = &g->battle.units[g->speech->speaker];
+    const StageChrome *box = stage_chrome("combatScript");
+    if (!box)
+        return;
 
-    /* The original parks the box on the speaker's side of the screen, at
-       (21.8, 460.7) for the left team and (473.3, 460.7) for the right. Its
-       art rises from that origin -- the ability bar sits at y 508, so a box
-       drawn downward from 460 would cover it. */
-    float x = (speaker->teamSide == 2) ? 473.3f : 21.8f;
-    float y = 460.7f;
-    float height = 52;
-    Rectangle box = {x, y - height, 305, height};
+    /* Placed on the right; the game moves it left when the left team speaks.
+       Mirroring its own placement about the middle of the stage is what puts
+       it in the other bottom panel. */
+    Vector2 at = {box->x, box->y};
+    if (speaker->teamSide != 2)
+        at.x = SPEECH_LEFT_X;
 
-    DrawRectangleRec(box, (Color){16, 18, 24, 235});
-    DrawRectangleLinesEx(box, 1.0f, (Color){120, 124, 140, 255});
-    ui_text(speaker->name, (int)box.x + 8, (int)box.y + 6, 10,
-             (Color){235, 200, 90, 255});
-
-    /* Wrap the line to the box. */
-    const char *text = g->speech->say;
-    char line[96];
-    int start = 0, last_space = -1, row = 0;
-    for (int i = 0; text[i] && row < 2; i++) {
-        int len = i - start + 1;
-        if (text[i] == ' ')
-            last_space = i;
-        if (len < 52 && text[i + 1])
+    for (int i = 0; i < SONNY_CLIP_PART_COUNT; i++) {
+        const ClipPart *part = &SONNY_CLIP_PARTS[i];
+        if (strcmp(part->owner, "combatScript") != 0 || part->width <= 0)
             continue;
-        int end = (text[i + 1] && last_space > start) ? last_space : i + 1;
-        int count = end - start;
-        if (count > (int)sizeof(line) - 1)
-            count = (int)sizeof(line) - 1;
-        memcpy(line, text + start, count);
-        line[count] = 0;
-        ui_text(line, (int)box.x + 8, (int)box.y + 20 + row * 11, 10,
-                 (Color){215, 220, 230, 255});
-        row++;
-        if (row >= 2)
-            break;
-        start = (end == last_space) ? end + 1 : end;
-        last_space = -1;
-        i = start - 1;
+        /* The "press space to skip" label belongs to the cutscenes, not to a
+           line spoken mid-fight. */
+        if (strcmp(part->name, "@8") == 0)
+            continue;
+        /* A piece the game points at a frame of by name: the portrait, whose
+           frames are labelled with who is speaking. */
+        const char *name = part->frames ? speaker->name
+                                        : TextFormat("#%d", part->character);
+        const Texture2D *tex = asset_texture(name, 1);
+        if (!tex)
+            continue;
+        Rectangle dst = placed_rect(at.x + part->x, at.y + part->y,
+                                    part->scale_x, part->scale_y,
+                                    part->width, part->height,
+                                    part->origin_x, part->origin_y);
+        DrawTexturePro(*tex, (Rectangle){0, 0, (float)tex->width,
+                                         (float)tex->height},
+                       dst, (Vector2){0, 0}, 0.0f, WHITE);
     }
+
+    /* The clip stacks the two fields body-first, and the original fills them
+       with the line and the speaker's name -- combatText and
+       combatTextName. */
+    draw_field_wrapped(text_field("combatScript", 0), at, g->speech->say);
+    draw_field(text_field("combatScript", 1), at, speaker->name);
 }
 
 static void draw_battle(const Game *g)
@@ -639,31 +777,25 @@ static void draw_battle(const Game *g)
     for (int32_t slot = 1; slot < SONNY_SLOTS; slot++)
         draw_unit(g, slot);
 
+    draw_reticle(g);
+    draw_ring(g);
     draw_numbers(g);
-    draw_ability_bar(g);
-    draw_tooltip(g);
     draw_speech(g);
-
-    for (int32_t i = 0; i < g->log_count; i++)
-        ui_text(g->log[i], 200, 320 + i * 13, 10,
-                 (Color){160, 165, 175, 255});
-
-    if (player_turn(g)) {
-        const char *hint = (g->selected < 0)
-            ? "pick an ability (1-8 or click), then click a target"
-            : "click a target";
-        ui_text(hint, 22, STAGE_H - 32, 10, (Color){235, 200, 90, 255});
-    }
 }
 
 /* ------------------------------------------------------------------- input */
 
+/* Which unit the pointer is over. The original's hit area is the reticle
+   parked on the unit itself, not its bar, so the test is that ring. */
 static int32_t unit_at(const Game *g, Vector2 p)
 {
+    const StageChrome *art = stage_chrome("KrinSelector1");
+    float radius = art ? art->height * art->scale_y / 3.0f : 30.0f;
     for (int32_t slot = 1; slot < SONNY_SLOTS; slot++) {
-        if (g->battle.units[slot].LIFEU == 0)
+        if (!g->battle.units[slot].active)
             continue;
-        if (CheckCollisionPointRec(p, unit_rect(&g->battle, slot)))
+        if (CheckCollisionPointCircle(p, unit_stage_pos(&g->battle, slot),
+                                      radius))
             return slot;
     }
     return -1;
@@ -770,37 +902,39 @@ static void handle_input(Game *g)
     if (!player_turn(g) || g->queued)
         return;
 
-    for (int i = 0; i < ABILITY_SLOTS; i++)
-        if (IsKeyPressed(KEY_ONE + i) && g->ability_ids[i] != 0)
-            g->selected = i;
-
-    if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
-        for (int i = 0; i < ABILITY_SLOTS; i++) {
-            if (CheckCollisionPointRec(stage, ability_rect(i))
-                && g->ability_ids[i] != 0) {
-                g->selected = i;
+    if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && g->hovered_unit > 0) {
+        Vector2 centre = unit_stage_pos(b, g->hovered_unit);
+        float radius = orb_radius();
+        for (int i = 0; i < SONNY_RING_SLOT_COUNT; i++) {
+            const RingSlot *slot = &SONNY_RING_SLOTS[i];
+            const AbilityDef *a = ability_by_id(g->ability_ids[slot->slot]);
+            if (!a || a->id == 0)
+                continue;
+            if (!CheckCollisionPointCircle(stage, ring_slot_pos(slot, centre),
+                                           radius))
+                continue;
+            if (!move_usable(g, a, g->hovered_unit)) {
+                /* The original says why, rather than doing nothing. */
+                game_notice(g, "You cannot use this move on that target.");
                 return;
             }
-        }
-        if (g->selected >= 0 && g->hovered_unit > 0) {
-            const AbilityDef *a = ability_by_id(g->ability_ids[g->selected]);
-            Unit *target = &b->units[g->hovered_unit];
-            int enemy = target->teamSide != b->units[PLAYER_SLOT].teamSide;
-
-            /* Respect the ability's own targeting flags. */
-            int ok = target->active
-                  && ((enemy && a->target_enemy)
-                      || (!enemy && (a->target_ally
-                                     || (a->target_self
-                                         && g->hovered_unit == PLAYER_SLOT))));
-            if (ok && b->units[PLAYER_SLOT].FOCUSN >= a->focus_cost) {
-                battle_queue(b, PLAYER_SLOT, g->hovered_unit,
-                             g->ability_ids[g->selected], 0);
-                g->queued = 1;
-                g->selected = -1;
-            }
+            battle_queue(b, PLAYER_SLOT, g->hovered_unit, a->id, 0);
+            g->queued = 1;
+            return;
         }
     }
+
+    /* The turn indicator in the middle of the bottom panel: clicking it ends
+       the turn with the null move, which is how the original passes. */
+    const StageChrome *pass = stage_chrome("krinToMove2");
+    if (pass && IsMouseButtonPressed(MOUSE_BUTTON_LEFT)
+        && CheckCollisionPointCircle(stage, (Vector2){pass->x, pass->y},
+                                     PASS_BUTTON_RADIUS)) {
+        battle_queue(b, PLAYER_SLOT, PLAYER_SLOT, 0, 0);
+        g->queued = 1;
+        return;
+    }
+
     if (IsKeyPressed(KEY_SPACE)) {   /* pass */
         battle_queue(b, PLAYER_SLOT, PLAYER_SLOT, 0, 0);
         g->queued = 1;

@@ -132,6 +132,65 @@ typedef struct {
     unsigned char r, g, b;
 } BarField;
 
+/* One of the eight orbs in the ability ring, in the ring's own coordinates.
+   The player does not choose a move from a bar: hovering a unit brings up this
+   ring around it, one orb per slot of the loadout, and clicking an orb uses
+   that ability on that unit. */
+typedef struct {
+    int32_t slot;
+    float   x, y;
+    float   scale_x, scale_y;
+} RingSlot;
+
+/* A piece of the orb. It is built rather than drawn whole, because the clip's
+   labelled frames have the black "cannot use this" disc in front of
+   everything: a ball, the icon over it, a glass highlight, and that disc only
+   when the ability is unusable. The icon is asset "<icon name>" in the orb
+   category; `art` here is the shared piece, asset "#<character>". */
+typedef struct {
+    const char *role;      /* ball, mask, glass, filter */
+    int32_t     character;
+    int32_t     depth;
+    float       x, y;
+    float       scale_x, scale_y;
+    float       width, height;
+    float       origin_x, origin_y;
+} OrbPart;
+
+/* One drawable piece of a clip, in that clip's own coordinates. A clip that
+   carries text fields cannot be exported whole -- the decompiler bakes the
+   fields' design-time copy into the picture -- so its graphics are taken
+   apart and the text drawn over them. `frames` is non-zero for a piece the
+   game points at a frame of by name, like the speech box's portrait: its art
+   is then the asset of that name rather than "#<character>". */
+typedef struct {
+    const char *owner;
+    const char *name;
+    int32_t     character;
+    int32_t     depth;
+    int32_t     frames;
+    float       x, y;
+    float       scale_x, scale_y;
+    float       width, height;
+    float       origin_x, origin_y;
+} ClipPart;
+
+/* One of a clip's text fields, in that clip's own coordinates, straight off
+   the DefineEditText tag: its box, the size and colour it is set in, its
+   alignment (0 left, 1 right, 2 centre), the leading the player puts above
+   the first line, and whether it uses one of Flash's device fonts. */
+typedef struct {
+    const char *owner;     /* which clip it belongs to */
+    const char *name;      /* the instance name inside that clip */
+    float       x, y;
+    float       width, height;
+    float       size;
+    float       leading;
+    int32_t     align;
+    int32_t     device;
+    unsigned char r, g, b;
+} TextField;
+
 /* The two backdrop layers, which are containers rather than pictures: the
    game points each at the zone's own art on load, the sky with
    gotoAndStop(Krin.SkyBG) and the ground with gotoAndStop(Krin.ZoneBG). */
@@ -163,6 +222,23 @@ const MenuSlot *menu_slot(const char *name);
 extern const TalentSlot SONNY_TALENT_SLOTS[];
 extern const int SONNY_TALENT_SLOT_COUNT;
 const TalentSlot *talent_slot(int32_t node);
+
+extern const ClipPart SONNY_CLIP_PARTS[];
+extern const int SONNY_CLIP_PART_COUNT;
+
+extern const TextField SONNY_TEXT_FIELDS[];
+extern const int SONNY_TEXT_FIELD_COUNT;
+/* The `index`-th field of `owner`, in the order the clip stacks them. */
+const TextField *text_field(const char *owner, int32_t index);
+
+extern const RingSlot SONNY_RING_SLOTS[];
+extern const int SONNY_RING_SLOT_COUNT;
+/* The ring's own scale, which the orbs' offsets are in. */
+extern const float SONNY_RING_SCALE;
+
+extern const OrbPart SONNY_ORB_PARTS[];
+extern const int SONNY_ORB_PART_COUNT;
+const OrbPart *orb_part(const char *role);
 
 extern const BarPart SONNY_BAR_PARTS[];
 extern const int SONNY_BAR_PART_COUNT;

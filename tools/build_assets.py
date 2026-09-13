@@ -140,7 +140,7 @@ def collect_names(data_dir):
 
     want = {'icon': set(), 'effect': set(), 'background': set(),
             'doll': set(), 'buff': set(), 'ui': set(), 'sound': set(),
-            'chrome': set()}
+            'chrome': set(), 'orb': set(), 'portrait': set()}
     speculative = set()
     # Expected to have no art: enemy ability icons (never on the player's
     # bar), permanent passive-talent buffs, and the doll cross-product below,
@@ -149,6 +149,12 @@ def collect_names(data_dir):
     for a in abilities:
         if a.get('icon'):
             want['icon'].add(a['icon'])
+            # The battle screen does not show a bare icon: it shows the whole
+            # orb, which is one clip whose frames are labelled by icon name.
+            # The placeholder move is the one with no picture at all.
+            want['orb'].add(a['icon'])
+            if a['icon'] == 'None':
+                speculative.add(a['icon'])
             if a['id'] >= 500:
                 speculative.add(a['icon'])
         # `model` names the projectile or impact graphic. `anim` ("Attack",
@@ -253,6 +259,12 @@ def collect_names(data_dir):
             want['chrome'].add('#%d' % entry['character'])
     # The bar widget is drawn from its pieces rather than as a whole, because
     # its own frame has the design-time name and numbers baked into it.
+    # The speech box is drawn from its pieces for the same reason the bar is:
+    # its own frame has the design-time copy baked into it. The portrait is
+    # one of them, and the game points it at a frame named for the speaker.
+    for part in ((stage.get('speech') or {}).get('parts') or []):
+        if part.get('character') and part.get('width') and not part.get('frames'):
+            want['chrome'].add('#%d' % part['character'])
     for part in ((stage.get('bar') or {}).get('graphics') or []):
         if part.get('character') and part.get('width'):
             want['chrome'].add('#%d' % part['character'])
@@ -273,6 +285,26 @@ def main():
     label_index = exports['label_index']
     want, speculative = collect_names(args.data)
 
+    # The ring's orb, whose frames are labelled by ability icon name.
+    try:
+        stage = load('stage', args.data)
+    except (OSError, ValueError):
+        stage = {}
+    selector = stage.get('selector') or {}
+    orb_icons = selector.get('icons') or {}
+    # The speech portrait, whose frames are labelled with who is speaking.
+    portrait = next((p for p in ((stage.get('speech') or {}).get('parts') or [])
+                     if p.get('frames')), None)
+    portrait_character = portrait['character'] if portrait else None
+    portrait_labels = (exports['sprite_frame_labels']
+                       .get(str(portrait_character)) or {}) if portrait else {}
+    want['portrait'].update(portrait_labels)
+    # The orb's shared pieces: the ball, the mask that cuts the icon to it,
+    # the glass over it and the black disc shown while a move is unusable.
+    for part in (selector.get('parts') or {}).values():
+        if part.get('character'):
+            want['chrome'].add('#%d' % part['character'])
+
     os.makedirs(args.out, exist_ok=True)
     manifest = {}
     stats = {'copied': 0, 'bytes': 0, 'missing': [], 'categories': {}}
@@ -287,6 +319,25 @@ def main():
                 path = sound_file(args.raw, exports, name)
                 if path:
                     entries = [(1, path)]
+            elif category == 'portrait':
+                frame = portrait_labels.get(name)
+                if frame:
+                    for index, path in frame_files(args.raw,
+                                                   portrait_character):
+                        if index == frame:
+                            entries = [(1, path)]
+                            break
+            elif category == 'orb':
+                # The icon alone, as the ring's orb clip places it. The orb is
+                # put back together from its shared pieces at draw time.
+                cid = orb_icons.get(name)
+                png = shape_png(args.raw, cid) if cid else None
+                if png:
+                    entries = [(1, png)]
+                    origin = shape_origin(exports, cid)
+                elif cid:
+                    frames = frame_files(args.raw, cid)[:args.max_frames]
+                    entries = list(frames)
             elif name.startswith('#') and name[1:].isdigit():
                 # Asked for by character id: a sprite keeps its frames, a
                 # shape is one picture carrying its own bounds.
