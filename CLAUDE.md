@@ -168,7 +168,12 @@ What the original settled that guesswork had got wrong:
   player, and the game never asks for a name.
 * A button carries art for its resting state and its over state, and swapping
   between them is the only thing most of these buttons do to show they can be
-  pressed.
+  pressed. That art is recorded at the button's own size, so what the screen
+  shrank the button to has to be carried with it -- the hub's row of icons is
+  placed at 0.81 and the little marker beside the map at 0.30.
+* The hub's icons are painted flat into the panel behind them; the border and
+  the glass over each one are the button's art, and without it they read as
+  flat colour.
 * A cutscene is one long animation whose own frames carry its script: it sets
   a counter and, on the frames where the caption changes, shows the next line
   of CUTSUB or clears it. The intro is 1306 frames but only 166 pictures --

@@ -672,6 +672,8 @@ void draw_button_state(const StageButton *b, int over, Color tint)
     if (!b)
         return;
     Vector2 centre = {b->x + b->width / 2, b->y + b->height / 2};
+    float sx = b->scale_x != 0 ? b->scale_x : 1.0f;
+    float sy = b->scale_y != 0 ? b->scale_y : 1.0f;
     for (int32_t i = 0; ; i++) {
         const ButtonPiece *p = button_piece(b->character, i);
         if (!p)
@@ -684,9 +686,10 @@ void draw_button_state(const StageButton *b, int over, Color tint)
                                              1);
         if (!tex)
             continue;
-        Rectangle dst = placed_rect(centre.x + p->x, centre.y + p->y,
-                                    p->scale_x, p->scale_y, p->width,
-                                    p->height, p->origin_x, p->origin_y);
+        Rectangle dst = placed_rect(centre.x + p->x * sx, centre.y + p->y * sy,
+                                    p->scale_x * sx, p->scale_y * sy,
+                                    p->width, p->height, p->origin_x,
+                                    p->origin_y);
         DrawTexturePro(*tex, (Rectangle){0, 0, (float)tex->width,
                                          (float)tex->height},
                        dst, (Vector2){0, 0}, 0.0f, tint);
@@ -737,6 +740,11 @@ void draw_screen_buttons(const char *screen, Vector2 mouse)
     for (int i = 0; i < SONNY_BUTTON_COUNT; i++) {
         const StageButton *b = &SONNY_BUTTONS[i];
         if (strcmp(b->screen, screen) != 0)
+            continue;
+        /* A button inside a clip the engine drives belongs to that clip, not
+           to the screen: the menu's bag squares are on the hub's frame too,
+           and they are only there when the menu is open. */
+        if (chrome_is_runtime(b->owner))
             continue;
         /* A button shows one set of pieces at rest and another under the
            pointer, which is the only thing most of them do to say they can

@@ -232,6 +232,10 @@ typedef struct {
     const char *name;      /* the instance name inside that clip */
     int32_t     character;
     float       x, y, width, height;
+    /* What the screen shrank or grew the button to. A button's own art is
+       recorded at its own size, so this is what puts it where the button
+       actually is. */
+    float       scale_x, scale_y;
 } StageButton;
 
 /* One piece of a button's resting art. A button is not a sprite and its art
@@ -802,11 +806,13 @@ const BarField *bar_field(const char *side, const char *role)
                     for b in (menu.get('buttons') or [])]
     for b in ((stage_json.get('buttons') or []) + menu_buttons
               + zone_buttons):
-        lines.append('    { %s, %s, %s, %d, %s, %s, %s, %s },'
+        lines.append('    { %s, %s, %s, %d, %s, %s, %s, %s, %s, %s },'
                      % (c_string(b['screen']), c_string(b.get('owner') or ''),
                         c_string(b['name']), b['character'],
                         c_float(b['x']), c_float(b['y']),
-                        c_float(b['width']), c_float(b['height'])))
+                        c_float(b['width']), c_float(b['height']),
+                        c_float(b.get('scale_x', 1.0)),
+                        c_float(b.get('scale_y', 1.0))))
     lines.append('};')
     lines.append('const int SONNY_BUTTON_COUNT = '
                  '(int)(sizeof(SONNY_BUTTONS) / sizeof(SONNY_BUTTONS[0]));')

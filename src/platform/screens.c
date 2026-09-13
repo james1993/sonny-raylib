@@ -243,7 +243,6 @@ void screen_zone_update(Game *g, Vector2 mouse)
    beside them. */
 void screen_zone_draw(Game *g, Vector2 mouse)
 {
-    (void)mouse;
     const ZoneDef *zone = campaign_zone(&g->campaign);
 
     ClearBackground(BLACK);
@@ -254,8 +253,11 @@ void screen_zone_draw(Game *g, Vector2 mouse)
                           1.0f, WHITE);
 
     /* The furniture below it: the panels, the row of buttons and their
-       icons, the marker that says a fight is waiting. */
+       icons, the marker that says a fight is waiting. The icons are painted
+       into the panel; what sits over each one -- its border and the glass on
+       it -- is the button's own art. */
     draw_screen_chrome(HUB_SCREEN);
+    draw_screen_buttons(HUB_SCREEN, mouse);
 
     /* How far through the zone the player is. The bar is scaled by the same
        fraction the original scales it by: how many of the zone's fights are
@@ -576,6 +578,7 @@ void screen_talents_draw(Game *g, Vector2 mouse)
     ClearBackground(BLACK);
     /* The hub stays behind the menu, as it does in the original. */
     draw_screen_chrome(HUB_SCREEN);
+    draw_screen_buttons(HUB_SCREEN, mouse);
     draw_clip_parts(MENU_SCREEN, MENU_SKILLS, NO_OFFSET, NULL, WHITE);
 
     /* The four headings, which the frame reads out of the language table. */
@@ -1174,6 +1177,7 @@ void screen_inventory_draw(Game *g, Vector2 mouse)
     /* The hub's own furniture stays behind the menu, as it does in the
        original: the row of buttons and the zone's progress are still there. */
     draw_screen_chrome(HUB_SCREEN);
+    draw_screen_buttons(HUB_SCREEN, mouse);
     draw_clip_parts(MENU_SCREEN, MENU_INVENTORY, NO_OFFSET, NULL, WHITE);
 
     draw_field(inv_field("@881"), NO_OFFSET,
@@ -1329,6 +1333,7 @@ void screen_shop_draw(Game *g, Vector2 mouse)
 
     ClearBackground(BLACK);
     draw_screen_chrome(HUB_SCREEN);
+    draw_screen_buttons(HUB_SCREEN, mouse);
     draw_clip_parts(MENU_SCREEN, MENU_SHOP, NO_OFFSET, NULL, WHITE);
     /* The two buttons in the purse strip -- the store's own euro sign and the
        recycler -- are art the frame keeps inside the buttons themselves. */

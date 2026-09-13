@@ -302,12 +302,12 @@ void screen_settings_draw(Game *g, Vector2 mouse)
 {
     ClearBackground(BLACK);
     draw_screen_chrome("Navigation");
+    draw_screen_buttons("Navigation", mouse);
     draw_clip_parts(MENU_SCREEN_ID, SETTINGS_MENU, NOWHERE, NULL, WHITE);
     draw_static_text(MENU_SCREEN_ID, SETTINGS_MENU);
     for (int i = 0; i < SONNY_BUTTON_COUNT; i++)
         if (strcmp(SONNY_BUTTONS[i].screen, SETTINGS_MENU) == 0)
             draw_button_art(&SONNY_BUTTONS[i], WHITE);
-    (void)mouse;
 
     menu_say("tit_3", lang_text("MENU", g->options.sound ? 29 : 30));
     menu_say("tit_4", lang_text("MENU", g->options.graphics ? 31 : 32));

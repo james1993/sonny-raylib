@@ -615,7 +615,12 @@ def buttons_in(body, character, boxes, at=(1.0, 1.0, 0.0, 0.0), depth=0,
                 'x': round(here[2] + here[0] * box[0], 3),
                 'y': round(here[3] + here[1] * box[1], 3),
                 'width': round(abs(here[0]) * (box[2] - box[0]), 3),
-                'height': round(abs(here[1]) * (box[3] - box[1]), 3)})
+                'height': round(abs(here[1]) * (box[3] - box[1]), 3),
+                # What the screen shrank or grew the button to on its way
+                # down. Its art is recorded at its own size, so this is what
+                # puts that art where the button actually is.
+                'scale_x': round(here[0], 6),
+                'scale_y': round(here[1], 6)})
             continue
         found.extend(buttons_in(body, info['character'], boxes, here,
                                 depth + 1))
@@ -1147,7 +1152,9 @@ def main(path, raw_dir=None):
                           'x': round(entry['x'] + entry['scale_x'] * box[0], 3),
                           'y': round(entry['y'] + entry['scale_y'] * box[1], 3),
                           'width': round(entry['scale_x'] * (box[2] - box[0]), 3),
-                          'height': round(entry['scale_y'] * (box[3] - box[1]), 3)}]
+                          'height': round(entry['scale_y'] * (box[3] - box[1]), 3),
+                          'scale_x': round(entry['scale_x'], 6),
+                          'scale_y': round(entry['scale_y'], 6)}]
             else:
                 found = buttons_in(body, entry['character'], boxes, at)
             for button in found:

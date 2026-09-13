@@ -220,6 +220,10 @@ typedef struct {
     const char *name;      /* the instance name inside that clip */
     int32_t     character;
     float       x, y, width, height;
+    /* What the screen shrank or grew the button to. A button's own art is
+       recorded at its own size, so this is what puts it where the button
+       actually is. */
+    float       scale_x, scale_y;
 } StageButton;
 
 /* One piece of a button's resting art. A button is not a sprite and its art
