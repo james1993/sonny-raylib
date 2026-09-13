@@ -18,13 +18,10 @@ static void game_start(Game *g, uint64_t seed)
     rng_seed(&g->rng, seed);
     rng_refill_krs(&g->rng);
 
-    /* Continue a saved game when there is one, otherwise start a new one. */
-    if (save_read(&g->campaign, SONNY_SAVE_PATH) != 0) {
+    /* Continue a saved game when there is one, otherwise start a new one.
+       Neither says anything about it: the original announces nothing here. */
+    if (save_read(&g->campaign, SONNY_SAVE_PATH) != 0)
         campaign_new(&g->campaign, 1);
-        game_notice(g, "A new game. Spend your ability points to begin.");
-    } else {
-        game_notice(g, "Loaded your saved game.");
-    }
     g->screen = SCREEN_ZONE;
     g->selected = -1;
     g->hovered_unit = -1;
@@ -114,9 +111,10 @@ int main(int argc, char **argv)
             screen_zone_update(&game, mouse);
             break;
         }
+        /* A message the game wants to show. In a fight the original runs
+           these across the top of the battlefield, in KrinCombatText. */
         if (game.notice_timer > 0)
-            ui_text(game.notice, 22, STAGE_H - 20, 10,
-                     (Color){235, 200, 90, 255});
+            game_draw_notice(&game);
         EndTextureMode();
 
         float scale = (float)GetScreenHeight() / STAGE_H;

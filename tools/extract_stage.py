@@ -672,11 +672,37 @@ def main(path, raw_dir=None):
     fonts = font_table(body)
     widget = bar_widget(body, raw_dir, texts, fonts)
 
+    # Any text the battle screen's furniture carries. Some entries are a text
+    # field in their own right -- the frame-rate readout is two of them --
+    # and some are clips with fields inside.
+    chrome_fields = []
+    for entry in chrome:
+        box = texts.get(entry['character'])
+        if box:
+            chrome_fields.append({
+                'owner': entry['name'], 'name': entry['name'],
+                'x': round(entry['x'] + entry['scale_x'] * box['xmin'], 3),
+                'y': round(entry['y'] + entry['scale_y'] * box['ymin'], 3),
+                'width': round(entry['scale_x'] * (box['xmax'] - box['xmin']), 3),
+                'height': round(entry['scale_y'] * (box['ymax'] - box['ymin']), 3),
+                'size': box['height'], 'align': box['align'],
+                'leading': box['leading'],
+                'font': (fonts.get(box['font']) or ('', 0))[0],
+                'device': (fonts.get(box['font']) or ('', 0))[1] == 0,
+                'color': box['color']})
+            continue
+        for field in text_fields(body, entry['character'], texts, fonts):
+            field['owner'] = entry['name']
+            field['x'] = round(entry['x'] + entry['scale_x'] * field['x'], 3)
+            field['y'] = round(entry['y'] + entry['scale_y'] * field['y'], 3)
+            chrome_fields.append(field)
+
     json.dump({'screen': {'x': sx, 'y': sy, 'character': screen['character']},
                'slots': slots, 'backdrop': backdrop, 'bars': bars,
                'layers': layers, 'chrome': chrome,
                'bar': widget, 'life_colours': colour_ramp(body, raw_dir),
                'selector': selector_ring(body, raw_dir, chrome),
+               'chrome_text': chrome_fields,
                'speech': speech_box(body, raw_dir, chrome, texts, fonts),
                'talents': talents, 'menu': menu_screens}, sys.stdout, indent=1)
     print()

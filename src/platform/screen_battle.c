@@ -130,14 +130,20 @@ static void draw_doll(const Game *g, int32_t slot)
 #define BAR_CENTER_Y 508.0f
 #define BAR_SLOT     46.0f
 
-/* The gutter Flash leaves inside every text field before the text starts. */
+/* The gutter Flash leaves inside every text field before the text starts,
+   and how much taller than its size a line box is. */
 #define TEXT_GUTTER 2.0f
+#define TEXT_LINE_FACTOR 1.15f
 
 /* The turn indicator's clickable middle, which ends the turn. */
 #define PASS_BUTTON_RADIUS 30.0f
 
 /* Where the speech box goes when it is the left team talking. */
 #define SPEECH_LEFT_X 21.8f
+
+/* The reticle clip whose art and text every unit's gets: the original parks
+   one on each, and they are all the same widget. */
+#define RETICLE_INSTANCE "KrinSelector1"
 
 /* ------------------------------------------------------------------ chrome */
 
@@ -356,6 +362,34 @@ static void draw_unit_bar(const Game *g, int32_t slot)
                    TextFormat("%d", u->FOCUSU));
 }
 
+/* One text field, laid out as the SWF lays it out: its own box, alignment,
+   leading, size, colour and face, relative to the clip it belongs to. */
+static void draw_field_tinted(const TextField *f, Vector2 clip,
+                              const char *text, Color colour)
+{
+    if (!f || !text || !text[0])
+        return;
+    float width = f->device ? ui_sans_text_width(text, f->size)
+                            : ui_text_width(text, f->size);
+    float x = clip.x + f->x;
+    if (f->align == 1)
+        x += f->width - width;
+    else if (f->align == 2)
+        x += (f->width - width) / 2.0f;
+    float y = clip.y + f->y + TEXT_GUTTER + f->leading;
+    if (f->device)
+        ui_sans_text(text, x, y, f->size, colour);
+    else
+        ui_text(text, x, y, f->size, colour);
+}
+
+/* The same, in the field's own colour. */
+static void draw_field(const TextField *f, Vector2 clip, const char *text)
+{
+    if (f)
+        draw_field_tinted(f, clip, text, (Color){f->r, f->g, f->b, 255});
+}
+
 /* -------------------------------------------------------------------- ring */
 
 /* The ability ring. The original does not put the player's moves on a bar
@@ -453,34 +487,52 @@ static void draw_ring(const Game *g)
 }
 
 /* The reticle the original parks on every unit and shows under the pointer:
-   a ring in the target's own colour, with its name and level. */
+   a ring in the target's own colour, with the level above it and the name
+   below, both from the clip's own two text fields. */
 static void draw_reticle(const Game *g)
 {
     if (g->hovered_unit <= 0)
         return;
     const Unit *u = &g->battle.units[g->hovered_unit];
-    const StageChrome *art = stage_chrome("KrinSelector1");
+    const StageChrome *art = stage_chrome(RETICLE_INSTANCE);
+    if (!art)
+        return;
     Vector2 at = unit_stage_pos(&g->battle, g->hovered_unit);
     int enemy = u->teamSide != g->battle.units[PLAYER_SLOT].teamSide;
     Color tint = enemy ? (Color){255, 90, 90, 255} : (Color){120, 200, 255, 255};
 
-    if (art) {
-        const Texture2D *tex = asset_texture(TextFormat("#%d", art->character),
-                                             1);
-        if (tex) {
-            Rectangle dst = placed_rect(at.x, at.y, art->scale_x, art->scale_y,
-                                        art->width, art->height,
-                                        art->origin_x, art->origin_y);
-            DrawTexturePro(*tex, (Rectangle){0, 0, (float)tex->width,
-                                             (float)tex->height},
-                           dst, (Vector2){0, 0}, 0.0f, tint);
-        }
+    const Texture2D *tex = asset_texture(TextFormat("#%d", art->character), 1);
+    if (tex) {
+        Rectangle dst = placed_rect(at.x, at.y, art->scale_x, art->scale_y,
+                                    art->width, art->height,
+                                    art->origin_x, art->origin_y);
+        DrawTexturePro(*tex, (Rectangle){0, 0, (float)tex->width,
+                                         (float)tex->height},
+                       dst, (Vector2){0, 0}, 0.0f, tint);
     }
-    const char *level = TextFormat("Lvl %d", u->plevel);
-    ui_sans_text(level, at.x - ui_sans_text_width(level, 10) / 2, at.y - 6,
-                 10, tint);
-    ui_sans_text(u->name, at.x - ui_sans_text_width(u->name, 10) / 2,
-                 at.y + 28, 10, tint);
+
+    /* The clip's fields are recorded where it is parked off stage, so they
+       follow it by the same amount it moved. The name is the lower of the
+       two, the level the upper. */
+    Vector2 moved = {at.x - art->x, at.y - art->y};
+    const TextField *name = text_field(RETICLE_INSTANCE, 0);
+    const TextField *level = text_field(RETICLE_INSTANCE, 1);
+    if (name && level && name->y < level->y) {
+        const TextField *swap = name;
+        name = level;
+        level = swap;
+    }
+    draw_field_tinted(level, moved, TextFormat("Lvl %d", u->plevel), tint);
+    draw_field_tinted(name, moved, u->name, tint);
+}
+
+/* The frame-rate readout the original keeps in the corner of the
+   battlefield: a label and a number, two fields of its own. */
+static void draw_frame_rate(void)
+{
+    draw_field(text_field("@535", 0), (Vector2){0, 0}, "FPS:");
+    draw_field(text_field("@536", 0), (Vector2){0, 0},
+               TextFormat("%d", GetFPS()));
 }
 
 static void draw_unit(const Game *g, int32_t slot)
@@ -637,34 +689,14 @@ static int speech_update(Game *g)
     return 1;
 }
 
-/* One text field, laid out as the SWF lays it out: its own box, alignment,
-   leading, size, colour and face, relative to the clip it belongs to. */
-static void draw_field(const TextField *f, Vector2 clip, const char *text)
-{
-    if (!f || !text || !text[0])
-        return;
-    float width = f->device ? ui_sans_text_width(text, f->size)
-                            : ui_text_width(text, f->size);
-    float x = clip.x + f->x;
-    if (f->align == 1)
-        x += f->width - width;
-    else if (f->align == 2)
-        x += (f->width - width) / 2.0f;
-    float y = clip.y + f->y + TEXT_GUTTER + f->leading;
-    Color c = {f->r, f->g, f->b, 255};
-    if (f->device)
-        ui_sans_text(text, x, y, f->size, c);
-    else
-        ui_text(text, x, y, f->size, c);
-}
-
 /* The same, wrapped to the field's width and its own line height. */
 static void draw_field_wrapped(const TextField *f, Vector2 clip,
                                const char *text)
 {
     if (!f || !text || !text[0])
         return;
-    float line_height = f->size + f->leading;
+    /* Flash stacks lines a full line box apart, not a font size apart. */
+    float line_height = f->size * TEXT_LINE_FACTOR + f->leading;
     int rows = (int)(f->height / line_height);
     char line[160];
     int start = 0, count = 0, row = 0;
@@ -742,8 +774,11 @@ static void draw_speech(const Game *g)
     /* The clip stacks the two fields body-first, and the original fills them
        with the line and the speaker's name -- combatText and
        combatTextName. */
-    draw_field_wrapped(text_field("combatScript", 0), at, g->speech->say);
-    draw_field(text_field("combatScript", 1), at, speaker->name);
+    /* The fields are recorded where the clip is placed, so they follow it by
+       however far it moved. */
+    Vector2 moved = {at.x - box->x, at.y - box->y};
+    draw_field_wrapped(text_field("combatScript", 0), moved, g->speech->say);
+    draw_field(text_field("combatScript", 1), moved, speaker->name);
 }
 
 static void draw_battle(const Game *g)
@@ -777,6 +812,7 @@ static void draw_battle(const Game *g)
     for (int32_t slot = 1; slot < SONNY_SLOTS; slot++)
         draw_unit(g, slot);
 
+    draw_frame_rate();
     draw_reticle(g);
     draw_ring(g);
     draw_numbers(g);

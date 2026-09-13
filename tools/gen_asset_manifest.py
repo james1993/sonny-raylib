@@ -187,10 +187,13 @@ typedef struct {
     float       origin_x, origin_y;
 } ClipPart;
 
-/* One of a clip's text fields, in that clip's own coordinates, straight off
-   the DefineEditText tag: its box, the size and colour it is set in, its
-   alignment (0 left, 1 right, 2 centre), the leading the player puts above
-   the first line, and whether it uses one of Flash's device fonts. */
+/* One text field of the battle screen's furniture, in stage coordinates,
+   straight off the DefineEditText tag: its box, the size and colour it is set
+   in, its alignment (0 left, 1 right, 2 centre), the leading the player puts
+   above the first line, and whether it uses one of Flash's device fonts.
+   `owner` is the instance it belongs to, so the fields of something the game
+   moves around -- a target's reticle, the speech box -- are taken relative to
+   where that instance is placed. */
 typedef struct {
     const char *owner;     /* which clip it belongs to */
     const char *name;      /* the instance name inside that clip */
@@ -488,6 +491,7 @@ const StageChrome *stage_chrome(const char *name)
     return NULL;
 }""")
     speech = stage_json.get('speech') or {}
+    chrome_text = stage_json.get('chrome_text') or []
     lines.append('')
     lines.append('const ClipPart SONNY_CLIP_PARTS[] = {')
     for part in (speech.get('parts') or []):
@@ -506,10 +510,10 @@ const StageChrome *stage_chrome(const char *name)
                  '(int)(sizeof(SONNY_CLIP_PARTS) / sizeof(SONNY_CLIP_PARTS[0]));')
     lines.append('')
     lines.append('const TextField SONNY_TEXT_FIELDS[] = {')
-    for f in (speech.get('fields') or []):
+    for f in chrome_text:
         colour = f.get('color') or [255, 255, 255, 255]
         lines.append('    { %s, %s, %s, %s, %s, %s, %s, %s, %d, %d, %d, %d, %d },'
-                     % (c_string(speech['name']), c_string(f['name']),
+                     % (c_string(f['owner']), c_string(f['name']),
                         c_float(f['x']), c_float(f['y']),
                         c_float(f['width']), c_float(f['height']),
                         c_float(f.get('size') or 10.0),

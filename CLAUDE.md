@@ -91,3 +91,18 @@ What the original settled that guesswork had got wrong:
 * Flash sizes text by the em square; raylib bakes a font so its ascent plus
   descent comes to the size asked for. Text is a fifth too small until the
   request is scaled by the face's own ratio between the two.
+* raylib rounds every glyph advance down to a whole pixel, which at nine
+  points loses about half a pixel a letter -- a line comes out the better part
+  of a fifth too narrow and wraps in the wrong place. Text is measured against
+  a much larger bake of the same face and laid out a glyph at a time.
+* The player picks a target first. Hovering a unit parks a ring of eight orbs
+  around it, one per slot of the loadout, and clicking an orb uses that move on
+  that target; the panels along the bottom stay empty until something happens.
+* The right-hand team's containers carry a negative horizontal scale, so a
+  mirrored quad winds the other way and OpenGL's backface culling eats it.
+* The same frame label appears in several sprites. A backdrop has to be taken
+  from the container the game retargets, not from whichever sprite comes first.
+
+Known to differ: text is rasterised by stb_truetype without hinting, so stems
+land between pixels where Flash's device-font rendering snaps them onto one.
+Size, spacing, wrap and colour match; the weight reads lighter.

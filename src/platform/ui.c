@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "game.h"
+#include "../gen/assets_gen.h"
 
 /* The interface's two faces.
  *
@@ -19,6 +20,13 @@
  * minification eats the stems and the text goes grey and soft. So each size a
  * screen asks for is baked once and kept, which comes out crisp the way the
  * original does.
+ *
+ * Spacing needs the opposite. raylib rounds every glyph's advance down to a
+ * whole pixel, which at these sizes loses about half a pixel a letter -- a
+ * line of text comes out the better part of a fifth too narrow, and wraps in
+ * the wrong place. So each size also keeps a much larger bake, used only to
+ * measure: its advances scale down to fractions of a pixel, and text is laid
+ * out a glyph at a time against those.
  */
 #define UI_FONT_PATH "assets/font/1478_Tahoma.ttf"
 
@@ -32,7 +40,9 @@ static const char *const DEVICE_SANS[] = {
 #define UI_FACE_GAME   0
 #define UI_FACE_SANS   1
 #define UI_FACES       2
-#define UI_SIZE_CACHE  12
+#define UI_SIZE_CACHE  32
+/* How much bigger the measuring bake is than the one drawn from. */
+#define UI_METRIC_SCALE 8
 
 typedef struct {
     const char *path;
@@ -42,7 +52,7 @@ typedef struct {
        same number, so a nine-point field comes out a fifth too small unless
        the request is scaled by the face's own ratio between them. */
     float       em_to_box;
-    struct { int size; Font font; } cache[UI_SIZE_CACHE];
+    struct { int size; Font font; Font metrics; float em; } cache[UI_SIZE_CACHE];
     int         cached;
 } UiFace;
 
@@ -91,28 +101,41 @@ static UiFace ui_faces[UI_FACES];
    of the interface as blanks. */
 #define UI_MIN_GLYPHS 90
 
-static const Font *face_font(int face, float size)
+/* The pair of bakes for one size: the one text is drawn from, and the large
+   one it is measured against. `em` is the em square the measuring bake works
+   out to in its own pixels, which is what turns its advances into the
+   caller's units. */
+static int face_size(int face, float size)
 {
     UiFace *f = &ui_faces[face];
     if (!f->ready)
-        return NULL;
+        return -1;
 
     int px = (int)(size * f->em_to_box + 0.5f);
     if (px < 6)
         px = 6;
     for (int i = 0; i < f->cached; i++)
         if (f->cache[i].size == px)
-            return &f->cache[i].font;
+            return i;
     if (f->cached == UI_SIZE_CACHE)
-        return &f->cache[f->cached - 1].font;
+        return f->cached - 1;
 
     Font font = LoadFontEx(f->path, px, NULL, 0);
     if (font.texture.id == 0)
-        return NULL;
+        return -1;
     SetTextureFilter(font.texture, TEXTURE_FILTER_BILINEAR);
-    f->cache[f->cached].size = px;
-    f->cache[f->cached].font = font;
-    return &f->cache[f->cached++].font;
+
+    int big = px * UI_METRIC_SCALE;
+    Font metrics = LoadFontEx(f->path, big, NULL, 0);
+    if (metrics.texture.id == 0)
+        metrics = font;
+
+    int slot = f->cached++;
+    f->cache[slot].size = px;
+    f->cache[slot].font = font;
+    f->cache[slot].metrics = metrics;
+    f->cache[slot].em = (float)metrics.baseSize / f->em_to_box;
+    return slot;
 }
 
 static int face_open(int face, const char *path)
@@ -147,8 +170,12 @@ void ui_font_load(void)
 void ui_font_unload(void)
 {
     for (int face = 0; face < UI_FACES; face++) {
-        for (int i = 0; i < ui_faces[face].cached; i++)
+        for (int i = 0; i < ui_faces[face].cached; i++) {
+            if (ui_faces[face].cache[i].metrics.texture.id
+                != ui_faces[face].cache[i].font.texture.id)
+                UnloadFont(ui_faces[face].cache[i].metrics);
             UnloadFont(ui_faces[face].cache[i].font);
+        }
         ui_faces[face].cached = 0;
         ui_faces[face].ready = 0;
     }
@@ -165,41 +192,72 @@ static float face_spacing(int face, float size)
     return 0.0f;
 }
 
+/* Walk a string, handing each glyph its advance in the caller's units. */
+static float face_run(int face, const char *text, float size, float x, float y,
+                      Color color, int draw)
+{
+    int slot = face_size(face, size);
+    if (slot < 0)
+        return -1.0f;
+    UiFace *f = &ui_faces[face];
+    const Font *font = &f->cache[slot].font;
+    const Font *metrics = &f->cache[slot].metrics;
+    /* The measuring bake's advances are in its own pixels; one of its em
+       squares is what the caller calls `size`. */
+    float scale = size / f->cache[slot].em;
+    float pen = 0.0f;
+
+    for (int i = 0; text[i];) {
+        int step = 0;
+        int codepoint = GetCodepointNext(text + i, &step);
+        i += step;
+        int index = GetGlyphIndex(*metrics, codepoint);
+        int advance = metrics->glyphs[index].advanceX;
+        if (advance == 0)
+            advance = (int)metrics->recs[index].width
+                    + metrics->glyphs[index].offsetX;
+        if (draw && codepoint != ' ') {
+            int g = GetGlyphIndex(*font, codepoint);
+            Rectangle src = font->recs[g];
+            Rectangle dst = {
+                floorf(x + pen + font->glyphs[g].offsetX + 0.5f),
+                floorf(y + font->glyphs[g].offsetY + 0.5f),
+                src.width, src.height};
+            DrawTexturePro(font->texture, src, dst, (Vector2){0, 0}, 0.0f,
+                           color);
+        }
+        pen += advance * scale + face_spacing(face, size);
+    }
+    return pen;
+}
+
 static void face_draw(int face, const char *text, float x, float y, float size,
                       Color color)
 {
     if (!text || !text[0])
         return;
-    const Font *font = face_font(face, size);
-    if (!font) {
-        if (face == UI_FACE_SANS) {
-            face_draw(UI_FACE_GAME, text, x, y, size, color);
-            return;
-        }
-        DrawText(text, (int)x, (int)y, (int)size, color);
-        return;
-    }
     /* On the pixel grid. Flash hints its text onto whole pixels; drawn at a
        fraction the same glyphs sample across two texels each and go soft. */
-    /* Drawn at the size it was baked at, which is the requested em scaled by
-       the face's ratio, so no resampling happens and the glyphs come out on
-       the grid the way Flash hints them. */
-    DrawTextEx(*font, text, (Vector2){floorf(x + 0.5f), floorf(y + 0.5f)},
-               (float)font->baseSize, face_spacing(face, size), color);
+    if (face_run(face, text, size, floorf(x + 0.5f), floorf(y + 0.5f), color,
+                 1) >= 0.0f)
+        return;
+    if (face == UI_FACE_SANS) {
+        face_draw(UI_FACE_GAME, text, x, y, size, color);
+        return;
+    }
+    DrawText(text, (int)x, (int)y, (int)size, color);
 }
 
 static float face_width(int face, const char *text, float size)
 {
     if (!text || !text[0])
         return 0;
-    const Font *font = face_font(face, size);
-    if (!font) {
-        if (face == UI_FACE_SANS)
-            return face_width(UI_FACE_GAME, text, size);
-        return (float)MeasureText(text, (int)size);
-    }
-    return MeasureTextEx(*font, text, (float)font->baseSize,
-                         face_spacing(face, size)).x;
+    float width = face_run(face, text, size, 0.0f, 0.0f, BLANK, 0);
+    if (width >= 0.0f)
+        return width;
+    if (face == UI_FACE_SANS)
+        return face_width(UI_FACE_GAME, text, size);
+    return (float)MeasureText(text, (int)size);
 }
 
 void ui_text(const char *text, float x, float y, float size, Color color)
@@ -220,6 +278,25 @@ float ui_text_width(const char *text, float size)
 float ui_sans_text_width(const char *text, float size)
 {
     return face_width(UI_FACE_SANS, text, size);
+}
+
+/* Where a message goes. In a fight the original runs it across the top of
+   the battlefield, in the KrinCombatText banner; off the battle screen there
+   is no such banner, so it goes along the bottom. */
+void game_draw_notice(const Game *g)
+{
+    if (!g->notice[0])
+        return;
+    const StageChrome *banner = (g->screen == SCREEN_BATTLE)
+                              ? stage_chrome("KrinCombatText") : NULL;
+    Color colour = {235, 200, 90, 255};
+    if (!banner) {
+        ui_text(g->notice, 22, STAGE_H - 20, 10, colour);
+        return;
+    }
+    float size = 12.0f;
+    ui_sans_text(g->notice, banner->x - ui_sans_text_width(g->notice, size) / 2,
+                 banner->y, size, colour);
 }
 
 void game_log(Game *g, const char *fmt, ...)

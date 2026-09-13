@@ -175,10 +175,13 @@ typedef struct {
     float       origin_x, origin_y;
 } ClipPart;
 
-/* One of a clip's text fields, in that clip's own coordinates, straight off
-   the DefineEditText tag: its box, the size and colour it is set in, its
-   alignment (0 left, 1 right, 2 centre), the leading the player puts above
-   the first line, and whether it uses one of Flash's device fonts. */
+/* One text field of the battle screen's furniture, in stage coordinates,
+   straight off the DefineEditText tag: its box, the size and colour it is set
+   in, its alignment (0 left, 1 right, 2 centre), the leading the player puts
+   above the first line, and whether it uses one of Flash's device fonts.
+   `owner` is the instance it belongs to, so the fields of something the game
+   moves around -- a target's reticle, the speech box -- are taken relative to
+   where that instance is placed. */
 typedef struct {
     const char *owner;     /* which clip it belongs to */
     const char *name;      /* the instance name inside that clip */

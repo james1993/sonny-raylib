@@ -94,6 +94,7 @@ typedef struct {
  * rather than raylib's DrawText, which would use the built-in bitmap font. */
 void ui_font_load(void);
 void ui_font_unload(void);
+void game_draw_notice(const Game *g);
 void ui_text(const char *text, float x, float y, float size, Color color);
 float ui_text_width(const char *text, float size);
 /* The same, in the system sans face the original's "_sans" device-font text
