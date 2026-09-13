@@ -441,14 +441,50 @@ void screen_talents_draw(Game *g, Vector2 mouse)
 
 /* ----------------------------------------------------------- inventory */
 
+/* The character screen's own layout: seven equipment slots either side of a
+   doll preview, and a six-by-six bag grid to the right, all placed where the
+   original's menu places them. The slot art is 34 square, drawn centred on
+   its placement point. */
+#define MENU_SLOT_SIZE 34.0f
+
+static Rectangle named_slot(const char *prefix, int i, Rectangle fallback)
+{
+    char name[32];
+    snprintf(name, sizeof(name), "%s%d", prefix, i);
+    const MenuSlot *slot = menu_slot(name);
+    if (!slot)
+        return fallback;
+    return (Rectangle){slot->x - MENU_SLOT_SIZE / 2,
+                       slot->y - MENU_SLOT_SIZE / 2,
+                       MENU_SLOT_SIZE, MENU_SLOT_SIZE};
+}
+
 static Rectangle slot_rect(int i)
 {
-    return (Rectangle){70, 110 + i * 44, 300, 38};
+    return named_slot("playerSlot", i,
+                      (Rectangle){70, 110 + i * 44, 300, 38});
 }
 
 static Rectangle bag_rect(int i)
 {
-    return (Rectangle){420, 110 + (i % 8) * 34 + (i / 8) * 0, 320, 30};
+    return named_slot("itemSlot", i,
+                      (Rectangle){420, 110 + i * 34, 320, 30});
+}
+
+static Rectangle drop_rect(int i)
+{
+    return named_slot("dropSlot", i,
+                      (Rectangle){70 + i * 150, 190, 140, 34});
+}
+
+/* An item's icon is a frame label on the icon sprite, named for the item. */
+static void draw_item_icon(const ItemDef *item, Rectangle r, Color tint)
+{
+    if (!item || item->id == 0)
+        return;
+    if (!asset_draw_fit(item->name, 1, r, tint))
+        ui_text(item->name, (int)r.x + 2, (int)(r.y + r.height / 2 - 4), 9,
+                 tint);
 }
 
 /* An item can go in a slot when the slot matches and the requirements pass.
@@ -463,7 +499,7 @@ void screen_inventory_update(Game *g, Vector2 mouse)
     Campaign *c = &g->campaign;
     g->hovered_item = -1;
 
-    for (int32_t i = 0; i < c->inventory_count && i < 8; i++) {
+    for (int32_t i = 0; i < c->inventory_count && i < 36; i++) {
         Rectangle r = bag_rect(i);
         if (hit(r, mouse))
             g->hovered_item = 100 + i;
@@ -525,30 +561,54 @@ void screen_inventory_draw(Game *g, Vector2 mouse)
 
     ClearBackground((Color){18, 20, 26, 255});
     ui_text(lang_text("SYSTEM", 17), 22, 16, 20, (Color){210, 215, 225, 255});
-    ui_text("Worn", 70, 92, 10, (Color){150, 160, 175, 255});
-    ui_text("Carried", 420, 92, 10, (Color){150, 160, 175, 255});
+
+    /* The doll preview, wearing what is equipped. */
+    const MenuSlot *doll = menu_slot("chest");
+    if (doll) {
+        DollSpec spec;
+        memset(&spec, 0, sizeof(spec));
+        spec.gender = "M";
+        spec.skin = "ONE";
+        spec.hair = "ONE";
+        char looks[SONNY_EQUIP_SLOTS][24];
+        for (int i = 0; i < SONNY_EQUIP_SLOTS; i++) {
+            const ItemDef *item = item_by_id(c->player.equip[i]);
+            snprintf(looks[i], sizeof(looks[i]), "%s",
+                     (item && item->looks) ? item->looks : "");
+            spec.looks[i] = looks[i];
+        }
+        /* The menu places each doll part at its own absolute position rather
+           than through the model sprite, so the model's internal matrices --
+           and its mirroring -- do not carry over. The preview is drawn from
+           the model instead, stood at the menu's doll position and scaled to
+           match it. */
+        doll_draw(&spec, doll_animation_frame("stand", g->anim_tick / 3, 1),
+                  (Vector2){doll->x - 6.0f, doll->y + 10.0f}, 1.3f, 0, WHITE);
+    }
 
     for (int i = 0; i < SONNY_EQUIP_SLOTS; i++) {
         Rectangle r = slot_rect(i);
         const ItemDef *item = item_by_id(c->player.equip[i]);
-        DrawRectangleRec(r, (Color){30, 33, 41, 255});
+        DrawRectangleRec(r, (Color){30, 33, 41, 220});
         DrawRectangleLinesEx(r, hit(r, mouse) ? 2.0f : 1.0f,
                              (Color){80, 84, 96, 255});
-        /* ITEMSS names the slot kinds, in the original's own order. */
-        ui_text(lang_text("ITEMSS", i), (int)r.x + 8, (int)r.y + 12, 10,
-                 (Color){140, 145, 155, 255});
-        if (item && item->id != 0)
-            ui_text(item->name, (int)r.x + 110, (int)r.y + 12, 10, RAYWHITE);
+        draw_item_icon(item, r, WHITE);
+        /* The slot kinds are named in ITEMSS, but those names are wider than
+           a 34-pixel slot -- the two weapon slots sit 40 apart -- so the name
+           goes in the detail panel on hover rather than inside the box. */
+        if ((!item || item->id == 0) && hit(r, mouse))
+            ui_text(lang_text("ITEMSS", i), (int)r.x, (int)(r.y - 12), 10,
+                     (Color){170, 175, 185, 255});
     }
 
-    for (int32_t i = 0; i < c->inventory_count && i < 8; i++) {
+    for (int32_t i = 0; i < 36; i++) {
         Rectangle r = bag_rect(i);
-        const ItemDef *item = item_by_id(c->inventory[i]);
-        DrawRectangleRec(r, (Color){30, 33, 41, 255});
+        const ItemDef *item = (i < c->inventory_count)
+                            ? item_by_id(c->inventory[i]) : NULL;
+        DrawRectangleRec(r, (Color){30, 33, 41, 220});
         DrawRectangleLinesEx(r, hit(r, mouse) ? 2.0f : 1.0f,
-                             (Color){80, 84, 96, 255});
-        if (item)
-            ui_text(item->name, (int)r.x + 8, (int)r.y + 9, 10, RAYWHITE);
+                             (Color){70, 74, 86, 255});
+        draw_item_icon(item, r, WHITE);
     }
 
     /* The hovered item's own description. */
@@ -559,6 +619,13 @@ void screen_inventory_draw(Game *g, Vector2 mouse)
             shown = item_by_id(c->inventory[i]);
     } else if (g->hovered_item >= 0 && g->hovered_item < SONNY_EQUIP_SLOTS) {
         shown = item_by_id(c->player.equip[g->hovered_item]);
+    }
+    if (!shown && g->hovered_item >= 0
+        && g->hovered_item < SONNY_EQUIP_SLOTS) {
+        Rectangle box = {70, STAGE_H - 140, STAGE_W - 200, 40};
+        draw_panel(box, lang_text("ITEMSS", g->hovered_item));
+        ui_text("Empty.", (int)box.x + 8, (int)box.y + 24, 10,
+                 (Color){150, 160, 175, 255});
     }
     if (shown && shown->id != 0) {
         Rectangle box = {70, STAGE_H - 140, STAGE_W - 200, 90};
@@ -691,7 +758,7 @@ void screen_victory_update(Game *g, Vector2 mouse)
 {
     /* Drops are chosen by clicking them, as VICTORY[1] instructs. */
     for (int32_t i = 0; i < g->dropped_count; i++) {
-        Rectangle r = {70 + i * 150, 190, 140, 34};
+        Rectangle r = drop_rect(i);
         if (!hit(r, mouse) || !IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
             continue;
         if (g->taken[i])
@@ -722,16 +789,19 @@ void screen_victory_draw(Game *g, Vector2 mouse)
                  (Color){200, 205, 215, 255});
 
     for (int32_t i = 0; i < g->dropped_count; i++) {
-        Rectangle r = {70 + i * 150, 190, 140, 34};
+        Rectangle r = drop_rect(i);
         const ItemDef *item = item_by_id(g->dropped[i]);
         DrawRectangleRec(r, g->taken[i] ? (Color){26, 30, 26, 255}
                                         : (Color){30, 33, 41, 255});
         DrawRectangleLinesEx(r, hit(r, mouse) ? 2.0f : 1.0f,
                              g->taken[i] ? (Color){120, 180, 120, 255}
                                          : (Color){80, 84, 96, 255});
+        draw_item_icon(item, r, g->taken[i] ? (Color){150, 210, 150, 255}
+                                            : WHITE);
         if (item)
-            ui_text(item->name, (int)r.x + 8, (int)r.y + 11, 10,
-                     g->taken[i] ? (Color){140, 210, 140, 255} : RAYWHITE);
+            ui_text(item->name, (int)r.x, (int)(r.y + r.height + 2), 9,
+                     g->taken[i] ? (Color){140, 210, 140, 255}
+                                 : (Color){190, 195, 205, 255});
     }
 
     ui_text(TextFormat("%s %d", lang_text("VICTORY", 2), g->rewards.euros),

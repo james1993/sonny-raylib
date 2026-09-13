@@ -146,9 +146,32 @@ def main(path, raw_dir=None):
             if talents:
                 break
 
+    # The menu screens. Frame 1 is the character and inventory screen -- 36
+    # bag slots, 7 equipment slots, a live doll preview and the per-element
+    # bars -- and frame 16 adds the 15 drop slots the victory screen uses.
+    # Positions are relative to the menu, so they are composed with its own
+    # placement to give stage coordinates.
+    menu_screens = {}
+    if menu:
+        ma, _, _, md, mx, my = menu['matrix']
+        frames = model_frames(body, menu['character'])
+        for index, label in ((0, 'character'), (15, 'victory'),
+                             (24, 'talents')):
+            if index >= len(frames):
+                continue
+            entries = {}
+            for name, info in frames[index].items():
+                if name.startswith('@'):
+                    continue
+                a, _, _, d, x, y = info['matrix']
+                entries[name] = {'x': round(mx + ma * x, 3),
+                                 'y': round(my + md * y, 3),
+                                 'scale': round(ma * a, 6)}
+            menu_screens[label] = entries
+
     json.dump({'screen': {'x': sx, 'y': sy, 'character': screen['character']},
                'slots': slots, 'backdrop': backdrop, 'bars': bars,
-               'talents': talents}, sys.stdout, indent=1)
+               'talents': talents, 'menu': menu_screens}, sys.stdout, indent=1)
     print()
 
 

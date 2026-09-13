@@ -84,6 +84,18 @@ typedef struct {
     float   scale;
 } TalentSlot;
 
+/* A named slot on one of the menu screens, in stage coordinates: the 36 bag
+   slots, the 7 equipment slots, the 15 drop slots, and the doll preview. */
+typedef struct {
+    const char *name;
+    float       x, y;
+    float       scale;
+} MenuSlot;
+
+extern const MenuSlot SONNY_MENU_SLOTS[];
+extern const int SONNY_MENU_SLOT_COUNT;
+const MenuSlot *menu_slot(const char *name);
+
 extern const TalentSlot SONNY_TALENT_SLOTS[];
 extern const int SONNY_TALENT_SLOT_COUNT;
 const TalentSlot *talent_slot(int32_t node);

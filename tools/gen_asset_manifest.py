@@ -96,6 +96,18 @@ typedef struct {
     float   scale;
 } TalentSlot;
 
+/* A named slot on one of the menu screens, in stage coordinates: the 36 bag
+   slots, the 7 equipment slots, the 15 drop slots, and the doll preview. */
+typedef struct {
+    const char *name;
+    float       x, y;
+    float       scale;
+} MenuSlot;
+
+extern const MenuSlot SONNY_MENU_SLOTS[];
+extern const int SONNY_MENU_SLOT_COUNT;
+const MenuSlot *menu_slot(const char *name);
+
 extern const TalentSlot SONNY_TALENT_SLOTS[];
 extern const int SONNY_TALENT_SLOT_COUNT;
 const TalentSlot *talent_slot(int32_t node);
@@ -287,6 +299,34 @@ const StageBar *stage_bar(int32_t slot)
     if os.path.exists(args.stage):
         with open(args.stage, encoding='utf-8') as fh:
             talent_slots = json.load(fh).get('talents') or {}
+    menu_slots = {}
+    if os.path.exists(args.stage):
+        with open(args.stage, encoding='utf-8') as fh:
+            stage_data = json.load(fh)
+        # The character screen carries the slots; the victory screen adds the
+        # drop slots on top of the same layout.
+        for label in ('character', 'victory'):
+            menu_slots.update((stage_data.get('menu') or {}).get(label) or {})
+    lines.append('')
+    lines.append('const MenuSlot SONNY_MENU_SLOTS[] = {')
+    for name in sorted(menu_slots):
+        m_ = menu_slots[name]
+        lines.append('    { %s, %s, %s, %s },'
+                     % (c_string(name), c_float(m_['x']), c_float(m_['y']),
+                        c_float(m_['scale'])))
+    lines.append('};')
+    lines.append('const int SONNY_MENU_SLOT_COUNT = '
+                 '(int)(sizeof(SONNY_MENU_SLOTS) / sizeof(SONNY_MENU_SLOTS[0]));')
+    lines.append('''
+const MenuSlot *menu_slot(const char *name)
+{
+    if (!name)
+        return NULL;
+    for (int i = 0; i < SONNY_MENU_SLOT_COUNT; i++)
+        if (strcmp(SONNY_MENU_SLOTS[i].name, name) == 0)
+            return &SONNY_MENU_SLOTS[i];
+    return NULL;
+}''')
     lines.append('')
     lines.append('const TalentSlot SONNY_TALENT_SLOTS[] = {')
     for node in sorted(talent_slots, key=int):
