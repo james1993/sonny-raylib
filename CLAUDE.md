@@ -376,16 +376,26 @@ single frame with no tween, so the ramp is ours.
   is why that fight opens on the second track. The boss theme stands in for a
   boss marker or for battles 24, 30 and 36, and the counter moves either way.
 
-Not yet done: the turn ring. On the player's turn the original's ring around
-the exclamation mark is a bright blue with a blue halo, and orange on anyone
-else's -- BATTLESPEECH[3] tells the player to wait for it. The mechanism is
-`thingerClock` (character 1595 inside battleClocker), which places character
-1594 under two glow filters and switches between two frames: "friend" at 1
-with an inner glow of #0066FF (blur 8, strength 1) and an outer of #0066CC
-(blur 27, strength 1.7), and "enemy" at 12 with #FFCC00 inner and #FF6600
-outer. The decompiler exports the clip without its filters, so what ships is
-a grey ring with two faint ticks and nothing ever turns blue. The fix is the
-one the zone markers already use: render the frames with their glows applied
-at build time, in both colour sets, and pick between them by whose turn it is.
-The little red X beside it is wrong too -- the original's is a glossy red
-square with a dark red X, and what is drawn is a flat bright one.
+* The turn indicator's ring is a clock, not a picture. `thingerClock`
+  (character 1595 inside battleClocker) places 1594 under two glow filters and
+  stops on one of two frames: "friend" with an inner glow of #0066FF (blur 8,
+  strength 1) and an outer of #0066CC (blur 27, strength 1.7), "enemy" with
+  #FFCC00 inner and #FF6600 outer, chosen by whether the player's own teamSide
+  is TeamMoveNow. Inside 1594 the ring is one arc (character 1592, the right
+  half) held twice, the second copy turned through 180 degrees, each masked to
+  its own side and rotated every frame by clip actions reading
+  `_root.BattleTimeNow` -- so the dial fills as the turn runs down. Turn-based
+  play, which is how the game is played, pins BattleTimeNow at BattleTimeLimit
+  whichever side is moving, so the ring is always whole and only its colour
+  says anything. The decompiler renders 1594 as a one-pixel sliver, because at
+  rest the two halves are masked away, and drops the filters besides; the art
+  the engine draws is composed and lit by tools/extract_glows.py instead.
+* A glow's blur is in box passes, and the number of them is the filter's
+  quality: n passes of width w have a standard deviation of w*sqrt(n/12). The
+  zone bar's glow is three passes and the turn ring's is one, which is why the
+  ring's blur of 27 is tighter than the bar's of 19.
+* Nothing draws a button unless a screen asks: a button is a list of state
+  records, not a sprite, so it has no art to export. The battle screen's own
+  two are the pass button in the middle of the dial and the quit button in the
+  corner, whose dark glass plate over the red cross beneath it is what made
+  that corner a flat bright square while it was missing.

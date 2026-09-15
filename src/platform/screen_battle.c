@@ -131,6 +131,10 @@ static void draw_doll(const Game *g, int32_t slot)
 
 /* The piece of the box the game points at whoever is talking. */
 #define SPEECH_PORTRAIT "inner2"
+/* The standing object the original keeps at slot zero: always active, on no
+   side, and named for the portrait frame it shows. */
+#define NARRATOR_SLOT 0
+#define NARRATOR_NAME "Information"
 /* And the prompt beside it, which is a clip of its own. */
 #define SPEECH_SKIP_PART "@8"
 #define SPEECH_SKIP      "#1639"
@@ -207,6 +211,29 @@ static void draw_chrome(int32_t from, int32_t to)
         if (chrome_is_runtime(c->name))
             continue;
         draw_chrome_art(c);
+    }
+}
+
+/* The screen's own buttons.
+
+   A button is not a sprite and has no art to export: what it shows is a list
+   of state records, so nothing draws it unless the screen goes and asks. The
+   two here sit above the rest of the furniture -- the pass button in the
+   middle of the turn indicator, and the quit button in the corner, whose
+   dark glass plate over the red cross beneath it is what leaving this out
+   turned into a flat bright square. The eight move orbs are buttons too, but
+   they belong to the ring the game moves onto a unit rather than to the
+   screen, and draw_ring puts those up. */
+static void draw_chrome_buttons(Vector2 mouse)
+{
+    for (int i = 0; i < SONNY_BUTTON_COUNT; i++) {
+        const StageButton *b = &SONNY_BUTTONS[i];
+        if (strcmp(b->screen, BATTLE_SCREEN_NAME) != 0)
+            continue;
+        if (chrome_is_runtime(b->owner))
+            continue;
+        Rectangle box = {b->x, b->y, b->width, b->height};
+        draw_button_state(b, CheckCollisionPointRec(mouse, box), WHITE);
     }
 }
 
@@ -354,6 +381,45 @@ static void draw_unit_bar(const Game *g, int32_t slot)
                    TextFormat("%d", u->FOCUSN));
     draw_bar_field(bar_field(side, "focusMax"), bar, mirror,
                    TextFormat("%d", u->FOCUSU));
+}
+
+/* --------------------------------------------------------------- turn dial */
+
+/* The lit ring at the middle of the bottom panel. Inside the turn indicator
+   it is a clock: one arc held twice, the second copy turned through 180
+   degrees, each masked to its own side of the dial and rotated by
+   BattleTimeNow so the ring fills as the turn runs down. Turn-based play --
+   which is how the game is played -- pins the timer at its limit whether the
+   player is choosing or the other side is, so the ring is always whole and
+   only its colour carries anything: blue while the player's team moves,
+   orange while the other team does.
+
+   Its glow is a filter on the placement rather than anything in the clip, so
+   the decompiler hands back an unlit ring; tools/extract_glows.py renders the
+   two lit ones instead. */
+#define TURN_DIAL_FRIEND "TurnRingFriend"
+#define TURN_DIAL_ENEMY  "TurnRingEnemy"
+/* thingerClock's own offset inside battleClocker. */
+#define TURN_DIAL_X 0.4f
+#define TURN_DIAL_Y (-0.1f)
+
+static void draw_turn_dial(const Game *g)
+{
+    const StageChrome *clock = stage_chrome(BATTLE_SCREEN_NAME,
+                                            "battleClocker");
+    if (!clock)
+        return;
+    const Battle *b = &g->battle;
+    const char *name = b->units[PLAYER_SLOT].teamSide == b->TeamMoveNow
+                     ? TURN_DIAL_FRIEND : TURN_DIAL_ENEMY;
+    const Texture2D *tex = asset_texture(name, 1);
+    if (!tex)
+        return;
+    /* The arc is drawn about the ring's centre, and the glow's margin is the
+       same on every side, so the middle of the picture is that centre. */
+    draw_texture_placed(tex, clock->x + TURN_DIAL_X, clock->y + TURN_DIAL_Y,
+                        clock->scale_x, clock->scale_y,
+                        tex->width / 2.0f, tex->height / 2.0f, WHITE);
 }
 
 /* -------------------------------------------------------------------- ring */
@@ -715,9 +781,14 @@ static int speech_update(Game *g)
 
     g->speech_index++;
     g->speech_seq++;
-    /* A line from a unit that is already dead is skipped, not shown. */
-    if (next->speaker < 1 || next->speaker >= SONNY_SLOTS
-        || !g->battle.units[next->speaker].active)
+    /* A line from a unit that is already dead is skipped, not shown. Slot
+       zero is the exception: the original makes a standing object there
+       called "Information", always active and on no side, which is who the
+       tutorial speaks as. Half of the first fight's lines are its. */
+    if (next->speaker < 0 || next->speaker >= SONNY_SLOTS)
+        return 0;
+    if (next->speaker != NARRATOR_SLOT
+        && !g->battle.units[next->speaker].active)
         return 0;
 
     g->speech = next;
@@ -735,7 +806,8 @@ static int speech_update(Game *g)
    the speech driver plays it through once. */
 static void draw_balloon(const Game *g)
 {
-    if (!g->speech)
+    /* Nobody on the battlefield is talking when it is the narrator. */
+    if (!g->speech || g->speech->speaker == NARRATOR_SLOT)
         return;
     int32_t frames = asset_frame_count(SPEECH_BALLOON);
     if (frames <= 0 || g->balloon_tick >= frames)
@@ -768,23 +840,24 @@ static void draw_speech(const Game *g)
 {
     if (!g->speech)
         return;
+    int narrator = g->speech->speaker == NARRATOR_SLOT;
     const Unit *speaker = &g->battle.units[g->speech->speaker];
+    const char *who = narrator ? NARRATOR_NAME : speaker->name;
     const StageChrome *box = stage_chrome(BATTLE_SCREEN_NAME, "combatScript");
     if (!box)
         return;
 
     /* Placed on the right; the game moves it left when the left team speaks.
-       Mirroring its own placement about the middle of the stage is what puts
-       it in the other bottom panel. */
+       The narrator is on no side, so it goes left as well. */
     Vector2 at = {box->x, box->y};
-    if (speaker->teamSide != 2)
+    if (narrator || speaker->teamSide != 2)
         at.x = SPEECH_LEFT_X;
 
     Vector2 shifted = {at.x - box->x, at.y - box->y};
     /* The portrait is the piece the box points at the speaker; the prompt
        beside it is not. */
     draw_clip_parts(BATTLE_SCREEN_NAME, "combatScript", shifted,
-                    SPEECH_PORTRAIT, speaker->name, WHITE);
+                    SPEECH_PORTRAIT, who, WHITE);
 
     /* The prompt beside it runs through its own frames while the line is up.
        It is a piece of the box, so it moves with it. */
@@ -818,7 +891,7 @@ static void draw_speech(const Game *g)
     draw_field_wrapped(text_field(BATTLE_SCREEN_NAME, "combatScript", 0),
                        shifted, g->speech->say);
     draw_field(text_field(BATTLE_SCREEN_NAME, "combatScript", 1), shifted,
-               speaker->name);
+               who);
 }
 
 static void draw_battle(Game *g)
@@ -848,8 +921,17 @@ static void draw_battle(Game *g)
     if (mask)
         EndScissorMode();
 
-    /* The furniture above it: the bars, the turn indicator, the ring. */
-    draw_chrome(mask ? mask->clip_depth + 1 : 0, INT32_MAX);
+    /* The furniture above it: the bars, the turn indicator, the ring. The
+       dial goes in between, where the clip puts it: over the indicator's
+       plate and under the move orb that sits in the middle of it. */
+    const StageChrome *clock = stage_chrome(BATTLE_SCREEN_NAME,
+                                            "battleClocker");
+    int32_t above = mask ? mask->clip_depth + 1 : 0;
+    draw_chrome(above, clock ? clock->depth + 1 : INT32_MAX);
+    draw_turn_dial(g);
+    if (clock)
+        draw_chrome(clock->depth + 1, INT32_MAX);
+    draw_chrome_buttons(g->pointer);
     for (int32_t slot = 1; slot < SONNY_SLOTS; slot++)
         draw_unit(g, slot);
 

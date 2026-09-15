@@ -83,7 +83,14 @@ const Texture2D *asset_texture(const char *name, int32_t frame)
     if (FileExists(path)) {
         slot->texture = LoadTexture(path);
         if (slot->texture.id != 0) {
-            SetTextureFilter(slot->texture, TEXTURE_FILTER_BILINEAR);
+            /* Some art is drawn a long way below its exported size -- the
+               quit button is a 60px square shown at 18 -- and sampling four
+               texels of it picks out whichever ones happen to land under the
+               pointer, which turns a dark glossy square into a flat bright
+               one. Mipmaps give those draws a properly reduced copy to read;
+               at or near full size trilinear still reads the full one. */
+            GenTextureMipmaps(&slot->texture);
+            SetTextureFilter(slot->texture, TEXTURE_FILTER_TRILINEAR);
             slot->ok = 1;
         }
     }

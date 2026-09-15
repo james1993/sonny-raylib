@@ -74,7 +74,8 @@ static const TextField *win_field(const char *name)
 /* The zone's progress bar: a track, and a fill placed inside it at this
    offset. Only the fill is scaled. */
 #define BAR_TRACK  "#1259"
-#define BAR_FILL   "#1261"
+#define BAR_FILL       "ZoneBarFill"
+#define BAR_FILL_WIDTH 251.0f
 #define BAR_FILL_X (-126.0f)
 
 /* Whether the pointer is on the hub's button with this character. */
@@ -290,22 +291,22 @@ static void draw_hub_note(Game *g, Vector2 mouse)
 {
     if (!game_hub_note_up(g))
         return;
-    /* One piece: the fade across the stage with the panel already in it.
-       (The other stage-sized clip on this frame, @1242, is the black the
-       screens change behind -- nothing to do with the note.) */
-    const StageChrome *fade = stage_chrome(HUB_SCREEN, "krinNavFadeSpeech");
-    if (fade) {
-        const Texture2D *tex = asset_texture(TextFormat("#%d",
-                                                        fade->character), 1);
-        if (tex)
-            draw_texture_placed(tex, fade->x, fade->y, fade->scale_x,
-                                fade->scale_y, fade->origin_x, fade->origin_y,
-                                WHITE);
-    }
+    /* The fade across the stage and the panel on it, drawn as the clip's own
+       two pieces. The clip cannot be exported whole: it carries text fields,
+       and the decompiler bakes their design-time copy into the picture -- the
+       close line comes out as "< EWOINENJFEONVFOENV >". (The other
+       stage-sized clip on this frame, @1242, is the black the screens change
+       behind, nothing to do with the note.) */
+    draw_clip_parts(HUB_SCREEN, "krinNavFadeSpeech", NO_OFFSET, NULL, NULL,
+                    WHITE);
     draw_field_wrapped(chrome_field(HUB_SCREEN, "@1241"), NO_OFFSET,
                        lang_text("NAVTITLE2", g->hub_note));
     draw_field_wrapped(chrome_field(HUB_SCREEN, "@1240"), NO_OFFSET,
                        lang_text("NAVTEXT2", g->hub_note));
+    /* The clip's own frame sets this from the text table; what it was
+       authored with is placeholder. */
+    draw_field(text_field_var(HUB_SCREEN, "texter"), NO_OFFSET,
+               lang_text("SYSTEM", 8));
     const StageButton *close = stage_button(HUB_SCREEN, HUB_NOTE_CLOSE, 0);
     if (close)
         draw_button_state(close, CheckCollisionPointRec(mouse,
@@ -340,15 +341,23 @@ static void draw_hub_panel(Game *g, Vector2 mouse)
             draw_texture_placed(track, bar->x, bar->y, bar->scale_x,
                                 bar->scale_y, off.x, off.y, WHITE);
         }
+        /* The fill is lit: its placement carries a glow, so what is drawn is
+           the fill with the halo already under it. Cutting it to the fraction
+           cuts the halo with it, which is what scaling the clip does. */
         const Texture2D *fill = asset_texture(BAR_FILL, 1);
         if (fill && total > 0) {
             float fraction = done / total;
             Vector2 off = asset_frame_offset(BAR_FILL, 1);
-            Rectangle box = placed_texture(fill, bar->x + BAR_FILL_X * bar->scale_x,
+            Rectangle box = placed_texture(fill,
+                                           bar->x + BAR_FILL_X * bar->scale_x,
                                            bar->y, bar->scale_x, bar->scale_y,
                                            off.x, off.y);
-            box.width *= fraction;
-            Rectangle src = {0, 0, fill->width * fraction, (float)fill->height};
+            /* The glow's margin is outside the art, so only the art's own
+               width takes the fraction. */
+            float edge = (fill->width - BAR_FILL_WIDTH) / 2.0f;
+            float shown = edge * 2 + BAR_FILL_WIDTH * fraction;
+            box.width *= shown / fill->width;
+            Rectangle src = {0, 0, shown, (float)fill->height};
             DrawTexturePro(*fill, src, box, (Vector2){0, 0}, 0.0f, WHITE);
         }
     }
@@ -1627,6 +1636,15 @@ void screen_victory_update(Game *g, Vector2 mouse)
         }
     }
 
+    /* What is under the pointer says what it is, the same way it does in the
+       bag: a drop names itself, and the bag's own squares do too. */
+    for (int32_t i = 0; i < g->dropped_count; i++)
+        if (hit(drop_rect(i), mouse))
+            game_tooltip_item(g, item_by_id(g->dropped[i]), 0);
+    for (int32_t i = 0; i < g->campaign.inventory_count; i++)
+        if (hit(win_bag_rect(i), mouse))
+            game_tooltip_item(g, item_by_id(g->campaign.inventory[i]), 0);
+
     /* Drops are chosen by clicking them, as VICTORY[1] instructs. */
     for (int32_t i = 0; i < g->dropped_count; i++) {
         Rectangle r = drop_rect(i);
@@ -1693,6 +1711,9 @@ void screen_victory_update(Game *g, Vector2 mouse)
 #define WIN_PLAYER_ROW 2
 /* The bar's full width, which the original scales by exp/100. */
 #define WIN_BAR_WIDTH  95.1f
+/* The fill's own two frames: how it looks, and how it looks on a level. */
+#define WIN_BAR_PLAIN  "#1344@1"
+#define WIN_BAR_LEVEL  "#1344@2"
 
 /* Which row a piece of the frame belongs to: the three are stacked, so the
    band its y falls in says which. */
@@ -1762,11 +1783,21 @@ static void draw_win_parts(Game *g)
         if (in_row && !win_row_shown(g, row))
             continue;
 
+        /* Two pieces of a row are clips the frame points at a frame of: the
+           portrait, which it points at whoever the row is for, and the fill,
+           which has a second frame it switches to on a level. Pointing both
+           at the portrait put a second little face under the row. */
         const char *chosen = NULL;
         if (part->frames) {
             if (!in_row)
                 continue;
-            chosen = win_row_portrait(g, row);
+            if (strcmp(part->name, "avIn") == 0)
+                chosen = win_row_portrait(g, row);
+            else if (strcmp(part->name, "bar") == 0)
+                chosen = (row == WIN_PLAYER_ROW && g->win_leveled)
+                       ? WIN_BAR_LEVEL : WIN_BAR_PLAIN;
+            else
+                continue;
         }
         const char *name = chosen ? chosen
                                   : TextFormat("#%d", part->character);

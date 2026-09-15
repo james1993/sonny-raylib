@@ -1,0 +1,23 @@
+{
+ "ZoneBarFill": {
+  "file": "assets/art/glow/ZoneBarFill.png",
+  "character": 1261,
+  "width": 251,
+  "height": 14,
+  "pad": 29
+ },
+ "TurnRingFriend": {
+  "file": "assets/art/glow/TurnRingFriend.png",
+  "character": 1592,
+  "width": 62,
+  "height": 62,
+  "pad": 24
+ },
+ "TurnRingEnemy": {
+  "file": "assets/art/glow/TurnRingEnemy.png",
+  "character": 1592,
+  "width": 62,
+  "height": 62,
+  "pad": 24
+ }
+}

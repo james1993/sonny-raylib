@@ -230,6 +230,9 @@ def collect_names(data_dir):
     # The widget that shows one buff on a unit's bar: its coloured backing,
     # its frame, and the backing behind the turns left on it.
     want['chrome'].update(['#780', '#781', '#800'])
+    # The experience bar's fill on the victory screen, which has a second
+    # frame it switches to on a level.
+    want['chrome'].update(['#1344@1', '#1344@2'])
     # The balloon over a speaker's head. Each unit's container carries one
     # (character 974, placed as "speech") and the speech driver plays it
     # through when that unit says something.
@@ -621,6 +624,20 @@ def main():
                 if os.path.exists(os.path.join(ROOT, info['file'])):
                     manifest[name] = {'category': 'sound',
                                       'frames': [info['file']]}
+
+    # Pieces the game draws under a glow filter, which tools/extract_glows.py
+    # renders with the glow applied -- the filter is on the placement, so the
+    # art on its own comes out unlit. The origin moves out by the margin the
+    # glow needed.
+    glows_path = os.path.join(args.data, 'glows.json')
+    if os.path.exists(glows_path):
+        with open(glows_path, encoding='utf-8') as fh:
+            for name, info in json.load(fh).items():
+                if not os.path.exists(os.path.join(ROOT, info['file'])):
+                    continue
+                manifest[name] = {'category': 'glow',
+                                  'frames': [info['file']],
+                                  'offsets': [[-info['pad'], -info['pad']]]}
 
     # The markers on a zone's scene, which tools/extract_markers.py renders
     # style by style with their colour transform and glow already applied.

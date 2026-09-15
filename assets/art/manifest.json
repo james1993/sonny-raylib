@@ -1668,6 +1668,18 @@
     ]
    ]
   },
+  "#1344@1": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1344@1.png"
+   ],
+   "offsets": [
+    [
+     0.0,
+     9.35
+    ]
+   ]
+  },
   "#1344@2": {
    "category": "chrome",
    "frames": [
@@ -28717,6 +28729,18 @@
     "assets/art/sound/CutsceneVoiceOutro.mp3"
    ]
   },
+  "ZoneBarFill": {
+   "category": "glow",
+   "frames": [
+    "assets/art/glow/ZoneBarFill.png"
+   ],
+   "offsets": [
+    [
+     -29,
+     -29
+    ]
+   ]
+  },
   "marker0": {
    "category": "marker",
    "frames": [
@@ -30382,6 +30406,30 @@
     [
      93.05,
      98.6
+    ]
+   ]
+  },
+  "TurnRingFriend": {
+   "category": "glow",
+   "frames": [
+    "assets/art/glow/TurnRingFriend.png"
+   ],
+   "offsets": [
+    [
+     -24,
+     -24
+    ]
+   ]
+  },
+  "TurnRingEnemy": {
+   "category": "glow",
+   "frames": [
+    "assets/art/glow/TurnRingEnemy.png"
+   ],
+   "offsets": [
+    [
+     -24,
+     -24
     ]
    ]
   }

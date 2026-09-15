@@ -29,6 +29,11 @@ java -Xmx3g -jar "$FFDEC" -format sound:mp3 -export sound "$OUT/sound" "$SWF"
 # SWF has 356 DefineShape tags against 3 bitmaps.
 java -Xmx3g -jar "$FFDEC" -format shape:svg -export shape "$OUT/shape" "$SWF"
 
+# The same shapes as PNG. A few pieces are drawn under a glow filter that
+# lives on the placement rather than in the clip, and tools/extract_glows.py
+# renders those itself from the flat art.
+java -Xmx3g -jar "$FFDEC" -format shape:png -export shape "$OUT/shape_png" "$SWF"
+
 # Bitmaps (few, but needed).
 java -Xmx3g -jar "$FFDEC" -format image:png -export image "$OUT/image" "$SWF"
 
