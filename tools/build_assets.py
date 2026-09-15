@@ -43,6 +43,8 @@ ROOT = os.path.dirname(HERE)
 # The balloon a unit pops while it speaks, and where its container puts it.
 SPEECH_BALLOON = 974
 SPEECH_BALLOON_AT = (-10.65, -64.3)
+# The prompt beside the speech box.
+SPEECH_SKIP = 1639
 
 
 def load(name, data_dir):
@@ -232,6 +234,9 @@ def collect_names(data_dir):
     # (character 974, placed as "speech") and the speech driver plays it
     # through when that unit says something.
     want['effect'].add('#%d' % SPEECH_BALLOON)
+    # And the "< Press SPACEBAR to skip >" that sits beside the box while
+    # someone is talking, which pulses through its own frames.
+    want['effect'].add('#%d' % SPEECH_SKIP)
     # The battle screen's own effect sounds, played by name.
     want['sound'].update(['Swing', 'MagicCast', 'Forcefield', 'Click2putdown',
                           'Click3pickup'])

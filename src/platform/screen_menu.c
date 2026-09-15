@@ -321,7 +321,7 @@ void screen_settings_draw(Game *g, Vector2 mouse)
     ClearBackground(BLACK);
     draw_screen_chrome("Navigation");
     draw_screen_buttons("Navigation", mouse);
-    draw_clip_parts(MENU_SCREEN_ID, SETTINGS_MENU, NOWHERE, NULL, WHITE);
+    draw_clip_parts(MENU_SCREEN_ID, SETTINGS_MENU, NOWHERE, NULL, NULL, WHITE);
     draw_static_text(MENU_SCREEN_ID, SETTINGS_MENU);
     for (int i = 0; i < SONNY_BUTTON_COUNT; i++)
         if (strcmp(SONNY_BUTTONS[i].screen, SETTINGS_MENU) == 0)

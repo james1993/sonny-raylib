@@ -425,16 +425,22 @@ void draw_field_wrapped(const TextField *f, Vector2 clip, const char *text)
    pieces are drawn and the real text goes over them. A piece the game points
    at a frame of by name takes `chosen` as that name. */
 void draw_clip_parts(const char *screen, const char *owner,
-                            Vector2 moved, const char *chosen, Color tint)
+                            Vector2 moved, const char *framed,
+                            const char *chosen, Color tint)
 {
     for (int i = 0; i < SONNY_CLIP_PART_COUNT; i++) {
         const ClipPart *part = &SONNY_CLIP_PARTS[i];
         if (strcmp(part->screen, screen) != 0
             || strcmp(part->owner, owner) != 0 || part->width <= 0)
             continue;
-        /* A piece the game points at a frame of by name -- the speech box's
-           portrait -- is only drawn when the caller says which name. */
-        if (part->frames && !chosen)
+        /* A piece the game points at a frame of by name is only drawn when
+           the caller names that piece and says which frame. The speech box
+           has two of them -- the portrait, which it points at the speaker,
+           and the "press SPACEBAR" prompt, which runs on its own -- so
+           pointing every one of them at the speaker put a second little
+           portrait over the speaker's name. */
+        if (part->frames && (!framed || !chosen
+                             || strcmp(part->name, framed) != 0))
             continue;
         const char *name = part->frames ? chosen
                                         : TextFormat("#%d", part->character);

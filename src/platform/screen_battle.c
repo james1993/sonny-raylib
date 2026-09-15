@@ -129,6 +129,12 @@ static void draw_doll(const Game *g, int32_t slot)
 /* Where the speech box goes when it is the left team talking. */
 #define SPEECH_LEFT_X 21.8f
 
+/* The piece of the box the game points at whoever is talking. */
+#define SPEECH_PORTRAIT "inner2"
+/* And the prompt beside it, which is a clip of its own. */
+#define SPEECH_SKIP_PART "@8"
+#define SPEECH_SKIP      "#1639"
+
 /* The balloon a unit pops while it is talking. Every unit's container carries
    one, placed at this offset inside it and mirrored, and the speech driver
    plays it through once -- 57 frames at the stage's own rate. */
@@ -471,7 +477,7 @@ static void draw_reticle(const Game *g)
     /* The clip's fields are recorded where it is parked off stage, so
        everything in it follows by the same amount it moved. */
     Vector2 moved = {at.x - art->x, at.y - art->y};
-    draw_clip_parts(BATTLE_SCREEN_NAME, RETICLE_INSTANCE, moved, NULL, tint);
+    draw_clip_parts(BATTLE_SCREEN_NAME, RETICLE_INSTANCE, moved, NULL, NULL, tint);
 
     /* The name is the lower of the two fields, the level the upper. */
     const TextField *name = text_field(BATTLE_SCREEN_NAME, RETICLE_INSTANCE, 0);
@@ -760,8 +766,37 @@ static void draw_speech(const Game *g)
         at.x = SPEECH_LEFT_X;
 
     Vector2 shifted = {at.x - box->x, at.y - box->y};
-    draw_clip_parts(BATTLE_SCREEN_NAME, "combatScript", shifted, speaker->name,
-                    WHITE);
+    /* The portrait is the piece the box points at the speaker; the prompt
+       beside it is not. */
+    draw_clip_parts(BATTLE_SCREEN_NAME, "combatScript", shifted,
+                    SPEECH_PORTRAIT, speaker->name, WHITE);
+
+    /* The prompt beside it runs through its own frames while the line is up.
+       It is a piece of the box, so it moves with it. */
+    const ClipPart *prompt = NULL;
+    for (int i = 0; i < SONNY_CLIP_PART_COUNT; i++) {
+        const ClipPart *part = &SONNY_CLIP_PARTS[i];
+        if (strcmp(part->screen, BATTLE_SCREEN_NAME) == 0
+            && strcmp(part->owner, "combatScript") == 0
+            && strcmp(part->name, SPEECH_SKIP_PART) == 0)
+            prompt = part;
+    }
+    if (prompt) {
+        int32_t frames = asset_frame_count(SPEECH_SKIP);
+        const Texture2D *tex = asset_texture(SPEECH_SKIP,
+                                             frames > 0
+                                             ? g->balloon_tick % frames + 1
+                                             : 1);
+        if (tex) {
+            Vector2 off = asset_frame_offset(SPEECH_SKIP,
+                                             frames > 0
+                                             ? g->balloon_tick % frames + 1
+                                             : 1);
+            draw_texture_placed(tex, shifted.x + prompt->x,
+                                shifted.y + prompt->y, prompt->scale_x,
+                                prompt->scale_y, off.x, off.y, WHITE);
+        }
+    }
 
     /* The fields are recorded where the clip is placed, so they follow it by
        however far it moved. */

@@ -241,8 +241,11 @@ void draw_field_tinted(const TextField *f, Vector2 clip, const char *text,
 void draw_field_wrapped(const TextField *f, Vector2 clip, const char *text);
 /* The graphics of a clip that carries text, which cannot be drawn as one
    picture because the export bakes its fields' design-time copy in. */
+/* Every piece of a clip, moved by `moved`. A piece the game points at a
+   frame of by name is drawn only when `framed` names that piece and `chosen`
+   says which frame; the others are drawn as themselves. */
 void draw_clip_parts(const char *screen, const char *owner, Vector2 moved,
-                     const char *chosen, Color tint);
+                     const char *framed, const char *chosen, Color tint);
 
 /* One ability orb, put back together from the shared pieces the orb clip is
    made of, centred on `centre` and at the scale the screen places it: a ball,

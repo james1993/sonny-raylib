@@ -483,7 +483,7 @@ void screen_map_draw(Game *g, Vector2 mouse)
         BeginScissorMode((int)box.x, (int)box.y, (int)box.width,
                          (int)box.height);
     }
-    draw_clip_parts(MAP_SCREEN, MAP_CLIP, NO_OFFSET, NULL, WHITE);
+    draw_clip_parts(MAP_SCREEN, MAP_CLIP, NO_OFFSET, NULL, NULL, WHITE);
     if (backing)
         EndScissorMode();
 
@@ -690,7 +690,7 @@ void screen_talents_draw(Game *g, Vector2 mouse)
     ClearBackground(BLACK);
     /* The hub stays behind the menu, as it does in the original. */
     draw_hub_panel(g, mouse);
-    draw_clip_parts(MENU_SCREEN, MENU_SKILLS, NO_OFFSET, NULL, WHITE);
+    draw_clip_parts(MENU_SCREEN, MENU_SKILLS, NO_OFFSET, NULL, NULL, WHITE);
 
     /* The four headings, which the frame reads out of the language table. */
     draw_field(skill_field("@603", 0), NO_OFFSET, lang_text("K_TITLE1", 0));
@@ -811,7 +811,7 @@ void screen_talents_draw(Game *g, Vector2 mouse)
                          (int)box.height);
         for (int32_t i = 0; i < count; i++) {
             Vector2 at = pool_row(i);
-            draw_clip_parts(MENU_SCREEN, POOL_ROW, at, NULL, WHITE);
+            draw_clip_parts(MENU_SCREEN, POOL_ROW, at, NULL, NULL, WHITE);
             /* The original walks the list of known abilities with for..in,
                which hands back an array's indices last to first, so the row
                the pool fills first is the last ability learned. */
@@ -1280,7 +1280,7 @@ void screen_inventory_draw(Game *g, Vector2 mouse)
     /* The hub's own furniture stays behind the menu, as it does in the
        original: the row of buttons and the zone's progress are still there. */
     draw_hub_panel(g, mouse);
-    draw_clip_parts(MENU_SCREEN, MENU_INVENTORY, NO_OFFSET, NULL, WHITE);
+    draw_clip_parts(MENU_SCREEN, MENU_INVENTORY, NO_OFFSET, NULL, NULL, WHITE);
 
     draw_field(inv_field("@881"), NO_OFFSET,
                g->menu_member > 0 ? SONNY_PARTY[g->menu_member].name
@@ -1435,7 +1435,7 @@ void screen_shop_draw(Game *g, Vector2 mouse)
 
     ClearBackground(BLACK);
     draw_hub_panel(g, mouse);
-    draw_clip_parts(MENU_SCREEN, MENU_SHOP, NO_OFFSET, NULL, WHITE);
+    draw_clip_parts(MENU_SCREEN, MENU_SHOP, NO_OFFSET, NULL, NULL, WHITE);
     /* The two buttons in the purse strip -- the store's own euro sign and the
        recycler -- are art the frame keeps inside the buttons themselves. */
     for (int32_t i = 0; i < SONNY_BUTTON_COUNT; i++)
