@@ -583,8 +583,22 @@ static void draw_unit_bar(const Game *g, int32_t slot)
     int mirror = (slot % 2) == 0;
     const char *side = mirror ? "right" : "left";
 
-    float life = (u->LIFEU > 0) ? (float)u->LIFEN / (float)u->LIFEU : 0.0f;
-    float focus = (u->FOCUSU > 0) ? (float)u->FOCUSN / (float)u->FOCUSU : 0.0f;
+    /* The fight works a move out in one go, but the original does not apply
+       it until the blow lands -- so while an attacker is still crossing the
+       floor the bar has to read what it read before. */
+    int32_t life_now = u->LIFEN;
+    int32_t focus_now = u->FOCUSN;
+    if (g->move_pending && g->has_last && g->last.target == slot) {
+        if (g->last.kind == KIND_FULL_DAMAGE)
+            life_now += g->last.amount;
+        else if (g->last.kind == KIND_HEAL)
+            life_now -= g->last.amount;
+        else if (g->last.kind == KIND_FOCUS)
+            focus_now -= g->last.amount;
+    }
+
+    float life = (u->LIFEU > 0) ? (float)life_now / (float)u->LIFEU : 0.0f;
+    float focus = (u->FOCUSU > 0) ? (float)focus_now / (float)u->FOCUSU : 0.0f;
     if (life < 0) life = 0;
     if (life > 1) life = 1;
     if (focus < 0) focus = 0;
@@ -602,7 +616,7 @@ static void draw_unit_bar(const Game *g, int32_t slot)
             || part->name[strlen(part->name) - 1] == '3')
             continue;
         if (strcmp(part->name, "lB") == 0) {
-            Color c = life_colour(u->LIFEN, u->LIFEU);
+            Color c = life_colour(life_now, u->LIFEU);
             draw_bar_part(part, bar, mirror, life, &c);
         } else if (strcmp(part->name, "fB") == 0) {
             draw_bar_part(part, bar, mirror, focus, NULL);
@@ -613,11 +627,11 @@ static void draw_unit_bar(const Game *g, int32_t slot)
 
     draw_bar_field(bar_field(side, "name"), bar, mirror, u->name);
     draw_bar_field(bar_field(side, "lifeNow"), bar, mirror,
-                   TextFormat("%d", u->LIFEN));
+                   TextFormat("%d", life_now));
     draw_bar_field(bar_field(side, "lifeMax"), bar, mirror,
                    TextFormat("%d", u->LIFEU));
     draw_bar_field(bar_field(side, "focusNow"), bar, mirror,
-                   TextFormat("%d", u->FOCUSN));
+                   TextFormat("%d", focus_now));
     draw_bar_field(bar_field(side, "focusMax"), bar, mirror,
                    TextFormat("%d", u->FOCUSU));
 }
