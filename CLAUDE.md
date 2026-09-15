@@ -423,3 +423,11 @@ single frame with no tween, so the ramp is ours.
   the bar's own scale of 1.085 by 1.161. Ignoring that put the icons nine
   pixels in from where the original has them and drew them a twelfth too
   small.
+* A lit piece is the flat one with a margin round it for the halo, so its own
+  origin sits that much further into the picture. Recording the margin as the
+  origin instead drew the zone bar's fill 58 across and 65 down from the
+  track -- off the bottom of the stage, which is why the bar looked empty
+  however well the art came out.
+* Hovering an empty square says "None / This slot is empty.": the original
+  reads item zero rather than skipping the square, and it does that in the
+  bag, in the store and on the victory screen alike.

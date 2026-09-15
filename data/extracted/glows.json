@@ -11,13 +11,21 @@
   "character": 1592,
   "width": 62,
   "height": 62,
-  "pad": 24
+  "pad": 24,
+  "origin": [
+   31.0,
+   31.0
+  ]
  },
  "TurnRingEnemy": {
   "file": "assets/art/glow/TurnRingEnemy.png",
   "character": 1592,
   "width": 62,
   "height": 62,
-  "pad": 24
+  "pad": 24,
+  "origin": [
+   31.0,
+   31.0
+  ]
  }
 }

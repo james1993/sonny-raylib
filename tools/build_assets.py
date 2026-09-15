@@ -632,17 +632,22 @@ def main():
 
     # Pieces the game draws under a glow filter, which tools/extract_glows.py
     # renders with the glow applied -- the filter is on the placement, so the
-    # art on its own comes out unlit. The origin moves out by the margin the
-    # glow needed.
+    # art on its own comes out unlit. The lit picture is the flat one with a
+    # margin round it for the halo, so the piece's own origin sits that much
+    # further into it than it did before.
     glows_path = os.path.join(args.data, 'glows.json')
     if os.path.exists(glows_path):
         with open(glows_path, encoding='utf-8') as fh:
             for name, info in json.load(fh).items():
                 if not os.path.exists(os.path.join(ROOT, info['file'])):
                     continue
+                flat = manifest.get('#%d' % info['character']) or {}
+                origin = info.get('origin') \
+                    or (flat.get('offsets') or [[0.0, 0.0]])[0]
                 manifest[name] = {'category': 'glow',
                                   'frames': [info['file']],
-                                  'offsets': [[-info['pad'], -info['pad']]]}
+                                  'offsets': [[origin[0] + info['pad'],
+                                               origin[1] + info['pad']]]}
 
     # The markers on a zone's scene, which tools/extract_markers.py renders
     # style by style with their colour transform and glow already applied.

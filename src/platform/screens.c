@@ -1374,13 +1374,14 @@ void screen_inventory_draw(Game *g, Vector2 mouse)
     /* What the pointer is on, in the game's own words. */
     const ItemDef *shown_item = NULL;
     if (g->hovered_item >= 100) {
+        /* An empty square is item zero, whose own words are "This slot is
+           empty." -- the original says that rather than nothing. */
         int32_t i = g->hovered_item - 100;
-        if (i < c->inventory_count)
-            shown_item = item_by_id(c->inventory[i]);
+        shown_item = item_by_id(i < c->inventory_count ? c->inventory[i] : 0);
     } else if (g->hovered_item >= 0 && g->hovered_item < SONNY_EQUIP_SLOTS) {
         shown_item = item_by_id(c->player.equip[g->hovered_item]);
     }
-    if (shown_item && shown_item->id != 0)
+    if (shown_item)
         game_tooltip_item(g, shown_item, 0);
 }
 
@@ -1529,13 +1530,12 @@ void screen_shop_draw(Game *g, Vector2 mouse)
     const ItemDef *shown = NULL;
     if (g->hovered_item >= 100) {
         int32_t i = g->hovered_item - 100;
-        if (i < c->inventory_count)
-            shown = item_by_id(c->inventory[i]);
+        shown = item_by_id(i < c->inventory_count ? c->inventory[i] : 0);
     } else if (g->hovered_item >= 0 && shop
                && g->hovered_item < SHOP_STOCK_SLOTS) {
         shown = item_by_id(shop->item[g->hovered_item]);
     }
-    if (shown && shown->id != 0)
+    if (shown)
         /* The store's stock names its price first; a bag slot does not. */
         game_tooltip_item(g, shown,
                           g->hovered_item >= 100 ? 0 : shown->price);
@@ -1641,9 +1641,11 @@ void screen_victory_update(Game *g, Vector2 mouse)
     for (int32_t i = 0; i < g->dropped_count; i++)
         if (hit(drop_rect(i), mouse))
             game_tooltip_item(g, item_by_id(g->dropped[i]), 0);
-    for (int32_t i = 0; i < g->campaign.inventory_count; i++)
+    for (int32_t i = 0; i < MENU_BAG_SLOTS; i++)
         if (hit(win_bag_rect(i), mouse))
-            game_tooltip_item(g, item_by_id(g->campaign.inventory[i]), 0);
+            game_tooltip_item(g, item_by_id(
+                i < g->campaign.inventory_count ? g->campaign.inventory[i] : 0),
+                0);
 
     /* Drops are chosen by clicking them, as VICTORY[1] instructs. */
     for (int32_t i = 0; i < g->dropped_count; i++) {

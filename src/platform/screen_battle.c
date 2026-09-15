@@ -651,11 +651,11 @@ static void draw_turn_dial(const Game *g)
     const Texture2D *tex = asset_texture(name, 1);
     if (!tex)
         return;
-    /* The arc is drawn about the ring's centre, and the glow's margin is the
-       same on every side, so the middle of the picture is that centre. */
+    /* The arc is drawn about the ring's centre, which is the origin the
+       glow's own manifest entry carries. */
+    Vector2 off = asset_frame_offset(name, 1);
     draw_texture_placed(tex, clock->x + TURN_DIAL_X, clock->y + TURN_DIAL_Y,
-                        clock->scale_x, clock->scale_y,
-                        tex->width / 2.0f, tex->height / 2.0f, WHITE);
+                        clock->scale_x, clock->scale_y, off.x, off.y, WHITE);
 }
 
 /* -------------------------------------------------------------------- ring */

@@ -50,12 +50,14 @@ PIECES = {
     # game is played -- pins the timer at its limit, so the ring is always
     # whole, and only its colour says whose turn it is.
     'TurnRingFriend': {'character': 1592, 'compose': 'ring',
+                       'origin': 'middle',
                        'filters': [{'color': [0, 102, 255], 'blur': 8.0,
                                     'strength': 1.0, 'passes': 1,
                                     'inner': True},
                                    {'color': [0, 102, 204], 'blur': 27.0,
                                     'strength': 1.69921875, 'passes': 1}]},
     'TurnRingEnemy': {'character': 1592, 'compose': 'ring',
+                      'origin': 'middle',
                       'filters': [{'color': [255, 204, 0], 'blur': 8.0,
                                    'strength': 1.0, 'passes': 1,
                                    'inner': True},
@@ -174,6 +176,11 @@ def main(argv=None):
         out[name] = {'file': os.path.relpath(path, ROOT),
                      'character': spec['character'],
                      'width': width, 'height': height, 'pad': pad}
+        # Where the piece's own origin sits in the art. Left unsaid, it is
+        # the flat art's, which build_assets.py already knows; a composed
+        # piece has to say, because the flat art is only half of it.
+        if spec.get('origin') == 'middle':
+            out[name]['origin'] = [width / 2.0, height / 2.0]
         print('%-14s %dx%d art, %d px of glow round it'
               % (name, width, height, pad))
     with open(args.json, 'w', encoding='utf-8') as fh:
