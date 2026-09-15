@@ -8,7 +8,7 @@ CORE_SRC = src/core/formula.c src/core/rng.c src/core/unit.c \
            src/gen/gamedata.c
 BUILD    = build
 
-.PHONY: all game test simulate vectors data clean
+.PHONY: all game test simulate vectors data clean playtest
 
 all: game test
 
@@ -55,6 +55,13 @@ test: $(BUILD)
 data:
 	python3 tools/gen_c_data.py
 	python3 tools/gen_asset_manifest.py
+
+# Play both games through the same script and report where they differ.
+# Needs Ruffle and a debug-patched copy of the SWF; see tools/refcap.py.
+#   make playtest RUFFLE=path/to/ruffle SWF=path/to/sonny1_dbg.swf
+playtest: $(BUILD)/sonny
+	python3 tools/playtest.py tests/play/zone1.txt \
+	    --ruffle "$(RUFFLE)" --swf "$(SWF)"
 
 # Regenerate the differential vectors from the reference transcription.
 vectors:
