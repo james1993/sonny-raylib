@@ -114,7 +114,8 @@ note the inventory, and an item under the pointer
 click 55 510
 wait 4
 shot inventory
-move 250 300
+note something Sonny is wearing, which is where an item says what it does
+move 175 500
 wait 2
 shot inventory_hover
 
@@ -131,7 +132,8 @@ wait 4
 click 674 249
 wait 5
 shot shop
-move 250 300
+note something for sale, which also names its price
+move 545 175
 wait 2
 shot shop_hover
 
