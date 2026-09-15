@@ -49,7 +49,10 @@ typedef struct {
     Delivery     delivery;
     const char  *buff;       /* "" when the move applies none */
     const char  *sound;      /* effect sound, played on impact */
-    const char  *model;      /* impact/projectile graphic (BOOM_*) */
+    const char  *model;      /* the impact graphic (BOOM_*) */
+    /* What a missile throws. The original keeps it in the slot the melee
+       path leaves unused, so it is empty for everything else. */
+    const char  *projectile;
     const char  *tooltip;
     AbilityCoefs coefs;
 } AbilityDef;

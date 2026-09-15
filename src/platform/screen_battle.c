@@ -62,7 +62,8 @@ static Vector2 unit_marker_pos(const Game *g, int32_t slot)
     Vector2 at = unit_stage_pos(g, slot);
     float scale = g->camera_scale > 0 ? g->camera_scale : 1.0f;
     at.x = BATTLE_ORIGIN_X + g->camera_x + (at.x - BATTLE_ORIGIN_X) * scale;
-    at.y = BATTLE_ORIGIN_Y + g->camera_y + (at.y - BATTLE_ORIGIN_Y) * scale;
+    at.y = BATTLE_ORIGIN_Y + g->camera_y + g->shake_y
+         + (at.y - BATTLE_ORIGIN_Y) * scale;
     return at;
 }
 
@@ -146,7 +147,7 @@ static Camera2D battle_camera(const Game *g)
     Camera2D camera = {0};
     camera.target = (Vector2){BATTLE_ORIGIN_X, BATTLE_ORIGIN_Y};
     camera.offset = (Vector2){BATTLE_ORIGIN_X + g->camera_x,
-                              BATTLE_ORIGIN_Y + g->camera_y};
+                              BATTLE_ORIGIN_Y + g->camera_y + g->shake_y};
     camera.zoom = g->camera_scale > 0 ? g->camera_scale : 1.0f;
     return camera;
 }
@@ -245,6 +246,139 @@ static int melee_tick(Game *g)
         g->melee_frame = 0;
     }
     return g->melee_dir == 1 || g->melee_state == 1;
+}
+
+/* ------------------------------------------------------------------- shake */
+
+/* GridShaker. A blow that pierces -- and every shock -- bounces the
+   battlefield: the clip throws it by half the current value, then down by the
+   whole of it, then up again, taking a tenth off the throw each cycle until
+   it has nothing left. Only BATTLESCREEN moves, as with the lean. */
+#define SHAKE_THROW  8.0f
+#define SHAKE_DAMP   (SHAKE_THROW / 10.0f)
+
+static void shake_start(Game *g)
+{
+    g->shake_value = SHAKE_THROW;
+    g->shake_phase = 1;
+    g->shake_y = 0.0f;
+}
+
+static void shake_tick(Game *g)
+{
+    if (g->shake_phase <= 0)
+        return;
+    switch (g->shake_phase) {
+    case 1:                                   /* the clip's frame two */
+        g->shake_y += g->shake_value / 2.0f;
+        g->shake_phase = 2;
+        break;
+    case 2:                                   /* frame three does nothing */
+        g->shake_phase = 3;
+        break;
+    case 3:                                   /* frame four */
+        g->shake_y -= g->shake_value;
+        g->shake_value -= SHAKE_DAMP;
+        g->shake_phase = 4;
+        break;
+    default:                                  /* frame five */
+        g->shake_y += g->shake_value;
+        g->shake_value -= SHAKE_DAMP;
+        if (g->shake_value > 0) {
+            g->shake_phase = 1;
+        } else {
+            g->shake_phase = 0;
+            g->shake_y = 0.0f;
+        }
+        break;
+    }
+}
+
+/* -------------------------------------------------------------------- bolt */
+
+/* krinBoltMake. A missile throws a projectile from the caster to the target:
+   it fades in, is turned to face the way it is going, and accelerates by a
+   sixth every frame until it reaches whoever it was aimed at -- which is when
+   the move lands and the impact graphic goes up. Melee has the attacker walk
+   over instead; this is the same idea for the moves that stay put. */
+#define BOLT_TIME      60.0f     /* krinBoltTime */
+#define BOLT_SPEED     1.0f      /* krinBoltSpeed */
+#define BOLT_INCREASE  1.15f     /* krinBoltIncrease */
+#define BOLT_RISE      15.0f     /* it leaves from the caster's chest */
+#define BOLT_FADE      10        /* alpha a frame, out of a hundred */
+#define BOLT_GIVE_UP   240
+
+static void bolt_start(Game *g, const AbilityDef *a, int32_t caster,
+                       int32_t target)
+{
+    g->bolt = NULL;
+    if (!a || !a->projectile || !a->projectile[0] || asset_frame_count(a->projectile) <= 0)
+        return;
+    Vector2 from = unit_slot_pos(caster);
+    Vector2 to = unit_slot_pos(target);
+    if (caster == target)
+        return;
+    g->bolt = a->projectile;
+    g->bolt_target = target;
+    g->bolt_x = from.x;
+    g->bolt_y = from.y - BOLT_RISE;
+    g->bolt_step_x = (to.x - g->bolt_x) / BOLT_TIME;
+    g->bolt_step_y = (to.y - g->bolt_y) / BOLT_TIME;
+    g->bolt_speed = BOLT_SPEED;
+    g->bolt_facing = from.x < to.x ? 1.0f : -1.0f;
+    g->bolt_tick = 0;
+    /* Turned to face the target once, as it sets out. */
+    float angle = atan2f(to.y - g->bolt_y, to.x - g->bolt_x);
+    g->bolt_angle = angle * (180.0f / 3.14159265358979f);
+}
+
+static int bolt_busy(const Game *g)
+{
+    return g->bolt != NULL;
+}
+
+/* -> 1 while the bolt is still crossing. */
+static int bolt_tick(Game *g)
+{
+    if (!g->bolt)
+        return 0;
+    g->bolt_tick++;
+    Vector2 to = unit_stage_pos(g, g->bolt_target);
+    g->bolt_x += g->bolt_step_x * g->bolt_speed;
+    g->bolt_y += g->bolt_step_y * g->bolt_speed;
+    g->bolt_speed *= BOLT_INCREASE;
+    /* Arrival is being level with the target, whichever way it set off --
+       and a bolt that somehow never gets there gives up rather than holding
+       the fight open. */
+    if ((to.x - g->bolt_x) * g->bolt_facing <= 0
+        || g->bolt_tick > BOLT_GIVE_UP) {
+        g->bolt = NULL;
+        return 0;
+    }
+    return 1;
+}
+
+static void draw_bolt(const Game *g)
+{
+    if (!g->bolt)
+        return;
+    int32_t frames = asset_frame_count(g->bolt);
+    if (frames <= 0)
+        return;
+    int32_t frame = (g->bolt_tick % frames) + 1;
+    const Texture2D *tex = asset_texture(g->bolt, frame);
+    if (!tex)
+        return;
+    Vector2 off = asset_frame_offset(g->bolt, frame);
+    /* It fades in over its first ten frames. */
+    int32_t alpha = g->bolt_tick * BOLT_FADE;
+    if (alpha > 100)
+        alpha = 100;
+    Color tint = {255, 255, 255, (unsigned char)(alpha * 255 / 100)};
+    Rectangle src = {0, 0, (float)tex->width, (float)tex->height};
+    Rectangle dst = {g->bolt_x, g->bolt_y, (float)tex->width,
+                     (float)tex->height};
+    DrawTexturePro(*tex, src, dst, off, g->bolt_angle, tint);
 }
 
 /* Which animation a unit is playing, from its state and what is resolving. */
@@ -410,6 +544,10 @@ static int chrome_is_runtime(const char *name)
         /* The chosen move's orb, which sits in the turn indicator once the
            player has picked something and is hidden until then. */
         "krinToMove",
+        /* The ring that closes over the indicator on a choice. It rests on
+           an empty frame and is played through once, which draw_move_boomer
+           does; left to the furniture pass it loops for ever. */
+        "moveSelectBoomer",
         /* The turn indicator, which draw_turn_dial puts up itself: its clip
            holds the clock as well as the ring, and the decompiler renders
            that clock -- masked away at rest -- as a pair of stray slivers. */
@@ -1228,6 +1366,7 @@ static void draw_battle(Game *g)
     for (int32_t slot = 1; slot < SONNY_SLOTS; slot++)
         draw_doll(g, slot);
     draw_effect(g);
+    draw_bolt(g);
     draw_balloon(g);
     EndMode2D();
     if (mask)
@@ -1296,10 +1435,12 @@ static void present_move(Game *g, const MoveEvent *e)
         camera_aim(g, e->target, ZOOM_MELEE, MELEE_SWING * 2);
         break;
     case DELIVER_MISSILE:
+        bolt_start(g, a, e->caster, e->target);
         camera_aim(g, e->target, ZOOM_MELEE, 5);
         break;
     case DELIVER_SHOCK:
         camera_aim(g, e->target, ZOOM_SHOCK, 1);
+        shake_start(g);
         break;
     default:
         break;
@@ -1321,6 +1462,10 @@ static void present(Game *g, const MoveEvent *e)
 
     if (a->sound && a->sound[0])
         audio_play(a->sound);
+    /* A blow that got through the target's defence bounces the battlefield,
+       which is the original's tell for a piercing hit. */
+    if (e->pierced)
+        shake_start(g);
     if (a->model && a->model[0] && asset_frame_count(a->model) > 0) {
         g->effect = a->model;
         g->effect_slot = e->target;
@@ -1538,8 +1683,9 @@ static void advance(Game *g)
 
     if (b->phase == PHASE_RESOLVE) {
         /* An attacker on its way over holds the fight, the way the original
-           waits on krinMelee to reach its target before the hit lands. */
-        if (melee_busy(g))
+           waits on krinMelee to reach its target before the hit lands -- and
+           a bolt in the air holds it just the same. */
+        if (melee_busy(g) || bolt_busy(g))
             return;
         if (g->resolve_timer > 0) {
             g->resolve_timer--;
@@ -1658,6 +1804,9 @@ void battle_screen_start(Game *g, int32_t battle_id)
     g->melee_state = 0;
     g->melee_x = g->melee_y = 0.0f;
     g->boomer_tick = -1;
+    g->bolt = NULL;
+    g->shake_phase = 0;
+    g->shake_y = 0.0f;
 
     game_log(g, "%s%d. Team %d is faster and acts first.",
              lang_text("SYSTEM", 10), g->campaign.progress_battle - 1,
@@ -1686,7 +1835,9 @@ void battle_screen_update(Game *g, Vector2 mouse, int headless)
     g->move_tick++;
     g->effect_tick++;
     camera_tick(g);
+    shake_tick(g);
     melee_tick(g);
+    bolt_tick(g);
     if (g->boomer_tick >= 0)
         g->boomer_tick++;
     numbers_update(g);

@@ -25,6 +25,14 @@ static const Vector2 NO_OFFSET = {0, 0};
 /* How many bag slots a menu frame's grid has. */
 #define MENU_BAG_SLOTS 36
 
+/* What g->hovered_item holds while a menu is up. A screen can have three
+   kinds of square under the pointer at once and they must not share a range:
+   the shop had an equipment row and a stock slot both counting from zero, so
+   hovering the body row read out whatever was first on the shelf. */
+#define HOVER_STOCK 0            /* a store's shelf, or a tree node */
+#define HOVER_BAG   100
+#define HOVER_EQUIP 200
+
 /* The four tips the screen picks between, which the original chooses from at
    random every time the menu is opened (43 + random(4)). */
 #define SKILL_TIP_FIRST 43
@@ -1268,7 +1276,7 @@ void screen_inventory_update(Game *g, Vector2 mouse)
         Rectangle r = bag_rect(i);
         if (!hit(r, mouse))
             continue;
-        g->hovered_item = 100 + i;
+        g->hovered_item = HOVER_BAG + i;
         if (ui_clicked())
             swap_bag(g, i);
         break;
@@ -1278,7 +1286,7 @@ void screen_inventory_update(Game *g, Vector2 mouse)
         Rectangle r = slot_rect(i);
         if (!hit(r, mouse))
             continue;
-        g->hovered_item = i;
+        g->hovered_item = HOVER_EQUIP + i;
         /* A row only takes what belongs in it, and the row keeps what it has
            if the carried item does not fit. */
         if (ui_clicked() && item_fits(who, g->carried_item, i))
@@ -1491,18 +1499,18 @@ void screen_inventory_draw(Game *g, Vector2 mouse)
     }
 
     /* What the pointer is on, in the game's own words. */
-    if (g->hovered_item >= 100) {
-        /* An empty square is item zero, whose own words are "This slot is
-           empty." -- the original says that rather than nothing. */
-        int32_t i = g->hovered_item - 100;
-        game_tooltip_item(g, item_by_id(i < c->inventory_count
-                                        ? c->inventory[i] : 0), 0);
-    } else if (g->hovered_item >= 0 && g->hovered_item < SONNY_EQUIP_SLOTS) {
+    if (g->hovered_item >= HOVER_EQUIP) {
         /* A row is read off whoever the menu is showing, which is not always
            the player: the party row along the bottom swaps the doll and its
            slots for an ally's, and reading the player's rows here put one
            character's words over another's gear. */
-        tooltip_equip_row(g, who, g->hovered_item);
+        tooltip_equip_row(g, who, g->hovered_item - HOVER_EQUIP);
+    } else if (g->hovered_item >= HOVER_BAG) {
+        /* An empty square is item zero, whose own words are "This slot is
+           empty." -- the original says that rather than nothing. */
+        int32_t i = g->hovered_item - HOVER_BAG;
+        game_tooltip_item(g, item_by_id(i < c->inventory_count
+                                        ? c->inventory[i] : 0), 0);
     }
 }
 
@@ -1647,19 +1655,25 @@ void screen_shop_draw(Game *g, Vector2 mouse)
             DrawRectangleLinesEx(r, 1.0f, (Color){235, 200, 90, 255});
     }
 
-    /* What the pointer is on, in the game's own words. */
-    const ItemDef *shown = NULL;
-    if (g->hovered_item >= 100) {
-        int32_t i = g->hovered_item - 100;
-        shown = item_by_id(i < c->inventory_count ? c->inventory[i] : 0);
+    /* What the pointer is on, in the game's own words. The store has all
+       three kinds of square on it at once -- what it sells, what the player
+       is carrying, and what they are wearing -- so each is read from its own
+       range. */
+    if (g->hovered_item >= HOVER_EQUIP) {
+        /* The store dresses the player rather than an ally -- its doll is
+           drawn from the same rows. */
+        tooltip_equip_row(g, &c->player, g->hovered_item - HOVER_EQUIP);
+    } else if (g->hovered_item >= HOVER_BAG) {
+        int32_t i = g->hovered_item - HOVER_BAG;
+        game_tooltip_item(g, item_by_id(i < c->inventory_count
+                                        ? c->inventory[i] : 0), 0);
     } else if (g->hovered_item >= 0 && shop
                && g->hovered_item < SHOP_STOCK_SLOTS) {
-        shown = item_by_id(shop->item[g->hovered_item]);
+        /* The store's stock names its price first; nothing else does. */
+        const ItemDef *stock = item_by_id(shop->item[g->hovered_item]);
+        if (stock && stock->id != 0)
+            game_tooltip_item(g, stock, stock->price);
     }
-    if (shown)
-        /* The store's stock names its price first; a bag slot does not. */
-        game_tooltip_item(g, shown,
-                          g->hovered_item >= 100 ? 0 : shown->price);
 }
 
 void screen_shop_update(Game *g, Vector2 mouse)
@@ -1699,7 +1713,7 @@ void screen_shop_update(Game *g, Vector2 mouse)
         Rectangle r = shop_bag_rect(i);
         if (!hit(r, mouse))
             continue;
-        g->hovered_item = 100 + i;
+        g->hovered_item = HOVER_BAG + i;
         if (ui_clicked())
             swap_bag(g, i);
         break;
@@ -1709,7 +1723,7 @@ void screen_shop_update(Game *g, Vector2 mouse)
         Rectangle r = shop_equip_rect(i);
         if (!hit(r, mouse))
             continue;
-        g->hovered_item = i;
+        g->hovered_item = HOVER_EQUIP + i;
         if (ui_clicked() && item_fits(who, g->carried_item, i))
             swap_equipped(g, i);
         break;

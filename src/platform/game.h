@@ -125,6 +125,24 @@ typedef struct {
     float     melee_span;            /* how far along x it has to go */
     float     melee_step_x, melee_step_y;
     float     melee_facing;
+
+    /* krinBoltMake: a missile's projectile on its way over. It starts at the
+       caster, accelerates, and the move lands when it reaches the target. */
+    const char *bolt;
+    int32_t   bolt_target;
+    float     bolt_x, bolt_y;        /* where it is now */
+    float     bolt_step_x, bolt_step_y;
+    float     bolt_speed;
+    float     bolt_angle;
+    float     bolt_facing;           /* which way it is crossing */
+    int32_t   bolt_tick;
+
+    /* GridShaker: the battlefield bounces when a blow pierces, and on every
+       shock. The clip walks four frames a cycle, taking a tenth off the
+       throw each time round, until there is nothing left of it. */
+    float     shake_value;
+    float     shake_y;
+    int32_t   shake_phase;
     /* The move has been worked out but not yet shown: a melee attacker is
        still on its way over. */
     int32_t   move_pending;

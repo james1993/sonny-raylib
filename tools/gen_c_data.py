@@ -103,6 +103,11 @@ def gen_abilities(abilities):
                         'DELIVER_MISSILE' if delivery == 'Missile' else
                         'DELIVER_SHOCK' if delivery == 'Shock' else
                         'DELIVER_NONE'))
+        # Slot 12. The melee path leaves it unused, but a missile throws it:
+        # it names the projectile clip the bolt is made from.
+        lines.append('        .projectile = %s,'
+                     % c_string((a.get('anim') or '')
+                                if a.get('delivery') == 'Missile' else ''))
         lines.append('        .buff = %s, .sound = %s, .model = %s,'
                      % (c_string(buff_key), c_string(a.get('sound') or ''),
                         c_string(a.get('model') or '')))
@@ -585,7 +590,10 @@ typedef struct {
     Delivery     delivery;
     const char  *buff;       /* "" when the move applies none */
     const char  *sound;      /* effect sound, played on impact */
-    const char  *model;      /* impact/projectile graphic (BOOM_*) */
+    const char  *model;      /* the impact graphic (BOOM_*) */
+    /* What a missile throws. The original keeps it in the slot the melee
+       path leaves unused, so it is empty for everything else. */
+    const char  *projectile;
     const char  *tooltip;
     AbilityCoefs coefs;
 } AbilityDef;

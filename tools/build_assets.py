@@ -192,6 +192,11 @@ def collect_names(data_dir):
         # what get played. See the animations block in the manifest.
         if a.get('model'):
             want['effect'].add(a['model'])
+        # A missile's own projectile, which is the clip named in the slot the
+        # melee path leaves unused. Without it a bolt move had nothing to
+        # throw and the hit simply happened.
+        if a.get('delivery') == 'Missile' and a.get('anim'):
+            want['effect'].add(a['anim'])
         if a.get('sound'):
             want['sound'].add(a['sound'])
     for b in buffs:
