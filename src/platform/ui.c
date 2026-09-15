@@ -876,17 +876,104 @@ float ui_sans_bold_width(const char *text, float size)
 #define TOOLTIP_FAR_X    (-183.0f)
 #define TOOLTIP_RISE_Y   500.0f
 #define TOOLTIP_RISE     (-50.0f)
+/* The item form is wider, and flips further left. */
+#define TOOLTIP_ITEM_WIDTH 200.0f
+#define TOOLTIP_ITEM_FAR_X (-213.0f)
+/* The grey the title sits on before the item's rarity is added to it. */
+#define TOOLTIP_TITLE_BACKING ((Color){219, 219, 219, 217})
+/* The three inks the item form uses: the requirement line, the attributes it
+   adds, and what it says about itself. */
+#define TOOLTIP_REQ_INK   ((Color){0x33, 0x33, 0x33, 255})
+#define TOOLTIP_STAT_INK  ((Color){0xF8, 0xD7, 0x54, 255})
+#define TOOLTIP_SAY_INK   ((Color){0xB8, 0xFE, 0x4E, 255})
 
 void game_tooltip(Game *g, const char *title, const char *body)
 {
     snprintf(g->tip_title, sizeof(g->tip_title), "%s", title ? title : "");
     snprintf(g->tip_body, sizeof(g->tip_body), "%s", body ? body : "");
+    g->tip_req[0] = 0;
+    g->tip_line_count = 0;
+    g->tip_tint = TOOLTIP_TITLE_BACKING;
+}
+
+/* What the title's backing is tinted by: the item's rarity, as an offset
+   added to the backing's own grey. */
+static Color rarity_tint(const char *rarity)
+{
+    static const struct { const char *name; int r, g, b; } RARITY[] = {
+        {"Common", 0, 0, 0}, {"Uncommon", -62, -51, 0},
+        {"Rare", 86, 0, -164}, {"Unique", -67, 0, -159},
+    };
+    Color c = TOOLTIP_TITLE_BACKING;
+    for (size_t i = 0; rarity && i < sizeof(RARITY) / sizeof(RARITY[0]); i++) {
+        if (strcmp(rarity, RARITY[i].name) != 0)
+            continue;
+        int r = c.r + RARITY[i].r, g = c.g + RARITY[i].g;
+        int b = c.b + RARITY[i].b;
+        c.r = (unsigned char)(r < 0 ? 0 : r > 255 ? 255 : r);
+        c.g = (unsigned char)(g < 0 ? 0 : g > 255 ? 255 : g);
+        c.b = (unsigned char)(b < 0 ? 0 : b > 255 ? 255 : b);
+        break;
+    }
+    return c;
+}
+
+static void tip_line(Game *g, const char *text)
+{
+    if (g->tip_line_count >= TOOLTIP_LINES)
+        return;
+    snprintf(g->tip_lines[g->tip_line_count], sizeof(g->tip_lines[0]), "%s",
+             text);
+    g->tip_line_count++;
+}
+
+void game_tooltip_item(Game *g, const ItemDef *item, int32_t price)
+{
+    if (!item) {
+        game_tooltip(g, "", "");
+        return;
+    }
+    /* A shop puts what it costs in front of what it is. */
+    if (price > 0)
+        game_tooltip(g, TextFormat("%s%d - %s", EURO, price, item->name),
+                     item->tooltip);
+    else
+        game_tooltip(g, item->name, item->tooltip);
+    g->tip_tint = rarity_tint(item->rarity);
+    if (item->slot < 2)
+        return;             /* not equipment: the plain two-block tooltip */
+
+    /* "Lvl. N <Class> <what it goes on>". */
+    const char *klass = item->class_req > 0
+                      ? TextFormat(" %s", lang_text("CLASS",
+                                                    item->class_req - 1))
+                      : "";
+    snprintf(g->tip_req, sizeof(g->tip_req), "%s%d%s %s", lang_text("MENU", 0),
+             item->level_req, klass, lang_text("ITEMSS", item->slot - 2));
+
+    /* Every attribute it adds, then piercing, then defense -- and each list
+       is walked backwards, because that is the order ActionScript's for..in
+       hands an array's indices back. */
+    for (int32_t i = 4; i >= 0; i--)
+        if (item->stat[i] > 0)
+            tip_line(g, TextFormat("%s +%d", lang_text("SYSTEM", i),
+                                   (int32_t)item->stat[i]));
+    for (int32_t i = SONNY_ELEMENTS - 1; i >= 0; i--)
+        if (item->per[i] > 0)
+            tip_line(g, TextFormat("%s %s +%d", lang_text("ELEMENTS", i),
+                                   lang_text("SYSTEM", 5),
+                                   (int32_t)item->per[i]));
+    for (int32_t i = SONNY_ELEMENTS - 1; i >= 0; i--)
+        if (item->def[i] > 0)
+            tip_line(g, TextFormat("%s %s +%d", lang_text("ELEMENTS", i),
+                                   lang_text("SYSTEM", 6),
+                                   (int32_t)item->def[i]));
 }
 
 /* One of the tooltip's two blocks: the text wrapped to the box's width on its
    own backing, which is only as big as the text turned out to be. */
-static float tip_block(const char *text, float x, float y, Color backing,
-                       Color ink, int bold)
+static float tip_block(const char *text, float x, float y, float width,
+                       Color backing, Color ink, int bold)
 {
     char line[256];
     float height = 0;
@@ -907,7 +994,7 @@ static float tip_block(const char *text, float x, float y, Color backing,
                     float measured = bold
                     ? ui_sans_bold_width(line, TOOLTIP_SIZE)
                     : ui_sans_text_width(line, TOOLTIP_SIZE);
-                if (measured <= TOOLTIP_WIDTH - TOOLTIP_INDENT * 2
+                if (measured <= width - TOOLTIP_INDENT * 2
                         || !last_fit)
                         last_fit = i;
                     else
@@ -935,8 +1022,7 @@ static float tip_block(const char *text, float x, float y, Color backing,
             start = text[take] ? take + 1 : take;
         }
         height = at - y;
-        if (pass == 0) {
-            float width = TOOLTIP_WIDTH;
+        if (pass == 0 && backing.a) {
             DrawRectangleRec((Rectangle){x, y, width, height}, backing);
             DrawRectangleLinesEx((Rectangle){x, y, width, height}, 1.0f,
                                  (Color){0, 0, 0, 255});
@@ -966,10 +1052,48 @@ void game_draw_tooltip(const Game *g, Vector2 mouse)
     float x = mouse.x + sx;
     /* The title sits on a light backing, the body under it on a dark one --
        the two shapes the clip keeps behind its fields. */
-    if (g->tip_title[0])
-        tip_block(g->tip_title, x, mouse.y + sy + TOOLTIP_TITLE_Y,
-                  (Color){219, 219, 219, 217}, (Color){0, 0, 0, 255}, 1);
+    if (!g->tip_req[0]) {
+        if (g->tip_title[0])
+            tip_block(g->tip_title, x, mouse.y + sy + TOOLTIP_TITLE_Y,
+                      TOOLTIP_WIDTH, g->tip_tint, (Color){0, 0, 0, 255}, 1);
+        if (g->tip_body[0])
+            tip_block(g->tip_body, x, mouse.y + sy + TOOLTIP_BODY_Y,
+                      TOOLTIP_WIDTH, (Color){0, 0, 0, 230},
+                      (Color){255, 255, 255, 255}, 0);
+        return;
+    }
+
+    /* An item. A wider box, flipping further left, with the requirement line
+       on its own light backing and the attributes and the description on one
+       dark one below it. */
+    x = mouse.x + ((mouse.x < TOOLTIP_FLIP_X) ? TOOLTIP_NEAR_X
+                                              : TOOLTIP_ITEM_FAR_X);
+    float top = mouse.y + sy;
+    float at = top + TOOLTIP_BODY_Y;
+    float req = tip_block(g->tip_req, x, at, TOOLTIP_ITEM_WIDTH,
+                          TOOLTIP_TITLE_BACKING, TOOLTIP_REQ_INK, 0);
+    at += req + 2.0f;
+
+    /* Measure the block under it, so its backing can be drawn first. */
+    float body = 0;
+    for (int32_t i = 0; i < g->tip_line_count; i++)
+        body += TOOLTIP_SIZE + 4.0f + 2.0f;
+    float say = g->tip_body[0]
+              ? tip_block(g->tip_body, x, at + body, TOOLTIP_ITEM_WIDTH,
+                          BLANK, TOOLTIP_SAY_INK, 0) : 0;
+    DrawRectangleRec((Rectangle){x, at, TOOLTIP_ITEM_WIDTH, body + say},
+                     (Color){0, 0, 0, 230});
+    DrawRectangleLinesEx((Rectangle){x, at, TOOLTIP_ITEM_WIDTH, body + say},
+                         1.0f, (Color){0, 0, 0, 255});
+    for (int32_t i = 0; i < g->tip_line_count; i++) {
+        ui_sans_text(g->tip_lines[i], x + TOOLTIP_INDENT, at, TOOLTIP_SIZE,
+                     TOOLTIP_STAT_INK);
+        at += TOOLTIP_SIZE + 4.0f + 2.0f;
+    }
     if (g->tip_body[0])
-        tip_block(g->tip_body, x, mouse.y + sy + TOOLTIP_BODY_Y,
-                  (Color){0, 0, 0, 230}, (Color){255, 255, 255, 255}, 0);
+        tip_block(g->tip_body, x, at, TOOLTIP_ITEM_WIDTH, BLANK,
+                  TOOLTIP_SAY_INK, 0);
+    /* The name goes on last, over the top of it all. */
+    tip_block(g->tip_title, x, top + TOOLTIP_TITLE_Y, TOOLTIP_ITEM_WIDTH,
+              g->tip_tint, (Color){0, 0, 0, 255}, 1);
 }

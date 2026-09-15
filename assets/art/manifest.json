@@ -1218,6 +1218,36 @@
     ]
    ]
   },
+  "#1259": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1259.png"
+   ],
+   "bounds": [
+    -125.7,
+    -7.0,
+    125.7,
+    7.05
+   ],
+   "offsets": [
+    [
+     125.7,
+     7.0
+    ]
+   ]
+  },
+  "#1261": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1261.png"
+   ],
+   "offsets": [
+    [
+     0.0,
+     7.0
+    ]
+   ]
+  },
   "#1262": {
    "category": "chrome",
    "frames": [
@@ -18121,6 +18151,36 @@
     ]
    ]
   },
+  "#780": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#780.png"
+   ],
+   "offsets": [
+    [
+     7.4,
+     12.55
+    ]
+   ]
+  },
+  "#781": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#781.png"
+   ],
+   "bounds": [
+    -8.0,
+    -13.25,
+    7.75,
+    13.1
+   ],
+   "offsets": [
+    [
+     8.0,
+     13.25
+    ]
+   ]
+  },
   "#821": {
    "category": "chrome",
    "frames": [
@@ -22024,6 +22084,298 @@
     [
      14.4,
      39.3
+    ]
+   ]
+  },
+  "#974": {
+   "category": "effect",
+   "frames": [
+    "assets/art/effect/#974_1.png",
+    "assets/art/effect/#974_1.png",
+    "assets/art/effect/#974_3.png",
+    "assets/art/effect/#974_4.png",
+    "assets/art/effect/#974_5.png",
+    "assets/art/effect/#974_6.png",
+    "assets/art/effect/#974_7.png",
+    "assets/art/effect/#974_8.png",
+    "assets/art/effect/#974_9.png",
+    "assets/art/effect/#974_10.png",
+    "assets/art/effect/#974_11.png",
+    "assets/art/effect/#974_12.png",
+    "assets/art/effect/#974_13.png",
+    "assets/art/effect/#974_8.png",
+    "assets/art/effect/#974_8.png",
+    "assets/art/effect/#974_8.png",
+    "assets/art/effect/#974_8.png",
+    "assets/art/effect/#974_8.png",
+    "assets/art/effect/#974_8.png",
+    "assets/art/effect/#974_8.png",
+    "assets/art/effect/#974_8.png",
+    "assets/art/effect/#974_8.png",
+    "assets/art/effect/#974_8.png",
+    "assets/art/effect/#974_8.png",
+    "assets/art/effect/#974_8.png",
+    "assets/art/effect/#974_8.png",
+    "assets/art/effect/#974_8.png",
+    "assets/art/effect/#974_8.png",
+    "assets/art/effect/#974_8.png",
+    "assets/art/effect/#974_8.png",
+    "assets/art/effect/#974_8.png",
+    "assets/art/effect/#974_8.png",
+    "assets/art/effect/#974_8.png",
+    "assets/art/effect/#974_8.png",
+    "assets/art/effect/#974_8.png",
+    "assets/art/effect/#974_8.png",
+    "assets/art/effect/#974_8.png",
+    "assets/art/effect/#974_8.png",
+    "assets/art/effect/#974_39.png",
+    "assets/art/effect/#974_40.png",
+    "assets/art/effect/#974_41.png",
+    "assets/art/effect/#974_42.png",
+    "assets/art/effect/#974_43.png",
+    "assets/art/effect/#974_44.png",
+    "assets/art/effect/#974_45.png",
+    "assets/art/effect/#974_46.png",
+    "assets/art/effect/#974_47.png",
+    "assets/art/effect/#974_48.png",
+    "assets/art/effect/#974_49.png",
+    "assets/art/effect/#974_50.png",
+    "assets/art/effect/#974_51.png",
+    "assets/art/effect/#974_52.png",
+    "assets/art/effect/#974_53.png",
+    "assets/art/effect/#974_54.png",
+    "assets/art/effect/#974_55.png",
+    "assets/art/effect/#974_56.png",
+    "assets/art/effect/#974_1.png"
+   ],
+   "offsets": [
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
+    ],
+    [
+     23.25,
+     36.95
     ]
    ]
   },

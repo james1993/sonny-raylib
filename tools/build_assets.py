@@ -40,6 +40,10 @@ CHROME_ID = re.compile(r'^[0-9]+(@[0-9]+)?$')
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 
+# The balloon a unit pops while it speaks, and where its container puts it.
+SPEECH_BALLOON = 974
+SPEECH_BALLOON_AT = (-10.65, -64.3)
+
 
 def load(name, data_dir):
     with open(os.path.join(data_dir, name + '.json'), encoding='utf-8') as fh:
@@ -217,6 +221,17 @@ def collect_names(data_dir):
         if isinstance(u.get('voiceDie'), str) and u['voiceDie']:
             want['sound'].add(u['voiceDie'])
 
+    # The zone's progress bar, in two pieces: the game scales only the fill
+    # (the child named "bar"), leaving the track it runs in alone, so the two
+    # have to be drawn apart.
+    want['chrome'].update(['#1259', '#1261'])
+    # The widget that shows one buff on a unit's bar: its coloured backing,
+    # its frame, and the backing behind the turns left on it.
+    want['chrome'].update(['#780', '#781', '#800'])
+    # The balloon over a speaker's head. Each unit's container carries one
+    # (character 974, placed as "speech") and the speech driver plays it
+    # through when that unit says something.
+    want['effect'].add('#%d' % SPEECH_BALLOON)
     # The battle screen's own effect sounds, played by name.
     want['sound'].update(['Swing', 'MagicCast', 'Forcefield', 'Click2putdown',
                           'Click3pickup'])
@@ -479,9 +494,10 @@ def main():
                     frames = [(1, path) for frame, path
                               in frame_files(args.raw, cid)
                               if frame == int(pick)]
-                elif category == 'cutscene':
-                    # A cutscene is meant to be played through, so it keeps
-                    # every frame it has.
+                elif category in ('cutscene', 'effect'):
+                    # Something meant to be played through keeps every frame
+                    # it has: a comic, and the balloon that pops over a
+                    # character's head while they talk.
                     frames = frame_files(args.raw, cid)
                 else:
                     frames = frame_files(args.raw, cid)[:args.chrome_frames]

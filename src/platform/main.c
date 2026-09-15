@@ -27,6 +27,7 @@ static void game_start(Game *g, uint64_t seed)
     g->options.autosave = 1;
     g->screen = SCREEN_TITLE;
     g->selected = -1;
+    g->hub_note = -1;
     g->hovered_unit = -1;
     g->ring_unit = -1;
 }

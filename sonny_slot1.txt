@@ -1,7 +1,7 @@
 sonny-save 1
 class 1
 level 1
-xp 51.5
+xp 51.50001144
 euros 5
 progress 3
 zone 0

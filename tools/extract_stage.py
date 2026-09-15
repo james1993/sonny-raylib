@@ -1213,8 +1213,16 @@ def main(path, raw_dir=None):
         for field in fields:
             field['screen'] = entry['screen']
             field['owner'] = entry['name']
+            # The clip's own scale carries its text: the box and the type size
+            # shrink with it, not only the corner the box starts at. Scaling
+            # one and not the other is what pushed the reticle's name and
+            # level off the middle of its ring.
             field['x'] = round(entry['x'] + entry['scale_x'] * field['x'], 3)
             field['y'] = round(entry['y'] + entry['scale_y'] * field['y'], 3)
+            field['width'] = round(entry['scale_x'] * field['width'], 3)
+            field['height'] = round(entry['scale_y'] * field['height'], 3)
+            field['size'] = round(entry['scale_y'] * field['size'], 3)
+            field['leading'] = round(entry['scale_y'] * field['leading'], 3)
             chrome_fields.append(field)
         for part in graphic_parts(body, raw_dir, entry['character'], texts):
             part['screen'] = entry['screen']

@@ -49,6 +49,14 @@ typedef enum {
    the original's setLimiter. */
 #define WIN_FILL_FRAMES 30
 
+/* How many attribute lines an item's tooltip can stack: the original
+   makes ten fields and fills as many as the item has. */
+#define TOOLTIP_LINES 10
+
+/* The sign the game prints against every price. raylib bakes printable
+   ASCII and nothing else, so this one is asked for by codepoint. */
+#define EURO "\u20ac"
+
 typedef struct {
     Screen    screen;
     Campaign  campaign;
@@ -100,6 +108,7 @@ typedef struct {
     int32_t   speech_index;
     int32_t   speech_timer;
     const Speech *speech;
+    int32_t   balloon_tick;    /* how far through the speaker's balloon */
 
     /* Rewards from the battle just won. */
     BattleRewards rewards;
@@ -109,6 +118,15 @@ typedef struct {
     float     win_xp;          /* exp, the running percentage */
     float     win_step;        /* adderPer */
     int32_t   win_leveled;     /* playerLeveled */
+    /* The hub's welcome: which of the story's notes is up, or -1, and
+       whether this visit has already offered one. */
+    /* The reticle does not snap on and off: it comes up over a few frames
+       and goes down the same way, so `fade` is how far in it is and
+       `fade_unit` who it is still fading out from. */
+    float     ring_fade;
+    int32_t   ring_fade_unit;
+    int32_t   hub_note;
+    int32_t   hub_note_done;
     int32_t   dropped[SONNY_MAX_DROPPED];
     int32_t   dropped_count;
     int32_t   taken[SONNY_MAX_DROPPED];
@@ -145,6 +163,13 @@ typedef struct {
        these and every button fills it on roll-over. */
     char      tip_title[128];
     char      tip_body[256];
+    /* An item's tooltip is a different shape: the name on a backing tinted by
+       the item's own rarity, then what it takes to wear it, then every
+       attribute it adds, then what it says about itself. */
+    char      tip_req[128];
+    char      tip_lines[TOOLTIP_LINES][64];
+    int32_t   tip_line_count;
+    Color     tip_tint;
     /* Krin.UITmouseHold: the ability the pointer is carrying. The original
        does not drag -- clicking a node or a pool row picks one up, clicking
        a slot of the action bar puts it down, and clicking a slot while
@@ -245,6 +270,15 @@ int screen_button_pressed(const char *screen, int32_t character,
    the top of every frame, so it only shows while something is under the
    pointer. */
 void game_tooltip(Game *g, const char *title, const char *body);
+/* An item's tooltip, built the way the original builds it: the requirement
+   line, then one line for every attribute the item adds, then its own text.
+   `price` over zero puts the price in front of the name, as a shop does. */
+void game_tooltip_item(Game *g, const ItemDef *item, int32_t price);
+
+/* Offer the story's note for where the player has got to, if there is one and
+   this visit has not already offered it, and whether one is up. */
+void game_hub_note(Game *g);
+int  game_hub_note_up(const Game *g);
 void game_draw_tooltip(const Game *g, Vector2 mouse);
 
 void game_draw_notice(const Game *g);

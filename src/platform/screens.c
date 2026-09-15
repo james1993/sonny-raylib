@@ -21,7 +21,6 @@
 static const Vector2 NO_OFFSET = {0, 0};
 
 /* What the game spends, as its own fields carry it. */
-#define EURO "\u20ac"
 
 /* How many bag slots a menu frame's grid has. */
 #define MENU_BAG_SLOTS 36
@@ -69,6 +68,14 @@ static const TextField *win_field(const char *name)
 #define HUB_BUTTON_OPTIONS   1257   /* opens the menu's own settings frame */
 #define HUB_BUTTON_RESPEC    1258   /* gives every point back to spend again */
 #define HUB_BUTTON_MAP       1251
+/* The button that clicks the story's note away. */
+#define HUB_NOTE_CLOSE 1512
+
+/* The zone's progress bar: a track, and a fill placed inside it at this
+   offset. Only the fill is scaled. */
+#define BAR_TRACK  "#1259"
+#define BAR_FILL   "#1261"
+#define BAR_FILL_X (-126.0f)
 
 /* Whether the pointer is on the hub's button with this character. */
 static int hub_pressed(int32_t character, Vector2 mouse)
@@ -166,6 +173,15 @@ static void hub_tooltips(Game *g, Vector2 mouse)
 
 void screen_zone_update(Game *g, Vector2 mouse)
 {
+    /* The note holds the hub still: PauseForScreen, which is what stops every
+       marker and every button answering until it is clicked away. */
+    if (game_hub_note_up(g)) {
+        if (screen_button_pressed(HUB_SCREEN, HUB_NOTE_CLOSE, mouse)) {
+            audio_play("Click3pickup");
+            g->hub_note = -1;
+        }
+        return;
+    }
     hub_tooltips(g, mouse);
     /* The markers on the scene. Which one was pressed decides what happens,
        and for a store it is also what says which store. */
@@ -238,6 +254,62 @@ void screen_zone_update(Game *g, Vector2 mouse)
 
 
 
+/* ------------------------------------------------------ the hub's welcome */
+
+/* The story stops the player on the hub at seven points to explain something.
+   Krin.progressSpeech is keyed by how far the story has got, and each entry
+   is a title and a body out of NAVTITLE2 and NAVTEXT2; the fade behind it
+   holds the hub still until it is clicked away. Proceed! on the victory
+   screen is what offers one, and winning a fight re-arms the offer. */
+static const struct { int32_t at; int32_t say; } HUB_NOTES[] = {
+    {3, 0}, {4, 1}, {5, 2}, {10, 3}, {16, 4}, {20, 5}, {33, 6},
+};
+
+void game_hub_note(Game *g)
+{
+    if (g->hub_note_done)
+        return;
+    g->hub_note_done = 1;
+    g->hub_note = -1;
+    for (size_t i = 0; i < sizeof(HUB_NOTES) / sizeof(HUB_NOTES[0]); i++)
+        if (HUB_NOTES[i].at == g->campaign.progress_battle)
+            g->hub_note = HUB_NOTES[i].say;
+}
+
+int game_hub_note_up(const Game *g)
+{
+    return g->hub_note >= 0;
+}
+
+/* The note over the hub: the fade across the whole stage, the panel on it,
+   and the two lines. Nothing else on the hub answers while it is up. */
+static void draw_hub_note(Game *g, Vector2 mouse)
+{
+    if (!game_hub_note_up(g))
+        return;
+    /* One piece: the fade across the stage with the panel already in it.
+       (The other stage-sized clip on this frame, @1242, is the black the
+       screens change behind -- nothing to do with the note.) */
+    const StageChrome *fade = stage_chrome(HUB_SCREEN, "krinNavFadeSpeech");
+    if (fade) {
+        const Texture2D *tex = asset_texture(TextFormat("#%d",
+                                                        fade->character), 1);
+        if (tex)
+            draw_texture_placed(tex, fade->x, fade->y, fade->scale_x,
+                                fade->scale_y, fade->origin_x, fade->origin_y,
+                                WHITE);
+    }
+    draw_field_wrapped(chrome_field(HUB_SCREEN, "@1241"), NO_OFFSET,
+                       lang_text("NAVTITLE2", g->hub_note));
+    draw_field_wrapped(chrome_field(HUB_SCREEN, "@1240"), NO_OFFSET,
+                       lang_text("NAVTEXT2", g->hub_note));
+    const StageButton *close = stage_button(HUB_SCREEN, HUB_NOTE_CLOSE, 0);
+    if (close)
+        draw_button_state(close, CheckCollisionPointRec(mouse,
+                              (Rectangle){close->x, close->y, close->width,
+                                          close->height}), WHITE);
+}
+
 /* The furniture along the bottom of the hub: the panels, the row of buttons
    and their icons, the bar that says how far through the zone the player is,
    and the three lines beside it. Every menu the hub opens is a clip laid over
@@ -249,9 +321,9 @@ static void draw_hub_panel(Game *g, Vector2 mouse)
     draw_screen_chrome(HUB_SCREEN);
     draw_screen_buttons(HUB_SCREEN, mouse);
 
-    /* How far through the zone the player is. The bar is scaled by the same
-       fraction the original scales it by: how many of the zone's fights are
-       behind them, out of how many it has. */
+    /* How far through the zone the player is. The widget is a track with a
+       fill inside it, and the original scales only the fill -- the track is
+       left alone, which is why the bar does not shrink with it. */
     const StageChrome *bar = stage_chrome(HUB_SCREEN, "krinXbarPro");
     if (bar && zone) {
         float total = (float)(zone->last_battle - zone->first_battle);
@@ -259,18 +331,22 @@ static void draw_hub_panel(Game *g, Vector2 mouse)
                                     - zone->first_battle);
         if (done > total)
             done = total;
-        if (total > 0) {
-            const Texture2D *tex = asset_texture(TextFormat("#%d",
-                                                            bar->character), 1);
-            if (tex) {
-                Rectangle box = placed_texture(tex, bar->x, bar->y,
-                                               bar->scale_x, bar->scale_y,
-                                               bar->origin_x, bar->origin_y);
-                Rectangle src = {0, 0, tex->width * (done / total),
-                                 (float)tex->height};
-                box.width *= done / total;
-                DrawTexturePro(*tex, src, box, (Vector2){0, 0}, 0.0f, WHITE);
-            }
+        const Texture2D *track = asset_texture(BAR_TRACK, 1);
+        if (track) {
+            Vector2 off = asset_frame_offset(BAR_TRACK, 1);
+            draw_texture_placed(track, bar->x, bar->y, bar->scale_x,
+                                bar->scale_y, off.x, off.y, WHITE);
+        }
+        const Texture2D *fill = asset_texture(BAR_FILL, 1);
+        if (fill && total > 0) {
+            float fraction = done / total;
+            Vector2 off = asset_frame_offset(BAR_FILL, 1);
+            Rectangle box = placed_texture(fill, bar->x + BAR_FILL_X * bar->scale_x,
+                                           bar->y, bar->scale_x, bar->scale_y,
+                                           off.x, off.y);
+            box.width *= fraction;
+            Rectangle src = {0, 0, fill->width * fraction, (float)fill->height};
+            DrawTexturePro(*fill, src, box, (Vector2){0, 0}, 0.0f, WHITE);
         }
     }
 
@@ -332,6 +408,7 @@ void screen_zone_draw(Game *g, Vector2 mouse)
     }
 
     draw_hub_panel(g, mouse);
+    draw_hub_note(g, mouse);
 }
 
 /* ----------------------------------------------------------- world map */
@@ -1292,7 +1369,7 @@ void screen_inventory_draw(Game *g, Vector2 mouse)
         shown_item = item_by_id(c->player.equip[g->hovered_item]);
     }
     if (shown_item && shown_item->id != 0)
-        game_tooltip(g, shown_item->name, shown_item->tooltip);
+        game_tooltip_item(g, shown_item, 0);
 }
 
 /* ---------------------------------------------------------------- shop */
@@ -1447,8 +1524,9 @@ void screen_shop_draw(Game *g, Vector2 mouse)
         shown = item_by_id(shop->item[g->hovered_item]);
     }
     if (shown && shown->id != 0)
-        game_tooltip(g, TextFormat("%s  %s%d", shown->name, EURO,
-                                   shown->price), shown->tooltip);
+        /* The store's stock names its price first; a bag slot does not. */
+        game_tooltip_item(g, shown,
+                          g->hovered_item >= 100 ? 0 : shown->price);
 }
 
 void screen_shop_update(Game *g, Vector2 mouse)
@@ -1579,6 +1657,9 @@ void screen_victory_update(Game *g, Vector2 mouse)
        just been finished goes out to the map -- by way of a comic at the two
        points the story has one -- and anything else goes back to the hub, or
        to the ability screen when the fight was a level. */
+    /* Proceed! is what offers the story's next note, if there is one for
+       where the player has got to. */
+    game_hub_note(g);
     if (g->options.autosave)
         save_write(&g->campaign, save_slot_path(g->campaign.slot));
     if (g->boss_beaten) {

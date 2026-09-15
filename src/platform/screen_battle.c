@@ -26,25 +26,6 @@ static int player_turn(const Game *g)
    down the left and 6, 2, 4 down the right. The bar art is 201 x 28.75 at a
    scale of about 1.085, and the right-hand team's is mirrored, so its origin
    is its right edge. */
-static Rectangle unit_rect(const Battle *b, int32_t slot)
-{
-    const StageBar *bar = stage_bar(slot);
-    if (!bar) {
-        int32_t row = (slot <= 2) ? 1 : (slot <= 4) ? 2 : 0;
-        float x = (b->units[slot].teamSide == 1) ? 12.0f
-                                                 : STAGE_W - 12.0f - 148.0f;
-        return (Rectangle){x, 64.0f + row * 66.0f, 148.0f, 60.0f};
-    }
-
-    (void)b;
-    float w = bar->width * bar->scale;
-    float h = bar->height * bar->scale;
-    /* The bar's own origin is its centre, so the placement point is where the
-       middle of it goes. */
-    return (Rectangle){bar->x - bar->origin_x * bar->scale,
-                       bar->y - bar->origin_y * bar->scale, w, h};
-}
-
 /* Where a unit's model stands: the original's own stage layout, so position
    follows the slot -- not the speed order, which only decides who acts when. */
 static Vector2 unit_stage_pos(const Battle *b, int32_t slot)
@@ -144,9 +125,19 @@ static void draw_doll(const Game *g, int32_t slot)
 /* Where the speech box goes when it is the left team talking. */
 #define SPEECH_LEFT_X 21.8f
 
+/* The balloon a unit pops while it is talking. Every unit's container carries
+   one, placed at this offset inside it and mirrored, and the speech driver
+   plays it through once -- 57 frames at the stage's own rate. */
+#define SPEECH_BALLOON      "#974"
+#define SPEECH_BALLOON_X   (-10.65f)
+#define SPEECH_BALLOON_Y   (-64.3f)
+
 /* The reticle clip whose art and text every unit's gets: the original parks
    one on each, and they are all the same widget. */
 #define RETICLE_INSTANCE "KrinSelector1"
+
+/* How long the reticle takes to come up, and to go back down. */
+#define RETICLE_FADE_FRAMES 6.0f
 
 /* ------------------------------------------------------------------ chrome */
 
@@ -433,7 +424,7 @@ static const char *move_refusal(const Game *g, int slot, int32_t target)
 }
 
 /* One piece of the orb, in the ring's coordinates around `centre`. */
-static void draw_ring(const Game *g)
+static void draw_ring(Game *g, Vector2 mouse)
 {
     if (g->ring_unit <= 0 || !player_turn(g) || g->queued)
         return;
@@ -445,9 +436,14 @@ static void draw_ring(const Game *g)
            hides the orb's button and marks the slot zero. */
         if (!a || a->id == 0)
             continue;
-        draw_orb(a->icon, ring_slot_pos(slot, centre), SONNY_RING_SCALE,
+        Vector2 at = ring_slot_pos(slot, centre);
+        draw_orb(a->icon, at, SONNY_RING_SCALE,
                  move_offered(g, slot->slot, g->ring_unit) ? 0 : ORB_DIM_RING,
                  g->ability_cooldown[slot->slot]);
+        /* An ability says what it does under the pointer, the same way one
+           on the ability screen does. */
+        if (CheckCollisionPointCircle(mouse, at, orb_radius()))
+            game_tooltip(g, a->name, a->tooltip);
     }
 }
 
@@ -456,15 +452,17 @@ static void draw_ring(const Game *g)
    below, both from the clip's own two text fields. */
 static void draw_reticle(const Game *g)
 {
-    if (g->ring_unit <= 0)
+    int32_t on = g->ring_unit > 0 ? g->ring_unit : g->ring_fade_unit;
+    if (on <= 0 || g->ring_fade <= 0.0f)
         return;
-    const Unit *u = &g->battle.units[g->ring_unit];
+    const Unit *u = &g->battle.units[on];
     const StageChrome *art = stage_chrome(BATTLE_SCREEN_NAME, RETICLE_INSTANCE);
     if (!art)
         return;
-    Vector2 at = unit_stage_pos(&g->battle, g->ring_unit);
+    Vector2 at = unit_stage_pos(&g->battle, on);
     int enemy = u->teamSide != g->battle.units[PLAYER_SLOT].teamSide;
     Color tint = enemy ? (Color){255, 90, 90, 255} : (Color){120, 200, 255, 255};
+    tint.a = (unsigned char)(tint.a * g->ring_fade);
 
     /* The clip's fields are recorded where it is parked off stage, so
        everything in it follows by the same amount it moved. */
@@ -495,6 +493,90 @@ static void draw_frame_rate(void)
                TextFormat("%d", GetFPS()));
 }
 
+static Color color_from_rgb(uint32_t rgb)
+{
+    return (Color){(unsigned char)(rgb >> 16), (unsigned char)(rgb >> 8),
+                   (unsigned char)rgb, 255};
+}
+
+/* What is on a unit, shown along its bar. The original attaches a
+   KrinBuffShower for each -- longest first -- to the unit's own bar clip, at
+   110 out from its middle and 17 apart, going the way that team faces. Each
+   is the buff's own icon on a backing tinted with its element, with the turns
+   it has left over the corner. */
+#define BUFF_SHOWN      10
+#define BUFF_OFFSET     110.0f
+#define BUFF_SPACING    17.0f
+#define BUFF_BACKING    "#780"
+#define BUFF_FRAME      "#781"
+/* The counter's field, from the clip that carries it. */
+#define BUFF_COUNT_X    (-4.55f)
+#define BUFF_COUNT_Y    (-0.8f)
+#define BUFF_COUNT_W    13.05f
+#define BUFF_COUNT_SIZE 10.0f
+
+static void draw_buff_widget(Vector2 at, const char *key, int32_t turns,
+                             Color element)
+{
+    const Texture2D *back = asset_texture(BUFF_BACKING, 1);
+    if (back) {
+        Vector2 off = asset_frame_offset(BUFF_BACKING, 1);
+        draw_texture_placed(back, at.x - 0.1f, at.y, 1.0f, 1.0f, off.x, off.y,
+                            element);
+    }
+    /* The icon, which is a frame of the shower's own clip named for the
+       buff. A passive talent has no frame there, in the original either. */
+    const Texture2D *icon = asset_texture(key, 1);
+    if (icon) {
+        Vector2 off = asset_frame_offset(key, 1);
+        draw_texture_placed(icon, at.x, at.y, 1.0f, 1.0f, off.x, off.y, WHITE);
+    }
+    const Texture2D *frame = asset_texture(BUFF_FRAME, 1);
+    if (frame) {
+        Vector2 off = asset_frame_offset(BUFF_FRAME, 1);
+        draw_texture_placed(frame, at.x, at.y, 1.0f, 1.0f, off.x, off.y,
+                            WHITE);
+    }
+    const char *text = TextFormat("%d", turns);
+    float width = ui_sans_text_width(text, BUFF_COUNT_SIZE);
+    ui_sans_text(text, at.x + BUFF_COUNT_X + (BUFF_COUNT_W - width) / 2 - 2.0f,
+                 at.y + BUFF_COUNT_Y - 2.0f, BUFF_COUNT_SIZE, RAYWHITE);
+}
+
+static void draw_unit_buffs(const Game *g, int32_t slot)
+{
+    const Unit *u = &g->battle.units[slot];
+    const StageBar *bar = stage_bar(slot);
+    if (!bar)
+        return;
+    /* Longest first, which is how the original sorts the list before it
+       hangs them on the bar. */
+    int32_t order[SONNY_MAX_BUFFS];
+    int32_t count = 0;
+    for (int32_t i = 0; i < SONNY_MAX_BUFFS; i++)
+        if (u->BUFFARRAYK[i].CD != 0)
+            order[count++] = i;
+    for (int32_t i = 1; i < count; i++)
+        for (int32_t j = i; j > 0
+             && u->BUFFARRAYK[order[j]].CD > u->BUFFARRAYK[order[j - 1]].CD;
+             j--) {
+            int32_t swap = order[j];
+            order[j] = order[j - 1];
+            order[j - 1] = swap;
+        }
+
+    float way = u->teamSide == 1 ? 1.0f : -1.0f;
+    for (int32_t h = 0; h < count && h < BUFF_SHOWN; h++) {
+        const BuffDef *def = buff_find(SONNY_BUFFS, SONNY_BUFF_COUNT,
+                                       u->BUFFARRAYK[order[h]].buffId);
+        Color element = def ? color_from_rgb(element_color((Element)def->element))
+                            : WHITE;
+        Vector2 at = {bar->x + (BUFF_OFFSET + BUFF_SPACING * h) * way, bar->y};
+        draw_buff_widget(at, u->BUFFARRAYK[order[h]].buffId,
+                         u->BUFFARRAYK[order[h]].CD, element);
+    }
+}
+
 static void draw_unit(const Game *g, int32_t slot)
 {
     const Battle *b = &g->battle;
@@ -502,36 +584,8 @@ static void draw_unit(const Game *g, int32_t slot)
     if (u->LIFEU == 0)
         return;
 
-    Rectangle r = unit_rect(b, slot);
     draw_unit_bar(g, slot);
-
-    /* Active buffs, with their remaining turns. */
-    int shown = 0;
-    for (int32_t i = 0; i < SONNY_MAX_BUFFS && shown < 8; i++) {
-        if (u->BUFFARRAYK[i].CD == 0)
-            continue;
-        const BuffDef *def = buff_find(SONNY_BUFFS, SONNY_BUFF_COUNT,
-                                       u->BUFFARRAYK[i].buffId);
-        Rectangle box = {r.x + 6 + shown * 16, r.y + r.height + 2, 14, 12};
-        /* Buff icons are named by the buff key. The permanent passive buffs
-           have no icon frame in the original either, so those fall back to a
-           coloured block. */
-        if (!asset_draw_fit(u->BUFFARRAYK[i].buffId, 1, box, WHITE)) {
-            Color c = def && def->change[1] < 0 ? (Color){175, 80, 80, 255}
-                                                : (Color){110, 165, 110, 255};
-            DrawRectangleRec(box, c);
-        }
-        if (u->BUFFARRAYK[i].CD > 0)
-            ui_text(TextFormat("%d", u->BUFFARRAYK[i].CD),
-                     (int)box.x + 3, (int)box.y + 2, 10, RAYWHITE);
-        shown++;
-    }
-    if (u->SHIELD > 0)
-        ui_text(TextFormat("shield %d", u->SHIELD), (int)r.x + 6,
-                 (int)r.y + 68, 10, (Color){120, 190, 235, 255});
-    if (u->STUN > 0)
-        ui_text("stunned", (int)r.x + (int)r.width - 48, (int)r.y + 68, 10,
-                 (Color){225, 200, 120, 255});
+    draw_unit_buffs(g, slot);
 }
 
 /* The battle backdrop. The battlefield has two layers and each is a container
@@ -555,11 +609,6 @@ static void draw_backdrop(const Game *g)
 
 #define NUMBER_LIFE 34
 
-static Color color_from_rgb(uint32_t rgb)
-{
-    return (Color){(unsigned char)(rgb >> 16), (unsigned char)(rgb >> 8),
-                   (unsigned char)rgb, 255};
-}
 
 /* KrinNumberShow: a number rises from the unit it applied to, coloured by the
    element that caused it -- green for healing -- and shown larger when the
@@ -644,9 +693,43 @@ static int speech_update(Game *g)
 
     g->speech = next;
     g->speech_timer = (int32_t)(next->seconds * STAGE_FPS);
+    /* The balloon starts with the line and runs once, however long the line
+       lasts. */
+    g->balloon_tick = 0;
     if (next->voice_over && next->voice_over[0])
         audio_play(next->voice_over);
     return 1;
+}
+
+/* The balloon over whoever is talking. It is part of the unit's own
+   container -- mirrored inside it, so it faces the way the unit does -- and
+   the speech driver plays it through once. */
+static void draw_balloon(const Game *g)
+{
+    if (!g->speech)
+        return;
+    int32_t frames = asset_frame_count(SPEECH_BALLOON);
+    if (frames <= 0 || g->balloon_tick >= frames)
+        return;
+    const Unit *speaker = &g->battle.units[g->speech->speaker];
+    const StageSlot *s = stage_slot(g->speech->speaker);
+    int flip = s ? s->flip : (speaker->teamSide == 2);
+    Vector2 at = unit_stage_pos(&g->battle, g->speech->speaker);
+    /* Its own placement is mirrored inside the container, and the container
+       is mirrored again for the right-hand team, so the two cancel. */
+    at.x += flip ? -SPEECH_BALLOON_X : SPEECH_BALLOON_X;
+    at.y += SPEECH_BALLOON_Y;
+
+    const Texture2D *tex = asset_texture(SPEECH_BALLOON, g->balloon_tick + 1);
+    if (!tex)
+        return;
+    Vector2 offset = asset_frame_offset(SPEECH_BALLOON, g->balloon_tick + 1);
+    /* Mirrored: the source rectangle is read backwards. */
+    Rectangle src = {0, 0, flip ? (float)tex->width : -(float)tex->width,
+                     (float)tex->height};
+    Rectangle dst = {at.x - (flip ? tex->width - offset.x : offset.x), at.y - offset.y,
+                     (float)tex->width, (float)tex->height};
+    DrawTexturePro(*tex, src, dst, (Vector2){0, 0}, 0.0f, WHITE);
 }
 
 /* What a character is saying. The original places one box and slides it to
@@ -680,7 +763,7 @@ static void draw_speech(const Game *g)
                speaker->name);
 }
 
-static void draw_battle(const Game *g)
+static void draw_battle(Game *g)
 {
     const StageChrome *mask = battlefield_mask();
 
@@ -703,6 +786,7 @@ static void draw_battle(const Game *g)
     for (int32_t slot = 1; slot < SONNY_SLOTS; slot++)
         draw_doll(g, slot);
     draw_effect(g);
+    draw_balloon(g);
     if (mask)
         EndScissorMode();
 
@@ -713,7 +797,7 @@ static void draw_battle(const Game *g)
 
     draw_frame_rate();
     draw_reticle(g);
-    draw_ring(g);
+    draw_ring(g, GetMousePosition());
     draw_numbers(g);
     draw_speech(g);
 }
@@ -849,6 +933,16 @@ static void handle_input(Game *g)
                       stage, unit_stage_pos(b, g->ring_unit), ring_radius())) {
         g->ring_unit = -1;
     }
+
+    /* The fade. It follows whoever the ring is on, and keeps the last one
+       while it goes back down so the reticle is not simply cut off. */
+    if (g->ring_unit > 0)
+        g->ring_fade_unit = g->ring_unit;
+    g->ring_fade += (g->ring_unit > 0 ? 1.0f : -1.0f) / RETICLE_FADE_FRAMES;
+    if (g->ring_fade > 1.0f)
+        g->ring_fade = 1.0f;
+    if (g->ring_fade < 0.0f)
+        g->ring_fade = 0.0f;
 
     if (!player_turn(g) || g->queued)
         return;
@@ -1039,6 +1133,8 @@ void battle_screen_update(Game *g, Vector2 mouse, int headless)
     }
 
     g->anim_tick++;
+    if (g->speech)
+        g->balloon_tick++;
     if (g->effect)
         g->effect_tick++;
     numbers_update(g);
@@ -1059,6 +1155,9 @@ void battle_screen_update(Game *g, Vector2 mouse, int headless)
             g->win_xp = (float)g->campaign.player.xp;
             g->win_step = (float)g->rewards.xp_percent / WIN_FILL_FRAMES;
             g->win_leveled = 0;
+            /* Winning re-arms the story's note, as frame 213 clears
+               Krin.tutSpeecher. */
+            g->hub_note_done = 0;
             /* Only a fight the story marker started carries progress -- a
                practice fight and a replayed boss both leave it where it is,
                as Krin.progressFight does. */

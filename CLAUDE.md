@@ -17,6 +17,8 @@ Collection, and every number, string and pixel is extracted from it:
                                  sound on each comic's own timeline
     tools/extract_markers.py     the markers on a zone's scene, and a copy of
                                  the SWF with them taken out of it
+    tools/check_assets.py        every name the engine can ask for, against
+                                 what the art build shipped
     tools/swf_exports.py         export names, frame labels, shape bounds
     tools/swf_doll.py            timeline walker: per-frame part transforms
     tools/extract_stage.py       where the interface goes, from the display list
@@ -34,8 +36,23 @@ independent transcription of the same source (`tools/ref_*.py`) over generated
 cases. The turn driver is a state machine rather than a pure function, so it is
 checked by properties instead. `make test` runs all of it.
 
-`build/simulate` prints a battle move by move. That exists for the one check
-that is not automated: setting up the same fight in the real game and comparing.
+`build/simulate` prints a battle move by move.
+
+`tools/playtest.py` is how differences are found now, instead of by eye. One
+script drives both games -- the real SWF under Ruffle and `build/sonny` --
+through the same clicks at the same moments on the same 800x575 virtual
+display, photographs both at the same points, and reports where they disagree,
+worst first, with each difference located on a grid. A line can be addressed
+to one side (`ref:` / `mine:`) where the two must be driven differently, which
+is how the original's preloader is clicked through without the replica needing
+one. `tests/play/zone1.txt` is the opening of the game end to end.
+
+    python3 tools/playtest.py tests/play/zone1.txt \
+        --ruffle path/to/ruffle --swf path/to/sonny1_dbg.swf
+
+A mean difference under 3 is the text rasteriser; past that something is
+missing. It found the victory screen's whole bottom half, the story's notes on
+the hub, and the reticle's name sitting eighteen pixels right of its ring.
 
 ## Things that bite
 
@@ -45,6 +62,14 @@ that is not automated: setting up the same fight in the real game and comparing.
 - **A SWF RECT is Xmin, Xmax, Ymin, Ymax** -- not Xmin, Ymin, Xmax, Ymax.
 - **An exported image's top-left is not the art's origin.** Every export has an
   SWF sibling whose root transform records the offset; draw at `target - offset`.
+- **A clip's scale carries its text with it.** The box and the type size
+  shrink with the clip, not only the corner the box starts at. Scaling one and
+  not the other is what pushed the reticle's name and level off the middle of
+  its ring, by exactly the 18.3 pixels the gutter accounts for.
+- **A name that is not there is silent.** attachSound on a missing name does
+  nothing in Flash, and neither does asset_texture here. Three of the four
+  battle tracks and all thirty-five lines of battle speech were missing for
+  that reason, without anything saying so. tools/check_assets.py is the guard.
 - **An exported image is a pixel bigger than its box.** The decompiler
   rasterises at one pixel to the unit and rounds the canvas up, so a 60-unit
   shape comes out 61 pixels with the last row and column empty. Drawing it
@@ -311,3 +336,31 @@ given, so a whole run through the menus can be checked from a script:
 
 That path is title, New Game, slot 1, Destroyer, PLAY -- which lands on the
 opening comic.
+
+* A fight's money is a roll, not a number: `round(EnemyXPFinal * EuroConstant
+  * ((85 + random(30)) / 100))`. The first fight pays 5, 6 or 7 and all three
+  are right.
+* An item says more about itself than a name and a line. Equipment gets a
+  taller tooltip -- the frame's GO4 -- with what it takes to wear it ("Lvl. 1
+  Headwear"), then one line for every attribute it adds, then its own text,
+  and the name sits on a backing tinted by its rarity. A store puts the price
+  in front of the name; a bag slot does not. The attribute lines come out
+  backwards from the arrays, because that is the order ActionScript's for..in
+  hands an array's indices back.
+* What is on a unit in a fight hangs off its own bar, not off the unit: a
+  KrinBuffShower for each, longest first, 110 out from the middle of the bar
+  and 17 apart, going the way that team faces.
+* The story stops the player on the hub at seven points to explain something
+  (progressSpeech, keyed by how far the story has got). Proceed! on the
+  victory screen is what offers one; winning re-arms the offer.
+* The zone's progress bar is a track with a fill inside it, and only the fill
+  is scaled -- the track stays the width it was.
+* A comic's narration and a unit's speech are both sounds the engine can ask
+  for by name, and both were missing from the art build. So is the balloon
+  that pops over whoever is talking: it is part of the unit's own container
+  (character 974, placed as "speech"), mirrored inside it, and played through
+  once when that unit says something.
+
+Known to differ: the reticle fades in and out here over six frames. The
+original does fade, but nothing in its scripts does it and the clip is a
+single frame with no tween, so the ramp is ours.
