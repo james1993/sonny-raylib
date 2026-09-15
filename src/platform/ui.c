@@ -393,8 +393,16 @@ void draw_field_wrapped(const TextField *f, Vector2 clip, const char *text)
     char line[160];
     int start = 0, row = 0;
     while (text[start] && row < rows) {
-        int fit = 0, space = -1;
+        int fit = 0, space = -1, hard = 0;
         for (int i = 0; text[start + i]; i++) {
+            /* A line break in the text is a line break on the screen: Flash
+               fields honour them, and running one through the wrapper as an
+               ordinary character drew it as a glyph. */
+            if (text[start + i] == '\n') {
+                fit = i;
+                hard = 1;
+                break;
+            }
             if (text[start + i] == ' ')
                 space = i;
             line[i] = text[start + i];
@@ -414,6 +422,8 @@ void draw_field_wrapped(const TextField *f, Vector2 clip, const char *text)
         row_field.y = f->y + row * line_height;
         draw_field(&row_field, clip, line);
         start += count;
+        if (hard)
+            start++;            /* step over the break itself */
         while (text[start] == ' ')
             start++;
         row++;

@@ -5,3 +5,6 @@
 __pycache__/
 assets/raw/
 build/
+
+# A crash dump, if one is ever written here.
+/core
