@@ -22,7 +22,10 @@
 #define PLAYER_SLOT   1
 #define ABILITY_SLOTS 8
 #define LOG_LINES     6
-#define RESOLVE_FRAMES 14
+/* How long one move takes to play out, which is the original's
+   AttackEndCounterLimit: twenty-five frames, and the model's animation and
+   the ability's effect both run inside it. */
+#define RESOLVE_FRAMES 25
 
 typedef enum {
     SCREEN_TITLE = 0,
@@ -86,7 +89,11 @@ typedef struct {
     int32_t   has_last;
     const char *effect;
     int32_t   effect_slot;
-    int32_t   effect_tick;
+    /* Frames since the move being played started. The model's attack and the
+       ability's effect are both played off this, so each starts from its own
+       first frame rather than from wherever a free-running counter had got
+       to -- which showed nothing but the last frame of every animation. */
+    int32_t   move_tick;
 
     /* Floating damage numbers, spawned on the unit they landed on. */
     struct {

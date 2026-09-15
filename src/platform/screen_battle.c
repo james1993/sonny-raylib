@@ -72,11 +72,11 @@ static void draw_effect(const Game *g)
     if (!g->effect || g->effect_slot <= 0)
         return;
     int32_t frames = asset_frame_count(g->effect);
-    if (frames <= 0 || g->effect_tick >= frames)
+    if (frames <= 0 || g->move_tick >= frames)
         return;
 
     Vector2 pos = unit_stage_pos(&g->battle, g->effect_slot);
-    asset_draw_placed(g->effect, g->effect_tick + 1, pos, 1.0f, WHITE);
+    asset_draw_placed(g->effect, g->move_tick + 1, pos, 1.0f, WHITE);
 }
 
 static void draw_doll(const Game *g, int32_t slot)
@@ -95,7 +95,11 @@ static void draw_doll(const Game *g, int32_t slot)
 
     int loop = 1;
     const char *animation = unit_animation(g, slot, &loop);
-    int32_t frame = doll_animation_frame(animation, g->anim_tick / 2, loop);
+    /* An animation that runs once is clocked from the move it belongs to; the
+       standing loop just keeps going. */
+    int32_t frame = doll_animation_frame(animation,
+                                         loop ? g->anim_tick / 2 : g->move_tick,
+                                         loop);
 
     /* The right-hand team's containers are mirrored in the original. */
     const StageSlot *s = stage_slot(slot);
@@ -829,7 +833,7 @@ static void present(Game *g, const MoveEvent *e)
 
     g->effect = NULL;
     g->effect_slot = 0;
-    g->effect_tick = 0;
+    g->move_tick = 0;
 
     if (!a || e->moveID == 0 || e->missed)
         return;
@@ -1135,8 +1139,7 @@ void battle_screen_update(Game *g, Vector2 mouse, int headless)
     g->anim_tick++;
     if (g->speech)
         g->balloon_tick++;
-    if (g->effect)
-        g->effect_tick++;
+    g->move_tick++;
     numbers_update(g);
 
     /* Dialogue holds the fight, as speechDone does in the original. */

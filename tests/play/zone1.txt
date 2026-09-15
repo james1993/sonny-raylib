@@ -119,14 +119,14 @@ wait 2
 shot inventory_hover
 
 note the abilities screen
-click 698 548              # Back
+click 756 42               # the X that closes a menu the hub opened
 wait 4
 click 114 510
 wait 4
 shot abilities
 
 note the store
-click 698 548
+click 756 42
 wait 4
 click 674 249
 wait 5
@@ -136,7 +136,7 @@ wait 2
 shot shop_hover
 
 note the world map
-click 698 548
+click 756 42
 wait 4
 click 401 509
 wait 5
