@@ -1,0 +1,143 @@
+# The opening of the game, end to end: the menus, the first fight, what
+# winning it leads to, and the screens the hub opens.
+#
+# The two sides are driven identically except at the preloader, which the
+# replica deliberately leaves out.
+
+note the title
+ref:  wait 20
+ref:  click 400 540        # < CLICK TO PLAY >
+mine: wait 3
+wait 6
+shot title
+
+click 393 355              # Start!
+wait 4
+shot start
+
+click 392 341              # New Game
+wait 4
+shot slots
+
+click 270 208              # slot 1
+wait 4
+shot class
+
+note the class list, with the pointer on Destroyer
+move 400 274
+wait 2
+shot class_hover
+
+click 400 274              # Destroyer
+wait 5
+shot settings
+
+note the opening comic -- the original stands still here without a sound
+note device, so both are photographed at its first frame and then skipped
+click 399 470              # PLAY
+wait 3
+click 760 555              # SKIP
+wait 9
+
+note the first fight, before anything has happened
+move 5 5
+wait 2
+shot battle
+
+note the pointer on the enemy: his ring of moves, and his reticle
+move 634 288
+wait 2
+shot battle_hover
+
+note the pointer resting on one of the moves in the ring
+move 638 246
+wait 2
+shot battle_orb
+
+note a turn taken
+click 638 246
+wait 7
+shot battle_turn
+
+note the fight run out
+click 634 288
+wait 1
+click 638 246
+wait 6
+click 634 288
+wait 1
+click 638 246
+wait 6
+click 634 288
+wait 1
+click 638 246
+wait 6
+click 634 288
+wait 1
+click 638 246
+wait 6
+click 634 288
+wait 1
+click 638 246
+wait 6
+click 634 288
+wait 1
+click 638 246
+wait 6
+click 634 288
+wait 1
+click 638 246
+wait 6
+click 634 288
+wait 1
+click 638 246
+wait 8
+shot won
+
+note the victory screen, a moment later
+wait 4
+shot won_later
+
+note back to the hub, with its welcome
+click 380 391
+wait 7
+shot hub_welcome
+
+note the hub itself
+click 393 319              # < CLICK HERE TO CLOSE >
+wait 4
+move 5 5
+wait 2
+shot hub
+
+note the inventory, and an item under the pointer
+click 55 510
+wait 4
+shot inventory
+move 250 300
+wait 2
+shot inventory_hover
+
+note the abilities screen
+click 698 548              # Back
+wait 4
+click 114 510
+wait 4
+shot abilities
+
+note the store
+click 698 548
+wait 4
+click 674 249
+wait 5
+shot shop
+move 250 300
+wait 2
+shot shop_hover
+
+note the world map
+click 698 548
+wait 4
+click 401 509
+wait 5
+shot map
