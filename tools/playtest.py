@@ -243,8 +243,10 @@ def main(argv=None):
 
     if args.only != 'ref':
         print('the replica:', flush=True)
+        # A fixed seed, so two runs of the replica are the same run. The
+        # game is otherwise seeded from the clock, as Flash seeds random().
         d = Display(92, [args.game],
-                    env={'SONNY_SILENT': '1'},
+                    env={'SONNY_SILENT': '1', 'SONNY_SEED': '20260912'},
                     log=os.path.join(args.out, 'sonny.log'))
         try:
             run(script, d, 'mine', args.out)

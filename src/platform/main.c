@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include "assets.h"
 #include "audio.h"
 #include "game.h"
@@ -32,9 +33,26 @@ static void game_start(Game *g, uint64_t seed)
     g->ring_unit = -1;
 }
 
+/* The dice the whole game rolls on: every hit, miss, critical and drop, and
+   what a fight pays out. The original has no seed of its own -- Flash seeds
+   random() from the machine when the movie opens, so no two playthroughs
+   roll the same -- and this stood on a constant, which made every playthrough
+   identical down to the euro. The clock stands in for Flash's entropy; a seed
+   given on the command line or in SONNY_SEED still pins it, which is what the
+   playtest and the headless captures want. */
+static uint64_t chosen_seed(int argc, char **argv)
+{
+    if (argc > 1)
+        return strtoull(argv[1], NULL, 10);
+    const char *fixed = getenv("SONNY_SEED");
+    if (fixed && fixed[0])
+        return strtoull(fixed, NULL, 10);
+    return (uint64_t)time(NULL) * 1000003u + (uint64_t)clock();
+}
+
 int main(int argc, char **argv)
 {
-    uint64_t seed = (argc > 1) ? strtoull(argv[1], NULL, 10) : 20260912;
+    uint64_t seed = chosen_seed(argc, argv);
 
     SetTraceLogLevel(LOG_WARNING);
     /* The stage is the original's own 800 by 575 and every coordinate in the

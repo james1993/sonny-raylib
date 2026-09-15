@@ -431,3 +431,15 @@ single frame with no tween, so the ramp is ours.
 * Hovering an empty square says "None / This slot is empty.": the original
   reads item zero rather than skipping the square, and it does that in the
   bag, in the store and on the victory screen alike.
+* What a fight pays is EnemyXPFinal * EuroConstant * ((85 + random(30)) / 100),
+  rounded, where EnemyXPFinal is the enemies' average level times 1 + 0.2 per
+  enemy and EuroConstant is 5. The first fight's one level-one enemy makes that
+  1.2 * 5 * 0.85..1.14, which rounds to five euros on seven of the thirty
+  rolls, six on seventeen and seven on six -- so five and six are the same
+  formula, not a difference in it.
+* The original has no seed of its own: Flash seeds random() from the machine
+  when the movie opens, so no two playthroughs roll the same. Standing on a
+  constant made every playthrough identical down to the euro, which is what
+  made that payout look wrong every time rather than sometimes. The clock
+  stands in for Flash's entropy now; SONNY_SEED, or a seed on the command
+  line, still pins it for the playtest and for headless captures.
