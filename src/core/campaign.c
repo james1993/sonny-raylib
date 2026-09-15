@@ -174,7 +174,15 @@ int32_t campaign_roll_drops(const BattleDef *def, Rng *rng, int32_t *out,
     return n;
 }
 
-BattleRewards campaign_award(Campaign *c, const Battle *b, Rng *rng)
+/* One level, which is also the point in each pool: both budgets are the level
+   less one, so the original's skillPoints++ and statPoints++ come for free. */
+int32_t campaign_apply_xp(Campaign *c, double amount)
+{
+    return character_award_xp(&c->player, amount);
+}
+
+BattleRewards campaign_award(Campaign *c, const Battle *b, Rng *rng,
+                             int apply)
 {
     BattleRewards r;
     memset(&r, 0, sizeof(r));
@@ -190,6 +198,13 @@ BattleRewards campaign_award(Campaign *c, const Battle *b, Rng *rng)
     r.xp_percent = character_xp_gain(r.enemy_rating, c->player.level);
     r.euros = rewards_money(r.enemy_rating, rng);
     c->euros += r.euros;
-    r.leveled = character_award_xp(&c->player, r.xp_percent);
+    /* The experience is not granted here. The original's victory screen fills
+       the bar towards it over thirty frames and levels up when the fill gets
+       there, which is when the skill and attribute points arrive -- so the
+       award belongs to the screen, and `apply` is for callers with no
+       screen. */
+    r.leveled = 0;
+    if (apply)
+        r.leveled = campaign_apply_xp(c, r.xp_percent);
     return r;
 }

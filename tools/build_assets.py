@@ -220,8 +220,15 @@ def collect_names(data_dir):
     # The battle screen's own effect sounds, played by name.
     want['sound'].update(['Swing', 'MagicCast', 'Forcefield', 'Click2putdown',
                           'Click3pickup'])
-    # Music tracks, which the original cycles through during battle.
-    want['sound'].update(['BattleMusic1loopable', 'BattleMusic2loopable'])
+    # Music. The original walks a list of four during battle and plays the
+    # first again on the hub; the boss theme stands in for a boss fight.
+    want['sound'].update(['menumusic', 'Gamemusic002', 'BossBattleloopable',
+                          'BattleMusic1loopable', 'BattleMusic2loopable'])
+    # The lines a fight speaks: a battle's speech list names the take.
+    for b in battles:
+        for speech in (b.get('speeches') or []):
+            if isinstance(speech.get('voiceOver'), str) and speech['voiceOver']:
+                want['sound'].add(speech['voiceOver'])
     # Each doll part draws two layers: the skin underneath
     # (<gender>_S<part>_<skin>) and the equipped item over it
     # (<gender>_<part>_<look>). Weapons always use the M_ form. Hair goes on

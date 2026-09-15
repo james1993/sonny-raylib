@@ -199,7 +199,7 @@ int main(void)
         if (fight.winCondition == 1) {
             Rng reward_rng;
             rng_seed(&reward_rng, fought);
-            BattleRewards r = campaign_award(&run, &fight, &reward_rng);
+            BattleRewards r = campaign_award(&run, &fight, &reward_rng, 1);
             assert(r.enemy_rating > 0);
             assert(r.xp_percent >= 0);
             assert(r.euros > 0);

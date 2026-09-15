@@ -1051,7 +1051,14 @@ void battle_screen_update(Game *g, Vector2 mouse, int headless)
     /* When the fight ends, pay out and move on. */
     if (g->battle.phase == PHASE_OVER) {
         if (g->battle.winCondition == 1) {
-            g->rewards = campaign_award(&g->campaign, &g->battle, &g->rng);
+            g->rewards = campaign_award(&g->campaign, &g->battle, &g->rng, 0);
+            /* The experience is the victory screen's to grant: it fills the
+               bar towards it over thirty frames, adding a thirtieth a frame,
+               and levels up if the fill reaches the end. */
+            g->win_fill = WIN_FILL_FRAMES;
+            g->win_xp = (float)g->campaign.player.xp;
+            g->win_step = (float)g->rewards.xp_percent / WIN_FILL_FRAMES;
+            g->win_leveled = 0;
             /* Only a fight the story marker started carries progress -- a
                practice fight and a replayed boss both leave it where it is,
                as Krin.progressFight does. */

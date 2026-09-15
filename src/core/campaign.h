@@ -79,7 +79,13 @@ typedef struct {
     int32_t leveled;
 } BattleRewards;
 
-BattleRewards campaign_award(Campaign *c, const Battle *b, Rng *rng);
+/* `apply` grants the experience straight away, for a caller with no victory
+   screen to fill a bar; the screen passes 0 and calls campaign_apply_xp when
+   the fill gets there. */
+BattleRewards campaign_award(Campaign *c, const Battle *b, Rng *rng,
+                             int apply);
+/* Award experience; a level brings a point in each pool with it. */
+int32_t campaign_apply_xp(Campaign *c, double amount);
 
 /* Advance past the battle just won (frame 213 increments progressLevelOn). */
 void campaign_advance(Campaign *c);

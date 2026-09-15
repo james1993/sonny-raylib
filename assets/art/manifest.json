@@ -27284,6 +27284,12 @@
     "assets/art/sound/BattleMusic2loopable.mp3"
    ]
   },
+  "BossBattleloopable": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/BossBattleloopable.mp3"
+   ]
+  },
   "Click2putdown": {
    "category": "sound",
    "frames": [
@@ -27366,6 +27372,12 @@
    "category": "sound",
    "frames": [
     "assets/art/sound/GaliantHit3.mp3"
+   ]
+  },
+  "Gamemusic002": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/Gamemusic002.mp3"
    ]
   },
   "GhostDie": {
@@ -27510,6 +27522,222 @@
    "category": "sound",
    "frames": [
     "assets/art/sound/ZombieHit2.mp3"
+   ]
+  },
+  "menumusic": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/menumusic.mp3"
+   ]
+  },
+  "v2_1": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v2_1.mp3"
+   ]
+  },
+  "v2_2": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v2_2.mp3"
+   ]
+  },
+  "v2_3": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v2_3.mp3"
+   ]
+  },
+  "v2_4": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v2_4.mp3"
+   ]
+  },
+  "v2_5": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v2_5.mp3"
+   ]
+  },
+  "v2_6": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v2_6.mp3"
+   ]
+  },
+  "v2_7": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v2_7.mp3"
+   ]
+  },
+  "v2_8": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v2_8.mp3"
+   ]
+  },
+  "v3_1": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v3_1.mp3"
+   ]
+  },
+  "v3_10": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v3_10.mp3"
+   ]
+  },
+  "v3_11": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v3_11.mp3"
+   ]
+  },
+  "v3_12": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v3_12.mp3"
+   ]
+  },
+  "v3_13": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v3_13.mp3"
+   ]
+  },
+  "v3_14": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v3_14.mp3"
+   ]
+  },
+  "v3_15": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v3_15.mp3"
+   ]
+  },
+  "v3_16": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v3_16.mp3"
+   ]
+  },
+  "v3_17": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v3_17.mp3"
+   ]
+  },
+  "v3_2": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v3_2.mp3"
+   ]
+  },
+  "v3_3": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v3_3.mp3"
+   ]
+  },
+  "v3_4": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v3_4.mp3"
+   ]
+  },
+  "v3_5": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v3_5.mp3"
+   ]
+  },
+  "v3_6": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v3_6.mp3"
+   ]
+  },
+  "v3_7": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v3_7.mp3"
+   ]
+  },
+  "v3_8": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v3_8.mp3"
+   ]
+  },
+  "v3_9": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v3_9.mp3"
+   ]
+  },
+  "v_1": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v_1.mp3"
+   ]
+  },
+  "v_10": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v_10.mp3"
+   ]
+  },
+  "v_2": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v_2.mp3"
+   ]
+  },
+  "v_3": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v_3.mp3"
+   ]
+  },
+  "v_4": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v_4.mp3"
+   ]
+  },
+  "v_5": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v_5.mp3"
+   ]
+  },
+  "v_6": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v_6.mp3"
+   ]
+  },
+  "v_7": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v_7.mp3"
+   ]
+  },
+  "v_8": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v_8.mp3"
+   ]
+  },
+  "v_9": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/v_9.mp3"
    ]
   },
   "KrinBuffShower": {

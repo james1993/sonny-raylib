@@ -4,6 +4,7 @@
  * the original's does (SYSTEM[13..28]), as do the zone names, item names and
  * victory lines.
  */
+#include <math.h>
 #include <stdio.h>
 #include <string.h>
 #include "assets.h"
@@ -237,51 +238,14 @@ void screen_zone_update(Game *g, Vector2 mouse)
 
 
 
-/* The hub, laid out from the original's Navigation frame: the zone's own
-   scene across the top with the markers that start a fight or open the shop,
-   the row of buttons along the bottom, and the zone's name and progress
-   beside them. */
-void screen_zone_draw(Game *g, Vector2 mouse)
+/* The furniture along the bottom of the hub: the panels, the row of buttons
+   and their icons, the bar that says how far through the zone the player is,
+   and the three lines beside it. Every menu the hub opens is a clip laid over
+   this, so it stays on screen behind all of them -- which is why the original
+   never shows a bare menu with nothing under it. */
+static void draw_hub_panel(Game *g, Vector2 mouse)
 {
     const ZoneDef *zone = campaign_zone(&g->campaign);
-
-    ClearBackground(BLACK);
-    /* The scene, one frame of the clip per zone. The markers are not in it:
-       they are a clip of their own, and the art build takes them out so they
-       can be drawn here and turn. */
-    const char *label = (zone && zone->zone < SONNY_ZONE_LABEL_COUNT)
-                      ? SONNY_ZONE_LABELS[zone->zone] : NULL;
-    Vector2 scene = {SONNY_ZONE_SCREEN.x, SONNY_ZONE_SCREEN.y};
-    if (label)
-        asset_draw_placed(label, 1, scene, 1.0f, WHITE);
-
-    /* The markers, turning. The clip is its own loop at the SWF's frame rate,
-       and every marker on a scene is the same clip, so they turn together. */
-    if (label) {
-        int32_t frame = 1;
-        if (SONNY_MARKER_FRAMES > 0)
-            frame = 1 + (int32_t)(GetTime() * SONNY_MARKER_FPS)
-                        % SONNY_MARKER_FRAMES;
-        for (int32_t i = 0; ; i++) {
-            const ZoneMarker *m = zone_marker(label, i);
-            if (!m)
-                break;
-            /* Two of these are squashed by their placement, so the two scales
-               are kept apart. */
-            const Texture2D *tex = asset_texture(m->style, frame);
-            if (!tex)
-                continue;
-            Vector2 offset = asset_frame_offset(m->style, frame);
-            draw_texture_placed(tex, scene.x + m->x, scene.y + m->y,
-                                m->scale_x, m->scale_y, offset.x, offset.y,
-                                WHITE);
-        }
-    }
-
-    /* The furniture below it: the panels, the row of buttons and their
-       icons, the marker that says a fight is waiting. The icons are painted
-       into the panel; what sits over each one -- its border and the glass on
-       it -- is the button's own art. */
     draw_screen_chrome(HUB_SCREEN);
     draw_screen_buttons(HUB_SCREEN, mouse);
 
@@ -323,6 +287,51 @@ void screen_zone_draw(Game *g, Vector2 mouse)
                    TextFormat("%s%d", lang_text("SYSTEM", 10),
                               g->campaign.progress_battle - 1));
     }
+}
+
+
+/* The hub, laid out from the original's Navigation frame: the zone's own
+   scene across the top with the markers that start a fight or open the shop,
+   the row of buttons along the bottom, and the zone's name and progress
+   beside them. */
+void screen_zone_draw(Game *g, Vector2 mouse)
+{
+    const ZoneDef *zone = campaign_zone(&g->campaign);
+
+    ClearBackground(BLACK);
+    /* The scene, one frame of the clip per zone. The markers are not in it:
+       they are a clip of their own, and the art build takes them out so they
+       can be drawn here and turn. */
+    const char *label = (zone && zone->zone < SONNY_ZONE_LABEL_COUNT)
+                      ? SONNY_ZONE_LABELS[zone->zone] : NULL;
+    Vector2 scene = {SONNY_ZONE_SCREEN.x, SONNY_ZONE_SCREEN.y};
+    if (label)
+        asset_draw_placed(label, 1, scene, 1.0f, WHITE);
+
+    /* The markers, turning. The clip is its own loop at the SWF's frame rate,
+       and every marker on a scene is the same clip, so they turn together. */
+    if (label) {
+        int32_t frame = 1;
+        if (SONNY_MARKER_FRAMES > 0)
+            frame = 1 + (int32_t)(GetTime() * SONNY_MARKER_FPS)
+                        % SONNY_MARKER_FRAMES;
+        for (int32_t i = 0; ; i++) {
+            const ZoneMarker *m = zone_marker(label, i);
+            if (!m)
+                break;
+            /* Two of these are squashed by their placement, so the two scales
+               are kept apart. */
+            const Texture2D *tex = asset_texture(m->style, frame);
+            if (!tex)
+                continue;
+            Vector2 offset = asset_frame_offset(m->style, frame);
+            draw_texture_placed(tex, scene.x + m->x, scene.y + m->y,
+                                m->scale_x, m->scale_y, offset.x, offset.y,
+                                WHITE);
+        }
+    }
+
+    draw_hub_panel(g, mouse);
 }
 
 /* ----------------------------------------------------------- world map */
@@ -603,8 +612,7 @@ void screen_talents_draw(Game *g, Vector2 mouse)
 
     ClearBackground(BLACK);
     /* The hub stays behind the menu, as it does in the original. */
-    draw_screen_chrome(HUB_SCREEN);
-    draw_screen_buttons(HUB_SCREEN, mouse);
+    draw_hub_panel(g, mouse);
     draw_clip_parts(MENU_SCREEN, MENU_SKILLS, NO_OFFSET, NULL, WHITE);
 
     /* The four headings, which the frame reads out of the language table. */
@@ -1194,8 +1202,7 @@ void screen_inventory_draw(Game *g, Vector2 mouse)
     ClearBackground(BLACK);
     /* The hub's own furniture stays behind the menu, as it does in the
        original: the row of buttons and the zone's progress are still there. */
-    draw_screen_chrome(HUB_SCREEN);
-    draw_screen_buttons(HUB_SCREEN, mouse);
+    draw_hub_panel(g, mouse);
     draw_clip_parts(MENU_SCREEN, MENU_INVENTORY, NO_OFFSET, NULL, WHITE);
 
     draw_field(inv_field("@881"), NO_OFFSET,
@@ -1350,8 +1357,7 @@ void screen_shop_draw(Game *g, Vector2 mouse)
     const ShopDef *shop = shop_for_button(g->shop_button);
 
     ClearBackground(BLACK);
-    draw_screen_chrome(HUB_SCREEN);
-    draw_screen_buttons(HUB_SCREEN, mouse);
+    draw_hub_panel(g, mouse);
     draw_clip_parts(MENU_SCREEN, MENU_SHOP, NO_OFFSET, NULL, WHITE);
     /* The two buttons in the purse strip -- the store's own euro sign and the
        recycler -- are art the frame keeps inside the buttons themselves. */
@@ -1522,6 +1528,24 @@ void screen_shop_update(Game *g, Vector2 mouse)
 
 void screen_victory_update(Game *g, Vector2 mouse)
 {
+    /* The experience bar fills a thirtieth of what the fight paid each frame.
+       If it reaches the end the player levels there and then -- the bar goes
+       to full, stops, and the level (and with it a skill point and an
+       attribute point) is granted. The original discards the overflow. */
+    if (g->win_fill > 0) {
+        g->win_fill--;
+        g->win_xp += g->win_step;
+        if (g->win_xp >= 100.0f) {
+            g->win_leveled = 1;
+            g->win_fill = 0;
+            g->win_xp = 100.0f;
+            g->rewards.leveled = campaign_apply_xp(&g->campaign,
+                                                   100.0 - g->campaign.player.xp);
+        } else if (g->win_fill == 0) {
+            g->campaign.player.xp = g->win_xp;
+        }
+    }
+
     /* Drops are chosen by clicking them, as VICTORY[1] instructs. */
     for (int32_t i = 0; i < g->dropped_count; i++) {
         Rectangle r = drop_rect(i);
@@ -1575,6 +1599,120 @@ void screen_victory_update(Game *g, Vector2 mouse)
     g->screen = SCREEN_ZONE;
 }
 
+/* ------------------------------------------------------- the victory rows */
+
+/* The three experience rows the win frame stacks, in the order its fields
+   come: two for the allies standing in the line, and the last -- the top of
+   the panel -- hardwired to the player. A row whose member is not there sets
+   itself invisible. */
+#define WIN_XP_ROWS    3
+#define WIN_PLAYER_ROW 2
+/* The bar's full width, which the original scales by exp/100. */
+#define WIN_BAR_WIDTH  95.1f
+
+/* Which row a piece of the frame belongs to: the three are stacked, so the
+   band its y falls in says which. */
+static int32_t win_part_row(float y)
+{
+    if (y < 230.0f)
+        return WIN_PLAYER_ROW;
+    return y < 320.0f ? 0 : 1;
+}
+
+/* Who is in a row, or -1 for the player's own. An ally row takes whoever
+   stands in that place in the line -- and only if the story has actually
+   handed them over, which is the same test the fight itself makes. The
+   original builds this list (friendlySlotsFFTT) while it places the units, so
+   a row is empty exactly when nobody fought in it. */
+static int32_t win_row_ally(const Game *g, int32_t row)
+{
+    if (row == WIN_PLAYER_ROW || row >= SONNY_MAX_ALLIES)
+        return -1;
+    int32_t member = g->campaign.line[row];
+    return campaign_has_friend(&g->campaign, member) ? member : -1;
+}
+
+static int win_row_shown(const Game *g, int32_t row)
+{
+    return row == WIN_PLAYER_ROW || win_row_ally(g, row) > 0;
+}
+
+static const char *win_row_name(const Game *g, int32_t row)
+{
+    if (row == WIN_PLAYER_ROW)
+        return g->battle.units[PLAYER_SLOT].name[0]
+             ? g->battle.units[PLAYER_SLOT].name : "Sonny";
+    int32_t member = win_row_ally(g, row);
+    return (member > 0 && member < SONNY_PARTY_COUNT)
+         ? SONNY_PARTY[member].name : "";
+}
+
+/* An ally levels with the player -- the original scales them off the player's
+   own level rather than keeping one of their own. */
+static int32_t win_row_level(const Game *g, int32_t row)
+{
+    (void)row;
+    return g->campaign.player.level;
+}
+
+/* The frame the portrait clip shows for a row. */
+static const char *win_row_portrait(const Game *g, int32_t row)
+{
+    return row == WIN_PLAYER_ROW ? "mainPlayer" : win_row_name(g, row);
+}
+
+/* The win frame's own pieces, with the rows nobody is in left out and the
+   player's bar cut to how far the fill has got. */
+static void draw_win_parts(Game *g)
+{
+    for (int i = 0; i < SONNY_CLIP_PART_COUNT; i++) {
+        const ClipPart *part = &SONNY_CLIP_PARTS[i];
+        if (strcmp(part->screen, MENU_SCREEN) != 0
+            || strcmp(part->owner, MENU_WIN) != 0 || part->width <= 0)
+            continue;
+        int in_row = strcmp(part->name, "@3") == 0
+                  || strcmp(part->name, "avIn") == 0
+                  || strcmp(part->name, "bar") == 0
+                  || strcmp(part->name, "@16") == 0;
+        int32_t row = in_row ? win_part_row(part->y) : -1;
+        if (in_row && !win_row_shown(g, row))
+            continue;
+
+        const char *chosen = NULL;
+        if (part->frames) {
+            if (!in_row)
+                continue;
+            chosen = win_row_portrait(g, row);
+        }
+        const char *name = chosen ? chosen
+                                  : TextFormat("#%d", part->character);
+        const Texture2D *tex = asset_texture(name, 1);
+        if (!tex)
+            continue;
+        /* The fill is the one piece the screen drives: its width is the
+           percentage, out of the 95.1 the frame gives it. */
+        if (strcmp(part->name, "bar") == 0) {
+            float shown = row == WIN_PLAYER_ROW ? g->win_xp
+                                                : (float)g->campaign.player.xp;
+            float fraction = shown / 100.0f;
+            if (fraction < 0)
+                fraction = 0;
+            if (fraction > 1)
+                fraction = 1;
+            Rectangle box = placed_texture(tex, part->x, part->y,
+                                           part->scale_x, part->scale_y,
+                                           part->origin_x, part->origin_y);
+            Rectangle src = {0, 0, tex->width * fraction, (float)tex->height};
+            box.width = WIN_BAR_WIDTH * fraction * part->scale_x;
+            DrawTexturePro(*tex, src, box, (Vector2){0, 0}, 0.0f, WHITE);
+            continue;
+        }
+        draw_texture_placed(tex, part->x, part->y, part->scale_x,
+                            part->scale_y, part->origin_x, part->origin_y,
+                            WHITE);
+    }
+}
+
 /* The tally after a fight, laid out from the menu clip's own "win" frame: the
    party's experience down the left, what the fight paid in the middle, and
    the bag on the right with whatever dropped beside it. Every line is one of
@@ -1582,21 +1720,28 @@ void screen_victory_update(Game *g, Vector2 mouse)
 void screen_victory_draw(Game *g, Vector2 mouse)
 {
     ClearBackground(BLACK);
-    draw_clip_parts(MENU_SCREEN, MENU_WIN, NO_OFFSET, NULL, WHITE);
+    /* The hub is behind this too -- the frame only hides the scene
+       (KrinScreen._visible = false), not the furniture under it. */
+    draw_hub_panel(g, mouse);
+    draw_win_parts(g);
 
-    draw_field(win_field("@901"), NO_OFFSET, lang_text("VICTORY", 0));
+    /* Three of these are wider than one line of their own box, and the frame
+       lets them wrap. */
+    draw_field_wrapped(win_field("@901"), NO_OFFSET, lang_text("VICTORY", 0));
+    /* vb2 is set whether or not anything dropped; vb99 is the "nothing did"
+       on top of it. */
+    draw_field_wrapped(win_field("@899"), NO_OFFSET, lang_text("VICTORY", 1));
     if (g->dropped_count == 0)
-        draw_field(win_field("@904"), NO_OFFSET, lang_text("MENU", 12));
-    else
-        draw_field(win_field("@899"), NO_OFFSET, lang_text("VICTORY", 1));
+        draw_field_wrapped(win_field("@904"), NO_OFFSET, lang_text("MENU", 12));
 
     draw_field(win_field("@895"), NO_OFFSET, lang_text("VICTORY", 2));
     draw_field(win_field("@896"), NO_OFFSET,
                TextFormat("%s%d", EURO, g->rewards.euros));
     draw_field(win_field("@897"), NO_OFFSET, lang_text("VICTORY", 3));
+    /* Math.round, not a cast: 51.5 reads 52 in the original. */
     draw_field(win_field("@898"), NO_OFFSET,
-               TextFormat("%d%%", (int32_t)g->rewards.xp_percent));
-    draw_field(win_field("@900"), NO_OFFSET, lang_text("VICTORY", 4));
+               TextFormat("%d%%", (int32_t)floor(g->rewards.xp_percent + 0.5)));
+    draw_field_wrapped(win_field("@900"), NO_OFFSET, lang_text("VICTORY", 4));
     draw_field(win_field("@23"), NO_OFFSET, lang_text("MENU", 13));
     draw_field(win_field("@959"), NO_OFFSET, lang_text("MENU", 15));
     draw_field(win_field("@1059"), NO_OFFSET, lang_text("MENU", 14));
@@ -1605,16 +1750,25 @@ void screen_victory_draw(Game *g, Vector2 mouse)
     /* The frame's own content, which the game never writes to. */
     draw_field(win_field("@1053"), NO_OFFSET, EURO);
 
-    /* An experience row per party member -- name, level, and how far through
-       the level they are. The frame stacks three; the story gives the player
-       company later, and the last of the three is the player's own. */
+    /* The experience rows. The frame stacks three clips: two bound to the
+       allies standing in the line and one, the top, hardwired to the player.
+       A clip whose member is not there sets itself invisible, which is why a
+       lone Sonny gets one row and not three. */
     const Character *p = &g->campaign.player;
-    draw_field(text_field_named(MENU_SCREEN, MENU_WIN, "@12", 2), NO_OFFSET,
-               g->battle.units[PLAYER_SLOT].name);
-    draw_field(text_field_named(MENU_SCREEN, MENU_WIN, "@13", 2), NO_OFFSET,
-               TextFormat("%s%d", lang_text("MENU", 0), p->level));
-    draw_field(text_field_named(MENU_SCREEN, MENU_WIN, "@17", 2), NO_OFFSET,
-               TextFormat("%d%%", (int32_t)p->xp));
+    for (int32_t row = 0; row < WIN_XP_ROWS; row++) {
+        if (!win_row_shown(g, row))
+            continue;
+        draw_field(text_field_named(MENU_SCREEN, MENU_WIN, "@12", row),
+                   NO_OFFSET, win_row_name(g, row));
+        draw_field(text_field_named(MENU_SCREEN, MENU_WIN, "@13", row),
+                   NO_OFFSET, TextFormat("%s%d", lang_text("MENU", 0),
+                                         win_row_level(g, row)));
+        /* Only the player's bar moves; an ally's shows what it already had. */
+        float shown = row == WIN_PLAYER_ROW ? g->win_xp : (float)p->xp;
+        draw_field(text_field_named(MENU_SCREEN, MENU_WIN, "@17", row),
+                   NO_OFFSET,
+                   TextFormat("%d%%", (int32_t)floor(shown + 0.5)));
+    }
 
     for (int32_t i = 0; i < g->dropped_count; i++) {
         Rectangle r = drop_rect(i);

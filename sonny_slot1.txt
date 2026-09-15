@@ -1,0 +1,20 @@
+sonny-save 1
+class 1
+level 1
+xp 51.5
+euros 5
+progress 3
+zone 0
+spent_skill 0
+spent_stat 0
+sets 0 5 0 3 0
+per 0 0 0 0 0 0 0 0
+def 0 0 0 0 0 0 0 0
+friends 0 -1 -1 -1 -1 -1
+line 1 2
+stats 0 5 0 3 0
+equip 0 0 0 4 8 5 0
+bar 69 70 0 0 0 0 0 0
+ranks 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+skilladder 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+inventory

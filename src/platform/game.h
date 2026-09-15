@@ -45,6 +45,10 @@ typedef enum {
     SCREEN_MAP
 } Screen;
 
+/* How long the victory screen takes to fill the experience bar, in frames:
+   the original's setLimiter. */
+#define WIN_FILL_FRAMES 30
+
 typedef struct {
     Screen    screen;
     Campaign  campaign;
@@ -99,6 +103,12 @@ typedef struct {
 
     /* Rewards from the battle just won. */
     BattleRewards rewards;
+    /* The victory screen fills the experience bar towards what the fight paid
+       over thirty frames, and levels up when the fill gets there. */
+    int32_t   win_fill;        /* setLimiter */
+    float     win_xp;          /* exp, the running percentage */
+    float     win_step;        /* adderPer */
+    int32_t   win_leveled;     /* playerLeveled */
     int32_t   dropped[SONNY_MAX_DROPPED];
     int32_t   dropped_count;
     int32_t   taken[SONNY_MAX_DROPPED];

@@ -49,6 +49,7 @@ test: $(BUILD)
 	$(BUILD)/test_party
 	$(BUILD)/test_window
 	$(BUILD)/test_save
+	python3 tools/check_assets.py
 
 # Regenerate the C data tables from the extracted JSON.
 data:
