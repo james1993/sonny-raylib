@@ -34,6 +34,10 @@ int asset_draw_cover(const char *name, int32_t frame, Rectangle area,
 /* Draw art where the original places it: centred on its recorded bounds,
    offset from `parent` (the stage position of whatever contains it). Assets
    with no bounds fall back to being centred on `parent`. */
+/* The same image with its own colour taken out, for a piece the game recolours
+   with Color.setRGB: drawn with a tint, it lands on exactly that colour. */
+const Texture2D *asset_texture_recolored(const char *name, int32_t frame);
+
 int asset_draw_placed(const char *name, int32_t frame, Vector2 parent,
                       float scale, Color tint);
 

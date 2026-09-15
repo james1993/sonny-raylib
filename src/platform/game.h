@@ -130,6 +130,10 @@ typedef struct {
     /* The reticle does not snap on and off: it comes up over a few frames
        and goes down the same way, so `fade` is how far in it is and
        `fade_unit` who it is still fading out from. */
+    /* Where the pointer was when the screen last ran. The battle screen
+       draws from it, so a headless capture with the pointer parked sees what
+       a player hovering there would. */
+    Vector2   pointer;
     float     ring_fade;
     int32_t   ring_fade_unit;
     int32_t   hub_note;

@@ -522,24 +522,28 @@ static Color color_from_rgb(uint32_t rgb)
 static void draw_buff_widget(Vector2 at, const char *key, int32_t turns,
                              Color element)
 {
-    const Texture2D *back = asset_texture(BUFF_BACKING, 1);
+    /* The disc takes the buff's element outright, the way Color.setRGB does,
+       rather than being multiplied by it. */
+    const Texture2D *back = asset_texture_recolored(BUFF_BACKING, 1);
     if (back) {
         Vector2 off = asset_frame_offset(BUFF_BACKING, 1);
         draw_texture_placed(back, at.x - 0.1f, at.y, 1.0f, 1.0f, off.x, off.y,
                             element);
     }
-    /* The icon, which is a frame of the shower's own clip named for the
-       buff. A passive talent has no frame there, in the original either. */
-    const Texture2D *icon = asset_texture(key, 1);
-    if (icon) {
-        Vector2 off = asset_frame_offset(key, 1);
-        draw_texture_placed(icon, at.x, at.y, 1.0f, 1.0f, off.x, off.y, WHITE);
-    }
+    /* Then the plate, and the icon over it -- the widget stacks them at
+       depths 1, 3 and 4, so the icon is the last of the three. It is a frame
+       of the shower's own clip named for the buff; a passive talent has no
+       frame there, in the original either. */
     const Texture2D *frame = asset_texture(BUFF_FRAME, 1);
     if (frame) {
         Vector2 off = asset_frame_offset(BUFF_FRAME, 1);
         draw_texture_placed(frame, at.x, at.y, 1.0f, 1.0f, off.x, off.y,
                             WHITE);
+    }
+    const Texture2D *icon = asset_texture(key, 1);
+    if (icon) {
+        Vector2 off = asset_frame_offset(key, 1);
+        draw_texture_placed(icon, at.x, at.y, 1.0f, 1.0f, off.x, off.y, WHITE);
     }
     const char *text = TextFormat("%d", turns);
     float width = ui_sans_text_width(text, BUFF_COUNT_SIZE);
@@ -801,7 +805,7 @@ static void draw_battle(Game *g)
 
     draw_frame_rate();
     draw_reticle(g);
-    draw_ring(g, GetMousePosition());
+    draw_ring(g, g->pointer);
     draw_numbers(g);
     draw_speech(g);
 }
@@ -1125,6 +1129,7 @@ void battle_screen_start(Game *g, int32_t battle_id)
 
 void battle_screen_update(Game *g, Vector2 mouse, int headless)
 {
+    g->pointer = mouse;
     g->hovered_unit = unit_at(g, mouse);
     handle_input(g);
 

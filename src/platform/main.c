@@ -102,6 +102,8 @@ int main(int argc, char **argv)
        screen does on hover can be photographed. */
     const char *parked = getenv("SONNY_MOUSE");
     int steps = getenv("SONNY_STEPS") ? atoi(getenv("SONNY_STEPS")) : 0;
+    int every = getenv("SONNY_SHOT_EVERY")
+              ? atoi(getenv("SONNY_SHOT_EVERY")) : 0;
     const char *want_screen = getenv("SONNY_SCREEN");
     int frames = 0;
 
@@ -291,8 +293,15 @@ int main(int argc, char **argv)
                        (Vector2){0, 0}, 0.0f, WHITE);
         EndDrawing();
 
-        if (shot && ++frames >= (steps > 0 ? steps : 2)) {
-            TakeScreenshot(shot);
+        /* SONNY_SHOT_EVERY=N photographs every Nth frame instead of only the
+           last, which is how an animation is looked at: one run, a strip of
+           frames, rather than one run per frame. */
+        frames++;
+        if (shot && every > 0 && frames % every == 0)
+            TakeScreenshot(TextFormat("%s_%04d.png", shot, frames));
+        if (shot && frames >= (steps > 0 ? steps : 2)) {
+            if (every <= 0)
+                TakeScreenshot(shot);
             break;
         }
     }
