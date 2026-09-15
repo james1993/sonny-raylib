@@ -154,6 +154,11 @@ def gen_buffs(buffs):
                      % (int(num(g(26))), fmt(g(28)), fmt(g(29))))
         lines.append('        .dot_speed = %s, .filter = %d,'
                      % (fmt(g(30)), int(num(g(31)))))
+        # [25] is the line the interface shows for the buff: on the widget
+        # over a unit's bar, and on a passive node in the talent tree.
+        say = f.get('25')
+        lines.append('        .tooltip = %s,'
+                     % c_string(say if isinstance(say, str) else ''))
         lines.append('    },')
     lines.append('};')
     lines.append('const int SONNY_BUFF_COUNT = '

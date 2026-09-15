@@ -155,8 +155,8 @@ static const char *const FRAMES_74[] = { "assets/art/chrome/#1516.png" };
 static const AssetOffset OFFSETS_74[] = { { 402.800000f, 288.500000f } };
 static const char *const FRAMES_75[] = { "assets/art/chrome/#1531.png" };
 static const AssetOffset OFFSETS_75[] = { { 395.000000f, 107.750000f } };
-static const char *const FRAMES_76[] = { "assets/art/chrome/#1536.png" };
-static const AssetOffset OFFSETS_76[] = { { 15.000000f, 15.000000f } };
+static const char *const FRAMES_76[] = { "assets/art/chrome/#1536_1.png", "assets/art/chrome/#1536_2.png", "assets/art/chrome/#1536_3.png", "assets/art/chrome/#1536_4.png", "assets/art/chrome/#1536_5.png", "assets/art/chrome/#1536_6.png", "assets/art/chrome/#1536_7.png", "assets/art/chrome/#1536_8.png", "assets/art/chrome/#1536_9.png", "assets/art/chrome/#1536_10.png", "assets/art/chrome/#1536_11.png", "assets/art/chrome/#1536_12.png", "assets/art/chrome/#1536_13.png", "assets/art/chrome/#1536_14.png", "assets/art/chrome/#1536_15.png", "assets/art/chrome/#1536_16.png", "assets/art/chrome/#1536_17.png", "assets/art/chrome/#1536_18.png", "assets/art/chrome/#1536_19.png", "assets/art/chrome/#1536_20.png", "assets/art/chrome/#1536_21.png", "assets/art/chrome/#1536_22.png", "assets/art/chrome/#1536_23.png", "assets/art/chrome/#1536_24.png", "assets/art/chrome/#1536_25.png", "assets/art/chrome/#1536_26.png", "assets/art/chrome/#1536_27.png", "assets/art/chrome/#1536_28.png", "assets/art/chrome/#1536_29.png", "assets/art/chrome/#1536_30.png", "assets/art/chrome/#1536_31.png", "assets/art/chrome/#1536_32.png", "assets/art/chrome/#1536_33.png", "assets/art/chrome/#1536_34.png", "assets/art/chrome/#1536_35.png", "assets/art/chrome/#1536_36.png", "assets/art/chrome/#1536_37.png", "assets/art/chrome/#1536_38.png", "assets/art/chrome/#1536_39.png", "assets/art/chrome/#1536_40.png", "assets/art/chrome/#1536_41.png", "assets/art/chrome/#1536_42.png", "assets/art/chrome/#1536_43.png", "assets/art/chrome/#1536_44.png", "assets/art/chrome/#1536_45.png", "assets/art/chrome/#1536_46.png", "assets/art/chrome/#1536_47.png", "assets/art/chrome/#1536_48.png" };
+static const AssetOffset OFFSETS_76[] = { { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f }, { 15.000000f, 15.000000f } };
 static const char *const FRAMES_77[] = { "assets/art/chrome/#1537.png" };
 static const AssetOffset OFFSETS_77[] = { { 385.000000f, 157.000000f } };
 static const char *const FRAMES_78[] = { "assets/art/chrome/#1560.png" };
@@ -191,8 +191,8 @@ static const char *const FRAMES_92[] = { "assets/art/chrome/#1596.png" };
 static const AssetOffset OFFSETS_92[] = { { 47.150000f, 41.900000f } };
 static const char *const FRAMES_93[] = { "assets/art/chrome/#1606.png" };
 static const AssetOffset OFFSETS_93[] = { { 82.000000f, 77.900000f } };
-static const char *const FRAMES_94[] = { "assets/art/chrome/#1610.png" };
-static const AssetOffset OFFSETS_94[] = { { 62.850000f, 62.850000f } };
+static const char *const FRAMES_94[] = { "assets/art/effect/#1610_1.png", "assets/art/effect/#1610_2.png", "assets/art/effect/#1610_3.png", "assets/art/effect/#1610_4.png", "assets/art/effect/#1610_5.png", "assets/art/effect/#1610_6.png", "assets/art/effect/#1610_7.png", "assets/art/effect/#1610_8.png", "assets/art/effect/#1610_9.png", "assets/art/effect/#1610_10.png", "assets/art/effect/#1610_11.png", "assets/art/effect/#1610_12.png", "assets/art/effect/#1610_13.png", "assets/art/effect/#1610_14.png", "assets/art/effect/#1610_15.png", "assets/art/effect/#1610_16.png", "assets/art/effect/#1610_17.png", "assets/art/effect/#1610_18.png", "assets/art/effect/#1610_19.png", "assets/art/effect/#1610_20.png", "assets/art/effect/#1610_21.png", "assets/art/effect/#1610_22.png", "assets/art/effect/#1610_23.png", "assets/art/effect/#1610_24.png", "assets/art/effect/#1610_25.png" };
+static const AssetOffset OFFSETS_94[] = { { 62.850000f, 62.850000f }, { 62.850000f, 62.850000f }, { 62.850000f, 62.850000f }, { 62.850000f, 62.850000f }, { 62.850000f, 62.850000f }, { 62.850000f, 62.850000f }, { 62.850000f, 62.850000f }, { 62.850000f, 62.850000f }, { 62.850000f, 62.850000f }, { 62.850000f, 62.850000f }, { 62.850000f, 62.850000f }, { 62.850000f, 62.850000f }, { 62.850000f, 62.850000f }, { 62.850000f, 62.850000f }, { 62.850000f, 62.850000f }, { 62.850000f, 62.850000f }, { 62.850000f, 62.850000f }, { 62.850000f, 62.850000f }, { 62.850000f, 62.850000f }, { 62.850000f, 62.850000f }, { 62.850000f, 62.850000f }, { 62.850000f, 62.850000f }, { 62.850000f, 62.850000f }, { 62.850000f, 62.850000f }, { 62.850000f, 62.850000f } };
 static const char *const FRAMES_95[] = { "assets/art/chrome/#1613.png" };
 static const AssetOffset OFFSETS_95[] = { { 95.950000f, 35.700000f } };
 static const char *const FRAMES_96[] = { "assets/art/chrome/#1632.png" };
@@ -1658,7 +1658,7 @@ const AssetEntry SONNY_ASSETS[] = {
     { "#1513", "chrome", FRAMES_73, OFFSETS_73, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
     { "#1516", "chrome", FRAMES_74, OFFSETS_74, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
     { "#1531", "chrome", FRAMES_75, OFFSETS_75, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1536", "chrome", FRAMES_76, OFFSETS_76, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1536", "chrome", FRAMES_76, OFFSETS_76, 48, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
     { "#1537", "chrome", FRAMES_77, OFFSETS_77, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
     { "#1560", "chrome", FRAMES_78, OFFSETS_78, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
     { "#1561", "chrome", FRAMES_79, OFFSETS_79, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
@@ -1676,7 +1676,7 @@ const AssetEntry SONNY_ASSETS[] = {
     { "#1591", "chrome", FRAMES_91, OFFSETS_91, 1, 1, -31.800000f, -31.800000f, 31.800000f, 31.800000f },
     { "#1596", "chrome", FRAMES_92, OFFSETS_92, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
     { "#1606", "chrome", FRAMES_93, OFFSETS_93, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
-    { "#1610", "chrome", FRAMES_94, OFFSETS_94, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
+    { "#1610", "effect", FRAMES_94, OFFSETS_94, 25, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
     { "#1613", "chrome", FRAMES_95, OFFSETS_95, 1, 1, -95.950000f, -35.700000f, 96.000000f, 112.300000f },
     { "#1632", "chrome", FRAMES_96, OFFSETS_96, 1, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
     { "#1633", "chrome", FRAMES_97, OFFSETS_97, 1, 1, -0.500000f, -0.500000f, 306.000000f, 94.500000f },

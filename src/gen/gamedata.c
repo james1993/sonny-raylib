@@ -2146,6 +2146,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Strength, Magic and Speed reduced by 15%.",
     },
     { /* DARKREGEN */
         .key = "DARKREGEN", .name = "Dark Regeneration", .element = 6,
@@ -2155,6 +2156,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Recovering 1000 Health every turn.",
     },
     { /* DOCTOR */
         .key = "DOCTOR", .name = "Dark Omen", .element = 6,
@@ -2164,6 +2166,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit's next attack will be extra powerful, but this unit is also taking extra damage from all attacks. This cannot be dispeled.",
     },
     { /* FATE */
         .key = "FATE", .name = "Fate", .element = 6,
@@ -2173,6 +2176,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit is going to die.",
     },
     { /* IGNITE */
         .key = "IGNITE", .name = "Ignited", .element = 3,
@@ -2182,6 +2186,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit is suffering Fire damage every round.",
     },
     { /* BLACKOUT */
         .key = "BLACKOUT", .name = "Lost", .element = 6,
@@ -2191,6 +2196,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit is totally trippin' dawg!",
     },
     { /* DECAY */
         .key = "DECAY", .name = "Decay", .element = 6,
@@ -2200,6 +2206,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Deals 80 Shadow damage to this unit every turn.",
     },
     { /* REGENSHAMAN */
         .key = "REGENSHAMAN", .name = "Water Mend", .element = 2,
@@ -2209,6 +2216,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = -0.25,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit is recovering Health.",
     },
     { /* WASHED */
         .key = "WASHED", .name = "Slugged", .element = 2,
@@ -2218,6 +2226,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit deals 20% less damage.",
     },
     { /* REGENFOC */
         .key = "REGENFOC", .name = "Re-Energize", .element = 4,
@@ -2227,6 +2236,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit is recovering Focus.",
     },
     { /* SPEEDUP */
         .key = "SPEEDUP", .name = "Shadow Blend", .element = 6,
@@ -2236,6 +2246,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit's speed is increased by 500%.",
     },
     { /* COLDSOUL */
         .key = "COLDSOUL", .name = "Cold Soul", .element = 2,
@@ -2245,6 +2256,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit's speed is lowered by 15%.",
     },
     { /* FIRESHOCK */
         .key = "FIRESHOCK", .name = "Shocked", .element = 3,
@@ -2254,6 +2266,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit is stunned.",
     },
     { /* SUBVERSION */
         .key = "SUBVERSION", .name = "Subversion", .element = 6,
@@ -2263,6 +2276,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 1, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Damage and healing are reversed for this unit.",
     },
     { /* SHATTER */
         .key = "SHATTER", .name = "Shattered", .element = 2,
@@ -2272,6 +2286,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = -12, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit is stunned.",
     },
     { /* SHATTER2 */
         .key = "SHATTER2", .name = "Shattered", .element = 2,
@@ -2281,6 +2296,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = -12, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit is stunned.",
     },
     { /* BURNING */
         .key = "BURNING", .name = "Burning", .element = 3,
@@ -2290,6 +2306,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0.3,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit suffers Fire damage equal to 30% of the caster's magic every turn.",
     },
     { /* VOID1 */
         .key = "VOID1", .name = "Void", .element = 6,
@@ -2299,6 +2316,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0.1,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit is suffers Shadow damage every turn. In addition, this unit receives extra damage from all sources.",
     },
     { /* VOID2 */
         .key = "VOID2", .name = "Void", .element = 6,
@@ -2308,6 +2326,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0.1,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit is suffers Shadow damage every turn. In addition, this unit receives extra damage from all sources.",
     },
     { /* VOID3 */
         .key = "VOID3", .name = "Void", .element = 6,
@@ -2317,6 +2336,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0.1,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit is suffers Shadow damage every turn. In addition, this unit receives extra damage from all sources.",
     },
     { /* VOID4 */
         .key = "VOID4", .name = "Void", .element = 6,
@@ -2326,6 +2346,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0.1,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit is suffers Shadow damage every turn. In addition, this unit receives extra damage from all sources.",
     },
     { /* VOID5 */
         .key = "VOID5", .name = "Void", .element = 6,
@@ -2335,6 +2356,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0.1,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit is suffers Shadow damage every turn. In addition, this unit receives extra damage from all sources.",
     },
     { /* VOIDMOB */
         .key = "VOIDMOB", .name = "Void", .element = 6,
@@ -2344,6 +2366,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0.3,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit is suffers Shadow damage every turn. In addition, this unit receives extra damage from all sources.",
     },
     { /* MAGICWOUND */
         .key = "MAGICWOUND", .name = "Magical Rift", .element = 1,
@@ -2353,6 +2376,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = -7, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit receives 17% extra damage from all sources, and has weaker Magical Defense.",
     },
     { /* INTERVENTION1 */
         .key = "INTERVENTION1", .name = "Intervention", .element = 4,
@@ -2362,6 +2386,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = -0.17, .dot_magic = -0.17,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit is shielded, and is recovering Health.",
     },
     { /* INTERVENTION2 */
         .key = "INTERVENTION2", .name = "Intervention", .element = 4,
@@ -2371,6 +2396,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = -0.17, .dot_magic = -0.17,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit is shielded, and is recovering Health.",
     },
     { /* INTERVENTION3 */
         .key = "INTERVENTION3", .name = "Intervention", .element = 4,
@@ -2380,6 +2406,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = -0.18, .dot_magic = -0.18,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit is shielded, and is recovering Health.",
     },
     { /* INTERVENTION4 */
         .key = "INTERVENTION4", .name = "Intervention", .element = 4,
@@ -2389,6 +2416,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = -0.18, .dot_magic = -0.18,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit is shielded, and is recovering Health.",
     },
     { /* INTERVENTION5 */
         .key = "INTERVENTION5", .name = "Intervention", .element = 4,
@@ -2398,6 +2426,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = -0.19, .dot_magic = -0.19,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit is shielded, and is recovering Health.",
     },
     { /* INTERVENTION6 */
         .key = "INTERVENTION6", .name = "Intervention", .element = 4,
@@ -2407,6 +2436,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = -0.19, .dot_magic = -0.19,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit is shielded, and is recovering Health.",
     },
     { /* INTERVENTION7 */
         .key = "INTERVENTION7", .name = "Intervention", .element = 4,
@@ -2416,6 +2446,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = -0.2, .dot_magic = -0.2,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit is shielded, and is recovering Health.",
     },
     { /* INTERVENTION8 */
         .key = "INTERVENTION8", .name = "Intervention", .element = 4,
@@ -2425,6 +2456,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = -0.2, .dot_magic = -0.2,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit is shielded, and is recovering Health.",
     },
     { /* INTERVENTION9 */
         .key = "INTERVENTION9", .name = "Intervention", .element = 4,
@@ -2434,6 +2466,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = -0.21, .dot_magic = -0.21,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit is shielded, and is recovering Health.",
     },
     { /* INTERVENTION10 */
         .key = "INTERVENTION10", .name = "Intervention", .element = 4,
@@ -2443,6 +2476,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = -0.21, .dot_magic = -0.21,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit is shielded, and is recovering Health.",
     },
     { /* POISONZOMBIE */
         .key = "POISONZOMBIE", .name = "Poison", .element = 7,
@@ -2452,6 +2486,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0.33000000000000007, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit suffers Acid damage every turn, equal to 33% of the caster's Strength.",
     },
     { /* POWERUP */
         .key = "POWERUP", .name = "Enraged", .element = 0,
@@ -2461,6 +2496,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Increases damage of this unit's next attack by 400%.",
     },
     { /* SUPRESSION */
         .key = "SUPRESSION", .name = "Supression", .element = 0,
@@ -2470,6 +2506,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Reduces damage taken from all sources by 70%",
     },
     { /* WOUND1 */
         .key = "WOUND1", .name = "Wounded", .element = 0,
@@ -2479,6 +2516,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0.12, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Target is bleeding, and takes additional damage from all attacks.",
     },
     { /* WOUND2 */
         .key = "WOUND2", .name = "Wounded", .element = 0,
@@ -2488,6 +2526,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0.12, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Target is bleeding, and takes additional damage from all attacks.",
     },
     { /* WOUND3 */
         .key = "WOUND3", .name = "Wounded", .element = 0,
@@ -2497,6 +2536,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0.12, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Target is bleeding, and takes additional damage from all attacks.",
     },
     { /* STUN1 */
         .key = "STUN1", .name = "Broken", .element = 0,
@@ -2506,6 +2546,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Target is stunned.",
     },
     { /* RAGE1 */
         .key = "RAGE1", .name = "Raging!", .element = 3,
@@ -2515,6 +2556,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit's Strength and Magic is increased.",
     },
     { /* RAGE2 */
         .key = "RAGE2", .name = "Raging!", .element = 3,
@@ -2524,6 +2566,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit's Strength and Magic is increased.",
     },
     { /* RAGE3 */
         .key = "RAGE3", .name = "Raging!", .element = 3,
@@ -2533,6 +2576,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit's Strength and Magic is increased.",
     },
     { /* IRONSKIN1 */
         .key = "IRONSKIN1", .name = "Iron Skin", .element = 0,
@@ -2542,6 +2586,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 1,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit's Health and Physical Defence is increased.",
     },
     { /* IRONSKIN2 */
         .key = "IRONSKIN2", .name = "Iron Skin", .element = 0,
@@ -2551,6 +2596,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 1,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit's Health and Physical Defence is increased.",
     },
     { /* IRONSKIN3 */
         .key = "IRONSKIN3", .name = "Iron Skin", .element = 0,
@@ -2560,6 +2606,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 1,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit's Health and Physical Defence is increased.",
     },
     { /* IRONSKIN4 */
         .key = "IRONSKIN4", .name = "Iron Skin", .element = 0,
@@ -2569,6 +2616,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 1,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit's Health and Physical Defence is increased.",
     },
     { /* IRONSKIN5 */
         .key = "IRONSKIN5", .name = "Iron Skin", .element = 0,
@@ -2578,6 +2626,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 1,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit's Health and Physical Defence is increased.",
     },
     { /* REGEN1 */
         .key = "REGEN1", .name = "Zombie Regeneration", .element = 0,
@@ -2587,6 +2636,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = -0.25, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Recovering Health and Focus.",
     },
     { /* BLOCK1 */
         .key = "BLOCK1", .name = "Block", .element = 0,
@@ -2596,6 +2646,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Shielded from damage.",
     },
     { /* SOLIDITY1 */
         .key = "SOLIDITY1", .name = "Zombie Regeneration", .element = 0,
@@ -2605,6 +2656,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Recovering Health and Focus.",
     },
     { /* SOLIDITY2 */
         .key = "SOLIDITY2", .name = "Zombie Regeneration", .element = 0,
@@ -2614,6 +2666,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Recovering Health and Focus.",
     },
     { /* SOLIDITY3 */
         .key = "SOLIDITY3", .name = "Zombie Regeneration", .element = 0,
@@ -2623,6 +2676,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Recovering Health and Focus.",
     },
     { /* SOLIDITY4 */
         .key = "SOLIDITY4", .name = "Zombie Regeneration", .element = 0,
@@ -2632,6 +2686,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Recovering Health and Focus.",
     },
     { /* SOLIDITY5 */
         .key = "SOLIDITY5", .name = "Zombie Regeneration", .element = 0,
@@ -2641,6 +2696,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Recovering Health and Focus.",
     },
     { /* BRUTALITY1 */
         .key = "BRUTALITY1", .name = "Zombie Regeneration", .element = 0,
@@ -2650,6 +2706,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Recovering Health and Focus.",
     },
     { /* BRUTALITY2 */
         .key = "BRUTALITY2", .name = "Zombie Regeneration", .element = 0,
@@ -2659,6 +2716,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Recovering Health and Focus.",
     },
     { /* BRUTALITY3 */
         .key = "BRUTALITY3", .name = "Zombie Regeneration", .element = 0,
@@ -2668,6 +2726,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Recovering Health and Focus.",
     },
     { /* BRUTALITY4 */
         .key = "BRUTALITY4", .name = "Zombie Regeneration", .element = 0,
@@ -2677,6 +2736,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Recovering Health and Focus.",
     },
     { /* BRUTALITY5 */
         .key = "BRUTALITY5", .name = "Zombie Regeneration", .element = 0,
@@ -2686,6 +2746,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Recovering Health and Focus.",
     },
     { /* REGENERATION1 */
         .key = "REGENERATION1", .name = "Zombie Regeneration", .element = 0,
@@ -2695,6 +2756,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Recovering Health and Focus.",
     },
     { /* REGENERATION2 */
         .key = "REGENERATION2", .name = "Zombie Regeneration", .element = 0,
@@ -2704,6 +2766,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Recovering Health and Focus.",
     },
     { /* REGENERATION3 */
         .key = "REGENERATION3", .name = "Zombie Regeneration", .element = 0,
@@ -2713,6 +2776,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Recovering Health and Focus.",
     },
     { /* REGENERATION4 */
         .key = "REGENERATION4", .name = "Zombie Regeneration", .element = 0,
@@ -2722,6 +2786,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Recovering Health and Focus.",
     },
     { /* REGENERATION5 */
         .key = "REGENERATION5", .name = "Zombie Regeneration", .element = 0,
@@ -2731,6 +2796,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Recovering Health and Focus.",
     },
     { /* REGENERATION6 */
         .key = "REGENERATION6", .name = "Zombie Regeneration", .element = 0,
@@ -2740,6 +2806,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Recovering Health and Focus.",
     },
     { /* REGENERATION7 */
         .key = "REGENERATION7", .name = "Zombie Regeneration", .element = 0,
@@ -2749,6 +2816,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Recovering Health and Focus.",
     },
     { /* REGENERATION8 */
         .key = "REGENERATION8", .name = "Zombie Regeneration", .element = 0,
@@ -2758,6 +2826,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Recovering Health and Focus.",
     },
     { /* REGENERATION9 */
         .key = "REGENERATION9", .name = "Zombie Regeneration", .element = 0,
@@ -2767,6 +2836,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Recovering Health and Focus.",
     },
     { /* REGENERATION10 */
         .key = "REGENERATION10", .name = "Zombie Regeneration", .element = 0,
@@ -2776,6 +2846,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Recovering Health and Focus.",
     },
     { /* ENDURANCE1 */
         .key = "ENDURANCE1", .name = "Zombie Regeneration", .element = 0,
@@ -2785,6 +2856,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Recovering Health and Focus.",
     },
     { /* ENDURANCE2 */
         .key = "ENDURANCE2", .name = "Zombie Regeneration", .element = 0,
@@ -2794,6 +2866,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Recovering Health and Focus.",
     },
     { /* ENDURANCE3 */
         .key = "ENDURANCE3", .name = "Zombie Regeneration", .element = 0,
@@ -2803,6 +2876,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Recovering Health and Focus.",
     },
     { /* ENDURANCE4 */
         .key = "ENDURANCE4", .name = "Zombie Regeneration", .element = 0,
@@ -2812,6 +2886,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Recovering Health and Focus.",
     },
     { /* ENDURANCE5 */
         .key = "ENDURANCE5", .name = "Zombie Regeneration", .element = 0,
@@ -2821,6 +2896,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Recovering Health and Focus.",
     },
     { /* CRIPPLE1 */
         .key = "CRIPPLE1", .name = "Crippled", .element = 0,
@@ -2830,6 +2906,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit's speed is reduced.",
     },
     { /* CRIPPLE2 */
         .key = "CRIPPLE2", .name = "Crippled", .element = 0,
@@ -2839,6 +2916,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit's speed is reduced.",
     },
     { /* CRIPPLE3 */
         .key = "CRIPPLE3", .name = "Crippled", .element = 0,
@@ -2848,6 +2926,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit's speed is reduced.",
     },
     { /* SUNDER1 */
         .key = "SUNDER1", .name = "Sundered", .element = 0,
@@ -2857,6 +2936,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit's Strength is decreased, and it is taking extra damage from attacks.",
     },
     { /* SUNDER2 */
         .key = "SUNDER2", .name = "Sundered", .element = 0,
@@ -2866,6 +2946,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit's Strength is decreased, and it is taking extra damage from attacks.",
     },
     { /* SUNDER3 */
         .key = "SUNDER3", .name = "Sundered", .element = 0,
@@ -2875,6 +2956,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit's Strength is decreased, and it is taking extra damage from attacks.",
     },
     { /* SUNDER4 */
         .key = "SUNDER4", .name = "Sundered", .element = 0,
@@ -2884,6 +2966,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit's Strength is decreased, and it is taking extra damage from attacks.",
     },
     { /* SUNDER5 */
         .key = "SUNDER5", .name = "Sundered", .element = 0,
@@ -2893,6 +2976,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "This unit's Strength is decreased, and it is taking extra damage from attacks.",
     },
     { /* POISON */
         .key = "POISON", .name = "Frozen", .element = 2,
@@ -2902,6 +2986,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Target is stunned.",
     },
     { /* BURNS */
         .key = "BURNS", .name = "Burning", .element = 3,
@@ -2911,6 +2996,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Target is burning for \" + _root.hackMove2[14] + \" damage every turn.",
     },
     { /* REGEN */
         .key = "REGEN", .name = "Blessing of Light", .element = 1,
@@ -2920,6 +3006,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .tooltip = "Target is being healed every turn.",
     },
 };
 const int SONNY_BUFF_COUNT = (int)(sizeof(SONNY_BUFFS) / sizeof(SONNY_BUFFS[0]));

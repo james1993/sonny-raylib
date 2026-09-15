@@ -45,6 +45,11 @@ SPEECH_BALLOON = 974
 SPEECH_BALLOON_AT = (-10.65, -64.3)
 # The prompt beside the speech box.
 SPEECH_SKIP = 1639
+# The exclamation mark that pulses at the turn indicator (@18 on the battle
+# frame), which is what the original shows while no ability is chosen.
+TURN_MARK = 1536
+# moveSelectBoomer: the ring that closes over the indicator on a choice.
+MOVE_BOOMER = 1610
 
 
 def load(name, data_dir):
@@ -245,6 +250,13 @@ def collect_names(data_dir):
     # And the "< Press SPACEBAR to skip >" that sits beside the box while
     # someone is talking, which pulses through its own frames.
     want['effect'].add('#%d' % SPEECH_SKIP)
+    # The exclamation mark under the turn indicator, which pulses from a
+    # bright yellow to a dim orange and back over its forty-eight frames. It
+    # is thirty pixels square, so keeping all of them costs almost nothing.
+    want['effect'].add('#%d' % TURN_MARK)
+    # The ring that closes over the turn indicator once a move is chosen,
+    # which the original plays through once (moveSelectBoomer.play()).
+    want['effect'].add('#%d' % MOVE_BOOMER)
     # The battle screen's own effect sounds, played by name.
     want['sound'].update(['Swing', 'MagicCast', 'Forcefield', 'Click2putdown',
                           'Click3pickup'])

@@ -128,8 +128,10 @@ int main(int argc, char **argv)
     if (want_screen) {
         if (strcmp(want_screen, "battle") == 0)
             battle_screen_start(&game, game.campaign.progress_battle);
-        else if (strcmp(want_screen, "talents") == 0)
+        else if (strcmp(want_screen, "talents") == 0) {
+            screen_talents_open(&game);
             game.screen = SCREEN_TALENTS;
+        }
         else if (strcmp(want_screen, "inventory") == 0)
             game.screen = SCREEN_INVENTORY;
         else if (strcmp(want_screen, "shop") == 0) {

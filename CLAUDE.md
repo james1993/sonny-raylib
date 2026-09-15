@@ -443,3 +443,39 @@ single frame with no tween, so the ramp is ours.
   made that payout look wrong every time rather than sometimes. The clock
   stands in for Flash's entropy now; SONNY_SEED, or a seed on the command
   line, still pins it for the playtest and for headless captures.
+* The exclamation mark at the turn indicator is character 1536, a thirty-pixel
+  clip of forty-eight frames that pulses from a bright yellow to a dim orange
+  and back. It sits at depth 18, under the whole bottom panel, and shows
+  through the hole in the middle of the dial. Taking only its first frame --
+  which is what the asset builder used to do for every clip of more than one
+  -- is what left it dead.
+* The orb at the indicator carries the two lines the original writes into it
+  at load: "No ability selected!" and "You may click here to skip your turn."
+  in turn-based play. They are literals in the clip, not entries in the
+  language table. Once a move is chosen the orb says the ability's name and
+  "You will use this ability on <name>. Click to cancel this ability."
+* What answers the click there is krinToMove2, a button. It has no furniture
+  row of its own -- only a button row -- so asking for its chrome gave
+  nothing and the click never landed.
+* moveSelectBoomer (character 1610) is a white ring that closes over the
+  indicator when the player chooses. It rests on an empty first frame and is
+  played through once.
+* The space bar ends a line of speech: it sets nextSpeechKKK, which fades the
+  box out, and stops my_sound1..3 so the voice over goes with it. Nothing in
+  the original passes a turn on a key.
+* An attribute point has to be rebuilt into the character's running totals.
+  The screen reads stat_sets, which is a cache of what has been spent plus
+  what is worn, so a point that only lands in spent[] never shows.
+* An equipment row is read off whoever the menu is showing, which the party
+  row can change: reading the player's rows while drawing an ally's gear put
+  one character's words over another's. An empty row names what belongs in it
+  (ITEMSS by the row's own number), not the empty item's own words.
+* A node in the talent tree says four things: "(rank/tier) name", what the
+  move does at the tier below the rank (the first tier while nothing is
+  spent), what it costs, and "Next Tier (Lvl. N): ..." with what the next
+  tier would do -- or "This ability is at its maximum tier." The level it
+  wants is LEVELMIN + LEVELSCALE * rank. A passive node reads the same off
+  the buff it grants, and says "Passive Combat Effect" for its third line.
+* The box on the skills screen picks one of MENU[43..46] at random as it
+  loads, unless there are points to spend -- then it walks through MENU[7]
+  to MENU[10], one per click of "< Click Here >".

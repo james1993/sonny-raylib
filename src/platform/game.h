@@ -89,6 +89,10 @@ typedef struct {
     int32_t   has_last;
     const char *effect;
     int32_t   effect_slot;
+    /* Frames since the impact graphic was attached. It is its own counter
+       because the caster's animation is clocked from when the move began,
+       and restarting that clock when the blow lands played it twice. */
+    int32_t   effect_tick;
     /* Frames since the move being played started. The model's attack and the
        ability's effect are both played off this, so each starts from its own
        first frame rather than from wherever a free-running counter had got
@@ -124,6 +128,9 @@ typedef struct {
     /* The move has been worked out but not yet shown: a melee attacker is
        still on its way over. */
     int32_t   move_pending;
+    /* moveSelectBoomer: frames since the ring closed over the turn
+       indicator on the player's choice, or -1 when it is not running. */
+    int32_t   boomer_tick;
 
     /* Floating damage numbers, spawned on the unit they landed on. */
     struct {
@@ -179,6 +186,12 @@ typedef struct {
        been open: the swatches beside the attributes go grey then, and are
        coloured again the next time the screen is opened. */
     int32_t   stat_points_spent;
+    /* Which of MENU[43..46] the skills screen is showing. The original
+       picks one at random each time the clip loads. */
+    int32_t   skill_tip;
+    /* Which step of the level-up walkthrough the box is on, or -1 when it
+       is showing a tip instead. */
+    int32_t   skill_step;
     /* Which store marker opened the shop screen: its button's character is
        what says which store, as Krin.shopId does in the original. */
     int32_t   shop_button;
@@ -319,6 +332,8 @@ int screen_button_pressed(const char *screen, int32_t character,
    the top of every frame, so it only shows while something is under the
    pointer. */
 void game_tooltip(Game *g, const char *title, const char *body);
+void game_tooltip_line(Game *g, const char *text);
+void screen_talents_open(Game *g);
 /* An item's tooltip, built the way the original builds it: the requirement
    line, then one line for every attribute the item adds, then its own text.
    `price` over zero puts the price in front of the name, as a shop does. */

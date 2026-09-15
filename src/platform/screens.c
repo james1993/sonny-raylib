@@ -25,6 +25,31 @@ static const Vector2 NO_OFFSET = {0, 0};
 /* How many bag slots a menu frame's grid has. */
 #define MENU_BAG_SLOTS 36
 
+/* The four tips the screen picks between, which the original chooses from at
+   random every time the menu is opened (43 + random(4)). */
+#define SKILL_TIP_FIRST 43
+#define SKILL_TIP_COUNT 4
+/* And the four things it says instead when there are points to spend: what
+   they are, how to spend them on the tree, how to spend them on an attribute,
+   and the warning about the action bar. "< Click Here >" moves it on. */
+#define SKILL_STEP_FIRST 7
+#define SKILL_STEP_COUNT 4
+#define SKILL_STEP_CLICK 11
+
+/* Opening the skills screen. The original's box jumps to its walkthrough
+   when there is anything to spend and otherwise picks one of its four tips,
+   both decided as the clip loads. */
+void screen_talents_open(Game *g)
+{
+    const Character *c = &g->campaign.player;
+    int32_t points = character_unspent_skill_points(c)
+                   + character_unspent_stat_points(c);
+    g->skill_step = points > 0 ? 0 : -1;
+    g->skill_tip = (int32_t)GetRandomValue(0, SKILL_TIP_COUNT - 1);
+}
+
+
+
 /* What a full element bar stands for. A character's piercing and defense
    start at twenty-five and climb from there, and the band is scaled so the
    numbers a first zone reaches fill about half of it. */
@@ -237,6 +262,7 @@ void screen_zone_update(Game *g, Vector2 mouse)
         /* Opening the screen puts the menu clip back on its first frame, so
            the swatches beside the attributes start coloured again. */
         g->stat_points_spent = 0;
+        screen_talents_open(g);
         g->screen = SCREEN_TALENTS;
     } else if (hub_pressed(HUB_BUTTON_MAP, mouse)) {
         audio_play("Click3pickup");
@@ -727,8 +753,19 @@ void screen_talents_draw(Game *g, Vector2 mouse)
     /* The tip. Every tree node carries a rank readout whose own fields are
        called "@1" to "@4" as well, so the screen's own is the one after
        them. */
-    draw_field_wrapped(skill_field("@1", SONNY_TALENT_SLOT_COUNT), NO_OFFSET,
-                       lang_text("MENU", 44));
+    /* Opening the screen with points in hand starts the original's
+       walkthrough; with none it shows one of its tips. */
+    const TextField *box = skill_field("@1", SONNY_TALENT_SLOT_COUNT);
+    if (g->skill_step >= 0 && g->skill_step < SKILL_STEP_COUNT) {
+        draw_field_wrapped(box, NO_OFFSET,
+                           TextFormat("%s\n\n%s",
+                                      lang_text("MENU", SKILL_STEP_FIRST
+                                                + g->skill_step),
+                                      lang_text("MENU", SKILL_STEP_CLICK)));
+    } else {
+        draw_field_wrapped(box, NO_OFFSET,
+                           lang_text("MENU", SKILL_TIP_FIRST + g->skill_tip));
+    }
 
     /* The attributes: the swatches behind the row of plus buttons, then each
        row's name, number and button. */
@@ -857,10 +894,84 @@ static void place_on_bar(Game *g, int32_t slot)
     g->carrying = 0;
 }
 
+/* What a node in the tree says about itself. The original puts four things
+   on it: the rank it stands at out of its tier with the move's name, what the
+   move does at the rank it is now (a node with nothing spent on it still
+   describes its first tier), what it costs, and what the next tier would do
+   and the level it wants -- which is the part that says where a point goes.
+   A passive node reads the same four off the buff it grants instead. */
+static void talent_tooltip(Game *g, const Character *c, int32_t node)
+{
+    const TalentDef *t = &SONNY_TALENTS[node];
+    int32_t rank = c->rank[node];
+    /* bobJimJohn: the tier whose words are shown, which is the one below the
+       rank, and the first tier while nothing is spent. */
+    int32_t at = rank > 0 ? rank - 1 : 0;
+
+    const char *name = "";
+    const char *body = "";
+    const char *third = "";      /* what a passive calls itself */
+    if (t->passive) {
+        const BuffDef *now = buff_find(SONNY_BUFFS, SONNY_BUFF_COUNT,
+                                       TextFormat("%s", t->buff_name));
+        const BuffDef *tier = buff_find(SONNY_BUFFS, SONNY_BUFF_COUNT,
+                                        TextFormat("%s%d", t->buff_name, at));
+        if (now)
+            name = now->name;
+        if (tier)
+            body = tier->tooltip;
+        third = lang_text("SKILLAURA", 0);
+    } else {
+        const AbilityDef *now = ability_by_id(t->ability_id + at);
+        if (now) {
+            name = now->name;
+            body = now->tooltip;
+        }
+        /* The original reads a third line off the move here too, but the
+           only move that carries one is the "None" placeholder, so for
+           everything in the tree there is nothing to say. */
+    }
+    game_tooltip(g, TextFormat("(%d/%d)  %s", rank, t->max_rank, name), body);
+    if (third && third[0])
+        game_tooltip_line(g, third);
+
+    if (rank >= t->max_rank) {
+        game_tooltip_line(g, lang_text("SKILLTALENTTIP3", 0));
+        return;
+    }
+    /* The tier a point would buy, and the level it asks for. */
+    int32_t wants = t->level_min + t->level_scale * rank;
+    const char *next = "";
+    if (t->passive) {
+        const BuffDef *up = buff_find(SONNY_BUFFS, SONNY_BUFF_COUNT,
+                                      TextFormat("%s%d", t->buff_name, rank));
+        if (up)
+            next = up->tooltip;
+    } else {
+        const AbilityDef *up = ability_by_id(t->ability_id + rank);
+        if (up)
+            next = up->tooltip;
+    }
+    game_tooltip_line(g, TextFormat("%s%d): %s",
+                                    lang_text("SKILLTALENTTIP", 0), wants,
+                                    next));
+}
+
 void screen_talents_update(Game *g, Vector2 mouse)
 {
     Character *c = &g->campaign.player;
     g->hovered_item = -1;
+
+    /* The walkthrough steps on when its box is clicked, and gives way to a
+       tip once it has said its piece. */
+    const TextField *box = skill_field("@1", SONNY_TALENT_SLOT_COUNT);
+    if (g->skill_step >= 0 && box && ui_clicked()
+        && hit((Rectangle){box->x, box->y, box->width, box->height}, mouse)) {
+        g->skill_step++;
+        if (g->skill_step >= SKILL_STEP_COUNT)
+            g->skill_step = -1;
+        return;
+    }
 
     /* The action bar: pick an ability up off the pool or the tree, drop it on
        a slot. */
@@ -921,6 +1032,10 @@ void screen_talents_update(Game *g, Vector2 mouse)
             break;
         c->spent[SKILL_ATTRIBUTES[i].stat] += 1;
         c->spent_stat_points++;
+        /* The running totals the screen reads are a cache of what has been
+           spent plus what is worn, so a point that is not rebuilt into them
+           leaves the number on screen where it was. */
+        character_rebuild_sets(c);
         /* The swatches go grey as the last point goes, and stay that way
            until the screen is opened again. */
         if (character_unspent_stat_points(c) == 0)
@@ -932,17 +1047,7 @@ void screen_talents_update(Game *g, Vector2 mouse)
         if (!hit(talent_rect(node), mouse))
             continue;
         g->hovered_item = node;
-        /* What the node calls itself: its rank out of its tier, then the
-           move's own name and what it does. */
-        const TalentDef *t = &SONNY_TALENTS[node];
-        int32_t rank = c->rank[node];
-        const AbilityDef *shown = ability_by_id(t->ability_id
-                                                + (rank > 0 ? rank - 1 : 0));
-        if (shown)
-            game_tooltip(g, TextFormat("(%d/%d)  %s", rank, t->max_rank,
-                                       shown->name),
-                         rank > 0 ? shown->tooltip
-                                  : lang_text("SKILLTALENTTIP2", 0));
+        talent_tooltip(g, c, node);
         if (!ui_clicked())
             break;
 
@@ -1282,6 +1387,20 @@ static void draw_party_row(Game *g, const char *menu, Vector2 mouse)
     }
 }
 
+/* What an equipment row says about itself. A row with something in it says
+   what the item is, the way any item does; an empty one names what belongs
+   in it -- the original reads ITEMSS by the row's own number rather than
+   falling back to the item's words. */
+static void tooltip_equip_row(Game *g, const Character *who, int32_t row)
+{
+    const ItemDef *worn = item_by_id(who->equip[row]);
+    if (worn && worn->slot >= 2) {
+        game_tooltip_item(g, worn, 0);
+        return;
+    }
+    game_tooltip(g, worn ? worn->name : "", lang_text("ITEMSS", row));
+}
+
 void screen_inventory_draw(Game *g, Vector2 mouse)
 {
     const Campaign *c = &g->campaign;
@@ -1372,17 +1491,19 @@ void screen_inventory_draw(Game *g, Vector2 mouse)
     }
 
     /* What the pointer is on, in the game's own words. */
-    const ItemDef *shown_item = NULL;
     if (g->hovered_item >= 100) {
         /* An empty square is item zero, whose own words are "This slot is
            empty." -- the original says that rather than nothing. */
         int32_t i = g->hovered_item - 100;
-        shown_item = item_by_id(i < c->inventory_count ? c->inventory[i] : 0);
+        game_tooltip_item(g, item_by_id(i < c->inventory_count
+                                        ? c->inventory[i] : 0), 0);
     } else if (g->hovered_item >= 0 && g->hovered_item < SONNY_EQUIP_SLOTS) {
-        shown_item = item_by_id(c->player.equip[g->hovered_item]);
+        /* A row is read off whoever the menu is showing, which is not always
+           the player: the party row along the bottom swaps the doll and its
+           slots for an ally's, and reading the player's rows here put one
+           character's words over another's gear. */
+        tooltip_equip_row(g, who, g->hovered_item);
     }
-    if (shown_item)
-        game_tooltip_item(g, shown_item, 0);
 }
 
 /* ---------------------------------------------------------------- shop */
@@ -1697,6 +1818,7 @@ void screen_victory_update(Game *g, Vector2 mouse)
     }
     if (g->rewards.leveled) {
         g->stat_points_spent = 0;
+        screen_talents_open(g);
         g->screen = SCREEN_TALENTS;
         return;
     }

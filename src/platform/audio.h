@@ -18,6 +18,7 @@ int  audio_ready(void);
 /* Play an effect by export name, through the next channel in the rotation.
    Unknown names are ignored, as attachSound on a missing name is in Flash. */
 void audio_play(const char *name);
+void audio_stop_effects(void);
 
 /* Start a looping music track by name, crossfading from whatever is playing.
    Passing NULL stops the music. */

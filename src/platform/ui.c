@@ -924,6 +924,17 @@ static Color rarity_tint(const char *rarity)
     return c;
 }
 
+/* Another line under the tooltip's body. The talent tree uses it for what a
+   move costs and for what the next tier of it would do. */
+void game_tooltip_line(Game *g, const char *text)
+{
+    if (g->tip_line_count >= TOOLTIP_LINES)
+        return;
+    snprintf(g->tip_lines[g->tip_line_count], sizeof(g->tip_lines[0]), "%s",
+             text ? text : "");
+    g->tip_line_count++;
+}
+
 static void tip_line(Game *g, const char *text)
 {
     if (g->tip_line_count >= TOOLTIP_LINES)
@@ -1062,10 +1073,18 @@ void game_draw_tooltip(const Game *g, Vector2 mouse)
         if (g->tip_title[0])
             tip_block(g->tip_title, x, mouse.y + sy + TOOLTIP_TITLE_Y,
                       TOOLTIP_WIDTH, g->tip_tint, (Color){0, 0, 0, 255}, 1);
+        float at = mouse.y + sy + TOOLTIP_BODY_Y;
         if (g->tip_body[0])
-            tip_block(g->tip_body, x, mouse.y + sy + TOOLTIP_BODY_Y,
-                      TOOLTIP_WIDTH, (Color){0, 0, 0, 230},
-                      (Color){255, 255, 255, 255}, 0);
+            at += tip_block(g->tip_body, x, at, TOOLTIP_WIDTH,
+                            (Color){0, 0, 0, 230},
+                            (Color){255, 255, 255, 255}, 0);
+        /* Anything else the tooltip was given goes under the body on its own
+           backing: on a node of the talent tree, what the next tier of the
+           move would do and the level it wants. */
+        for (int32_t i = 0; i < g->tip_line_count; i++)
+            at += tip_block(g->tip_lines[i], x, at, TOOLTIP_WIDTH,
+                            (Color){0, 0, 0, 230},
+                            (Color){255, 255, 255, 255}, 0);
         return;
     }
 

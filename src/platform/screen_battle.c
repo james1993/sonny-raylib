@@ -48,15 +48,21 @@ static Vector2 unit_stage_pos(const Game *g, int32_t slot)
     return at;
 }
 
-/* Where the reticle round a unit goes. The original puts those on the root
-   rather than in the battlefield and sets each one to the unit's own place
-   plus BATTLESCREEN's -- so a reticle follows a unit walking off to hit
-   something, and follows the camera panning, but is not scaled by it. */
+/* Where BATTLESCREEN's own origin sits on the stage, and where the zoom puts
+   the point it is aiming at. */
+#define BATTLE_ORIGIN_X 400.0f
+#define BATTLE_ORIGIN_Y 294.5f
+
+/* Where the reticle round a unit goes. It is drawn outside the battlefield's
+   own transform -- the original keeps the reticles on the root, not in
+   BATTLESCREEN -- so the camera has to be applied by hand to keep it on the
+   unit it belongs to while the battlefield leans in. */
 static Vector2 unit_marker_pos(const Game *g, int32_t slot)
 {
     Vector2 at = unit_stage_pos(g, slot);
-    at.x += g->camera_x;
-    at.y += g->camera_y;
+    float scale = g->camera_scale > 0 ? g->camera_scale : 1.0f;
+    at.x = BATTLE_ORIGIN_X + g->camera_x + (at.x - BATTLE_ORIGIN_X) * scale;
+    at.y = BATTLE_ORIGIN_Y + g->camera_y + (at.y - BATTLE_ORIGIN_Y) * scale;
     return at;
 }
 
@@ -77,10 +83,6 @@ static Vector2 unit_marker_pos(const Game *g, int32_t slot)
 #define ZOOM_SCALE     0.13f
 #define ZOOM_MELEE     0.4f           /* zoomRatioNEW */
 #define ZOOM_SHOCK     0.3f
-/* Where BATTLESCREEN's own origin sits on the stage, and where the zoom puts
-   the point it is aiming at. */
-#define BATTLE_ORIGIN_X 400.0f
-#define BATTLE_ORIGIN_Y 294.5f
 #define ZOOM_AIM_X      400.0f
 #define ZOOM_AIM_Y      300.0f
 /* The aim is the target container's _x + _width / 2 and _y + _height / 2.
@@ -275,7 +277,11 @@ static const char *unit_animation(const Game *g, int32_t slot, int *loop)
                 return "attack1";
             return "cast";
         }
-        if (g->last.target == slot && g->last.amount > 0
+        /* The recoil belongs to the moment the blow lands, not to the
+           moment the numbers were worked out: a melee attacker is still
+           crossing the floor until then, and flinching early made the whole
+           exchange look like it had happened backwards. */
+        if (!g->move_pending && g->last.target == slot && g->last.amount > 0
             && g->last.kind == KIND_FULL_DAMAGE) {
             *loop = 0;
             return "hit";
@@ -290,11 +296,11 @@ static void draw_effect(const Game *g)
     if (!g->effect || g->effect_slot <= 0)
         return;
     int32_t frames = asset_frame_count(g->effect);
-    if (frames <= 0 || g->move_tick >= frames)
+    if (frames <= 0 || g->effect_tick >= frames)
         return;
 
     Vector2 pos = unit_stage_pos(g, g->effect_slot);
-    asset_draw_placed(g->effect, g->move_tick + 1, pos, 1.0f, WHITE);
+    asset_draw_placed(g->effect, g->effect_tick + 1, pos, 1.0f, WHITE);
 }
 
 static void draw_doll(const Game *g, int32_t slot)
@@ -344,7 +350,8 @@ static void draw_doll(const Game *g, int32_t slot)
 #define TEXT_LINE_FACTOR 1.15f
 
 /* The turn indicator's clickable middle, which ends the turn. */
-#define PASS_BUTTON_RADIUS 30.0f
+/* krinToMove2, the button in the middle of the turn indicator. */
+#define PASS_BUTTON 1597
 
 /* Where the speech box goes when it is the left team talking. */
 #define SPEECH_LEFT_X 21.8f
@@ -414,17 +421,25 @@ static int chrome_is_runtime(const char *name)
     return strncmp(name, "p", 1) == 0 && strstr(name, "BAR") != NULL;
 }
 
-static void draw_chrome_art(const StageChrome *c)
+static void draw_chrome_art(const StageChrome *c, int32_t tick)
 {
-    const Texture2D *tex = asset_texture(TextFormat("#%d", c->character), 1);
+    /* A piece that ships more than one frame is one the original leaves
+       playing -- the exclamation mark under the turn indicator pulses
+       through forty-eight of them -- so it runs off the free clock. */
+    const char *name = TextFormat("#%d", c->character);
+    int32_t frames = asset_frame_count(name);
+    int32_t frame = frames > 1 ? (int32_t)(tick % frames) + 1 : 1;
+    const Texture2D *tex = asset_texture(name, frame);
     if (!tex)
         return;
+    Vector2 off = frames > 1 ? asset_frame_offset(name, frame)
+                             : (Vector2){c->origin_x, c->origin_y};
     draw_texture_placed(tex, c->x, c->y, c->scale_x, c->scale_y,
-                        c->origin_x, c->origin_y, WHITE);
+                        off.x, off.y, WHITE);
 }
 
 /* Draw every piece of the battle screen whose depth falls in [from, to). */
-static void draw_chrome(int32_t from, int32_t to)
+static void draw_chrome(int32_t from, int32_t to, int32_t tick)
 {
     for (int i = 0; i < SONNY_STAGE_CHROME_COUNT; i++) {
         const StageChrome *c = &SONNY_STAGE_CHROME[i];
@@ -434,7 +449,7 @@ static void draw_chrome(int32_t from, int32_t to)
             continue;
         if (chrome_is_runtime(c->name))
             continue;
-        draw_chrome_art(c);
+        draw_chrome_art(c, tick);
     }
 }
 
@@ -627,6 +642,32 @@ static void draw_unit_bar(const Game *g, int32_t slot)
 /* thingerClock's own offset inside battleClocker. */
 #define TURN_DIAL_X 0.4f
 #define TURN_DIAL_Y (-0.1f)
+
+/* moveSelectBoomer: a white ring that closes over the turn indicator once
+   the player has chosen what to do. The clip sits stopped on an empty first
+   frame and is played through once, so this runs its remaining frames and
+   then leaves nothing behind. */
+#define BOOMER_CLIP "#1610"
+
+static void draw_move_boomer(const Game *g)
+{
+    if (g->boomer_tick < 0)
+        return;
+    int32_t frames = asset_frame_count(BOOMER_CLIP);
+    int32_t frame = g->boomer_tick + 2;      /* frame one is the empty rest */
+    if (frames <= 0 || frame > frames)
+        return;
+    const StageChrome *at = stage_chrome(BATTLE_SCREEN_NAME,
+                                         "moveSelectBoomer");
+    if (!at)
+        return;
+    const Texture2D *tex = asset_texture(BOOMER_CLIP, frame);
+    if (!tex)
+        return;
+    Vector2 off = asset_frame_offset(BOOMER_CLIP, frame);
+    draw_texture_placed(tex, at->x, at->y, at->scale_x, at->scale_y,
+                        off.x, off.y, WHITE);
+}
 
 static void draw_turn_dial(const Game *g)
 {
@@ -1011,6 +1052,13 @@ static void draw_numbers(const Game *g)
 static int speech_update(Game *g)
 {
     if (g->speech) {
+        /* The space bar cuts a line short, as the original does: it sets
+           nextSpeechKKK, which ends the line there and stops whatever voice
+           over it was playing. The prompt under the battlefield says so. */
+        if (IsKeyPressed(KEY_SPACE)) {
+            g->speech_timer = 0;
+            audio_stop_effects();
+        }
         if (--g->speech_timer > 0)
             return 1;
         g->speech = NULL;
@@ -1144,7 +1192,8 @@ static void draw_battle(Game *g)
     ClearBackground(BLACK);
     /* The furniture below the battlefield mask: the stats panel across the
        top, the black the battlefield sits on, the panels along the bottom. */
-    draw_chrome(0, mask ? mask->depth : SONNY_STAGE_CHROME_COUNT);
+    draw_chrome(0, mask ? mask->depth : SONNY_STAGE_CHROME_COUNT,
+                g->anim_tick);
 
     /* Everything the mask clips -- the two backdrop layers and the six units
        over them -- inside the battlefield frame, which is what stops the
@@ -1176,11 +1225,13 @@ static void draw_battle(Game *g)
     const StageChrome *clock = stage_chrome(BATTLE_SCREEN_NAME,
                                             "battleClocker");
     int32_t above = mask ? mask->clip_depth + 1 : 0;
-    draw_chrome(above, clock ? clock->depth + 1 : INT32_MAX);
+    draw_chrome(above, clock ? clock->depth + 1 : INT32_MAX,
+                g->anim_tick);
     draw_turn_dial(g);
     if (clock)
-        draw_chrome(clock->depth + 1, INT32_MAX);
+        draw_chrome(clock->depth + 1, INT32_MAX, g->anim_tick);
     draw_chrome_buttons(g->pointer);
+    draw_move_boomer(g);
     for (int32_t slot = 1; slot < SONNY_SLOTS; slot++)
         draw_unit(g, slot);
 
@@ -1259,7 +1310,7 @@ static void present(Game *g, const MoveEvent *e)
     if (a->model && a->model[0] && asset_frame_count(a->model) > 0) {
         g->effect = a->model;
         g->effect_slot = e->target;
-        g->move_tick = 0;
+        g->effect_tick = 0;
     }
 
     /* The number for what just happened, in the ability's own element. */
@@ -1332,10 +1383,11 @@ static void describe(Game *g, const MoveEvent *e)
 static void handle_input(Game *g)
 {
     Battle *b = &g->battle;
-    Vector2 mouse = GetMousePosition();
-    float scale = (float)GetScreenHeight() / STAGE_H;
-    Vector2 stage = {(mouse.x - (GetScreenWidth() - STAGE_W * scale) / 2) / scale,
-                     mouse.y / scale};
+    /* Where the pointer is in stage coordinates. The caller has already put
+       the window's letterboxing behind it -- and a headless capture parks it
+       by hand -- so taking it from the screen again here would put this out
+       of step with everything else on the frame. */
+    Vector2 stage = g->pointer;
 
     g->hovered_unit = unit_at(g, stage);
     /* SONNY_HOVER pins a slot for a headless capture, so the ring can be
@@ -1365,6 +1417,30 @@ static void handle_input(Game *g)
     if (g->ring_fade < 0.0f)
         g->ring_fade = 0.0f;
 
+    /* What the turn indicator says about itself. The original keeps the two
+       lines on the orb -- thinger1 and thinger2 -- and swaps in the chosen
+       ability's name and target once there is one. They are written into the
+       clip rather than the language table, so they are literals here too. */
+    const StageButton *mark = stage_button(BATTLE_SCREEN_NAME, PASS_BUTTON, 0);
+    if (mark && hit((Rectangle){mark->x, mark->y, mark->width, mark->height},
+                    stage)) {
+        const QueuedMove *mine = NULL;
+        if (g->queued)
+            for (int32_t i = 0; i < SONNY_QUEUE; i++)
+                if (b->queue[i].caster == PLAYER_SLOT
+                    && b->queue[i].moveID != 0)
+                    mine = &b->queue[i];
+        const AbilityDef *chosen = mine ? ability_by_id(mine->moveID) : NULL;
+        if (chosen && chosen->id != 0)
+            game_tooltip(g, chosen->name,
+                         TextFormat("You will use this ability on %s. "
+                                    "Click to cancel this ability.",
+                                    b->units[mine->target].name));
+        else
+            game_tooltip(g, "No ability selected!",
+                         "You may click here to skip your turn.");
+    }
+
     if (!player_turn(g) || g->queued)
         return;
 
@@ -1389,25 +1465,26 @@ static void handle_input(Game *g)
             battle_queue(b, PLAYER_SLOT, g->ring_unit, a->id, 0);
             g->queued = 1;
             g->cooldown_slot = slot->slot;
+            g->boomer_tick = 0;
             return;
         }
     }
 
     /* The turn indicator in the middle of the bottom panel: clicking it ends
-       the turn with the null move, which is how the original passes. */
-    const StageChrome *pass = stage_chrome(BATTLE_SCREEN_NAME, "krinToMove2");
+       the turn with the null move, which is how the original passes. The
+       thing that answers the click is krinToMove2, a button -- it has no
+       furniture row of its own, and asking for one gave nothing, so this
+       never fired. */
+    const StageButton *pass = stage_button(BATTLE_SCREEN_NAME, PASS_BUTTON, 0);
     if (pass && ui_clicked()
-        && CheckCollisionPointCircle(stage, (Vector2){pass->x, pass->y},
-                                     PASS_BUTTON_RADIUS)) {
+        && hit((Rectangle){pass->x, pass->y, pass->width, pass->height},
+               stage)) {
         battle_queue(b, PLAYER_SLOT, PLAYER_SLOT, 0, 0);
         g->queued = 1;
+        g->boomer_tick = 0;
         return;
     }
 
-    if (IsKeyPressed(KEY_SPACE)) {   /* pass */
-        battle_queue(b, PLAYER_SLOT, PLAYER_SLOT, 0, 0);
-        g->queued = 1;
-    }
 }
 
 /* Krin.abilityCoolDown, kept the way the original keeps it: as one of the
@@ -1566,6 +1643,7 @@ void battle_screen_start(Game *g, int32_t battle_id)
     g->melee_dir = 0;
     g->melee_state = 0;
     g->melee_x = g->melee_y = 0.0f;
+    g->boomer_tick = -1;
 
     game_log(g, "%s%d. Team %d is faster and acts first.",
              lang_text("SYSTEM", 10), g->campaign.progress_battle - 1,
@@ -1585,14 +1663,18 @@ void battle_screen_update(Game *g, Vector2 mouse, int headless)
     if (headless && !getenv("SONNY_HOVER") && player_turn(g) && !g->queued) {
         battle_queue(&g->battle, PLAYER_SLOT, PLAYER_SLOT, 0, 0);
         g->queued = 1;
+        g->boomer_tick = 0;
     }
 
     g->anim_tick++;
     if (g->speech)
         g->balloon_tick++;
     g->move_tick++;
+    g->effect_tick++;
     camera_tick(g);
     melee_tick(g);
+    if (g->boomer_tick >= 0)
+        g->boomer_tick++;
     numbers_update(g);
 
     /* Dialogue holds the fight, as speechDone does in the original. */

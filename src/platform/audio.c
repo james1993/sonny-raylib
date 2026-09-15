@@ -97,6 +97,18 @@ void audio_play(const char *name)
     PlaySound(channels[channel]);
 }
 
+/* Everything the three effect channels are playing, cut off. The original
+   stops my_sound1..3 when the space bar skips a line of speech, so the voice
+   over it was playing goes with it. */
+void audio_stop_effects(void)
+{
+    if (!ready)
+        return;
+    for (int32_t i = 0; i < EFFECT_CHANNELS; i++)
+        if (channel_used[i])
+            StopSound(channels[i]);
+}
+
 void audio_music(const char *name)
 {
     if (!ready)

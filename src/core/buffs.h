@@ -33,6 +33,7 @@ typedef struct {
     double  dot_magic;              /* [29] ... from caster MAGIC */
     double  dot_speed;              /* [30] ... from caster SPEED */
     int32_t filter;                 /* [31] visual filter slot */
+    const char *tooltip;            /* [25] what it says it does */
 } BuffDef;
 
 /* applyBuffKrin(target, buff, iftbc, caster, debuffValue).
