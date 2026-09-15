@@ -173,6 +173,9 @@ static void hub_tooltips(Game *g, Vector2 mouse)
 
 void screen_zone_update(Game *g, Vector2 mouse)
 {
+    /* The hub's own frame asks for the roaming track every time it is
+       reached, which is also what moves the counter the fights share. */
+    game_music_roaming(g);
     /* The note holds the hub still: PauseForScreen, which is what stops every
        marker and every button answering until it is clicked away. */
     if (game_hub_note_up(g)) {

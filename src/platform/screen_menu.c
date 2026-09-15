@@ -486,9 +486,12 @@ static void cutscene_over(Game *g)
         g->screen = then;
         return;
     }
-    /* IntroSeq's last frame: the first fight, and it carries progress. */
+    /* IntroSeq's last frame: the first fight, and it carries progress. It
+       also sets soundPlayCounter to 1, so the opening fight is the second
+       track rather than the first. */
     g->boss_fight = 0;
     g->progress_fight = 1;
+    g->music_next = 1;
     battle_screen_start(g, INTRO_BATTLE);
 }
 

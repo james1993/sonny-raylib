@@ -457,6 +457,22 @@ static void draw_ring(Game *g, Vector2 mouse)
     }
 }
 
+/* What colour a unit's reticle is. The original parks six of them, one per
+   unit, and the colour is a transform on each placement: the player's has
+   none at all, so it keeps the art's own white; an ally's adds
+   (-102, 0, -189), which comes out green; an enemy's adds (0, -138, -159),
+   which comes out red. The art is white, so adding to it and tinting it land
+   on the same place. */
+static Color reticle_colour(const Game *g, int32_t slot)
+{
+    const Unit *u = &g->battle.units[slot];
+    if (slot == PLAYER_SLOT)
+        return (Color){255, 255, 255, 255};
+    if (u->teamSide == g->battle.units[PLAYER_SLOT].teamSide)
+        return (Color){153, 255, 66, 255};
+    return (Color){255, 117, 96, 255};
+}
+
 /* The reticle the original parks on every unit and shows under the pointer:
    a ring in the target's own colour, with the level above it and the name
    below, both from the clip's own two text fields. */
@@ -470,8 +486,7 @@ static void draw_reticle(const Game *g)
     if (!art)
         return;
     Vector2 at = unit_stage_pos(&g->battle, on);
-    int enemy = u->teamSide != g->battle.units[PLAYER_SLOT].teamSide;
-    Color tint = enemy ? (Color){255, 90, 90, 255} : (Color){120, 200, 255, 255};
+    Color tint = reticle_colour(g, on);
     tint.a = (unsigned char)(tint.a * g->ring_fade);
 
     /* The clip's fields are recorded where it is parked off stage, so
@@ -1092,21 +1107,37 @@ static void advance(Game *g)
 
 /* ----------------------------------------------------------------- entry */
 
-/* What plays during a fight. The original walks a list of four tracks, one
-   per fight, and swaps in the boss theme for a boss marker or for the three
-   fights it names outright. */
-static const char *battle_music(Game *g)
+/* The four tracks the game walks, in its own order (soundPlayArray). */
+static const char *const MUSIC_TRACKS[4] = {
+    "menumusic", "BattleMusic2loopable", "Gamemusic002",
+    "BattleMusic1loopable",
+};
+
+/* addSound("Music", 1): the roaming track, which the hub asks for. */
+void game_music_roaming(Game *g)
 {
-    static const char *const TRACKS[4] = {
-        "menumusic", "BattleMusic2loopable", "Gamemusic002",
-        "BattleMusic1loopable",
-    };
+    if (!audio_ready() || g->music_mode == 1)
+        return;
+    g->music_mode = 1;
+    audio_music(MUSIC_TRACKS[g->music_next % 4]);
+    g->music_next = (g->music_next + 1) % 4;
+}
+
+/* addSound("Music", 2): a fight. It takes the next track off the same
+   counter the hub walks -- so which track a fight gets depends on how many
+   times the hub has been through since -- and the boss theme stands in for a
+   boss marker or for the three fights the game names outright. The counter
+   moves either way. */
+void game_music_battle(Game *g)
+{
+    if (!audio_ready() || g->music_mode == 2)
+        return;
+    g->music_mode = 2;
     int32_t at = g->campaign.progress_battle;
-    if (g->boss_fight || at == 24 || at == 30 || at == 36)
-        return "BossBattleloopable";
-    const char *track = TRACKS[g->music_turn % 4];
-    g->music_turn++;
-    return track;
+    int boss = g->boss_fight || at == 24 || at == 30 || at == 36;
+    audio_music(boss ? "BossBattleloopable"
+                     : MUSIC_TRACKS[g->music_next % 4]);
+    g->music_next = (g->music_next + 1) % 4;
 }
 
 void battle_screen_start(Game *g, int32_t battle_id)
@@ -1158,8 +1189,7 @@ void battle_screen_start(Game *g, int32_t battle_id)
     game_log(g, "%s%d. Team %d is faster and acts first.",
              lang_text("SYSTEM", 10), g->campaign.progress_battle - 1,
              g->battle.TeamMove);
-    if (audio_ready())
-        audio_music(battle_music(g));
+    game_music_battle(g);
 }
 
 void battle_screen_update(Game *g, Vector2 mouse, int headless)
@@ -1221,8 +1251,8 @@ void battle_screen_update(Game *g, Vector2 mouse, int headless)
             g->battle_drawn = (g->battle.winCondition == 2);
             g->screen = SCREEN_LOST;
         }
-        if (audio_ready())
-            audio_music(NULL);
+        audio_music(NULL);
+        g->music_mode = 0;
     }
 }
 

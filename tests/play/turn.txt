@@ -1,0 +1,38 @@
+# The turn indicator at the moment the player may act, and the reticles on
+# each of the three kinds of target.
+ref:  wait 20
+ref:  click 400 540
+mine: wait 3
+wait 6
+click 393 355
+wait 4
+click 392 341
+wait 4
+click 270 208
+wait 4
+click 400 274
+wait 5
+click 399 470
+wait 3
+click 760 555
+wait 30
+
+note the ring once the speech is done and the player may act
+move 5 5
+wait 2
+shot ready
+
+note the reticle on the enemy
+move 634 288
+wait 2
+shot on_enemy
+
+note the reticle on Sonny
+move 225 300
+wait 2
+shot on_player
+
+note the reticle on Louis
+move 150 300
+wait 2
+shot on_ally

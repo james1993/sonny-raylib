@@ -158,7 +158,12 @@ typedef struct {
     int32_t   boss_fight;
     int32_t   progress_fight;
     /* How far through the original's four-track battle playlist we are. */
-    int32_t   music_turn;
+    /* addSound("Music", n): `mode` is soundModeKrin -- 0 nothing, 1 roaming,
+       2 a fight -- and asking for the mode already playing does nothing.
+       `music_next` is soundPlayCounter, one counter walked by the hub and by
+       every fight alike. */
+    int32_t   music_mode;
+    int32_t   music_next;
     /* Which way the slot screen was opened: a new game writes over the slot,
        a load reads it. */
     enum { SLOT_SAVE = 0, SLOT_LOAD } slot_mode;
@@ -291,6 +296,11 @@ void game_tooltip_item(Game *g, const ItemDef *item, int32_t price);
 
 /* Offer the story's note for where the player has got to, if there is one and
    this visit has not already offered it, and whether one is up. */
+/* addSound("Music", n): the roaming track and a fight's, which share one
+   counter -- so which track a fight gets depends on what has played since. */
+void game_music_roaming(Game *g);
+void game_music_battle(Game *g);
+
 void game_hub_note(Game *g);
 int  game_hub_note_up(const Game *g);
 void game_draw_tooltip(const Game *g, Vector2 mouse);
