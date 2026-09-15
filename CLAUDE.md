@@ -364,3 +364,28 @@ opening comic.
 Known to differ: the reticle fades in and out here over six frames. The
 original does fade, but nothing in its scripts does it and the clip is a
 single frame with no tween, so the ramp is ours.
+
+* A reticle's colour is not a decision the code makes: the original parks six
+  of them, one per unit, and the colour is a transform on each placement. The
+  player's carries none at all, so it keeps the art's own white; an ally's
+  adds (-102, 0, -189), which comes out green; an enemy's adds (0, -138, -159),
+  which comes out red.
+* The music is one playlist of four walked by a single counter that the hub
+  and every fight share, so which track a fight gets depends on what has
+  played since. IntroSeq seeds the counter to 1 before the first fight, which
+  is why that fight opens on the second track. The boss theme stands in for a
+  boss marker or for battles 24, 30 and 36, and the counter moves either way.
+
+Not yet done: the turn ring. On the player's turn the original's ring around
+the exclamation mark is a bright blue with a blue halo, and orange on anyone
+else's -- BATTLESPEECH[3] tells the player to wait for it. The mechanism is
+`thingerClock` (character 1595 inside battleClocker), which places character
+1594 under two glow filters and switches between two frames: "friend" at 1
+with an inner glow of #0066FF (blur 8, strength 1) and an outer of #0066CC
+(blur 27, strength 1.7), and "enemy" at 12 with #FFCC00 inner and #FF6600
+outer. The decompiler exports the clip without its filters, so what ships is
+a grey ring with two faint ticks and nothing ever turns blue. The fix is the
+one the zone markers already use: render the frames with their glows applied
+at build time, in both colour sets, and pick between them by whose turn it is.
+The little red X beside it is wrong too -- the original's is a glossy red
+square with a dark red X, and what is drawn is a flat bright one.
