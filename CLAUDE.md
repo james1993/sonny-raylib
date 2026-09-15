@@ -399,3 +399,27 @@ single frame with no tween, so the ramp is ours.
   two are the pass button in the middle of the dial and the quit button in the
   corner, whose dark glass plate over the red cross beneath it is what made
   that corner a flat bright square while it was missing.
+* A move is delivered in one of three ways, and the way decides what is seen.
+  Melee sends the attacker over: krinMelee walks it to where the two models
+  meet (the target's x less half of each width), holds fifteen frames for the
+  swing -- which is when the hit actually lands and the boom is attached --
+  fifteen more for the follow through, and then walks it home. The pace is a
+  sixtieth of the way there times ten a frame, scaled by 1.5 - 1.45 * how far
+  along it is on the way out and 1.45 * that on the way back, capped at one:
+  flat out for the first third, easing into the target, and the reverse going
+  home. Missile throws a bolt and Shock lands on the spot.
+* GridZoomer leans the battlefield in on whatever a move is aimed at. Ten
+  steps in and ten back, each step proportional to how many are left, so it
+  starts fast and settles; the numbers work out to a factor of 55, a gain of
+  thirteen per cent of scale, and a finish that puts the target's middle at
+  (400, 300) taken back by the delivery's own ratio -- 0.4 for melee and
+  missile, 0.3 for shock. It holds at the top for thirty frames on a melee
+  swing, five on a bolt and one on a shock. Only BATTLESCREEN moves, which is
+  why the bars and the panels round it stay put; the reticles are on the root
+  and are set to the unit's place plus BATTLESCREEN's, so they follow the pan
+  but not the scale.
+* A buff's widget is attached inside the unit's bar clip, not beside it, so
+  the 110 out and 17 apart the code uses -- and the art itself -- come out at
+  the bar's own scale of 1.085 by 1.161. Ignoring that put the icons nine
+  pixels in from where the original has them and drew them a twelfth too
+  small.

@@ -1,0 +1,42 @@
+# A melee attack, frame by frame. Passing the turn hands the move to the
+# other side, which walks over and swings; the shots that follow say how far
+# the attacker goes and how hard the battlefield leans in behind it.
+ref:  wait 20
+ref:  click 400 540
+mine: wait 3
+wait 6
+click 393 355
+wait 4
+click 392 341
+wait 4
+click 270 208
+wait 4
+click 400 274
+wait 5
+click 399 470
+wait 3
+click 760 555
+wait 45
+
+note the turn is the player's now; hand it straight back
+move 5 5
+click 400 507
+shot a0
+wait 0.25
+shot a1
+wait 0.25
+shot a2
+wait 0.25
+shot a3
+wait 0.25
+shot a4
+wait 0.25
+shot a5
+wait 0.25
+shot a6
+wait 0.25
+shot a7
+wait 0.25
+shot a8
+wait 0.25
+shot a9

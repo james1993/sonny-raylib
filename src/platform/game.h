@@ -95,6 +95,36 @@ typedef struct {
        to -- which showed nothing but the last frame of every animation. */
     int32_t   move_tick;
 
+    /* GridZoomer: the battlefield leans in on whatever a move is aimed at,
+       holds, and comes back out. zoom_point counts the ten steps of a leg
+       down to zero, zoom_way is 1 going in and -1 coming out, and the deltas
+       are one step's worth at zoom_point 1. */
+    int32_t   zoom_point;
+    int32_t   zoom_way;
+    int32_t   zoom_hold;        /* frames to wait at the top */
+    int32_t   zoom_held;
+    float     zoom_step_x, zoom_step_y, zoom_step_scale;
+    float     camera_x, camera_y;   /* how far the battlefield has moved */
+    float     camera_scale;
+
+    /* krinMelee: the attacker walks up to whoever it is hitting, swings, and
+       walks back. Nothing else moves, so one runner at a time is enough. */
+    int32_t   melee_slot;
+    int32_t   melee_dir;        /* 1 out, 0 while swinging, -1 back */
+    int32_t   melee_state;      /* 0 running, 1 swing, 2 follow through */
+    int32_t   melee_counter;
+    /* Frames since this leg of the walk began, which is what the run, the
+       swing and the walk home are each played off. */
+    int32_t   melee_frame;
+    float     melee_x, melee_y;      /* how far from where it stands */
+    float     melee_rel;             /* the same along x, for the easing */
+    float     melee_span;            /* how far along x it has to go */
+    float     melee_step_x, melee_step_y;
+    float     melee_facing;
+    /* The move has been worked out but not yet shown: a melee attacker is
+       still on its way over. */
+    int32_t   move_pending;
+
     /* Floating damage numbers, spawned on the unit they landed on. */
     struct {
         char    text[16];

@@ -227,6 +227,11 @@ def collect_names(data_dir):
     # (the child named "bar"), leaving the track it runs in alone, so the two
     # have to be drawn apart.
     want['chrome'].update(['#1259', '#1261'])
+    # The turn indicator's plain ring. The clip it sits in (#1596) also holds
+    # the clock that fills over it, which the decompiler renders as a pair of
+    # one-pixel slivers, so the ring is taken on its own and the lit clock
+    # comes from tools/extract_glows.py.
+    want['chrome'].update(['#1591'])
     # The widget that shows one buff on a unit's bar: its coloured backing,
     # its frame, and the backing behind the turns left on it.
     want['chrome'].update(['#780', '#781', '#800'])

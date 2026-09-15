@@ -1,0 +1,43 @@
+# The status icons on a unit's bar. Metabii's defensive move puts POWERUP on
+# itself, so passing turns until it uses one brings the widget up on the
+# right-hand bar; the shots either side of it say whether it lands where the
+# original puts it.
+ref:  wait 20
+ref:  click 400 540
+mine: wait 3
+wait 6
+click 393 355
+wait 4
+click 392 341
+wait 4
+click 270 208
+wait 4
+click 400 274
+wait 5
+click 399 470
+wait 3
+click 760 555
+wait 30
+
+note pass the turn -- the dial in the middle of the bottom panel is the
+note button for it -- and let the other side move
+move 5 5
+click 400 507
+wait 2
+shot swing1
+wait 10
+shot swing2
+wait 20
+shot round1
+
+click 400 507
+wait 30
+shot round2
+
+click 400 507
+wait 30
+shot round3
+
+click 400 507
+wait 30
+shot round4

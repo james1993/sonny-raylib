@@ -63,35 +63,35 @@ note the fight run out
 click 634 288
 wait 1
 click 638 246
-wait 6
+wait 9
 click 634 288
 wait 1
 click 638 246
-wait 6
+wait 9
 click 634 288
 wait 1
 click 638 246
-wait 6
+wait 9
 click 634 288
 wait 1
 click 638 246
-wait 6
+wait 9
 click 634 288
 wait 1
 click 638 246
-wait 6
+wait 9
 click 634 288
 wait 1
 click 638 246
-wait 6
+wait 9
 click 634 288
 wait 1
 click 638 246
-wait 6
+wait 9
 click 634 288
 wait 1
 click 638 246
-wait 8
+wait 20
 shot won
 
 note the victory screen, a moment later

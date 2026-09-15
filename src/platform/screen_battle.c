@@ -28,13 +28,221 @@ static int player_turn(const Game *g)
    is its right edge. */
 /* Where a unit's model stands: the original's own stage layout, so position
    follows the slot -- not the speed order, which only decides who acts when. */
-static Vector2 unit_stage_pos(const Battle *b, int32_t slot)
+static Vector2 unit_slot_pos(int32_t slot)
 {
-    (void)b;
     const StageSlot *s = stage_slot(slot);
     if (s)
         return (Vector2){s->x, s->y};
     return (Vector2){STAGE_W / 2.0f, STAGE_H / 2.0f};
+}
+
+/* Where it is actually standing this frame, which is somewhere else while it
+   is walking up to whatever it is about to hit. */
+static Vector2 unit_stage_pos(const Game *g, int32_t slot)
+{
+    Vector2 at = unit_slot_pos(slot);
+    if (g->melee_slot == slot) {
+        at.x += g->melee_x;
+        at.y += g->melee_y;
+    }
+    return at;
+}
+
+/* Where the reticle round a unit goes. The original puts those on the root
+   rather than in the battlefield and sets each one to the unit's own place
+   plus BATTLESCREEN's -- so a reticle follows a unit walking off to hit
+   something, and follows the camera panning, but is not scaled by it. */
+static Vector2 unit_marker_pos(const Game *g, int32_t slot)
+{
+    Vector2 at = unit_stage_pos(g, slot);
+    at.x += g->camera_x;
+    at.y += g->camera_y;
+    return at;
+}
+
+/* ------------------------------------------------------------------ camera */
+
+/* GridZoomer. A move makes the battlefield lean in on whatever it is aimed
+   at, hold there while it lands, and come back out: ten steps each way, the
+   step proportional to how many are left, so it starts fast and eases in.
+   BATTLESCREEN is moved and scaled, which is why the bars, the reticles and
+   the panels round it stay where they are.
+
+   The numbers are the clip's own: ten steps of a ratio of ten make a factor
+   of 55, the scale gains thirteen per cent over the leg, and the point it
+   settles on is the target's middle taken back by the ratio the delivery
+   asks for. */
+#define ZOOM_TIME      10
+#define ZOOM_FACTOR    55.0f          /* time * (step + ratio) / 2 */
+#define ZOOM_SCALE     0.13f
+#define ZOOM_MELEE     0.4f           /* zoomRatioNEW */
+#define ZOOM_SHOCK     0.3f
+/* Where BATTLESCREEN's own origin sits on the stage, and where the zoom puts
+   the point it is aiming at. */
+#define BATTLE_ORIGIN_X 400.0f
+#define BATTLE_ORIGIN_Y 294.5f
+#define ZOOM_AIM_X      400.0f
+#define ZOOM_AIM_Y      300.0f
+/* The aim is the target container's _x + _width / 2 and _y + _height / 2.
+   Flash measures both from the clip's origin rather than from the middle of
+   what the clip holds, so the point lands half a model past where the unit
+   stands -- down by half its height, and along by half its width in whatever
+   direction the container is turned, which for the right-hand team is back
+   towards the middle. The model is 61 by 100; the numbers a zoomed frame of
+   the original fits are within a pixel of that. */
+#define UNIT_HALF_W     30.5f
+#define UNIT_HALF_H     50.0f
+
+/* Start a lean-in on `slot`. `hold` is how many frames to stay at the top. */
+static void camera_aim(Game *g, int32_t slot, float ratio, int32_t hold)
+{
+    const StageSlot *s = stage_slot(slot);
+    Vector2 at = unit_slot_pos(slot);
+    float aim_x = at.x - BATTLE_ORIGIN_X
+                + ((s && s->flip) ? -UNIT_HALF_W : UNIT_HALF_W);
+    float aim_y = at.y - BATTLE_ORIGIN_Y + UNIT_HALF_H;
+    float to_x = ZOOM_AIM_X - ratio * aim_x - BATTLE_ORIGIN_X;
+    float to_y = ZOOM_AIM_Y - ratio * aim_y - BATTLE_ORIGIN_Y;
+    g->zoom_step_x = (to_x - g->camera_x) / ZOOM_FACTOR;
+    g->zoom_step_y = (to_y - g->camera_y) / ZOOM_FACTOR;
+    g->zoom_step_scale = ZOOM_SCALE / ZOOM_FACTOR;
+    g->zoom_point = ZOOM_TIME;
+    g->zoom_way = 1;
+    g->zoom_hold = hold;
+    g->zoom_held = 0;
+}
+
+static void camera_tick(Game *g)
+{
+    if (g->zoom_point <= 0) {
+        if (g->zoom_way >= 0)
+            return;
+        /* Holding at the top, counting down to the way back. */
+        if (++g->zoom_held < g->zoom_hold)
+            return;
+        g->zoom_point = ZOOM_TIME;
+        return;
+    }
+    g->camera_x += g->zoom_step_x * g->zoom_point * g->zoom_way;
+    g->camera_y += g->zoom_step_y * g->zoom_point * g->zoom_way;
+    g->camera_scale += g->zoom_step_scale * g->zoom_point * g->zoom_way;
+    if (--g->zoom_point > 0)
+        return;
+    if (g->zoom_way == 1) {
+        g->zoom_way = -1;
+        g->zoom_held = 0;
+        return;
+    }
+    /* Back where it started, exactly rather than nearly. */
+    g->camera_x = g->camera_y = 0.0f;
+    g->camera_scale = 1.0f;
+    g->zoom_way = 0;
+}
+
+static Camera2D battle_camera(const Game *g)
+{
+    Camera2D camera = {0};
+    camera.target = (Vector2){BATTLE_ORIGIN_X, BATTLE_ORIGIN_Y};
+    camera.offset = (Vector2){BATTLE_ORIGIN_X + g->camera_x,
+                              BATTLE_ORIGIN_Y + g->camera_y};
+    camera.zoom = g->camera_scale > 0 ? g->camera_scale : 1.0f;
+    return camera;
+}
+
+/* ------------------------------------------------------------------- melee */
+
+/* krinMelee. A melee attacker walks up to whoever it is hitting, stopping
+   where the two models meet, swings, waits, and walks back. The pace is the
+   original's: a step of a sixtieth of the way there times ten, eased by how
+   far along it is -- flat out for the first third, then slowing into the
+   target, and the other way round on the way home. */
+#define MELEE_BOLT_TIME   60.0f
+#define MELEE_BODY_MOVE   10.0f
+#define MELEE_SWING       15      /* krinMeleeAttackCD */
+#define MELEE_FOLLOW      15      /* krinMeleeAttackEndCD */
+#define MELEE_GIVE_UP     120
+/* Where the two models come to rest against each other. */
+#define MELEE_REACH       (UNIT_HALF_W * 2.0f)
+
+static void melee_start(Game *g, int32_t caster, int32_t target)
+{
+    Vector2 from = unit_slot_pos(caster);
+    Vector2 to = unit_slot_pos(target);
+    /* A move aimed at the caster's own square has nowhere to walk to, and
+       the pace is a fraction of the distance, so there would be no step to
+       take and nothing to end the walk. */
+    if (caster == target || from.x == to.x) {
+        g->melee_slot = 0;
+        g->melee_dir = 0;
+        g->melee_state = 0;
+        g->melee_x = g->melee_y = 0.0f;
+        return;
+    }
+    float end = from.x < to.x ? to.x - MELEE_REACH : to.x + MELEE_REACH;
+    g->melee_slot = caster;
+    g->melee_dir = 1;
+    g->melee_state = 0;
+    g->melee_counter = 0;
+    g->melee_frame = 0;
+    g->melee_x = g->melee_y = 0.0f;
+    g->melee_rel = 0.0f;
+    g->melee_span = end - from.x;
+    g->melee_facing = from.x < to.x ? 1.0f : -1.0f;
+    g->melee_step_x = (to.x - from.x) / MELEE_BOLT_TIME;
+    g->melee_step_y = (to.y - from.y) / MELEE_BOLT_TIME;
+}
+
+/* True while the swing has still to land, which is what holds the move. */
+static int melee_busy(const Game *g)
+{
+    return g->melee_slot > 0 && (g->melee_dir == 1 || g->melee_state == 1);
+}
+
+static int melee_tick(Game *g)
+{
+    if (g->melee_slot <= 0)
+        return 0;
+    g->melee_frame++;
+    if (g->melee_state == 1) {
+        if (++g->melee_counter >= MELEE_SWING) {
+            g->melee_state = 2;
+            g->melee_counter = 0;
+        }
+    } else if (g->melee_state == 2) {
+        if (++g->melee_counter >= MELEE_FOLLOW) {
+            g->melee_state = 0;
+            g->melee_dir = -1;
+            g->melee_frame = 0;
+        }
+    }
+
+    float along = g->melee_span != 0 ? g->melee_rel / g->melee_span : 1.0f;
+    float pace = g->melee_dir == 1 ? 1.5f - 1.45f * along : 1.45f * along;
+    if (pace > 1.0f)
+        pace = 1.0f;
+    float step = pace * MELEE_BODY_MOVE * g->melee_dir;
+    g->melee_x += step * g->melee_step_x;
+    g->melee_rel += step * g->melee_step_x;
+    g->melee_y += step * g->melee_step_y;
+
+    if (g->melee_dir == -1 && g->melee_rel * g->melee_facing <= 0.000001f) {
+        g->melee_x = g->melee_y = 0.0f;
+        g->melee_slot = 0;
+        g->melee_dir = 0;
+        return 0;
+    }
+    /* Arrival is judged on where the step just left it, not where it was.
+       The pace never quite reaches zero, but a walk that has not arrived in
+       four times as long as the longest one takes is swung anyway rather
+       than left to hold up the fight. */
+    along = g->melee_span != 0 ? g->melee_rel / g->melee_span : 1.0f;
+    if (g->melee_dir == 1 && (along >= 1.0f || g->melee_frame > MELEE_GIVE_UP)) {
+        g->melee_dir = 0;
+        g->melee_state = 1;
+        g->melee_counter = 0;
+        g->melee_frame = 0;
+    }
+    return g->melee_dir == 1 || g->melee_state == 1;
 }
 
 /* Which animation a unit is playing, from its state and what is resolving. */
@@ -48,6 +256,16 @@ static const char *unit_animation(const Game *g, int32_t slot, int *loop)
         return (*loop = 0, "dead");
     if (u->STUN > 0)
         return "stun";
+
+    /* A melee attacker is on its feet: out to the target, the swing, then
+       home again. */
+    if (g->melee_slot == slot) {
+        if (g->melee_dir == 1)
+            return "run";
+        if (g->melee_dir == -1)
+            return "runback";
+        return (*loop = 0, "attack1");
+    }
 
     if (b->phase == PHASE_RESOLVE && g->has_last) {
         if (g->last.caster == slot && g->last.moveID != 0) {
@@ -75,7 +293,7 @@ static void draw_effect(const Game *g)
     if (frames <= 0 || g->move_tick >= frames)
         return;
 
-    Vector2 pos = unit_stage_pos(&g->battle, g->effect_slot);
+    Vector2 pos = unit_stage_pos(g, g->effect_slot);
     asset_draw_placed(g->effect, g->move_tick + 1, pos, 1.0f, WHITE);
 }
 
@@ -97,15 +315,17 @@ static void draw_doll(const Game *g, int32_t slot)
     const char *animation = unit_animation(g, slot, &loop);
     /* An animation that runs once is clocked from the move it belongs to; the
        standing loop just keeps going. */
-    int32_t frame = doll_animation_frame(animation,
-                                         loop ? g->anim_tick / 2 : g->move_tick,
-                                         loop);
+    /* A walking attacker is played off its own counter, which restarts at
+       each leg -- out, swing, home -- rather than off the free-running one. */
+    int32_t tick = g->melee_slot == slot ? g->melee_frame
+                 : loop ? g->anim_tick / 2 : g->move_tick;
+    int32_t frame = doll_animation_frame(animation, tick, loop);
 
     /* The right-hand team's containers are mirrored in the original. */
     const StageSlot *s = stage_slot(slot);
     int flip = s ? s->flip : (u->teamSide == 2);
     Color tint = u->active ? WHITE : (Color){255, 255, 255, 150};
-    doll_draw(&spec, frame, unit_stage_pos(&g->battle, slot), 1.0f, flip, tint);
+    doll_draw(&spec, frame, unit_stage_pos(g, slot), 1.0f, flip, tint);
 }
 
 /* The bar sits where the original's does: its pieces (the backing, the
@@ -183,6 +403,10 @@ static int chrome_is_runtime(const char *name)
         /* The chosen move's orb, which sits in the turn indicator once the
            player has picked something and is hidden until then. */
         "krinToMove",
+        /* The turn indicator, which draw_turn_dial puts up itself: its clip
+           holds the clock as well as the ring, and the decompiler renders
+           that clock -- masked away at rest -- as a pair of stray slivers. */
+        "battleClocker",
     };
     for (size_t i = 0; i < sizeof(hidden) / sizeof(hidden[0]); i++)
         if (strcmp(name, hidden[i]) == 0)
@@ -397,6 +621,7 @@ static void draw_unit_bar(const Game *g, int32_t slot)
    Its glow is a filter on the placement rather than anything in the clip, so
    the decompiler hands back an unlit ring; tools/extract_glows.py renders the
    two lit ones instead. */
+#define TURN_DIAL_PLAIN  "#1591"
 #define TURN_DIAL_FRIEND "TurnRingFriend"
 #define TURN_DIAL_ENEMY  "TurnRingEnemy"
 /* thingerClock's own offset inside battleClocker. */
@@ -408,6 +633,17 @@ static void draw_turn_dial(const Game *g)
     const StageChrome *clock = stage_chrome(BATTLE_SCREEN_NAME,
                                             "battleClocker");
     if (!clock)
+        return;
+    const Texture2D *plain = asset_texture(TURN_DIAL_PLAIN, 1);
+    if (plain) {
+        Vector2 off = asset_frame_offset(TURN_DIAL_PLAIN, 1);
+        draw_texture_placed(plain, clock->x, clock->y, clock->scale_x,
+                            clock->scale_y, off.x, off.y, WHITE);
+    }
+    /* The clock over it only fills once the turn is actually the player's to
+       spend: the loop holds BattleTimeNow at zero while a line of speech is
+       running, so through the opening of a fight the dial is dark. */
+    if (g->speech)
         return;
     const Battle *b = &g->battle;
     const char *name = b->units[PLAYER_SLOT].teamSide == b->TeamMoveNow
@@ -504,7 +740,7 @@ static void draw_ring(Game *g, Vector2 mouse)
 {
     if (g->ring_unit <= 0 || !player_turn(g) || g->queued)
         return;
-    Vector2 centre = unit_stage_pos(&g->battle, g->ring_unit);
+    Vector2 centre = unit_stage_pos(g, g->ring_unit);
     for (int i = 0; i < SONNY_RING_SLOT_COUNT; i++) {
         const RingSlot *slot = &SONNY_RING_SLOTS[i];
         const AbilityDef *a = ability_by_id(g->ability_ids[slot->slot]);
@@ -551,7 +787,7 @@ static void draw_reticle(const Game *g)
     const StageChrome *art = stage_chrome(BATTLE_SCREEN_NAME, RETICLE_INSTANCE);
     if (!art)
         return;
-    Vector2 at = unit_stage_pos(&g->battle, on);
+    Vector2 at = unit_marker_pos(g, on);
     Color tint = reticle_colour(g, on);
     tint.a = (unsigned char)(tint.a * g->ring_fade);
 
@@ -607,14 +843,14 @@ static Color color_from_rgb(uint32_t rgb)
 #define BUFF_COUNT_SIZE 10.0f
 
 static void draw_buff_widget(Vector2 at, const char *key, int32_t turns,
-                             Color element)
+                             Color element, float sx, float sy)
 {
     /* The disc takes the buff's element outright, the way Color.setRGB does,
        rather than being multiplied by it. */
     const Texture2D *back = asset_texture_recolored(BUFF_BACKING, 1);
     if (back) {
         Vector2 off = asset_frame_offset(BUFF_BACKING, 1);
-        draw_texture_placed(back, at.x - 0.1f, at.y, 1.0f, 1.0f, off.x, off.y,
+        draw_texture_placed(back, at.x - 0.1f * sx, at.y, sx, sy, off.x, off.y,
                             element);
     }
     /* Then the plate, and the icon over it -- the widget stacks them at
@@ -624,18 +860,19 @@ static void draw_buff_widget(Vector2 at, const char *key, int32_t turns,
     const Texture2D *frame = asset_texture(BUFF_FRAME, 1);
     if (frame) {
         Vector2 off = asset_frame_offset(BUFF_FRAME, 1);
-        draw_texture_placed(frame, at.x, at.y, 1.0f, 1.0f, off.x, off.y,
-                            WHITE);
+        draw_texture_placed(frame, at.x, at.y, sx, sy, off.x, off.y, WHITE);
     }
     const Texture2D *icon = asset_texture(key, 1);
     if (icon) {
         Vector2 off = asset_frame_offset(key, 1);
-        draw_texture_placed(icon, at.x, at.y, 1.0f, 1.0f, off.x, off.y, WHITE);
+        draw_texture_placed(icon, at.x, at.y, sx, sy, off.x, off.y, WHITE);
     }
     const char *text = TextFormat("%d", turns);
-    float width = ui_sans_text_width(text, BUFF_COUNT_SIZE);
-    ui_sans_text(text, at.x + BUFF_COUNT_X + (BUFF_COUNT_W - width) / 2 - 2.0f,
-                 at.y + BUFF_COUNT_Y - 2.0f, BUFF_COUNT_SIZE, RAYWHITE);
+    float size = BUFF_COUNT_SIZE * sx;
+    float width = ui_sans_text_width(text, size);
+    ui_sans_text(text,
+                 at.x + (BUFF_COUNT_X - 2.0f) * sx + (BUFF_COUNT_W * sx - width) / 2,
+                 at.y + (BUFF_COUNT_Y - 2.0f) * sy, size, RAYWHITE);
 }
 
 static void draw_unit_buffs(const Game *g, int32_t slot)
@@ -666,9 +903,15 @@ static void draw_unit_buffs(const Game *g, int32_t slot)
                                        u->BUFFARRAYK[order[h]].buffId);
         Color element = def ? color_from_rgb(element_color((Element)def->element))
                             : WHITE;
-        Vector2 at = {bar->x + (BUFF_OFFSET + BUFF_SPACING * h) * way, bar->y};
+        /* The widget is attached inside the bar's own clip, so the offset
+           and the art alike come out at the bar's scale, which is neither 1
+           nor square. */
+        Vector2 at = {bar->x + (BUFF_OFFSET + BUFF_SPACING * h) * way
+                             * bar->scale,
+                      bar->y};
         draw_buff_widget(at, u->BUFFARRAYK[order[h]].buffId,
-                         u->BUFFARRAYK[order[h]].CD, element);
+                         u->BUFFARRAYK[order[h]].CD, element, bar->scale,
+                         bar->scale_y);
     }
 }
 
@@ -719,7 +962,7 @@ static void number_show(Game *g, int32_t slot, const char *text,
                 sizeof(g->numbers[0]) * (g->number_count - 1));
         g->number_count--;
     }
-    Vector2 at = unit_stage_pos(&g->battle, slot);
+    Vector2 at = unit_marker_pos(g, slot);
     int32_t i = g->number_count++;
     snprintf(g->numbers[i].text, sizeof(g->numbers[i].text), "%s", text);
     /* A little scatter so several numbers on one unit stay readable. */
@@ -815,7 +1058,7 @@ static void draw_balloon(const Game *g)
     const Unit *speaker = &g->battle.units[g->speech->speaker];
     const StageSlot *s = stage_slot(g->speech->speaker);
     int flip = s ? s->flip : (speaker->teamSide == 2);
-    Vector2 at = unit_stage_pos(&g->battle, g->speech->speaker);
+    Vector2 at = unit_stage_pos(g, g->speech->speaker);
     /* Its own placement is mirrored inside the container, and the container
        is mirrored again for the right-hand team, so the two cancel. */
     at.x += flip ? -SPEECH_BALLOON_X : SPEECH_BALLOON_X;
@@ -913,11 +1156,17 @@ static void draw_battle(Game *g)
         BeginScissorMode((int)box.x, (int)box.y, (int)box.width,
                          (int)box.height);
     }
+    /* Everything inside the frame moves with the camera; the bars, the
+       reticles and the panels round it do not, because the original moves
+       BATTLESCREEN and leaves the root alone. */
+    Camera2D camera = battle_camera(g);
+    BeginMode2D(camera);
     draw_backdrop(g);
     for (int32_t slot = 1; slot < SONNY_SLOTS; slot++)
         draw_doll(g, slot);
     draw_effect(g);
     draw_balloon(g);
+    EndMode2D();
     if (mask)
         EndScissorMode();
 
@@ -953,7 +1202,7 @@ static int32_t unit_at(const Game *g, Vector2 p)
     for (int32_t slot = 1; slot < SONNY_SLOTS; slot++) {
         if (!g->battle.units[slot].active)
             continue;
-        if (CheckCollisionPointCircle(p, unit_stage_pos(&g->battle, slot),
+        if (CheckCollisionPointCircle(p, unit_stage_pos(g, slot),
                                       radius))
             return slot;
     }
@@ -962,14 +1211,45 @@ static int32_t unit_at(const Game *g, Vector2 p)
 
 /* What a resolved move sounds and looks like: the ability's own effect sound
    and impact graphic, then the target's hit grunt or death cry. */
-static void present(Game *g, const MoveEvent *e)
+/* Setting a move going: what the caster does, and how hard the battlefield
+   leans in on whatever the move is aimed at. A melee attacker walks over and
+   the camera holds through the swing, a bolt gets a short hold, and a shock
+   is a shallower lean with barely any hold at all. */
+static void present_move(Game *g, const MoveEvent *e)
 {
-    const Battle *b = &g->battle;
     const AbilityDef *a = ability_by_id(e->moveID);
 
     g->effect = NULL;
     g->effect_slot = 0;
     g->move_tick = 0;
+    if (!a || e->moveID == 0)
+        return;
+
+    switch (a->delivery) {
+    case DELIVER_MELEE:
+        melee_start(g, e->caster, e->target);
+        camera_aim(g, e->target, ZOOM_MELEE, MELEE_SWING * 2);
+        break;
+    case DELIVER_MISSILE:
+        camera_aim(g, e->target, ZOOM_MELEE, 5);
+        break;
+    case DELIVER_SHOCK:
+        camera_aim(g, e->target, ZOOM_SHOCK, 1);
+        break;
+    default:
+        break;
+    }
+}
+
+/* The moment it lands: the sound, the impact graphic, the number over the
+   target and whatever it has to say about being hit. For a melee move this
+   is a walk and a wind-up after present_move, which is where the original
+   puts it too -- krinMelee attaches the boom when its counter reaches
+   krinMeleeAttackCD, not when the move is chosen. */
+static void present(Game *g, const MoveEvent *e)
+{
+    const Battle *b = &g->battle;
+    const AbilityDef *a = ability_by_id(e->moveID);
 
     if (!a || e->moveID == 0 || e->missed)
         return;
@@ -979,6 +1259,7 @@ static void present(Game *g, const MoveEvent *e)
     if (a->model && a->model[0] && asset_frame_count(a->model) > 0) {
         g->effect = a->model;
         g->effect_slot = e->target;
+        g->move_tick = 0;
     }
 
     /* The number for what just happened, in the ability's own element. */
@@ -1070,7 +1351,7 @@ static void handle_input(Game *g)
         g->ring_unit = g->hovered_unit;
     } else if (g->ring_unit > 0
                && !CheckCollisionPointCircle(
-                      stage, unit_stage_pos(b, g->ring_unit), ring_radius())) {
+                      stage, unit_stage_pos(g, g->ring_unit), ring_radius())) {
         g->ring_unit = -1;
     }
 
@@ -1088,7 +1369,7 @@ static void handle_input(Game *g)
         return;
 
     if (ui_clicked() && g->ring_unit > 0) {
-        Vector2 centre = unit_stage_pos(b, g->ring_unit);
+        Vector2 centre = unit_stage_pos(g, g->ring_unit);
         float radius = orb_radius();
         for (int i = 0; i < SONNY_RING_SLOT_COUNT; i++) {
             const RingSlot *slot = &SONNY_RING_SLOTS[i];
@@ -1165,18 +1446,29 @@ static void advance(Game *g)
     }
 
     if (b->phase == PHASE_RESOLVE) {
+        /* An attacker on its way over holds the fight, the way the original
+           waits on krinMelee to reach its target before the hit lands. */
+        if (melee_busy(g))
+            return;
         if (g->resolve_timer > 0) {
             g->resolve_timer--;
+            return;
+        }
+        /* The swing has landed: show what it did. */
+        if (g->move_pending) {
+            g->move_pending = 0;
+            present(g, &g->last);
+            g->resolve_timer = RESOLVE_FRAMES;
             return;
         }
         MoveEvent e;
         if (battle_resolve_step(b, &e)) {
             g->last = e;
             g->has_last = 1;
+            g->move_pending = 1;
             tick_cooldowns(g, &e);
             describe(g, &e);
-            present(g, &e);
-            g->resolve_timer = RESOLVE_FRAMES;
+            present_move(g, &e);
         } else if (b->phase != PHASE_OVER) {
             battle_end_phase(b);
             /* A completed phase advances the dialogue's turn counter and
@@ -1267,6 +1559,13 @@ void battle_screen_start(Game *g, int32_t battle_id)
     g->speech_timer = 0;
     g->speech = NULL;
     g->number_count = 0;
+    g->camera_x = g->camera_y = 0.0f;
+    g->camera_scale = 1.0f;
+    g->zoom_point = g->zoom_way = 0;
+    g->melee_slot = 0;
+    g->melee_dir = 0;
+    g->melee_state = 0;
+    g->melee_x = g->melee_y = 0.0f;
 
     game_log(g, "%s%d. Team %d is faster and acts first.",
              lang_text("SYSTEM", 10), g->campaign.progress_battle - 1,
@@ -1292,6 +1591,8 @@ void battle_screen_update(Game *g, Vector2 mouse, int headless)
     if (g->speech)
         g->balloon_tick++;
     g->move_tick++;
+    camera_tick(g);
+    melee_tick(g);
     numbers_update(g);
 
     /* Dialogue holds the fight, as speechDone does in the original. */

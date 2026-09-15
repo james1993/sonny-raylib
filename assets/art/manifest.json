@@ -30432,6 +30432,24 @@
      -24
     ]
    ]
+  },
+  "#1591": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1591.png"
+   ],
+   "bounds": [
+    -31.8,
+    -31.8,
+    31.8,
+    31.8
+   ],
+   "offsets": [
+    [
+     31.8,
+     31.8
+    ]
+   ]
   }
  },
  "animations": {
