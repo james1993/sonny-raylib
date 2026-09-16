@@ -308,10 +308,93 @@ static void shake_tick(Game *g)
 #define BOLT_FADE      10        /* alpha a frame, out of a hundred */
 #define BOLT_GIVE_UP   240
 
+/* KrinTrail. The streak is one small shape, ten units long, whose art runs
+   from clear at the tail to solid at the head; the clip is dropped where the
+   bolt has got to on its first frame, turned the way the bolt is going, and
+   from then on stretched along its own x so the solid head keeps pace while
+   the clear tail stays at the throw. Its own clip runs thirty-three frames
+   whatever the bolt does -- in from nothing over the first nine, out again
+   over the last nine -- and takes itself off the screen at the end, so a
+   trail is still fading after its bolt has landed. */
+#define TRAIL_ART    "#144"
+#define TRAIL_GROW   8.3f      /* per cent of its length per unit travelled */
+#define TRAIL_FRAMES 33
+#define TRAIL_IN     9         /* solid by here */
+#define TRAIL_OUT    24        /* and fading from here */
+#define TRAIL_PLACED_X 5.0f    /* where the clip puts the shape */
+
+/* The colour is already on the game from bolt_start, which is where the
+   move that threw this is still to hand. */
+static void trail_start(Game *g)
+{
+    g->trail_tick = 1;
+    g->trail_x = g->bolt_x;
+    g->trail_y = g->bolt_y;
+    g->trail_angle = g->bolt_angle;
+    g->trail_scale = 100.0f;
+}
+
+/* The original grows the streak by the distance the bolt covered this frame,
+   which is the step it takes times the speed it has wound up to. */
+static void trail_grow(Game *g)
+{
+    if (g->trail_tick <= 0)
+        return;
+    float step = sqrtf(g->bolt_step_x * g->bolt_step_x
+                       + g->bolt_step_y * g->bolt_step_y);
+    g->trail_scale += TRAIL_GROW * step * g->bolt_speed;
+}
+
+static void trail_tick_on(Game *g)
+{
+    if (g->trail_tick <= 0)
+        return;
+    if (++g->trail_tick > TRAIL_FRAMES)
+        g->trail_tick = 0;          /* frame 33 unloads it */
+}
+
+static void draw_trail(const Game *g)
+{
+    if (g->trail_tick <= 0)
+        return;
+    /* The art is already white, carrying only the fade along its length,
+       so the move's own colour goes straight on as a tint -- which is what
+       Color.setRGB on the clip amounts to. */
+    const Texture2D *tex = asset_texture(TRAIL_ART, 1);
+    if (!tex)
+        return;
+    /* The clip's cxform: nothing on its first frame, solid from its ninth,
+       and back down to nothing by its thirty-second. */
+    float a = 1.0f;
+    if (g->trail_tick < TRAIL_IN)
+        a = (float)(g->trail_tick - 1) / (float)(TRAIL_IN - 1);
+    else if (g->trail_tick >= TRAIL_OUT)
+        a = (float)(TRAIL_FRAMES - 1 - g->trail_tick)
+            / (float)(TRAIL_FRAMES - 1 - TRAIL_OUT + 1);
+    if (a < 0.0f) a = 0.0f;
+    if (a > 1.0f) a = 1.0f;
+    Color tint = {g->trail_colour.r, g->trail_colour.g, g->trail_colour.b,
+                  (unsigned char)(a * 255.0f)};
+    /* The shape is placed five units along inside the clip and its own
+       origin is its middle, so its left edge -- the clear end -- sits exactly
+       on the clip's origin. Stretching along x therefore leaves the tail at
+       the throw and carries the solid head away from it, which is the whole
+       point of the effect; the pivot is that same origin, since the clip is
+       turned about it. Only _xscale moves, so the height is left alone. */
+    Vector2 off = asset_frame_offset(TRAIL_ART, 1);
+    float s = g->trail_scale / 100.0f;
+    Rectangle src = {0, 0, (float)tex->width, (float)tex->height};
+    Rectangle dst = {g->trail_x, g->trail_y, (float)tex->width * s,
+                     (float)tex->height};
+    Vector2 pivot = {(off.x - TRAIL_PLACED_X) * s, off.y};
+    DrawTexturePro(*tex, src, dst, pivot, g->trail_angle, tint);
+}
+
 static void bolt_start(Game *g, const AbilityDef *a, int32_t caster,
                        int32_t target)
 {
     g->bolt = NULL;
+    g->trail_tick = 0;
     if (!a || !a->projectile || !a->projectile[0] || asset_frame_count(a->projectile) <= 0)
         return;
     Vector2 from = unit_slot_pos(caster);
@@ -330,6 +413,9 @@ static void bolt_start(Game *g, const AbilityDef *a, int32_t caster,
     /* Turned to face the target once, as it sets out. */
     float angle = atan2f(to.y - g->bolt_y, to.x - g->bolt_x);
     g->bolt_angle = angle * (180.0f / 3.14159265358979f);
+    g->trail_colour = (Color){(unsigned char)((a->colour >> 16) & 0xFF),
+                              (unsigned char)((a->colour >> 8) & 0xFF),
+                              (unsigned char)(a->colour & 0xFF), 255};
 }
 
 static int bolt_busy(const Game *g)
@@ -340,6 +426,9 @@ static int bolt_busy(const Game *g)
 /* -> 1 while the bolt is still crossing. */
 static int bolt_tick(Game *g)
 {
+    /* The streak runs its own thirty-three frames, so it carries on fading
+       after the bolt it came from has landed and gone. */
+    trail_tick_on(g);
     if (!g->bolt)
         return 0;
     g->bolt_tick++;
@@ -347,6 +436,10 @@ static int bolt_tick(Game *g)
     g->bolt_x += g->bolt_step_x * g->bolt_speed;
     g->bolt_y += g->bolt_step_y * g->bolt_speed;
     g->bolt_speed *= BOLT_INCREASE;
+    /* The original lays the streak down on the bolt's first frame, once it
+       has taken that first step. */
+    if (g->bolt_tick == 1)
+        trail_start(g);
     /* Arrival is being level with the target, whichever way it set off --
        and a bolt that somehow never gets there gives up rather than holding
        the fight open. */
@@ -355,6 +448,7 @@ static int bolt_tick(Game *g)
         g->bolt = NULL;
         return 0;
     }
+    trail_grow(g);
     return 1;
 }
 
@@ -1368,6 +1462,9 @@ static void draw_battle(Game *g)
     for (int32_t slot = 1; slot < SONNY_SLOTS; slot++)
         draw_doll(g, slot);
     draw_effect(g);
+    /* The original stacks these by depth: the impact at 400, the streak at
+       500, the projectile itself at 600. */
+    draw_trail(g);
     draw_bolt(g);
     draw_balloon(g);
     EndMode2D();

@@ -85,6 +85,21 @@ the hub, and the reticle's name sitting eighteen pixels right of its ring.
   Flipping those a second time undoes them, and the enemy's name and numbers
   land in the middle of the bar instead of at its two ends.
 
+- **The streak behind a projectile is anchored, not carried.** KrinTrail is
+  attached once, on the bolt's first frame, at the point the bolt has reached
+  by then, and turned to face the way it is going. After that it never moves:
+  the bolt runs on and the streak is stretched along its own x to follow it,
+  by 8.3 per cent of its length for every unit the bolt covered that frame.
+  Its art is ten units long and runs from clear at the tail to solid at the
+  head, with the clear end sitting on the clip's origin, so stretching leaves
+  the tail at the throw. Drawing it centred instead makes a comet that flies
+  along with the bolt, which is not the effect at all.
+- **KrinFilterBlur0 is empty, because of a typo in the original.** The line
+  that should fill it reads `KrinFilterBlu0r.push(KFBlur0)`, so the blur it
+  was built with is pushed onto a name nothing ever reads and the array stays
+  empty. Two of BATTLEBLUR's eight steps therefore apply no blur at all. It
+  is a quirk, so it is reproduced.
+
 - **Enemies and the player use different stat formulas.** `krinAddNewUnit`
   scales linearly with no rounding; the player's path rounds up over a
   level-scaled baseline. One formula for both is wrong in both directions.

@@ -37,6 +37,12 @@ java -Xmx3g -jar "$FFDEC" -format shape:png -export shape "$OUT/shape_png" "$SWF
 # Bitmaps (few, but needed).
 java -Xmx3g -jar "$FFDEC" -format image:png -export image "$OUT/image" "$SWF"
 
+# Every sprite as SVG as well. Nothing is drawn from these: build_assets.py
+# reads the root transform out of the SVG beside each frame to find where the
+# art's own origin sits inside the trimmed PNG, and without them every sprite
+# frame loses its offset and lands beside its mark.
+java -Xmx3g -jar "$FFDEC" -format sprite:svg -export sprite "$OUT/sprite_svg" "$SWF"
+
 # Sprites rendered frame by frame. This is the big one: every frame of every
 # sprite, so expect ~200 MB. build_assets.py keeps only the frames named by
 # the engine.

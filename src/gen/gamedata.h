@@ -53,6 +53,9 @@ typedef struct {
     /* What a missile throws. The original keeps it in the slot the melee
        path leaves unused, so it is empty for everything else. */
     const char  *projectile;
+    /* Slot 11, the move's own colour, as 0xRRGGBB. It tints the streak a
+       projectile leaves behind it, and the cast effect on the caster. */
+    int32_t      colour;
     const char  *tooltip;
     AbilityCoefs coefs;
 } AbilityDef;

@@ -137,6 +137,18 @@ typedef struct {
     float     bolt_facing;           /* which way it is crossing */
     int32_t   bolt_tick;
 
+    /* KrinTrail: the streak the projectile leaves behind it. The original
+       attaches it once, on the bolt's first frame, at the point the bolt had
+       reached by then and turned to face the same way; it is then stretched
+       along its own x as the bolt runs on, so its bright end keeps up while
+       its faded end stays where it was thrown from. It lives thirty-three
+       frames of its own whatever the bolt does, so a trail outlasts the hit. */
+    int32_t   trail_tick;            /* 1..33, or 0 for no trail */
+    float     trail_x, trail_y;
+    float     trail_angle;
+    float     trail_scale;           /* per cent, as the original's _xscale */
+    Color     trail_colour;
+
     /* GridShaker: the battlefield bounces when a blow pierces, and on every
        shock. The clip walks four frames a cycle, taking a tenth off the
        throw each time round, until there is nothing left of it. */

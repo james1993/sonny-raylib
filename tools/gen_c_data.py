@@ -108,6 +108,11 @@ def gen_abilities(abilities):
         lines.append('        .projectile = %s,'
                      % c_string((a.get('anim') or '')
                                 if a.get('delivery') == 'Missile' else ''))
+        # Slot 11: the colour the move paints its own effects with.
+        colour = a.get('color') or '0xFFFFFF'
+        colour = (int(str(colour), 16) if str(colour).lower().startswith('0x')
+                  else int(colour))
+        lines.append('        .colour = 0x%06X,' % (colour & 0xFFFFFF))
         lines.append('        .buff = %s, .sound = %s, .model = %s,'
                      % (c_string(buff_key), c_string(a.get('sound') or ''),
                         c_string(a.get('model') or '')))
@@ -594,6 +599,9 @@ typedef struct {
     /* What a missile throws. The original keeps it in the slot the melee
        path leaves unused, so it is empty for everything else. */
     const char  *projectile;
+    /* Slot 11, the move's own colour, as 0xRRGGBB. It tints the streak a
+       projectile leaves behind it, and the cast effect on the caster. */
+    int32_t      colour;
     const char  *tooltip;
     AbilityCoefs coefs;
 } AbilityDef;
