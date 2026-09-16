@@ -1,8 +1,11 @@
-/* Entry point: the window, the fixed-stage render target, and the screen loop.
+/* Entry point: the window, the stage render target, and the screen loop.
  *
- * Everything is drawn into a render texture at the original's 800x575 stage
- * size and scaled with letterboxing, so layout stays 1:1 with reference
- * screenshots whatever the window size.
+ * Everything is drawn in the original's 800x575 stage coordinates, into a
+ * render texture that is then letterboxed into the window -- so layout stays
+ * 1:1 with reference screenshots whatever the window size. The texture is
+ * kept at the size the stage occupies in the window rather than at 800x575,
+ * which is what lets the frame be rasterised as finely as the player's window
+ * can show it; see render.h.
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -12,6 +15,7 @@
 #include "audio.h"
 #include "game.h"
 #include "glow.h"
+#include "render.h"
 #include "rlgl.h"
 
 static void game_start(Game *g, uint64_t seed)
@@ -71,19 +75,31 @@ int main(int argc, char **argv)
                    | FLAG_WINDOW_ALWAYS_RUN);
     InitWindow(STAGE_W, STAGE_H, "Sonny");
     SetWindowMinSize(STAGE_W / 2, STAGE_H / 2);
-    {
+    /* SONNY_WINDOW=WxH opens at exactly that size, which is how a capture is
+       taken at something other than the stage's own. */
+    const char *want_window = getenv("SONNY_WINDOW");
+    if (want_window && strchr(want_window, 'x')) {
+        int w = atoi(want_window);
+        int h = atoi(strchr(want_window, 'x') + 1);
+        if (w > 0 && h > 0)
+            SetWindowSize(w, h);
+    } else {
         int monitor = GetCurrentMonitor();
         int room_w = GetMonitorWidth(monitor);
         int room_h = GetMonitorHeight(monitor);
-        int fit = 1;
-        /* Leave a tenth of the screen for the desktop's own furniture. */
-        while ((fit + 1) * STAGE_W <= room_w * 9 / 10
-               && (fit + 1) * STAGE_H <= room_h * 9 / 10 && fit < 4)
-            fit++;
-        if (fit > 1) {
-            SetWindowSize(STAGE_W * fit, STAGE_H * fit);
-            SetWindowPosition((room_w - STAGE_W * fit) / 2,
-                              (room_h - STAGE_H * fit) / 2);
+        /* As much of the monitor as the stage's shape will take, leaving a
+           tenth of it for the desktop's own furniture. The stage is drawn at
+           whatever size it lands on, so there is no longer any reason to
+           stop at a whole multiple of it. */
+        int w = room_w * 9 / 10;
+        int h = room_h * 9 / 10;
+        if (w * STAGE_H > h * STAGE_W)
+            w = h * STAGE_W / STAGE_H;
+        else
+            h = w * STAGE_H / STAGE_W;
+        if (w > STAGE_W && h > STAGE_H) {
+            SetWindowSize(w, h);
+            SetWindowPosition((room_w - w) / 2, (room_h - h) / 2);
         }
     }
     /* The right-hand team's containers carry a negative horizontal scale --
@@ -102,8 +118,10 @@ int main(int argc, char **argv)
     Game game;
     game_start(&game, seed);
 
-    RenderTexture2D stage = LoadRenderTexture(STAGE_W, STAGE_H);
-    SetTextureFilter(stage.texture, TEXTURE_FILTER_POINT);
+    /* The stage's texture, at the size the stage is shown at. It is made on
+       the first frame and again whenever the window changes shape. */
+    RenderTexture2D stage = {0};
+    int stage_w = 0, stage_h = 0;
     /* The stage is drawn into a texture and then blitted to the window, and
        the default blend runs the destination's alpha through the same
        formula as its colour: laying anything translucent over the stage eats
@@ -199,6 +217,26 @@ int main(int argc, char **argv)
                 ClearWindowState(FLAG_VSYNC_HINT);
         }
 
+        /* The stage's texture is kept at the size the stage is shown at, so
+           the frame is rasterised as finely as the window can show it and
+           then laid down one texel to one pixel. The window can be resized
+           at any moment, so this is checked every frame; when it changes, the
+           glow's targets belong to the old size and are thrown away to be
+           made again at the new one; the text bakes notice for themselves,
+           the next time each size is asked for. */
+        StageFit fit = stage_fit(GetScreenWidth(), GetScreenHeight());
+        if (fit.w != stage_w || fit.h != stage_h) {
+            if (stage.id != 0)
+                if (stage.id != 0)
+        UnloadRenderTexture(stage);
+            stage = LoadRenderTexture(fit.w, fit.h);
+            SetTextureFilter(stage.texture, TEXTURE_FILTER_POINT);
+            stage_w = fit.w;
+            stage_h = fit.h;
+            render_set_scale(fit.w / (float)STAGE_W);
+            glow_unload();
+        }
+
         Vector2 mouse = stage_mouse();
         if (parked) {
             const char *y = strchr(parked, ':');
@@ -244,6 +282,10 @@ int main(int argc, char **argv)
         /* Update and draw go through the same call for each screen: several
            of them decide from the same button rectangles they draw. */
         BeginTextureMode(stage);
+        /* The target is in window pixels; this puts the stage's own 800 by
+           575 back over the whole of it, so every coordinate below is in the
+           original's units however finely they are being drawn. */
+        render_stage_projection();
         BeginBlendMode(BLEND_CUSTOM_SEPARATE);
         switch (game.screen) {
         case SCREEN_BATTLE:
@@ -327,20 +369,15 @@ int main(int argc, char **argv)
         EndBlendMode();
         EndTextureMode();
 
-        /* Fit the stage into the window and let the rest be black on
-           whichever side is over. A whole multiple keeps every pixel square,
-           which is what the text was aligned to; anything else is smoothed
-           instead. */
-        StageFit fit = stage_fit(GetScreenWidth(), GetScreenHeight());
-        int whole = (fit.scale >= 1.0f && fit.scale == (float)(int)fit.scale);
-        SetTextureFilter(stage.texture, whole ? TEXTURE_FILTER_POINT
-                                              : TEXTURE_FILTER_BILINEAR);
+        /* The stage into the window, and black on whichever side is over.
+           The texture is already the size it is shown at, so this is one
+           texel to one pixel at a whole offset -- nothing is resampled, and
+           what was drawn is what appears. */
         BeginDrawing();
         ClearBackground(BLACK);
         DrawTexturePro(stage.texture,
-                       (Rectangle){0, 0, (float)STAGE_W, -(float)STAGE_H},
-                       (Rectangle){fit.x, fit.y, STAGE_W * fit.scale,
-                                   STAGE_H * fit.scale},
+                       (Rectangle){0, 0, (float)fit.w, -(float)fit.h},
+                       (Rectangle){fit.x, fit.y, (float)fit.w, (float)fit.h},
                        (Vector2){0, 0}, 0.0f, WHITE);
         EndDrawing();
 
@@ -361,7 +398,8 @@ int main(int argc, char **argv)
     ui_font_unload();
     assets_unload_all();
     glow_unload();
-    UnloadRenderTexture(stage);
+    if (stage.id != 0)
+        UnloadRenderTexture(stage);
     CloseWindow();
     return 0;
 }

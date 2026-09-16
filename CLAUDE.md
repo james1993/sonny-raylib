@@ -477,8 +477,35 @@ stage to whatever the player is given and letterboxes to keep its shape, so
 the window here is resizable and `stage_fit` puts the stage in it. Drawing and
 the pointer both go through that one function, which is what keeps a click
 landing where it looks like it landed; `tests/test_window.c` checks the round
-trip at nine window shapes. A whole multiple is drawn with point filtering to
-keep pixels square, anything else with bilinear.
+trip at nine window shapes.
+
+The stage's texture is the size the stage is shown at, not 800 by 575, and the
+projection puts the stage's own coordinates over the whole of it
+(`render_stage_projection`). That is what keeps the game as sharp as the
+window it is in: a fixed 800 by 575 texture makes the stage's pixel the unit
+of resolution and a window twice the size then smears each of them over four,
+where the original is vector art rasterised at whatever size Flash is given.
+Drawing code goes on working in stage units and needs to know nothing about
+it. Three things do:
+
+* **The text bakes.** A bake is a picture of the glyphs at a fixed size, so
+  the size it is made at is the size it is sharp at. `face_size` makes the
+  drawing bake at `render_scale()` times the stage size and lays each glyph
+  down at a stage unit to its texel. The *measuring* bake is deliberately left
+  off the render scale -- it only ever yields advances, in stage units, so
+  keeping it fixed is what makes every line of text lay out identically at
+  every window size.
+* **The glow's targets** (`glow.c`), for the same reason, with the blur's
+  kernel walking the target's texels rather than stage pixels.
+* **The scissor.** `BeginScissorMode` is the one thing in raylib set in the
+  framebuffer's own pixels rather than through the projection, so it has to be
+  scaled by hand -- `render_scissor` does it, truncating each of the four
+  numbers on its own, which is what the box came to when a stage unit was a
+  pixel. Missing this leaves the battlefield drawn into a corner of the
+  window.
+
+`SONNY_WINDOW=WxH` opens at exactly that size, which is how a capture is taken
+at anything other than the stage's own.
 
 ## Driving the game without a pointer
 

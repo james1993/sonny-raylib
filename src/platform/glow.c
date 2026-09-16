@@ -2,10 +2,13 @@
 
 #include <stddef.h>
 
+#include "render.h"
 #include "rlgl.h"
 
 /* The stage's own size; the targets are full-size so the silhouette can be
-   drawn where it belongs and laid back down without any coordinate juggling. */
+   drawn where it belongs and laid back down without any coordinate juggling.
+   In pixels they are as big as the stage is being drawn at, so the halo is as
+   fine as the figure it comes off. */
 #define GLOW_W 800
 #define GLOW_H 575
 
@@ -74,15 +77,18 @@ static Shader fill_shader;
 static int blur_step, blur_radius, rim_second;
 static int ready;                  /* 1 loaded, -1 tried and failed */
 static int capturing;
+static int target_w, target_h;     /* the targets' size in pixels */
 
 static int glow_load(void)
 {
     if (ready)
         return ready > 0;
     ready = -1;
-    shape = LoadRenderTexture(GLOW_W, GLOW_H);
-    pass1 = LoadRenderTexture(GLOW_W, GLOW_H);
-    pass2 = LoadRenderTexture(GLOW_W, GLOW_H);
+    target_w = (int)(GLOW_W * render_scale() + 0.5f);
+    target_h = (int)(GLOW_H * render_scale() + 0.5f);
+    shape = LoadRenderTexture(target_w, target_h);
+    pass1 = LoadRenderTexture(target_w, target_h);
+    pass2 = LoadRenderTexture(target_w, target_h);
     blur = LoadShaderFromMemory(NULL, BLUR_FS);
     rim_shader = LoadShaderFromMemory(NULL, RIM_FS);
     fill_shader = LoadShaderFromMemory(NULL, FILL_FS);
@@ -129,6 +135,7 @@ int glow_capture_begin(void)
     if (!glow_load())
         return 0;
     BeginTextureMode(shape);
+    render_stage_projection();
     ClearBackground(BLANK);
     glow_blend_begin();
     capturing = 1;
@@ -145,11 +152,13 @@ void glow_capture_end(void)
 }
 
 /* A render target is drawn upside down, because its texture is written the
-   way OpenGL writes one. */
-static void blit(Texture2D tex, Color tint)
+   way OpenGL writes one. `size` is how big to lay it down: the blur passes
+   draw one target over the whole of another and work in texels, and composing
+   draws into the stage and works in its units. */
+static void blit(Texture2D tex, Color tint, float w, float h)
 {
     Rectangle src = {0, 0, (float)tex.width, -(float)tex.height};
-    Rectangle dst = {0, 0, (float)tex.width, (float)tex.height};
+    Rectangle dst = {0, 0, w, h};
     DrawTexturePro(tex, src, dst, (Vector2){0, 0}, 0.0f, tint);
 }
 
@@ -161,14 +170,16 @@ void glow_blur(float width)
        kernel runs half that either side of the pixel. Taking it as a reach
        makes the glow twice as wide and half as strong, which reads as a grey
        smudge rather than an edge. */
-    float radius = width / 2.0f;
+    /* The kernel walks the target's own texels, and there is more than one of
+       them to a stage pixel when the stage is drawn large. */
+    float radius = width * render_scale() / 2.0f;
     if (radius < 1.0f)
         radius = 1.0f;
 
     /* Across, then down. Both passes run into their own target, so neither
        reads what it is writing. */
-    float across[2] = {1.0f / GLOW_W, 0.0f};
-    float down[2] = {0.0f, 1.0f / GLOW_H};
+    float across[2] = {1.0f / target_w, 0.0f};
+    float down[2] = {0.0f, 1.0f / target_h};
     SetShaderValue(blur, blur_radius, &radius, SHADER_UNIFORM_FLOAT);
 
     BeginTextureMode(pass1);
@@ -176,7 +187,7 @@ void glow_blur(float width)
     glow_blend_begin();
     SetShaderValue(blur, blur_step, across, SHADER_UNIFORM_VEC2);
     BeginShaderMode(blur);
-    blit(shape.texture, WHITE);
+    blit(shape.texture, WHITE, (float)target_w, (float)target_h);
     EndShaderMode();
     glow_blend_end();
     EndTextureMode();
@@ -186,7 +197,7 @@ void glow_blur(float width)
     glow_blend_begin();
     SetShaderValue(blur, blur_step, down, SHADER_UNIFORM_VEC2);
     BeginShaderMode(blur);
-    blit(pass1.texture, WHITE);
+    blit(pass1.texture, WHITE, (float)target_w, (float)target_h);
     EndShaderMode();
     glow_blend_end();
     EndTextureMode();
@@ -200,10 +211,10 @@ void glow_compose(Color rim)
         return;
     /* The halo outside, from the blurred silhouette at full strength. */
     BeginShaderMode(fill_shader);
-    blit(pass2.texture, rim);
+    blit(pass2.texture, rim, GLOW_W, GLOW_H);
     /* The figure itself, filled flat -- the hundred-pixel inner glow
        saturates, so nothing of its own colour is left. */
-    blit(shape.texture, WHITE);
+    blit(shape.texture, WHITE, GLOW_W, GLOW_H);
     EndShaderMode();
     /* And the rim just inside the outline. The blurred silhouette goes in as
        a second sampler, bound inside the shader block: beginning one flushes
@@ -211,7 +222,7 @@ void glow_compose(Color rim)
        it beforehand loses it. */
     BeginShaderMode(rim_shader);
     SetShaderValueTexture(rim_shader, rim_second, pass2.texture);
-    blit(shape.texture, rim);
+    blit(shape.texture, rim, GLOW_W, GLOW_H);
     EndShaderMode();
 }
 

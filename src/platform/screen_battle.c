@@ -10,6 +10,7 @@
 #include "assets.h"
 #include "audio.h"
 #include "game.h"
+#include "render.h"
 #include "glow.h"
 
 static int player_turn(const Game *g)
@@ -1607,8 +1608,7 @@ static void draw_battle(Game *g)
         Rectangle box = placed_rect(mask->x, mask->y, mask->scale_x,
                                     mask->scale_y, mask->width, mask->height,
                                     mask->origin_x, mask->origin_y);
-        BeginScissorMode((int)box.x, (int)box.y, (int)box.width,
-                         (int)box.height);
+        render_scissor(box);
     }
     /* Everything inside the frame moves with the camera; the bars, the
        reticles and the panels round it do not, because the original moves

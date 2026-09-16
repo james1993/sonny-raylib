@@ -16,6 +16,7 @@
 typedef struct {
     float scale;
     float x, y;        /* where the stage's top-left lands in the window */
+    int   w, h;        /* and how big it is there, in whole pixels */
 } StageFit;
 
 StageFit stage_fit(int window_w, int window_h);

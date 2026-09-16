@@ -10,6 +10,7 @@
 #include "assets.h"
 #include "audio.h"
 #include "game.h"
+#include "render.h"
 
 /* The menu clip's frames, by the labels the original gives them: one screen
    each, and the same slot name means different places on different frames. */
@@ -526,8 +527,7 @@ void screen_map_draw(Game *g, Vector2 mouse)
                                     backing->scale_y, backing->width,
                                     backing->height, backing->origin_x,
                                     backing->origin_y);
-        BeginScissorMode((int)box.x, (int)box.y, (int)box.width,
-                         (int)box.height);
+        render_scissor(box);
     }
     draw_clip_parts(MAP_SCREEN, MAP_CLIP, NO_OFFSET, NULL, NULL, WHITE);
     if (backing)
@@ -864,8 +864,7 @@ void screen_talents_draw(Game *g, Vector2 mouse)
                                                   (int32_t)(sizeof(known)
                                                             / sizeof(known[0])));
         draw_slot_art(MENU_SKILLS, POOL_SLOT, -1);
-        BeginScissorMode((int)box.x, (int)box.y, (int)box.width,
-                         (int)box.height);
+        render_scissor(box);
         for (int32_t i = 0; i < count; i++) {
             Vector2 at = pool_row(i);
             draw_clip_parts(MENU_SCREEN, POOL_ROW, at, NULL, NULL, WHITE);

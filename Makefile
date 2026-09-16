@@ -20,6 +20,7 @@ game: $(BUILD)
 	    src/platform/assets.c src/platform/audio.c src/platform/ui.c \
 	    src/platform/screens.c src/platform/screen_battle.c \
 	    src/platform/screen_menu.c src/platform/glow.c \
+	    src/platform/render.c \
 	    src/gen/assets_gen.c \
 	    $(CORE_SRC) $(RAYLIB_LIBS)
 

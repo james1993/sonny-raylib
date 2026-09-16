@@ -6,6 +6,7 @@
 #include <string.h>
 #include "assets.h"
 #include "game.h"
+#include "render.h"
 
 /* The interface's two faces.
  *
@@ -62,7 +63,8 @@ typedef struct {
        same number, so a nine-point field comes out a fifth too small unless
        the request is scaled by the face's own ratio between them. */
     float       em_to_box;
-    struct { int size; Font font; Font metrics; float em; } cache[UI_SIZE_CACHE];
+    struct { int size; Font font; Font metrics; float em; float scale; }
+                cache[UI_SIZE_CACHE];
     int         cached;
 } UiFace;
 
@@ -126,7 +128,17 @@ static void codepoints_init(void)
 /* The pair of bakes for one size: the one text is drawn from, and the large
    one it is measured against. `em` is the em square the measuring bake works
    out to in its own pixels, which is what turns its advances into the
-   caller's units. */
+   caller's units.
+ *
+ * A bake is a picture of the glyphs at a fixed size, so the size drawn from
+ * is the size it is sharp at: baked at the stage's nine points and shown in a
+ * window twice that, every letter is smoothed across four pixels. So the
+ * drawing bake is made at the size the stage is being rasterised to and the
+ * glyphs are laid down at a stage unit each, which is the same text at the
+ * window's own resolution. The measuring bake is deliberately left alone --
+ * it only ever yields advances, in stage units, and keeping it off the render
+ * scale is what keeps every line of text laid out identically at every window
+ * size. */
 static int face_size(int face, float size)
 {
     UiFace *f = &ui_faces[face];
@@ -136,13 +148,35 @@ static int face_size(int face, float size)
     int px = (int)(size * f->em_to_box + 0.5f);
     if (px < 6)
         px = 6;
-    for (int i = 0; i < f->cached; i++)
-        if (f->cache[i].size == px)
-            return i;
+    float scale = render_scale();
+    int draw_px = (int)(px * scale + 0.5f);
+    if (draw_px < 6)
+        draw_px = 6;
+    for (int i = 0; i < f->cached; i++) {
+        if (f->cache[i].size != px)
+            continue;
+        /* The window has changed size under a bake that is still wanted:
+           the letters are re-drawn at the new resolution, and the advances
+           they are laid out on stay exactly as they were. */
+        if (f->cache[i].scale != scale) {
+            Font again = LoadFontEx(f->path, draw_px, UI_CODEPOINTS,
+                                    UI_CODEPOINT_COUNT);
+            if (again.texture.id != 0) {
+                SetTextureFilter(again.texture, TEXTURE_FILTER_BILINEAR);
+                if (f->cache[i].metrics.texture.id
+                    != f->cache[i].font.texture.id)
+                    UnloadFont(f->cache[i].font);
+                f->cache[i].font = again;
+                f->cache[i].scale = scale;
+            }
+        }
+        return i;
+    }
     if (f->cached == UI_SIZE_CACHE)
         return f->cached - 1;
 
-    Font font = LoadFontEx(f->path, px, UI_CODEPOINTS, UI_CODEPOINT_COUNT);
+    Font font = LoadFontEx(f->path, draw_px, UI_CODEPOINTS,
+                           UI_CODEPOINT_COUNT);
     if (font.texture.id == 0)
         return -1;
     SetTextureFilter(font.texture, TEXTURE_FILTER_BILINEAR);
@@ -157,6 +191,7 @@ static int face_size(int face, float size)
     f->cache[slot].size = px;
     f->cache[slot].font = font;
     f->cache[slot].metrics = metrics;
+    f->cache[slot].scale = scale;
     f->cache[slot].em = (float)metrics.baseSize / f->em_to_box;
     return slot;
 }
@@ -248,10 +283,17 @@ static float face_run(int face, const char *text, float size, float x, float y,
         if (draw && codepoint != ' ') {
             int g = GetGlyphIndex(*font, codepoint);
             Rectangle src = font->recs[g];
+            /* The bake is in device pixels and everything here is in stage
+               units, so a texel of it is one over the render scale. The
+               glyph still goes on a whole pixel -- Flash hints its text onto
+               one, and drawn at a fraction the same glyphs sample across two
+               texels each and go soft -- but the pixel that matters is the
+               window's, not the stage's. */
+            float texel = 1.0f / f->cache[slot].scale;
             Rectangle dst = {
-                floorf(x + pen + font->glyphs[g].offsetX + 0.5f),
-                floorf(y + font->glyphs[g].offsetY + 0.5f),
-                src.width, src.height};
+                render_snap(x + pen + font->glyphs[g].offsetX * texel),
+                render_snap(y + font->glyphs[g].offsetY * texel),
+                src.width * texel, src.height * texel};
             DrawTexturePro(font->texture, src, dst, (Vector2){0, 0}, 0.0f,
                            color);
         }
@@ -265,9 +307,8 @@ static void face_draw(int face, const char *text, float x, float y, float size,
 {
     if (!text || !text[0])
         return;
-    /* On the pixel grid. Flash hints its text onto whole pixels; drawn at a
-       fraction the same glyphs sample across two texels each and go soft. */
-    if (face_run(face, text, size, floorf(x + 0.5f), floorf(y + 0.5f), color,
+    /* On the pixel grid, the window's rather than the stage's. */
+    if (face_run(face, text, size, render_snap(x), render_snap(y), color,
                  1) >= 0.0f)
         return;
     if (face == UI_FACE_BOLD) {
