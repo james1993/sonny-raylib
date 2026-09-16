@@ -215,13 +215,20 @@ the hub, and the reticle's name sitting eighteen pixels right of its ring.
   the animation has to be chosen from its own clock rather than from `active`,
   or the model drops dead on the frame the move resolved regardless.
 
-- **The music is never stopped at the end of a fight.** Only four places in
-  the whole file ask for a track: the hub frame (roaming), the frame that
-  loads a battle (fight), the opening cutscene, and one menu button. Winning
-  goes to the hub frame, so the roaming track starts there and the results
-  panel is drawn over it -- which is why there is music behind the rewards.
-  Losing goes to resetHere, which asks for nothing, so the fight's own track
-  simply carries on.
+- **Only four places ask for music, and one place stops it.** The hub frame
+  asks for a roaming track, the frame that loads a battle asks for a fight
+  one, the opening cutscene asks, and the sound toggle asks. Winning goes to
+  the hub frame, so the roaming track starts there and the results panel is
+  drawn over it -- which is why there is music behind the rewards. Losing goes
+  to resetHere, which is the whole game's reset: stopAllSounds, the counter
+  back to zero, soundModeKrin back to zero. Grepping for addSound alone says
+  the fight's track carries on into a loss, which is wrong -- the stop is not
+  an addSound call.
+- **The menus have no music.** Nothing between the first frame and the hub
+  ever asks for a track, and resetHere stops whatever was playing on the way
+  past, so the title and the menus sit in silence. "menumusic" being the first
+  of the four tracks is misleading: it belongs to whoever calls for a roaming
+  track first, which on a new game is the opening cutscene.
 
 - **Enemies and the player use different stat formulas.** `krinAddNewUnit`
   scales linearly with no rounding; the player's path rounds up over a

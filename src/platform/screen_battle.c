@@ -2243,13 +2243,20 @@ void battle_screen_update(Game *g, Vector2 mouse, int headless)
             g->battle_drawn = (g->battle.winCondition == 2);
             g->screen = SCREEN_LOST;
         }
-        /* Nothing in the original stops the music when a fight ends. Winning
-           goes to the Navigation frame, which asks for the roaming track --
-           and the results panel is drawn over that frame, so what plays under
-           it is the hub's music, started here. Losing goes to resetHere,
-           which asks for nothing, so the battle track simply carries on. */
-        if (g->battle.winCondition == 1)
+        /* Winning goes to the Navigation frame, which asks for the roaming
+           track -- and the results panel is drawn over that frame, so what
+           plays under it is the hub's music, started here.
+
+           Losing goes to resetHere, which is the whole game's reset: it
+           stops every sound and puts the track counter back to the start of
+           the four, so the next fight or hub begins the rotation again. */
+        if (g->battle.winCondition == 1) {
             game_music_roaming(g);
+        } else {
+            audio_music(NULL);
+            g->music_mode = 0;
+            g->music_next = 0;
+        }
     }
 }
 
