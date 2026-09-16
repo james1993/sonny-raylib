@@ -551,9 +551,13 @@ static const char *unit_animation(const Game *g, int32_t slot, int *loop,
        file runs at thirty and so does the stage, which makes it one for one.
        Halving it ran every idle at half speed. */
     *tick = g->anim_tick;
-    if (!u->active) {
+    /* Only once the death has actually been set going. A unit killed by a
+       melee attacker stops being active when the move resolves, which is
+       before the attacker has even set off; until the blow lands it is still
+       standing there, so it goes on doing whatever it was doing. */
+    if (!u->active && g->death_tick[slot] > 0) {
         *loop = 0;
-        *tick = g->death_tick[slot] > 0 ? g->death_tick[slot] - 1 : 0;
+        *tick = g->death_tick[slot] - 1;
         return "dead";
     }
     if (u->STUN > 0)
@@ -2165,15 +2169,27 @@ void battle_screen_update(Game *g, Vector2 mouse, int headless)
         /* The original plays "dead" wherever it sets active false -- a blow,
            a shadow blow, a buff ticking someone down -- so the clock starts
            the moment a unit that was standing is not active any more, which
-           catches all of them at once. */
-        if (!u->active && u->LIFEU > 0 && g->death_tick[slot] == 0) {
+           catches all of them at once.
+
+           Not while a move is still on its way over, though. The original
+           takes the health off and sets active false at the moment the blow
+           lands; this side works the whole move out when it resolves and only
+           shows it when the blow lands, so a unit killed by a melee attacker
+           has been inactive since before the attacker set off. Reading that
+           straight away drops it dead a walk's length of frames early -- the
+           same reason the bars hold their old value until then. */
+        if (!u->active && u->LIFEU > 0 && g->death_tick[slot] == 0
+            && !g->move_pending) {
             g->death_tick[slot] = 1;
             g->hit_tick[slot] = 0;
+            /* and not stepped on the frame it was started, or the first
+               frame of the animation is skipped */
+        } else if (g->death_tick[slot] > 0
+                   && g->death_tick[slot] <= DEATH_FRAMES) {
+            g->death_tick[slot]++;
         }
         if (g->hit_tick[slot] > 0 && ++g->hit_tick[slot] > HIT_FRAMES)
             g->hit_tick[slot] = 0;      /* and back to standing */
-        if (g->death_tick[slot] > 0 && g->death_tick[slot] <= DEATH_FRAMES)
-            g->death_tick[slot]++;
     }
     melee_tick(g);
     bolt_tick(g);

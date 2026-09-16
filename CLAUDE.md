@@ -204,6 +204,17 @@ the hub, and the reticle's name sitting eighteen pixels right of its ring.
   the handler in it. Searching by id alone will tell you a clip has no code
   when it does -- match the id with a trailing wildcard.
 
+- **A unit is dead long before it falls over.** The original takes the health
+  off and sets active false at the moment the blow lands. This side works the
+  whole move out when it resolves and only shows it when the blow lands, so a
+  unit killed by a melee attacker has been inactive since before the attacker
+  set off -- a walk's length of frames early. Anything driven off `active`
+  rather than off what has been shown will run early by that much: the bars
+  hold their old value until the blow lands for the same reason, and the death
+  animation has to wait on it too. Waiting is not enough on its own, either:
+  the animation has to be chosen from its own clock rather than from `active`,
+  or the model drops dead on the frame the move resolved regardless.
+
 - **Enemies and the player use different stat formulas.** `krinAddNewUnit`
   scales linearly with no rounding; the player's path rounds up over a
   level-scaled baseline. One formula for both is wrong in both directions.
