@@ -118,6 +118,12 @@ the hub, and the reticle's name sitting eighteen pixels right of its ring.
   only its alpha matters. Each effect is a pair of layers and only one of them
   carries that handler, so the other keeps the colour it was drawn in.
 
+- **The reticles come off the moment a move is committed.** When the turn
+  clock reaches BattleTimeLimit the original sets _visible = false on all six
+  KrinSelectors and on the loose selector, and puts them back only when it is
+  the player's turn to pick again. They do not fade for that. Leaving them up
+  draws a ring and a name over whoever is being hit all through the swing.
+
 - **Enemies and the player use different stat formulas.** `krinAddNewUnit`
   scales linearly with no rounding; the player's path rounds up over a
   level-scaled baseline. One formula for both is wrong in both directions.

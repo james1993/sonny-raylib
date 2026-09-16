@@ -1675,7 +1675,14 @@ static void handle_input(Game *g)
        pointer is anywhere within it -- which is what lets it be moved off the
        unit and onto one of the orbs. The original pins it on a click and
        drops it when the pointer leaves. */
-    if (g->hovered_unit > 0) {
+    /* The original takes all six reticles off the moment a move is committed
+       -- KrinSelector1..6 go _visible = false when the turn clock runs out --
+       and puts them back when it is the player's turn to pick again. They do
+       not fade out for that; they are simply gone. */
+    if (!player_turn(g)) {
+        g->ring_unit = -1;
+        g->ring_fade = 0.0f;
+    } else if (g->hovered_unit > 0) {
         g->ring_unit = g->hovered_unit;
     } else if (g->ring_unit > 0
                && !CheckCollisionPointCircle(
