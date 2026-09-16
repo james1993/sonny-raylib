@@ -137,6 +137,18 @@ typedef struct {
     float     bolt_facing;           /* which way it is crossing */
     int32_t   bolt_tick;
 
+    /* BATTLEFLASH: the white-and-orange pulse over whoever was just hit, or
+       the white-and-green one over whoever was just healed. The clip runs
+       fifteen frames from its "hit" label, with the filters on for two and
+       off for two, four times over. 0 is nobody. */
+    int32_t   flash_slot;
+    int32_t   flash_tick;            /* 1..15 */
+    int32_t   flash_heal;
+    /* Whether the silhouette for this frame was actually taken -- the glow
+       needs render targets and a shader, and if the hardware will not give us
+       those the model is drawn plainly instead of not at all. */
+    int32_t   flash_ready;
+
     /* colortobe: the colour each unit was last told to cast in. The original
        sets it on the model before it plays, and the effect the model shows
        over itself reads it as it loads, so it lasts until the next move. */
@@ -452,6 +464,11 @@ void game_play_cutscene(Game *g, int32_t which);
 void game_begin_story(Game *g);
 
 void battle_screen_start(Game *g, int32_t battle_id);
+/* Work that has to happen before the frame's own render target is
+   open, because ending a target in raylib returns to the window
+   rather than to the target that was current: the silhouette of a
+   model under the hit flash, and the blur of it. */
+void battle_screen_prepare(Game *g);
 void battle_screen_update(Game *g, Vector2 mouse, int headless);
 void battle_screen_draw(Game *g);
 

@@ -11,6 +11,7 @@
 #include "assets.h"
 #include "audio.h"
 #include "game.h"
+#include "glow.h"
 #include "rlgl.h"
 
 static void game_start(Game *g, uint64_t seed)
@@ -210,6 +211,12 @@ int main(int argc, char **argv)
         game.tip_title[0] = 0;
         game.tip_body[0] = 0;
 
+        /* Anything needing a render target of its own goes first: ending one
+           in raylib returns to the window, not to the target that was
+           current, so none of this can happen inside the stage pass. */
+        if (game.screen == SCREEN_BATTLE)
+            battle_screen_prepare(&game);
+
         /* Update and draw go through the same call for each screen: several
            of them decide from the same button rectangles they draw. */
         BeginTextureMode(stage);
@@ -329,6 +336,7 @@ int main(int argc, char **argv)
     audio_shutdown();
     ui_font_unload();
     assets_unload_all();
+    glow_unload();
     UnloadRenderTexture(stage);
     CloseWindow();
     return 0;

@@ -10,6 +10,7 @@
 #include "assets.h"
 #include "audio.h"
 #include "game.h"
+#include "glow.h"
 
 static int player_turn(const Game *g)
 {
@@ -297,6 +298,43 @@ static void shake_tick(Game *g)
         }
         break;
     }
+}
+
+/* ------------------------------------------------------------------- flash */
+
+/* BATTLEFLASH. The original hangs three glow filters on the target's model
+   for two frames, takes them off for two, and does that four times: fifteen
+   frames from the clip's "hit" label, or its "heal" label for the green one.
+   KFHit1 is a white inner glow a hundred pixels across at strength ten, which
+   saturates and leaves the figure a flat white cut-out; KFHit2 and KFHit3 are
+   the ten-pixel edges outside and inside it. */
+#define FLASH_FRAMES  15
+#define FLASH_BLUR    10.0f      /* KFHit2 and KFHit3's blurX */
+#define FLASH_HIT_RIM   ((Color){255, 204, 0, 255})    /* 0xFFCC00 */
+#define FLASH_HEAL_RIM  ((Color){153, 255, 0, 255})    /* 0x99FF00 */
+
+static void flash_start(Game *g, int32_t slot, int heal)
+{
+    g->flash_slot = slot;
+    g->flash_tick = 1;
+    g->flash_heal = heal;
+}
+
+static void flash_tick_on(Game *g)
+{
+    if (g->flash_slot <= 0)
+        return;
+    if (++g->flash_tick > FLASH_FRAMES) {
+        g->flash_slot = 0;
+        g->flash_tick = 0;
+    }
+}
+
+/* Two frames on, two off. The clip's last frame takes them off and stops. */
+static int flash_lit(const Game *g, int32_t slot)
+{
+    return g->flash_slot == slot && g->flash_tick >= 1
+        && g->flash_tick < FLASH_FRAMES && ((g->flash_tick - 1) % 4) < 2;
 }
 
 /* -------------------------------------------------------------------- bolt */
@@ -1471,8 +1509,19 @@ static void draw_battle(Game *g)
     Camera2D camera = battle_camera(g);
     BeginMode2D(camera);
     draw_backdrop(g);
-    for (int32_t slot = 1; slot < SONNY_SLOTS; slot++)
-        draw_doll(g, slot);
+    for (int32_t slot = 1; slot < SONNY_SLOTS; slot++) {
+        /* A model under the flash is not drawn at all: what goes down in its
+           place is the silhouette taken before this pass started, laid out
+           in stage coordinates, so the camera comes off for it and goes back
+           on afterwards. Its turn in the order is kept. */
+        if (flash_lit(g, slot) && g->flash_ready) {
+            EndMode2D();
+            glow_compose(g->flash_heal ? FLASH_HEAL_RIM : FLASH_HIT_RIM);
+            BeginMode2D(camera);
+        } else {
+            draw_doll(g, slot);
+        }
+    }
     draw_effect(g);
     /* The original stacks these by depth: the impact at 400, the streak at
        500, the projectile itself at 600. */
@@ -1588,6 +1637,14 @@ static void present(Game *g, const MoveEvent *e)
         g->effect_slot = e->target;
         g->effect_tick = 0;
     }
+
+    /* The pulse over whoever it landed on. The original sets it going at the
+       same point as the number, from the same branch that moves the health:
+       green for a heal, orange for anything that takes health off. */
+    if (e->kind == KIND_HEAL && e->amount > 0)
+        flash_start(g, e->target, 1);
+    else if (e->kind == KIND_FULL_DAMAGE && e->amount > 0)
+        flash_start(g, e->target, 0);
 
     /* The number for what just happened, in the ability's own element. */
     uint32_t rgb = element_color((Element)a->coefs.element);
@@ -2008,6 +2065,32 @@ void battle_screen_update(Game *g, Vector2 mouse, int headless)
         audio_music(NULL);
         g->music_mode = 0;
     }
+}
+
+void battle_screen_prepare(Game *g)
+{
+    /* The flash is clocked here rather than with the rest of the fight,
+       because this runs before the frame's update and the silhouette has to
+       be taken for the same frame that will draw it. Clocking it in the
+       update would leave this a frame behind, and half the lit frames would
+       find no silhouette waiting for them. */
+    flash_tick_on(g);
+    g->flash_ready = 0;
+    if (!flash_lit(g, g->flash_slot))
+        return;
+    if (!glow_capture_begin())
+        return;
+    /* Drawn through the camera, so what comes back is already where it goes
+       on the stage and can be laid down without moving. */
+    Camera2D camera = battle_camera(g);
+    BeginMode2D(camera);
+    draw_doll(g, g->flash_slot);
+    EndMode2D();
+    glow_capture_end();
+    /* Flash scales a filter with the clip it is on, and BATTLESCREEN is
+       scaled while the camera is leaning in. */
+    glow_blur(FLASH_BLUR * camera.zoom);
+    g->flash_ready = 1;
 }
 
 void battle_screen_draw(Game *g)

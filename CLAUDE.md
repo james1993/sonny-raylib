@@ -124,6 +124,31 @@ the hub, and the reticle's name sitting eighteen pixels right of its ring.
   the player's turn to pick again. They do not fade for that. Leaving them up
   draws a ring and a name over whoever is being hit all through the swing.
 
+- **BATTLEBLUR never runs.** The motion blur over the battlefield is guarded
+  by KrinSettings.SFX2, and the only place that sets SFX2 sets it false on
+  both branches of its one `if`; nothing else in the file assigns it and there
+  is no setting that turns it on. The twenty-frame clip and all four
+  KrinFilterBlur arrays are dead code. It is not reproduced, because the game
+  does not do it.
+- **Writing alpha needs the separate blend factors.** raylib's ordinary blend
+  runs the destination alpha through the source's alpha as well, so drawing
+  something with alpha a onto a cleared render target stores a squared. main.c
+  sets separate factors for exactly this reason, but only turns them on inside
+  the pass that draws the stage -- so anything with a render target of its own
+  has to ask for BLEND_CUSTOM_SEPARATE itself. A silhouette blurred twice
+  without it comes out at the fourth power of itself, and an edge that should
+  be half lit reads as a tenth.
+- **A Flash filter's blurX is a width, not a reach.** BlurFilter(10, 10, 1)
+  blurs over ten pixels, so the kernel runs five either side. Taking it as a
+  radius makes every glow twice as wide and half as strong, which turns an
+  edge into a smudge.
+- **The hit flash is all filter, no colour.** BATTLEFLASH calls
+  krinChangeColor(inner, "Hit") as well as setting the filters, but "Hit"
+  sets every offset to zero -- it does nothing. The whole effect is the three
+  glows: a white inner one a hundred pixels across at strength ten, which
+  saturates and leaves a flat white cut-out, and the two ten-pixel orange
+  edges inside and outside it.
+
 - **Enemies and the player use different stat formulas.** `krinAddNewUnit`
   scales linearly with no rounding; the player's path rounds up over a
   level-scaled baseline. One formula for both is wrong in both directions.
