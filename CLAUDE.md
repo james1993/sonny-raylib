@@ -198,6 +198,12 @@ the hub, and the reticle's name sitting eighteen pixels right of its ring.
   what reads as the two halves coming apart. autoSize does not pull the sides
   in once wordWrap is on, so both blocks stay the width they were created at.
 
+- **A clip's scripts may be filed under its exported name.** The decompiler
+  writes them to DefineSprite_<id>_<EXPORTNAME>, so looking for
+  DefineSprite_801/ finds nothing while DefineSprite_801_KrinBuffShower/ has
+  the handler in it. Searching by id alone will tell you a clip has no code
+  when it does -- match the id with a trailing wildcard.
+
 - **Enemies and the player use different stat formulas.** `krinAddNewUnit`
   scales linearly with no rounding; the player's path rounds up over a
   level-scaled baseline. One formula for both is wrong in both directions.

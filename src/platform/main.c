@@ -134,7 +134,11 @@ int main(int argc, char **argv)
 
     if (want_screen) {
         if (strcmp(want_screen, "battle") == 0)
-            battle_screen_start(&game, game.campaign.progress_battle);
+            /* SONNY_BATTLE picks which fight, for looking at something the
+               opening one never shows. */
+            battle_screen_start(&game, getenv("SONNY_BATTLE")
+                                ? atoi(getenv("SONNY_BATTLE"))
+                                : game.campaign.progress_battle);
         else if (strcmp(want_screen, "talents") == 0) {
             screen_talents_open(&game);
             game.screen = SCREEN_TALENTS;

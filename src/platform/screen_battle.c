@@ -1263,15 +1263,12 @@ static void draw_buff_widget(Vector2 at, const char *key, int32_t turns,
                  at.y + (BUFF_COUNT_Y - 2.0f) * sy, size, RAYWHITE);
 }
 
-static void draw_unit_buffs(const Game *g, int32_t slot)
+/* Which of a unit's buffs are shown and in what order -- longest first, which
+   is how the original sorts the list before it hangs them on the bar. Both the
+   drawing and the hover test walk this, so they cannot disagree about which
+   widget is where. */
+static int32_t buff_order(const Unit *u, int32_t *order)
 {
-    const Unit *u = &g->battle.units[slot];
-    const StageBar *bar = stage_bar(slot);
-    if (!bar)
-        return;
-    /* Longest first, which is how the original sorts the list before it
-       hangs them on the bar. */
-    int32_t order[SONNY_MAX_BUFFS];
     int32_t count = 0;
     for (int32_t i = 0; i < SONNY_MAX_BUFFS; i++)
         if (u->BUFFARRAYK[i].CD != 0)
@@ -1284,22 +1281,79 @@ static void draw_unit_buffs(const Game *g, int32_t slot)
             order[j] = order[j - 1];
             order[j - 1] = swap;
         }
+    return count > BUFF_SHOWN ? BUFF_SHOWN : count;
+}
+
+/* Where the h'th widget sits on a unit's bar. The widget is attached inside
+   the bar's own clip, so the offset and the art alike come out at the bar's
+   scale, which is neither 1 nor square. */
+static Vector2 buff_widget_pos(const StageBar *bar, float way, int32_t h)
+{
+    return (Vector2){bar->x + (BUFF_OFFSET + BUFF_SPACING * h) * way
+                             * bar->scale,
+                     bar->y};
+}
+
+/* What the pointer has to be inside for the buff to name itself: the disc
+   under the icon, which is the piece the original hangs the hit test on. */
+static Rectangle buff_widget_rect(Vector2 at, float sx, float sy)
+{
+    const Texture2D *back = asset_texture(BUFF_BACKING, 1);
+    if (!back)
+        return (Rectangle){0, 0, 0, 0};
+    Vector2 off = asset_frame_offset(BUFF_BACKING, 1);
+    return placed_texture(back, at.x - 0.1f * sx, at.y, sx, sy, off.x, off.y);
+}
+
+static void draw_unit_buffs(const Game *g, int32_t slot)
+{
+    const Unit *u = &g->battle.units[slot];
+    const StageBar *bar = stage_bar(slot);
+    if (!bar)
+        return;
+    int32_t order[SONNY_MAX_BUFFS];
+    int32_t count = buff_order(u, order);
 
     float way = u->teamSide == 1 ? 1.0f : -1.0f;
-    for (int32_t h = 0; h < count && h < BUFF_SHOWN; h++) {
+    for (int32_t h = 0; h < count; h++) {
         const BuffDef *def = buff_find(SONNY_BUFFS, SONNY_BUFF_COUNT,
                                        u->BUFFARRAYK[order[h]].buffId);
         Color element = def ? color_from_rgb(element_color((Element)def->element))
                             : WHITE;
-        /* The widget is attached inside the bar's own clip, so the offset
-           and the art alike come out at the bar's scale, which is neither 1
-           nor square. */
-        Vector2 at = {bar->x + (BUFF_OFFSET + BUFF_SPACING * h) * way
-                             * bar->scale,
-                      bar->y};
+        Vector2 at = buff_widget_pos(bar, way, h);
         draw_buff_widget(at, u->BUFFARRAYK[order[h]].buffId,
                          u->BUFFARRAYK[order[h]].CD, element, bar->scale,
                          bar->scale_y);
+    }
+}
+
+/* The buff under the pointer names itself, the way the original's widget
+   does: its disc hit-tests the pointer every frame and hands the tooltip the
+   buff's name and the line it keeps at index 25. Every bar carries them, so
+   the enemy's are readable too. */
+static void buff_tooltip(Game *g, Vector2 p)
+{
+    for (int32_t slot = 1; slot < SONNY_SLOTS; slot++) {
+        const Unit *u = &g->battle.units[slot];
+        if (u->LIFEU == 0 || !u->active)
+            continue;
+        const StageBar *bar = stage_bar(slot);
+        if (!bar)
+            continue;
+        int32_t order[SONNY_MAX_BUFFS];
+        int32_t count = buff_order(u, order);
+        float way = u->teamSide == 1 ? 1.0f : -1.0f;
+        for (int32_t h = 0; h < count; h++) {
+            Vector2 at = buff_widget_pos(bar, way, h);
+            if (!CheckCollisionPointRec(
+                    p, buff_widget_rect(at, bar->scale, bar->scale_y)))
+                continue;
+            const BuffDef *def = buff_find(SONNY_BUFFS, SONNY_BUFF_COUNT,
+                                           u->BUFFARRAYK[order[h]].buffId);
+            if (def)
+                game_tooltip(g, def->name, def->tooltip);
+            return;
+        }
     }
 }
 
@@ -2087,6 +2141,7 @@ void battle_screen_update(Game *g, Vector2 mouse, int headless)
 
     g->pointer = mouse;
     g->hovered_unit = unit_at(g, mouse);
+    buff_tooltip(g, mouse);
     handle_input(g);
 
     /* A headless capture passes the turn so the fight keeps moving, unless
