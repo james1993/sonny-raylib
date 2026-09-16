@@ -61,6 +61,12 @@ typedef struct {
     const char *skin;
     const char *hair;
     const char *looks[7];
+    /* The colour the model was last told to cast in -- `colortobe` in the
+       original, set on the model before it is told to play. One layer of each
+       effect clip is recoloured to it outright; the other keeps its own
+       colour. An alpha of zero means nothing has been cast, and the layer is
+       left as it was drawn. */
+    Color       cast;
 } DollSpec;
 
 /* Draw one frame of the model. `frame` is 1-based into the model's timeline;

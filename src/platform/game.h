@@ -137,6 +137,11 @@ typedef struct {
     float     bolt_facing;           /* which way it is crossing */
     int32_t   bolt_tick;
 
+    /* colortobe: the colour each unit was last told to cast in. The original
+       sets it on the model before it plays, and the effect the model shows
+       over itself reads it as it loads, so it lasts until the next move. */
+    int32_t   cast_colour[SONNY_SLOTS];
+
     /* KrinTrail: the streak the projectile leaves behind it. The original
        attaches it once, on the bolt's first frame, at the point the bolt had
        reached by then and turned to face the same way; it is then stretched

@@ -210,6 +210,11 @@ static int melee_tick(Game *g)
         if (++g->melee_counter >= MELEE_SWING) {
             g->melee_state = 2;
             g->melee_counter = 0;
+            /* attack1 and attack2 are the two halves of one swing and sit
+               back to back on the model's timeline with nothing between
+               them, so the original's playhead simply runs on from 92 to 93.
+               Restarting the count here is how that reads from this side. */
+            g->melee_frame = 0;
         }
     } else if (g->melee_state == 2) {
         if (++g->melee_counter >= MELEE_FOLLOW) {
@@ -494,7 +499,9 @@ static const char *unit_animation(const Game *g, int32_t slot, int *loop)
             return "run";
         if (g->melee_dir == -1)
             return "runback";
-        return (*loop = 0, "attack1");
+        /* The second half of the swing, where the model shows the sweep in
+           the move's own colour over itself. */
+        return (*loop = 0, g->melee_state == 2 ? "attack2" : "attack1");
     }
 
     if (b->phase == PHASE_RESOLVE && g->has_last) {
@@ -544,6 +551,11 @@ static void draw_doll(const Game *g, int32_t slot)
     spec.hair = u->model_hair;
     for (int i = 0; i < 7; i++)
         spec.looks[i] = u->looks[i];
+    int32_t colour = g->cast_colour[slot];
+    spec.cast = (Color){(unsigned char)((colour >> 16) & 0xFF),
+                        (unsigned char)((colour >> 8) & 0xFF),
+                        (unsigned char)(colour & 0xFF),
+                        (unsigned char)(colour ? 255 : 0)};
 
     int loop = 1;
     const char *animation = unit_animation(g, slot, &loop);
@@ -1527,6 +1539,12 @@ static void present_move(Game *g, const MoveEvent *e)
     g->move_tick = 0;
     if (!a || e->moveID == 0)
         return;
+
+    /* The original sets colortobe on the caster's model before it tells it to
+       play, for the melee swing as much as for a cast, so the effect the model
+       shows over itself comes up in the move's own colour. */
+    if (e->caster > 0 && e->caster < SONNY_SLOTS)
+        g->cast_colour[e->caster] = a->colour;
 
     switch (a->delivery) {
     case DELIVER_MELEE:

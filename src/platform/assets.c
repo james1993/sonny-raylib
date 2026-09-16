@@ -291,6 +291,74 @@ static int draw_layer(const char *name, const float m[6], Vector2 origin,
     return 1;
 }
 
+/* Two SWF matrices, outer applied to inner: the model places the effect clip,
+   and the clip places each of its own layers inside that. */
+static void compose(const float outer[6], const float inner[6], float out[6])
+{
+    out[0] = outer[0] * inner[0] + outer[2] * inner[1];
+    out[1] = outer[1] * inner[0] + outer[3] * inner[1];
+    out[2] = outer[0] * inner[2] + outer[2] * inner[3];
+    out[3] = outer[1] * inner[2] + outer[3] * inner[3];
+    out[4] = outer[0] * inner[4] + outer[2] * inner[5] + outer[4];
+    out[5] = outer[1] * inner[4] + outer[3] * inner[5] + outer[5];
+}
+
+/* The effect the model plays over itself on this frame, drawn through the
+   unnamed slot the model keeps for it. The clip runs its own timeline
+   alongside the animation that started it, so its frame is how far into that
+   animation the model has got. */
+static int draw_cast(const DollSpec *spec, const DollPlacement *p,
+                     int32_t frame, Vector2 origin, float scale, int flip,
+                     Color tint)
+{
+    const CastEffect *fx = NULL;
+    for (int i = 0; i < SONNY_CAST_EFFECT_COUNT; i++)
+        if (SONNY_CAST_EFFECTS[i].character == p->character)
+            fx = &SONNY_CAST_EFFECTS[i];
+    if (!fx || fx->count <= 0)
+        return 0;
+
+    const AssetAnimation *anim = asset_animation(fx->animation);
+    int32_t index = anim ? frame - anim->start : 0;
+    if (index < 0)
+        index = 0;
+    if (index >= fx->count)
+        index = fx->loops ? index % fx->count : fx->count - 1;
+
+    const CastFrame *cf = &fx->frames[index];
+    const float outer[6] = {p->a, p->b, p->c, p->d, p->tx, p->ty};
+    int drawn = 0;
+    char name[32];
+    for (int32_t i = 0; i < cf->count; i++) {
+        const CastLayer *l = &cf->layers[i];
+        if (l->alpha <= 0.0f)
+            continue;
+        const float inner[6] = {l->a, l->b, l->c, l->d, l->tx, l->ty};
+        float m[6];
+        compose(outer, inner, m);
+        snprintf(name, sizeof(name), "#%d", l->character);
+        /* The recoloured layer is replaced outright, the way Color.setRGB
+           replaces rather than tints, so it goes through the whitened copy. */
+        Color c = tint;
+        const Texture2D *tex;
+        if (l->tinted && spec->cast.a) {
+            tex = asset_texture_recolored(name, 1);
+            c.r = spec->cast.r;
+            c.g = spec->cast.g;
+            c.b = spec->cast.b;
+        } else {
+            tex = asset_texture(name, 1);
+        }
+        if (!tex)
+            continue;
+        c.a = (unsigned char)(c.a * l->alpha);
+        draw_with_matrix(tex, m, origin, scale, flip,
+                         asset_frame_offset(name, 1), c);
+        drawn++;
+    }
+    return drawn;
+}
+
 int doll_draw(const DollSpec *spec, int32_t frame, Vector2 origin, float scale,
               int flip, Color tint)
 {
@@ -310,8 +378,13 @@ int doll_draw(const DollSpec *spec, int32_t frame, Vector2 origin, float scale,
     for (int32_t i = 0; i < f->count; i++) {
         const DollPlacement *p = &f->parts[i];
         const DollPart *part = doll_part(p->part);
-        if (!part)
+        if (!part) {
+            /* The model's one unnamed slot, which carries the move's effect
+               rather than any part of the body. */
+            if (p->character)
+                drawn += draw_cast(spec, p, frame, origin, scale, flip, tint);
             continue;   /* "shadower" and anything else not a dressed part */
+        }
 
         const float m[6] = {p->a, p->b, p->c, p->d, p->tx, p->ty};
 

@@ -42,6 +42,10 @@ typedef struct {
 typedef struct {
     const char *part;
     float       a, b, c, d, tx, ty;
+    /* What sits in the slot. Body parts are dressed from the character's own
+       equipment and ignore this; the model's one unnamed slot swaps whole
+       effect clips through it, and there this is the only way to tell which. */
+    int32_t     character;
 } DollPlacement;
 
 typedef struct {
@@ -56,6 +60,33 @@ typedef struct {
     int32_t     core;
     const char *art;
 } DollPart;
+
+/* One layer of an effect the model plays over itself, on one of that effect's
+   own frames. The model keeps a single slot for these and swaps the clip in
+   it: a sweep through the magic swing, the orb a caster charges, the crackle
+   of being held stunned. `tinted` marks the layer the game recolours to the
+   move's own colour with Color.setRGB; the other layer of each pair keeps the
+   colour it was drawn in. Matrices are SWF form, inside the effect clip. */
+typedef struct {
+    int32_t character;
+    float   a, b, c, d, tx, ty;
+    float   alpha;
+    int32_t tinted;
+} CastLayer;
+
+typedef struct {
+    const CastLayer *layers;
+    int32_t          count;
+} CastFrame;
+
+/* The effect belonging to one model animation, by that animation's name. */
+typedef struct {
+    const char      *animation;
+    int32_t          character;
+    const CastFrame *frames;
+    int32_t          count;
+    int32_t          loops;   /* 0 stops on its last frame, 1 runs round */
+} CastEffect;
 
 /* Where the battle screen stands each unit, in stage coordinates, straight
    out of the original's own display list. The right-hand team's containers
@@ -398,6 +429,11 @@ extern const DollFrame SONNY_DOLL_FRAMES[];
 extern const int SONNY_DOLL_FRAME_COUNT;
 extern const DollPart SONNY_DOLL_PARTS[];
 extern const int SONNY_DOLL_PART_COUNT;
+
+extern const CastEffect SONNY_CAST_EFFECTS[];
+extern const int SONNY_CAST_EFFECT_COUNT;
+/* The effect for an animation, or NULL where that animation plays none. */
+const CastEffect *cast_effect(const char *animation);
 
 extern const AssetEntry SONNY_ASSETS[];
 extern const int SONNY_ASSET_COUNT;

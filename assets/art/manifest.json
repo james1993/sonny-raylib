@@ -22472,6 +22472,72 @@
     ]
    ]
   },
+  "#929": {
+   "category": "effect",
+   "frames": [
+    "assets/art/effect/#929.png"
+   ],
+   "offsets": [
+    [
+     40.1,
+     69.0
+    ]
+   ]
+  },
+  "#930": {
+   "category": "effect",
+   "frames": [
+    "assets/art/effect/#930.png"
+   ],
+   "offsets": [
+    [
+     40.1,
+     69.0
+    ]
+   ]
+  },
+  "#934": {
+   "category": "effect",
+   "frames": [
+    "assets/art/effect/#934.png"
+   ],
+   "offsets": [
+    [
+     28.0,
+     27.8
+    ]
+   ]
+  },
+  "#935": {
+   "category": "effect",
+   "frames": [
+    "assets/art/effect/#935.png"
+   ],
+   "bounds": [
+    -28.0,
+    -27.8,
+    28.0,
+    27.8
+   ],
+   "offsets": [
+    [
+     28.0,
+     27.8
+    ]
+   ]
+  },
+  "#938": {
+   "category": "effect",
+   "frames": [
+    "assets/art/effect/#938.png"
+   ],
+   "offsets": [
+    [
+     3.0,
+     3.05
+    ]
+   ]
+  },
   "#1639": {
    "category": "effect",
    "frames": [

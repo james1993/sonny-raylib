@@ -100,6 +100,24 @@ the hub, and the reticle's name sitting eighteen pixels right of its ring.
   empty. Two of BATTLEBLUR's eight steps therefore apply no blur at all. It
   is a quirk, so it is reproduced.
 
+- **The model carries one slot that is not part of the body.** Depth 33 of
+  MODEL1 holds whichever effect belongs to what is being done: the sweep
+  through the magic swing (932), the orb a caster charges (936), the crackle
+  of being held stunned (939). swf_doll.py keys it "@33" because it has no
+  instance name, and it is the only slot whose character has to be read out of
+  the display list rather than from the wearer's equipment.
+- **attack1 runs straight into attack2.** There is no stop at the model's
+  frame 92, so a swing is thirty frames, not fifteen: fifteen of attack1 and
+  then fifteen of attack2, which is where the sweep lives. krinMeleeAttackCD
+  and krinMeleeAttackEndCD are both 15 for exactly that reason. Holding the
+  animation on attack1 means the sweep never shows at all.
+- **setRGB beats the colour transform under it.** The cast orb is placed with
+  a hard green cxform (rgb multiplied by nothing, 255 of green added), which
+  is why it exports green -- but the layer's own onClipEvent(load) then calls
+  setRGB, which replaces the colour outright. The placement's colour is dead;
+  only its alpha matters. Each effect is a pair of layers and only one of them
+  carries that handler, so the other keeps the colour it was drawn in.
+
 - **Enemies and the player use different stat formulas.** `krinAddNewUnit`
   scales linearly with no rounding; the player's path rounds up over a
   level-scaled baseline. One formula for both is wrong in both directions.

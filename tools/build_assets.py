@@ -259,6 +259,12 @@ def collect_names(data_dir):
     # bright yellow to a dim orange and back over its forty-eight frames. It
     # is thirty pixels square, so keeping all of them costs almost nothing.
     want['effect'].add('#%d' % TURN_MARK)
+    # The layers of the three effect clips the model plays over itself: the
+    # sweep through the magic swing (929 over 930), the orb a caster charges
+    # (934 under 935), and the crackle of being held stunned (938). The clips
+    # that hold them are kept apart because the game recolours one layer of
+    # each pair and not the other; see tools/extract_cast.py.
+    want['effect'].update(['#929', '#930', '#934', '#935', '#938'])
     # KrinTrail's streak: one small shape, clear at the tail and solid at
     # the head, which the bolt code drops behind a projectile and stretches.
     # The clip around it (146) holds nothing else, so the shape is enough.

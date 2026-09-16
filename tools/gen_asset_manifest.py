@@ -54,6 +54,10 @@ typedef struct {
 typedef struct {
     const char *part;
     float       a, b, c, d, tx, ty;
+    /* What sits in the slot. Body parts are dressed from the character's own
+       equipment and ignore this; the model's one unnamed slot swaps whole
+       effect clips through it, and there this is the only way to tell which. */
+    int32_t     character;
 } DollPlacement;
 
 typedef struct {
@@ -68,6 +72,33 @@ typedef struct {
     int32_t     core;
     const char *art;
 } DollPart;
+
+/* One layer of an effect the model plays over itself, on one of that effect's
+   own frames. The model keeps a single slot for these and swaps the clip in
+   it: a sweep through the magic swing, the orb a caster charges, the crackle
+   of being held stunned. `tinted` marks the layer the game recolours to the
+   move's own colour with Color.setRGB; the other layer of each pair keeps the
+   colour it was drawn in. Matrices are SWF form, inside the effect clip. */
+typedef struct {
+    int32_t character;
+    float   a, b, c, d, tx, ty;
+    float   alpha;
+    int32_t tinted;
+} CastLayer;
+
+typedef struct {
+    const CastLayer *layers;
+    int32_t          count;
+} CastFrame;
+
+/* The effect belonging to one model animation, by that animation's name. */
+typedef struct {
+    const char      *animation;
+    int32_t          character;
+    const CastFrame *frames;
+    int32_t          count;
+    int32_t          loops;   /* 0 stops on its last frame, 1 runs round */
+} CastEffect;
 
 /* Where the battle screen stands each unit, in stage coordinates, straight
    out of the original's own display list. The right-hand team's containers
@@ -411,6 +442,11 @@ extern const int SONNY_DOLL_FRAME_COUNT;
 extern const DollPart SONNY_DOLL_PARTS[];
 extern const int SONNY_DOLL_PART_COUNT;
 
+extern const CastEffect SONNY_CAST_EFFECTS[];
+extern const int SONNY_CAST_EFFECT_COUNT;
+/* The effect for an animation, or NULL where that animation plays none. */
+const CastEffect *cast_effect(const char *animation);
+
 extern const AssetEntry SONNY_ASSETS[];
 extern const int SONNY_ASSET_COUNT;
 extern const AssetAnimation SONNY_ANIMATIONS[];
@@ -450,6 +486,7 @@ def main():
     ap.add_argument('--doll', default='data/extracted/doll_frames.json')
     ap.add_argument('--doll-parts', default='data/extracted/doll.json')
     ap.add_argument('--stage', default='data/extracted/stage.json')
+    ap.add_argument('--cast', default='data/extracted/cast_frames.json')
     args = ap.parse_args()
 
     with open(args.input, encoding='utf-8') as fh:
@@ -516,10 +553,10 @@ def main():
         entries = []
         for name, info in sorted(frame.items(), key=lambda kv: kv[1]['depth']):
             m = info['matrix']
-            entries.append('{ %s, %s, %s, %s, %s, %s, %s }'
+            entries.append('{ %s, %s, %s, %s, %s, %s, %s, %d }'
                            % (c_string(name), c_float(m[0]), c_float(m[1]),
                               c_float(m[2]), c_float(m[3]), c_float(m[4]),
-                              c_float(m[5])))
+                              c_float(m[5]), info.get('character') or 0))
         lines.append('static const DollPlacement DOLL_%d[] = { %s };'
                      % (index, ', '.join(entries)))
     lines.append('')
@@ -1034,6 +1071,56 @@ const DollPart *doll_part(const char *name)
     for (int i = 0; i < SONNY_DOLL_PART_COUNT; i++)
         if (strcmp(SONNY_DOLL_PARTS[i].part, name) == 0)
             return &SONNY_DOLL_PARTS[i];
+    return NULL;
+}''')
+
+    cast = {}
+    if os.path.exists(args.cast):
+        with open(args.cast, encoding='utf-8') as fh:
+            cast = json.load(fh)
+    lines.append('')
+    for animation in sorted(cast):
+        for index, frame in enumerate(cast[animation]['frames']):
+            if not frame:
+                continue
+            entries = []
+            for layer in frame:
+                m = layer['matrix']
+                entries.append('{ %d, %s, %s, %s, %s, %s, %s, %s, %d }'
+                               % (layer['character'], c_float(m[0]),
+                                  c_float(m[1]), c_float(m[2]), c_float(m[3]),
+                                  c_float(m[4]), c_float(m[5]),
+                                  c_float(layer['alpha']), layer['tinted']))
+            lines.append('static const CastLayer CAST_%s_%d[] = { %s };'
+                         % (animation.upper(), index, ', '.join(entries)))
+    for animation in sorted(cast):
+        lines.append('static const CastFrame CAST_%s[] = {'
+                     % animation.upper())
+        for index, frame in enumerate(cast[animation]['frames']):
+            if frame:
+                lines.append('    { CAST_%s_%d, %d },'
+                             % (animation.upper(), index, len(frame)))
+            else:
+                lines.append('    { NULL, 0 },')
+        lines.append('};')
+    lines.append('const CastEffect SONNY_CAST_EFFECTS[] = {')
+    for animation in sorted(cast):
+        lines.append('    { %s, %d, CAST_%s, %d, %d },'
+                     % (c_string(animation), cast[animation]['character'],
+                        animation.upper(), len(cast[animation]['frames']),
+                        cast[animation].get('loops', 0)))
+    lines.append('};')
+    lines.append('const int SONNY_CAST_EFFECT_COUNT = '
+                 '(int)(sizeof(SONNY_CAST_EFFECTS) '
+                 '/ sizeof(SONNY_CAST_EFFECTS[0]));')
+    lines.append('''
+const CastEffect *cast_effect(const char *animation)
+{
+    if (!animation)
+        return NULL;
+    for (int i = 0; i < SONNY_CAST_EFFECT_COUNT; i++)
+        if (strcmp(SONNY_CAST_EFFECTS[i].animation, animation) == 0)
+            return &SONNY_CAST_EFFECTS[i];
     return NULL;
 }
 
