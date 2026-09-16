@@ -215,6 +215,14 @@ the hub, and the reticle's name sitting eighteen pixels right of its ring.
   the animation has to be chosen from its own clock rather than from `active`,
   or the model drops dead on the frame the move resolved regardless.
 
+- **The music is never stopped at the end of a fight.** Only four places in
+  the whole file ask for a track: the hub frame (roaming), the frame that
+  loads a battle (fight), the opening cutscene, and one menu button. Winning
+  goes to the hub frame, so the roaming track starts there and the results
+  panel is drawn over it -- which is why there is music behind the rewards.
+  Losing goes to resetHere, which asks for nothing, so the fight's own track
+  simply carries on.
+
 - **Enemies and the player use different stat formulas.** `krinAddNewUnit`
   scales linearly with no rounding; the player's path rounds up over a
   level-scaled baseline. One formula for both is wrong in both directions.
