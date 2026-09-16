@@ -677,14 +677,16 @@ static void draw_bar_part(const BarPart *part, const StageBar *bar, int mirror,
 }
 
 /* One of the bar's text fields, laid out the way the SWF lays it out: its box
-   in the bar's own coordinates, its own alignment, its own colour. */
-static void draw_bar_field(const BarField *f, const StageBar *bar, int mirror,
+   in the bar's own coordinates, its own alignment, its own colour. The
+   right-hand team needs no mirroring here: the original does not flip the
+   text with the widget -- it lays the fields out a second time, already
+   mirrored, which is the "right" layout, so flipping it again would undo it. */
+static void draw_bar_field(const BarField *f, const StageBar *bar,
                            const char *text)
 {
     if (!f || !text || !text[0])
         return;
-    float x0 = mirror ? bar->x - (f->x + f->width) * bar->scale
-                      : bar->x + f->x * bar->scale;
+    float x0 = bar->x + f->x * bar->scale;
     float w = f->width * bar->scale;
     float size = f->size * bar->scale;
     float tw = f->device ? ui_sans_text_width(text, size)
@@ -763,14 +765,14 @@ static void draw_unit_bar(const Game *g, int32_t slot)
         }
     }
 
-    draw_bar_field(bar_field(side, "name"), bar, mirror, u->name);
-    draw_bar_field(bar_field(side, "lifeNow"), bar, mirror,
+    draw_bar_field(bar_field(side, "name"), bar, u->name);
+    draw_bar_field(bar_field(side, "lifeNow"), bar,
                    TextFormat("%d", life_now));
-    draw_bar_field(bar_field(side, "lifeMax"), bar, mirror,
+    draw_bar_field(bar_field(side, "lifeMax"), bar,
                    TextFormat("%d", u->LIFEU));
-    draw_bar_field(bar_field(side, "focusNow"), bar, mirror,
+    draw_bar_field(bar_field(side, "focusNow"), bar,
                    TextFormat("%d", focus_now));
-    draw_bar_field(bar_field(side, "focusMax"), bar, mirror,
+    draw_bar_field(bar_field(side, "focusMax"), bar,
                    TextFormat("%d", u->FOCUSU));
 }
 

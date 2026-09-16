@@ -76,6 +76,15 @@ the hub, and the reticle's name sitting eighteen pixels right of its ring.
   into the box the SWF declares squeezes 61 pixels into 60 -- less than a
   pixel, and a pixel off the corner of every icon on the screen. Draw at the
   image's own size and let the padding fall outside.
+- **The right-hand bar is mirrored twice if you are not careful.** The battle
+  bar widget is mirrored for slots 2, 4 and 6 -- the container carries a
+  negative horizontal scale, so the art has to be flipped about the bar's
+  centre. Its *text* must not be: the original does not flip the fields with
+  the widget, it lays them out a second time already mirrored, which is what
+  the "right" rows of SONNY_BAR_FIELDS are (negative x, alignments swapped).
+  Flipping those a second time undoes them, and the enemy's name and numbers
+  land in the middle of the bar instead of at its two ends.
+
 - **Enemies and the player use different stat formulas.** `krinAddNewUnit`
   scales linearly with no rounding; the player's path rounds up over a
   level-scaled baseline. One formula for both is wrong in both directions.
