@@ -177,6 +177,27 @@ the hub, and the reticle's name sitting eighteen pixels right of its ring.
   reliable place to notice is the moment a unit stops being active, which
   catches all three.
 
+- **The decompiler plays nested clips; it does not obey their stops.** When it
+  renders a sprite frame by frame it steps the clips inside it too, ignoring
+  any stop they carry -- so a holder longer than the clip inside it comes back
+  with the inner clip wrapped round to its start. moveSelectBoomer is exactly
+  that: 1610 is an empty twenty-five frame holder that places 1609 on its
+  frame two, and 1609 is twenty-one frames with a stop on its last. The last
+  three frames handed back are the ring setting off again just as it finishes.
+  The clip's real last frame is the holder's twenty-second. A quick way to
+  spot the others: an exported animation whose final frames are byte-identical
+  to its opening ones.
+- **A nested clip steps once per stage frame.** The file runs at thirty and so
+  does the stage, so the model's own timeline is one frame per frame. Playing
+  it off half the clock ran every idle at half speed.
+- **The tooltip's gap belongs there.** The original leaves three pixels of
+  screen between the title block and the body: the title field is eighteen
+  pixels tall -- a sixteen-pixel line plus the gutter a Flash field keeps
+  inside its border -- and the body is placed at twenty-one. Measuring the
+  block as the bare line makes the gap five pixels instead of three, which is
+  what reads as the two halves coming apart. autoSize does not pull the sides
+  in once wordWrap is on, so both blocks stay the width they were created at.
+
 - **Enemies and the player use different stat formulas.** `krinAddNewUnit`
   scales linearly with no rounding; the player's path rounds up over a
   level-scaled baseline. One formula for both is wrong in both directions.

@@ -887,6 +887,12 @@ float ui_sans_bold_width(const char *text, float size)
 #define TOOLTIP_TITLE_Y  0.0f
 #define TOOLTIP_BODY_Y   21.0f
 #define TOOLTIP_INDENT   3.0f
+/* The padding a Flash text field keeps inside its border. It is what makes
+   the title block eighteen pixels tall against its sixteen-pixel line, and
+   the original leaves three pixels of screen between the title and the body
+   below it -- the gap belongs there, it was just twice the size it should be
+   while the block was measured as the bare line. */
+#define TOOLTIP_GUTTER   2.0f
 #define TOOLTIP_FLIP_X   570.0f   /* past this the box goes left of the pointer */
 #define TOOLTIP_NEAR_X   13.0f
 #define TOOLTIP_FAR_X    (-183.0f)
@@ -1039,17 +1045,29 @@ static float tip_block(const char *text, float x, float y, float width,
             line[count] = 0;
             if (pass == 1) {
                 if (bold)
-                    ui_sans_bold_text(line, x + TOOLTIP_INDENT, at,
+                    ui_sans_bold_text(line, x + TOOLTIP_INDENT,
+                                      at + TOOLTIP_GUTTER / 2.0f,
                                       TOOLTIP_SIZE, ink);
                 else
-                    ui_sans_text(line, x + TOOLTIP_INDENT, at, TOOLTIP_SIZE,
+                    ui_sans_text(line, x + TOOLTIP_INDENT,
+                                 at + TOOLTIP_GUTTER / 2.0f, TOOLTIP_SIZE,
                                  ink);
             }
             at += TOOLTIP_SIZE + 4.0f;
             start = text[take] ? take + 1 : take;
         }
-        height = at - y;
+        /* A Flash text field keeps a gutter inside its border, which is what
+           makes a single line of twelve-point _sans twenty-one pixels tall
+           against a sixteen-pixel line -- and twenty-one is exactly where the
+           clip puts the body, so the two backings meet. Leaving the gutter
+           off left a gap between the title and the body with the screen
+           showing through it. */
+        height = at - y + TOOLTIP_GUTTER;
         if (pass == 0 && backing.a) {
+            /* The width is the one the field was created at. autoSize only
+               grows a field downwards once wordWrap is on -- it does not pull
+               the sides in -- so both blocks stay as wide as each other, which
+               is how the original looks. */
             DrawRectangleRec((Rectangle){x, y, width, height}, backing);
             DrawRectangleLinesEx((Rectangle){x, y, width, height}, 1.0f,
                                  (Color){0, 0, 0, 255});
@@ -1091,10 +1109,12 @@ void game_draw_tooltip(const Game *g, Vector2 mouse)
         /* Anything else the tooltip was given goes under the body on its own
            backing: on a node of the talent tree, what the next tier of the
            move would do and the level it wants. */
+        /* The clip chains each extra field two pixels under the one above
+           it: previousOne._y + previousOne._height + 2. */
         for (int32_t i = 0; i < g->tip_line_count; i++)
             at += tip_block(g->tip_lines[i], x, at, TOOLTIP_WIDTH,
                             (Color){0, 0, 0, 230},
-                            (Color){255, 255, 255, 255}, 0);
+                            (Color){255, 255, 255, 255}, 0) + 2.0f;
         return;
     }
 

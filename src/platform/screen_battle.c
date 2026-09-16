@@ -547,7 +547,10 @@ static const char *unit_animation(const Game *g, int32_t slot, int *loop,
     const Unit *u = &b->units[slot];
 
     *loop = 1;
-    *tick = g->anim_tick / 2;
+    /* The model is a nested clip, so it steps once per stage frame -- the
+       file runs at thirty and so does the stage, which makes it one for one.
+       Halving it ran every idle at half speed. */
+    *tick = g->anim_tick;
     if (!u->active) {
         *loop = 0;
         *tick = g->death_tick[slot] > 0 ? g->death_tick[slot] - 1 : 0;
@@ -570,7 +573,7 @@ static const char *unit_animation(const Game *g, int32_t slot, int *loop,
             const AssetAnimation *back = asset_animation("runback");
             if (back && g->melee_frame >= back->length) {
                 *loop = 1;
-                *tick = g->anim_tick / 2;
+                *tick = g->anim_tick;
                 return "stand";
             }
             return "runback";
@@ -984,6 +987,14 @@ static void draw_unit_bar(const Game *g, int32_t slot)
    frame and is played through once, so this runs its remaining frames and
    then leaves nothing behind. */
 #define BOOMER_CLIP "#1610"
+/* The clip ships twenty-five frames but only twenty-two of them are real.
+   1610 is an empty holder that places 1609 on its frame two and does nothing
+   else; 1609 is twenty-one frames with a stop on its last, so the original
+   runs out of animation at the holder's frame twenty-two and rests there. The
+   decompiler renders nested clips by playing them, stop and all ignored, so
+   the last three frames it hands back are 1609 wrapped round to its start --
+   which is the ring appearing to set off again just as it finishes. */
+#define BOOMER_LAST 22
 
 static void draw_move_boomer(const Game *g)
 {
@@ -991,7 +1002,7 @@ static void draw_move_boomer(const Game *g)
         return;
     int32_t frames = asset_frame_count(BOOMER_CLIP);
     int32_t frame = g->boomer_tick + 2;      /* frame one is the empty rest */
-    if (frames <= 0 || frame > frames)
+    if (frames <= 0 || frame > BOOMER_LAST || frame > frames)
         return;
     const StageChrome *at = stage_chrome(BATTLE_SCREEN_NAME,
                                          "moveSelectBoomer");

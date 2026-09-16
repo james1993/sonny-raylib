@@ -130,6 +130,7 @@ int main(int argc, char **argv)
               ? atoi(getenv("SONNY_SHOT_EVERY")) : 0;
     const char *want_screen = getenv("SONNY_SCREEN");
     int frames = 0;
+    int was_focused = 1;
 
     if (want_screen) {
         if (strcmp(want_screen, "battle") == 0)
@@ -179,6 +180,20 @@ int main(int argc, char **argv)
             || ((IsKeyDown(KEY_LEFT_ALT) || IsKeyDown(KEY_RIGHT_ALT))
                 && IsKeyPressed(KEY_ENTER)))
             ToggleBorderlessWindowed();
+
+        /* A window that is not in front may have its buffer swaps throttled
+           or stopped altogether by the compositor, and the music is refilled
+           from this loop -- so waiting on the vertical blank is what makes it
+           stutter. Out of focus the loop paces itself on the frame timer
+           instead, and takes the blank back when the window returns. */
+        int focused = IsWindowFocused();
+        if (focused != was_focused) {
+            was_focused = focused;
+            if (focused)
+                SetWindowState(FLAG_VSYNC_HINT);
+            else
+                ClearWindowState(FLAG_VSYNC_HINT);
+        }
 
         Vector2 mouse = stage_mouse();
         if (parked) {

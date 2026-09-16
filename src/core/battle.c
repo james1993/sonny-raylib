@@ -602,12 +602,19 @@ int battle_resolve_step(Battle *b, MoveEvent *event)
 
     b->PlayerToMove++;
     b->Cycler--;
-    battle_check_win(b);
     return 1;
 }
 
 void battle_end_phase(Battle *b)
 {
+    /* The original decides the fight here and nowhere else: the whole
+       winCon/loseCon block sits inside `if (Cycler == 0)`, so it only runs
+       once the side that was moving has finished moving. Deciding it the
+       instant the last unit falls ends the fight on the killing blow --
+       before the pause that follows a move, and before whoever went down has
+       had a frame to fall over. */
+    battle_check_win(b);
+
     for (int32_t i = 0; i < SONNY_SLOTS; i++)
         b->healedThisTurn[i] = 0;
 

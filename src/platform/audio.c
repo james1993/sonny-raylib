@@ -29,10 +29,21 @@ static char music_name[64];
 static Music narration;
 static int32_t narration_playing;
 
+/* Frames per audio buffer. raylib keeps two of these per stream, so this is
+   about three quarters of a second of slack at 44.1 kHz. */
+#define MUSIC_BUFFER_FRAMES 16384
+
 void audio_init(void)
 {
     if (ready)
         return;
+    /* The music is refilled from the frame loop, a buffer at a time, so
+       however long the loop is away is how long the stream has to live on
+       what it already holds. raylib's default buffer is a fifth of a second
+       at most, which a backgrounded window can easily overrun; this gives it
+       most of a second instead. It has to be set before the device is
+       opened, because that is when the size is taken. */
+    SetAudioStreamBufferSizeDefault(MUSIC_BUFFER_FRAMES);
     InitAudioDevice();
     ready = IsAudioDeviceReady();
 }
