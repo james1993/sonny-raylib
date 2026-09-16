@@ -149,6 +149,34 @@ the hub, and the reticle's name sitting eighteen pixels right of its ring.
   saturates and leaves a flat white cut-out, and the two ten-pixel orange
   edges inside and outside it.
 
+- **Each model has a playhead of its own.** Two of the things it plays are
+  started by something landing on it rather than by the move being made: the
+  recoil, and dying. Clocking those off the move's counter runs them from
+  wherever that counter had reached -- and after a melee attacker has walked
+  sixty frames, the seventeen-frame recoil is already over before the blow
+  lands, so nothing ever flinches. Each animation has to say which counter it
+  is played from.
+- **Only run and stand are loops.** The model's frame scripts say so: frame 45
+  goes back to "stand", 77 is a bare stop, 128 and 276 run on into standing,
+  243 goes back to "stun2", and 335 removes the model outright. So runback
+  plays once and then the character stands there while it finishes sliding
+  home; looping it plays the landing two or three times over.
+- **A slot that does not act costs one frame, not twenty-five.** The pause
+  between moves is AttackEndCounterLimit, and the original only ever sets
+  AttackEndCounter when a move actually fires. A slot that passes, or whose
+  caster is stunned or down, or whose target is already dead, is stepped over
+  in the same frame. Charging the full pause for those stacks up: with three
+  such slots ahead of the player, most of a second of nothing sits between
+  choosing a move and anything moving.
+- **A fight does not end on the killing blow.** The win is only checked once
+  the whole round has run, and then blacker5 plays from its frame 31 to its
+  85 over the battlefield -- fifty-four frames -- before the screen changes.
+  That is the time the death animation plays in.
+- **A unit can die without anything reporting it.** buffTicker plays "dead"
+  itself when a tick takes someone down, as do the two damage branches. The
+  reliable place to notice is the moment a unit stops being active, which
+  catches all three.
+
 - **Enemies and the player use different stat formulas.** `krinAddNewUnit`
   scales linearly with no rounding; the player's path rounds up over a
   level-scaled baseline. One formula for both is wrong in both directions.

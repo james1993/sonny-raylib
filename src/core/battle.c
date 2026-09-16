@@ -556,6 +556,8 @@ int battle_resolve_step(Battle *b, MoveEvent *event)
         event->missed = 1;
     }
 
+    event->fired = usable;
+
     if (usable) {
         pay_costs(caster, a);
 

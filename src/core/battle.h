@@ -98,6 +98,12 @@ typedef struct {
     int32_t  amount;        /* damage dealt, health healed, or focus gained */
     int32_t  absorbed;      /* by a shield */
     int32_t  missed;        /* the move could not be paid for or had no target */
+    /* Whether the move actually happened. A slot that passes, or whose caster
+       is stunned or dead, or whose target is already down, produces an event
+       that changes nothing -- and the original moves straight on to the next
+       slot in the same frame rather than holding the fight open for it. Only
+       a move that fires is followed by the pause between moves. */
+    int32_t  fired;
     int32_t  target_died;
 } MoveEvent;
 

@@ -137,6 +137,22 @@ typedef struct {
     float     bolt_facing;           /* which way it is crossing */
     int32_t   bolt_tick;
 
+    /* Each model has a playhead of its own, and two of the things it plays
+       are started by something landing on it rather than by the move it
+       belongs to: the recoil, and dying. Clocking those off the move's own
+       counter runs them from wherever that counter had got to -- after a
+       melee attacker has walked sixty frames the seventeen-frame recoil is
+       already over before the blow lands, which is why nothing flinched. */
+    /* blacker5: the fade the original runs over the battlefield once the
+       fight is decided, before it goes to the victory or defeat screen. It
+       sits on its frame 31 and plays from there to 85, so the fight stays on
+       screen for fifty-four frames -- which is what gives whoever went down
+       time to fall over. */
+    int32_t   over_fade;
+
+    int32_t   hit_tick[SONNY_SLOTS];     /* 1..17, 0 for not recoiling */
+    int32_t   death_tick[SONNY_SLOTS];   /* 1..59, then the model is gone */
+
     /* BATTLEFLASH: the white-and-orange pulse over whoever was just hit, or
        the white-and-green one over whoever was just healed. The clip runs
        fifteen frames from its "hit" label, with the filters on for two and

@@ -366,6 +366,20 @@ static int flash_lit(const Game *g, int32_t slot)
 #define TRAIL_OUT    24        /* and fading from here */
 #define TRAIL_PLACED_X 5.0f    /* where the clip puts the shape */
 
+/* blacker5, from its resting frame 31 to its last at 85. The alpha on each
+   of those frames is the clip's own -- an eased tween, not a straight ramp,
+   reaching black four frames before the end and holding there. */
+#define OVER_FADE_FRAMES 54
+static const float OVER_FADE_ALPHA[OVER_FADE_FRAMES] = {
+    0.000000f, 0.039062f, 0.070312f, 0.109375f, 0.148438f, 0.179688f, 0.218750f, 0.250000f,
+    0.289062f, 0.320312f, 0.351562f, 0.378906f, 0.410156f, 0.441406f, 0.460938f, 0.488281f,
+    0.519531f, 0.550781f, 0.570312f, 0.601562f, 0.621094f, 0.640625f, 0.671875f, 0.691406f,
+    0.710938f, 0.730469f, 0.750000f, 0.769531f, 0.789062f, 0.800781f, 0.820312f, 0.839844f,
+    0.851562f, 0.871094f, 0.878906f, 0.890625f, 0.910156f, 0.921875f, 0.929688f, 0.941406f,
+    0.949219f, 0.960938f, 0.960938f, 0.968750f, 0.980469f, 0.980469f, 0.988281f, 0.988281f,
+    0.988281f, 1.000000f, 1.000000f, 1.000000f, 1.000000f, 1.000000f,
+};
+
 /* The colour is already on the game from bolt_start, which is where the
    move that threw this is still to hand. */
 static void trail_start(Game *g)
@@ -518,46 +532,70 @@ static void draw_bolt(const Game *g)
     DrawTexturePro(*tex, src, dst, off, g->bolt_angle, tint);
 }
 
-/* Which animation a unit is playing, from its state and what is resolving. */
-static const char *unit_animation(const Game *g, int32_t slot, int *loop)
+/* How long the model's one-shot states run, from its own frame labels. */
+#define HIT_FRAMES   17      /* 260..276, then back to standing */
+#define DEATH_FRAMES 59      /* 277..335, and at 335 the model removes itself */
+
+/* Which animation a unit is playing, and off which counter. The model has a
+   playhead of its own, so an animation started by something landing on the
+   unit is clocked from that moment, not from whatever the move's counter had
+   reached. `tick` comes back as the frame within the animation. */
+static const char *unit_animation(const Game *g, int32_t slot, int *loop,
+                                  int32_t *tick)
 {
     const Battle *b = &g->battle;
     const Unit *u = &b->units[slot];
 
     *loop = 1;
-    if (!u->active)
-        return (*loop = 0, "dead");
+    *tick = g->anim_tick / 2;
+    if (!u->active) {
+        *loop = 0;
+        *tick = g->death_tick[slot] > 0 ? g->death_tick[slot] - 1 : 0;
+        return "dead";
+    }
     if (u->STUN > 0)
         return "stun";
 
     /* A melee attacker is on its feet: out to the target, the swing, then
-       home again. */
+       home again. None of the four loops -- the model stops at the end of
+       run, and runs on into standing at the end of runback -- so a walk
+       longer than the cycle holds its last frame or stands, rather than
+       playing the cycle again. */
     if (g->melee_slot == slot) {
+        *loop = 0;
+        *tick = g->melee_frame;
         if (g->melee_dir == 1)
             return "run";
-        if (g->melee_dir == -1)
+        if (g->melee_dir == -1) {
+            const AssetAnimation *back = asset_animation("runback");
+            if (back && g->melee_frame >= back->length) {
+                *loop = 1;
+                *tick = g->anim_tick / 2;
+                return "stand";
+            }
             return "runback";
+        }
         /* The second half of the swing, where the model shows the sweep in
            the move's own colour over itself. */
-        return (*loop = 0, g->melee_state == 2 ? "attack2" : "attack1");
+        return g->melee_state == 2 ? "attack2" : "attack1";
+    }
+
+    /* The recoil belongs to the moment the blow landed, and is clocked from
+       it: seventeen frames, then standing again. */
+    if (g->hit_tick[slot] > 0) {
+        *loop = 0;
+        *tick = g->hit_tick[slot] - 1;
+        return "hit";
     }
 
     if (b->phase == PHASE_RESOLVE && g->has_last) {
         if (g->last.caster == slot && g->last.moveID != 0) {
             *loop = 0;
+            *tick = g->move_tick;
             const AbilityDef *a = ability_by_id(g->last.moveID);
             if (a && a->delivery == DELIVER_MELEE)
                 return "attack1";
             return "cast";
-        }
-        /* The recoil belongs to the moment the blow lands, not to the
-           moment the numbers were worked out: a melee attacker is still
-           crossing the floor until then, and flinching early made the whole
-           exchange look like it had happened backwards. */
-        if (!g->move_pending && g->last.target == slot && g->last.amount > 0
-            && g->last.kind == KIND_FULL_DAMAGE) {
-            *loop = 0;
-            return "hit";
         }
     }
     return "stand";
@@ -581,6 +619,11 @@ static void draw_doll(const Game *g, int32_t slot)
     const Unit *u = &g->battle.units[slot];
     if (u->LIFEU == 0)
         return;
+    /* The model takes itself off the screen at the end of the death
+       animation -- removeMovieClip on its last frame -- so a unit that has
+       finished dying is not there at all. */
+    if (!u->active && g->death_tick[slot] > DEATH_FRAMES)
+        return;
 
     DollSpec spec;
     memset(&spec, 0, sizeof(spec));
@@ -596,13 +639,8 @@ static void draw_doll(const Game *g, int32_t slot)
                         (unsigned char)(colour ? 255 : 0)};
 
     int loop = 1;
-    const char *animation = unit_animation(g, slot, &loop);
-    /* An animation that runs once is clocked from the move it belongs to; the
-       standing loop just keeps going. */
-    /* A walking attacker is played off its own counter, which restarts at
-       each leg -- out, swing, home -- rather than off the free-running one. */
-    int32_t tick = g->melee_slot == slot ? g->melee_frame
-                 : loop ? g->anim_tick / 2 : g->move_tick;
+    int32_t tick = 0;
+    const char *animation = unit_animation(g, slot, &loop, &tick);
     int32_t frame = doll_animation_frame(animation, tick, loop);
 
     /* The right-hand team's containers are mirrored in the original. */
@@ -1553,6 +1591,17 @@ static void draw_battle(Game *g)
     draw_ring(g, g->pointer);
     draw_numbers(g);
     draw_speech(g);
+
+    /* blacker5 sits over the whole stage at the top of the display list, so
+       it covers the panels as well as the battlefield. */
+    if (g->over_fade > 0) {
+        int32_t at = g->over_fade - 1;
+        if (at >= OVER_FADE_FRAMES)
+            at = OVER_FADE_FRAMES - 1;
+        DrawRectangle(0, 0, STAGE_W, STAGE_H,
+                      (Color){0, 0, 0,
+                              (unsigned char)(OVER_FADE_ALPHA[at] * 255.0f)});
+    }
 }
 
 /* ------------------------------------------------------------------- input */
@@ -1645,6 +1694,15 @@ static void present(Game *g, const MoveEvent *e)
         flash_start(g, e->target, 1);
     else if (e->kind == KIND_FULL_DAMAGE && e->amount > 0)
         flash_start(g, e->target, 0);
+
+    /* And the recoil, from the same branch: the original tells the target's
+       model to play "hit" unless it is being held stunned. Dying is picked up
+       elsewhere -- a unit can go down to a buff tick as well as to a blow,
+       and the original starts the death animation at each of those places. */
+    if (e->target > 0 && e->target < SONNY_SLOTS && !e->target_died
+        && e->kind == KIND_FULL_DAMAGE && e->amount > 0
+        && b->units[e->target].STUN == 0)
+        g->hit_tick[e->target] = 1;
 
     /* The number for what just happened, in the ability's own element. */
     uint32_t rgb = element_color((Element)a->coefs.element);
@@ -1876,16 +1934,27 @@ static void advance(Game *g)
         if (g->move_pending) {
             g->move_pending = 0;
             present(g, &g->last);
-            g->resolve_timer = RESOLVE_FRAMES;
+            /* AttackEndCounterLimit, but only for a move that happened. A
+               slot that passes, or one whose caster is stunned or down, is
+               stepped over in the same frame by the original -- it never
+               sets AttackEndCounter, so nothing waits on it. Charging the
+               full pause for those put most of a second of nothing between
+               the player choosing a move and anything moving. */
+            g->resolve_timer = g->last.fired ? RESOLVE_FRAMES : 0;
             return;
         }
         MoveEvent e;
         if (battle_resolve_step(b, &e)) {
             g->last = e;
             g->has_last = 1;
-            g->move_pending = 1;
             tick_cooldowns(g, &e);
             describe(g, &e);
+            /* Nothing to show for a slot that never acted, and nothing to
+               hold the bars back for either: the next slot comes round on
+               the next frame, which is the pace the original steps them at. */
+            if (!e.fired)
+                return;
+            g->move_pending = 1;
             present_move(g, &e);
         } else if (b->phase != PHASE_OVER) {
             battle_end_phase(b);
@@ -1968,6 +2037,13 @@ void battle_screen_start(Game *g, int32_t battle_id)
     g->queued = 0;
     g->resolve_timer = 0;
     g->has_last = 0;
+    /* Every model starts standing, and nothing is part-way through dying. */
+    memset(g->hit_tick, 0, sizeof(g->hit_tick));
+    memset(g->death_tick, 0, sizeof(g->death_tick));
+    memset(g->cast_colour, 0, sizeof(g->cast_colour));
+    g->flash_slot = 0;
+    g->flash_tick = 0;
+    g->over_fade = 0;
     g->effect = NULL;
     g->log_count = 0;
     g->screen = SCREEN_BATTLE;
@@ -1997,6 +2073,7 @@ void battle_screen_start(Game *g, int32_t battle_id)
 
 void battle_screen_update(Game *g, Vector2 mouse, int headless)
 {
+
     g->pointer = mouse;
     g->hovered_unit = unit_at(g, mouse);
     handle_input(g);
@@ -2017,6 +2094,21 @@ void battle_screen_update(Game *g, Vector2 mouse, int headless)
     g->effect_tick++;
     camera_tick(g);
     shake_tick(g);
+    for (int32_t slot = 1; slot < SONNY_SLOTS; slot++) {
+        const Unit *u = &g->battle.units[slot];
+        /* The original plays "dead" wherever it sets active false -- a blow,
+           a shadow blow, a buff ticking someone down -- so the clock starts
+           the moment a unit that was standing is not active any more, which
+           catches all of them at once. */
+        if (!u->active && u->LIFEU > 0 && g->death_tick[slot] == 0) {
+            g->death_tick[slot] = 1;
+            g->hit_tick[slot] = 0;
+        }
+        if (g->hit_tick[slot] > 0 && ++g->hit_tick[slot] > HIT_FRAMES)
+            g->hit_tick[slot] = 0;      /* and back to standing */
+        if (g->death_tick[slot] > 0 && g->death_tick[slot] <= DEATH_FRAMES)
+            g->death_tick[slot]++;
+    }
     melee_tick(g);
     bolt_tick(g);
     if (g->boomer_tick >= 0)
@@ -2028,7 +2120,14 @@ void battle_screen_update(Game *g, Vector2 mouse, int headless)
         return;
     advance(g);
 
-    /* When the fight ends, pay out and move on. */
+    /* When the fight ends, the original does not leave at once: blacker5
+       plays from its frame 31 to its frame 85 over the battlefield, and only
+       on that last frame does it go to the victory, defeat or draw screen.
+       Those fifty-four frames are what the death animation plays in. */
+    if (g->battle.phase == PHASE_OVER && g->over_fade < OVER_FADE_FRAMES) {
+        g->over_fade++;
+        return;
+    }
     if (g->battle.phase == PHASE_OVER) {
         if (g->battle.winCondition == 1) {
             g->rewards = campaign_award(&g->campaign, &g->battle, &g->rng, 0);

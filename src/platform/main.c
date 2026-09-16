@@ -63,7 +63,12 @@ int main(int argc, char **argv)
        and it opens at the largest whole multiple that leaves room on the
        monitor -- a window of exactly 800 by 575 is uncomfortably small on
        anything modern. */
-    SetConfigFlags(FLAG_WINDOW_RESIZABLE | FLAG_VSYNC_HINT);
+    /* ALWAYS_RUN keeps the loop going while the window is minimised or in
+       the background. Without it raylib stops stepping, and the music stream
+       -- which is refilled from the loop, a buffer at a time -- runs dry and
+       stutters as soon as the window is not in front. */
+    SetConfigFlags(FLAG_WINDOW_RESIZABLE | FLAG_VSYNC_HINT
+                   | FLAG_WINDOW_ALWAYS_RUN);
     InitWindow(STAGE_W, STAGE_H, "Sonny");
     SetWindowMinSize(STAGE_W / 2, STAGE_H / 2);
     {
