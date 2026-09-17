@@ -18,6 +18,32 @@
 #include "render.h"
 #include "rlgl.h"
 
+/* SONNY_INFO=1 says what the window, the monitor and the framebuffer
+   actually came to. It is the only way to tell from outside whether the
+   desktop is scaling one against the other, or has quietly given the window a
+   size other than the one it was asked for -- both of which draw the stage at
+   a size the window cannot show. Printed once the window has settled, because
+   the size a window is asked for is not the size it has. */
+static void print_window_info(void)
+{
+    Vector2 dpi = GetWindowScaleDPI();
+    int monitor = GetCurrentMonitor();
+    const char *name = GetMonitorName(monitor);
+    StageFit look = stage_fit(GetRenderWidth(), GetRenderHeight());
+    printf("monitors    %d, on %d (%s)\n", GetMonitorCount(), monitor,
+           name ? name : "?");
+    printf("monitor     %d x %d pixels\n", GetMonitorWidth(monitor),
+           GetMonitorHeight(monitor));
+    printf("dpi scale   %.3f x %.3f\n", dpi.x, dpi.y);
+    printf("window      %d x %d at %d,%d\n", GetScreenWidth(),
+           GetScreenHeight(), (int)GetWindowPosition().x,
+           (int)GetWindowPosition().y);
+    printf("framebuffer %d x %d\n", GetRenderWidth(), GetRenderHeight());
+    printf("stage       %d x %d at %g,%g, %.4f px to the unit\n",
+           look.w, look.h, look.x, look.y, look.scale);
+    fflush(stdout);
+}
+
 static void game_start(Game *g, uint64_t seed)
 {
     memset(g, 0, sizeof(*g));
@@ -84,24 +110,46 @@ int main(int argc, char **argv)
         if (w > 0 && h > 0)
             SetWindowSize(w, h);
     } else {
+        /* As much of the monitor as the stage's shape will take.
+         *
+         * The monitor is reported in its own pixels and the window is asked
+         * for in the desktop's coordinates, and on a screen the desktop
+         * scales -- which a 4K monitor almost always is -- those are not the
+         * same number. Asking for a window the size of a 3840 by 2160 panel
+         * on a desktop scaled to 150% asks for half as much again as the
+         * screen can show, and the window opens with its right and bottom
+         * off the edge. So the monitor is taken back into the desktop's own
+         * coordinates first.
+         *
+         * The rest is headroom: a fifth of the height for a title bar, a
+         * top bar and whatever else the desktop keeps there, and a cap at
+         * four times the stage, which is past the point where there is
+         * anything left to see. */
+        Vector2 dpi = GetWindowScaleDPI();
+        if (dpi.x <= 0.0f)
+            dpi.x = 1.0f;
+        if (dpi.y <= 0.0f)
+            dpi.y = 1.0f;
         int monitor = GetCurrentMonitor();
-        int room_w = GetMonitorWidth(monitor);
-        int room_h = GetMonitorHeight(monitor);
-        /* As much of the monitor as the stage's shape will take, leaving a
-           tenth of it for the desktop's own furniture. The stage is drawn at
-           whatever size it lands on, so there is no longer any reason to
-           stop at a whole multiple of it. */
+        int room_w = (int)(GetMonitorWidth(monitor) / dpi.x);
+        int room_h = (int)(GetMonitorHeight(monitor) / dpi.y);
         int w = room_w * 9 / 10;
-        int h = room_h * 9 / 10;
+        int h = room_h * 8 / 10;
+        if (w > STAGE_W * 4)
+            w = STAGE_W * 4;
+        if (h > STAGE_H * 4)
+            h = STAGE_H * 4;
         if (w * STAGE_H > h * STAGE_W)
             w = h * STAGE_W / STAGE_H;
         else
             h = w * STAGE_H / STAGE_W;
         if (w > STAGE_W && h > STAGE_H) {
             SetWindowSize(w, h);
-            SetWindowPosition((room_w - w) / 2, (room_h - h) / 2);
+            SetWindowPosition((room_w - w) / 2, (room_h - h) / 3);
         }
     }
+
+
     /* The right-hand team's containers carry a negative horizontal scale --
        that is how the original faces them the other way -- and a mirrored
        quad winds the opposite way, so the default backface culling throws it
@@ -224,7 +272,14 @@ int main(int argc, char **argv)
            glow's targets belong to the old size and are thrown away to be
            made again at the new one; the text bakes notice for themselves,
            the next time each size is asked for. */
-        StageFit fit = stage_fit(GetScreenWidth(), GetScreenHeight());
+        /* The framebuffer, not the "screen". raylib records the size a
+           window was *asked* for, whatever the window manager then gives it:
+           SetWindowSize writes it down and only a resize the desktop actually
+           performs corrects it. Everything drawn to the window goes through a
+           projection in framebuffer pixels, so a fit worked out from the
+           asked-for size draws the stage larger than the window and the right
+           and the bottom of it are never seen. */
+        StageFit fit = stage_fit(GetRenderWidth(), GetRenderHeight());
         if (fit.w != stage_w || fit.h != stage_h) {
             if (stage.id != 0)
                 if (stage.id != 0)
@@ -385,6 +440,8 @@ int main(int argc, char **argv)
            last, which is how an animation is looked at: one run, a strip of
            frames, rather than one run per frame. */
         frames++;
+        if (frames == 3 && getenv("SONNY_INFO"))
+            print_window_info();
         if (shot && every > 0 && frames % every == 0)
             TakeScreenshot(TextFormat("%s_%04d.png", shot, frames));
         if (shot && frames >= (steps > 0 ? steps : 2)) {

@@ -556,7 +556,9 @@ Vector2 stage_mouse(void)
     /* Back out of the window and into the stage, undoing the same fit the
        frame is drawn with -- whichever side the letterbox falls on. */
     Vector2 m = GetMousePosition();
-    StageFit fit = stage_fit(GetScreenWidth(), GetScreenHeight());
+    /* Through the same fit the frame is drawn with, which is the
+       framebuffer's -- see the note in main.c. */
+    StageFit fit = stage_fit(GetRenderWidth(), GetRenderHeight());
     if (fit.scale <= 0)
         return m;
     return (Vector2){(m.x - fit.x) / fit.scale, (m.y - fit.y) / fit.scale};

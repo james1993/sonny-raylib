@@ -505,7 +505,27 @@ it. Three things do:
   window.
 
 `SONNY_WINDOW=WxH` opens at exactly that size, which is how a capture is taken
-at anything other than the stage's own.
+at anything other than the stage's own. `SONNY_INFO=1` prints the monitor, the
+window, the framebuffer and the fit once the window has settled, which is how
+a window that is not the size it looks is caught.
+
+Two things about raylib's window sizes had to be learned the hard way, and
+both of them draw the stage larger than the window it is in:
+
+* **A monitor is measured in its own pixels, a window in the desktop's.**
+  `GetMonitorWidth` reports the panel, `SetWindowSize` asks in the coordinates
+  the desktop lays windows out in, and on a scaled desktop -- which a 4K
+  monitor almost always is -- those differ by the scale. Asking for nine
+  tenths of a 3840 by 2160 panel on a desktop at 150% asks for half as much
+  again as the screen can show. `GetWindowScaleDPI` takes it back.
+* **`GetScreenWidth` is the size the window was asked for, not the size it
+  has.** raylib's `SetWindowSize` writes the number down and hands it to the
+  window manager, and only a resize the desktop actually performs corrects it.
+  Everything drawn to the window goes through a projection in framebuffer
+  pixels, so the fit has to come from `GetRenderWidth`/`GetRenderHeight` --
+  the frame and the pointer both. Taken from the screen instead, a window the
+  desktop declined to make that big draws a stage too large for it and the
+  right and the bottom are never seen.
 
 Art is raster and so carries a resolution of its own; see the next section.
 
