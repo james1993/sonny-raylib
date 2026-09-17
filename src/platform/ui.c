@@ -373,25 +373,26 @@ Rectangle placed_rect(float x, float y, float scale_x, float scale_y,
 
 /* Where an exported image goes, as opposed to where its box is.
    The decompiler rasterises a shape into a bitmap a pixel wider and taller
-   than the box the SWF declares: the art fills w by h of it at one pixel to
-   the unit, and the last row and column are padding. So the image has to be
-   drawn at its own pixel size and the padding allowed to fall outside the
-   box. Squeezing 61 pixels into 60 is less than a pixel, but it is a pixel
-   taken off the corner of every icon on the screen, and it shows. */
-Rectangle placed_texture(const Texture2D *tex, float x, float y,
-                         float scale_x, float scale_y, float ox, float oy)
+   than the box the SWF declares: the art fills the box and the last row and
+   column are padding. So the image has to be drawn at its own size and the
+   padding allowed to fall outside the box. Squeezing 61 units into 60 is
+   less than a pixel, but it is a pixel taken off the corner of every icon on
+   the screen, and it shows. `art.size` is that size in the stage's units,
+   which is not the image's pixels: the art is rasterised finer than the
+   stage wherever it can be. */
+Rectangle placed_art(const Art *art, float x, float y,
+                     float scale_x, float scale_y, float ox, float oy)
 {
-    return placed_rect(x, y, scale_x, scale_y, (float)tex->width,
-                       (float)tex->height, ox, oy);
+    return placed_rect(x, y, scale_x, scale_y, art->size.x, art->size.y,
+                       ox, oy);
 }
 
-void draw_texture_placed(const Texture2D *tex, float x, float y,
-                         float scale_x, float scale_y, float ox, float oy,
-                         Color tint)
+void draw_art_placed(const Art *art, float x, float y,
+                     float scale_x, float scale_y, float ox, float oy,
+                     Color tint)
 {
-    DrawTexturePro(*tex, (Rectangle){0, 0, (float)tex->width,
-                                     (float)tex->height},
-                   placed_texture(tex, x, y, scale_x, scale_y, ox, oy),
+    DrawTexturePro(*art->texture, art->source,
+                   placed_art(art, x, y, scale_x, scale_y, ox, oy),
                    (Vector2){0, 0}, 0.0f, tint);
 }
 
@@ -495,12 +496,12 @@ void draw_clip_parts(const char *screen, const char *owner,
             continue;
         const char *name = part->frames ? chosen
                                         : TextFormat("#%d", part->character);
-        const Texture2D *tex = asset_texture(name, 1);
-        if (!tex)
+        Art art;
+        if (!asset_art(name, 1, &art))
             continue;
-        draw_texture_placed(tex, moved.x + part->x, moved.y + part->y,
-                            part->scale_x, part->scale_y,
-                            part->origin_x, part->origin_y, tint);
+        draw_art_placed(&art, moved.x + part->x, moved.y + part->y,
+                        part->scale_x, part->scale_y,
+                        part->origin_x, part->origin_y, tint);
     }
 }
 
@@ -620,8 +621,8 @@ static void draw_orb_part(const OrbPart *part, Vector2 centre, float scale,
 {
     if (!part)
         return;
-    const Texture2D *tex = asset_texture(TextFormat("#%d", part->character), 1);
-    if (!tex)
+    Art art;
+    if (!asset_art(TextFormat("#%d", part->character), 1, &art))
         return;
     float sx = part->scale_x * scale;
     float sy = part->scale_y * scale;
@@ -630,9 +631,8 @@ static void draw_orb_part(const OrbPart *part, Vector2 centre, float scale,
                      centre.y + (part->y - part->origin_y * part->scale_y)
                      * scale,
                      part->width * sx, part->height * sy};
-    DrawTexturePro(*tex, (Rectangle){0, 0, (float)tex->width,
-                                     (float)tex->height},
-                   dst, (Vector2){0, 0}, 0.0f, tint);
+    DrawTexturePro(*art.texture, art.source, dst, (Vector2){0, 0}, 0.0f,
+                   tint);
 }
 
 /* The orb clip cuts the icon to the ball with a circular mask, and the icons
@@ -661,30 +661,34 @@ static const Texture2D *orb_icon_cut(const char *icon)
     orb_cut[slot].ok = 0;
 
     const OrbPart *mask = orb_part("mask");
-    const char *art = TextFormat("%s%s", ORB_ICON_PREFIX, icon);
-    const Texture2D *icon_tex = asset_texture(art, 1);
-    const Texture2D *mask_tex = mask
-        ? asset_texture(TextFormat("#%d", mask->character), 1) : NULL;
-    if (!icon_tex || !mask_tex)
+    Art icon_art, mask_art;
+    if (!mask
+        || !asset_art(TextFormat("%s%s", ORB_ICON_PREFIX, icon), 1, &icon_art)
+        || !asset_art(TextFormat("#%d", mask->character), 1, &mask_art))
         return NULL;
 
-    Vector2 icon_origin = asset_frame_offset(art, 1);
-    Vector2 mask_origin = asset_frame_offset(TextFormat("#%d",
-                                                        mask->character), 1);
-    Image icon_img = LoadImageFromTexture(*icon_tex);
-    Image mask_img = LoadImageFromTexture(*mask_tex);
+    Image icon_img = LoadImageFromTexture(*icon_art.texture);
+    Image mask_img = LoadImageFromTexture(*mask_art.texture);
     Color *icon_px = LoadImageColors(icon_img);
     Color *mask_px = LoadImageColors(mask_img);
     Color *out_px = (Color *)MemAlloc((unsigned)(mask_img.width
                                                  * mask_img.height)
                                       * sizeof(Color));
     /* The icon's own origin goes on the mask's, which is how the orb places
-       the two over each other. */
-    int shift_x = (int)(mask_origin.x - icon_origin.x + 0.5f);
-    int shift_y = (int)(mask_origin.y - icon_origin.y + 0.5f);
+       the two over each other. The cut is made in the mask's pixels; the two
+       need not be rasterised at the same scale, so the icon is walked at
+       whatever ratio there is between them -- one, whenever both rasterised,
+       which is when the step is a whole pixel and the sampling exact. */
+    float mask_scale = mask_art.source.width / mask_art.size.x;
+    float ratio = (icon_art.source.width / icon_art.size.x) / mask_scale;
+    int shift_x = (int)((mask_art.offset.x - icon_art.offset.x) * mask_scale
+                        + 0.5f);
+    int shift_y = (int)((mask_art.offset.y - icon_art.offset.y) * mask_scale
+                        + 0.5f);
     for (int y = 0; y < mask_img.height; y++) {
         for (int x = 0; x < mask_img.width; x++) {
-            int sx = x - shift_x, sy = y - shift_y;
+            int sx = (int)((x - shift_x) * ratio + 0.5f);
+            int sy = (int)((y - shift_y) * ratio + 0.5f);
             Color c = {0, 0, 0, 0};
             if (sx >= 0 && sy >= 0 && sx < icon_img.width
                 && sy < icon_img.height)
@@ -760,13 +764,12 @@ void draw_button_state(const StageButton *b, int over, Color tint)
             continue;
         if (p->width <= 0)
             continue;
-        const Texture2D *tex = asset_texture(TextFormat("#%d", p->character),
-                                             1);
-        if (!tex)
+        Art art;
+        if (!asset_art(TextFormat("#%d", p->character), 1, &art))
             continue;
-        draw_texture_placed(tex, centre.x + p->x * sx, centre.y + p->y * sy,
-                            p->scale_x * sx, p->scale_y * sy,
-                            p->origin_x, p->origin_y, tint);
+        draw_art_placed(&art, centre.x + p->x * sx, centre.y + p->y * sy,
+                        p->scale_x * sx, p->scale_y * sy,
+                        p->origin_x, p->origin_y, tint);
     }
 }
 
@@ -796,12 +799,11 @@ void draw_screen_chrome(const char *screen)
             continue;
         if (chrome_is_runtime(c->name))
             continue;
-        const Texture2D *tex = asset_texture(TextFormat("#%d", c->character),
-                                             1);
-        if (!tex)
+        Art art;
+        if (!asset_art(TextFormat("#%d", c->character), 1, &art))
             continue;
-        draw_texture_placed(tex, c->x, c->y, c->scale_x, c->scale_y,
-                            c->origin_x, c->origin_y, WHITE);
+        draw_art_placed(&art, c->x, c->y, c->scale_x, c->scale_y,
+                        c->origin_x, c->origin_y, WHITE);
     }
 }
 

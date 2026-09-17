@@ -88,9 +88,10 @@
     "assets/art/marker/marker0_82.png"
    ],
    "offset": [
-    93.05,
-    98.6
+    92.55,
+    98.1
    ],
+   "scale": 2,
    "glow": [
     255,
     0,
@@ -184,9 +185,10 @@
     "assets/art/marker/marker1_82.png"
    ],
    "offset": [
-    93.05,
-    98.6
+    92.55,
+    98.1
    ],
+   "scale": 2,
    "glow": [
     0,
     255,
@@ -280,9 +282,10 @@
     "assets/art/marker/marker2_82.png"
    ],
    "offset": [
-    93.05,
-    98.6
+    92.55,
+    98.1
    ],
+   "scale": 2,
    "glow": [
     0,
     255,
@@ -376,9 +379,10 @@
     "assets/art/marker/marker3_82.png"
    ],
    "offset": [
-    93.05,
-    98.6
+    92.55,
+    98.1
    ],
+   "scale": 2,
    "glow": [
     0,
     255,

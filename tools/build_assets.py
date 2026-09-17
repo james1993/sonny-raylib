@@ -22,6 +22,11 @@ import json
 import os
 import re
 import shutil
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import rasterize                                              # noqa: E402
+from rasterize import svg_sibling                             # noqa: E402
 
 # The root <g> of an exported SVG carries the offset from the sprite's own
 # origin to the top-left of the exported canvas. Without it a sprite can only
@@ -62,15 +67,12 @@ def frame_offset(png_path, raw):
 
     Both sprite frames and shapes get exported alongside an SVG whose root
     transform records exactly this, which is the only reliable way to line the
-    trimmed and padded PNG back up with the coordinate the game draws at."""
-    if os.sep + 'shape_png' + os.sep in png_path:
-        svg = png_path.replace(os.sep + 'shape_png' + os.sep,
-                               os.sep + 'shape' + os.sep)
-    else:
-        svg = png_path.replace(os.sep + 'sprite' + os.sep,
-                               os.sep + 'sprite_svg' + os.sep)
-    svg = os.path.splitext(svg)[0] + '.svg'
-    if not os.path.exists(svg):
+    trimmed and padded PNG back up with the coordinate the game draws at.
+
+    It is in stage units and stays that way whatever scale the art itself is
+    rasterised at."""
+    svg = svg_sibling(png_path)
+    if not svg:
         return None
     try:
         with open(svg, encoding='utf-8', errors='replace') as fh:
@@ -418,6 +420,45 @@ def collect_names(data_dir):
     return want, speculative
 
 
+def copy_frames(entries, dest_dir, safe, scale):
+    """Put one asset's frames in place. -> (paths, whether they are at
+    `scale`).
+
+    An animation is all one picture to the eye, so its frames have to agree on
+    how finely they are drawn: the first frame that will not rasterise
+    faithfully -- because the decompiler wrote its colour transform or its
+    glow as an SVG filter, and no other rasteriser reproduces those the way
+    the decompiler's own renderer does -- gives up on the whole asset, which
+    is then copied as the decompiler exported it.
+
+    A frame that is byte for byte one already written points at that copy
+    instead of making another: a cutscene of thirteen hundred frames is a
+    hundred and sixty pictures.
+    """
+    files = []
+    written = {}
+    for index, (_, src) in enumerate(entries, start=1):
+        ext = os.path.splitext(src)[1] or '.png'
+        with open(src, 'rb') as fh:
+            digest = hashlib.md5(fh.read()).hexdigest()
+        if digest in written:
+            files.append(written[digest])
+            continue
+        dest = os.path.join(dest_dir,
+                            '%s_%d%s' % (safe, index, ext) if len(entries) > 1
+                            else '%s%s' % (safe, ext))
+        if scale > 1:
+            large = rasterize.art(svg_sibling(src), src, scale)
+            if large is None:
+                return src, False
+            large.save(dest)
+        else:
+            shutil.copyfile(src, dest)
+        written[digest] = os.path.relpath(dest, ROOT)
+        files.append(written[digest])
+    return files, True
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--raw', default='assets/raw')
@@ -432,6 +473,12 @@ def main():
                     help='cap on frames copied per animation')
     ap.add_argument('--chrome-frames', type=int, default=1,
                     help='cap on frames copied per piece of furniture')
+    ap.add_argument('--art-scale', type=float,
+                    default=rasterize.DEFAULT_SCALE,
+                    help="pixels of art per stage unit. The decompiler only "
+                         "exports at 1, so anything above it is rasterised "
+                         "from the SVG beside each PNG and checked against "
+                         "that PNG; see tools/rasterize.py. 1 turns it off.")
     args = ap.parse_args()
 
     exports = load('exports', args.data)
@@ -473,7 +520,8 @@ def main():
 
     os.makedirs(args.out, exist_ok=True)
     manifest = {}
-    stats = {'copied': 0, 'bytes': 0, 'missing': [], 'categories': {}}
+    stats = {'copied': 0, 'bytes': 0, 'missing': [], 'flat': [],
+             'categories': {}}
 
     for category, names in sorted(want.items()):
         found = 0
@@ -608,27 +656,19 @@ def main():
             safe = name.replace('/', '_').replace(' ', '_')
             dest_dir = os.path.join(args.out, category)
             os.makedirs(dest_dir, exist_ok=True)
-            files = []
-            # An animation holds most of its frames still -- a cutscene of
-            # thirteen hundred frames is a hundred and sixty pictures -- so a
-            # frame that is byte for byte one already copied points at that
-            # copy instead of making another.
-            written = {}
-            for index, (_, src) in enumerate(entries, start=1):
-                ext = os.path.splitext(src)[1] or '.png'
-                with open(src, 'rb') as fh:
-                    digest = hashlib.md5(fh.read()).hexdigest()
-                if digest in written:
-                    files.append(written[digest])
-                    continue
-                dest = os.path.join(dest_dir, '%s_%d%s' % (safe, index, ext)
-                                    if len(entries) > 1 else '%s%s' % (safe, ext))
-                shutil.copyfile(src, dest)
-                written[digest] = os.path.relpath(dest, ROOT)
-                files.append(written[digest])
+            scale = args.art_scale if category != 'sound' else 1.0
+            files, sharp = copy_frames(entries, dest_dir, safe, scale)
+            if not sharp:
+                stats['flat'].append('%-28s %s' % ('%s/%s' % (category, name),
+                                                   files))
+                scale = 1.0
+                files, _ = copy_frames(entries, dest_dir, safe, scale)
+            for path in set(files):
                 stats['copied'] += 1
-                stats['bytes'] += os.path.getsize(dest)
+                stats['bytes'] += os.path.getsize(os.path.join(ROOT, path))
             manifest[name] = {'category': category, 'frames': files}
+            if scale > 1:
+                manifest[name]['scale'] = scale
             if origin:
                 manifest[name]['bounds'] = origin
             if category != 'sound':
@@ -675,6 +715,8 @@ def main():
                                   'frames': [info['file']],
                                   'offsets': [[origin[0] + info['pad'],
                                                origin[1] + info['pad']]]}
+                if info.get('scale', 1) > 1:
+                    manifest[name]['scale'] = info['scale']
 
     # The markers on a zone's scene, which tools/extract_markers.py renders
     # style by style with their colour transform and glow already applied.
@@ -690,6 +732,8 @@ def main():
                 continue
             manifest[name] = {'category': 'marker', 'frames': files,
                               'offsets': [style['offset']] * len(files)}
+            if style.get('scale', 1) > 1:
+                manifest[name]['scale'] = style['scale']
 
     # The character model's frame labels are its animation states, so record
     # each one's start frame and how long it runs. The engine plays these by
@@ -716,6 +760,13 @@ def main():
         print('%-12s %4d resolved of %d asked for' % (category, c['found'],
                                                       c['wanted']))
     print('%d files, %.1f MB' % (stats['copied'], stats['bytes'] / 1e6))
+    if stats['flat']:
+        print('%d assets kept at 1 pixel to the unit, with the frame that '
+              'would not rasterise faithfully:' % len(stats['flat']))
+        for name in stats['flat'][:30]:
+            print('  ' + name)
+        if len(stats['flat']) > 30:
+            print('  ... and %d more' % (len(stats['flat']) - 30))
     if animations:
         print('model animations: %s'
               % ', '.join('%s(%d)' % (k, v['length'])

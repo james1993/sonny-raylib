@@ -507,6 +507,65 @@ it. Three things do:
 `SONNY_WINDOW=WxH` opens at exactly that size, which is how a capture is taken
 at anything other than the stage's own.
 
+Art is raster and so carries a resolution of its own; see the next section.
+
+## The art's own resolution
+
+Art is rasterised above one pixel to the stage unit -- two, in what is
+committed -- and each asset's manifest entry says how far above. `asset_art`
+hands a caller the art's size in *stage units*, which is what every coordinate
+in the game is in; the image's pixels only ever appear as a source rectangle.
+Nothing in the drawing code knows the difference, and an asset that could not
+be rasterised sits at one pixel to the unit beside the rest without anything
+having to care.
+
+The decompiler will not export above 1:1 from the command line. `export.zoom`
+is in `-listconfigs` and `-config export.zoom=2` is accepted without
+complaint, but the PNGs come out the same size: it is the GUI's preview zoom.
+What works is to rasterise the SVG it writes beside every PNG, which is the
+same vector art, with cairosvg -- `tools/rasterize.py`. Three things had to be
+got right before that was worth anything:
+
+* **A hairline is a screen pixel, not a unit.** The decompiler writes Flash's
+  hairline as `stroke-width="0.05"`, which is the one twip it is in the SWF.
+  Taken literally it is a twentieth of a pixel and every outline in the game
+  vanishes; the player, and the decompiler's own renderer, draw it one screen
+  pixel wide however far the movie is zoomed. So the width is rewritten to one
+  over the scale before rendering. This was the whole of why not one doll part
+  would rasterise: they are drawn almost entirely in outline.
+* **The canvas is truncated.** A shape 5.55 units wide comes out 5 pixels;
+  rendered at two it is 11, which is 5.5 units, not 5. A quarter of a unit is
+  nothing on a backdrop and a tenth of a foot on a doll's foot, so the
+  rendering is cut to exactly twice the canvas the decompiler made. Every
+  piece of art is then the size it always was, in units, with more pixels in
+  it and nothing else changed -- which is why turning this on moved no
+  geometry anywhere.
+* **A filter is where the two renderers part company.** The decompiler writes
+  a colour transform, a blur or a glow as an SVG filter, and cairosvg has
+  none: it drops them silently, so the art comes back unlit or at full
+  strength where it should have faded. Nothing statistical tells that apart
+  from ordinary rasteriser disagreement reliably enough, so art with a
+  `<filter>` in it is simply not rasterised and ships as the decompiler
+  exported it. That is most of what is left at 1:1 -- the BOOM effects and the
+  lit pieces of furniture.
+
+Everything that does rasterise is checked: rendered at 1:1 as well, reduced
+and compared against the PNG the decompiler exported, and kept only if it is
+the same picture. The tolerance comes from the reference itself -- what
+fraction of it lies along a boundary in its own alpha -- because how much of a
+picture is edge depends entirely on how big it is. A backdrop is edge nowhere;
+a lock of hair nine pixels across is edge almost everywhere, and there one
+pixel of disagreement is a tenth of the picture.
+
+The two tools that render art themselves rather than copying it --
+`extract_glows.py` and `extract_markers.py` -- take a `--scale` and work their
+blurs out in those pixels, so a halo is as fine as the thing it surrounds.
+Both report their padding and origins in units, because that is what the
+manifest's offsets are in.
+
+`--art-scale 1` turns the whole of it off and ships the decompiler's own
+export, which is what the game had before.
+
 ## Driving the game without a pointer
 
 `SONNY_CLICKS="frame:x:y,..."` presses at a stage coordinate on the frame

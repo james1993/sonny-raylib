@@ -2,16 +2,18 @@
  "ZoneBarFill": {
   "file": "assets/art/glow/ZoneBarFill.png",
   "character": 1261,
-  "width": 251,
-  "height": 14,
-  "pad": 29
+  "width": 251.0,
+  "height": 14.0,
+  "pad": 29.0,
+  "scale": 2
  },
  "TurnRingFriend": {
   "file": "assets/art/glow/TurnRingFriend.png",
   "character": 1592,
-  "width": 62,
-  "height": 62,
-  "pad": 24,
+  "width": 62.0,
+  "height": 62.0,
+  "pad": 23.5,
+  "scale": 2,
   "origin": [
    31.0,
    31.0
@@ -20,9 +22,10 @@
  "TurnRingEnemy": {
   "file": "assets/art/glow/TurnRingEnemy.png",
   "character": 1592,
-  "width": 62,
-  "height": 62,
-  "pad": 24,
+  "width": 62.0,
+  "height": 62.0,
+  "pad": 23.5,
+  "scale": 2,
   "origin": [
    31.0,
    31.0

@@ -20,6 +20,11 @@ typedef struct {
     const char *const *frames;
     const AssetOffset *offsets;   /* NULL when unknown */
     int32_t            frame_count;
+    /* How many pixels of this asset's image there are to the stage unit. The
+       decompiler exports at one; art rasterised from the vector source is
+       finer than that, and every draw divides by this to get back to the
+       units everything else is in. */
+    float              scale;
     /* Where this art sits relative to its parent's origin, when known: the
        shape's bounds with its placement matrix applied. has_bounds is 0 for
        assets whose position the engine supplies instead. */

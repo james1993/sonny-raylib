@@ -20,9 +20,28 @@ void assets_set_root(const char *root);
 /* The texture for a still, or frame `frame` (1-based) of an animation.
    Returns NULL when the name is unknown or the file will not load. */
 const Texture2D *asset_texture(const char *name, int32_t frame);
-/* Where a frame's own origin sits inside its exported image, in pixels. */
+/* Where a frame's own origin sits inside its exported image, in stage units. */
 Vector2 asset_frame_offset(const char *name, int32_t frame);
 int32_t asset_frame_count(const char *name);
+
+/* One frame of art, ready to draw.
+ *
+ * An image is not its size: the art is rasterised above 1:1 so that the game
+ * is not limited to the stage's own resolution, and how far above is per
+ * asset -- a piece the decompiler wrote a filter into is kept at 1:1 because
+ * no other rasteriser reproduces those the way its own renderer does. So
+ * `size` is how big the picture is in the stage's units, which is what every
+ * coordinate in the game is in, and the texture's pixels are only ever the
+ * source rectangle. */
+typedef struct {
+    const Texture2D *texture;
+    Vector2          size;      /* in stage units */
+    Vector2          offset;    /* the art's own origin inside it, in units */
+    Rectangle        source;    /* the whole image, in its own pixels */
+} Art;
+
+/* Returns 0 with everything zeroed when there is nothing to draw. */
+int asset_art(const char *name, int32_t frame, Art *out);
 
 /* Draw an asset centred in `area`, scaled down to fit if needed. Returns 0 if
    there was nothing to draw. */

@@ -334,13 +334,13 @@ void ui_font_unload(void);
 /* Where a piece of art goes, given the placement the original recorded: its
    exported canvas carries the piece's own origin inside it, so the top-left
    is the placement point less that origin. */
-/* Where an exported image goes: its own pixel size, stood on the placement
-   point by the origin the SWF records. */
-Rectangle placed_texture(const Texture2D *tex, float x, float y,
-                         float scale_x, float scale_y, float ox, float oy);
-void draw_texture_placed(const Texture2D *tex, float x, float y,
-                         float scale_x, float scale_y, float ox, float oy,
-                         Color tint);
+/* Where an exported image goes: its own size in stage units, stood on the
+   placement point by the origin the SWF records. */
+Rectangle placed_art(const Art *art, float x, float y,
+                     float scale_x, float scale_y, float ox, float oy);
+void draw_art_placed(const Art *art, float x, float y,
+                     float scale_x, float scale_y, float ox, float oy,
+                     Color tint);
 Rectangle placed_rect(float x, float y, float scale_x, float scale_y,
                       float w, float h, float ox, float oy);
 /* One of a screen's text fields, laid out the way the SWF lays it out: its

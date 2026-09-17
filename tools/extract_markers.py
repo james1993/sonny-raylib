@@ -30,6 +30,7 @@ import struct
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import rasterize                                                # noqa: E402
 from swfinfo import read_swf, Bits                              # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -253,19 +254,30 @@ def style_name(index):
     return 'marker%d' % index
 
 
-def render_style(frames, cxform, filters, out_dir, name):
+def render_style(frames, cxform, filters, out_dir, name, scale=1.0):
     """The marker's own frames in one style: the colour transform applied, and
-    the glow the placement asks for rendered from the frame's own alpha."""
+    the glow the placement asks for rendered from the frame's own alpha.
+
+    `scale` is how many pixels to the stage unit the art is wanted at, as
+    everywhere else; the halo is worked out in those pixels too, so it comes
+    out as fine as the wheel it surrounds. What is handed back is in units:
+    the caller records where the marker's origin sits, and that is a stage
+    coordinate whatever the art is rasterised at."""
     from PIL import Image, ImageFilter
     mult, add = cxform
     glow = filters[0] if filters else None
     pad = 0
     if glow:
-        pad = int(max(glow['blur_x'], glow['blur_y']) * 1.5) + 1
+        pad = int(max(glow['blur_x'], glow['blur_y']) * 1.5 * scale) + 1
 
     written = []
     for index, path in frames:
-        art = Image.open(path).convert('RGBA')
+        art = rasterize.art(rasterize.svg_sibling(path), path, scale)
+        if art is None:
+            art = Image.open(path).convert('RGBA')
+            scale = 1.0
+            pad = (int(max(glow['blur_x'], glow['blur_y']) * 1.5) + 1
+                   if glow else 0)
         red, green, blue, alpha = art.split()
         # CXFORMWITHALPHA: channel * mult / 256 + add, clamped.
         def transform(band, i):
@@ -281,7 +293,8 @@ def render_style(frames, cxform, filters, out_dir, name):
             lit = Image.new('L', canvas.size, 0)
             lit.paste(spread, (pad, pad))
             lit = lit.filter(ImageFilter.GaussianBlur(
-                (glow['blur_x'] + glow['blur_y']) / 2 * BLUR_TO_SIGMA))
+                (glow['blur_x'] + glow['blur_y']) / 2 * BLUR_TO_SIGMA
+                * scale))
             strength = glow['strength'] * glow['color'][3] / 255.0
             lit = lit.point(lambda v: min(255, int(v * strength)))
             halo = Image.new('RGBA', canvas.size,
@@ -292,7 +305,7 @@ def render_style(frames, cxform, filters, out_dir, name):
         out = os.path.join(out_dir, '%s_%d.png' % (name, index))
         canvas.save(out)
         written.append((index, os.path.relpath(out, ROOT)))
-    return written, pad
+    return written, pad, scale
 
 
 SVG_ROOT_TRANSFORM = __import__('re').compile(
@@ -331,6 +344,8 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('swf')
     ap.add_argument('--raw', default='assets/raw')
+    ap.add_argument('--scale', type=float, default=rasterize.DEFAULT_SCALE,
+                    help='pixels of art per stage unit; see tools/rasterize.py')
     ap.add_argument('--out', default=os.path.join(ROOT, 'assets/art/marker'))
     ap.add_argument('--stripped',
                     help='where to write the marker-free SWF copy')
@@ -367,16 +382,19 @@ def main(argv=None):
 
     out = {'clip': MARKER, 'frames': len(frames), 'styles': {}, 'zones': placed}
     for style in styles.values():
-        written, pad = render_style(frames, style['cxform'], style['filters'],
-                                    args.out, style['name'])
+        written, pad, at = render_style(frames, style['cxform'],
+                                        style['filters'], args.out,
+                                        style['name'], args.scale)
         out['styles'][style['name']] = {
             'files': [path for _, path in written],
-            # The glow grows the canvas, so the origin moves with it.
-            'offset': [origin_x + pad, origin_y + pad],
+            # The glow grows the canvas, so the origin moves with it -- by
+            # the halo's width in units, which is its pixels over the scale.
+            'offset': [origin_x + pad / at, origin_y + pad / at],
+            'scale': at,
             'glow': style['filters'][0]['color'] if style['filters'] else None,
         }
-        print('%-9s %3d frames, %d px of glow round each'
-              % (style['name'], len(written), pad))
+        print('%-9s %3d frames at %g px to the unit, %d px of glow round each'
+              % (style['name'], len(written), at, pad))
 
     for label, here in placed.items():
         print('%-16s %s' % (label, ', '.join('%s at %g,%g' % (m['style'],

@@ -370,30 +370,32 @@ static void draw_hub_panel(Game *g, Vector2 mouse)
                                     - zone->first_battle);
         if (done > total)
             done = total;
-        const Texture2D *track = asset_texture(BAR_TRACK, 1);
-        if (track) {
-            Vector2 off = asset_frame_offset(BAR_TRACK, 1);
-            draw_texture_placed(track, bar->x, bar->y, bar->scale_x,
-                                bar->scale_y, off.x, off.y, WHITE);
-        }
+        Art track;
+        if (asset_art(BAR_TRACK, 1, &track))
+            draw_art_placed(&track, bar->x, bar->y, bar->scale_x,
+                            bar->scale_y, track.offset.x, track.offset.y,
+                            WHITE);
         /* The fill is lit: its placement carries a glow, so what is drawn is
            the fill with the halo already under it. Cutting it to the fraction
            cuts the halo with it, which is what scaling the clip does. */
-        const Texture2D *fill = asset_texture(BAR_FILL, 1);
-        if (fill && total > 0) {
+        Art fill;
+        if (asset_art(BAR_FILL, 1, &fill) && total > 0) {
             float fraction = done / total;
-            Vector2 off = asset_frame_offset(BAR_FILL, 1);
-            Rectangle box = placed_texture(fill,
-                                           bar->x + BAR_FILL_X * bar->scale_x,
-                                           bar->y, bar->scale_x, bar->scale_y,
-                                           off.x, off.y);
+            Rectangle box = placed_art(&fill,
+                                       bar->x + BAR_FILL_X * bar->scale_x,
+                                       bar->y, bar->scale_x, bar->scale_y,
+                                       fill.offset.x, fill.offset.y);
             /* The glow's margin is outside the art, so only the art's own
-               width takes the fraction. */
-            float edge = (fill->width - BAR_FILL_WIDTH) / 2.0f;
+               width takes the fraction. In units, because that is what the
+               frame's own width is in; the source rectangle then goes back
+               through the art's own scale to reach its pixels. */
+            float edge = (fill.size.x - BAR_FILL_WIDTH) / 2.0f;
             float shown = edge * 2 + BAR_FILL_WIDTH * fraction;
-            box.width *= shown / fill->width;
-            Rectangle src = {0, 0, shown, (float)fill->height};
-            DrawTexturePro(*fill, src, box, (Vector2){0, 0}, 0.0f, WHITE);
+            box.width *= shown / fill.size.x;
+            Rectangle src = {0, 0, fill.source.width * shown / fill.size.x,
+                             fill.source.height};
+            DrawTexturePro(*fill.texture, src, box, (Vector2){0, 0}, 0.0f,
+                           WHITE);
         }
     }
 
@@ -444,13 +446,12 @@ void screen_zone_draw(Game *g, Vector2 mouse)
                 break;
             /* Two of these are squashed by their placement, so the two scales
                are kept apart. */
-            const Texture2D *tex = asset_texture(m->style, frame);
-            if (!tex)
+            Art art;
+            if (!asset_art(m->style, frame, &art))
                 continue;
-            Vector2 offset = asset_frame_offset(m->style, frame);
-            draw_texture_placed(tex, scene.x + m->x, scene.y + m->y,
-                                m->scale_x, m->scale_y, offset.x, offset.y,
-                                WHITE);
+            draw_art_placed(&art, scene.x + m->x, scene.y + m->y,
+                            m->scale_x, m->scale_y,
+                            art.offset.x, art.offset.y, WHITE);
         }
     }
 
@@ -779,14 +780,13 @@ void screen_talents_draw(Game *g, Vector2 mouse)
        row's name, number and button. */
     const MenuSlot *swatch = menu_slot(MENU_SKILLS, STAT_COLOUR_SLOT);
     if (swatch && swatch->width > 0) {
-        const Texture2D *tex = asset_texture(
-            g->stat_points_spent ? STAT_COLOUR_DEAD
-                                 : TextFormat("#%d", swatch->character), 1);
-        if (tex) {
-            draw_texture_placed(tex, swatch->x, swatch->y, swatch->scale,
-                                swatch->scale, swatch->origin_x,
-                                swatch->origin_y, WHITE);
-        }
+        Art art;
+        if (asset_art(g->stat_points_spent
+                      ? STAT_COLOUR_DEAD
+                      : TextFormat("#%d", swatch->character), 1, &art))
+            draw_art_placed(&art, swatch->x, swatch->y, swatch->scale,
+                            swatch->scale, swatch->origin_x,
+                            swatch->origin_y, WHITE);
     }
     DerivedStats stats = character_derive(c);
     const double shown[4] = {stats.life, stats.strength, stats.magic,
@@ -1242,11 +1242,11 @@ static void draw_slot_art(const char *menu, const char *prefix, int i)
     const MenuSlot *slot = menu_slot(menu, name);
     if (!slot || slot->width <= 0)
         return;
-    const Texture2D *tex = asset_texture(TextFormat("#%d", slot->character), 1);
-    if (!tex)
+    Art art;
+    if (!asset_art(TextFormat("#%d", slot->character), 1, &art))
         return;
-    draw_texture_placed(tex, slot->x, slot->y, slot->scale, slot->scale,
-                        slot->origin_x, slot->origin_y, WHITE);
+    draw_art_placed(&art, slot->x, slot->y, slot->scale, slot->scale,
+                    slot->origin_x, slot->origin_y, WHITE);
 }
 
 
@@ -1587,13 +1587,12 @@ void screen_shop_draw(Game *g, Vector2 mouse)
        screen points it at shopId + 1. */
     const ClipPart *picture = shop_picture();
     if (picture && shop) {
-        const Texture2D *tex = asset_texture(
-            TextFormat("#%d@%d", picture->character, shop->id + 1), 1);
-        if (tex) {
-            draw_texture_placed(tex, picture->x, picture->y,
-                                picture->scale_x, picture->scale_y,
-                                picture->origin_x, picture->origin_y, WHITE);
-        }
+        Art art;
+        if (asset_art(TextFormat("#%d@%d", picture->character, shop->id + 1),
+                      1, &art))
+            draw_art_placed(&art, picture->x, picture->y,
+                            picture->scale_x, picture->scale_y,
+                            picture->origin_x, picture->origin_y, WHITE);
     }
 
     draw_field_wrapped(shop_field("@895"), NO_OFFSET,
@@ -1938,8 +1937,8 @@ static void draw_win_parts(Game *g)
         }
         const char *name = chosen ? chosen
                                   : TextFormat("#%d", part->character);
-        const Texture2D *tex = asset_texture(name, 1);
-        if (!tex)
+        Art art;
+        if (!asset_art(name, 1, &art))
             continue;
         /* The fill is the one piece the screen drives: its width is the
            percentage, out of the 95.1 the frame gives it. */
@@ -1951,17 +1950,19 @@ static void draw_win_parts(Game *g)
                 fraction = 0;
             if (fraction > 1)
                 fraction = 1;
-            Rectangle box = placed_texture(tex, part->x, part->y,
-                                           part->scale_x, part->scale_y,
-                                           part->origin_x, part->origin_y);
-            Rectangle src = {0, 0, tex->width * fraction, (float)tex->height};
+            Rectangle box = placed_art(&art, part->x, part->y,
+                                       part->scale_x, part->scale_y,
+                                       part->origin_x, part->origin_y);
+            Rectangle src = {0, 0, art.source.width * fraction,
+                             art.source.height};
             box.width = WIN_BAR_WIDTH * fraction * part->scale_x;
-            DrawTexturePro(*tex, src, box, (Vector2){0, 0}, 0.0f, WHITE);
+            DrawTexturePro(*art.texture, src, box, (Vector2){0, 0}, 0.0f,
+                           WHITE);
             continue;
         }
-        draw_texture_placed(tex, part->x, part->y, part->scale_x,
-                            part->scale_y, part->origin_x, part->origin_y,
-                            WHITE);
+        draw_art_placed(&art, part->x, part->y, part->scale_x,
+                        part->scale_y, part->origin_x, part->origin_y,
+                        WHITE);
     }
 }
 

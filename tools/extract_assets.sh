@@ -29,18 +29,23 @@ java -Xmx3g -jar "$FFDEC" -format sound:mp3 -export sound "$OUT/sound" "$SWF"
 # SWF has 356 DefineShape tags against 3 bitmaps.
 java -Xmx3g -jar "$FFDEC" -format shape:svg -export shape "$OUT/shape" "$SWF"
 
-# The same shapes as PNG. A few pieces are drawn under a glow filter that
-# lives on the placement rather than in the clip, and tools/extract_glows.py
-# renders those itself from the flat art.
+# The same shapes as PNG. These are what the SVG renderings are checked
+# against, and what is shipped for the handful of pieces that will not
+# rasterise faithfully. A few are drawn under a glow filter that lives on the
+# placement rather than in the clip, and tools/extract_glows.py renders those
+# itself from the flat art.
 java -Xmx3g -jar "$FFDEC" -format shape:png -export shape "$OUT/shape_png" "$SWF"
 
 # Bitmaps (few, but needed).
 java -Xmx3g -jar "$FFDEC" -format image:png -export image "$OUT/image" "$SWF"
 
-# Every sprite as SVG as well. Nothing is drawn from these: build_assets.py
-# reads the root transform out of the SVG beside each frame to find where the
-# art's own origin sits inside the trimmed PNG, and without them every sprite
-# frame loses its offset and lands beside its mark.
+# Every sprite as SVG as well, and this is what most of the art is actually
+# built from. The decompiler will not export a PNG at more than one pixel to
+# the stage unit, which is as sharp as the game could ever be; the SVG is the
+# same vector art, so tools/rasterize.py renders it at two and checks what
+# comes back against the PNG beside it. The root transform in the SVG is also
+# where the art's own origin sits inside the trimmed PNG, and without that
+# every sprite frame lands beside its mark.
 java -Xmx3g -jar "$FFDEC" -format sprite:svg -export sprite "$OUT/sprite_svg" "$SWF"
 
 # Sprites rendered frame by frame. This is the big one: every frame of every
@@ -58,6 +63,8 @@ python3 tools/extract_markers.py "$SWF" --raw "$OUT" \
     --stripped "$OUT/nomarkers.swf"
 java -Xmx3g -jar "$FFDEC" -format sprite:png -export sprite \
     "$OUT/nomarkers/sprite" "$OUT/nomarkers.swf"
+java -Xmx3g -jar "$FFDEC" -format sprite:svg -export sprite \
+    "$OUT/nomarkers/sprite_svg" "$OUT/nomarkers.swf"
 
 # The cutscene narration, which is a stream sound on each comic's timeline and
 # so is not in the sound export above.

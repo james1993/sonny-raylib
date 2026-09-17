@@ -418,8 +418,8 @@ static void draw_trail(const Game *g)
     /* The art is already white, carrying only the fade along its length,
        so the move's own colour goes straight on as a tint -- which is what
        Color.setRGB on the clip amounts to. */
-    const Texture2D *tex = asset_texture(TRAIL_ART, 1);
-    if (!tex)
+    Art art;
+    if (!asset_art(TRAIL_ART, 1, &art))
         return;
     /* The clip's cxform: nothing on its first frame, solid from its ninth,
        and back down to nothing by its thirty-second. */
@@ -439,13 +439,11 @@ static void draw_trail(const Game *g)
        the throw and carries the solid head away from it, which is the whole
        point of the effect; the pivot is that same origin, since the clip is
        turned about it. Only _xscale moves, so the height is left alone. */
-    Vector2 off = asset_frame_offset(TRAIL_ART, 1);
     float s = g->trail_scale / 100.0f;
-    Rectangle src = {0, 0, (float)tex->width, (float)tex->height};
-    Rectangle dst = {g->trail_x, g->trail_y, (float)tex->width * s,
-                     (float)tex->height};
-    Vector2 pivot = {(off.x - TRAIL_PLACED_X) * s, off.y};
-    DrawTexturePro(*tex, src, dst, pivot, g->trail_angle, tint);
+    Rectangle dst = {g->trail_x, g->trail_y, art.size.x * s, art.size.y};
+    Vector2 pivot = {(art.offset.x - TRAIL_PLACED_X) * s, art.offset.y};
+    DrawTexturePro(*art.texture, art.source, dst, pivot, g->trail_angle,
+                   tint);
 }
 
 static void bolt_start(Game *g, const AbilityDef *a, int32_t caster,
@@ -518,19 +516,17 @@ static void draw_bolt(const Game *g)
     if (frames <= 0)
         return;
     int32_t frame = (g->bolt_tick % frames) + 1;
-    const Texture2D *tex = asset_texture(g->bolt, frame);
-    if (!tex)
+    Art art;
+    if (!asset_art(g->bolt, frame, &art))
         return;
-    Vector2 off = asset_frame_offset(g->bolt, frame);
     /* It fades in over its first ten frames. */
     int32_t alpha = g->bolt_tick * BOLT_FADE;
     if (alpha > 100)
         alpha = 100;
     Color tint = {255, 255, 255, (unsigned char)(alpha * 255 / 100)};
-    Rectangle src = {0, 0, (float)tex->width, (float)tex->height};
-    Rectangle dst = {g->bolt_x, g->bolt_y, (float)tex->width,
-                     (float)tex->height};
-    DrawTexturePro(*tex, src, dst, off, g->bolt_angle, tint);
+    Rectangle dst = {g->bolt_x, g->bolt_y, art.size.x, art.size.y};
+    DrawTexturePro(*art.texture, art.source, dst, art.offset, g->bolt_angle,
+                   tint);
 }
 
 /* How long the model's one-shot states run, from its own frame labels. */
@@ -757,13 +753,13 @@ static void draw_chrome_art(const StageChrome *c, int32_t tick)
     const char *name = TextFormat("#%d", c->character);
     int32_t frames = asset_frame_count(name);
     int32_t frame = frames > 1 ? (int32_t)(tick % frames) + 1 : 1;
-    const Texture2D *tex = asset_texture(name, frame);
-    if (!tex)
+    Art art;
+    if (!asset_art(name, frame, &art))
         return;
-    Vector2 off = frames > 1 ? asset_frame_offset(name, frame)
+    Vector2 off = frames > 1 ? art.offset
                              : (Vector2){c->origin_x, c->origin_y};
-    draw_texture_placed(tex, c->x, c->y, c->scale_x, c->scale_y,
-                        off.x, off.y, WHITE);
+    draw_art_placed(&art, c->x, c->y, c->scale_x, c->scale_y,
+                    off.x, off.y, WHITE);
 }
 
 /* Draw every piece of the battle screen whose depth falls in [from, to). */
@@ -845,8 +841,8 @@ static Color life_colour(int32_t now, int32_t max)
 static void draw_bar_part(const BarPart *part, const StageBar *bar, int mirror,
                           float fill, const Color *recolour)
 {
-    const Texture2D *tex = asset_texture(TextFormat("#%d", part->character), 1);
-    if (!tex)
+    Art art;
+    if (!asset_art(TextFormat("#%d", part->character), 1, &art))
         return;
     float left = part->x - part->origin_x * part->scale_x;
     float w = part->width * part->scale_x * fill;
@@ -860,10 +856,10 @@ static void draw_bar_part(const BarPart *part, const StageBar *bar, int mirror,
         DrawRectangleRec(dst, *recolour);
         return;
     }
-    Rectangle src = {0, 0, (float)tex->width * fill, (float)tex->height};
+    Rectangle src = {0, 0, art.source.width * fill, art.source.height};
     if (mirror)
         src.width = -src.width;
-    DrawTexturePro(*tex, src, dst, (Vector2){0, 0}, 0.0f, WHITE);
+    DrawTexturePro(*art.texture, src, dst, (Vector2){0, 0}, 0.0f, WHITE);
 }
 
 /* One of the bar's text fields, laid out the way the SWF lays it out: its box
@@ -1013,12 +1009,11 @@ static void draw_move_boomer(const Game *g)
                                          "moveSelectBoomer");
     if (!at)
         return;
-    const Texture2D *tex = asset_texture(BOOMER_CLIP, frame);
-    if (!tex)
+    Art art;
+    if (!asset_art(BOOMER_CLIP, frame, &art))
         return;
-    Vector2 off = asset_frame_offset(BOOMER_CLIP, frame);
-    draw_texture_placed(tex, at->x, at->y, at->scale_x, at->scale_y,
-                        off.x, off.y, WHITE);
+    draw_art_placed(&art, at->x, at->y, at->scale_x, at->scale_y,
+                    art.offset.x, art.offset.y, WHITE);
 }
 
 static void draw_turn_dial(const Game *g)
@@ -1027,12 +1022,11 @@ static void draw_turn_dial(const Game *g)
                                             "battleClocker");
     if (!clock)
         return;
-    const Texture2D *plain = asset_texture(TURN_DIAL_PLAIN, 1);
-    if (plain) {
-        Vector2 off = asset_frame_offset(TURN_DIAL_PLAIN, 1);
-        draw_texture_placed(plain, clock->x, clock->y, clock->scale_x,
-                            clock->scale_y, off.x, off.y, WHITE);
-    }
+    Art plain;
+    if (asset_art(TURN_DIAL_PLAIN, 1, &plain))
+        draw_art_placed(&plain, clock->x, clock->y, clock->scale_x,
+                        clock->scale_y, plain.offset.x, plain.offset.y,
+                        WHITE);
     /* The clock over it only fills once the turn is actually the player's to
        spend: the loop holds BattleTimeNow at zero while a line of speech is
        running, so through the opening of a fight the dial is dark. */
@@ -1041,14 +1035,14 @@ static void draw_turn_dial(const Game *g)
     const Battle *b = &g->battle;
     const char *name = b->units[PLAYER_SLOT].teamSide == b->TeamMoveNow
                      ? TURN_DIAL_FRIEND : TURN_DIAL_ENEMY;
-    const Texture2D *tex = asset_texture(name, 1);
-    if (!tex)
+    Art art;
+    if (!asset_art(name, 1, &art))
         return;
     /* The arc is drawn about the ring's centre, which is the origin the
        glow's own manifest entry carries. */
-    Vector2 off = asset_frame_offset(name, 1);
-    draw_texture_placed(tex, clock->x + TURN_DIAL_X, clock->y + TURN_DIAL_Y,
-                        clock->scale_x, clock->scale_y, off.x, off.y, WHITE);
+    draw_art_placed(&art, clock->x + TURN_DIAL_X, clock->y + TURN_DIAL_Y,
+                    clock->scale_x, clock->scale_y,
+                    art.offset.x, art.offset.y, WHITE);
 }
 
 /* -------------------------------------------------------------------- ring */
@@ -1240,26 +1234,25 @@ static void draw_buff_widget(Vector2 at, const char *key, int32_t turns,
 {
     /* The disc takes the buff's element outright, the way Color.setRGB does,
        rather than being multiplied by it. */
-    const Texture2D *back = asset_texture_recolored(BUFF_BACKING, 1);
-    if (back) {
-        Vector2 off = asset_frame_offset(BUFF_BACKING, 1);
-        draw_texture_placed(back, at.x - 0.1f * sx, at.y, sx, sy, off.x, off.y,
-                            element);
+    Art back;
+    if (asset_art(BUFF_BACKING, 1, &back)) {
+        back.texture = asset_texture_recolored(BUFF_BACKING, 1);
+        if (back.texture)
+            draw_art_placed(&back, at.x - 0.1f * sx, at.y, sx, sy,
+                            back.offset.x, back.offset.y, element);
     }
     /* Then the plate, and the icon over it -- the widget stacks them at
        depths 1, 3 and 4, so the icon is the last of the three. It is a frame
        of the shower's own clip named for the buff; a passive talent has no
        frame there, in the original either. */
-    const Texture2D *frame = asset_texture(BUFF_FRAME, 1);
-    if (frame) {
-        Vector2 off = asset_frame_offset(BUFF_FRAME, 1);
-        draw_texture_placed(frame, at.x, at.y, sx, sy, off.x, off.y, WHITE);
-    }
-    const Texture2D *icon = asset_texture(key, 1);
-    if (icon) {
-        Vector2 off = asset_frame_offset(key, 1);
-        draw_texture_placed(icon, at.x, at.y, sx, sy, off.x, off.y, WHITE);
-    }
+    Art frame;
+    if (asset_art(BUFF_FRAME, 1, &frame))
+        draw_art_placed(&frame, at.x, at.y, sx, sy,
+                        frame.offset.x, frame.offset.y, WHITE);
+    Art icon;
+    if (asset_art(key, 1, &icon))
+        draw_art_placed(&icon, at.x, at.y, sx, sy,
+                        icon.offset.x, icon.offset.y, WHITE);
     const char *text = TextFormat("%d", turns);
     float size = BUFF_COUNT_SIZE * sx;
     float width = ui_sans_text_width(text, size);
@@ -1303,11 +1296,11 @@ static Vector2 buff_widget_pos(const StageBar *bar, float way, int32_t h)
    under the icon, which is the piece the original hangs the hit test on. */
 static Rectangle buff_widget_rect(Vector2 at, float sx, float sy)
 {
-    const Texture2D *back = asset_texture(BUFF_BACKING, 1);
-    if (!back)
+    Art back;
+    if (!asset_art(BUFF_BACKING, 1, &back))
         return (Rectangle){0, 0, 0, 0};
-    Vector2 off = asset_frame_offset(BUFF_BACKING, 1);
-    return placed_texture(back, at.x - 0.1f * sx, at.y, sx, sy, off.x, off.y);
+    return placed_art(&back, at.x - 0.1f * sx, at.y, sx, sy,
+                      back.offset.x, back.offset.y);
 }
 
 static void draw_unit_buffs(const Game *g, int32_t slot)
@@ -1518,16 +1511,16 @@ static void draw_balloon(const Game *g)
     at.x += flip ? -SPEECH_BALLOON_X : SPEECH_BALLOON_X;
     at.y += SPEECH_BALLOON_Y;
 
-    const Texture2D *tex = asset_texture(SPEECH_BALLOON, g->balloon_tick + 1);
-    if (!tex)
+    Art art;
+    if (!asset_art(SPEECH_BALLOON, g->balloon_tick + 1, &art))
         return;
-    Vector2 offset = asset_frame_offset(SPEECH_BALLOON, g->balloon_tick + 1);
     /* Mirrored: the source rectangle is read backwards. */
-    Rectangle src = {0, 0, flip ? (float)tex->width : -(float)tex->width,
-                     (float)tex->height};
-    Rectangle dst = {at.x - (flip ? tex->width - offset.x : offset.x), at.y - offset.y,
-                     (float)tex->width, (float)tex->height};
-    DrawTexturePro(*tex, src, dst, (Vector2){0, 0}, 0.0f, WHITE);
+    Rectangle src = art.source;
+    if (!flip)
+        src.width = -src.width;
+    Rectangle dst = {at.x - (flip ? art.size.x - art.offset.x : art.offset.x),
+                     at.y - art.offset.y, art.size.x, art.size.y};
+    DrawTexturePro(*art.texture, src, dst, (Vector2){0, 0}, 0.0f, WHITE);
 }
 
 /* What a character is saying. The original places one box and slides it to
@@ -1568,19 +1561,13 @@ static void draw_speech(const Game *g)
     }
     if (prompt) {
         int32_t frames = asset_frame_count(SPEECH_SKIP);
-        const Texture2D *tex = asset_texture(SPEECH_SKIP,
-                                             frames > 0
-                                             ? g->balloon_tick % frames + 1
-                                             : 1);
-        if (tex) {
-            Vector2 off = asset_frame_offset(SPEECH_SKIP,
-                                             frames > 0
-                                             ? g->balloon_tick % frames + 1
-                                             : 1);
-            draw_texture_placed(tex, shifted.x + prompt->x,
-                                shifted.y + prompt->y, prompt->scale_x,
-                                prompt->scale_y, off.x, off.y, WHITE);
-        }
+        Art art;
+        if (asset_art(SPEECH_SKIP,
+                      frames > 0 ? g->balloon_tick % frames + 1 : 1, &art))
+            draw_art_placed(&art, shifted.x + prompt->x,
+                            shifted.y + prompt->y, prompt->scale_x,
+                            prompt->scale_y, art.offset.x, art.offset.y,
+                            WHITE);
     }
 
     /* The fields are recorded where the clip is placed, so they follow it by

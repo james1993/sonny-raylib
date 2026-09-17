@@ -4,18 +4,27 @@
 #include "rlgl.h"
 
 #define ASSET_CACHE_MAX 512
+/* And what they may come to between them. A count on its own stopped being
+   enough when the art went to two pixels to the stage unit: a comic's panel
+   is a couple of thousand pixels across and eleven megabytes on the card, and
+   five hundred of anything like that is more memory than a machine need have.
+   A cutscene is what fills this; everything else in the game together is a
+   fraction of it. */
+#define ASSET_CACHE_BYTES (192 * 1024 * 1024)
 
 typedef struct {
-    const char *name;
+    const char *name;          /* NULL for a slot nothing is in */
     int32_t     frame;
     Texture2D   texture;
     int32_t     ok;
     int64_t     used;          /* when this was last asked for */
+    int64_t     bytes;         /* what it takes on the card, mipmaps and all */
 } CachedTexture;
 
 static CachedTexture cache[ASSET_CACHE_MAX];
 static int32_t cache_count;
 static int64_t cache_clock;
+static int64_t cache_bytes;
 static char asset_root[512] = ".";
 
 void assets_set_root(const char *root)
@@ -38,6 +47,38 @@ int32_t asset_frame_count(const char *name)
     return entry ? entry->frame_count : 0;
 }
 
+static CachedTexture *oldest_slot(void)
+{
+    CachedTexture *slot = &cache[0];
+    for (int32_t i = 1; i < cache_count; i++)
+        if (cache[i].name && (!slot->name || cache[i].used < slot->used))
+            slot = &cache[i];
+    return slot;
+}
+
+static void release(CachedTexture *slot)
+{
+    if (slot->ok)
+        UnloadTexture(slot->texture);
+    cache_bytes -= slot->bytes;
+    slot->name = NULL;
+    slot->frame = 0;
+    slot->ok = 0;
+    slot->bytes = 0;
+    slot->used = 0;
+}
+
+/* Throw out the one that has gone longest without being asked for. Returns 0
+   when there is nothing left to throw out. */
+static int evict_oldest(void)
+{
+    CachedTexture *slot = oldest_slot();
+    if (!slot->name)
+        return 0;
+    release(slot);
+    return 1;
+}
+
 const Texture2D *asset_texture(const char *name, int32_t frame)
 {
     const AssetEntry *entry = asset_find(name);
@@ -55,31 +96,36 @@ const Texture2D *asset_texture(const char *name, int32_t frame)
             return cache[i].ok ? &cache[i].texture : NULL;
         }
     }
+    /* Room for one more. The one that has gone longest without being asked
+       for makes way -- never the one just handed out, which is what lets a
+       caller hold a texture while it fetches another. */
+    while (cache_bytes > ASSET_CACHE_BYTES)
+        if (!evict_oldest())
+            break;
 
     char path[1024];
     snprintf(path, sizeof(path), "%s/%s", asset_root, entry->frames[frame - 1]);
 
-    /* A comic is a thousand pictures of its own, so a cache that only fills
-       up would leave the game with nothing to draw once one has played. The
-       one that has gone longest without being asked for makes way. Asking
-       for a texture puts it at the head of that order, so a pointer handed
-       back by this function is never what the next call throws out -- which
-       is what lets a caller hold one while it fetches another. */
-    CachedTexture *slot;
-    if (cache_count < ASSET_CACHE_MAX) {
+    /* A comic is a thousand pictures of its own, so a cache that only filled
+       up would leave the game with nothing to draw once one had played.
+       Asking for a texture puts it at the head of the order, so a pointer
+       handed back by this function is never what the next call throws out.
+       */
+    CachedTexture *slot = NULL;
+    for (int32_t i = 0; i < cache_count && !slot; i++)
+        if (!cache[i].name)
+            slot = &cache[i];
+    if (!slot && cache_count < ASSET_CACHE_MAX)
         slot = &cache[cache_count++];
-    } else {
-        slot = &cache[0];
-        for (int32_t i = 1; i < cache_count; i++)
-            if (cache[i].used < slot->used)
-                slot = &cache[i];
-        if (slot->ok)
-            UnloadTexture(slot->texture);
+    if (!slot) {
+        slot = oldest_slot();
+        release(slot);
     }
     slot->used = ++cache_clock;
     slot->name = entry->name;
     slot->frame = frame;
     slot->ok = 0;
+    slot->bytes = 0;
     if (FileExists(path)) {
         slot->texture = LoadTexture(path);
         if (slot->texture.id != 0) {
@@ -92,6 +138,11 @@ const Texture2D *asset_texture(const char *name, int32_t frame)
             GenTextureMipmaps(&slot->texture);
             SetTextureFilter(slot->texture, TEXTURE_FILTER_TRILINEAR);
             slot->ok = 1;
+            /* Four bytes a pixel, and a third as much again for the chain of
+               reduced copies. */
+            slot->bytes = (int64_t)slot->texture.width
+                        * slot->texture.height * 4 * 4 / 3;
+            cache_bytes += slot->bytes;
         }
     }
     return slot->ok ? &slot->texture : NULL;
@@ -148,7 +199,9 @@ const Texture2D *asset_texture_recolored(const char *name, int32_t frame)
     return white_cache[slot].ok ? &white_cache[slot].texture : NULL;
 }
 
-/* Where a frame's own origin sits inside its exported image. */
+/* Where a frame's own origin sits inside its exported image. The offsets are
+   read out of the vector source and so are in stage units whatever scale the
+   art itself was rasterised at. */
 Vector2 asset_frame_offset(const char *name, int32_t frame)
 {
     const AssetEntry *entry = asset_find(name);
@@ -161,37 +214,55 @@ Vector2 asset_frame_offset(const char *name, int32_t frame)
     return (Vector2){entry->offsets[frame - 1].x, entry->offsets[frame - 1].y};
 }
 
-static int draw_scaled(const char *name, int32_t frame, Rectangle area,
-                       Color tint, int cover)
+int asset_art(const char *name, int32_t frame, Art *out)
 {
+    *out = (Art){0};
     const Texture2D *tex = asset_texture(name, frame);
     if (!tex)
         return 0;
+    const AssetEntry *entry = asset_find(name);
+    float scale = (entry && entry->scale > 0.0f) ? entry->scale : 1.0f;
+    out->texture = tex;
+    out->size = (Vector2){tex->width / scale, tex->height / scale};
+    out->offset = asset_frame_offset(name, frame);
+    out->source = (Rectangle){0, 0, (float)tex->width, (float)tex->height};
+    return 1;
+}
 
-    float sx = area.width / tex->width;
-    float sy = area.height / tex->height;
+static int draw_scaled(const char *name, int32_t frame, Rectangle area,
+                       Color tint, int cover)
+{
+    Art art;
+    if (!asset_art(name, frame, &art))
+        return 0;
+
+    float sx = area.width / art.size.x;
+    float sy = area.height / art.size.y;
     /* Fit stays inside the box; cover fills it and crops. */
     float scale = cover ? (sx > sy ? sx : sy) : (sx < sy ? sx : sy);
     if (!cover && scale > 1.0f)
         scale = 1.0f;
 
-    float w = tex->width * scale;
-    float h = tex->height * scale;
+    float w = art.size.x * scale;
+    float h = art.size.y * scale;
     Rectangle dest = {area.x + (area.width - w) / 2,
                       area.y + (area.height - h) / 2, w, h};
-    Rectangle src = {0, 0, (float)tex->width, (float)tex->height};
+    Rectangle src = art.source;
 
     if (cover) {
-        /* Crop the source instead of spilling outside the box. */
-        float visible_w = area.width / scale;
-        float visible_h = area.height / scale;
-        src.x = (tex->width - visible_w) / 2;
-        src.y = (tex->height - visible_h) / 2;
+        /* Crop the source instead of spilling outside the box. The crop is
+           in the image's own pixels, so the box goes back through the art's
+           own scale to get there. */
+        float texels = art.source.width / art.size.x;
+        float visible_w = area.width / scale * texels;
+        float visible_h = area.height / scale * texels;
+        src.x = (art.source.width - visible_w) / 2;
+        src.y = (art.source.height - visible_h) / 2;
         src.width = visible_w;
         src.height = visible_h;
         dest = area;
     }
-    DrawTexturePro(*tex, src, dest, (Vector2){0, 0}, 0.0f, tint);
+    DrawTexturePro(*art.texture, src, dest, (Vector2){0, 0}, 0.0f, tint);
     return 1;
 }
 
@@ -209,19 +280,16 @@ int asset_draw_cover(const char *name, int32_t frame, Rectangle area,
 int asset_draw_placed(const char *name, int32_t frame, Vector2 parent,
                       float scale, Color tint)
 {
-    const Texture2D *tex = asset_texture(name, frame);
-    if (!tex)
+    Art art;
+    if (!asset_art(name, frame, &art))
         return 0;
     /* The frame's recorded offset says where its own origin sits inside the
        image, so this puts that origin exactly on `parent`. */
-    Vector2 offset = asset_frame_offset(name, frame);
-
-    float w = tex->width * scale;
-    float h = tex->height * scale;
-    Rectangle src = {0, 0, (float)tex->width, (float)tex->height};
-    Rectangle dest = {parent.x - offset.x * scale,
-                      parent.y - offset.y * scale, w, h};
-    DrawTexturePro(*tex, src, dest, (Vector2){0, 0}, 0.0f, tint);
+    Rectangle dest = {parent.x - art.offset.x * scale,
+                      parent.y - art.offset.y * scale,
+                      art.size.x * scale, art.size.y * scale};
+    DrawTexturePro(*art.texture, art.source, dest, (Vector2){0, 0}, 0.0f,
+                   tint);
     return 1;
 }
 
@@ -231,6 +299,8 @@ void assets_unload_all(void)
         if (cache[i].ok)
             UnloadTexture(cache[i].texture);
     cache_count = 0;
+    cache_bytes = 0;
+    memset(cache, 0, sizeof(cache));
     for (int32_t i = 0; i < white_count; i++)
         if (white_cache[i].ok)
             UnloadTexture(white_cache[i].texture);
@@ -252,9 +322,9 @@ int32_t doll_animation_frame(const char *animation, int32_t tick, int loop)
 
 /* Draw one texture under a SWF matrix, so skew and rotation survive rather
    than being approximated by a rotation angle. */
-static void draw_with_matrix(const Texture2D *tex, const float m[6],
+static void draw_with_matrix(const Art *art, const float m[6],
                              Vector2 origin, float scale, int flip,
-                             Vector2 offset, Color tint)
+                             Color tint)
 {
     float sign = flip ? -1.0f : 1.0f;
 
@@ -274,20 +344,20 @@ static void draw_with_matrix(const Texture2D *tex, const float m[6],
     /* The exported image is trimmed and padded, and its SVG sibling records
        where the art's own origin sits inside it. Putting the top-left at
        -offset lines the two coordinate systems back up exactly. */
-    Rectangle src = {0, 0, (float)tex->width, (float)tex->height};
-    Rectangle dest = {-offset.x, -offset.y,
-                      (float)tex->width, (float)tex->height};
-    DrawTexturePro(*tex, src, dest, (Vector2){0, 0}, 0.0f, tint);
+    Rectangle dest = {-art->offset.x, -art->offset.y,
+                      art->size.x, art->size.y};
+    DrawTexturePro(*art->texture, art->source, dest, (Vector2){0, 0}, 0.0f,
+                   tint);
     rlPopMatrix();
 }
 
 static int draw_layer(const char *name, const float m[6], Vector2 origin,
                       float scale, int flip, Color tint)
 {
-    const Texture2D *tex = asset_texture(name, 1);
-    if (!tex)
+    Art art;
+    if (!asset_art(name, 1, &art))
         return 0;
-    draw_with_matrix(tex, m, origin, scale, flip, asset_frame_offset(name, 1), tint);
+    draw_with_matrix(&art, m, origin, scale, flip, tint);
     return 1;
 }
 
@@ -340,20 +410,20 @@ static int draw_cast(const DollSpec *spec, const DollPlacement *p,
         /* The recoloured layer is replaced outright, the way Color.setRGB
            replaces rather than tints, so it goes through the whitened copy. */
         Color c = tint;
-        const Texture2D *tex;
+        Art art;
+        if (!asset_art(name, 1, &art))
+            continue;
         if (l->tinted && spec->cast.a) {
-            tex = asset_texture_recolored(name, 1);
+            const Texture2D *plain = asset_texture_recolored(name, 1);
+            if (!plain)
+                continue;
+            art.texture = plain;
             c.r = spec->cast.r;
             c.g = spec->cast.g;
             c.b = spec->cast.b;
-        } else {
-            tex = asset_texture(name, 1);
         }
-        if (!tex)
-            continue;
         c.a = (unsigned char)(c.a * l->alpha);
-        draw_with_matrix(tex, m, origin, scale, flip,
-                         asset_frame_offset(name, 1), c);
+        draw_with_matrix(&art, m, origin, scale, flip, c);
         drawn++;
     }
     return drawn;

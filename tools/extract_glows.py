@@ -20,6 +20,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
+import rasterize                                                # noqa: E402
 
 def blur_sigma(glow):
     """The Gaussian PIL is asked for, from the filter's own numbers.
@@ -100,17 +101,17 @@ def compose_ring(art):
 COMPOSERS = {'ring': compose_ring}
 
 
-def outer_glow(canvas, alpha, glow):
+def outer_glow(canvas, alpha, glow, scale=1.0):
     """The air round the shape lit up, laid under it."""
     from PIL import Image, ImageFilter
-    lit = alpha.filter(ImageFilter.GaussianBlur(blur_sigma(glow)))
+    lit = alpha.filter(ImageFilter.GaussianBlur(blur_sigma(glow) * scale))
     lit = lit.point(lambda v: min(255, int(v * glow['strength'])))
     halo = Image.new('RGBA', canvas.size, tuple(glow['color']) + (0,))
     halo.putalpha(lit)
     return Image.alpha_composite(canvas, halo)
 
 
-def inner_glow(art, glow):
+def inner_glow(art, glow, scale=1.0):
     """The inside of the shape lit up along its edges.
 
     Flash lights an inner glow from the *outside*: it blurs everything the
@@ -120,17 +121,22 @@ def inner_glow(art, glow):
     from PIL import Image, ImageFilter, ImageChops
     alpha = art.getchannel('A')
     outside = alpha.point(lambda v: 255 - v)
-    lit = outside.filter(ImageFilter.GaussianBlur(blur_sigma(glow)))
+    lit = outside.filter(ImageFilter.GaussianBlur(blur_sigma(glow) * scale))
     lit = lit.point(lambda v: min(255, int(v * glow['strength'])))
     layer = Image.new('RGBA', art.size, tuple(glow['color']) + (0,))
     layer.putalpha(ImageChops.multiply(lit, alpha))
     return Image.alpha_composite(art, layer)
 
 
-def render(source, spec, out_path):
-    """The art with its filters applied. -> (width, height, pad)."""
+def render(source, spec, out_path, scale=1.0):
+    """The art with its filters applied. -> (width, height, pad, scale), the
+    first three in stage units: the caller records where the piece's own
+    origin sits, which is a stage coordinate whatever the art is drawn at."""
     from PIL import Image
-    art = Image.open(source).convert('RGBA')
+    art = rasterize.art(rasterize.svg_sibling(source), source, scale)
+    if art is None:
+        art = Image.open(source).convert('RGBA')
+        scale = 1.0
     compose = COMPOSERS.get(spec.get('compose'))
     if compose:
         art = compose(art)
@@ -141,24 +147,26 @@ def render(source, spec, out_path):
 
     # Room for the widest halo. An inner glow stays inside the art, so only
     # the outer ones decide how far the picture has to reach.
-    pad = max([int(blur_sigma(g) * 3) + 1 for g in outers] or [0])
+    pad = max([int(blur_sigma(g) * scale * 3) + 1 for g in outers] or [0])
     canvas = Image.new('RGBA', (art.width + pad * 2, art.height + pad * 2),
                        (0, 0, 0, 0))
 
     alpha = Image.new('L', canvas.size, 0)
     alpha.paste(art.getchannel('A'), (pad, pad))
     for glow in outers:
-        canvas = outer_glow(canvas, alpha, glow)
+        canvas = outer_glow(canvas, alpha, glow, scale)
     for glow in inners:
-        art = inner_glow(art, glow)
+        art = inner_glow(art, glow, scale)
     canvas.alpha_composite(art, (pad, pad))
     canvas.save(out_path)
-    return art.width, art.height, pad
+    return art.width / scale, art.height / scale, pad / scale, scale
 
 
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--raw', default='assets/raw')
+    ap.add_argument('--scale', type=float, default=rasterize.DEFAULT_SCALE,
+                    help='pixels of art per stage unit; see tools/rasterize.py')
     ap.add_argument('--out', default=os.path.join(ROOT, 'assets/art/glow'))
     ap.add_argument('--json',
                     default=os.path.join(ROOT, 'data/extracted/glows.json'))
@@ -172,17 +180,18 @@ def main(argv=None):
         if not source:
             raise SystemExit('no art for character %d' % spec['character'])
         path = os.path.join(args.out, name + '.png')
-        width, height, pad = render(source, spec, path)
+        width, height, pad, at = render(source, spec, path, args.scale)
         out[name] = {'file': os.path.relpath(path, ROOT),
                      'character': spec['character'],
-                     'width': width, 'height': height, 'pad': pad}
+                     'width': width, 'height': height, 'pad': pad,
+                     'scale': at}
         # Where the piece's own origin sits in the art. Left unsaid, it is
         # the flat art's, which build_assets.py already knows; a composed
         # piece has to say, because the flat art is only half of it.
         if spec.get('origin') == 'middle':
             out[name]['origin'] = [width / 2.0, height / 2.0]
-        print('%-14s %dx%d art, %d px of glow round it'
-              % (name, width, height, pad))
+        print('%-14s %gx%g art at %g px to the unit, %g units of glow '
+              'round it' % (name, width, height, at, pad))
     with open(args.json, 'w', encoding='utf-8') as fh:
         json.dump(out, fh, indent=1)
 

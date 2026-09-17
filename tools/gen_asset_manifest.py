@@ -32,6 +32,11 @@ typedef struct {
     const char *const *frames;
     const AssetOffset *offsets;   /* NULL when unknown */
     int32_t            frame_count;
+    /* How many pixels of this asset's image there are to the stage unit. The
+       decompiler exports at one; art rasterised from the vector source is
+       finer than that, and every draw divides by this to get back to the
+       units everything else is in. */
+    float              scale;
     /* Where this art sits relative to its parent's origin, when known: the
        shape's bounds with its placement matrix applied. has_bounds is 0 for
        assets whose position the engine supplies instead. */
@@ -516,11 +521,12 @@ def main():
     lines.append('const AssetEntry SONNY_ASSETS[] = {')
     for index, (name, entry) in enumerate(sorted(assets.items())):
         b = entry.get('bounds') or [0, 0, 0, 0]
-        lines.append('    { %s, %s, FRAMES_%d, %s, %d, %d, %s, %s, %s, %s },'
+        lines.append('    { %s, %s, FRAMES_%d, %s, %d, %s, %d, %s, %s, %s, %s },'
                      % (c_string(name), c_string(entry['category']), index,
                         ('OFFSETS_%d' % index) if entry.get('offsets')
                         else 'NULL',
                         len(entry['frames']),
+                        c_float(entry.get('scale') or 1.0),
                         1 if entry.get('bounds') else 0,
                         c_float(b[0]), c_float(b[1]), c_float(b[2]),
                         c_float(b[3])))
