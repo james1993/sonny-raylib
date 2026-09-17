@@ -1816,8 +1816,9 @@ void screen_victory_update(Game *g, Vector2 mouse)
     /* Proceed! is what offers the story's next note, if there is one for
        where the player has got to. */
     game_hub_note(g);
-    if (g->options.autosave)
-        save_write(&g->campaign, save_slot_path(g->campaign.slot));
+    /* Always, where the original asks first. A run lost to a setting is the
+       setting's fault. */
+    save_write(&g->campaign, save_slot_path(g->campaign.slot));
     if (g->boss_beaten) {
         g->boss_beaten = 0;
         if (g->campaign.progress_battle == 9)

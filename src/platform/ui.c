@@ -7,6 +7,7 @@
 #include "assets.h"
 #include "game.h"
 #include "render.h"
+#include "rlgl.h"
 
 /* The interface's two faces.
  *
@@ -595,6 +596,69 @@ void draw_panel(Rectangle r, const char *title)
     }
 }
 
+/* The sound switch, which is a departure: the original asks "Sound: On/Off"
+ * in a row of four settings, and the other three are gone, so what is left is
+ * one control and a word is more than it needs. A quaver says it, and a line
+ * through a quaver says the other thing, in any language.
+ *
+ * Drawn rather than taken from the SWF because the original has no such
+ * button to take -- which also means it is vector at whatever size the stage
+ * is drawn, the way everything else here wishes it were.
+ */
+void draw_music_note(Rectangle box, int on, int over)
+{
+    Vector2 at = {box.x + box.width / 2, box.y + box.height / 2};
+    /* Lit when the sound is on, and brighter still under the pointer; dark
+       when it is off, because a switch should look switched off. */
+    Color colour = on ? (over ? (Color){255, 245, 210, 255}
+                              : (Color){236, 214, 150, 255})
+                      : (over ? (Color){176, 168, 160, 255}
+                              : (Color){142, 134, 126, 255});
+    /* The line reads over the note, so it is the lit one when the note is
+       not: the eye should land on the line and take the note as struck out,
+       rather than hunt for a line inside a shape of the same colour. */
+    Color line = over ? (Color){255, 250, 242, 255}
+                      : (Color){246, 238, 228, 255};
+
+    /* A quaver: the stem up the right of the head, the flag off the top of
+       the stem, and the head laid over at the angle a note's head sits at,
+       which is what keeps it from reading as a lollipop. Drawn in a nominal
+       30 by 32 and scaled to whatever box it is given, so a screen sizes it
+       by asking for the room it has. */
+    float k = box.width / 30.0f;
+    if (box.height / 32.0f < k)
+        k = box.height / 32.0f;
+    if (k <= 0.0f)
+        return;
+
+    rlPushMatrix();
+    rlTranslatef(at.x, at.y, 0.0f);
+    rlScalef(k, k, 1.0f);
+
+    const float STEM_W = 2.6f;
+    DrawRectangleRec((Rectangle){2.2f, -14.0f, STEM_W, 20.5f}, colour);
+    DrawTriangle((Vector2){2.2f + STEM_W, -14.0f},
+                 (Vector2){2.2f + STEM_W, -3.0f},
+                 (Vector2){11.5f, -8.5f}, colour);
+    rlPushMatrix();
+    rlTranslatef(-3.4f, 6.8f, 0.0f);
+    rlRotatef(-22.0f, 0.0f, 0.0f, 1.0f);
+    DrawEllipse(0, 0, 6.4f, 4.7f, colour);
+    rlPopMatrix();
+
+    /* And the line through it. Laid over a darker one so that it reads
+       against the note as well as against whatever is behind it. */
+    if (!on) {
+        Vector2 from = {-13.0f, 13.5f};
+        Vector2 to = {13.5f, -13.0f};
+        /* A little of the dark under it, so the line holds its shape where it
+           crosses the note as well as where it crosses the background. */
+        DrawLineEx(from, to, 5.4f, (Color){24, 16, 14, 130});
+        DrawLineEx(from, to, 3.2f, line);
+    }
+    rlPopMatrix();
+}
+
 int draw_button(Rectangle r, const char *label, Vector2 mouse, int enabled)
 {
     int over = enabled && hit(r, mouse);
@@ -884,7 +948,8 @@ static const char *strip_markup(const char *html, char *out, size_t max)
     return out;
 }
 
-void draw_static_text(const char *screen, const char *owner)
+void draw_static_text_except(const char *screen, const char *owner,
+                             const float *skip_y, int skips)
 {
     for (int i = 0; i < SONNY_TEXT_FIELD_COUNT; i++) {
         const TextField *f = &SONNY_TEXT_FIELDS[i];
@@ -895,11 +960,24 @@ void draw_static_text(const char *screen, const char *owner)
         /* A field the frame's script fills is the screen's to draw. */
         if (f->variable[0] || !f->text || !f->text[0])
             continue;
+        /* And any row a screen has decided not to show, named by where it
+           is, because a row of the clip's own static text has nothing else
+           to name it by. */
+        int skipped = 0;
+        for (int j = 0; j < skips && !skipped; j++)
+            skipped = fabsf(f->y - skip_y[j]) < 0.5f;
+        if (skipped)
+            continue;
         char plain[512];
         strip_markup(f->text, plain, sizeof(plain));
         if (plain[0])
             draw_field_wrapped(f, (Vector2){0, 0}, plain);
     }
+}
+
+void draw_static_text(const char *screen, const char *owner)
+{
+    draw_static_text_except(screen, owner, NULL, 0);
 }
 
 void draw_screen_text(const char *screen)

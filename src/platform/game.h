@@ -273,9 +273,13 @@ typedef struct {
     /* Which way the slot screen was opened: a new game writes over the slot,
        a load reads it. */
     enum { SLOT_SAVE = 0, SLOT_LOAD } slot_mode;
-    /* The settings the original asks for once, before the story starts. */
+    /* What is left of the settings the original asks for once, before the
+       story starts. Effects and Graphics chose between its two qualities and
+       this port only has the good one, so there was nothing for them to
+       choose; Autosave is always on. The sound is the one that remains, and
+       the one that now does something -- see screen_menu.c. */
     struct {
-        int32_t sound, graphics, quality, autosave;
+        int32_t sound;
     } options;
     int32_t   lost_timer;
     /* Both sides ran out at once, which the original has its own frame for. */
@@ -383,6 +387,11 @@ void draw_screen_buttons(const char *screen, Vector2 mouse);
 /* The text a frame bakes into its own fields, which the game never sets.
    `owner` narrows it to one clip on that screen; NULL takes them all. */
 void draw_static_text(const char *screen, const char *owner);
+/* The same, less every field sitting at one of `skips` heights -- which is
+   how a screen leaves out a row that is the clip's own static text rather
+   than a field it fills, there being nothing else to name such a row by. */
+void draw_static_text_except(const char *screen, const char *owner,
+                             const float *skip_y, int skips);
 void draw_screen_text(const char *screen);
 /* One of a root frame's own text fields, by the name the frame gives it. */
 const TextField *chrome_field(const char *screen, const char *name);
@@ -437,6 +446,9 @@ int ui_clicked(void);
 int hit(Rectangle r, Vector2 p);
 void draw_panel(Rectangle r, const char *title);
 int draw_button(Rectangle r, const char *label, Vector2 mouse, int enabled);
+/* The sound switch: a quaver, with a line through it when the sound is off.
+   `over` is whether the pointer is on it. See the note in ui.c. */
+void draw_music_note(Rectangle box, int on, int over);
 
 /* Screens. */
 void screen_zone_update(Game *g, Vector2 mouse);

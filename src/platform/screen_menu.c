@@ -39,10 +39,6 @@ static const int32_t SLOT_BUTTONS[SONNY_SAVE_SLOTS] = {1135, 1136, 1137, 1138};
 /* The four classes the class menu offers, in the order it lists them. */
 static const int32_t CLASS_BUTTONS[4] = {1148, 1149, 1150, 1151};
 /* The settings rows, and the button that leaves for the story. */
-#define BUTTON_SOUND    1156
-#define BUTTON_GRAPHICS 1157
-#define BUTTON_QUALITY  1162
-#define BUTTON_AUTOSAVE 1168
 #define BUTTON_PLAY     1165
 /* The one button the game-over screen has: load the slot again. */
 #define BUTTON_RELOAD 1171
@@ -232,38 +228,51 @@ void screen_class_update(Game *g, Vector2 mouse)
 
 /* ----------------------------------------------------------- the settings */
 
+/* A departure from the original, which asks four things here.
+ *
+ * Three of them are gone. Effects and Graphics chose between the original's
+ * own two qualities, and this port only has the one -- the good one -- so the
+ * question had no answer to give; Autosave is on, because a game that loses a
+ * run to a setting is the setting's fault. What is left is the sound, and one
+ * switch does not need a row and a word: it is the quaver, and it carries the
+ * whole screen. The two lines of advice went with them, being advice about
+ * turning down settings that are no longer there.
+ *
+ * `options.sound` now does something, too. The original's switch was wired to
+ * nothing here -- the port read the value nowhere -- so turning the sound off
+ * left it playing. */
+#define SOUND_NOTE_X 404.0f
+#define SOUND_NOTE_Y 145.4f
+/* Bigger than the row it replaces: it is the only thing on the screen to
+   press besides START, and at a row's height it read as a stray glyph. */
+#define SOUND_NOTE_W 58.0f
+#define SOUND_NOTE_H 62.0f
+
+static Rectangle sound_note_box(void)
+{
+    return (Rectangle){SOUND_NOTE_X - SOUND_NOTE_W / 2,
+                       SOUND_NOTE_Y - SOUND_NOTE_H / 2,
+                       SOUND_NOTE_W, SOUND_NOTE_H};
+}
+
 void screen_options_draw(Game *g, Vector2 mouse)
 {
     draw_frame(OPTIONS_SCREEN, mouse);
-    /* The four rows, their headings and the two lines of advice, exactly as
-       the frame's own script sets them. */
-    say(OPTIONS_SCREEN, "tit_1", lang_text("MENU", 27));
-    say(OPTIONS_SCREEN, "tit_2", lang_text("MENU", 28));
-    say(OPTIONS_SCREEN, "tit_8", lang_text("MENU", 35));
-    say(OPTIONS_SCREEN, "tit_9", lang_text("MENU", 38));
-    say(OPTIONS_SCREEN, "tit_3", lang_text("MENU", g->options.sound ? 29 : 30));
-    say(OPTIONS_SCREEN, "tit_4",
-        lang_text("MENU", g->options.graphics ? 31 : 32));
-    say(OPTIONS_SCREEN, "tit_11",
-        lang_text("MENU", g->options.quality ? 31 : 32));
-    say(OPTIONS_SCREEN, "tit_7",
-        lang_text("MENU", g->options.autosave ? 29 : 30));
     say(OPTIONS_SCREEN, "TitLOL1", lang_text("MENU", 33));
-    say(OPTIONS_SCREEN, "TitLOL2", lang_text("MENU", 34));
     say(OPTIONS_SCREEN, "whatToSayY", lang_text("MENU", 36));
+    Rectangle note = sound_note_box();
+    draw_music_note(note, g->options.sound, hit(note, mouse));
 }
 
 void screen_options_update(Game *g, Vector2 mouse)
 {
-    if (screen_button_pressed(OPTIONS_SCREEN, BUTTON_SOUND, mouse))
+    if (hit(sound_note_box(), mouse) && ui_clicked()) {
         g->options.sound = !g->options.sound;
-    else if (screen_button_pressed(OPTIONS_SCREEN, BUTTON_GRAPHICS, mouse))
-        g->options.graphics = !g->options.graphics;
-    else if (screen_button_pressed(OPTIONS_SCREEN, BUTTON_QUALITY, mouse))
-        g->options.quality = !g->options.quality;
-    else if (screen_button_pressed(OPTIONS_SCREEN, BUTTON_AUTOSAVE, mouse))
-        g->options.autosave = !g->options.autosave;
-    else if (screen_button_pressed(OPTIONS_SCREEN, BUTTON_PLAY, mouse)) {
+        audio_set_muted(!g->options.sound);
+        /* After the switch, so that turning the sound on is audible and
+           turning it off is not. */
+        audio_play("Click3pickup");
+    } else if (screen_button_pressed(OPTIONS_SCREEN, BUTTON_PLAY, mouse)) {
         audio_play("Click3pickup");
         game_begin_story(g);
     } else if (screen_button_pressed(OPTIONS_SCREEN, BUTTON_BACK, mouse))
@@ -300,15 +309,34 @@ void screen_manual_update(Game *g, Vector2 mouse)
 
 /* ------------------------------------------ the settings inside the game */
 
-/* The same four switches again, on the menu clip's own frame, with the tally
-   the original keeps beside them. */
+/* The same switches again, on the menu clip's own frame, with the tally the
+   original keeps beside them -- and the same three of them gone, for the same
+   reasons. The rows here are the clip's own static text rather than fields
+   the screen fills, so the three that go have to be left out by where they
+   are; their y is the only thing that names them. */
 #define SETTINGS_MENU  "options"
 #define MENU_SCREEN_ID "menu"
 #define SETTINGS_SOUND    1483
-#define SETTINGS_GRAPHICS 1157
-#define SETTINGS_QUALITY  1162
-#define SETTINGS_AUTOSAVE 1490
 #define SETTINGS_CLOSE    1364
+/* The three rows that go, by the field each of them fills: Effects, Graphics
+   and Autosave. Their headings are the clip's own static text and sit at the
+   same height, so this is what names them. */
+static const char *const SETTINGS_ROWS_GONE[] = {"tit_4", "tit_7", "tit_11"};
+
+/* Where the quaver goes on this screen: over the switch the sound row's own
+   button occupies, so it is where the original's switch was. */
+static Rectangle settings_note_box(void)
+{
+    const StageButton *b = NULL;
+    for (int i = 0; i < SONNY_BUTTON_COUNT; i++)
+        if (strcmp(SONNY_BUTTONS[i].screen, SETTINGS_MENU) == 0
+            && SONNY_BUTTONS[i].character == SETTINGS_SOUND)
+            b = &SONNY_BUTTONS[i];
+    if (!b)
+        return (Rectangle){0, 0, 0, 0};
+    return (Rectangle){b->x + b->width / 2 - 23.0f,
+                       b->y + b->height / 2 - 20.0f, 46.0f, 40.0f};
+}
 
 static void menu_say(const char *variable, const char *text)
 {
@@ -322,15 +350,26 @@ void screen_settings_draw(Game *g, Vector2 mouse)
     draw_screen_chrome("Navigation");
     draw_screen_buttons("Navigation", mouse);
     draw_clip_parts(MENU_SCREEN_ID, SETTINGS_MENU, NOWHERE, NULL, NULL, WHITE);
-    draw_static_text(MENU_SCREEN_ID, SETTINGS_MENU);
+    /* The clip's own static text, less the headings of the rows that are
+       gone. The tally on the other side of the panel has rows at the same
+       heights, so this cannot be done by height alone. */
+    float gone[3];
+    int goners = 0;
+    for (size_t i = 0; i < sizeof(SETTINGS_ROWS_GONE)
+                           / sizeof(SETTINGS_ROWS_GONE[0]); i++) {
+        const TextField *f = text_field_var(MENU_SCREEN_ID,
+                                            SETTINGS_ROWS_GONE[i]);
+        if (f)
+            gone[goners++] = f->y;
+    }
+    draw_static_text_except(MENU_SCREEN_ID, SETTINGS_MENU, gone, goners);
     for (int i = 0; i < SONNY_BUTTON_COUNT; i++)
-        if (strcmp(SONNY_BUTTONS[i].screen, SETTINGS_MENU) == 0)
+        if (strcmp(SONNY_BUTTONS[i].screen, SETTINGS_MENU) == 0
+            && SONNY_BUTTONS[i].character == SETTINGS_SOUND)
             draw_button_art(&SONNY_BUTTONS[i], WHITE);
 
-    menu_say("tit_3", lang_text("MENU", g->options.sound ? 29 : 30));
-    menu_say("tit_4", lang_text("MENU", g->options.graphics ? 31 : 32));
-    menu_say("tit_7", lang_text("MENU", g->options.autosave ? 29 : 30));
-    menu_say("tit_11", lang_text("MENU", g->options.quality ? 31 : 32));
+    Rectangle note = settings_note_box();
+    draw_music_note(note, g->options.sound, hit(note, mouse));
 
     const Campaign *c = &g->campaign;
     menu_say("gs_zone_cleared", TextFormat("%d", c->stats.zones_cleared));
@@ -343,15 +382,11 @@ void screen_settings_draw(Game *g, Vector2 mouse)
 
 void screen_settings_update(Game *g, Vector2 mouse)
 {
-    if (screen_button_pressed(SETTINGS_MENU, SETTINGS_SOUND, mouse))
+    if (hit(settings_note_box(), mouse) && ui_clicked()) {
         g->options.sound = !g->options.sound;
-    else if (screen_button_pressed(SETTINGS_MENU, SETTINGS_GRAPHICS, mouse))
-        g->options.graphics = !g->options.graphics;
-    else if (screen_button_pressed(SETTINGS_MENU, SETTINGS_QUALITY, mouse))
-        g->options.quality = !g->options.quality;
-    else if (screen_button_pressed(SETTINGS_MENU, SETTINGS_AUTOSAVE, mouse))
-        g->options.autosave = !g->options.autosave;
-    else if (screen_button_pressed("Navigation", SETTINGS_CLOSE, mouse))
+        audio_set_muted(!g->options.sound);
+        audio_play("Click3pickup");
+    } else if (screen_button_pressed("Navigation", SETTINGS_CLOSE, mouse))
         g->screen = SCREEN_ZONE;
 }
 

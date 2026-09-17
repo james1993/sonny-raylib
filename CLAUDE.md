@@ -248,6 +248,44 @@ the hub, and the reticle's name sitting eighteen pixels right of its ring.
 - Text is drawn with `ui_text`, never raylib's `DrawText`, so it uses the
   game's own font.
 
+## Departures from the original
+
+Everything else in here is written to match the original; these are the places
+it deliberately does not, and they are listed so that nobody reads one as a
+bug and puts it back. Each one was asked for.
+
+**The settings.** The original asks four things before the story starts --
+Sound, Effects, Autosave, Graphics -- and again on the in-game menu. Three are
+gone from both:
+
+* Effects and Graphics chose between the original's two qualities. This port
+  only implements the good one, and read neither value anywhere, so the
+  question had no answer to give.
+* Autosave is always on. A run lost to a setting is the setting's fault.
+* What is left is the sound, and one switch does not need a row and a word:
+  it is a quaver, with a line through it when the sound is off
+  (`draw_music_note`, drawn rather than taken from the SWF because the
+  original has no such button, which also makes it vector at any size).
+
+Removing them took `options.graphics`, `options.quality` and
+`options.autosave` out of the `Game` with them, rather than leaving state
+nothing reads. It also took a bug with it: the original's own frame has the
+Autosave row's button wired to the Graphics value and the Graphics row's to
+Autosave, and the port reproduced that faithfully -- clicking one moved the
+other.
+
+`options.sound` now does something. The original's switch was wired to nothing
+here: the port set the value and read it nowhere, so turning the sound off
+left it playing. It goes through `audio_set_muted`, which is the one master
+volume, so it silences effects, music and narration alike.
+
+The in-game menu's settings rows are the clip's own static text rather than
+fields the screen fills, so leaving three of them out means leaving out
+whatever sits at their height -- `draw_static_text_except`. Not by height
+alone, though: the Gameplay Stats on the other side of the same panel have
+rows at nearly the same heights, and a band wide enough to catch the settings
+ate three of their labels. The rows are named by the fields they fill instead.
+
 ## Checking against the original
 
 The original runs here. `tools/refcap.py` starts Ruffle on a virtual X display,

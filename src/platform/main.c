@@ -54,9 +54,6 @@ static void game_start(Game *g, uint64_t seed)
        slot is picked. */
     campaign_new(&g->campaign, 1);
     g->options.sound = 1;
-    g->options.graphics = 1;
-    g->options.quality = 1;
-    g->options.autosave = 1;
     g->screen = SCREEN_TITLE;
     g->selected = -1;
     g->hub_note = -1;

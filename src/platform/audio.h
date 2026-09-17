@@ -37,6 +37,13 @@ int  audio_narration_playing(void);
 /* Seconds of narration played, which is the animation's own frame clock. */
 float audio_narration_time(void);
 
+/* Silence, or not. The one setting the game still asks about: everything the
+   game plays goes through the one master volume, so this is all of it --
+   effects, music and narration alike. Remembered across audio_init, so it can
+   be set before there is a device to set it on. */
+void audio_set_muted(int muted);
+int  audio_muted(void);
+
 int32_t audio_loaded_count(void);
 
 #endif
