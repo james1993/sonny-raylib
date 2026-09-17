@@ -8,7 +8,7 @@ CORE_SRC = src/core/formula.c src/core/rng.c src/core/unit.c \
            src/gen/gamedata.c
 BUILD    = build
 
-.PHONY: all game test simulate vectors data clean playtest
+.PHONY: all game dist test simulate vectors data clean playtest
 
 all: game test
 
@@ -23,6 +23,15 @@ game: $(BUILD)
 	    src/platform/render.c \
 	    src/gen/assets_gen.c \
 	    $(CORE_SRC) $(RAYLIB_LIBS)
+
+# The binary the repository ships, for people who would rather not build it.
+# It is committed, so it goes stale the moment the game or the art changes --
+# and stale is not a thing a player can see: art rasterised finer than a build
+# expects draws at a multiple of its size, quietly and everywhere. Rebuild
+# this with any change that reaches either.
+dist: game
+	strip -o dist/sonny-linux-x86_64 $(BUILD)/sonny
+	@ls -l dist/sonny-linux-x86_64
 
 simulate: $(BUILD)
 	$(CC) $(CFLAGS) -o $(BUILD)/simulate tools/simulate.c $(CORE_SRC) -lm
