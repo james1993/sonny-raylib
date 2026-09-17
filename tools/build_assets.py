@@ -420,6 +420,67 @@ def collect_names(data_dir):
     return want, speculative
 
 
+SPRITE_DIR_ID = re.compile(r'DefineSprite_(\d+)')
+
+
+def clip_id(src):
+    """The character a frame was exported from, out of its path."""
+    m = SPRITE_DIR_ID.search(src or '')
+    return int(m.group(1)) if m else None
+
+
+def real_length(files, plays=None):
+    """Where a clip's frames stop being its own and start being a repeat.
+
+    A clip that holds another one is exported longer than it plays. The
+    decompiler renders a nested clip by playing it and ignores its stop(), so
+    where Flash holds the inner clip on its last frame for the rest of the
+    outer one, the export shows it looping back to its beginning: BOOM_RED is
+    a 25-frame holder around a 20-frame burst that ends in stop(), and its
+    exported frames 21 to 24 are its frames 1 to 4 over again. Played back,
+    the effect flares a second time just as it should be going out.
+
+    The repeat is exact, and identical frames already share a file, so it can
+    be read straight off the list. Two frames in a row have to line up, so
+    that one frame equal to the first by chance is not enough; and the repeat
+    has to be shorter than what it repeats, which is what tells a wrap from a
+    clip whose frames are simply all the same -- a comic holds one picture for
+    dozens of frames, and every one of those equals the one before it.
+
+    The last place that lines up is the answer, not the first. A clip whose
+    inner animation ends on a blank frame has that blank sharing a file with
+    the holder's own blank opening, so even that is a frame early: the turn
+    ring runs to twenty-two and the pictures say twenty-one. Which is why the
+    SWF gets the last word on where the cut goes, and the pictures only on
+    whether there is one.
+
+    `plays` is what tools/extract_clip_lengths.py worked out from the SWF for
+    this clip, which is where the cut actually goes.
+    """
+    n = len(files)
+    # The two frames being matched have to differ from each other, or the
+    # match says nothing: a comic opens on one still held for three hundred
+    # frames, and every pair of frames in that run matches every other pair.
+    if n < 4 or files[0] == files[1]:
+        return n
+    found = n
+    for length in range(2, n - 1):
+        if (files[length] == files[0] and files[length + 1] == files[1]
+                and n - length < length):
+            found = length
+    if found >= n:
+        return n
+    # The pictures say there is a repeat; the SWF says exactly where it
+    # starts, which is a frame later than the pictures whenever the holder
+    # puts its child down after its own first frame. Only where the two are
+    # talking about the same thing: a clip that animates on its own timeline
+    # has no meaningful child to measure, and the number that comes back for
+    # one of those is nonsense.
+    if plays and plays < n and abs(plays - found) <= 2:
+        return plays
+    return found
+
+
 def copy_frames(entries, dest_dir, safe, scale):
     """Put one asset's frames in place. -> (paths, whether they are at
     `scale`).
@@ -482,6 +543,13 @@ def main():
     args = ap.parse_args()
 
     exports = load('exports', args.data)
+    # How long each clip actually plays, from tools/extract_clip_lengths.py.
+    # Optional: without it the repeat is found from the pictures alone, which
+    # is a frame out on a holder that places its child late.
+    try:
+        plays = load('clip_lengths', args.data)
+    except (OSError, ValueError):
+        plays = {}
     by_name = exports['exports']
     label_index = exports['label_index']
     want, speculative = collect_names(args.data)
@@ -521,7 +589,7 @@ def main():
     os.makedirs(args.out, exist_ok=True)
     manifest = {}
     stats = {'copied': 0, 'bytes': 0, 'missing': [], 'flat': [],
-             'categories': {}}
+             'wrapped': [], 'categories': {}}
 
     for category, names in sorted(want.items()):
         found = 0
@@ -666,6 +734,13 @@ def main():
             for path in set(files):
                 stats['copied'] += 1
                 stats['bytes'] += os.path.getsize(os.path.join(ROOT, path))
+            length = real_length(files, plays.get(str(clip_id(
+                entries[0][1] if entries else None))))
+            if length < len(files):
+                stats['wrapped'].append('%s/%s %d -> %d'
+                                        % (category, name, len(files),
+                                           length))
+                files = files[:length]
             manifest[name] = {'category': category, 'frames': files}
             if scale > 1:
                 manifest[name]['scale'] = scale
@@ -760,6 +835,12 @@ def main():
         print('%-12s %4d resolved of %d asked for' % (category, c['found'],
                                                       c['wanted']))
     print('%d files, %.1f MB' % (stats['copied'], stats['bytes'] / 1e6))
+    if stats['wrapped']:
+        print('%d clips cut back to where they stop playing -- the decompiler '
+              'renders a nested clip past its own stop() and it comes out '
+              'looping:' % len(stats['wrapped']))
+        for name in stats['wrapped']:
+            print('  ' + name)
     if stats['flat']:
         print('%d assets kept at 1 pixel to the unit, with the frame that '
               'would not rasterise faithfully:' % len(stats['flat']))

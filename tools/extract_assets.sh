@@ -66,6 +66,12 @@ java -Xmx3g -jar "$FFDEC" -format sprite:png -export sprite \
 java -Xmx3g -jar "$FFDEC" -format sprite:svg -export sprite \
     "$OUT/nomarkers/sprite_svg" "$OUT/nomarkers.swf"
 
+# Every script, which is where a clip says where it stops. Small, and it is
+# what tools/extract_clip_lengths.py needs to tell how long a clip actually
+# plays as against how long the decompiler exports it -- see that tool.
+java -Xmx3g -jar "$FFDEC" -format script:as -export script "$OUT/as" "$SWF"
+python3 tools/extract_clip_lengths.py "$SWF" --scripts "$OUT/as/scripts"
+
 # The cutscene narration, which is a stream sound on each comic's timeline and
 # so is not in the sound export above.
 python3 tools/extract_streams.py "$SWF"

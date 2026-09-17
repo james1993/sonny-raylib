@@ -239,6 +239,40 @@ the hub, and the reticle's name sitting eighteen pixels right of its ring.
   repeats within a battle; XP discards its overflow; a shield equal to the
   incoming hit does not absorb it. The balance sits on top of these.
 
+## A clip is exported longer than it plays
+
+The decompiler renders a nested clip by playing it and ignoring its `stop()`.
+Where Flash holds an inner clip on its last frame for the rest of the outer
+one, the export shows it looping back to the beginning instead: BOOM_RED is a
+25-frame holder around a 20-frame burst that ends in `stop()`, and its
+exported frames 21 to 24 are its frames 1 to 4 over again. Played back, the
+effect flares a second time just as it should be going out -- thirteen clips
+did it, every impact effect in the game and the turn ring.
+
+It is found twice over, because neither way is enough on its own:
+
+* **The pictures** say whether there is a repeat. It is exact, and identical
+  frames already share a file, so it reads straight off the frame list. Two
+  frames in a row have to line up (one frame equal to the first by chance is
+  not enough) and the repeat has to be shorter than what it repeats -- which
+  is what tells a wrap from a comic holding one still for three hundred
+  frames, where every frame equals the one before it.
+* **The SWF** says where the cut goes: `(the frame the child is placed on -
+  1) + how long the child runs`, in `tools/extract_clip_lengths.py`. The
+  pictures are a frame out whenever a holder puts its child down after its own
+  first frame, because the child's blank last frame shares a file with the
+  holder's blank first one. The turn ring runs to 22 and the pictures say 21.
+
+The SWF's number alone is no good either: a clip that animates on its own
+timeline has no child worth measuring, and what comes back for one of those is
+nonsense (`BOOM_POWERUP` "plays 1 frame"). So the pictures gate it and the SWF
+places it, and they have to agree to within a frame or two or the clip is left
+alone. This replaced a hand-counted `BOOMER_LAST 22` that was right only
+because someone had read that one clip's scripts by hand.
+
+`SONNY_TRACE=1` prints which effect clip a move plays and how many frames it
+has, which is the quickest way to find out what is actually on screen.
+
 ## Conventions
 
 - `src/core/` is pure C and links nothing but libc, so battles can be simulated
@@ -278,6 +312,11 @@ other.
 here: the port set the value and read it nowhere, so turning the sound off
 left it playing. It goes through `audio_set_muted`, which is the one master
 volume, so it silences effects, music and narration alike.
+
+**The level-up screen.** The tip in the middle panel has a frame round it --
+amber over a wash of black, the colour this game highlights in -- where the
+original lets it float loose with nothing to say it is one thing rather than a
+stray line under the points.
 
 The in-game menu's settings rows are the clip's own static text rather than
 fields the screen fills, so leaving three of them out means leaving out

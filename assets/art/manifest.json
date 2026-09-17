@@ -2788,10 +2788,7 @@
     "assets/art/effect/#1610_19.png",
     "assets/art/effect/#1610_20.png",
     "assets/art/effect/#1610_1.png",
-    "assets/art/effect/#1610_1.png",
-    "assets/art/effect/#1610_2.png",
-    "assets/art/effect/#1610_3.png",
-    "assets/art/effect/#1610_4.png"
+    "assets/art/effect/#1610_1.png"
    ],
    "offsets": [
     [
@@ -23956,11 +23953,6 @@
     "assets/art/effect/BOOM3_17.png",
     "assets/art/effect/BOOM3_18.png",
     "assets/art/effect/BOOM3_18.png",
-    "assets/art/effect/BOOM3_18.png",
-    "assets/art/effect/BOOM3_1.png",
-    "assets/art/effect/BOOM3_2.png",
-    "assets/art/effect/BOOM3_3.png",
-    "assets/art/effect/BOOM3_4.png",
     "assets/art/effect/BOOM3_18.png"
    ],
    "offsets": [
@@ -24088,11 +24080,6 @@
     "assets/art/effect/BOOM_DARK_17.png",
     "assets/art/effect/BOOM_DARK_18.png",
     "assets/art/effect/BOOM_DARK_18.png",
-    "assets/art/effect/BOOM_DARK_18.png",
-    "assets/art/effect/BOOM_DARK_1.png",
-    "assets/art/effect/BOOM_DARK_2.png",
-    "assets/art/effect/BOOM_DARK_3.png",
-    "assets/art/effect/BOOM_DARK_4.png",
     "assets/art/effect/BOOM_DARK_18.png"
    ],
    "offsets": [
@@ -24307,11 +24294,6 @@
     "assets/art/effect/BOOM_HEAL2_17.png",
     "assets/art/effect/BOOM_HEAL2_18.png",
     "assets/art/effect/BOOM_HEAL2_18.png",
-    "assets/art/effect/BOOM_HEAL2_18.png",
-    "assets/art/effect/BOOM_HEAL2_1.png",
-    "assets/art/effect/BOOM_HEAL2_2.png",
-    "assets/art/effect/BOOM_HEAL2_3.png",
-    "assets/art/effect/BOOM_HEAL2_4.png",
     "assets/art/effect/BOOM_HEAL2_18.png"
    ],
    "offsets": [
@@ -24526,11 +24508,6 @@
     "assets/art/effect/BOOM_RED_17.png",
     "assets/art/effect/BOOM_RED_18.png",
     "assets/art/effect/BOOM_RED_18.png",
-    "assets/art/effect/BOOM_RED_18.png",
-    "assets/art/effect/BOOM_RED_1.png",
-    "assets/art/effect/BOOM_RED_2.png",
-    "assets/art/effect/BOOM_RED_3.png",
-    "assets/art/effect/BOOM_RED_4.png",
     "assets/art/effect/BOOM_RED_18.png"
    ],
    "offsets": [
@@ -24760,17 +24737,7 @@
     "assets/art/effect/BOOM_SLASH_12.png",
     "assets/art/effect/BOOM_SLASH_13.png",
     "assets/art/effect/BOOM_SLASH_14.png",
-    "assets/art/effect/BOOM_SLASH_15.png",
-    "assets/art/effect/BOOM_SLASH_1.png",
-    "assets/art/effect/BOOM_SLASH_2.png",
-    "assets/art/effect/BOOM_SLASH_3.png",
-    "assets/art/effect/BOOM_SLASH_4.png",
-    "assets/art/effect/BOOM_SLASH_5.png",
-    "assets/art/effect/BOOM_SLASH_6.png",
-    "assets/art/effect/BOOM_SLASH_7.png",
-    "assets/art/effect/BOOM_SLASH_8.png",
-    "assets/art/effect/BOOM_SLASH_9.png",
-    "assets/art/effect/BOOM_SLASH_10.png"
+    "assets/art/effect/BOOM_SLASH_15.png"
    ],
    "offsets": [
     [
@@ -24889,18 +24856,6 @@
     "assets/art/effect/BOOM_SLASH2_9.png",
     "assets/art/effect/BOOM_SLASH2_10.png",
     "assets/art/effect/BOOM_SLASH2_11.png",
-    "assets/art/effect/BOOM_SLASH2_11.png",
-    "assets/art/effect/BOOM_SLASH2_13.png",
-    "assets/art/effect/BOOM_SLASH2_1.png",
-    "assets/art/effect/BOOM_SLASH2_2.png",
-    "assets/art/effect/BOOM_SLASH2_3.png",
-    "assets/art/effect/BOOM_SLASH2_4.png",
-    "assets/art/effect/BOOM_SLASH2_5.png",
-    "assets/art/effect/BOOM_SLASH2_6.png",
-    "assets/art/effect/BOOM_SLASH2_7.png",
-    "assets/art/effect/BOOM_SLASH2_8.png",
-    "assets/art/effect/BOOM_SLASH2_9.png",
-    "assets/art/effect/BOOM_SLASH2_10.png",
     "assets/art/effect/BOOM_SLASH2_11.png",
     "assets/art/effect/BOOM_SLASH2_13.png"
    ],
@@ -25024,17 +24979,7 @@
     "assets/art/effect/BOOM_SLASHBLUE_12.png",
     "assets/art/effect/BOOM_SLASHBLUE_13.png",
     "assets/art/effect/BOOM_SLASHBLUE_14.png",
-    "assets/art/effect/BOOM_SLASHBLUE_15.png",
-    "assets/art/effect/BOOM_SLASHBLUE_1.png",
-    "assets/art/effect/BOOM_SLASHBLUE_2.png",
-    "assets/art/effect/BOOM_SLASHBLUE_3.png",
-    "assets/art/effect/BOOM_SLASHBLUE_4.png",
-    "assets/art/effect/BOOM_SLASHBLUE_5.png",
-    "assets/art/effect/BOOM_SLASHBLUE_6.png",
-    "assets/art/effect/BOOM_SLASHBLUE_7.png",
-    "assets/art/effect/BOOM_SLASHBLUE_8.png",
-    "assets/art/effect/BOOM_SLASHBLUE_9.png",
-    "assets/art/effect/BOOM_SLASHBLUE_10.png"
+    "assets/art/effect/BOOM_SLASHBLUE_15.png"
    ],
    "offsets": [
     [
@@ -25156,17 +25101,7 @@
     "assets/art/effect/BOOM_SLASHGREEN_12.png",
     "assets/art/effect/BOOM_SLASHGREEN_13.png",
     "assets/art/effect/BOOM_SLASHGREEN_14.png",
-    "assets/art/effect/BOOM_SLASHGREEN_15.png",
-    "assets/art/effect/BOOM_SLASHGREEN_1.png",
-    "assets/art/effect/BOOM_SLASHGREEN_2.png",
-    "assets/art/effect/BOOM_SLASHGREEN_3.png",
-    "assets/art/effect/BOOM_SLASHGREEN_4.png",
-    "assets/art/effect/BOOM_SLASHGREEN_5.png",
-    "assets/art/effect/BOOM_SLASHGREEN_6.png",
-    "assets/art/effect/BOOM_SLASHGREEN_7.png",
-    "assets/art/effect/BOOM_SLASHGREEN_8.png",
-    "assets/art/effect/BOOM_SLASHGREEN_9.png",
-    "assets/art/effect/BOOM_SLASHGREEN_10.png"
+    "assets/art/effect/BOOM_SLASHGREEN_15.png"
    ],
    "offsets": [
     [
@@ -25288,17 +25223,7 @@
     "assets/art/effect/BOOM_SLASHORANGE_12.png",
     "assets/art/effect/BOOM_SLASHORANGE_13.png",
     "assets/art/effect/BOOM_SLASHORANGE_14.png",
-    "assets/art/effect/BOOM_SLASHORANGE_15.png",
-    "assets/art/effect/BOOM_SLASHORANGE_1.png",
-    "assets/art/effect/BOOM_SLASHORANGE_2.png",
-    "assets/art/effect/BOOM_SLASHORANGE_3.png",
-    "assets/art/effect/BOOM_SLASHORANGE_4.png",
-    "assets/art/effect/BOOM_SLASHORANGE_5.png",
-    "assets/art/effect/BOOM_SLASHORANGE_6.png",
-    "assets/art/effect/BOOM_SLASHORANGE_7.png",
-    "assets/art/effect/BOOM_SLASHORANGE_8.png",
-    "assets/art/effect/BOOM_SLASHORANGE_9.png",
-    "assets/art/effect/BOOM_SLASHORANGE_10.png"
+    "assets/art/effect/BOOM_SLASHORANGE_15.png"
    ],
    "offsets": [
     [
@@ -25420,17 +25345,7 @@
     "assets/art/effect/BOOM_SLASHRED_12.png",
     "assets/art/effect/BOOM_SLASHRED_13.png",
     "assets/art/effect/BOOM_SLASHRED_14.png",
-    "assets/art/effect/BOOM_SLASHRED_15.png",
-    "assets/art/effect/BOOM_SLASHRED_1.png",
-    "assets/art/effect/BOOM_SLASHRED_2.png",
-    "assets/art/effect/BOOM_SLASHRED_3.png",
-    "assets/art/effect/BOOM_SLASHRED_4.png",
-    "assets/art/effect/BOOM_SLASHRED_5.png",
-    "assets/art/effect/BOOM_SLASHRED_6.png",
-    "assets/art/effect/BOOM_SLASHRED_7.png",
-    "assets/art/effect/BOOM_SLASHRED_8.png",
-    "assets/art/effect/BOOM_SLASHRED_9.png",
-    "assets/art/effect/BOOM_SLASHRED_10.png"
+    "assets/art/effect/BOOM_SLASHRED_15.png"
    ],
    "offsets": [
     [
@@ -25557,11 +25472,6 @@
     "assets/art/effect/BOOM_SPARK_17.png",
     "assets/art/effect/BOOM_SPARK_18.png",
     "assets/art/effect/BOOM_SPARK_18.png",
-    "assets/art/effect/BOOM_SPARK_18.png",
-    "assets/art/effect/BOOM_SPARK_1.png",
-    "assets/art/effect/BOOM_SPARK_2.png",
-    "assets/art/effect/BOOM_SPARK_3.png",
-    "assets/art/effect/BOOM_SPARK_4.png",
     "assets/art/effect/BOOM_SPARK_18.png"
    ],
    "offsets": [
@@ -25689,11 +25599,6 @@
     "assets/art/effect/BOOM_SPARKBLUE_17.png",
     "assets/art/effect/BOOM_SPARKBLUE_18.png",
     "assets/art/effect/BOOM_SPARKBLUE_18.png",
-    "assets/art/effect/BOOM_SPARKBLUE_18.png",
-    "assets/art/effect/BOOM_SPARKBLUE_1.png",
-    "assets/art/effect/BOOM_SPARKBLUE_2.png",
-    "assets/art/effect/BOOM_SPARKBLUE_3.png",
-    "assets/art/effect/BOOM_SPARKBLUE_4.png",
     "assets/art/effect/BOOM_SPARKBLUE_18.png"
    ],
    "offsets": [

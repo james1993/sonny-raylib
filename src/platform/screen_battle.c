@@ -988,14 +988,6 @@ static void draw_unit_bar(const Game *g, int32_t slot)
    frame and is played through once, so this runs its remaining frames and
    then leaves nothing behind. */
 #define BOOMER_CLIP "#1610"
-/* The clip ships twenty-five frames but only twenty-two of them are real.
-   1610 is an empty holder that places 1609 on its frame two and does nothing
-   else; 1609 is twenty-one frames with a stop on its last, so the original
-   runs out of animation at the holder's frame twenty-two and rests there. The
-   decompiler renders nested clips by playing them, stop and all ignored, so
-   the last three frames it hands back are 1609 wrapped round to its start --
-   which is the ring appearing to set off again just as it finishes. */
-#define BOOMER_LAST 22
 
 static void draw_move_boomer(const Game *g)
 {
@@ -1003,7 +995,7 @@ static void draw_move_boomer(const Game *g)
         return;
     int32_t frames = asset_frame_count(BOOMER_CLIP);
     int32_t frame = g->boomer_tick + 2;      /* frame one is the empty rest */
-    if (frames <= 0 || frame > BOOMER_LAST || frame > frames)
+    if (frames <= 0 || frame > frames)
         return;
     const StageChrome *at = stage_chrome(BATTLE_SCREEN_NAME,
                                          "moveSelectBoomer");
@@ -1741,6 +1733,10 @@ static void present(Game *g, const MoveEvent *e)
         g->effect = a->model;
         g->effect_slot = e->target;
         g->effect_tick = 0;
+        if (getenv("SONNY_TRACE"))
+            printf("TRACE effect %s (%d frames) on slot %d, ability %s\n",
+                   a->model, asset_frame_count(a->model), (int)e->target,
+                   a->name ? a->name : "?");
     }
 
     /* The pulse over whoever it landed on. The original sets it going at the

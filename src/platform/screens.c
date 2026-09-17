@@ -37,6 +37,10 @@ static const Vector2 NO_OFFSET = {0, 0};
 /* The four tips the screen picks between, which the original chooses from at
    random every time the menu is opened (43 + random(4)). */
 #define SKILL_TIP_FIRST 43
+/* The frame round the tip: how far outside the text field it sits, and how
+   much its corners are turned. */
+#define TIP_FRAME_PAD   6.0f
+#define TIP_FRAME_ROUND 0.10f
 #define SKILL_TIP_COUNT 4
 /* And the four things it says instead when there are points to spend: what
    they are, how to spend them on the tree, how to spend them on an attribute,
@@ -765,6 +769,20 @@ void screen_talents_draw(Game *g, Vector2 mouse)
     /* Opening the screen with points in hand starts the original's
        walkthrough; with none it shows one of its tips. */
     const TextField *box = skill_field("@1", SONNY_TALENT_SLOT_COUNT);
+    /* A frame round it, which is a departure: the original lets the tip float
+       loose in the middle of the panel with nothing to say it is one thing
+       rather than a stray line under the points. Amber, because that is the
+       colour this game highlights in -- the zone bar, the hovered slot -- and
+       over a wash of black so the text lifts off the panel behind it. */
+    if (box) {
+        Rectangle frame = {box->x - TIP_FRAME_PAD, box->y - TIP_FRAME_PAD,
+                           box->width + TIP_FRAME_PAD * 2,
+                           box->height + TIP_FRAME_PAD * 2};
+        DrawRectangleRounded(frame, TIP_FRAME_ROUND, 8,
+                             (Color){0, 0, 0, 70});
+        DrawRectangleRoundedLinesEx(frame, TIP_FRAME_ROUND, 8, 1.0f,
+                                    (Color){235, 200, 90, 130});
+    }
     if (g->skill_step >= 0 && g->skill_step < SKILL_STEP_COUNT) {
         draw_field_wrapped(box, NO_OFFSET,
                            TextFormat("%s\n\n%s",
@@ -1037,12 +1055,23 @@ void screen_talents_update(Game *g, Vector2 mouse)
             continue;
         if (character_unspent_stat_points(c) <= 0)
             break;
+        /* One point, into the record and into the running total, which is
+           what the original's own handler does:
+
+               _root.Krin.StatSets0[1] += 1;
+               _root.Krin.statPoints--;
+               yut_str2++;
+               _root.Krin.STRENGTH += 1;
+
+           and emphatically not a rebuild. A rebuild is the respec operation
+           -- zero the record, fold in every worn item -- and the starting
+           gear is worn without ever having passed through a slot, so it is
+           not in the total. Rebuilding here dropped all of it in at once
+           behind the point: a click on Speed moved the number by two and a
+           click on Strength by four. */
         c->spent[SKILL_ATTRIBUTES[i].stat] += 1;
+        c->stat_sets[SKILL_ATTRIBUTES[i].stat] += 1;
         c->spent_stat_points++;
-        /* The running totals the screen reads are a cache of what has been
-           spent plus what is worn, so a point that is not rebuilt into them
-           leaves the number on screen where it was. */
-        character_rebuild_sets(c);
         /* The swatches go grey as the last point goes, and stay that way
            until the screen is opened again. */
         if (character_unspent_stat_points(c) == 0)
@@ -1728,14 +1757,26 @@ void screen_shop_update(Game *g, Vector2 mouse)
     }
 
     /* The recycler: whatever the pointer is carrying goes in for a quarter of
-       what it is worth, rounded up. */
+       what it is worth, rounded up. It is the one place in the game that says
+       what an item is worth to sell -- an item's own description never does,
+       and the store's stock says only what it costs to buy -- so it says the
+       figure while the pointer is over it holding something:
+
+           t = MENU[4] + " EUR" + Math.ceil(KRINITEM[mouseItem][5] / 4)
+
+       and the standing invitation when the hand is empty. */
     const StageButton *bin = stage_button(MENU_SHOP, SHOP_RECYCLER, 0);
     if (bin && CheckCollisionPointRec(mouse, (Rectangle){bin->x, bin->y,
                                                          bin->width,
                                                          bin->height})) {
-        game_tooltip(g, lang_text("MENU", 5), lang_text("MENU", 5));
+        const ItemDef *item = item_by_id(g->carried_item);
+        if (item && item->id != 0)
+            game_tooltip(g, lang_text("MENU", 3),
+                         TextFormat("%s €%d", lang_text("MENU", 4),
+                                    (item->price + 3) / 4));
+        else
+            game_tooltip(g, lang_text("MENU", 3), lang_text("MENU", 5));
         if (ui_clicked() && g->carried_item != 0) {
-            const ItemDef *item = item_by_id(g->carried_item);
             if (item)
                 c->euros += (item->price + 3) / 4;
             g->carried_item = 0;
