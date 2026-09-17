@@ -281,6 +281,16 @@ has, which is the quickest way to find out what is actually on screen.
 - `src/gen/` is generated. Do not edit it; change the generator.
 - Text is drawn with `ui_text`, never raylib's `DrawText`, so it uses the
   game's own font.
+- The platform layer builds against raylib 4.5 and up, not just the 6.0 this
+  is developed on: a player builds it with whatever their distribution ships.
+  raylib's own API is not stable across those versions -- the rounded
+  rectangle outline is `DrawRectangleRoundedLines(rec, roundness, segments,
+  lineThick, color)` in 5.0, the same name with no thickness in 5.5, and the
+  thickness moved to `...LinesEx` -- so reaching for a recent call breaks
+  somebody's build with an error that names the wrong problem. Checking is
+  cheap:
+
+      gcc -std=c99 -fsyntax-only -I<older raylib>/src src/platform/*.c
 
 ## Departures from the original
 
