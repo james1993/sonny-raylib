@@ -32,6 +32,30 @@ void assets_set_root(const char *root)
     snprintf(asset_root, sizeof(asset_root), "%s", root ? root : ".");
 }
 
+void assets_check_stamp(void)
+{
+    char path[1024];
+    snprintf(path, sizeof(path), "%s/assets/art/stamp.txt", asset_root);
+    char *on_disk = LoadFileText(path);
+    if (!on_disk) {
+        TraceLog(LOG_WARNING, "ASSETS: no %s -- cannot tell whether the art "
+                              "matches this build", path);
+        return;
+    }
+    /* Whitespace and the trailing newline are the file's, not the stamp's. */
+    int n = 0;
+    while (on_disk[n] && on_disk[n] > ' ')
+        n++;
+    if (strncmp(on_disk, SONNY_ASSET_STAMP, (size_t)n) != 0
+        || SONNY_ASSET_STAMP[n] != '\0')
+        TraceLog(LOG_WARNING,
+                 "ASSETS: the art in %s was built as %.*s and this game was "
+                 "built against %s. They are not the same set, and nothing "
+                 "will be the size it should be. Run: make game",
+                 asset_root, n, on_disk, SONNY_ASSET_STAMP);
+    UnloadFileText(on_disk);
+}
+
 int32_t assets_loaded_count(void)
 {
     int32_t n = 0;

@@ -586,6 +586,17 @@ manifest's offsets are in.
 `--art-scale 1` turns the whole of it off and ships the decompiler's own
 export, which is what the game had before.
 
+The manifest is compiled into the game and the pictures are read off the disk,
+so the two drift apart the moment one is updated without the other -- and a
+picture does not say what it is. Art at two pixels to the unit, drawn by a
+build that believes in one, comes out at exactly twice its size, everywhere,
+without a word: every piece of art too big and anchored at its own origin,
+while the text, which is not art, stays exactly right. That is what a stale
+`build/sonny` looks like, and it cost three rounds of looking at screenshots
+to name. `gen_asset_manifest.py` now writes the same stamp into
+`assets/art/stamp.txt` and into `SONNY_ASSET_STAMP`, and the game compares
+them at startup and says so.
+
 ## Driving the game without a pointer
 
 `SONNY_CLICKS="frame:x:y,..."` presses at a stage coordinate on the frame

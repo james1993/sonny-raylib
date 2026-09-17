@@ -158,6 +158,7 @@ int main(int argc, char **argv)
     rlDisableBackfaceCulling();
     SetTargetFPS(STAGE_FPS);
     assets_set_root(getenv("SONNY_ASSETS") ? getenv("SONNY_ASSETS") : ".");
+    assets_check_stamp();
     /* SONNY_SILENT keeps headless runs from opening an audio device. */
     if (!getenv("SONNY_SILENT"))
         audio_init();

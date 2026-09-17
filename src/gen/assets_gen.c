@@ -2457,6 +2457,7 @@ const AssetEntry SONNY_ASSETS[] = {
     { "v_9", "sound", FRAMES_844, NULL, 1, 1.000000f, 0, 0.000000f, 0.000000f, 0.000000f, 0.000000f },
 };
 const int SONNY_ASSET_COUNT = (int)(sizeof(SONNY_ASSETS) / sizeof(SONNY_ASSETS[0]));
+const char *const SONNY_ASSET_STAMP = "7a2a87ed0cb7ba0e";
 
 const AssetAnimation SONNY_ANIMATIONS[] = {
     { "stand", 1, 45, 45 },

@@ -442,6 +442,15 @@ const CastEffect *cast_effect(const char *animation);
 
 extern const AssetEntry SONNY_ASSETS[];
 extern const int SONNY_ASSET_COUNT;
+
+/* What the art this manifest was generated from looked like, written beside
+   it as assets/art/stamp.txt. The engine carries the manifest inside itself
+   and reads the pictures off the disk, so the two can drift apart -- and a
+   picture is not self-describing: art rasterised at two pixels to the stage
+   unit drawn by an engine that believes in one comes out at twice its size,
+   quietly and everywhere. Comparing the two at startup is how that says so
+   rather than simply looking wrong. */
+extern const char *const SONNY_ASSET_STAMP;
 extern const AssetAnimation SONNY_ANIMATIONS[];
 extern const int SONNY_ANIMATION_COUNT;
 

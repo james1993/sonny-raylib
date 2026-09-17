@@ -17,6 +17,16 @@
    startup; defaults to "." so running from the repository root just works. */
 void assets_set_root(const char *root);
 
+/* Shout if the art on the disk is not the art this build was made against.
+ *
+ * The manifest is compiled in and the pictures are read off the disk, so the
+ * two drift apart the moment one is updated without the other -- and a
+ * picture does not say what it is: art rasterised at two pixels to the stage
+ * unit, drawn by a build that believes in one, comes out at exactly twice its
+ * size, everywhere, without a word. Both are written by the same run of
+ * tools/gen_asset_manifest.py, so a stamp each is enough to tell. */
+void assets_check_stamp(void);
+
 /* The texture for a still, or frame `frame` (1-based) of an animation.
    Returns NULL when the name is unknown or the file will not load. */
 const Texture2D *asset_texture(const char *name, int32_t frame);

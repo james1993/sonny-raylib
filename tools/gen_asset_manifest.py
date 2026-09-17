@@ -7,6 +7,7 @@ runtime and makes the asset set visible in a diff.
     python3 tools/gen_asset_manifest.py
 """
 import argparse
+import hashlib
 import json
 import os
 
@@ -454,6 +455,15 @@ const CastEffect *cast_effect(const char *animation);
 
 extern const AssetEntry SONNY_ASSETS[];
 extern const int SONNY_ASSET_COUNT;
+
+/* What the art this manifest was generated from looked like, written beside
+   it as assets/art/stamp.txt. The engine carries the manifest inside itself
+   and reads the pictures off the disk, so the two can drift apart -- and a
+   picture is not self-describing: art rasterised at two pixels to the stage
+   unit drawn by an engine that believes in one comes out at twice its size,
+   quietly and everywhere. Comparing the two at startup is how that says so
+   rather than simply looking wrong. */
+extern const char *const SONNY_ASSET_STAMP;
 extern const AssetAnimation SONNY_ANIMATIONS[];
 extern const int SONNY_ANIMATION_COUNT;
 
@@ -494,9 +504,11 @@ def main():
     ap.add_argument('--cast', default='data/extracted/cast_frames.json')
     args = ap.parse_args()
 
-    with open(args.input, encoding='utf-8') as fh:
-        manifest = json.load(fh)
+    with open(args.input, 'rb') as fh:
+        raw = fh.read()
+    manifest = json.loads(raw.decode('utf-8'))
     assets = manifest['assets']
+    stamp = hashlib.sha1(raw).hexdigest()[:16]
     animations = manifest.get('animations') or {}
 
     os.makedirs(args.out, exist_ok=True)
@@ -533,6 +545,7 @@ def main():
     lines.append('};')
     lines.append('const int SONNY_ASSET_COUNT = '
                  '(int)(sizeof(SONNY_ASSETS) / sizeof(SONNY_ASSETS[0]));')
+    lines.append('const char *const SONNY_ASSET_STAMP = %s;' % c_string(stamp))
     lines.append('')
     lines.append('const AssetAnimation SONNY_ANIMATIONS[] = {')
     for name, a in sorted(animations.items(), key=lambda kv: kv[1]['start']):
@@ -1154,9 +1167,15 @@ const AssetAnimation *asset_animation(const char *name)
               encoding='utf-8') as fh:
         fh.write('\n'.join(lines) + '\n')
 
-    print('%d assets, %d animations, %d doll frames, %d parts -> %s'
+    # And the same stamp beside the art, for the engine to check its own
+    # manifest against at startup.
+    with open(os.path.join(os.path.dirname(args.input), 'stamp.txt'), 'w',
+              encoding='utf-8') as fh:
+        fh.write(stamp + '\n')
+
+    print('%d assets, %d animations, %d doll frames, %d parts -> %s (%s)'
           % (len(assets), len(animations), len(doll_frames),
-             len(doll_parts.get('dollPartsArray') or []), args.out))
+             len(doll_parts.get('dollPartsArray') or []), args.out, stamp))
 
 
 if __name__ == '__main__':
