@@ -545,6 +545,8 @@ int battle_resolve_step(Battle *b, MoveEvent *event)
 
     memset(event, 0, sizeof(*event));
     event->landed = -1;
+    event->target_life = target->LIFEN;
+    event->target_focus = target->FOCUSN;
     event->caster = q->caster;
     event->target = q->target;
     event->moveID = q->moveID;
@@ -568,15 +570,17 @@ int battle_resolve_step(Battle *b, MoveEvent *event)
             int32_t absorbed = 0;
             int32_t landed = -1;
             formula_apply_damage(target, d.damage, &absorbed, &landed);
-            /* The rest of the original's condition for reading a hit off
-               into the gameplay tally: the move has to be the human's own,
-               and the target not one of the few whose incoming-damage
-               modifier is enormous.
+            /* The original's condition for reading a hit off into the
+               gameplay tally: it has to have taken life off, the move has to
+               be the human's own, and the target must not be one of the few
+               whose incoming-damage modifier is enormous.
 
-                   if(IDKC.playerID == Krin.playerNumber)
-                      if(IDKT.IDMG < 500) ... */
-            if (!(caster->playerID == b->playerNumber && target->IDMG < 500))
-                landed = -1;
+                   if(IDKT.SSWITCH == 0)
+                      if(IDKC.playerID == Krin.playerNumber)
+                         if(IDKT.IDMG < 500) ... */
+            event->tally = (landed >= 0 && target->SSWITCH == 0
+                            && caster->playerID == b->playerNumber
+                            && target->IDMG < 500);
             event->pierced = d.pierced;
             event->amount = d.damage;
             event->absorbed = absorbed;

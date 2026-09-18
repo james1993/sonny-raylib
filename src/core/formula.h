@@ -68,10 +68,12 @@ int32_t formula_apply_focus(Unit *target, const AbilityCoefs *a);
 /* Applies a damage result to the target the way executeMove does: shields
    absorb first, SSWITCH turns the remainder into healing, and death zeroes
    focus. Returns the health actually lost (negative when healed). */
-/* `landed_out`, when given, is the original's DamageOutputKrinFinal at the
-   point it records a top hit: the damage left after the shield, and only when
-   the shield failed to swallow it and the target is not the flipped kind that
-   heals from being hit. -1 says the original recorded nothing here. */
+/* `landed_out`, when given, is the original's DamageOutputKrinFinal: the
+   damage left once the shield has taken its part, which is the number the
+   fight floats over the target and the amount its life moves by. -1 when the
+   shield swallowed the blow whole, which is where the original floats the
+   word "shield" instead. It is not clamped to the life the target had, so an
+   overkill reads as all of it, the way the original's does. */
 int32_t formula_apply_damage(Unit *target, int32_t damage, int32_t *absorbed_out,
                              int32_t *landed_out);
 

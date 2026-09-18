@@ -911,16 +911,15 @@ static void draw_unit_bar(const Game *g, int32_t slot)
 
     /* The fight works a move out in one go, but the original does not apply
        it until the blow lands -- so while an attacker is still crossing the
-       floor the bar has to read what it read before. */
+       floor the bar has to read what it read before. That is the reading the
+       move was resolved against, not the reading after it undone: adding the
+       damage back gave a target that was killed its own overkill as a life
+       total, so seventeen left, hit for twenty-three, read twenty-three. */
     int32_t life_now = u->LIFEN;
     int32_t focus_now = u->FOCUSN;
     if (g->move_pending && g->has_last && g->last.target == slot) {
-        if (g->last.kind == KIND_FULL_DAMAGE)
-            life_now += g->last.amount;
-        else if (g->last.kind == KIND_HEAL)
-            life_now -= g->last.amount;
-        else if (g->last.kind == KIND_FOCUS)
-            focus_now -= g->last.amount;
+        life_now = g->last.target_life;
+        focus_now = g->last.target_focus;
     }
 
     float life = (u->LIFEU > 0) ? (float)life_now / (float)u->LIFEU : 0.0f;
@@ -1770,10 +1769,14 @@ static void present(Game *g, const MoveEvent *e)
     } else if (e->kind == KIND_FOCUS && e->amount != 0) {
         number_show(g, e->target, TextFormat("%d", e->amount), 0x66CCFF, 0);
     } else if (e->kind == KIND_FULL_DAMAGE) {
-        if (e->absorbed > 0 && e->amount == 0)
+        /* A shield that swallowed the blow whole floats the word rather than
+           a number; anything else floats what got through it, which is the
+           original's DamageOutputKrinFinal and not the damage before the
+           shield took its part. */
+        if (e->landed < 0)
             number_show(g, e->target, "shield", rgb, 0);
-        else if (e->amount > 0)
-            number_show(g, e->target, TextFormat("%d", e->amount), rgb,
+        else if (e->landed > 0)
+            number_show(g, e->target, TextFormat("%d", e->landed), rgb,
                         e->pierced);
     }
 
@@ -1970,7 +1973,7 @@ static void tick_cooldowns(Game *g, const MoveEvent *e)
    everything else counts as elemental. */
 static void record_top_hit(Game *g, const MoveEvent *e)
 {
-    if (e->landed < 0)
+    if (!e->tally)
         return;
     const AbilityDef *a = ability_by_id(e->moveID);
     if (!a)

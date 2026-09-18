@@ -144,6 +144,44 @@ int main(void)
             differs = 1;
     assert(differs);
 
+    /* What the screen draws a target's bars against while the attacker is
+       still crossing the floor: the reading the move was resolved against,
+       which the event has to carry because the fight has already applied it.
+       Deriving it from the damage instead once gave a killed target its own
+       overkill as a life total -- seventeen left, hit for twenty-three, and
+       the bar read twenty-three. */
+    Battle w;
+    setup(&w, 4242, 12);
+    int32_t hits = 0, kills = 0;
+    while (w.phase != PHASE_OVER) {
+        battle_declare_phase(&w);
+        MoveEvent e;
+        for (;;) {
+            int32_t life[SONNY_SLOTS], focus[SONNY_SLOTS];
+            for (int32_t i = 0; i < SONNY_SLOTS; i++) {
+                life[i] = w.units[i].LIFEN;
+                focus[i] = w.units[i].FOCUSN;
+            }
+            if (!battle_resolve_step(&w, &e))
+                break;
+            assert(e.target_life == life[e.target]);
+            assert(e.target_focus == focus[e.target]);
+            if (e.fired && e.kind == KIND_FULL_DAMAGE && e.landed >= 0) {
+                hits++;
+                /* A blow never leaves a target on more life than it had, and
+                   one that takes more than is left reads as all of it. */
+                assert(w.units[e.target].LIFEN <= e.target_life);
+                if (e.landed > e.target_life) {
+                    kills++;
+                    assert(w.units[e.target].LIFEN == 0);
+                }
+            }
+        }
+        battle_end_phase(&w);
+    }
+    assert(hits > 0);
+    assert(kills > 0);
+
     printf("battle: determinism and invariants hold\n");
     return 0;
 }

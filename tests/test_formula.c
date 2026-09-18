@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "../src/core/formula.h"
+#include "../src/core/unit.h"
 
 static int read_fields(FILE *fh, double *v, int n)
 {
@@ -26,6 +27,62 @@ static int read_fields(FILE *fh, double *v, int n)
         return 1;
     }
     return 0;
+}
+
+/* What a blow comes to, which is the number the fight floats over the target
+   and what its bars have to be drawn against. The reading is deliberately not
+   clamped to the life the target had: a kill for more than is left counts for
+   all of it, the way the original's DamageOutputKrinFinal does. */
+static int check_landed(void)
+{
+    int failures = 0;
+    Unit u;
+    int32_t absorbed, landed;
+
+    /* An overkill: seventeen left, hit for twenty-three. */
+    unit_init(&u, 1);
+    u.LIFEU = 100;
+    u.LIFEN = 17;
+    u.active = 1;
+    landed = -1;
+    if (formula_apply_damage(&u, 23, &absorbed, &landed) != 17
+        || landed != 23 || u.LIFEN != 0 || u.active) {
+        fprintf(stderr, "overkill: lost/landed/life/active wrong "
+                "(landed %d, life %d)\n", landed, u.LIFEN);
+        failures++;
+    }
+
+    /* A shield that swallows the blow whole: nothing landed at all, which is
+       where the original floats the word rather than a number. */
+    unit_init(&u, 1);
+    u.LIFEU = 100;
+    u.LIFEN = 80;
+    u.SHIELD = 50;
+    u.active = 1;
+    landed = 0;
+    if (formula_apply_damage(&u, 23, &absorbed, &landed) != 0
+        || landed != -1 || absorbed != 23 || u.SHIELD != 27) {
+        fprintf(stderr, "full shield: landed %d absorbed %d shield %d\n",
+                landed, absorbed, u.SHIELD);
+        failures++;
+    }
+
+    /* A shield that only takes part of it: what lands is what got through. */
+    unit_init(&u, 1);
+    u.LIFEU = 100;
+    u.LIFEN = 80;
+    u.SHIELD = 10;
+    u.active = 1;
+    landed = -1;
+    if (formula_apply_damage(&u, 23, &absorbed, &landed) != 13
+        || landed != 13 || absorbed != 10 || u.SHIELD != 0
+        || u.LIFEN != 67) {
+        fprintf(stderr, "part shield: landed %d absorbed %d life %d\n",
+                landed, absorbed, u.LIFEN);
+        failures++;
+    }
+
+    return failures;
 }
 
 int main(int argc, char **argv)
@@ -125,6 +182,9 @@ int main(int argc, char **argv)
         fprintf(stderr, "no vectors loaded\n");
         return 2;
     }
-    printf("formula: %d/%d vectors match\n", cases - failures, cases);
+    failures += check_landed();
+
+    printf("formula: %d/%d vectors match, what a blow comes to holds\n",
+           cases - failures, cases);
     return failures ? 1 : 0;
 }

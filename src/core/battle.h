@@ -97,10 +97,20 @@ typedef struct {
     int32_t  pierced;
     int32_t  amount;        /* damage dealt, health healed, or focus gained */
     int32_t  absorbed;      /* by a shield */
-    /* The hit to read off into the gameplay tally, or -1 for none: the
-       damage left after the shield, unclamped, and only for a move of the
-       human's own that actually took life off. */
+    /* What the blow actually came to once the shield had taken its part,
+       unclamped by the life the target had -- the number the original floats
+       over them. -1 when the shield swallowed it whole. */
     int32_t  landed;
+    /* Whether the original reads this hit off into the gameplay tally: a move
+       of the human's own that took life off a target whose incoming-damage
+       modifier is not enormous. */
+    int32_t  tally;
+    /* What the target's bars read before any of this happened. The port works
+       a whole move out in one go, but the original does not touch anything
+       until the blow lands, so the screen needs what was there to show while
+       the attacker is still crossing the floor. */
+    int32_t  target_life;
+    int32_t  target_focus;
     int32_t  missed;        /* the move could not be paid for or had no target */
     /* Whether the move actually happened. A slot that passes, or whose caster
        is stunned or dead, or whose target is already down, produces an event
