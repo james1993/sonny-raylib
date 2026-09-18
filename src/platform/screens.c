@@ -33,8 +33,8 @@ static const Vector2 NO_OFFSET = {0, 0};
 
 /* What the game spends, as its own fields carry it. */
 
-/* How many bag slots a menu frame's grid has. */
-#define MENU_BAG_SLOTS 36
+/* How many bag slots a menu frame's grid has, which is the bag itself. */
+#define MENU_BAG_SLOTS SONNY_BAG_SLOTS
 
 /* What g->hovered_item holds while a menu is up. A screen can have three
    kinds of square under the pointer at once and they must not share a range:
@@ -1276,25 +1276,32 @@ static void swap_equipped(Game *g, int32_t row)
     }
 }
 
-/* The bag is a list rather than a grid of holes: the original keeps
-   itemArray dense, so an item put down past the end is appended and one
-   picked up off the end leaves nothing behind. */
+/* A square of the bag. The original's handler is an unconditional swap of
+   whatever is in the square with what the pointer is carrying --
+
+       itemHolder = Krin.itemArray[id];
+       Krin.itemArray[id] = Krin.mouseItem;
+       Krin.mouseItem = itemHolder;
+
+   -- so an item goes down in the square it was dropped on rather than in the
+   first free one, dropping onto an occupied square picks that one up in
+   exchange, and the gap an item leaves stays a gap. */
 static void swap_bag(Game *g, int32_t index)
 {
-    Campaign *c = &g->campaign;
-    int32_t max = (int32_t)(sizeof(c->inventory) / sizeof(c->inventory[0]));
-    if (index < c->inventory_count) {
-        swap_carried(g, &c->inventory[index]);
-        if (c->inventory[index] == 0) {
-            for (int32_t i = index; i + 1 < c->inventory_count; i++)
-                c->inventory[i] = c->inventory[i + 1];
-            c->inventory_count--;
-        }
-    } else if (g->carried_item != 0 && c->inventory_count < max) {
-        c->inventory[c->inventory_count++] = g->carried_item;
-        g->carried_item = 0;
-        audio_play("Click2putdown");
-    }
+    if (index < 0 || index >= SONNY_BAG_SLOTS)
+        return;
+    swap_carried(g, &g->campaign.inventory[index]);
+}
+
+/* The lowest square with nothing in it, which is where the original puts an
+   item the player did not place: loot taken off the victory screen and a
+   purchase off a store's shelf. -1 when the bag is full. */
+static int32_t bag_free_slot(const Campaign *c)
+{
+    for (int32_t i = 0; i < SONNY_BAG_SLOTS; i++)
+        if (c->inventory[i] == 0)
+            return i;
+    return -1;
 }
 
 
@@ -1669,7 +1676,7 @@ void screen_inventory_draw(Game *g, Vector2 mouse)
     for (int32_t i = 0; i < MENU_BAG_SLOTS; i++) {
         Rectangle r = bag_rect(i);
         draw_slot_art(MENU_INVENTORY, "itemSlot", i);
-        if (i < c->inventory_count)
+        if (c->inventory[i])
             draw_item_icon(item_by_id(c->inventory[i]), r, WHITE);
         if (hit(r, mouse))
             DrawRectangleLinesEx(r, 1.0f, (Color){235, 200, 90, 255});
@@ -1686,8 +1693,7 @@ void screen_inventory_draw(Game *g, Vector2 mouse)
         /* An empty square is item zero, whose own words are "This slot is
            empty." -- the original says that rather than nothing. */
         int32_t i = g->hovered_item - HOVER_BAG;
-        game_tooltip_item(g, item_by_id(i < c->inventory_count
-                                        ? c->inventory[i] : 0), 0);
+        game_tooltip_item(g, item_by_id(c->inventory[i]), 0);
     }
 }
 
@@ -1825,7 +1831,7 @@ void screen_shop_draw(Game *g, Vector2 mouse)
     for (int32_t i = 0; i < MENU_BAG_SLOTS; i++) {
         Rectangle r = shop_bag_rect(i);
         draw_slot_art(MENU_SHOP, "itemSlot", i);
-        if (i < c->inventory_count)
+        if (c->inventory[i])
             draw_item_icon(item_by_id(c->inventory[i]), r, WHITE);
         if (hit(r, mouse))
             DrawRectangleLinesEx(r, 1.0f, (Color){235, 200, 90, 255});
@@ -1841,8 +1847,7 @@ void screen_shop_draw(Game *g, Vector2 mouse)
         tooltip_equip_row(g, &c->player, g->hovered_item - HOVER_EQUIP);
     } else if (g->hovered_item >= HOVER_BAG) {
         int32_t i = g->hovered_item - HOVER_BAG;
-        game_tooltip_item(g, item_by_id(i < c->inventory_count
-                                        ? c->inventory[i] : 0), 0);
+        game_tooltip_item(g, item_by_id(c->inventory[i]), 0);
     } else if (g->hovered_item >= 0 && shop
                && g->hovered_item < SHOP_STOCK_SLOTS) {
         /* The store's stock names its price first; nothing else does. */
@@ -1877,11 +1882,11 @@ void screen_shop_update(Game *g, Vector2 mouse)
             game_notice(g, "%s", lang_text("MENU", 20));
             break;
         }
-        if (c->inventory_count >= (int32_t)(sizeof(c->inventory)
-                                            / sizeof(c->inventory[0])))
+        int32_t free_slot = bag_free_slot(c);
+        if (free_slot < 0)
             break;
         c->euros -= item->price;
-        c->inventory[c->inventory_count++] = item->id;
+        c->inventory[free_slot] = item->id;
         audio_play("Click2putdown");
         break;
     }
@@ -1969,8 +1974,7 @@ void screen_victory_update(Game *g, Vector2 mouse)
     for (int32_t i = 0; i < MENU_BAG_SLOTS; i++)
         if (hit(win_bag_rect(i), mouse))
             game_tooltip_item(g, item_by_id(
-                i < g->campaign.inventory_count ? g->campaign.inventory[i] : 0),
-                0);
+                g->campaign.inventory[i]), 0);
 
     /* Drops are chosen by clicking them, as VICTORY[1] instructs. The slot's
        own handler empties the drop as it fills the bag --
@@ -1986,10 +1990,10 @@ void screen_victory_update(Game *g, Vector2 mouse)
         if (!hit(r, mouse) || !ui_clicked() || !g->dropped[i])
             continue;
         Campaign *c = &g->campaign;
-        if (c->inventory_count >= (int32_t)(sizeof(c->inventory)
-                                            / sizeof(c->inventory[0])))
+        int32_t free_slot = bag_free_slot(c);
+        if (free_slot < 0)
             break;
-        c->inventory[c->inventory_count++] = g->dropped[i];
+        c->inventory[free_slot] = g->dropped[i];
         g->dropped[i] = 0;
         audio_play("Click3pickup");
         break;
@@ -2235,7 +2239,7 @@ void screen_victory_draw(Game *g, Vector2 mouse)
        only there while something is in it. */
     for (int32_t i = 0; i < MENU_BAG_SLOTS; i++) {
         draw_slot_art(MENU_WIN, "itemSlot", i);
-        if (i < g->campaign.inventory_count)
+        if (g->campaign.inventory[i])
             draw_item_icon(item_by_id(g->campaign.inventory[i]),
                            win_bag_rect(i), WHITE);
     }

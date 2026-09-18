@@ -74,7 +74,10 @@ int save_write(const Campaign *c, const char *path)
     write_int_array(fh, "bar", c->player.move_matrix, SONNY_MOVE_SLOTS);
     write_int_array(fh, "ranks", c->player.rank, SONNY_TALENT_MAX);
     write_int_array(fh, "skilladder", c->player.skill_adder, SONNY_TALENT_MAX);
-    write_int_array(fh, "inventory", c->inventory, c->inventory_count);
+    /* Every square, holes and all -- the bag is a grid, not a list. An older
+       save wrote only what was in it, densely, which reads back into the
+       first squares and leaves the rest empty: the same bag. */
+    write_int_array(fh, "inventory", c->inventory, SONNY_BAG_SLOTS);
 
     /* Passive talent buff keys, which carry their rank in the name. */
     for (int32_t i = 0; i < SONNY_TALENT_MAX; i++)
@@ -201,9 +204,7 @@ int save_read(Campaign *c, const char *path)
         } else if (strcmp(key, "skilladder") == 0) {
             read_int_array(rest, c->player.skill_adder, SONNY_TALENT_MAX);
         } else if (strcmp(key, "inventory") == 0) {
-            c->inventory_count = read_int_array(
-                rest, c->inventory,
-                (int32_t)(sizeof(c->inventory) / sizeof(c->inventory[0])));
+            read_int_array(rest, c->inventory, SONNY_BAG_SLOTS);
         } else if (strcmp(key, "passive") == 0) {
             int32_t node = 0;
             char buff[SONNY_NAME_LEN] = {0};

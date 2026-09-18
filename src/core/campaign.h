@@ -20,6 +20,8 @@
 /* Krin.bgElementsInteracted = [0,0,0,0,0,0,0,0]: the pieces of scenery on the
    zone scenes that say something when they are clicked. */
 #define SONNY_SCENERY 8
+/* The squares the bag screen lays out, six rows of six. */
+#define SONNY_BAG_SLOTS 36
 
 typedef struct {
     Character  player;
@@ -36,8 +38,11 @@ typedef struct {
     int32_t    progress_battle;   /* Krin.progressLevelOn */
     int32_t    zone;              /* Krin.sectionIn */
     int32_t    euros;
-    int32_t    inventory[64];
-    int32_t    inventory_count;
+    /* Krin.itemArray. A grid of holes, not a list: the bag screen swaps
+       whatever is in the square that was clicked with what the pointer is
+       carrying, whether or not anything was there, so an item stays in the
+       square it was put down in and a gap left behind stays a gap. */
+    int32_t    inventory[SONNY_BAG_SLOTS];
     /* Krin.slotInUse: which of the four saves this run belongs to. */
     int32_t    slot;
     /* The tally the settings screen shows. Each is one of the counters the

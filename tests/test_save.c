@@ -19,8 +19,9 @@ int main(void)
     c.player.equip[1] = 4;
     c.player.equip[5] = 6;
     c.inventory[0] = 9;
-    c.inventory[1] = 12;
-    c.inventory_count = 2;
+    /* A gap, which the bag keeps: it is a grid of squares, not a list. */
+    c.inventory[2] = 12;
+    c.inventory[SONNY_BAG_SLOTS - 1] = 3;
 
     /* Spend points so there are ranks, a bar and a passive to round-trip. */
     for (int32_t node = 0; node < SONNY_TALENT_COUNT; node++)
@@ -47,8 +48,7 @@ int main(void)
     assert(back.zone == c.zone);
     assert(back.player.spent_skill_points == c.player.spent_skill_points);
     assert(back.player.class_template == c.player.class_template);
-    assert(back.inventory_count == c.inventory_count);
-    for (int32_t i = 0; i < c.inventory_count; i++)
+    for (int32_t i = 0; i < SONNY_BAG_SLOTS; i++)
         assert(back.inventory[i] == c.inventory[i]);
     for (int32_t i = 0; i < SONNY_STATS; i++)
         assert(back.player.spent[i] == c.player.spent[i]);
