@@ -1007,10 +1007,21 @@ static void place_on_bar(Game *g, int32_t slot)
 
 /* What a node in the tree says about itself. The original puts four things
    on it: the rank it stands at out of its tier with the move's name, what the
-   move does at the rank it is now (a node with nothing spent on it still
-   describes its first tier), what it costs, and what the next tier would do
-   and the level it wants -- which is the part that says where a point goes.
-   A passive node reads the same four off the buff it grants instead. */
+   move does at the rank it is now, what it costs, and what the next tier
+   would do and the level it wants -- which is the part that says where a
+   point goes.
+
+   A passive node reads all of that out of the BUFFSAY table rather than off
+   the buff it grants: BUFFSAY[name] is what it is called and
+   BUFFSAY[name + rank] is what that rank of it does, with the ranks numbered
+   from zero. The port was asking the buff table for a key ending in 0, which
+   no buff has, so four of the passives said nothing at all.
+
+   A node with nothing spent on it does not describe its first tier either.
+   The original replaces the whole line:
+
+       if(Krin.talentMainArray[krink] == 0)
+          thing2.toolTip = KrinLang[...].SKILLTALENTTIP2;   */
 static void talent_tooltip(Game *g, const Character *c, int32_t node)
 {
     const TalentDef *t = &SONNY_TALENTS[node];
@@ -1021,27 +1032,24 @@ static void talent_tooltip(Game *g, const Character *c, int32_t node)
 
     const char *name = "";
     const char *body = "";
-    const char *third = "";      /* what a passive calls itself */
+    const char *third = "";
     if (t->passive) {
-        const BuffDef *now = buff_find(SONNY_BUFFS, SONNY_BUFF_COUNT,
-                                       TextFormat("%s", t->buff_name));
-        const BuffDef *tier = buff_find(SONNY_BUFFS, SONNY_BUFF_COUNT,
-                                        TextFormat("%s%d", t->buff_name, at));
-        if (now)
-            name = now->name;
-        if (tier)
-            body = tier->tooltip;
+        name = lang_say("BUFFSAY", t->buff_name);
+        body = lang_say("BUFFSAY", TextFormat("%s%d", t->buff_name, at));
         third = lang_text("SKILLAURA", 0);
     } else {
         const AbilityDef *now = ability_by_id(t->ability_id + at);
         if (now) {
             name = now->name;
             body = now->tooltip;
+            /* The third line of a move's tip is what it costs, which
+               addNewMove() writes as it registers the move. */
+            third = now->cost_text;
         }
-        /* The original reads a third line off the move here too, but the
-           only move that carries one is the "None" placeholder, so for
-           everything in the tree there is nothing to say. */
     }
+    /* Nothing spent: the node says so instead of describing a tier. */
+    if (rank == 0)
+        body = lang_text("SKILLTALENTTIP2", 0);
     game_tooltip(g, TextFormat("(%d/%d)  %s", rank, t->max_rank, name), body);
     if (third && third[0])
         game_tooltip_line(g, third);
@@ -1054,10 +1062,7 @@ static void talent_tooltip(Game *g, const Character *c, int32_t node)
     int32_t wants = t->level_min + t->level_scale * rank;
     const char *next = "";
     if (t->passive) {
-        const BuffDef *up = buff_find(SONNY_BUFFS, SONNY_BUFF_COUNT,
-                                      TextFormat("%s%d", t->buff_name, rank));
-        if (up)
-            next = up->tooltip;
+        next = lang_say("BUFFSAY", TextFormat("%s%d", t->buff_name, rank));
     } else {
         const AbilityDef *up = ability_by_id(t->ability_id + rank);
         if (up)
@@ -1096,11 +1101,16 @@ void screen_talents_update(Game *g, Vector2 mouse)
         if (!hit(box, mouse))
             continue;
         const AbilityDef *on = ability_by_id(c->move_matrix[i]);
-        if (on && on->id != 0)
+        if (on && on->id != 0) {
             game_tooltip(g, on->name, on->tooltip);
-        else
+            /* Every place a move names itself carries what it costs under
+               it, which is slot 18 of the move's own table. */
+            game_tooltip_line(g, on->cost_text);
+        } else {
             game_tooltip(g, lang_text("SKILLNONE", 0),
                          lang_text("SKILLTUT", 0));
+            game_tooltip_line(g, lang_text("SKILLTUT2", 0));
+        }
         if (ui_clicked()) {
             audio_play("Click2putdown");
             place_on_bar(g, i);
@@ -1123,7 +1133,15 @@ void screen_talents_update(Game *g, Vector2 mouse)
             const AbilityDef *a = ability_by_id(known[count - 1 - i]);
             if (!a)
                 continue;
-            game_tooltip(g, a->name, a->tooltip);
+            /* A row in the pool also says how many places on the bar the
+               move may take at once, which the pool is the only screen to
+               mention. */
+            game_tooltip(g, a->name,
+                         TextFormat("%s%s%d%s", a->tooltip,
+                                    lang_text("SKILLTHRS1", 0),
+                                    a->bar_copies,
+                                    lang_text("SKILLTHRS2", 0)));
+            game_tooltip_line(g, a->cost_text);
             if (ui_clicked()) {
                 audio_play("Click3pickup");
                 g->carrying = a->id;

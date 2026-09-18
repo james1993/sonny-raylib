@@ -57,6 +57,10 @@ typedef struct {
        projectile leaves behind it, and the cast effect on the caster. */
     int32_t      colour;
     const char  *tooltip;
+    /* Slot 18: what the move costs, in the words addNewMove() builds as it
+       registers it -- "Costs 15 Focus. (CD: 6)". The tree shows it as the
+       third line of a move's tip. */
+    const char  *cost_text;
     AbilityCoefs coefs;
 } AbilityDef;
 
@@ -67,6 +71,15 @@ typedef struct {
     const char *const *values;
     int32_t            count;
 } LangArray;
+
+/* One line of a text table the game looks up by name rather than by index.
+   BUFFSAY is the only one: the ability tree reads BUFFSAY[name] for what a
+   passive is called and BUFFSAY[name + rank] for what that rank of it does. */
+typedef struct {
+    const char *table;
+    const char *key;
+    const char *value;
+} LangEntry;
 
 #define SONNY_MAX_PREREQ 4
 #define SONNY_BATTLE_SLOTS 5     /* players[0..4] fill slots 2..6 */
@@ -218,6 +231,10 @@ extern const int32_t SONNY_START_SKILL1;
 extern const int32_t SONNY_START_SKILL2;
 extern const LangArray SONNY_LANG[];
 extern const int SONNY_LANG_COUNT;
+extern const LangEntry SONNY_LANG_KEYED[];
+extern const int SONNY_LANG_KEYED_COUNT;
+/* Text out of a table keyed by name; "" when absent, never NULL. */
+const char *lang_say(const char *table, const char *key);
 /* Text by array name and index; "" when absent, never NULL. */
 const char *lang_text(const char *array, int32_t index);
 

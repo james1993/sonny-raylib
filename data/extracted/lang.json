@@ -892,7 +892,38 @@
   ],
   "EXPLAINEXTRA": [
    "Please select a topic."
-  ]
+  ],
+  "BUFFSAY": {
+   "SOLIDITY": "Solidity",
+   "SOLIDITY0": "Damage taken is reduced by 3%.",
+   "SOLIDITY1": "Damage taken is reduced by 6%.",
+   "SOLIDITY2": "Damage taken is reduced by 9%.",
+   "SOLIDITY3": "Damage taken is reduced by 12%.",
+   "SOLIDITY4": "Damage taken is reduced by 15%.",
+   "REGENERATION": "Regeneration",
+   "REGENERATION0": "Regenerate 3 Health and 3 Focus every turn.",
+   "REGENERATION1": "Regenerate 7 Health and 4 Focus every turn.",
+   "REGENERATION2": "Regenerate 11 Health and 5 Focus every turn.",
+   "REGENERATION3": "Regenerate 15 Health and 6 Focus every turn.",
+   "REGENERATION4": "Regenerate 20 Health and 7 Focus every turn.",
+   "REGENERATION5": "Regenerate 25 Health and 8 Focus every turn.",
+   "REGENERATION6": "Regenerate 30 Health and 9 Focus every turn.",
+   "REGENERATION7": "Regenerate 35 Health and 10 Focus every turn.",
+   "REGENERATION8": "Regenerate 40 Health and 11 Focus every turn.",
+   "REGENERATION9": "Regenerate 45 Health and 12 Focus every turn.",
+   "BRUTALITY": "Brutality",
+   "BRUTALITY0": "Increases direct damage by 2%",
+   "BRUTALITY1": "Increases direct damage by 4%",
+   "BRUTALITY2": "Increases direct damage by 6%",
+   "BRUTALITY3": "Increases direct damage by 8%",
+   "BRUTALITY4": "Increases direct damage by 10%",
+   "ENDURANCE": "Endurance",
+   "ENDURANCE0": "Increases Health by 4%",
+   "ENDURANCE1": "Increases Health by 8%",
+   "ENDURANCE2": "Increases Health by 12%",
+   "ENDURANCE3": "Increases Health by 16%",
+   "ENDURANCE4": "Increases Health by 20%"
+  }
  },
  "GERMAN": {
   "CUTSUB": [
@@ -1792,6 +1823,37 @@
   ],
   "EXPLAINEXTRA": [
    "Bitte wähle ein Thema."
-  ]
+  ],
+  "BUFFSAY": {
+   "SOLIDITY": "Zähigkeit",
+   "SOLIDITY0": "Du nimmst 3% weniger Schaden.",
+   "SOLIDITY1": "Du nimmst 6% weniger Schaden.",
+   "SOLIDITY2": "Du nimmst 9% weniger Schaden.",
+   "SOLIDITY3": "Du nimmst 12% weniger Schaden.",
+   "SOLIDITY4": "Du nimmst 15% weniger Schaden.",
+   "REGENERATION": "Regeneration",
+   "REGENERATION0": "Du regenerierst jede Runde 3 Leben und 3 Fokus.",
+   "REGENERATION1": "Du regenerierst jede Runde 7 Leben und 4 Fokus.",
+   "REGENERATION2": "Du regenerierst jede Runde 11 Leben und 5 Fokus.",
+   "REGENERATION3": "Du regenerierst jede Runde 15 Leben und 6 Fokus.",
+   "REGENERATION4": "Du regenerierst jede Runde 20 Leben und 7 Fokus.",
+   "REGENERATION5": "Du regenerierst jede Runde 25 Leben und 8 Fokus.",
+   "REGENERATION6": "Du regenerierst jede Runde 30 Leben und 9 Fokus.",
+   "REGENERATION7": "Du regenerierst jede Runde 35 Leben und 10 Fokus.",
+   "REGENERATION8": "Du regenerierst jede Runde 40 Leben und 11 Fokus.",
+   "REGENERATION9": "Du regenerierst jede Runde 45 Leben und 12 Fokus.",
+   "BRUTALITY": "Brutalität",
+   "BRUTALITY0": "Fügt dem Gegner 2% mehr Schaden zu.",
+   "BRUTALITY1": "Fügt dem Gegner 4% mehr Schaden zu.",
+   "BRUTALITY2": "Fügt dem Gegner 6% mehr Schaden zu.",
+   "BRUTALITY3": "Fügt dem Gegner 8% mehr Schaden zu.",
+   "BRUTALITY4": "Fügt dem Gegner 10% mehr Schaden zu.",
+   "ENDURANCE": "Dauerfestigkeit",
+   "ENDURANCE0": "Erhöht dein Leben um 4%.",
+   "ENDURANCE1": "Erhöht dein Leben um 8%.",
+   "ENDURANCE2": "Erhöht dein Leben um 12%.",
+   "ENDURANCE3": "Erhöht dein Leben um 16%.",
+   "ENDURANCE4": "Erhöht dein Leben um 20%."
+  }
  }
 }

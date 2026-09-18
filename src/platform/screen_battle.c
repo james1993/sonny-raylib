@@ -1132,8 +1132,10 @@ static void draw_ring(Game *g, Vector2 mouse)
                  g->ability_cooldown[slot->slot]);
         /* An ability says what it does under the pointer, the same way one
            on the ability screen does. */
-        if (CheckCollisionPointCircle(mouse, at, orb_radius()))
+        if (CheckCollisionPointCircle(mouse, at, orb_radius())) {
             game_tooltip(g, a->name, a->tooltip);
+            game_tooltip_line(g, a->cost_text);
+        }
     }
 }
 

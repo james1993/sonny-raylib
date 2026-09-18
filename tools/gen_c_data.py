@@ -117,6 +117,8 @@ def gen_abilities(abilities):
                      % (c_string(buff_key), c_string(a.get('sound') or ''),
                         c_string(a.get('model') or '')))
         lines.append('        .tooltip = %s,' % c_string(c.get('tooltip') or ''))
+        lines.append('        .cost_text = %s,'
+                     % c_string(c.get('cost_text') or ''))
         lines.append('        .coefs = { .element = %d, .strength_add = %s, '
                      '.strength_coef = %s,'
                      % (element_index(c.get('element')),
@@ -244,20 +246,36 @@ MAX_DROPS, MAX_RARE, MAX_TRAINING = 8, 24, 16
 def gen_lang(langs, language='ENGLISH'):
     """The display text, as the game's own named arrays."""
     table = langs.get(language) or {}
+    # Most of the text is in numbered arrays, but BUFFSAY is an object the
+    # tree looks up by name, so the two are kept apart rather than one being
+    # forced into the other's shape.
+    arrays = [a for a in sorted(table) if not isinstance(table[a], dict)]
+    keyed = [a for a in sorted(table) if isinstance(table[a], dict)]
     lines = []
-    for array in sorted(table):
+    for array in arrays:
         values = table[array]
         lines.append('static const char *const LANG_%s[] = { %s };'
                      % (array, ', '.join(c_string(v if v is not None else '')
                                          for v in values)))
     lines.append('')
     lines.append('const LangArray SONNY_LANG[] = {')
-    for array in sorted(table):
+    for array in arrays:
         lines.append('    { %s, LANG_%s, %d },'
                      % (c_string(array), array, len(table[array])))
     lines.append('};')
     lines.append('const int SONNY_LANG_COUNT = '
                  '(int)(sizeof(SONNY_LANG) / sizeof(SONNY_LANG[0]));')
+    lines.append('')
+    lines.append('const LangEntry SONNY_LANG_KEYED[] = {')
+    for name in keyed:
+        for key in sorted(table[name]):
+            lines.append('    { %s, %s, %s },'
+                         % (c_string(name), c_string(key),
+                            c_string(table[name][key] or '')))
+    lines.append('};')
+    lines.append('const int SONNY_LANG_KEYED_COUNT = '
+                 '(int)(sizeof(SONNY_LANG_KEYED) / '
+                 'sizeof(SONNY_LANG_KEYED[0]));')
     return '\n'.join(lines)
 
 
@@ -604,6 +622,10 @@ typedef struct {
        projectile leaves behind it, and the cast effect on the caster. */
     int32_t      colour;
     const char  *tooltip;
+    /* Slot 18: what the move costs, in the words addNewMove() builds as it
+       registers it -- "Costs 15 Focus. (CD: 6)". The tree shows it as the
+       third line of a move's tip. */
+    const char  *cost_text;
     AbilityCoefs coefs;
 } AbilityDef;
 
@@ -614,6 +636,15 @@ typedef struct {
     const char *const *values;
     int32_t            count;
 } LangArray;
+
+/* One line of a text table the game looks up by name rather than by index.
+   BUFFSAY is the only one: the ability tree reads BUFFSAY[name] for what a
+   passive is called and BUFFSAY[name + rank] for what that rank of it does. */
+typedef struct {
+    const char *table;
+    const char *key;
+    const char *value;
+} LangEntry;
 
 #define SONNY_MAX_PREREQ 4
 #define SONNY_BATTLE_SLOTS 5     /* players[0..4] fill slots 2..6 */
@@ -765,6 +796,10 @@ extern const int32_t SONNY_START_SKILL1;
 extern const int32_t SONNY_START_SKILL2;
 extern const LangArray SONNY_LANG[];
 extern const int SONNY_LANG_COUNT;
+extern const LangEntry SONNY_LANG_KEYED[];
+extern const int SONNY_LANG_KEYED_COUNT;
+/* Text out of a table keyed by name; "" when absent, never NULL. */
+const char *lang_say(const char *table, const char *key);
 /* Text by array name and index; "" when absent, never NULL. */
 const char *lang_text(const char *array, int32_t index);
 
@@ -978,6 +1013,17 @@ const char *lang_text(const char *array, int32_t index)
             return "";
         return SONNY_LANG[i].values[index] ? SONNY_LANG[i].values[index] : "";
     }
+    return "";
+}
+
+const char *lang_say(const char *table, const char *key)
+{
+    if (!table || !key)
+        return "";
+    for (int i = 0; i < SONNY_LANG_KEYED_COUNT; i++)
+        if (strcmp(SONNY_LANG_KEYED[i].table, table) == 0
+            && strcmp(SONNY_LANG_KEYED[i].key, key) == 0)
+            return SONNY_LANG_KEYED[i].value ? SONNY_LANG_KEYED[i].value : "";
     return "";
 }
 

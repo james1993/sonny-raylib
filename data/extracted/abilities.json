@@ -40,7 +40,7 @@
    ],
    "b16": 0,
    "tooltip": "No Tooltip assigned",
-   "cost_text": "Costs ",
+   "cost_text": "This move costs nothing",
    "b19": 1,
    "b20": 0
   },
@@ -87,7 +87,7 @@
    ],
    "b16": 0,
    "tooltip": "Attack the enemy for 160% of your total Strength and 5 extra points of Damage.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 15 Focus. (CD: 6)",
    "b19": 1,
    "b20": 0
   },
@@ -134,7 +134,7 @@
    ],
    "b16": 0,
    "tooltip": "Attack the enemy for 200% of your total Strength and 8 extra points of Damage.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 15 Focus. (CD: 6)",
    "b19": 1,
    "b20": 0
   },
@@ -181,7 +181,7 @@
    ],
    "b16": 0,
    "tooltip": "Attack the enemy for 240% of your total Strength and 15 extra points of Damage.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 15 Focus. (CD: 6)",
    "b19": 1,
    "b20": 0
   },
@@ -228,7 +228,7 @@
    ],
    "b16": 0,
    "tooltip": "Attack the enemy for 245% of your total Strength and 20 extra points of Damage.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 15 Focus. (CD: 6)",
    "b19": 1,
    "b20": 0
   },
@@ -275,7 +275,7 @@
    ],
    "b16": 0,
    "tooltip": "Attack the enemy for 250% of your total Strength and 30 extra points of Damage.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 15 Focus. (CD: 6)",
    "b19": 1,
    "b20": 0
   },
@@ -322,7 +322,7 @@
    ],
    "b16": 0,
    "tooltip": "Attack and wound the enemy. They enemy bleeds for 12% of your Strength and an additional 4 damage every turn for 4 turns. The enemy also receives 10% extra damage from all attacks.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 7 Focus. (CD: 3)",
    "b19": 1,
    "b20": 0
   },
@@ -369,7 +369,7 @@
    ],
    "b16": 0,
    "tooltip": "Attack and wound the enemy. They enemy bleeds for 12% of your Strength and an additional 8 damage every turn for 4 turns. The enemy also receives 12% extra damage from all attacks.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 7 Focus. (CD: 3)",
    "b19": 1,
    "b20": 0
   },
@@ -416,7 +416,7 @@
    ],
    "b16": 0,
    "tooltip": "Attack and wound the enemy. They enemy bleeds for 12% of your Strength and an additional 12 damage every turn for 4 turns. The enemy also receives 15% extra damage from all attacks.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 7 Focus. (CD: 3)",
    "b19": 1,
    "b20": 0
   },
@@ -463,7 +463,7 @@
    ],
    "b16": 0,
    "tooltip": "Attack and stun the enemy for one round.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 10 Focus. (CD: 3)",
    "b19": 1,
    "b20": 0
   },
@@ -510,7 +510,7 @@
    ],
    "b16": 0,
    "tooltip": "Increases your own, or a friendly unit's Strength and Magic by 20% and an additional 4 points for 7 turns.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 3 Focus. (CD: 7)",
    "b19": 1,
    "b20": 0
   },
@@ -557,7 +557,7 @@
    ],
    "b16": 0,
    "tooltip": "Increases your own, or a friendly unit's Strength and Magic by 25% and an additional 8 points for 7 turns.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 3 Focus. (CD: 7)",
    "b19": 1,
    "b20": 0
   },
@@ -604,7 +604,7 @@
    ],
    "b16": 0,
    "tooltip": "Increases your own, or a friendly unit's Strength and Magic by 30% and an additional 12 points for 7 turns.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 3 Focus. (CD: 7)",
    "b19": 1,
    "b20": 0
   },
@@ -651,7 +651,7 @@
    ],
    "b16": 0,
    "tooltip": "Increases your Life by 100 and doubles your Physical Defence. This effect lasts for 4 turns.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 3 Focus. (CD: 7)",
    "b19": 1,
    "b20": 0
   },
@@ -698,7 +698,7 @@
    ],
    "b16": 0,
    "tooltip": "Increases your Life by 150 and doubles your Physical Defence. This effect lasts for 4 turns.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 3 Focus. (CD: 7)",
    "b19": 1,
    "b20": 0
   },
@@ -745,7 +745,7 @@
    ],
    "b16": 0,
    "tooltip": "Increases your Life by 200 and doubles your Physical Defence. This effect lasts for 4 turns.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 3 Focus. (CD: 7)",
    "b19": 1,
    "b20": 0
   },
@@ -792,7 +792,7 @@
    ],
    "b16": 0,
    "tooltip": "Increases your Life by 250 and doubles your Physical Defence. This effect lasts for 4 turns.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 3 Focus. (CD: 7)",
    "b19": 1,
    "b20": 0
   },
@@ -839,7 +839,7 @@
    ],
    "b16": 0,
    "tooltip": "Increases your Life by 300 and doubles your Physical Defence. This effect lasts for 4 turns.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 3 Focus. (CD: 7)",
    "b19": 1,
    "b20": 0
   },
@@ -886,7 +886,7 @@
    ],
    "b16": 0,
    "tooltip": "Destroys 15 of the enemy's Focus.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 5 Focus. (CD: 3)",
    "b19": 1,
    "b20": 0
   },
@@ -933,7 +933,7 @@
    ],
    "b16": 0,
    "tooltip": "Destroys 17 of the enemy's Focus.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 4 Focus. (CD: 3)",
    "b19": 1,
    "b20": 0
   },
@@ -980,7 +980,7 @@
    ],
    "b16": 0,
    "tooltip": "Destroys 19 of the enemy's Focus.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 3 Focus. (CD: 3)",
    "b19": 1,
    "b20": 0
   },
@@ -1027,7 +1027,7 @@
    ],
    "b16": 0,
    "tooltip": "Destroys 21 of the enemy's Focus.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 2 Focus. (CD: 4)",
    "b19": 1,
    "b20": 0
   },
@@ -1074,7 +1074,7 @@
    ],
    "b16": 0,
    "tooltip": "Destroys 23 of the enemy's Focus.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 1 Focus. (CD: 4)",
    "b19": 1,
    "b20": 0
   },
@@ -1120,8 +1120,8 @@
     0
    ],
    "b16": 0,
-   "tooltip": "Heal yourself for {'$expr': '_root.hackMove[9]'} Health, and an additional {'$expr': '(_root.hackMove[2] * 100'}{'$expr': '\"%\")'} of your Strength.",
-   "cost_text": "Costs ",
+   "tooltip": "Heal yourself for 60 Health, and an additional 300% of your Strength.",
+   "cost_text": "Costs 5 Focus. (CD: 8)",
    "b19": 1,
    "b20": 0
   },
@@ -1167,8 +1167,8 @@
     0
    ],
    "b16": 0,
-   "tooltip": "Heal yourself for {'$expr': '_root.hackMove[9]'} Health, and an additional {'$expr': '(_root.hackMove[2] * 100'}{'$expr': '\"%\")'} of your Strength.",
-   "cost_text": "Costs ",
+   "tooltip": "Heal yourself for 80 Health, and an additional 350% of your Strength.",
+   "cost_text": "Costs 5 Focus. (CD: 8)",
    "b19": 1,
    "b20": 0
   },
@@ -1214,8 +1214,8 @@
     0
    ],
    "b16": 0,
-   "tooltip": "Heal yourself for {'$expr': '_root.hackMove[9]'} Health, and an additional {'$expr': '(_root.hackMove[2] * 100'}{'$expr': '\"%\")'} of your Strength.",
-   "cost_text": "Costs ",
+   "tooltip": "Heal yourself for 100 Health, and an additional 400% of your Strength.",
+   "cost_text": "Costs 5 Focus. (CD: 8)",
    "b19": 1,
    "b20": 0
   },
@@ -1261,8 +1261,8 @@
     0
    ],
    "b16": 0,
-   "tooltip": "Heal yourself for {'$expr': '_root.hackMove[9]'} Health, and an additional {'$expr': '(_root.hackMove[2] * 100'}{'$expr': '\"%\")'} of your Strength.",
-   "cost_text": "Costs ",
+   "tooltip": "Heal yourself for 120 Health, and an additional 500% of your Strength.",
+   "cost_text": "Costs 5 Focus. (CD: 8)",
    "b19": 1,
    "b20": 0
   },
@@ -1308,8 +1308,8 @@
     0
    ],
    "b16": 0,
-   "tooltip": "Heal yourself for {'$expr': '_root.hackMove[9]'} Health, and an additional {'$expr': '(_root.hackMove[2] * 100'}{'$expr': '\"%\")'} of your Strength.",
-   "cost_text": "Costs ",
+   "tooltip": "Heal yourself for 140 Health, and an additional 600% of your Strength.",
+   "cost_text": "Costs 5 Focus. (CD: 8)",
    "b19": 1,
    "b20": 0
   },
@@ -1363,7 +1363,7 @@
    ],
    "b16": 1,
    "tooltip": "Heals yourself, or a friendly target for 170% of your Strength and Magic, and dispels 1 negative effect(s).",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 10 Focus. (CD: 3)",
    "b19": -1,
    "b20": 0
   },
@@ -1417,7 +1417,7 @@
    ],
    "b16": 2,
    "tooltip": "Heals yourself, or a friendly target for 230% of your Strength and Magic, and dispels 2 negative effect(s).",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 10 Focus. (CD: 3)",
    "b19": -1,
    "b20": 0
   },
@@ -1471,7 +1471,7 @@
    ],
    "b16": 3,
    "tooltip": "Heals yourself, or a friendly target for 290% of your Strength and Magic, and dispels 3 negative effect(s).",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 10 Focus. (CD: 3)",
    "b19": -1,
    "b20": 0
   },
@@ -1518,7 +1518,7 @@
    ],
    "b16": 0,
    "tooltip": "Recover 40 Focus.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 3% of Total Health. (CD: 8)",
    "b19": 1,
    "b20": 0
   },
@@ -1565,7 +1565,7 @@
    ],
    "b16": 0,
    "tooltip": "Recover 50 Focus.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 3% of Total Health. (CD: 8)",
    "b19": 1,
    "b20": 0
   },
@@ -1612,7 +1612,7 @@
    ],
    "b16": 0,
    "tooltip": "Recover 60 Focus.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 3% of Total Health. (CD: 8)",
    "b19": 1,
    "b20": 0
   },
@@ -1659,7 +1659,7 @@
    ],
    "b16": 0,
    "tooltip": "Recover 70 Focus.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 3% of Total Health. (CD: 8)",
    "b19": 1,
    "b20": 0
   },
@@ -1706,7 +1706,7 @@
    ],
    "b16": 0,
    "tooltip": "Recover 80 Focus.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 3% of Total Health. (CD: 8)",
    "b19": 1,
    "b20": 0
   },
@@ -1752,8 +1752,8 @@
     0
    ],
    "b16": 0,
-   "tooltip": "Attack the enemy for 110% of your total Strength and {'$expr': '_root.hackMove[9]'} extra points of Damage.",
-   "cost_text": "Costs ",
+   "tooltip": "Attack the enemy for 110% of your total Strength and 60 extra points of Damage.",
+   "cost_text": "Costs 5% of Total Health. (CD: 2)",
    "b19": 1,
    "b20": 0
   },
@@ -1799,8 +1799,8 @@
     0
    ],
    "b16": 0,
-   "tooltip": "Attack the enemy for 110% of your total Strength and {'$expr': '_root.hackMove[9]'} extra points of Damage.",
-   "cost_text": "Costs ",
+   "tooltip": "Attack the enemy for 110% of your total Strength and 75 extra points of Damage.",
+   "cost_text": "Costs 5% of Total Health. (CD: 2)",
    "b19": 1,
    "b20": 0
   },
@@ -1846,8 +1846,8 @@
     0
    ],
    "b16": 0,
-   "tooltip": "Attack the enemy for 110% of your total Strength and {'$expr': '_root.hackMove[9]'} extra points of Damage.",
-   "cost_text": "Costs ",
+   "tooltip": "Attack the enemy for 110% of your total Strength and 90 extra points of Damage.",
+   "cost_text": "Costs 5% of Total Health. (CD: 2)",
    "b19": 1,
    "b20": 0
   },
@@ -1893,8 +1893,8 @@
     0
    ],
    "b16": 0,
-   "tooltip": "Attack the enemy for 110% of your total Strength and {'$expr': '_root.hackMove[9]'} extra points of Damage.",
-   "cost_text": "Costs ",
+   "tooltip": "Attack the enemy for 110% of your total Strength and 110 extra points of Damage.",
+   "cost_text": "Costs 5% of Total Health. (CD: 2)",
    "b19": 1,
    "b20": 0
   },
@@ -1940,8 +1940,8 @@
     0
    ],
    "b16": 0,
-   "tooltip": "Attack the enemy for 110% of your total Strength and {'$expr': '_root.hackMove[9]'} extra points of Damage.",
-   "cost_text": "Costs ",
+   "tooltip": "Attack the enemy for 110% of your total Strength and 140 extra points of Damage.",
+   "cost_text": "Costs 5% of Total Health. (CD: 2)",
    "b19": 1,
    "b20": 0
   },
@@ -1987,8 +1987,8 @@
     0
    ],
    "b16": 0,
-   "tooltip": "Attack the enemy for 110% of your total Strength and {'$expr': '_root.hackMove[9]'} extra points of Damage.",
-   "cost_text": "Costs ",
+   "tooltip": "Attack the enemy for 110% of your total Strength and 160 extra points of Damage.",
+   "cost_text": "Costs 5% of Total Health. (CD: 2)",
    "b19": 1,
    "b20": 0
   },
@@ -2034,8 +2034,8 @@
     0
    ],
    "b16": 0,
-   "tooltip": "Attack the enemy for 110% of your total Strength and {'$expr': '_root.hackMove[9]'} extra points of Damage.",
-   "cost_text": "Costs ",
+   "tooltip": "Attack the enemy for 110% of your total Strength and 180 extra points of Damage.",
+   "cost_text": "Costs 5% of Total Health. (CD: 2)",
    "b19": 1,
    "b20": 0
   },
@@ -2081,8 +2081,8 @@
     0
    ],
    "b16": 0,
-   "tooltip": "Attack the enemy for 110% of your total Strength and {'$expr': '_root.hackMove[9]'} extra points of Damage.",
-   "cost_text": "Costs ",
+   "tooltip": "Attack the enemy for 110% of your total Strength and 200 extra points of Damage.",
+   "cost_text": "Costs 5% of Total Health. (CD: 2)",
    "b19": 1,
    "b20": 0
   },
@@ -2128,8 +2128,8 @@
     0
    ],
    "b16": 0,
-   "tooltip": "Attack the enemy for 110% of your total Strength and {'$expr': '_root.hackMove[9]'} extra points of Damage.",
-   "cost_text": "Costs ",
+   "tooltip": "Attack the enemy for 110% of your total Strength and 220 extra points of Damage.",
+   "cost_text": "Costs 5% of Total Health. (CD: 2)",
    "b19": 1,
    "b20": 0
   },
@@ -2175,8 +2175,8 @@
     0
    ],
    "b16": 0,
-   "tooltip": "Attack the enemy for 110% of your total Strength and {'$expr': '_root.hackMove[9]'} extra points of Damage.",
-   "cost_text": "Costs ",
+   "tooltip": "Attack the enemy for 110% of your total Strength and 240 extra points of Damage.",
+   "cost_text": "Costs 5% of Total Health. (CD: 2)",
    "b19": 1,
    "b20": 0
   },
@@ -2223,7 +2223,7 @@
    ],
    "b16": 0,
    "tooltip": "You are shielded from damage for the next two rounds.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 7 Focus. (CD: 7)",
    "b19": 1,
    "b20": 0
   },
@@ -2270,7 +2270,7 @@
    ],
    "b16": 0,
    "tooltip": "You are shielded from damage for the next two rounds.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 6 Focus. (CD: 6)",
    "b19": 1,
    "b20": 0
   },
@@ -2317,7 +2317,7 @@
    ],
    "b16": 0,
    "tooltip": "You are shielded from damage for the next two rounds.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 5 Focus. (CD: 5)",
    "b19": 1,
    "b20": 0
   },
@@ -2364,7 +2364,7 @@
    ],
    "b16": 0,
    "tooltip": "A strong and accurate attack that has a higher chance of critically hitting. Scales with 70% of your Speed.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 12 Focus. (CD: 4)",
    "b19": 1,
    "b20": 0
   },
@@ -2411,7 +2411,7 @@
    ],
    "b16": 0,
    "tooltip": "A strong and accurate attack that has a higher chance of critically hitting. More effective than previous rank. Scales with 70% of your Speed.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 12 Focus. (CD: 4)",
    "b19": 1,
    "b20": 0
   },
@@ -2458,7 +2458,7 @@
    ],
    "b16": 0,
    "tooltip": "A strong and accurate attack that has a higher chance of critically hitting. More effective than previous rank. Scales with 70% of your Speed.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 12 Focus. (CD: 4)",
    "b19": 1,
    "b20": 0
   },
@@ -2505,7 +2505,7 @@
    ],
    "b16": 0,
    "tooltip": "A strong and accurate attack that has a higher chance of critically hitting. More effective than previous rank. Scales with 70% of your Speed.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 12 Focus. (CD: 4)",
    "b19": 1,
    "b20": 0
   },
@@ -2552,7 +2552,7 @@
    ],
    "b16": 0,
    "tooltip": "A strong and accurate attack that has a higher chance of critically hitting. More effective than previous rank. Scales with 70% of your Speed.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 12 Focus. (CD: 4)",
    "b19": 1,
    "b20": 0
   },
@@ -2599,7 +2599,7 @@
    ],
    "b16": 0,
    "tooltip": "Deal Fire damage equal to your Strength and Magic, and an additional 75.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 15 Focus. (CD: 3)",
    "b19": 1,
    "b20": 0
   },
@@ -2646,7 +2646,7 @@
    ],
    "b16": 0,
    "tooltip": "Attack the enemy, and weakens them for the next 9 turns. The enemy receives 12% extra damage from attacks, and their Strength is lowered by 12%.This effect cannot stack.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 4 Focus. (CD: 3)",
    "b19": 1,
    "b20": 0
   },
@@ -2693,7 +2693,7 @@
    ],
    "b16": 0,
    "tooltip": "Attack the enemy, and weakens them for the next 9 turns. The enemy receives 14% extra damage from attacks, and their Strength is lowered by 14%.This effect cannot stack.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 4 Focus. (CD: 3)",
    "b19": 1,
    "b20": 0
   },
@@ -2740,7 +2740,7 @@
    ],
    "b16": 0,
    "tooltip": "Attack the enemy, and weakens them for the next 9 turns. The enemy receives 16% extra damage from attacks, and their Strength is lowered by 16%.This effect cannot stack.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 4 Focus. (CD: 3)",
    "b19": 1,
    "b20": 0
   },
@@ -2787,7 +2787,7 @@
    ],
    "b16": 0,
    "tooltip": "Attack the enemy, and weakens them for the next 9 turns. The enemy receives 18% extra damage from attacks, and their Strength is lowered by 18%.This effect cannot stack.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 4 Focus. (CD: 3)",
    "b19": 1,
    "b20": 0
   },
@@ -2834,7 +2834,7 @@
    ],
    "b16": 0,
    "tooltip": "Attack the enemy, and weakens them for the next 9 turns. The enemy receives 20% extra damage from attacks, and their Strength is lowered by 20%.This effect cannot stack.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 4 Focus. (CD: 3)",
    "b19": 1,
    "b20": 0
   },
@@ -2880,8 +2880,8 @@
     0
    ],
    "b16": 0,
-   "tooltip": "Attempt to destroy the enemy, dealing {'$expr': '_root.hackMove[9]'} damage, plus 150% of your total Strength. This attack has high Piercing, but is 30% less accurate than normal attacks.",
-   "cost_text": "Costs ",
+   "tooltip": "Attempt to destroy the enemy, dealing 240 damage, plus 150% of your total Strength. This attack has high Piercing, but is 30% less accurate than normal attacks.",
+   "cost_text": "Costs 35 Focus. (CD: 8)",
    "b19": 1,
    "b20": 0
   },
@@ -2927,8 +2927,8 @@
     0
    ],
    "b16": 0,
-   "tooltip": "Attempt to destroy the enemy, dealing {'$expr': '_root.hackMove[9]'} damage, plus 150% of your total Strength. This attack has high Piercing, but is 30% less accurate than normal attacks.",
-   "cost_text": "Costs ",
+   "tooltip": "Attempt to destroy the enemy, dealing 290 damage, plus 150% of your total Strength. This attack has high Piercing, but is 30% less accurate than normal attacks.",
+   "cost_text": "Costs 35 Focus. (CD: 8)",
    "b19": 1,
    "b20": 0
   },
@@ -2974,8 +2974,8 @@
     0
    ],
    "b16": 0,
-   "tooltip": "Attempt to destroy the enemy, dealing {'$expr': '_root.hackMove[9]'} damage, plus 150% of your total Strength. This attack has high Piercing, but is 30% less accurate than normal attacks.",
-   "cost_text": "Costs ",
+   "tooltip": "Attempt to destroy the enemy, dealing 340 damage, plus 150% of your total Strength. This attack has high Piercing, but is 30% less accurate than normal attacks.",
+   "cost_text": "Costs 35 Focus. (CD: 8)",
    "b19": 1,
    "b20": 0
   },
@@ -3022,7 +3022,7 @@
    ],
    "b16": 0,
    "tooltip": "Attack  and cripple the enemy's movement, causing their Speed to be reduced by 30%.This effect cannot stack.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 10 Focus",
    "b19": 1,
    "b20": 0
   },
@@ -3069,7 +3069,7 @@
    ],
    "b16": 0,
    "tooltip": "Attack  and cripple the enemy's movement, causing their Speed to be reduced by 40%.This effect cannot stack.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 10 Focus",
    "b19": 1,
    "b20": 0
   },
@@ -3116,7 +3116,7 @@
    ],
    "b16": 0,
    "tooltip": "Attack  and cripple the enemy's movement, causing their Speed to be reduced by 50%.This effect cannot stack.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 10 Focus",
    "b19": 1,
    "b20": 0
   },
@@ -3163,7 +3163,7 @@
    ],
    "b16": 0,
    "tooltip": "Attack the enemy.",
-   "cost_text": "Costs ",
+   "cost_text": "This move costs nothing",
    "b19": 1,
    "b20": 0
   },
@@ -3210,7 +3210,7 @@
    ],
    "b16": 0,
    "tooltip": "Reduces damage from incoming attacks by 70% for three turns.",
-   "cost_text": "Costs ",
+   "cost_text": "This move costs nothing. (CD: 5)",
    "b19": 1,
    "b20": 0
   },
@@ -3256,8 +3256,8 @@
     0
    ],
    "b16": 0,
-   "tooltip": "Deals 120% of your Magic and an additional {'$expr': '_root.hackMove[9]'} Magic damage to the enemy, and makes him weaker to all attacks.",
-   "cost_text": "Costs ",
+   "tooltip": "Deals 120% of your Magic and an additional 10 Magic damage to the enemy, and makes him weaker to all attacks.",
+   "cost_text": "Costs 10 Focus. (CD: 1)",
    "b19": 1,
    "b20": 0
   },
@@ -3303,8 +3303,8 @@
     0
    ],
    "b16": 0,
-   "tooltip": "Deals 120% of your Magic and an additional {'$expr': '_root.hackMove[9]'} Magic damage to the enemy, and makes him weaker to all attacks.",
-   "cost_text": "Costs ",
+   "tooltip": "Deals 120% of your Magic and an additional 20 Magic damage to the enemy, and makes him weaker to all attacks.",
+   "cost_text": "Costs 10 Focus. (CD: 1)",
    "b19": 1,
    "b20": 0
   },
@@ -3350,8 +3350,8 @@
     0
    ],
    "b16": 0,
-   "tooltip": "Deals 120% of your Magic and an additional {'$expr': '_root.hackMove[9]'} Magic damage to the enemy, and makes him weaker to all attacks.",
-   "cost_text": "Costs ",
+   "tooltip": "Deals 120% of your Magic and an additional 30 Magic damage to the enemy, and makes him weaker to all attacks.",
+   "cost_text": "Costs 10 Focus. (CD: 1)",
    "b19": 1,
    "b20": 0
   },
@@ -3397,8 +3397,8 @@
     0
    ],
    "b16": 0,
-   "tooltip": "Deals 120% of your Magic and an additional {'$expr': '_root.hackMove[9]'} Magic damage to the enemy, and makes him weaker to all attacks.",
-   "cost_text": "Costs ",
+   "tooltip": "Deals 120% of your Magic and an additional 40 Magic damage to the enemy, and makes him weaker to all attacks.",
+   "cost_text": "Costs 10 Focus. (CD: 1)",
    "b19": 1,
    "b20": 0
   },
@@ -3444,8 +3444,8 @@
     0
    ],
    "b16": 0,
-   "tooltip": "Deals 120% of your Magic and an additional {'$expr': '_root.hackMove[9]'} Magic damage to the enemy, and makes him weaker to all attacks.",
-   "cost_text": "Costs ",
+   "tooltip": "Deals 120% of your Magic and an additional 50 Magic damage to the enemy, and makes him weaker to all attacks.",
+   "cost_text": "Costs 10 Focus. (CD: 1)",
    "b19": 1,
    "b20": 0
   },
@@ -3491,8 +3491,8 @@
     0
    ],
    "b16": 0,
-   "tooltip": "Deals 120% of your Magic and an additional {'$expr': '_root.hackMove[9]'} Magic damage to the enemy, and makes him weaker to all attacks.",
-   "cost_text": "Costs ",
+   "tooltip": "Deals 120% of your Magic and an additional 60 Magic damage to the enemy, and makes him weaker to all attacks.",
+   "cost_text": "Costs 10 Focus. (CD: 1)",
    "b19": 1,
    "b20": 0
   },
@@ -3538,8 +3538,8 @@
     0
    ],
    "b16": 0,
-   "tooltip": "Deals 120% of your Magic and an additional {'$expr': '_root.hackMove[9]'} Magic damage to the enemy, and makes him weaker to all attacks.",
-   "cost_text": "Costs ",
+   "tooltip": "Deals 120% of your Magic and an additional 70 Magic damage to the enemy, and makes him weaker to all attacks.",
+   "cost_text": "Costs 10 Focus. (CD: 1)",
    "b19": 1,
    "b20": 0
   },
@@ -3585,8 +3585,8 @@
     0
    ],
    "b16": 0,
-   "tooltip": "Deals 120% of your Magic and an additional {'$expr': '_root.hackMove[9]'} Magic damage to the enemy, and makes him weaker to all attacks.",
-   "cost_text": "Costs ",
+   "tooltip": "Deals 120% of your Magic and an additional 80 Magic damage to the enemy, and makes him weaker to all attacks.",
+   "cost_text": "Costs 10 Focus. (CD: 1)",
    "b19": 1,
    "b20": 0
   },
@@ -3632,8 +3632,8 @@
     0
    ],
    "b16": 0,
-   "tooltip": "Deals 120% of your Magic and an additional {'$expr': '_root.hackMove[9]'} Magic damage to the enemy, and makes him weaker to all attacks.",
-   "cost_text": "Costs ",
+   "tooltip": "Deals 120% of your Magic and an additional 90 Magic damage to the enemy, and makes him weaker to all attacks.",
+   "cost_text": "Costs 10 Focus. (CD: 1)",
    "b19": 1,
    "b20": 0
   },
@@ -3679,8 +3679,8 @@
     0
    ],
    "b16": 0,
-   "tooltip": "Deals 120% of your Magic and an additional {'$expr': '_root.hackMove[9]'} Magic damage to the enemy, and makes him weaker to all attacks.",
-   "cost_text": "Costs ",
+   "tooltip": "Deals 120% of your Magic and an additional 100 Magic damage to the enemy, and makes him weaker to all attacks.",
+   "cost_text": "Costs 10 Focus. (CD: 1)",
    "b19": 1,
    "b20": 0
   },
@@ -3734,7 +3734,7 @@
    ],
    "b16": 1,
    "tooltip": "Deals Lightning damage based on both your Strength and Magic and dispels 1 buff(s) from the enemy.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 7 Focus. (CD: 4)",
    "b19": 1,
    "b20": 0
   },
@@ -3788,7 +3788,7 @@
    ],
    "b16": 2,
    "tooltip": "Deals Lightning damage based on both your Strength and Magic and dispels 2 buff(s) from the enemy.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 6 Focus. (CD: 4)",
    "b19": 1,
    "b20": 0
   },
@@ -3842,7 +3842,7 @@
    ],
    "b16": 3,
    "tooltip": "Deals Lightning damage based on both your Strength and Magic and dispels 3 buff(s) from the enemy.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 5 Focus. (CD: 4)",
    "b19": 1,
    "b20": 0
   },
@@ -3889,7 +3889,7 @@
    ],
    "b16": 0,
    "tooltip": "Shields a friendly unit from 60 damage, and heals them for 20% of your Strength and Magic each turn for 9 turns.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 7 Focus. (CD: 5)",
    "b19": 1,
    "b20": 0
   },
@@ -3936,7 +3936,7 @@
    ],
    "b16": 0,
    "tooltip": "Shields a friendly unit from 100 damage, and heals them for 20% of your Strength and Magic each turn for 9 turns.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 7 Focus. (CD: 5)",
    "b19": 1,
    "b20": 0
   },
@@ -3983,7 +3983,7 @@
    ],
    "b16": 0,
    "tooltip": "Shields a friendly unit from 150 damage, and heals them for 20% of your Strength and Magic each turn for 9 turns.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 7 Focus. (CD: 5)",
    "b19": 1,
    "b20": 0
   },
@@ -4030,7 +4030,7 @@
    ],
    "b16": 0,
    "tooltip": "Shields a friendly unit from 200 damage, and heals them for 20% of your Strength and Magic each turn for 9 turns.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 7 Focus. (CD: 5)",
    "b19": 1,
    "b20": 0
   },
@@ -4077,7 +4077,7 @@
    ],
    "b16": 0,
    "tooltip": "Shields a friendly unit from 260 damage, and heals them for 20% of your Strength and Magic each turn for 9 turns.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 7 Focus. (CD: 5)",
    "b19": 1,
    "b20": 0
   },
@@ -4124,7 +4124,7 @@
    ],
    "b16": 0,
    "tooltip": "Shields a friendly unit from 320 damage, and heals them for 20% of your Strength and Magic each turn for 9 turns.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 7 Focus. (CD: 5)",
    "b19": 1,
    "b20": 0
   },
@@ -4171,7 +4171,7 @@
    ],
    "b16": 0,
    "tooltip": "Shields a friendly unit from 380 damage, and heals them for 20% of your Strength and Magic each turn for 9 turns.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 7 Focus. (CD: 5)",
    "b19": 1,
    "b20": 0
   },
@@ -4218,7 +4218,7 @@
    ],
    "b16": 0,
    "tooltip": "Shields a friendly unit from 440 damage, and heals them for 20% of your Strength and Magic each turn for 9 turns.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 7 Focus. (CD: 5)",
    "b19": 1,
    "b20": 0
   },
@@ -4265,7 +4265,7 @@
    ],
    "b16": 0,
    "tooltip": "Shields a friendly unit from 500 damage, and heals them for 20% of your Strength and Magic each turn for 9 turns.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 7 Focus. (CD: 5)",
    "b19": 1,
    "b20": 0
   },
@@ -4312,7 +4312,7 @@
    ],
    "b16": 0,
    "tooltip": "Shields a friendly unit from 600 damage, and heals them for 20% of your Strength and Magic each turn for 9 turns.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 7 Focus. (CD: 5)",
    "b19": 1,
    "b20": 0
   },
@@ -4359,7 +4359,7 @@
    ],
    "b16": 0,
    "tooltip": "Set the enemy on fire, dealing 30% of your Magic as Fire damage each turn for 5 turns.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 25 Focus. (CD: 5)",
    "b19": 1,
    "b20": 0
   },
@@ -4406,7 +4406,7 @@
    ],
    "b16": 0,
    "tooltip": "Set the enemy on fire, dealing 30% of your Magic as Fire damage each turn for 5 turns. Costs less Focus than previous level.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 20 Focus. (CD: 5)",
    "b19": 1,
    "b20": 0
   },
@@ -4453,7 +4453,7 @@
    ],
    "b16": 0,
    "tooltip": "Set the enemy on fire, dealing 30% of your Magic as Fire damage each turn for 5 turns. Costs less Focus than previous level.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 15 Focus. (CD: 5)",
    "b19": 1,
    "b20": 0
   },
@@ -4500,7 +4500,7 @@
    ],
    "b16": 0,
    "tooltip": "Deals Ice damage to the enemy equal to 30% of your Magic, and stuns for 2 turns. Additional 50% bonus to Ice Piercing.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 25 Focus. (CD: 8)",
    "b19": 1,
    "b20": 0
   },
@@ -4547,7 +4547,7 @@
    ],
    "b16": 0,
    "tooltip": "Deals Ice damage to the enemy equal to 30% of your Magic, and stuns for 2 turns. Additional 70% bonus to Ice Piercing.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 20 Focus. (CD: 8)",
    "b19": 1,
    "b20": 0
   },
@@ -4594,7 +4594,7 @@
    ],
    "b16": 0,
    "tooltip": "Deals Ice damage to the enemy equal to 30% of your Magic, and stuns for 2 turns. Additional 90% bonus to Ice Piercing.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 15 Focus. (CD: 8)",
    "b19": 1,
    "b20": 0
   },
@@ -4641,7 +4641,7 @@
    ],
    "b16": 0,
    "tooltip": "Creates a stacking debuff on the enemy, dealing 3 Shadow damage and an additional 20% of your Magic every turn for 9 turns. The enemy is also weaker to all incoming attacks.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 5 Focus. (CD: 6)",
    "b19": 1,
    "b20": 0
   },
@@ -4688,7 +4688,7 @@
    ],
    "b16": 0,
    "tooltip": "Creates a stacking debuff on the enemy, dealing 5 Shadow damage and an additional 20% of your Magic every turn for 9 turns. The enemy is also weaker to all incoming attacks.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 5 Focus. (CD: 6)",
    "b19": 1,
    "b20": 0
   },
@@ -4735,7 +4735,7 @@
    ],
    "b16": 0,
    "tooltip": "Creates a stacking debuff on the enemy, dealing 7 Shadow damage and an additional 20% of your Magic every turn for 9 turns. The enemy is also weaker to all incoming attacks.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 5 Focus. (CD: 6)",
    "b19": 1,
    "b20": 0
   },
@@ -4782,7 +4782,7 @@
    ],
    "b16": 0,
    "tooltip": "Creates a stacking debuff on the enemy, dealing 12 Shadow damage and an additional 20% of your Magic every turn for 9 turns. The enemy is also weaker to all incoming attacks.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 5 Focus. (CD: 6)",
    "b19": 1,
    "b20": 0
   },
@@ -4829,7 +4829,7 @@
    ],
    "b16": 0,
    "tooltip": "Creates a stacking debuff on the enemy, dealing 21 Shadow damage and an additional 20% of your Magic every turn for 9 turns. The enemy is also weaker to all incoming attacks.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 5 Focus. (CD: 6)",
    "b19": 1,
    "b20": 0
   },
@@ -4876,7 +4876,7 @@
    ],
    "b16": 0,
    "tooltip": "Restores 40 Focus to a friendly unit.",
-   "cost_text": "Costs ",
+   "cost_text": "This move costs nothing. (CD: 9)",
    "b19": 1,
    "b20": 0
   },
@@ -4923,7 +4923,7 @@
    ],
    "b16": 0,
    "tooltip": "The targeted unit receives a buff which switches damage with healing, and healing with damage.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 15 Focus. (CD: 8)",
    "b19": 1,
    "b20": 0
   },
@@ -4970,7 +4970,7 @@
    ],
    "b16": 0,
    "tooltip": "Attack the target.",
-   "cost_text": "Costs ",
+   "cost_text": "This move costs nothing",
    "b19": 1,
    "b20": 0
   },
@@ -5017,7 +5017,7 @@
    ],
    "b16": 0,
    "tooltip": "",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 25 Focus. (CD: 10)",
    "b19": 1,
    "b20": 0
   },
@@ -5064,7 +5064,7 @@
    ],
    "b16": 0,
    "tooltip": "",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 15 Focus. (CD: 2)",
    "b19": 1,
    "b20": 0
   },
@@ -5111,7 +5111,7 @@
    ],
    "b16": 0,
    "tooltip": "No Tooltip assigned",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 15 Focus",
    "b19": 1,
    "b20": 0
   },
@@ -5158,7 +5158,7 @@
    ],
    "b16": 0,
    "tooltip": "",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 22 Focus. (CD: 6)",
    "b19": 1,
    "b20": 0
   },
@@ -5205,7 +5205,7 @@
    ],
    "b16": 0,
    "tooltip": "No Tooltip assigned",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 15 Focus. (CD: 5)",
    "b19": 1,
    "b20": 0
   },
@@ -5252,7 +5252,7 @@
    ],
    "b16": 0,
    "tooltip": "No Tooltip assigned",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 10 Focus. (CD: 3)",
    "b19": 1,
    "b20": 0
   },
@@ -5299,7 +5299,7 @@
    ],
    "b16": 0,
    "tooltip": "No Tooltip assigned",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 10 Focus. (CD: 15)",
    "b19": 1,
    "b20": 0
   },
@@ -5346,7 +5346,7 @@
    ],
    "b16": 0,
    "tooltip": "Restores 40 Focus to a friendly unit.",
-   "cost_text": "Costs ",
+   "cost_text": "This move costs nothing. (CD: 20)",
    "b19": 1,
    "b20": 0
   },
@@ -5393,7 +5393,7 @@
    ],
    "b16": 0,
    "tooltip": "Restores 40 Focus to a friendly unit.",
-   "cost_text": "Costs ",
+   "cost_text": "This move costs nothing. (CD: 20)",
    "b19": 1,
    "b20": 0
   },
@@ -5440,7 +5440,7 @@
    ],
    "b16": 0,
    "tooltip": "Attack the target.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 10 Focus",
    "b19": 1,
    "b20": 0
   },
@@ -5487,7 +5487,7 @@
    ],
    "b16": 0,
    "tooltip": "",
-   "cost_text": "Costs ",
+   "cost_text": "This move costs nothing. (CD: 8)",
    "b19": 1,
    "b20": 0
   },
@@ -5541,7 +5541,7 @@
    ],
    "b16": 1,
    "tooltip": "No Tooltip assigned",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 15 Focus",
    "b19": -1,
    "b20": 0
   },
@@ -5588,7 +5588,7 @@
    ],
    "b16": 0,
    "tooltip": "No Tooltip assigned",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 5 Focus",
    "b19": 1,
    "b20": 0
   },
@@ -5635,7 +5635,7 @@
    ],
    "b16": 0,
    "tooltip": "No Tooltip assigned",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 5 Focus. (CD: 4)",
    "b19": 1,
    "b20": 0
   },
@@ -5682,7 +5682,7 @@
    ],
    "b16": 0,
    "tooltip": "No Tooltip assigned",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 1 Focus",
    "b19": 1,
    "b20": 0
   },
@@ -5729,7 +5729,7 @@
    ],
    "b16": 0,
    "tooltip": "No Tooltip assigned",
-   "cost_text": "Costs ",
+   "cost_text": "This move costs nothing. (CD: 4)",
    "b19": 1,
    "b20": 0
   },
@@ -5776,7 +5776,7 @@
    ],
    "b16": 0,
    "tooltip": "No Tooltip assigned",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 5 Focus",
    "b19": 1,
    "b20": 0
   },
@@ -5823,7 +5823,7 @@
    ],
    "b16": 0,
    "tooltip": "No Tooltip assigned",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 6 Focus. (CD: 10)",
    "b19": 1,
    "b20": 0
   },
@@ -5870,7 +5870,7 @@
    ],
    "b16": 0,
    "tooltip": "No Tooltip assigned",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 10 Focus. (CD: 3)",
    "b19": 1,
    "b20": 0
   },
@@ -5917,7 +5917,7 @@
    ],
    "b16": 0,
    "tooltip": "",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 1000 Focus",
    "b19": 1,
    "b20": 0
   },
@@ -5964,7 +5964,7 @@
    ],
    "b16": 0,
    "tooltip": "Shields a friendly unit from ",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 10 Focus. (CD: 24)",
    "b19": 1,
    "b20": 0
   },
@@ -6011,7 +6011,7 @@
    ],
    "b16": 0,
    "tooltip": "Deals Ice damage to the enemy equal to 30% of your Magic, and stuns for 2 turns. Additional  bonus to Ice Piercing.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 20 Focus. (CD: 5)",
    "b19": 1,
    "b20": 0
   },
@@ -6065,7 +6065,7 @@
    ],
    "b16": 1,
    "tooltip": "Deals Lightning damage based on both your Strength and Magic and dispels 1 buff(s) from the enemy.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 10 Focus. (CD: 3)",
    "b19": 1,
    "b20": 0
   },
@@ -6112,7 +6112,7 @@
    ],
    "b16": 0,
    "tooltip": "Creates a stacking debuff on the enemy, dealing 21 Shadow damage and an additional 20% of your Magic every turn for 9 turns. The enemy is also weaker to all incoming attacks.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 5 Focus. (CD: 3)",
    "b19": 1,
    "b20": 0
   },
@@ -6159,7 +6159,7 @@
    ],
    "b16": 0,
    "tooltip": "No Tooltip assigned",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 5 Focus",
    "b19": 1,
    "b20": 0
   },
@@ -6206,7 +6206,7 @@
    ],
    "b16": 0,
    "tooltip": "No Tooltip assigned",
-   "cost_text": "Costs ",
+   "cost_text": "This move costs nothing. (CD: 2)",
    "b19": 1,
    "b20": 0
   },
@@ -6253,7 +6253,7 @@
    ],
    "b16": 0,
    "tooltip": "No Tooltip assigned",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 5 Focus. (CD: 9)",
    "b19": 1,
    "b20": 0
   },
@@ -6307,7 +6307,7 @@
    ],
    "b16": 10,
    "tooltip": "No Tooltip assigned",
-   "cost_text": "Costs ",
+   "cost_text": "This move costs nothing. (CD: 4)",
    "b19": -1,
    "b20": 0
   },
@@ -6354,7 +6354,7 @@
    ],
    "b16": 0,
    "tooltip": "Increases your own, or a friendly unit's Strength and Magic by 30% and an additional 12 points for 7 turns.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 3 Focus. (CD: 7)",
    "b19": 1,
    "b20": 0
   },
@@ -6401,7 +6401,7 @@
    ],
    "b16": 0,
    "tooltip": "No Tooltip assigned",
-   "cost_text": "Costs ",
+   "cost_text": "This move costs nothing",
    "b19": 1,
    "b20": 0
   },
@@ -6448,7 +6448,7 @@
    ],
    "b16": 0,
    "tooltip": "No Tooltip assigned",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 100 Focus",
    "b19": 1,
    "b20": 0
   },
@@ -6495,7 +6495,7 @@
    ],
    "b16": 0,
    "tooltip": "No Tooltip assigned",
-   "cost_text": "Costs ",
+   "cost_text": "This move costs nothing. (CD: 5)",
    "b19": 1,
    "b20": 0
   },
@@ -6541,8 +6541,8 @@
     0
    ],
    "b16": 0,
-   "tooltip": "Heal yourself for {'$expr': '_root.hackMove[9]'} Health, and an additional {'$expr': '(_root.hackMove[2] * 100'}{'$expr': '\"%\")'} of your Strength.",
-   "cost_text": "Costs ",
+   "tooltip": "Heal yourself for 60 Health, and an additional 300% of your Strength.",
+   "cost_text": "Costs 5 Focus. (CD: 18)",
    "b19": 1,
    "b20": 0
   },
@@ -6589,7 +6589,7 @@
    ],
    "b16": 0,
    "tooltip": "Fire a ball of flame at the target, making them burn.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 15 Focus",
    "b19": 1,
    "b20": 0
   },
@@ -6636,7 +6636,7 @@
    ],
    "b16": 0,
    "tooltip": "Heal the target.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 10 Focus. (CD: 3)",
    "b19": 1,
    "b20": 0
   },
@@ -6683,7 +6683,7 @@
    ],
    "b16": 0,
    "tooltip": "Fire a bolt of ice at the enemy, stunning them.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 8 Focus and 1 Health. (CD: 6)",
    "b19": 1,
    "b20": 0
   },
@@ -6731,7 +6731,7 @@
    ],
    "b16": 2,
    "tooltip": "Dispels 2 harmful effects on the target, and heals them every turn for seven turns.",
-   "cost_text": "Costs ",
+   "cost_text": "Costs 10 Focus. (CD: 5)",
    "b19": -1,
    "b20": 0
   },

@@ -99,6 +99,188 @@ def parse_value(tok):
     return {"$expr": tok}
 
 
+# ------------------------------------------------------- expression evaluator
+
+# A skill's tooltip is not a literal. The original builds each one by stitching
+# three pieces of language text around the move's own numbers, and a few of
+# them read those numbers back off the move being registered:
+#
+#   _root.hackMove[17] = krinABC1[19] + _root.hackMove[9] + krinABC2[19];
+#   _root.hackMove[17] = krinABC1[6] + _root.hackMove[9] + krinABC2[6]
+#                      + (_root.hackMove[2] * 100 + "%") + krinABC3[6];
+#
+# Splitting those on "+" and hoping each piece is a literal cannot work -- a
+# bracketed sub-expression is torn in half and a lookup into the move has
+# nothing to look into -- so this evaluates them properly, against the move
+# whose registration is being replayed.
+
+NUM_ONLY_RE = re.compile(r'^-?\d+(\.\d+)?([eE][-+]?\d+)?$')
+
+
+def tokenize_expr(src):
+    """An AS expression as a flat token list, keeping strings whole."""
+    out, i = [], 0
+    while i < len(src):
+        ch = src[i]
+        if ch.isspace():
+            i += 1
+        elif ch in '"\'':
+            j = i + 1
+            while j < len(src) and src[j] != ch:
+                j += 2 if src[j] == '\\' else 1
+            out.append(src[i:j + 1])
+            i = j + 1
+        elif ch in '()[]+*/-':
+            out.append(ch)
+            i += 1
+        else:
+            j = i
+            while j < len(src) and not src[j].isspace() \
+                    and src[j] not in '()[]+*/-"\'':
+                j += 1
+            out.append(src[i:j])
+            i = j
+    return out
+
+
+def as_number(value):
+    """ActionScript's Number(x): a string that is not a number is not one."""
+    if isinstance(value, bool) or value is None:
+        return None
+    if isinstance(value, (int, float)):
+        return value
+    if isinstance(value, str) and NUM_ONLY_RE.match(value.strip()):
+        return float(value) if '.' in value else int(value)
+    return None
+
+
+def as_string(value):
+    """ActionScript's String(x). A whole number prints without a point."""
+    if value is None:
+        return 'undefined'
+    if isinstance(value, bool):
+        return 'true' if value else 'false'
+    if isinstance(value, float) and value == int(value):
+        return str(int(value))
+    return str(value)
+
+
+def as_add(left, right):
+    """AS "+": addition when both sides are numbers, otherwise concatenation."""
+    a, b = as_number(left), as_number(right)
+    if a is not None and b is not None \
+            and not isinstance(left, str) and not isinstance(right, str):
+        return a + b
+    return as_string(left) + as_string(right)
+
+
+class ExprError(Exception):
+    pass
+
+
+def eval_expr(src, lang, move_b):
+    """Evaluate one of the registration script's expressions.
+
+    `lang` is the language table the aliases read from and `move_b` the
+    B-table of the move being registered, which is what _root.hackMove reads
+    back into."""
+    tokens = tokenize_expr(src)
+    pos = [0]
+
+    def peek():
+        return tokens[pos[0]] if pos[0] < len(tokens) else None
+
+    def take():
+        tok = peek()
+        pos[0] += 1
+        return tok
+
+    def primary():
+        tok = take()
+        if tok is None:
+            raise ExprError('ran out of expression')
+        if tok == '(':
+            value = expression()
+            if take() != ')':
+                raise ExprError('unclosed bracket')
+            return value
+        if tok == '-':
+            return -(as_number(primary()) or 0)
+        if tok[0] in '"\'':
+            return unescape(tok[1:-1])
+        if NUM_ONLY_RE.match(tok):
+            return float(tok) if '.' in tok else int(tok)
+        # A name, possibly indexed: krinABC1[6], _root.hackMove[9].
+        if peek() == '[':
+            take()
+            index = expression()
+            if take() != ']':
+                raise ExprError('unclosed index')
+            index = int(as_number(index) or 0)
+            if tok in ('_root.hackMove', 'hackMove'):
+                return move_b.get(index)
+            array = LANG_ALIAS.get(tok)
+            if array is None and tok.startswith('_root.KrinLang'):
+                array = tok.rsplit('.', 1)[-1]
+            table = (lang.get(array) or []) if array else []
+            return table[index] if index < len(table) else None
+        raise ExprError('cannot read %r' % tok)
+
+    def product():
+        value = primary()
+        while peek() in ('*', '/'):
+            op = take()
+            other = as_number(primary()) or 0
+            value = as_number(value) or 0
+            value = value * other if op == '*' else value / other
+        return value
+
+    def expression():
+        value = product()
+        while peek() in ('+', '-'):
+            op = take()
+            other = product()
+            if op == '+':
+                value = as_add(value, other)
+            else:
+                value = (as_number(value) or 0) - (as_number(other) or 0)
+        return value
+
+    value = expression()
+    if pos[0] != len(tokens):
+        raise ExprError('trailing %r' % tokens[pos[0]:])
+    return value
+
+
+def move_cost_text(args):
+    """What addNewMove() writes into slot 18, replayed from its own body.
+
+    Kept as it is written, quirk and all: the health clause tests the health
+    cost but prints the argument beside it."""
+    focus = as_number(args.get('focus_cost')) or 0
+    health = as_number(args.get('health_cost')) or 0
+    other = as_number(args.get('a15')) or 0
+    pct = as_number(args.get('health_cost_pct')) or 0
+    cooldown = as_number(args.get('cooldown')) or 0
+
+    text = 'Costs '
+    if focus > 0:
+        text += as_string(focus) + ' Focus'
+    if health > 0:
+        if focus > 0:
+            text += ' and '
+        text += as_string(other) + ' Health'
+    if pct > 0:
+        if focus > 0 or health > 0:
+            text += ' and '
+        text += as_string(pct * 100) + '% of Total Health'
+    if focus + health + pct == 0:
+        text = 'This move costs nothing'
+    if cooldown != 0:
+        text += '. (CD: ' + as_string(cooldown) + ')'
+    return text
+
+
 # ------------------------------------------------------------------ lang tables
 
 LANG_ASSIGN = re.compile(
@@ -107,13 +289,24 @@ LANG_ASSIGN = re.compile(
 # other labels are plain properties.
 LANG_SCALAR = re.compile(
     r'^KrinLang\.([A-Z]+)\.([A-Z0-9_]+)\s*=\s*(\"(?:[^\"\\\\]|\\\\.)*\");$')
+# BUFFSAY is not an array at all: it is an object the tree looks up by name,
+# BUFFSAY[BUFFNAME] for what a passive is called and BUFFSAY[BUFFNAME + rank]
+# for what that rank of it does. So it is keyed by name here too.
+LANG_OBJECT_RE = re.compile(
+    r'^KrinLang\.([A-Z]+)\.([A-Z0-9_]+)\.([A-Za-z0-9_]+)\s*=\s*(.+);$')
 
 
 def extract_lang(text):
     langs = {}
     scalars = {}
+    objects = {}
     for line in text.splitlines():
         line = line.strip()
+        m = LANG_OBJECT_RE.match(line)
+        if m:
+            objects.setdefault(m.group(1), {}).setdefault(
+                m.group(2), {})[m.group(3)] = parse_value(m.group(4))
+            continue
         m = LANG_ASSIGN.match(line)
         if m:
             lang, array, idx, value = (m.group(1), m.group(2),
@@ -134,6 +327,11 @@ def extract_lang(text):
     for lang, entries in scalars.items():
         for name, value in entries.items():
             langs.setdefault(lang, {}).setdefault(name, [value])
+    # A table looked up by name stays a mapping, so nothing has to pretend an
+    # index it does not have.
+    for lang, tables in objects.items():
+        for name, entries in tables.items():
+            langs.setdefault(lang, {})[name] = entries
     return langs
 
 
@@ -361,7 +559,7 @@ def new_item_stats():
             'PIU': [0] * 8, 'DIU': [0] * 8}
 
 
-def extract_tables(text):
+def extract_tables(text, lang):
     moves, units, items, buffs = {}, {}, [], {}
     move_count = 0
     unit_count = 0
@@ -389,7 +587,8 @@ def extract_tables(text):
                 entry['b'] = {0: 'Physical', 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0,
                               7: 0, 8: 1, 9: 0, 10: 1, 11: 0, 12: 0, 13: 0,
                               14: 0, 15: [0], 16: 0,
-                              17: 'No Tooltip assigned', 18: 'Costs ', 19: 1,
+                              17: 'No Tooltip assigned',
+                              18: move_cost_text(entry['args']), 19: 1,
                               20: 0}
                 moves[move_count] = entry
                 cur = ('move', move_count)
@@ -425,11 +624,27 @@ def extract_tables(text):
 
         m = PATCH_RE.match(line)
         if m:
-            which, idx, value = m.group(1), int(m.group(2)), parse_value(m.group(3))
-            if which == 'hackMove' and cur and cur[0] == 'move':
-                moves[cur[1]]['b'][idx] = value
-            elif which == 'hackMove2' and cur and cur[0] == 'buff':
-                buffs[cur[1]]['fields'][idx] = value
+            which, idx = m.group(1), int(m.group(2))
+            table = (moves[cur[1]]['b']
+                     if which == 'hackMove' and cur and cur[0] == 'move'
+                     else buffs[cur[1]]['fields']
+                     if which == 'hackMove2' and cur and cur[0] == 'buff'
+                     else None)
+            if table is None:
+                continue
+            value = parse_value(m.group(3))
+            # Anything that is not a literal is an expression the original
+            # works out as it registers the move, and the tooltips are built
+            # that way -- so work it out here too, against what the move has
+            # so far. A literal keeps the reading it already had.
+            if isinstance(value, dict) and ('$expr' in value
+                                            or '$concat' in value):
+                try:
+                    value = eval_expr(m.group(3), lang, table)
+                except ExprError as err:
+                    sys.stderr.write('cannot evaluate %s: %s\n'
+                                     % (m.group(3), err))
+            table[idx] = value
             continue
 
         m = UNIT_PATCH_RE.match(line)
@@ -697,7 +912,7 @@ def main():
     zone_buttons = extract_zone_buttons(args.scripts_dir)
     party = extract_party(text, args.scripts_dir)
     cutscenes = extract_cutscenes(args.scripts_dir, (1695, 1710, 1719))
-    moves, units, items, buffs = extract_tables(text)
+    moves, units, items, buffs = extract_tables(text, lang)
     battles = extract_battles(text)
 
     # Resolve text references and give the verified B-table fields real names.
