@@ -295,6 +295,7 @@ void screen_settings_draw(Game *g, Vector2 mouse)
     /* This screen draws the bar itself rather than through the hub's panel,
        so the switch on it has to be asked for here too. */
     hud_sound(g, mouse);
+    hud_buttons(g, mouse);
 
     const Campaign *c = &g->campaign;
     menu_say("gs_zone_cleared", TextFormat("%d", c->stats.zones_cleared));

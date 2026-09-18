@@ -353,6 +353,9 @@ typedef struct {
     const char *name;
     float       x, y;
     float       scale;
+    /* Where the slot sits in its menu frame's stack, so a screen that draws
+       that frame's graphics itself can put the slot back among them. */
+    int32_t     depth;
     /* The slot's own clip, whose resting frame is the empty square. */
     int32_t     character;
     float       width, height;
@@ -1002,10 +1005,11 @@ const StageLayer *stage_layer(const char *name)
     for menu in sorted(menus):
         for name in sorted(menus[menu]['slots']):
             m_ = menus[menu]['slots'][name]
-            lines.append('    { %s, %s, %s, %s, %s, %d, %s, %s, %s, %s },'
+            lines.append('    { %s, %s, %s, %s, %s, %d, %d, %s, %s, %s, %s },'
                          % (c_string(menu), c_string(name),
                             c_float(m_['x']), c_float(m_['y']),
-                            c_float(m_['scale']), m_.get('character') or 0,
+                            c_float(m_['scale']), m_.get('depth') or 0,
+                            m_.get('character') or 0,
                             c_float(m_.get('width') or 0),
                             c_float(m_.get('height') or 0),
                             c_float(m_.get('origin_x') or 0),

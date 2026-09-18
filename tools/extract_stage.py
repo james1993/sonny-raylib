@@ -519,6 +519,10 @@ def menu_frames(body, raw_dir, chrome, texts, fonts, boxes):
             entry = {'x': round(at[2] + at[0] * x, 3),
                      'y': round(at[3] + at[1] * y, 3),
                      'scale': round(at[0] * a, 6),
+                     # Where the slot sits in the clip's own stack. A screen
+                     # that draws the frame's graphics itself needs it to put
+                     # the slot back between the right two pieces.
+                     'depth': info['depth'],
                      'character': info['character']}
             geom = sprite_geometry(raw_dir, info['character'])
             if geom:

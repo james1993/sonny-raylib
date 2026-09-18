@@ -340,6 +340,9 @@ typedef struct {
     const char *name;
     float       x, y;
     float       scale;
+    /* Where the slot sits in its menu frame's stack, so a screen that draws
+       that frame's graphics itself can put the slot back among them. */
+    int32_t     depth;
     /* The slot's own clip, whose resting frame is the empty square. */
     int32_t     character;
     float       width, height;

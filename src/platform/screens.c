@@ -16,6 +16,16 @@
    each, and the same slot name means different places on different frames. */
 #define MENU_SCREEN    "menu"
 #define MENU_INVENTORY "inventory"
+/* How wide an experience bar's fill is at a hundred per cent, which both the
+   inventory and the tally after a fight scale against. The frame's own
+   number: `_width = ExpSets[player] / 100 * 95.1`. */
+#define XP_BAR_WIDTH   95.1f
+/* The fill is a named slot, not one of the frame's own pieces: "bar", the
+   clip the original writes _width on. Its first frame is the plain fill and
+   its second is the flash on a level. */
+#define XP_BAR_SLOT    "bar"
+#define XP_BAR_PLAIN   "#1344@1"
+#define XP_BAR_LEVEL   "#1344@2"
 #define MENU_WIN       "win"
 
 /* Nothing on a menu moves, so its pieces are drawn where they are recorded. */
@@ -211,6 +221,48 @@ static void hub_tooltips(Game *g, Vector2 mouse)
     }
 }
 
+/* The bar's own buttons, wherever the bar is.
+ *
+ * Every menu the hub opens is a clip laid over the Navigation frame, so the
+ * row of buttons along the bottom is still there and still live underneath
+ * it -- the inventory does not stop the map button being the map button. The
+ * port had them answering on the hub alone, which left them drawn but dead on
+ * every screen that opens over it. */
+void hud_buttons(Game *g, Vector2 mouse)
+{
+    /* PauseForScreen: a note holds the hub still, and nothing on it answers
+       until it is clicked away. */
+    if (game_hub_note_up(g))
+        return;
+    hub_tooltips(g, mouse);
+    if (hub_pressed(HUB_BUTTON_INVENTORY, mouse)) {
+        audio_play("Click3pickup");
+        g->screen = SCREEN_INVENTORY;
+    } else if (hub_pressed(HUB_BUTTON_SKILLS, mouse)) {
+        audio_play("Click3pickup");
+        /* Opening the screen puts the menu clip back on its first frame, so
+           the swatches beside the attributes start coloured again. */
+        g->stat_points_spent = 0;
+        screen_talents_open(g);
+        g->screen = SCREEN_TALENTS;
+    } else if (hub_pressed(HUB_BUTTON_MAP, mouse)) {
+        audio_play("Click3pickup");
+        g->screen = SCREEN_MAP;
+    } else if (hub_pressed(HUB_BUTTON_SAVE, mouse)) {
+        audio_play("Click3pickup");
+        if (save_write(&g->campaign,
+                       save_slot_path(g->campaign.slot)) != 0)
+            game_notice(g, "Could not write the save file.");
+    } else if (hub_pressed(HUB_BUTTON_OPTIONS, mouse)) {
+        audio_play("Click3pickup");
+        g->screen = SCREEN_SETTINGS;
+    } else if (hub_pressed(HUB_BUTTON_RESPEC, mouse)) {
+        audio_play("Click3pickup");
+        g->campaign.stats.respec_used++;
+        character_respec(&g->campaign.player);
+    }
+}
+
 void screen_zone_update(Game *g, Vector2 mouse)
 {
     /* The hub's own frame asks for the roaming track every time it is
@@ -225,7 +277,7 @@ void screen_zone_update(Game *g, Vector2 mouse)
         }
         return;
     }
-    hub_tooltips(g, mouse);
+    hud_buttons(g, mouse);
     /* The markers on the scene. Which one was pressed decides what happens,
        and for a store it is also what says which store. */
     for (int32_t i = 0; ui_clicked(); i++) {
@@ -268,32 +320,6 @@ void screen_zone_update(Game *g, Vector2 mouse)
         }
     }
 
-    if (hub_pressed(HUB_BUTTON_INVENTORY, mouse)) {
-        audio_play("Click3pickup");
-        g->screen = SCREEN_INVENTORY;
-    } else if (hub_pressed(HUB_BUTTON_SKILLS, mouse)) {
-        audio_play("Click3pickup");
-        /* Opening the screen puts the menu clip back on its first frame, so
-           the swatches beside the attributes start coloured again. */
-        g->stat_points_spent = 0;
-        screen_talents_open(g);
-        g->screen = SCREEN_TALENTS;
-    } else if (hub_pressed(HUB_BUTTON_MAP, mouse)) {
-        audio_play("Click3pickup");
-        g->screen = SCREEN_MAP;
-    } else if (hub_pressed(HUB_BUTTON_SAVE, mouse)) {
-        audio_play("Click3pickup");
-        if (save_write(&g->campaign,
-                       save_slot_path(g->campaign.slot)) != 0)
-            game_notice(g, "Could not write the save file.");
-    } else if (hub_pressed(HUB_BUTTON_OPTIONS, mouse)) {
-        audio_play("Click3pickup");
-        g->screen = SCREEN_SETTINGS;
-    } else if (hub_pressed(HUB_BUTTON_RESPEC, mouse)) {
-        audio_play("Click3pickup");
-        g->campaign.stats.respec_used++;
-        character_respec(&g->campaign.player);
-    }
 }
 
 
@@ -1024,6 +1050,7 @@ static void talent_tooltip(Game *g, const Character *c, int32_t node)
 
 void screen_talents_update(Game *g, Vector2 mouse)
 {
+    hud_buttons(g, mouse);
     Character *c = &g->campaign.player;
     g->hovered_item = -1;
 
@@ -1336,6 +1363,7 @@ static void draw_item_icon(const ItemDef *item, Rectangle r, Color tint)
 
 void screen_inventory_update(Game *g, Vector2 mouse)
 {
+    hud_buttons(g, mouse);
     Character scratch;
     const Character *who = menu_character(g, &scratch);
     g->hovered_item = -1;
@@ -1401,6 +1429,67 @@ static void draw_element_bars(const char *menu, const char *slot,
 }
 
 /* One of the inventory frame's fields, by the name the clip gives it. */
+/* The inventory's own clip, drawn piece by piece rather than through
+   draw_clip_parts, because one thing on it is the screen's to drive: the
+   experience bar's fill, which the original sets the width of every frame --
+
+       _width = _root.Krin.ExpSets[MenuPlayerSelect] / 100 * 95.1;
+
+   The fill is not one of the frame's graphics at all. It is a named slot,
+   "bar", which is why draw_clip_parts never had it and the bar came out as
+   an empty recess. It sits at its own depth in the clip's stack, between the
+   recess below it and the track above, so the pieces are walked in depth
+   order and the slot dropped in where it belongs. */
+static void draw_inventory_clip(const Character *who)
+{
+    const MenuSlot *bar = menu_slot(MENU_INVENTORY, XP_BAR_SLOT);
+    float fraction = who->xp / 100.0f;
+    if (fraction < 0.0f)
+        fraction = 0.0f;
+    if (fraction > 1.0f)
+        fraction = 1.0f;
+
+    int32_t drawn = -1;             /* the deepest piece put down so far */
+    for (;;) {
+        /* The next piece up, so the slot can be dropped in at its depth
+           without the table having to be in any particular order. */
+        const ClipPart *next = NULL;
+        for (int i = 0; i < SONNY_CLIP_PART_COUNT; i++) {
+            const ClipPart *part = &SONNY_CLIP_PARTS[i];
+            if (strcmp(part->screen, MENU_SCREEN) != 0
+                || strcmp(part->owner, MENU_INVENTORY) != 0
+                || part->width <= 0 || part->depth <= drawn)
+                continue;
+            if (!next || part->depth < next->depth)
+                next = part;
+        }
+        if (bar && (!next || bar->depth < next->depth) && bar->depth > drawn) {
+            Art art;
+            if (fraction > 0.0f && asset_art(XP_BAR_PLAIN, 1, &art)) {
+                Rectangle box = placed_art(&art, bar->x, bar->y, bar->scale,
+                                           bar->scale, bar->origin_x,
+                                           bar->origin_y);
+                /* _width scales the clip from its registration point, which
+                   is its left edge, so the whole picture goes into a narrower
+                   box rather than being cut off at the fill's end. */
+                box.width = XP_BAR_WIDTH * fraction * bar->scale;
+                DrawTexturePro(*art.texture, art.source, box, (Vector2){0, 0},
+                               0.0f, WHITE);
+            }
+            drawn = bar->depth;
+            continue;
+        }
+        if (!next)
+            break;
+        drawn = next->depth;
+        Art art;
+        if (!asset_art(TextFormat("#%d", next->character), 1, &art))
+            continue;
+        draw_art_placed(&art, next->x, next->y, next->scale_x, next->scale_y,
+                        next->origin_x, next->origin_y, WHITE);
+    }
+}
+
 static const TextField *inv_field(const char *name)
 {
     return text_field_named(MENU_SCREEN, MENU_INVENTORY, name, 0);
@@ -1487,7 +1576,7 @@ void screen_inventory_draw(Game *g, Vector2 mouse)
     /* The hub's own furniture stays behind the menu, as it does in the
        original: the row of buttons and the zone's progress are still there. */
     draw_hub_panel(g, mouse);
-    draw_clip_parts(MENU_SCREEN, MENU_INVENTORY, NO_OFFSET, NULL, NULL, WHITE);
+    draw_inventory_clip(who);
 
     draw_field(inv_field("@881"), NO_OFFSET,
                g->menu_member > 0 ? SONNY_PARTY[g->menu_member].name
@@ -1521,7 +1610,7 @@ void screen_inventory_draw(Game *g, Vector2 mouse)
 
     draw_field(inv_field("@1027"), NO_OFFSET, lang_text("MENU", 17));
     draw_field(inv_field("@1032"), NO_OFFSET,
-               TextFormat("%d%%", (int32_t)c->player.xp));
+               TextFormat("%d%%", (int32_t)who->xp));
     draw_field(inv_field("@1059"), NO_OFFSET, lang_text("MENU", 14));
     draw_field(inv_field("@1052"), NO_OFFSET, TextFormat("%d", c->euros));
     draw_field(inv_field("@1053"), NO_OFFSET, EURO);
@@ -1745,6 +1834,7 @@ void screen_shop_draw(Game *g, Vector2 mouse)
 
 void screen_shop_update(Game *g, Vector2 mouse)
 {
+    hud_buttons(g, mouse);
     Campaign *c = &g->campaign;
     const ShopDef *shop = shop_for_button(g->shop_button);
     Character scratch;
@@ -1832,6 +1922,7 @@ void screen_shop_update(Game *g, Vector2 mouse)
 
 void screen_victory_update(Game *g, Vector2 mouse)
 {
+    hud_buttons(g, mouse);
     /* The experience bar fills a thirtieth of what the fight paid each frame.
        If it reaches the end the player levels there and then -- the bar goes
        to full, stops, and the level (and with it a skill point and an
@@ -1928,10 +2019,10 @@ void screen_victory_update(Game *g, Vector2 mouse)
 #define WIN_XP_ROWS    3
 #define WIN_PLAYER_ROW 2
 /* The bar's full width, which the original scales by exp/100. */
-#define WIN_BAR_WIDTH  95.1f
+#define WIN_BAR_WIDTH  XP_BAR_WIDTH
 /* The fill's own two frames: how it looks, and how it looks on a level. */
-#define WIN_BAR_PLAIN  "#1344@1"
-#define WIN_BAR_LEVEL  "#1344@2"
+#define WIN_BAR_PLAIN  XP_BAR_PLAIN
+#define WIN_BAR_LEVEL  XP_BAR_LEVEL
 
 /* Which row a piece of the frame belongs to: the three are stacked, so the
    band its y falls in says which. */
@@ -2035,11 +2126,9 @@ static void draw_win_parts(Game *g)
             Rectangle box = placed_art(&art, part->x, part->y,
                                        part->scale_x, part->scale_y,
                                        part->origin_x, part->origin_y);
-            Rectangle src = {0, 0, art.source.width * fraction,
-                             art.source.height};
             box.width = WIN_BAR_WIDTH * fraction * part->scale_x;
-            DrawTexturePro(*art.texture, src, box, (Vector2){0, 0}, 0.0f,
-                           WHITE);
+            DrawTexturePro(*art.texture, art.source, box, (Vector2){0, 0},
+                           0.0f, WHITE);
             continue;
         }
         draw_art_placed(&art, part->x, part->y, part->scale_x,

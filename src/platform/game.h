@@ -474,6 +474,11 @@ void screen_slots_update(Game *g, Vector2 mouse);
 void screen_slots_draw(Game *g, Vector2 mouse);
 void screen_class_update(Game *g, Vector2 mouse);
 void screen_class_draw(Game *g, Vector2 mouse);
+/* The row of buttons on the bar along the bottom -- inventory, skills, map,
+   save, settings, respec -- and the tooltips they name themselves with. Every
+   screen the bar shows under answers for them, because in the original they
+   are on the frame every menu is laid over. */
+void hud_buttons(Game *g, Vector2 mouse);
 /* The sound switch on the bar along the bottom: draws the quaver and takes
    its click. Both bars, the hub's and the battle's, leave the same gap beside
    the menu button, which is where it sits. */
