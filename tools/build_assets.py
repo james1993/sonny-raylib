@@ -276,7 +276,10 @@ def collect_names(data_dir):
     want['effect'].add('#%d' % MOVE_BOOMER)
     # The battle screen's own effect sounds, played by name.
     want['sound'].update(['Swing', 'MagicCast', 'Forcefield', 'Click2putdown',
-                          'Click3pickup'])
+                          'Click3pickup',
+                          # Krin.missToMake, which a missile that goes wide
+                          # plays; a swing that misses plays nothing.
+                          'MagicMiss'])
     # Music. The original walks a list of four during battle and plays the
     # first again on the hub; the boss theme stands in for a boss fight.
     want['sound'].update(['menumusic', 'Gamemusic002', 'BossBattleloopable',

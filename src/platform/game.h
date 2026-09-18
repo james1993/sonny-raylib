@@ -451,10 +451,6 @@ int ui_clicked(void);
 int hit(Rectangle r, Vector2 p);
 void draw_panel(Rectangle r, const char *title);
 int draw_button(Rectangle r, const char *label, Vector2 mouse, int enabled);
-/* The sound switch: a quaver, with a line through it when the sound is off.
-   `over` is whether the pointer is on it. See the note in ui.c. */
-void draw_music_note(Rectangle box, int on, int over);
-
 /* Screens. */
 void screen_zone_update(Game *g, Vector2 mouse);
 void screen_zone_draw(Game *g, Vector2 mouse);
@@ -481,10 +477,6 @@ void screen_class_draw(Game *g, Vector2 mouse);
    screen the bar shows under answers for them, because in the original they
    are on the frame every menu is laid over. */
 void hud_buttons(Game *g, Vector2 mouse);
-/* The sound switch on the bar along the bottom: draws the quaver and takes
-   its click. Both bars, the hub's and the battle's, leave the same gap beside
-   the menu button, which is where it sits. */
-void hud_sound(Game *g, Vector2 mouse);
 void screen_manual_update(Game *g, Vector2 mouse);
 void screen_manual_draw(Game *g, Vector2 mouse);
 void screen_lost_update(Game *g, Vector2 mouse);
@@ -510,7 +502,7 @@ void battle_screen_start(Game *g, int32_t battle_id);
    model under the hit flash, and the blur of it. */
 void battle_screen_prepare(Game *g);
 void battle_screen_update(Game *g, Vector2 mouse, int headless);
-void battle_screen_draw(Game *g, Vector2 mouse);
+void battle_screen_draw(Game *g);
 
 /* Where the player's save lives. */
 

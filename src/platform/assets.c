@@ -453,6 +453,17 @@ static int draw_cast(const DollSpec *spec, const DollPlacement *p,
     return drawn;
 }
 
+float doll_frame_alpha(int32_t frame)
+{
+    if (SONNY_DOLL_FRAME_COUNT == 0)
+        return 1.0f;
+    if (frame < 1)
+        frame = 1;
+    if (frame > SONNY_DOLL_FRAME_COUNT)
+        frame = SONNY_DOLL_FRAME_COUNT;
+    return SONNY_DOLL_FRAMES[frame - 1].alpha;
+}
+
 int doll_draw(const DollSpec *spec, int32_t frame, Vector2 origin, float scale,
               int flip, Color tint)
 {

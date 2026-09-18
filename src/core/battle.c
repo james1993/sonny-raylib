@@ -552,17 +552,49 @@ int battle_resolve_step(Battle *b, MoveEvent *event)
     event->moveID = q->moveID;
     event->kind = a ? a->kind : KIND_NONE;
 
+    /* A move that cannot be paid for does not happen at all: the original's
+       condition wraps everything, so there is no sound, no animation and no
+       number. That is not a miss -- a miss is a blow that was thrown. */
     int usable = q->moveID != 0 && a && caster->active && target->active
-                 && caster->STUN == 0;
-    if (usable && !can_pay(caster, a)) {
-        usable = 0;
-        event->missed = 1;
-    }
+                 && caster->STUN == 0 && can_pay(caster, a);
 
     event->fired = usable;
 
     if (usable) {
         pay_costs(caster, a);
+
+        /* Whether the blow lands at all. The original rolls for this after
+           the costs are paid and before the move is worked out, so a miss
+           still costs and nothing else about the move happens:
+
+               if(mAry1[10] != "Shock" && mTarget.STUN == 0) {
+                  spdVar1 = mTarget.SPEEDU / (mCaster.SPEEDU * mAry1[9]);
+                  spdVar2 = spdVar1 * 3 + 3;
+                  spdVar3 = spdVar1 * spdVar2;
+                  if(spdVar3 > 75) spdVar3 = 75;
+                  if(spdVar3 < 1)  spdVar3 = 0;
+                  KRRR();
+                  strikeSuccess = KRSO > spdVar3;
+               } else strikeSuccess = true;
+
+           A move delivered as a shock never misses, and neither does one
+           aimed at a target being held stunned; everything else is a race
+           between the target's speed and the caster's, scaled by how fast
+           the move itself is. */
+        if (a->delivery != DELIVER_SHOCK && target->STUN == 0) {
+            double pace = caster->SPEEDU * a->anim_speed;
+            double ratio = pace != 0 ? target->SPEEDU / pace : 0;
+            double chance = ratio * (ratio * 3 + 3);
+            if (chance > 75)
+                chance = 75;
+            if (chance < 1)
+                chance = 0;
+            if (rng_krrr(&b->rng) <= chance)
+                event->missed = 1;
+        }
+    }
+
+    if (usable && !event->missed) {
 
         if (a->kind == KIND_FULL_DAMAGE) {
             DamageResult d = formula_full_damage(&b->rng, caster, target,
@@ -609,9 +641,13 @@ int battle_resolve_step(Battle *b, MoveEvent *event)
     if (!target->active && event->target_died)
         battle_queue(b, q->target, q->target, 0, 1);
 
-    /* The caster ticks its own buffs after acting. */
+    /* The caster ticks its own buffs after acting. What the pass came to is
+       carried out so the fight can float it, the way buffTicker does. */
     if (caster->active) {
         TickResult tick = buff_tick(caster, SONNY_BUFFS, SONNY_BUFF_COUNT);
+        event->tick_damage = (int32_t)tick.total_damage;
+        event->tick_element = tick.element;
+        event->tick_shielded = tick.shielded;
         if (tick.died)
             battle_queue(b, q->caster, q->caster, 0, 1);
     }

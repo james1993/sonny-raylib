@@ -52,6 +52,12 @@ typedef struct {
     double  total_damage;   /* after elements and shields; negative = healed */
     double  focus_drained;
     int32_t died;
+    /* What the fight floats over the unit for this tick. The original picks
+       the element that contributed most of the damage -- Physical when none
+       did -- and floats the word "shield" instead when a shield swallowed
+       the whole of it. */
+    int32_t element;
+    int32_t shielded;
 } TickResult;
 
 /* buffTicker: one end-of-turn pass. Buff durations tick down here, and buffs

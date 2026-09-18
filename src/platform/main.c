@@ -341,7 +341,7 @@ int main(int argc, char **argv)
         switch (game.screen) {
         case SCREEN_BATTLE:
             battle_screen_update(&game, mouse, shot != NULL);
-            battle_screen_draw(&game, mouse);
+            battle_screen_draw(&game);
             break;
         case SCREEN_VICTORY:
             screen_victory_draw(&game, mouse);

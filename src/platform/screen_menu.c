@@ -292,9 +292,6 @@ void screen_settings_draw(Game *g, Vector2 mouse)
     draw_static_text_except(MENU_SCREEN_ID, SETTINGS_MENU, &gone, 1,
                             SETTINGS_TALLY_SHIFT);
 
-    /* This screen draws the bar itself rather than through the hub's panel,
-       so the switch on it has to be asked for here too. */
-    hud_sound(g, mouse);
     hud_buttons(g, mouse);
 
     const Campaign *c = &g->campaign;

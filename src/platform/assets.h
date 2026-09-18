@@ -101,6 +101,9 @@ typedef struct {
 /* Draw one frame of the model. `frame` is 1-based into the model's timeline;
    `scale` and `flip` place it, with flip mirroring for the right-hand team.
    Returns the number of part layers actually drawn. */
+/* How opaque the model is on this frame, as its own timeline sets it: 1
+   everywhere but the last eleven frames of the death, which fade it out. */
+float doll_frame_alpha(int32_t frame);
 int doll_draw(const DollSpec *spec, int32_t frame, Vector2 origin, float scale,
               int flip, Color tint);
 

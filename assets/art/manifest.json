@@ -29513,6 +29513,12 @@
     "assets/art/sound/MagicCast.mp3"
    ]
   },
+  "MagicMiss": {
+   "category": "sound",
+   "frames": [
+    "assets/art/sound/MagicMiss.mp3"
+   ]
+  },
   "PoisonHit": {
    "category": "sound",
    "frames": [

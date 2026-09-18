@@ -56,6 +56,9 @@ typedef struct {
 typedef struct {
     const DollPlacement *parts;
     int32_t              count;
+    /* How opaque the whole model is on this frame. It is 1 everywhere but the
+       last eleven frames of the death animation, which fade it out. */
+    float                alpha;
 } DollFrame;
 
 /* How a doll part maps to equipment: `core` indexes the 7 equipment slots and

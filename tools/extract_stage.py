@@ -352,7 +352,8 @@ def orb_parts(body, raw_dir, orb):
             continue
         for t2, s2, l2 in walk_tags(body, start + 4, start + length):
             if t2 in (TAG_PLACE_OBJECT2, TAG_PLACE_OBJECT3):
-                depth, character, name, matrix, is_move, clip = parse_place(
+                (depth, character, name, matrix, is_move, clip,
+                 _) = parse_place(
                     body, s2, l2, t2)
                 slot = live.setdefault(depth, {})
                 if character is not None:

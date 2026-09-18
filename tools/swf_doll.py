@@ -80,11 +80,15 @@ def read_matrix(body, pos):
 
 
 def parse_place(body, pos, length, tag):
-    """-> (depth, character, name, matrix, is_move, clip_depth)
+    """-> (depth, character, name, matrix, is_move, clip_depth, alpha)
 
     clip_depth is set when the placement is a mask: the object is not drawn,
     it clips everything placed above it up to that depth. The battle screen
-    uses one to keep the backdrop inside the battlefield frame."""
+    uses one to keep the backdrop inside the battlefield frame.
+
+    alpha is the colour transform's alpha multiplier as a fraction, or None
+    when the placement carries no transform. It is what fades the character
+    model out over the last frames of its death."""
     flags = body[pos]
     p = pos + 1
     if tag == TAG_PLACE_OBJECT3:
@@ -97,6 +101,7 @@ def parse_place(body, pos, length, tag):
     matrix = None
     name = None
     clip_depth = None
+    alpha = None
 
     if flags & 2:
         character = struct.unpack_from('<H', body, p)[0]
@@ -104,18 +109,16 @@ def parse_place(body, pos, length, tag):
     if flags & 4:
         matrix, p = read_matrix(body, p)
     if flags & 8:
-        # CXFORMWITHALPHA: skip it by parsing its bit layout.
+        # CXFORMWITHALPHA. Only the alpha is wanted; the rest is parsed to
+        # find the end of it.
         b = Bits(body, p)
         has_add = b.ub(1)
         has_mult = b.ub(1)
         nbits = b.ub(4)
-        if has_mult:
-            for _ in range(4):
-                b.sb(nbits)
-        if has_add:
-            for _ in range(4):
-                b.sb(nbits)
+        mult = [b.sb(nbits) for _ in range(4)] if has_mult else [256] * 4
+        add = [b.sb(nbits) for _ in range(4)] if has_add else [0] * 4
         p = b.align()
+        alpha = mult[3] / 256.0 + add[3] / 255.0
     if flags & 16:
         p += 2          # ratio
     if flags & 32:
@@ -123,7 +126,7 @@ def parse_place(body, pos, length, tag):
     if flags & 64:
         clip_depth = struct.unpack_from('<H', body, p)[0]
         p += 2
-    return depth, character, name, matrix, is_move, clip_depth
+    return depth, character, name, matrix, is_move, clip_depth, alpha
 
 
 def timeline_frames(body, pos, end):
@@ -132,8 +135,8 @@ def timeline_frames(body, pos, end):
     frames = []
     for t2, s2, l2 in walk_tags(body, pos, end):
         if t2 in (TAG_PLACE_OBJECT2, TAG_PLACE_OBJECT3):
-            depth, character, name, matrix, is_move, clip_depth = parse_place(
-                body, s2, l2, t2)
+            (depth, character, name, matrix, is_move, clip_depth,
+             alpha) = parse_place(body, s2, l2, t2)
             slot = depths.setdefault(depth, {})
             if character is not None and not is_move:
                 slot.clear()
@@ -144,6 +147,8 @@ def timeline_frames(body, pos, end):
                 slot['matrix'] = matrix
             if clip_depth is not None:
                 slot['clip_depth'] = clip_depth
+            if alpha is not None:
+                slot['alpha'] = alpha
         elif t2 in (TAG_REMOVE_OBJECT, TAG_REMOVE_OBJECT2):
             depth = struct.unpack_from(
                 '<H', body, s2 + (2 if t2 == TAG_REMOVE_OBJECT else 0))[0]
@@ -164,6 +169,8 @@ def timeline_frames(body, pos, end):
                 }
                 if slot.get('clip_depth') is not None:
                     snapshot[key]['clip_depth'] = slot['clip_depth']
+                if slot.get('alpha') is not None:
+                    snapshot[key]['alpha'] = round(slot['alpha'], 4)
             frames.append(snapshot)
     return frames
 

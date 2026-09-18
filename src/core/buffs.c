@@ -131,15 +131,24 @@ TickResult buff_tick(Unit *u, const BuffDef *lib, int32_t lib_count)
 {
     TickResult out;
     out.died = 0;
+    out.shielded = 0;
+    /* colorToBe starts at Physical and takes the element of whichever slot
+       contributed most. */
+    out.element = 0;
 
     double totalFocus = u->DOTTICKERARRAY[9];
     double totalDmg = u->DOTTICKERARRAY[8];
 
+    double most = 0;
     for (int32_t e = 0; e < SONNY_ELEMENTS; e++) {
         double scaled = ceil((1 + u->IDMG2)
                              * (u->DOTTICKERARRAY[e]
                                 * ((25 + u->plevel * 5) / u->DEFU[e])));
         totalDmg += scaled;
+        if (scaled > most) {
+            most = scaled;
+            out.element = e;
+        }
     }
 
     /* Durations tick after this turn's damage is counted, so a buff's final
@@ -169,6 +178,7 @@ TickResult buff_tick(Unit *u, const BuffDef *lib, int32_t lib_count)
 
     if (differenceForSH > 0) {
         u->SHIELD -= (int32_t)totalDmg;
+        out.shielded = 1;
     } else {
         /* Note: the shield is destroyed without reducing the damage. The
            original subtracts it from a leftover display global instead of

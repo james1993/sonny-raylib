@@ -111,6 +111,13 @@ typedef struct {
        the attacker is still crossing the floor. */
     int32_t  target_life;
     int32_t  target_focus;
+    /* What the caster's own end-of-turn buff pass came to, which the fight
+       floats over it: the damage (negative when the buff heals), the element
+       it is coloured by, and whether a shield swallowed the whole of it.
+       Zero damage and no shield means the pass had nothing to show. */
+    int32_t  tick_damage;
+    int32_t  tick_element;
+    int32_t  tick_shielded;
     int32_t  missed;        /* the move could not be paid for or had no target */
     /* Whether the move actually happened. A slot that passes, or whose caster
        is stunned or dead, or whose target is already down, produces an event

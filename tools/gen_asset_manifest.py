@@ -69,6 +69,9 @@ typedef struct {
 typedef struct {
     const DollPlacement *parts;
     int32_t              count;
+    /* How opaque the whole model is on this frame. It is 1 everywhere but the
+       last eleven frames of the death animation, which fade it out. */
+    float                alpha;
 } DollFrame;
 
 /* How a doll part maps to equipment: `core` indexes the 7 equipment slots and
@@ -585,9 +588,14 @@ def main():
     lines.append('const DollFrame SONNY_DOLL_FRAMES[] = {')
     for index, frame in enumerate(doll_frames):
         if frame:
-            lines.append('    { DOLL_%d, %d },' % (index, len(frame)))
+            # Every part of a frame carries the same alpha -- the model is
+            # faded as a whole, over the last frames of its death.
+            alphas = {round(p.get('alpha', 1.0), 4) for p in frame.values()}
+            alpha = min(alphas) if len(alphas) == 1 else 1.0
+            lines.append('    { DOLL_%d, %d, %s },'
+                         % (index, len(frame), c_float(alpha)))
         else:
-            lines.append('    { NULL, 0 },')
+            lines.append('    { NULL, 0, 1.0f },')
     lines.append('};')
     lines.append('const int SONNY_DOLL_FRAME_COUNT = '
                  '(int)(sizeof(SONNY_DOLL_FRAMES) / sizeof(SONNY_DOLL_FRAMES[0]));')

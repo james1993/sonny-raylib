@@ -82,7 +82,7 @@ def clip_frames(body, sprite_id):
         depths, frames = {}, []
         for t2, s2, l2 in walk_tags(body, start + 4, start + length):
             if t2 in (TAG_PLACE_OBJECT2, TAG_PLACE_OBJECT3):
-                depth, character, _, matrix, is_move, _ = parse_place(
+                depth, character, _, matrix, is_move, _, _ = parse_place(
                     body, s2, l2, t2)
                 slot = depths.setdefault(depth, {})
                 if character is not None and not is_move:

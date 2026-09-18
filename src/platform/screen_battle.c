@@ -650,7 +650,12 @@ static void draw_doll(const Game *g, int32_t slot)
     /* The right-hand team's containers are mirrored in the original. */
     const StageSlot *s = stage_slot(slot);
     int flip = s ? s->flip : (u->teamSide == 2);
-    Color tint = u->active ? WHITE : (Color){255, 255, 255, 150};
+    /* The model's own timeline is what fades it: full through the collapse,
+       then a ramp to nothing over the last eleven frames of the death. A flat
+       translucency from the moment of death made a unit go see-through on the
+       turn it was killed, which the original never does. */
+    float alpha = doll_frame_alpha(frame);
+    Color tint = {255, 255, 255, (unsigned char)(alpha * 255.0f + 0.5f)};
     doll_draw(&spec, frame, unit_stage_pos(g, slot), 1.0f, flip, tint);
 }
 
@@ -1571,7 +1576,7 @@ static void draw_speech(const Game *g)
                who);
 }
 
-static void draw_battle(Game *g, Vector2 mouse)
+static void draw_battle(Game *g)
 {
     const StageChrome *mask = battlefield_mask();
 
@@ -1643,7 +1648,6 @@ static void draw_battle(Game *g, Vector2 mouse)
 
     /* The sound switch, in the corner of the middle panel -- the same corner
        it sits in on the hub's bar, so it does not move when a fight starts. */
-    hud_sound(g, mouse);
 
     /* blacker5 sits over the whole stage at the top of the display list, so
        it covers the panels as well as the battlefield. */
@@ -1715,6 +1719,35 @@ static void present_move(Game *g, const MoveEvent *e)
     }
 }
 
+/* The number the caster's end-of-turn buff pass floats over it: a poison
+   biting, a regeneration topping it up. The original colours it by the
+   element that did most of the damage and green when it heals, and plays no
+   effect over it at all -- a tick is a number and nothing else.
+
+       if(totalDmgCalcZ < 0) KrinNumberShow(-totalDmgCalcZ, caster, "HEAL");
+       else                  KrinNumberShow(totalDmgCalcZ, caster, colorToBe);
+
+   buffTicker runs for whoever's turn it was whether or not the move landed,
+   and whether or not there was a move, so this is not inside present(). */
+static void tick_number(Game *g, const MoveEvent *e)
+{
+    if (e->caster <= 0 || e->caster >= SONNY_SLOTS)
+        return;
+    if (e->tick_shielded) {
+        number_show(g, e->caster, "shield",
+                    element_color((Element)e->tick_element), 0);
+        return;
+    }
+    if (e->tick_damage == 0)
+        return;
+    if (e->tick_damage < 0)
+        number_show(g, e->caster, TextFormat("%d", -e->tick_damage),
+                    0x66FF00, 0);
+    else
+        number_show(g, e->caster, TextFormat("%d", e->tick_damage),
+                    element_color((Element)e->tick_element), 0);
+}
+
 /* The moment it lands: the sound, the impact graphic, the number over the
    target and whatever it has to say about being hit. For a melee move this
    is a walk and a wind-up after present_move, which is where the original
@@ -1725,8 +1758,19 @@ static void present(Game *g, const MoveEvent *e)
     const Battle *b = &g->battle;
     const AbilityDef *a = ability_by_id(e->moveID);
 
-    if (!a || e->moveID == 0 || e->missed)
+    if (!a || e->moveID == 0)
         return;
+
+    /* A blow that went wide: the word over the target, and Krin.missToMake --
+       which a missile sets to "MagicMiss" and a swing leaves unset, so a
+       melee miss is silent. Nothing else about the move happens. */
+    if (e->missed) {
+        if (a->delivery == DELIVER_MISSILE)
+            audio_play("MagicMiss");
+        number_show(g, e->target, "miss",
+                    element_color((Element)a->coefs.element), 0);
+        return;
+    }
 
     if (a->sound && a->sound[0])
         audio_play(a->sound);
@@ -1763,9 +1807,7 @@ static void present(Game *g, const MoveEvent *e)
 
     /* The number for what just happened, in the ability's own element. */
     uint32_t rgb = element_color((Element)a->coefs.element);
-    if (e->missed) {
-        number_show(g, e->target, "miss", rgb, 0);
-    } else if (e->kind == KIND_HEAL && e->amount > 0) {
+    if (e->kind == KIND_HEAL && e->amount > 0) {
         number_show(g, e->target, TextFormat("%d", e->amount), 0x66FF00,
                     e->pierced);
     } else if (e->kind == KIND_FOCUS && e->amount != 0) {
@@ -1809,6 +1851,11 @@ static void describe(Game *g, const MoveEvent *e)
         return;
     }
     if (e->missed) {
+        game_log(g, "%s misses %s.", b->units[e->caster].name,
+                 b->units[e->target].name);
+        return;
+    }
+    if (!e->fired) {
         game_log(g, "%s cannot use %s.", b->units[e->caster].name, name);
         return;
     }
@@ -2016,6 +2063,7 @@ static void advance(Game *g)
         if (g->move_pending) {
             g->move_pending = 0;
             present(g, &g->last);
+            tick_number(g, &g->last);
             /* AttackEndCounterLimit, but only for a move that happened. A
                slot that passes, or one whose caster is stunned or down, is
                stepped over in the same frame by the original -- it never
@@ -2035,8 +2083,10 @@ static void advance(Game *g)
             /* Nothing to show for a slot that never acted, and nothing to
                hold the bars back for either: the next slot comes round on
                the next frame, which is the pace the original steps them at. */
-            if (!e.fired)
+            if (!e.fired) {
+                tick_number(g, &e);
                 return;
+            }
             g->move_pending = 1;
             present_move(g, &e);
         } else if (b->phase != PHASE_OVER) {
@@ -2299,7 +2349,7 @@ void battle_screen_prepare(Game *g)
     g->flash_ready = 1;
 }
 
-void battle_screen_draw(Game *g, Vector2 mouse)
+void battle_screen_draw(Game *g)
 {
-    draw_battle(g, mouse);
+    draw_battle(g);
 }

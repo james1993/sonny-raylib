@@ -182,6 +182,40 @@ int main(void)
     assert(hits > 0);
     assert(kills > 0);
 
+    /* Whether a blow lands. The original races the target's speed against
+       the caster's, scaled by how fast the move is, and never misses with a
+       move delivered as a shock or at a target being held stunned. A magic
+       class hardly ever misses because its moves are shocks. */
+    {
+        Battle m;
+        setup(&m, 77, 12);
+        int32_t rolled = 0, shocks = 0, missed = 0;
+        while (m.phase != PHASE_OVER) {
+            battle_declare_phase(&m);
+            MoveEvent e;
+            while (battle_resolve_step(&m, &e)) {
+                const AbilityDef *a = ability_by_id(e.moveID);
+                if (!e.fired || !a)
+                    continue;
+                if (a->delivery == DELIVER_SHOCK) {
+                    shocks++;
+                    assert(!e.missed);       /* a shock cannot miss */
+                } else {
+                    rolled++;
+                }
+                if (e.missed) {
+                    missed++;
+                    /* Nothing about the move happened but the cost. */
+                    assert(e.amount == 0 && e.landed < 0 && !e.tally
+                           && !e.target_died);
+                }
+            }
+            battle_end_phase(&m);
+        }
+        assert(rolled > 0 && shocks > 0);
+        assert(missed > 0);
+    }
+
     printf("battle: determinism and invariants hold\n");
     return 0;
 }
