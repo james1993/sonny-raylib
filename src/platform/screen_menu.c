@@ -303,7 +303,15 @@ void screen_settings_draw(Game *g, Vector2 mouse)
     menu_say("gs_training_used", TextFormat("%d", c->stats.training_used));
     menu_say("gs_top_dmg_physical", TextFormat("%d", c->stats.top_physical));
     menu_say("gs_top_dmg_elemental", TextFormat("%d", c->stats.top_elemental));
-    menu_say("gs_bg_found", TextFormat("%d", c->stats.scenery_found));
+    /* The screen adds the flags up as it opens, the way frame 39 does:
+
+           var bgElementsFound = 0;
+           while(i < Krin.bgElementsInteracted.length)
+              bgElementsFound += Krin.bgElementsInteracted[i++]; */
+    int32_t found = 0;
+    for (int32_t i = 0; i < SONNY_SCENERY; i++)
+        found += c->stats.scenery[i];
+    menu_say("gs_bg_found", TextFormat("%d", found));
 }
 
 void screen_settings_update(Game *g, Vector2 mouse)

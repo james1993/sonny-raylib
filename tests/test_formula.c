@@ -96,7 +96,7 @@ int main(int argc, char **argv)
 
         DamageResult d = formula_full_damage(&rng, &caster, &target, &a);
         int32_t absorbed = 0;
-        int32_t lost = formula_apply_damage(&target, d.damage, &absorbed);
+        int32_t lost = formula_apply_damage(&target, d.damage, &absorbed, NULL);
 
         cases++;
         if (d.pierced != want_pierced || d.damage != want_damage

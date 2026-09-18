@@ -240,12 +240,14 @@ typedef struct {
 
 /* What a marker on a zone's scene does. A marker is a button and nothing else
    says what it is for: one starts the zone's next story fight, one rolls a
-   practice fight out of the zone's training list, one opens a store, and
-   everything else on the scene is scenery. */
+   practice fight out of the zone's training list, one opens a store, and the
+   rest are scenery, which say a line about themselves and are what the
+   gameplay tally counts as found. */
 typedef enum {
     MARKER_PROGRESS = 0,
     MARKER_TRAINING,
-    MARKER_SHOP
+    MARKER_SHOP,
+    MARKER_SCENERY
 } MarkerKind;
 
 typedef struct {
@@ -255,6 +257,10 @@ typedef struct {
     int32_t    choices;   /* MARKER_TRAINING: how many the marker rolls
                              against, which is its own number and not the
                              training list's length */
+    /* MARKER_SCENERY: the line out of NAVTITLE/NAVTEXT the marker says, and
+       which of the eight bgElementsInteracted it flags. -1 for the rest. */
+    int32_t    say;
+    int32_t    element;
 } ZoneButton;
 
 /* One of the six the story can put in the fighting line. Their stats are kept

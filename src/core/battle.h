@@ -97,6 +97,10 @@ typedef struct {
     int32_t  pierced;
     int32_t  amount;        /* damage dealt, health healed, or focus gained */
     int32_t  absorbed;      /* by a shield */
+    /* The hit to read off into the gameplay tally, or -1 for none: the
+       damage left after the shield, unclamped, and only for a move of the
+       human's own that actually took life off. */
+    int32_t  landed;
     int32_t  missed;        /* the move could not be paid for or had no target */
     /* Whether the move actually happened. A slot that passes, or whose caster
        is stunned or dead, or whose target is already down, produces an event

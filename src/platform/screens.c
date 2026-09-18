@@ -214,6 +214,8 @@ static void hub_tooltips(Game *g, Vector2 mouse)
                                                        b->height}))
             continue;
         const ZoneButton *marker = zone_button(b->character);
+        if (marker->kind == MARKER_SCENERY)
+            continue;           /* the original gives scenery no tooltip */
         int32_t say = marker->kind == MARKER_SHOP ? 15
                     : marker->kind == MARKER_TRAINING ? 29 : 13;
         game_tooltip(g, lang_text("SYSTEM", say),
@@ -294,6 +296,17 @@ void screen_zone_update(Game *g, Vector2 mouse)
             g->shop_button = b->character;
             g->screen = SCREEN_SHOP;
             return;
+        case MARKER_SCENERY:
+            /* Scenery says a line about itself over the same panel the
+               story's notes use, and flags itself as found:
+
+                   _root.krinNavHideUI(n);
+                   _root.updateBgElementClicked(e);  */
+            g->hub_note = marker->say;
+            g->hub_note_nav = 1;
+            if (marker->element >= 0 && marker->element < SONNY_SCENERY)
+                g->campaign.stats.scenery[marker->element] = 1;
+            return;
         case MARKER_TRAINING: {
             int32_t pick = training_pick(&g->campaign, &g->rng,
                                          marker->choices);
@@ -341,6 +354,7 @@ void game_hub_note(Game *g)
         return;
     g->hub_note_done = 1;
     g->hub_note = -1;
+    g->hub_note_nav = 0;
     for (size_t i = 0; i < sizeof(HUB_NOTES) / sizeof(HUB_NOTES[0]); i++)
         if (HUB_NOTES[i].at == g->campaign.progress_battle)
             g->hub_note = HUB_NOTES[i].say;
@@ -365,10 +379,16 @@ static void draw_hub_note(Game *g, Vector2 mouse)
        behind, nothing to do with the note.) */
     draw_clip_parts(HUB_SCREEN, "krinNavFadeSpeech", NO_OFFSET, NULL, NULL,
                     WHITE);
+    /* The same two fields either way. The story's notes come out of
+       NAVTITLE2/NAVTEXT2 and a piece of scenery out of NAVTITLE/NAVTEXT,
+       which is the only difference between krinNavTutSpeech and
+       krinNavHideUI. */
     draw_field_wrapped(chrome_field(HUB_SCREEN, "@1241"), NO_OFFSET,
-                       lang_text("NAVTITLE2", g->hub_note));
+                       lang_text(g->hub_note_nav ? "NAVTITLE" : "NAVTITLE2",
+                                 g->hub_note));
     draw_field_wrapped(chrome_field(HUB_SCREEN, "@1240"), NO_OFFSET,
-                       lang_text("NAVTEXT2", g->hub_note));
+                       lang_text(g->hub_note_nav ? "NAVTEXT" : "NAVTEXT2",
+                                 g->hub_note));
     /* The clip's own frame sets this from the text table; what it was
        authored with is placeholder. */
     draw_field(text_field_var(HUB_SCREEN, "texter"), NO_OFFSET,
@@ -1952,21 +1972,25 @@ void screen_victory_update(Game *g, Vector2 mouse)
                 i < g->campaign.inventory_count ? g->campaign.inventory[i] : 0),
                 0);
 
-    /* Drops are chosen by clicking them, as VICTORY[1] instructs. */
+    /* Drops are chosen by clicking them, as VICTORY[1] instructs. The slot's
+       own handler empties the drop as it fills the bag --
+
+           Krin.itemArray[thereIsSlot] = Krin.dropArray[id];
+           Krin.dropArray[id] = 0;
+           inner.gotoAndStop(ITEMNAME[Krin.dropArray[id]]);
+
+       -- so the square stays where it is and the icon in it goes. With no
+       free bag slot the handler does nothing at all, and neither does this. */
     for (int32_t i = 0; i < g->dropped_count; i++) {
         Rectangle r = drop_rect(i);
-        if (!hit(r, mouse) || !ui_clicked())
-            continue;
-        if (g->taken[i])
+        if (!hit(r, mouse) || !ui_clicked() || !g->dropped[i])
             continue;
         Campaign *c = &g->campaign;
         if (c->inventory_count >= (int32_t)(sizeof(c->inventory)
-                                            / sizeof(c->inventory[0]))) {
-            game_notice(g, "The bag is full.");
+                                            / sizeof(c->inventory[0])))
             break;
-        }
         c->inventory[c->inventory_count++] = g->dropped[i];
-        g->taken[i] = 1;
+        g->dropped[i] = 0;
         audio_play("Click3pickup");
         break;
     }
@@ -2194,11 +2218,14 @@ void screen_victory_draw(Game *g, Vector2 mouse)
                    TextFormat("%d%%", (int32_t)floor(shown + 0.5)));
     }
 
+    /* A drop that has been taken is zeroed, and the square it was in stays:
+       only the ones the fight never filled are hidden, and that happens once
+       as the frame opens. */
     for (int32_t i = 0; i < g->dropped_count; i++) {
         Rectangle r = drop_rect(i);
         draw_slot_art(MENU_WIN, "dropSlot", i);
-        draw_item_icon(item_by_id(g->dropped[i]), r,
-                       g->taken[i] ? (Color){150, 210, 150, 255} : WHITE);
+        if (g->dropped[i])
+            draw_item_icon(item_by_id(g->dropped[i]), r, WHITE);
         if (hit(r, mouse))
             DrawRectangleLinesEx(r, 1.0f, (Color){235, 200, 90, 255});
     }

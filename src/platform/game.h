@@ -236,10 +236,12 @@ typedef struct {
     float     ring_fade;
     int32_t   ring_fade_unit;
     int32_t   hub_note;
+    /* Which pair of text arrays the note is out of: the story's notes are
+       NAVTITLE2/NAVTEXT2, a piece of scenery's is NAVTITLE/NAVTEXT. */
+    int32_t   hub_note_nav;
     int32_t   hub_note_done;
     int32_t   dropped[SONNY_MAX_DROPPED];
     int32_t   dropped_count;
-    int32_t   taken[SONNY_MAX_DROPPED];
 
     /* Menu/screen interaction. */
     int32_t   hovered_item;

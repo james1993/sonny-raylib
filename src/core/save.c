@@ -61,6 +61,15 @@ int save_write(const Campaign *c, const char *path)
         fprintf(fh, " %.10g", c->player.spent[i]);
     fprintf(fh, "\n");
 
+    /* The gameplay tally. The original saves the same six --
+       achivementSingleDataKeys plus bgElementsInteracted -- so the settings
+       screen still shows the run's after it is loaded back. */
+    fprintf(fh, "tally %d %d %d %d %d\n",
+            c->stats.zones_cleared, c->stats.respec_used,
+            c->stats.training_used, c->stats.top_physical,
+            c->stats.top_elemental);
+    write_int_array(fh, "scenery", c->stats.scenery, SONNY_SCENERY);
+
     write_int_array(fh, "equip", c->player.equip, SONNY_EQUIP_SLOTS);
     write_int_array(fh, "bar", c->player.move_matrix, SONNY_MOVE_SLOTS);
     write_int_array(fh, "ranks", c->player.rank, SONNY_TALENT_MAX);
@@ -173,6 +182,16 @@ int save_read(Campaign *c, const char *path)
                     break;
                 p = end;
             }
+        } else if (strcmp(key, "tally") == 0) {
+            int32_t t[5] = {0, 0, 0, 0, 0};
+            read_int_array(rest, t, 5);
+            c->stats.zones_cleared = t[0];
+            c->stats.respec_used = t[1];
+            c->stats.training_used = t[2];
+            c->stats.top_physical = t[3];
+            c->stats.top_elemental = t[4];
+        } else if (strcmp(key, "scenery") == 0) {
+            read_int_array(rest, c->stats.scenery, SONNY_SCENERY);
         } else if (strcmp(key, "equip") == 0) {
             read_int_array(rest, c->player.equip, SONNY_EQUIP_SLOTS);
         } else if (strcmp(key, "bar") == 0) {

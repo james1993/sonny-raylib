@@ -473,6 +473,11 @@ TRAINING_BUTTON_RE = re.compile(
     r'_root\.Krin\.trainingArray|'
     r'_root\.Krin\.trainingArray\[_root\.Krin\.sectionIn\]'
     r'\[random\((\d+)\)\]')
+# The rest of a scene's markers are the scenery: each pops the same panel the
+# story's notes use, with a line out of NAVTITLE/NAVTEXT, and flags one of the
+# eight the gameplay tally counts.
+SCENERY_BUTTON_RE = re.compile(r'_root\.krinNavHideUI\((\d+)\);')
+SCENERY_ELEMENT_RE = re.compile(r'_root\.updateBgElementClicked\((\d+)\);')
 
 
 def extract_shops(text):
@@ -598,9 +603,10 @@ def extract_zone_buttons(scripts_dir):
 
     A marker is a button and nothing else says what it is for: one starts the
     zone's next story fight, one rolls a practice fight out of the zone's
-    training list, one opens a store, and the rest are scenery the scene
-    reacts to. The store's id and the number the practice marker rolls
-    against both come out of the handler."""
+    training list, one opens a store, and the rest are scenery, which says a
+    line about itself and counts towards the gameplay tally. The store's id,
+    the number the practice marker rolls against, and which line and which of
+    the eight a piece of scenery is all come out of the handler."""
     out = {}
     for name in sorted(os.listdir(scripts_dir)):
         if not name.startswith('DefineButton2_'):
@@ -619,6 +625,7 @@ def extract_zone_buttons(scripts_dir):
             entry = None
             shop = SHOP_BUTTON_RE.search(body)
             training = TRAINING_BUTTON_RE.search(body)
+            scenery = SCENERY_ELEMENT_RE.search(body)
             if shop:
                 entry = {'kind': 'shop', 'shop': int(shop.group(1))}
             elif training:
@@ -626,6 +633,11 @@ def extract_zone_buttons(scripts_dir):
                 entry = {'kind': 'training', 'choices': int(rolls)}
             elif PROGRESS_BUTTON_RE.search(body):
                 entry = {'kind': 'progress'}
+            elif scenery:
+                say = SCENERY_BUTTON_RE.search(body)
+                entry = {'kind': 'scenery',
+                         'say': int(say.group(1)) if say else 0,
+                         'element': int(scenery.group(1))}
             if entry:
                 out[int(character)] = entry
     return out

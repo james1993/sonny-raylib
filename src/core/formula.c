@@ -116,10 +116,14 @@ int32_t formula_apply_focus(Unit *target, const AbilityCoefs *a)
     return target->FOCUSN - before;
 }
 
-int32_t formula_apply_damage(Unit *target, int32_t damage, int32_t *absorbed_out)
+int32_t formula_apply_damage(Unit *target, int32_t damage, int32_t *absorbed_out,
+                             int32_t *landed_out)
 {
     int32_t absorbed = 0;
     int32_t before = target->LIFEN;
+
+    if (landed_out)
+        *landed_out = -1;
 
     /* Note the original's exact shield condition: a shield equal to the
        incoming damage does NOT take the absorbing branch. */
@@ -134,6 +138,10 @@ int32_t formula_apply_damage(Unit *target, int32_t damage, int32_t *absorbed_out
         target->SHIELD = 0;
 
         if (target->SSWITCH == 0) {
+            /* Where the original reads the hit off for the tally, before the
+               life it comes off is clamped: an overkill counts for all of it. */
+            if (landed_out)
+                *landed_out = damage;
             target->LIFEN -= damage;
             if (target->LIFEN <= 0) {
                 target->LIFEN = 0;

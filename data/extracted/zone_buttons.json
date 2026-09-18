@@ -1,4 +1,19 @@
 {
+ "1208": {
+  "kind": "scenery",
+  "say": 1,
+  "element": 2
+ },
+ "1209": {
+  "kind": "scenery",
+  "say": 2,
+  "element": 1
+ },
+ "1210": {
+  "kind": "scenery",
+  "say": 3,
+  "element": 0
+ },
  "1211": {
   "kind": "progress"
  },
@@ -17,6 +32,26 @@
   "kind": "training",
   "choices": 8
  },
+ "1220": {
+  "kind": "scenery",
+  "say": 5,
+  "element": 3
+ },
+ "1221": {
+  "kind": "scenery",
+  "say": 6,
+  "element": 4
+ },
+ "1222": {
+  "kind": "scenery",
+  "say": 7,
+  "element": 5
+ },
+ "1223": {
+  "kind": "scenery",
+  "say": 8,
+  "element": 6
+ },
  "1227": {
   "kind": "shop",
   "shop": 2
@@ -24,6 +59,11 @@
  "1228": {
   "kind": "training",
   "choices": 11
+ },
+ "1229": {
+  "kind": "scenery",
+  "say": 9,
+  "element": 7
  },
  "1232": {
   "kind": "shop",

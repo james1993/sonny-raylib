@@ -17,6 +17,9 @@
 
 #define SONNY_MAX_ALLIES 2
 #define SONNY_MAX_DROPPED 15   /* Krin.dropArray */
+/* Krin.bgElementsInteracted = [0,0,0,0,0,0,0,0]: the pieces of scenery on the
+   zone scenes that say something when they are clicked. */
+#define SONNY_SCENERY 8
 
 typedef struct {
     Character  player;
@@ -45,7 +48,9 @@ typedef struct {
         int32_t training_used;      /* Krin.numberOfTrainingUsed */
         int32_t top_physical;       /* the biggest hit of each kind */
         int32_t top_elemental;
-        int32_t scenery_found;      /* updateBgElementClicked */
+        /* Krin.bgElementsInteracted: one flag per piece of scenery in the
+           game. The screen shows the sum, the way frame 39 adds it up. */
+        int32_t scenery[SONNY_SCENERY];
     } stats;
 } Campaign;
 

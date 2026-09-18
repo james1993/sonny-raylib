@@ -544,6 +544,7 @@ int battle_resolve_step(Battle *b, MoveEvent *event)
     const AbilityDef *a = ability_by_id(q->moveID);
 
     memset(event, 0, sizeof(*event));
+    event->landed = -1;
     event->caster = q->caster;
     event->target = q->target;
     event->moveID = q->moveID;
@@ -565,10 +566,21 @@ int battle_resolve_step(Battle *b, MoveEvent *event)
             DamageResult d = formula_full_damage(&b->rng, caster, target,
                                                 &a->coefs);
             int32_t absorbed = 0;
-            formula_apply_damage(target, d.damage, &absorbed);
+            int32_t landed = -1;
+            formula_apply_damage(target, d.damage, &absorbed, &landed);
+            /* The rest of the original's condition for reading a hit off
+               into the gameplay tally: the move has to be the human's own,
+               and the target not one of the few whose incoming-damage
+               modifier is enormous.
+
+                   if(IDKC.playerID == Krin.playerNumber)
+                      if(IDKT.IDMG < 500) ... */
+            if (!(caster->playerID == b->playerNumber && target->IDMG < 500))
+                landed = -1;
             event->pierced = d.pierced;
             event->amount = d.damage;
             event->absorbed = absorbed;
+            event->landed = landed;
         } else if (a->kind == KIND_HEAL) {
             DamageResult h = formula_heal(&b->rng, caster, target, &a->coefs);
             event->pierced = h.pierced;

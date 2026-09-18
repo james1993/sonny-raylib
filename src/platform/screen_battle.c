@@ -1960,6 +1960,27 @@ static void tick_cooldowns(Game *g, const MoveEvent *e)
     g->cooldown_slot = -1;
 }
 
+/* The two biggest single hits the run has landed, which the gameplay tally
+   shows. The original keeps a maximum of each as the damage is applied --
+
+       if(IDKM2[0] == elementMainArray[0]) updateTopPhysicalDamage(dmg);
+       else                                updateTopElementalDamage(dmg);
+
+   -- so physical is the move's own element being the first of the eight, and
+   everything else counts as elemental. */
+static void record_top_hit(Game *g, const MoveEvent *e)
+{
+    if (e->landed < 0)
+        return;
+    const AbilityDef *a = ability_by_id(e->moveID);
+    if (!a)
+        return;
+    int32_t *top = a->coefs.element == 0 ? &g->campaign.stats.top_physical
+                                         : &g->campaign.stats.top_elemental;
+    if (e->landed > *top)
+        *top = e->landed;
+}
+
 static void advance(Game *g)
 {
     Battle *b = &g->battle;
@@ -2004,6 +2025,7 @@ static void advance(Game *g)
             g->last = e;
             g->has_last = 1;
             tick_cooldowns(g, &e);
+            record_top_hit(g, &e);
             describe(g, &e);
             /* Nothing to show for a slot that never acted, and nothing to
                hold the bars back for either: the next slot comes round on
@@ -2086,7 +2108,6 @@ void battle_screen_start(Game *g, int32_t battle_id)
     /* Drops are rolled at the start of the battle, as the original does. */
     g->dropped_count = campaign_roll_drops(def, &g->rng, g->dropped,
                                            SONNY_MAX_DROPPED);
-    memset(g->taken, 0, sizeof(g->taken));
 
     g->selected = -1;
     g->hovered_unit = -1;
