@@ -1570,7 +1570,7 @@ static void draw_speech(const Game *g)
                who);
 }
 
-static void draw_battle(Game *g)
+static void draw_battle(Game *g, Vector2 mouse)
 {
     const StageChrome *mask = battlefield_mask();
 
@@ -1639,6 +1639,10 @@ static void draw_battle(Game *g)
     draw_ring(g, g->pointer);
     draw_numbers(g);
     draw_speech(g);
+
+    /* The sound switch, in the corner of the middle panel -- the same corner
+       it sits in on the hub's bar, so it does not move when a fight starts. */
+    hud_sound(g, mouse);
 
     /* blacker5 sits over the whole stage at the top of the display list, so
        it covers the panels as well as the battlefield. */
@@ -2269,7 +2273,7 @@ void battle_screen_prepare(Game *g)
     g->flash_ready = 1;
 }
 
-void battle_screen_draw(Game *g)
+void battle_screen_draw(Game *g, Vector2 mouse)
 {
-    draw_battle(g);
+    draw_battle(g, mouse);
 }

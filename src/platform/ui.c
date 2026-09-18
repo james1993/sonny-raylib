@@ -949,7 +949,7 @@ static const char *strip_markup(const char *html, char *out, size_t max)
 }
 
 void draw_static_text_except(const char *screen, const char *owner,
-                             const float *skip_y, int skips)
+                             const Rectangle *skip, int skips, Vector2 shift)
 {
     for (int i = 0; i < SONNY_TEXT_FIELD_COUNT; i++) {
         const TextField *f = &SONNY_TEXT_FIELDS[i];
@@ -960,24 +960,24 @@ void draw_static_text_except(const char *screen, const char *owner,
         /* A field the frame's script fills is the screen's to draw. */
         if (f->variable[0] || !f->text || !f->text[0])
             continue;
-        /* And any row a screen has decided not to show, named by where it
-           is, because a row of the clip's own static text has nothing else
+        /* And anything a screen has decided not to show, named by where it
+           is, because a piece of the clip's own static text has nothing else
            to name it by. */
         int skipped = 0;
         for (int j = 0; j < skips && !skipped; j++)
-            skipped = fabsf(f->y - skip_y[j]) < 0.5f;
+            skipped = CheckCollisionPointRec((Vector2){f->x, f->y}, skip[j]);
         if (skipped)
             continue;
         char plain[512];
         strip_markup(f->text, plain, sizeof(plain));
         if (plain[0])
-            draw_field_wrapped(f, (Vector2){0, 0}, plain);
+            draw_field_wrapped(f, shift, plain);
     }
 }
 
 void draw_static_text(const char *screen, const char *owner)
 {
-    draw_static_text_except(screen, owner, NULL, 0);
+    draw_static_text_except(screen, owner, NULL, 0, (Vector2){0, 0});
 }
 
 void draw_screen_text(const char *screen)

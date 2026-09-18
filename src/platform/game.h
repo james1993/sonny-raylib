@@ -32,7 +32,6 @@ typedef enum {
     SCREEN_START,
     SCREEN_SLOTS,
     SCREEN_CLASS,
-    SCREEN_OPTIONS,
     SCREEN_MANUAL,
     SCREEN_SETTINGS,
     SCREEN_CUTSCENE,
@@ -387,11 +386,15 @@ void draw_screen_buttons(const char *screen, Vector2 mouse);
 /* The text a frame bakes into its own fields, which the game never sets.
    `owner` narrows it to one clip on that screen; NULL takes them all. */
 void draw_static_text(const char *screen, const char *owner);
-/* The same, less every field sitting at one of `skips` heights -- which is
-   how a screen leaves out a row that is the clip's own static text rather
-   than a field it fills, there being nothing else to name such a row by. */
+/* The same, less every field whose own corner falls inside one of `skips`
+   boxes -- which is how a screen leaves out part of a clip that is its own
+   static text rather than fields the screen fills, there being nothing else
+   to name such a piece by.
+
+   `shift` moves whatever is left, for a screen that has taken a whole column
+   out of a clip and does not want the rest sitting off to one side. */
 void draw_static_text_except(const char *screen, const char *owner,
-                             const float *skip_y, int skips);
+                             const Rectangle *skip, int skips, Vector2 shift);
 void draw_screen_text(const char *screen);
 /* One of a root frame's own text fields, by the name the frame gives it. */
 const TextField *chrome_field(const char *screen, const char *name);
@@ -471,8 +474,10 @@ void screen_slots_update(Game *g, Vector2 mouse);
 void screen_slots_draw(Game *g, Vector2 mouse);
 void screen_class_update(Game *g, Vector2 mouse);
 void screen_class_draw(Game *g, Vector2 mouse);
-void screen_options_update(Game *g, Vector2 mouse);
-void screen_options_draw(Game *g, Vector2 mouse);
+/* The sound switch on the bar along the bottom: draws the quaver and takes
+   its click. Both bars, the hub's and the battle's, leave the same gap beside
+   the menu button, which is where it sits. */
+void hud_sound(Game *g, Vector2 mouse);
 void screen_manual_update(Game *g, Vector2 mouse);
 void screen_manual_draw(Game *g, Vector2 mouse);
 void screen_lost_update(Game *g, Vector2 mouse);
@@ -498,7 +503,7 @@ void battle_screen_start(Game *g, int32_t battle_id);
    model under the hit flash, and the blur of it. */
 void battle_screen_prepare(Game *g);
 void battle_screen_update(Game *g, Vector2 mouse, int headless);
-void battle_screen_draw(Game *g);
+void battle_screen_draw(Game *g, Vector2 mouse);
 
 /* Where the player's save lives. */
 

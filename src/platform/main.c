@@ -226,8 +226,6 @@ int main(int argc, char **argv)
             game.screen = SCREEN_SLOTS;
         else if (strcmp(want_screen, "class") == 0)
             game.screen = SCREEN_CLASS;
-        else if (strcmp(want_screen, "options") == 0)
-            game.screen = SCREEN_OPTIONS;
         else if (strcmp(want_screen, "manual") == 0)
             game.screen = SCREEN_MANUAL;
         else if (strcmp(want_screen, "ending") == 0)
@@ -343,7 +341,7 @@ int main(int argc, char **argv)
         switch (game.screen) {
         case SCREEN_BATTLE:
             battle_screen_update(&game, mouse, shot != NULL);
-            battle_screen_draw(&game);
+            battle_screen_draw(&game, mouse);
             break;
         case SCREEN_VICTORY:
             screen_victory_draw(&game, mouse);
@@ -380,10 +378,6 @@ int main(int argc, char **argv)
         case SCREEN_CLASS:
             screen_class_draw(&game, mouse);
             screen_class_update(&game, mouse);
-            break;
-        case SCREEN_OPTIONS:
-            screen_options_draw(&game, mouse);
-            screen_options_update(&game, mouse);
             break;
         case SCREEN_MANUAL:
             screen_manual_draw(&game, mouse);

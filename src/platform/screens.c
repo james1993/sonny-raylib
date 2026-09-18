@@ -354,6 +354,45 @@ static void draw_hub_note(Game *g, Vector2 mouse)
                                           close->height}), WHITE);
 }
 
+/* The sound switch, and the whole of what is left of the game's settings.
+ *
+ * The original stops the player on a screen of four before the story starts
+ * and keeps the same four on a menu inside it. Three of them had nothing to
+ * choose between in this port and are gone; the fourth is here, on the bar
+ * along the bottom, where it is one click away at any point in the game
+ * rather than two screens deep -- and where the music it turns off is
+ * actually playing.
+ *
+ * Both bars leave the same gap: the middle panel holds one button, the menu
+ * on the hub and the turn dial in a fight, with its corner badge above and
+ * nothing below. The quaver goes in that corner on both, so it does not move
+ * when a fight starts. */
+#define HUD_SOUND_X 444.0f
+#define HUD_SOUND_Y 509.0f
+#define HUD_SOUND_W 30.0f
+#define HUD_SOUND_H 38.0f
+
+void hud_sound(Game *g, Vector2 mouse)
+{
+    Rectangle box = {HUD_SOUND_X - HUD_SOUND_W / 2,
+                     HUD_SOUND_Y - HUD_SOUND_H / 2,
+                     HUD_SOUND_W, HUD_SOUND_H};
+    int over = hit(box, mouse);
+    draw_music_note(box, g->options.sound, over);
+    if (!over)
+        return;
+    /* In the game's own words: the row this used to be a row of. */
+    game_tooltip(g, lang_text("MENU", 27),
+                 lang_text("MENU", g->options.sound ? 29 : 30));
+    if (ui_clicked()) {
+        g->options.sound = !g->options.sound;
+        audio_set_muted(!g->options.sound);
+        /* After the switch, so turning it on is audible and turning it off
+           is not. */
+        audio_play("Click3pickup");
+    }
+}
+
 /* The furniture along the bottom of the hub: the panels, the row of buttons
    and their icons, the bar that says how far through the zone the player is,
    and the three lines beside it. Every menu the hub opens is a clip laid over
@@ -417,6 +456,8 @@ static void draw_hub_panel(Game *g, Vector2 mouse)
                    TextFormat("%s%d", lang_text("SYSTEM", 10),
                               g->campaign.progress_battle - 1));
     }
+
+    hud_sound(g, mouse);
 }
 
 

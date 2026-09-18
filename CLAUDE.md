@@ -299,17 +299,24 @@ it deliberately does not, and they are listed so that nobody reads one as a
 bug and puts it back. Each one was asked for.
 
 **The settings.** The original asks four things before the story starts --
-Sound, Effects, Autosave, Graphics -- and again on the in-game menu. Three are
-gone from both:
+Sound, Effects, Autosave, Graphics -- and again on the in-game menu. There is
+no longer a screen for them at all: picking a class starts the story, and the
+in-game menu is the tally it always mostly was, slid over into the middle of
+its own panel. Three of the four are gone outright:
 
 * Effects and Graphics chose between the original's two qualities. This port
   only implements the good one, and read neither value anywhere, so the
   question had no answer to give.
 * Autosave is always on. A run lost to a setting is the setting's fault.
-* What is left is the sound, and one switch does not need a row and a word:
-  it is a quaver, with a line through it when the sound is off
-  (`draw_music_note`, drawn rather than taken from the SWF because the
-  original has no such button, which also makes it vector at any size).
+* What is left is the sound, and one switch does not need a screen, a row or
+  a word: it is a quaver on the bar along the bottom of the game, with a line
+  through it when the sound is off (`draw_music_note`, drawn rather than taken
+  from the SWF because the original has no such button, which also makes it
+  vector at any size). Both bars leave the same gap -- the middle panel holds
+  one button, the menu on the hub and the turn dial in a fight, with its
+  corner badge above and nothing below -- so the quaver sits in that corner on
+  both and does not move when a fight starts. `hud_sound` draws it and takes
+  its click; every screen that shows the bar calls it.
 
 Removing them took `options.graphics`, `options.quality` and
 `options.autosave` out of the `Game` with them, rather than leaving state
