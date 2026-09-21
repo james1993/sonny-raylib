@@ -59,14 +59,21 @@ static Vector2 unit_stage_pos(const Game *g, int32_t slot)
    own transform -- the original keeps the reticles on the root, not in
    BATTLESCREEN -- so the camera has to be applied by hand to keep it on the
    unit it belongs to while the battlefield leans in. */
-static Vector2 unit_marker_pos(const Game *g, int32_t slot)
+/* A point on the battlefield, where the camera has it this frame. Anything
+   the original parks inside BATTLESCREEN moves and scales with it, so a thing
+   drawn outside the camera has to be put through the same transform. */
+static Vector2 camera_point(const Game *g, Vector2 at)
 {
-    Vector2 at = unit_stage_pos(g, slot);
     float scale = g->camera_scale > 0 ? g->camera_scale : 1.0f;
     at.x = BATTLE_ORIGIN_X + g->camera_x + (at.x - BATTLE_ORIGIN_X) * scale;
     at.y = BATTLE_ORIGIN_Y + g->camera_y + g->shake_y
          + (at.y - BATTLE_ORIGIN_Y) * scale;
     return at;
+}
+
+static Vector2 unit_marker_pos(const Game *g, int32_t slot)
+{
+    return camera_point(g, unit_stage_pos(g, slot));
 }
 
 /* ------------------------------------------------------------------ camera */
@@ -557,8 +564,31 @@ static const char *unit_animation(const Game *g, int32_t slot, int *loop,
         *tick = g->death_tick[slot] - 1;
         return "dead";
     }
-    if (u->STUN > 0)
-        return "stun";
+    /* Getting up is its own run, once, and the original plays it the moment
+       the stun drops whether or not any is left. */
+    if (g->unstun_tick[slot] > 0) {
+        *loop = 0;
+        *tick = g->unstun_tick[slot] - 1;
+        return "outofstun";
+    }
+    /* Being held stunned is two animations, not one: the model falls once and
+       then the hold loops, because the last frame of "stun2" is
+
+           gotoAndStop("stun2"); play();
+
+       which sends it back to that label's own first frame. Looping the fall
+       instead had the model collapse over and over. */
+    if (u->STUN > 0) {
+        const AssetAnimation *fall = asset_animation("stun");
+        int32_t into = g->stun_tick[slot];
+        if (fall && into < fall->length) {
+            *loop = 0;
+            *tick = into;
+            return "stun";
+        }
+        *tick = into - (fall ? fall->length : 0);
+        return "stun2";     /* which does loop */
+    }
 
     /* A melee attacker is on its feet: out to the target, the swing, then
        home again. None of the four loops -- the model stops at the end of
@@ -1435,8 +1465,12 @@ static void number_show(Game *g, int32_t slot, const char *word,
         g->numbers[i].digit_count = count;
     }
     /* The clip is attached at the unit's own position; everything else about
-       where it ends up is in the section's frames. */
-    Vector2 at = unit_marker_pos(g, slot);
+       where it ends up is in the section's frames. It is kept in the
+       battlefield's own coordinates because the original attaches it inside
+       BATTLESCREEN, which is what the camera leans in on: pinning it to where
+       the camera had that unit at the moment it was spawned left the number
+       stranded behind the unit as the camera came back out. */
+    Vector2 at = unit_stage_pos(g, slot);
     g->numbers[i].x = at.x;
     g->numbers[i].y = at.y;
     g->numbers[i].color = color_from_rgb(rgb);
@@ -1487,12 +1521,15 @@ static void draw_numbers(const Game *g)
         if (alpha == 0)
             continue;
         Color tint = g->numbers[i].color;
-        Vector2 at = {g->numbers[i].x, g->numbers[i].y + f->y};
+        Vector2 at = camera_point(g, (Vector2){g->numbers[i].x,
+                                               g->numbers[i].y + f->y});
+        /* And it is the size the camera has it, for the same reason. */
+        float scale = f->scale * (g->camera_scale > 0 ? g->camera_scale : 1.0f);
 
         if (anim->part_count > 0) {
             /* "miss" and "shield": the section's own art. */
             for (int32_t p = 0; p < anim->part_count; p++)
-                draw_number_part(&anim->parts[p], at, f->scale, tint, alpha);
+                draw_number_part(&anim->parts[p], at, scale, tint, alpha);
             continue;
         }
         int32_t steps = g->numbers[i].digit_count - 1;
@@ -1502,11 +1539,10 @@ static void draw_numbers(const Game *g)
             const NumberDigit *digit =
                 &SONNY_NUMBER_DIGITS[g->numbers[i].digits[d]];
             Vector2 place = {at.x + (offset + SONNY_NUMBER_SPACING * d)
-                                    * f->scale,
+                                    * scale,
                              at.y};
             for (int32_t p = 0; p < digit->count; p++)
-                draw_number_part(&digit->parts[p], place, f->scale, tint,
-                                 alpha);
+                draw_number_part(&digit->parts[p], place, scale, tint, alpha);
         }
     }
 }
@@ -2238,6 +2274,9 @@ void battle_screen_start(Game *g, int32_t battle_id)
     /* Every model starts standing, and nothing is part-way through dying. */
     memset(g->hit_tick, 0, sizeof(g->hit_tick));
     memset(g->death_tick, 0, sizeof(g->death_tick));
+    memset(g->stun_tick, 0, sizeof(g->stun_tick));
+    memset(g->unstun_tick, 0, sizeof(g->unstun_tick));
+    memset(g->stun_was, 0, sizeof(g->stun_was));
     memset(g->cast_colour, 0, sizeof(g->cast_colour));
     g->flash_slot = 0;
     g->flash_tick = 0;
@@ -2319,6 +2358,33 @@ void battle_screen_update(Game *g, Vector2 mouse, int headless)
         }
         if (g->hit_tick[slot] > 0 && ++g->hit_tick[slot] > HIT_FRAMES)
             g->hit_tick[slot] = 0;      /* and back to standing */
+
+        /* applyChangesKrin, which watches STUN against what it was and
+           starts one of two runs the moment it moves:
+
+               if (active && STUN != STUNP) {
+                  if (STUN - STUNP > 0) inner.gotoAndPlay("stun");
+                  else                  inner.gotoAndPlay("outofstun");
+               }
+               STUNP = STUN;
+
+           Any rise starts the fall again, and any fall starts getting up --
+           even one that leaves some stun on. */
+        if (u->active && u->STUN != g->stun_was[slot]) {
+            if (u->STUN > g->stun_was[slot]) {
+                g->stun_tick[slot] = 0;
+                g->unstun_tick[slot] = 0;
+            } else {
+                g->unstun_tick[slot] = 1;
+            }
+        } else if (g->unstun_tick[slot] > 0) {
+            const AssetAnimation *up = asset_animation("outofstun");
+            if (++g->unstun_tick[slot] > (up ? up->length : 16))
+                g->unstun_tick[slot] = 0;
+        } else if (u->STUN > 0) {
+            g->stun_tick[slot]++;
+        }
+        g->stun_was[slot] = u->STUN;
     }
     melee_tick(g);
     bolt_tick(g);

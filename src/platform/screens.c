@@ -1161,15 +1161,11 @@ void screen_talents_update(Game *g, Vector2 mouse)
         switch (err) {
         case TALENT_OK:
             audio_play("Click2putdown");
-            /* A newly learned active talent goes on the first free slot. */
-            if (!SONNY_TALENTS[node].passive) {
-                for (int32_t i = 0; i < SONNY_MOVE_SLOTS; i++) {
-                    if (c->move_matrix[i] == 0) {
-                        c->move_matrix[i] = c->skill_adder[node];
-                        break;
-                    }
-                }
-            }
+            /* And nothing else: the original's handler only upgrades a slot
+               that already holds the tier below, which character_learn does,
+               and adds the move to the pool to be picked up from. Putting a
+               newly learned move straight on the bar is not something it
+               ever does. */
             break;
         case TALENT_NO_POINTS:
             game_notice(g, "%s", lang_text("MENU", 20));

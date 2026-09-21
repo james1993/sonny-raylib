@@ -68,10 +68,18 @@ void campaign_story_joins(Campaign *c)
     }
 }
 
+/* Where the player is, which is not the same as how far they have got.
+   Krin.sectionIn is only ever set twice in the original: to zero as the story
+   starts, and by a marker on the map. Beating a zone's last fight does not
+   move it -- the victory screen sends the player to the map and they travel.
+   Deriving it from the progress battle instead meant the hub ignored where
+   they had travelled to and showed wherever their progress had reached. */
 const ZoneDef *campaign_zone(const Campaign *c)
 {
-    const ZoneDef *z = zone_of_battle(c->progress_battle);
-    return z ? z : &SONNY_ZONES[0];
+    for (int i = 0; i < SONNY_ZONE_COUNT; i++)
+        if (SONNY_ZONES[i].zone == c->zone)
+            return &SONNY_ZONES[i];
+    return &SONNY_ZONES[0];
 }
 
 int campaign_complete(const Campaign *c)
@@ -82,9 +90,6 @@ int campaign_complete(const Campaign *c)
 void campaign_advance(Campaign *c)
 {
     c->progress_battle++;
-    const ZoneDef *z = zone_of_battle(c->progress_battle);
-    if (z)
-        c->zone = z->zone;
     /* The story hands people over at set points, which the original checks in
        the marker's own handler and on the map. */
     campaign_story_joins(c);

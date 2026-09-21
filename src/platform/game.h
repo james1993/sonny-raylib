@@ -151,6 +151,13 @@ typedef struct {
 
     int32_t   hit_tick[SONNY_SLOTS];     /* 1..17, 0 for not recoiling */
     int32_t   death_tick[SONNY_SLOTS];   /* 1..59, then the model is gone */
+    /* Being held stunned, and coming out of it. The model falls once and then
+       holds on a loop, and getting up is its own run of frames; applyChanges
+       starts each of them off the turn STUN changes, which is what STUNP
+       remembers. */
+    int32_t   stun_tick[SONNY_SLOTS];
+    int32_t   unstun_tick[SONNY_SLOTS];  /* 1..16, 0 for not getting up */
+    int32_t   stun_was[SONNY_SLOTS];     /* STUNP */
 
     /* BATTLEFLASH: the white-and-orange pulse over whoever was just hit, or
        the white-and-green one over whoever was just healed. The clip runs
@@ -293,12 +300,16 @@ typedef struct {
     /* What the tooltip is showing this frame. The original keeps one of
        these and every button fills it on roll-over. */
     char      tip_title[128];
-    char      tip_body[256];
+    /* Long enough for the longest thing the game says: an ability's tooltip
+       runs to a hundred and eighty characters, and a row in the pool puts two
+       more sentences after it. Cutting these short is what left a tip ending
+       mid-word. */
+    char      tip_body[512];
     /* An item's tooltip is a different shape: the name on a backing tinted by
        the item's own rarity, then what it takes to wear it, then every
        attribute it adds, then what it says about itself. */
     char      tip_req[128];
-    char      tip_lines[TOOLTIP_LINES][64];
+    char      tip_lines[TOOLTIP_LINES][256];
     int32_t   tip_line_count;
     Color     tip_tint;
     /* Krin.UITmouseHold: the ability the pointer is carrying. The original

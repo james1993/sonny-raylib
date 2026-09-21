@@ -100,6 +100,22 @@ int main(void)
     assert(c.progress_battle == 2);
     assert(campaign_zone(&c)->zone == 0);
 
+    /* Where the player is is where they travelled to, not how far they have
+       got. Krin.sectionIn is only ever set as the story starts and by a
+       marker on the map, so beating a zone's last fight leaves the hub on
+       the scene they are standing in until they go and travel. */
+    {
+        Campaign t;
+        campaign_new(&t, 0);
+        assert(campaign_zone(&t)->zone == 0);
+        t.progress_battle = 12;         /* into the second zone's range */
+        assert(campaign_zone(&t)->zone == 0);
+        campaign_advance(&t);
+        assert(campaign_zone(&t)->zone == 0);
+        t.zone = 1;                     /* and now they have travelled */
+        assert(campaign_zone(&t)->zone == 1);
+    }
+
     const BattleDef *def = battle_def_by_id(2);
     Battle b;
     assert(campaign_setup_battle(&c, def, &b, 42));
