@@ -388,6 +388,15 @@ def collect_names(data_dir):
                 # frame too, not just the resting one.
                 for frame in (slot.get('labels') or {}).values():
                     want['chrome'].add('#%d@%d' % (slot['character'], frame))
+    # The floating number a hit puts over its target: its digits are clips the
+    # game attaches one per digit, and "miss" and "shield" are their own art.
+    numbers = stage.get('numbers') or {}
+    for group in ((numbers.get('sections') or [])
+                  + (numbers.get('digits') or [])):
+        for part in (group.get('parts') or []):
+            if part.get('width'):
+                want['chrome'].add('#%d' % part['character'])
+
     for part in ((stage.get('bar') or {}).get('graphics') or []):
         if part.get('character') and part.get('width'):
             want['chrome'].add('#%d' % part['character'])

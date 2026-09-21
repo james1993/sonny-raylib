@@ -197,6 +197,45 @@ typedef struct {
     float       origin_x, origin_y;
 } OrbPart;
 
+/* The floating number a hit puts over its target. It is not text: the game
+   attaches one digit clip per digit into NumberFixer's `flasher` and plays
+   one of that clip's four labelled sections. A section is a run of frames,
+   each of which says what `flasher` is scaled to, how far it has risen and
+   how opaque it is -- which is the punch, the lift and the fade. */
+typedef struct {
+    float scale;
+    float y;
+    float alpha;
+} NumberFrame;
+
+/* A piece of a digit, or of the words "miss" and "shield": their own art,
+   placed inside the clip that holds them. `tinted` marks the one the game
+   recolours to the element the hit was -- the instance the original calls KN,
+   which is the glyph itself; the backing and the gloss over it keep the
+   colour they were drawn in. */
+typedef struct {
+    const char *art;
+    float       x, y;
+    float       scale;
+    float       origin_x, origin_y;
+    int32_t     tinted;
+} NumberPart;
+
+typedef struct {
+    const char        *name;     /* normal, critical, miss, shield */
+    const NumberFrame *frames;
+    int32_t            count;
+    /* What `flasher` holds on those frames: the two words carry their own
+       art, a number has none and is the digits. */
+    const NumberPart  *parts;
+    int32_t            part_count;
+} NumberAnim;
+
+typedef struct {
+    const NumberPart *parts;
+    int32_t           count;
+} NumberDigit;
+
 /* One drawable piece of a clip, in that clip's own coordinates. A clip that
    carries text fields cannot be exported whole -- the decompiler bakes the
    fields' design-time copy into the picture -- so its graphics are taken
@@ -378,6 +417,14 @@ const MenuSlot *menu_slot(const char *menu, const char *name);
 extern const TalentSlot SONNY_TALENT_SLOTS[];
 extern const int SONNY_TALENT_SLOT_COUNT;
 const TalentSlot *talent_slot(int32_t node);
+
+extern const NumberAnim SONNY_NUMBER_ANIMS[];
+extern const int SONNY_NUMBER_ANIM_COUNT;
+/* The four sections by name; NULL when absent. */
+const NumberAnim *number_anim(const char *name);
+extern const NumberDigit SONNY_NUMBER_DIGITS[10];
+/* numberSpacingKrin: how far apart the digits of one number stand. */
+extern const float SONNY_NUMBER_SPACING;
 
 extern const ClipPart SONNY_CLIP_PARTS[];
 extern const int SONNY_CLIP_PART_COUNT;

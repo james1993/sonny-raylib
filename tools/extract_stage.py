@@ -326,6 +326,89 @@ def selector_ring(body, raw_dir, chrome):
     return ring
 
 
+# The floating number a hit puts over its target. It is not text: the game
+# attaches one NumberSetter per digit into NumberFixer's `flasher` and plays
+# one of that clip's four labelled sections, which is what makes the number
+# punch out, rise and fade. Digits are laid out this far apart.
+NUMBER_FIXER = 102
+NUMBER_SETTER = 143
+NUMBER_DIGIT_NAMES = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six',
+                      'Seven', 'Eight', 'Nine']
+# The piece of a digit, of "miss" and of "shield" that the game recolours to
+# the element the hit was: new Color(...KN).setRGB(KNcolor2).
+NUMBER_TINTED = 'KN'
+
+
+def clip_pieces(body, raw_dir, character, frame):
+    """One frame of a clip as its own placements, names kept.
+
+    Unlike graphic_parts this does not flatten a nested clip away, because
+    which piece the game recolours is known by its instance name."""
+    frames = model_frames(body, character)
+    if not frames or frame > len(frames):
+        return []
+    out = []
+    for name, info in sorted(frames[frame - 1].items(),
+                             key=lambda kv: kv[1]['depth']):
+        a, _, _, _, x, y = info['matrix']
+        entry = {'name': name, 'character': info['character'],
+                 'x': round(x, 3), 'y': round(y, 3), 'scale': round(a, 6)}
+        geom = sprite_geometry(raw_dir, info['character'])
+        if geom:
+            (entry['width'], entry['height'],
+             entry['origin_x'], entry['origin_y']) = geom
+        out.append(entry)
+    return out
+
+
+def number_widget(body, raw_dir):
+    """The floating number, taken apart.
+
+    Four sections of one clip -- normal, critical, miss, shield -- each a
+    run of frames that scales, lifts and fades whatever `flasher` holds. For
+    a number that is a row of digit clips the game attaches; for the two
+    words it is the word's own art, which is `flasher` itself on those
+    frames."""
+    labels = sprite_frame_labels(body, NUMBER_FIXER)
+    frames = model_frames(body, NUMBER_FIXER)
+    if not labels or not frames:
+        return {}
+
+    starts = sorted(labels.items(), key=lambda kv: kv[1])
+    sections = []
+    for index, (name, start) in enumerate(starts):
+        end = (starts[index + 1][1] - 1 if index + 1 < len(starts)
+               else len(frames))
+        steps = []
+        held = None
+        for f in range(start - 1, end):
+            placed = frames[f].get('flasher')
+            if not placed:
+                break       # the section's last frame takes it away again
+            held = placed['character']
+            a, _, _, _, _, ty = placed['matrix']
+            steps.append({'scale': round(a, 6), 'y': round(ty, 3),
+                          'alpha': round(placed.get('alpha', 1.0), 4)})
+        sections.append({'name': name, 'frames': steps,
+                         'character': held,
+                         # The word sections hold their own art; the number
+                         # sections hold an empty container the digits go in.
+                         'parts': clip_pieces(body, raw_dir, held, 1)
+                                  if held else []})
+
+    digits = []
+    setter_labels = sprite_frame_labels(body, NUMBER_SETTER)
+    for value, name in enumerate(NUMBER_DIGIT_NAMES):
+        frame = setter_labels.get(name)
+        if not frame:
+            continue
+        digits.append({'value': value,
+                       'parts': clip_pieces(body, raw_dir, NUMBER_SETTER,
+                                            frame)})
+
+    return {'sections': sections, 'digits': digits}
+
+
 def orb_parts(body, raw_dir, orb):
     """The orb taken apart.
 
@@ -1263,6 +1346,7 @@ def main(path, raw_dir=None):
                                             for e in group],
                'bar': widget, 'life_colours': colour_ramp(body, raw_dir),
                'selector': selector_ring(body, raw_dir, chrome),
+               'numbers': number_widget(body, raw_dir),
                'chrome_text': chrome_fields,
                'speech': speech_box(body, raw_dir, chrome, texts, fonts),
                'clip_parts': clip_parts,

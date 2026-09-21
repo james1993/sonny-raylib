@@ -1083,6 +1083,89 @@
     ]
    ]
   },
+  "#100": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#100.png"
+   ],
+   "scale": 2,
+   "bounds": [
+    -30.6,
+    -5.45,
+    33.6,
+    5.3
+   ],
+   "offsets": [
+    [
+     30.6,
+     5.45
+    ]
+   ]
+  },
+  "#103": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#103.png"
+   ],
+   "scale": 2,
+   "bounds": [
+    -6.35,
+    -17.45,
+    4.55,
+    8.35
+   ],
+   "offsets": [
+    [
+     6.35,
+     17.45
+    ]
+   ]
+  },
+  "#105": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#105.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     3.7,
+     11.4
+    ]
+   ]
+  },
+  "#106": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#106.png"
+   ],
+   "scale": 2,
+   "bounds": [
+    -5.35,
+    -16.45,
+    2.05,
+    6.35
+   ],
+   "offsets": [
+    [
+     5.35,
+     16.45
+    ]
+   ]
+  },
+  "#109": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#109.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     7.0,
+     11.75
+    ]
+   ]
+  },
   "#1092": {
    "category": "chrome",
    "frames": [
@@ -1153,6 +1236,19 @@
     ]
    ]
   },
+  "#113": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#113.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     7.0,
+     12.05
+    ]
+   ]
+  },
   "#1142": {
    "category": "chrome",
    "frames": [
@@ -1163,6 +1259,19 @@
     [
      49.0,
      68.7
+    ]
+   ]
+  },
+  "#117": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#117.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     8.35,
+     11.4
     ]
    ]
   },
@@ -1195,6 +1304,19 @@
     [
      409.75,
      108.25
+    ]
+   ]
+  },
+  "#121": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#121.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     6.9,
+     11.75
     ]
    ]
   },
@@ -1290,6 +1412,19 @@
     [
      13.6,
      12.2
+    ]
+   ]
+  },
+  "#125": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#125.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     7.45,
+     12.05
     ]
    ]
   },
@@ -1532,6 +1667,19 @@
     ]
    ]
   },
+  "#129": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#129.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     7.15,
+     11.4
+    ]
+   ]
+  },
   "#1312": {
    "category": "chrome",
    "frames": [
@@ -1696,6 +1844,19 @@
     [
      26.8,
      45.5
+    ]
+   ]
+  },
+  "#133": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#133.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     7.4,
+     12.05
     ]
    ]
   },
@@ -1920,6 +2081,19 @@
     ]
    ]
   },
+  "#137": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#137.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     7.4,
+     12.1
+    ]
+   ]
+  },
   "#1377": {
    "category": "chrome",
    "frames": [
@@ -2116,6 +2290,19 @@
     [
      0.55,
      1.0
+    ]
+   ]
+  },
+  "#141": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#141.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     9.45,
+     12.05
     ]
    ]
   },
@@ -19208,6 +19395,25 @@
     ]
    ]
   },
+  "#95": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#95.png"
+   ],
+   "scale": 2,
+   "bounds": [
+    -15.35,
+    -5.65,
+    15.85,
+    5.05
+   ],
+   "offsets": [
+    [
+     15.35,
+     5.65
+    ]
+   ]
+  },
   "#951": {
    "category": "chrome",
    "frames": [
@@ -19237,6 +19443,38 @@
     [
      -0.45,
      -0.5
+    ]
+   ]
+  },
+  "#97": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#97.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     31.4,
+     10.0
+    ]
+   ]
+  },
+  "#98": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#98.png"
+   ],
+   "scale": 2,
+   "bounds": [
+    -14.85,
+    -5.2,
+    14.75,
+    4.25
+   ],
+   "offsets": [
+    [
+     14.85,
+     5.2
     ]
    ]
   },

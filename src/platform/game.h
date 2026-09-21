@@ -194,12 +194,16 @@ typedef struct {
        indicator on the player's choice, or -1 when it is not running. */
     int32_t   boomer_tick;
 
-    /* Floating damage numbers, spawned on the unit they landed on. */
+    /* The numbers a hit floats over the unit it landed on. Each is one
+       NumberFixer the original attaches: the section it plays, how far into
+       that section it is, where it was attached, and the element colour the
+       digits are recoloured to. */
     struct {
-        char    text[16];
+        const NumberAnim *anim;
+        int32_t digits[8];      /* most significant first */
+        int32_t digit_count;    /* 0 for the two words */
         float   x, y;
-        int32_t life;
-        int32_t crit;
+        int32_t tick;
         Color   color;
     } numbers[12];
     int32_t number_count;

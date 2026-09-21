@@ -1383,16 +1383,35 @@ static void draw_backdrop(const Game *g)
 
 /* ---------------------------------------------------------------- numbers */
 
-#define NUMBER_LIFE 34
-
-
-/* KrinNumberShow: a number rises from the unit it applied to, coloured by the
-   element that caused it -- green for healing -- and shown larger when the
-   hit pierced. "miss" and "shield" come through the same way. */
-static void number_show(Game *g, int32_t slot, const char *text,
-                        uint32_t rgb, int crit)
+/* KrinNumberShow.
+ *
+ * A number over a unit is not text. The original attaches one NumberFixer to
+ * the battle screen at the unit's own position and fills its `flasher` with
+ * one digit clip per digit, laid out this far apart and recoloured to the
+ * element the hit was; "miss" and "shield" are their own art and are what
+ * `flasher` holds on those sections instead. Then it plays the section --
+ *
+ *     gotoAndPlay(perKSuccess ? "critical" : "normal")
+ *
+ * -- and the section is where the movement lives: the number punches out
+ * (nearly 1.8 times its size for a hit, nearly 2.9 for one that pierced),
+ * settles, lifts, and fades. Those frames come out of the clip's own
+ * timeline, so none of it is timed or eased here.
+ *
+ * The digits' own offsets are the original's arithmetic:
+ *
+ *     totalLKrinN = numberSpacingKrin * (gKMPsteps - 1);
+ *     KrinNOffset = -totalLKrinN / 2 - 10;
+ *     NumSet_i._x = KrinNOffset + spacing * gKMPsteps - spacing * i;
+ */
+static void number_show(Game *g, int32_t slot, const char *word,
+                        int32_t value, uint32_t rgb, int crit)
 {
     if (slot <= 0 || slot >= SONNY_SLOTS)
+        return;
+    const NumberAnim *anim = number_anim(word ? word
+                                              : (crit ? "critical" : "normal"));
+    if (!anim || anim->count <= 0)
         return;
     if (g->number_count >= (int32_t)(sizeof(g->numbers) / sizeof(g->numbers[0]))) {
         /* Drop the oldest rather than the newest. */
@@ -1400,45 +1419,95 @@ static void number_show(Game *g, int32_t slot, const char *text,
                 sizeof(g->numbers[0]) * (g->number_count - 1));
         g->number_count--;
     }
-    Vector2 at = unit_marker_pos(g, slot);
     int32_t i = g->number_count++;
-    snprintf(g->numbers[i].text, sizeof(g->numbers[i].text), "%s", text);
-    /* A little scatter so several numbers on one unit stay readable. */
-    g->numbers[i].x = at.x + (float)GetRandomValue(-12, 12);
-    g->numbers[i].y = at.y - 30;
-    g->numbers[i].life = NUMBER_LIFE;
-    g->numbers[i].crit = crit;
+    memset(&g->numbers[i], 0, sizeof(g->numbers[i]));
+    g->numbers[i].anim = anim;
+    if (!word) {
+        int32_t n = value < 0 ? 0 : value;
+        int32_t digits[8];
+        int32_t count = 0;
+        do {
+            digits[count++] = n % 10;
+            n /= 10;
+        } while (n > 0 && count < (int32_t)(sizeof(digits) / sizeof(digits[0])));
+        for (int32_t d = 0; d < count; d++)
+            g->numbers[i].digits[d] = digits[count - 1 - d];
+        g->numbers[i].digit_count = count;
+    }
+    /* The clip is attached at the unit's own position; everything else about
+       where it ends up is in the section's frames. */
+    Vector2 at = unit_marker_pos(g, slot);
+    g->numbers[i].x = at.x;
+    g->numbers[i].y = at.y;
     g->numbers[i].color = color_from_rgb(rgb);
 }
 
 static void numbers_update(Game *g)
 {
     for (int32_t i = 0; i < g->number_count; ) {
-        g->numbers[i].y -= 0.9f;
-        if (--g->numbers[i].life > 0) {
+        /* A section runs once and takes itself off the screen at the end,
+           which is the frame the original removes `flasher` on. */
+        if (++g->numbers[i].tick < g->numbers[i].anim->count) {
             i++;
             continue;
         }
-        g->numbers[i] = g->numbers[g->number_count - 1];
+        memmove(&g->numbers[i], &g->numbers[i + 1],
+                sizeof(g->numbers[0]) * (g->number_count - i - 1));
         g->number_count--;
     }
+}
+
+/* One piece of a digit or of a word, inside whatever `flasher` has been
+   scaled and lifted to. */
+static void draw_number_part(const NumberPart *part, Vector2 at, float scale,
+                             Color tint, unsigned char alpha)
+{
+    Art art;
+    if (!asset_art(part->art, 1, &art))
+        return;
+    Color colour = part->tinted ? tint : WHITE;
+    colour.a = alpha;
+    Rectangle box = placed_art(&art, at.x + part->x * scale,
+                               at.y + part->y * scale,
+                               part->scale * scale, part->scale * scale,
+                               part->origin_x, part->origin_y);
+    DrawTexturePro(*art.texture, art.source, box, (Vector2){0, 0}, 0.0f,
+                   colour);
 }
 
 static void draw_numbers(const Game *g)
 {
     for (int32_t i = 0; i < g->number_count; i++) {
-        float size = g->numbers[i].crit ? 22.0f : 16.0f;
-        Color c = g->numbers[i].color;
-        /* Fade out over the last third of its life. */
-        if (g->numbers[i].life < NUMBER_LIFE / 3)
-            c.a = (unsigned char)(255 * g->numbers[i].life
-                                  / (NUMBER_LIFE / 3));
-        float w = ui_text_width(g->numbers[i].text, size);
-        /* A dark pass behind it keeps it readable over the backdrop. */
-        ui_text(g->numbers[i].text, g->numbers[i].x - w / 2 + 1,
-                g->numbers[i].y + 1, size, (Color){0, 0, 0, c.a});
-        ui_text(g->numbers[i].text, g->numbers[i].x - w / 2, g->numbers[i].y,
-                size, c);
+        const NumberAnim *anim = g->numbers[i].anim;
+        int32_t tick = g->numbers[i].tick;
+        if (!anim || tick < 0 || tick >= anim->count)
+            continue;
+        const NumberFrame *f = &anim->frames[tick];
+        unsigned char alpha = (unsigned char)(f->alpha * 255.0f + 0.5f);
+        if (alpha == 0)
+            continue;
+        Color tint = g->numbers[i].color;
+        Vector2 at = {g->numbers[i].x, g->numbers[i].y + f->y};
+
+        if (anim->part_count > 0) {
+            /* "miss" and "shield": the section's own art. */
+            for (int32_t p = 0; p < anim->part_count; p++)
+                draw_number_part(&anim->parts[p], at, f->scale, tint, alpha);
+            continue;
+        }
+        int32_t steps = g->numbers[i].digit_count - 1;
+        float total = SONNY_NUMBER_SPACING * (steps - 1);
+        float offset = -total / 2.0f - 10.0f;
+        for (int32_t d = 0; d < g->numbers[i].digit_count; d++) {
+            const NumberDigit *digit =
+                &SONNY_NUMBER_DIGITS[g->numbers[i].digits[d]];
+            Vector2 place = {at.x + (offset + SONNY_NUMBER_SPACING * d)
+                                    * f->scale,
+                             at.y};
+            for (int32_t p = 0; p < digit->count; p++)
+                draw_number_part(&digit->parts[p], place, f->scale, tint,
+                                 alpha);
+        }
     }
 }
 
@@ -1734,17 +1803,16 @@ static void tick_number(Game *g, const MoveEvent *e)
     if (e->caster <= 0 || e->caster >= SONNY_SLOTS)
         return;
     if (e->tick_shielded) {
-        number_show(g, e->caster, "shield",
+        number_show(g, e->caster, "shield", 0,
                     element_color((Element)e->tick_element), 0);
         return;
     }
     if (e->tick_damage == 0)
         return;
     if (e->tick_damage < 0)
-        number_show(g, e->caster, TextFormat("%d", -e->tick_damage),
-                    0x66FF00, 0);
+        number_show(g, e->caster, NULL, -e->tick_damage, 0x66FF00, 0);
     else
-        number_show(g, e->caster, TextFormat("%d", e->tick_damage),
+        number_show(g, e->caster, NULL, e->tick_damage,
                     element_color((Element)e->tick_element), 0);
 }
 
@@ -1767,7 +1835,7 @@ static void present(Game *g, const MoveEvent *e)
     if (e->missed) {
         if (a->delivery == DELIVER_MISSILE)
             audio_play("MagicMiss");
-        number_show(g, e->target, "miss",
+        number_show(g, e->target, "miss", 0,
                     element_color((Element)a->coefs.element), 0);
         return;
     }
@@ -1808,20 +1876,18 @@ static void present(Game *g, const MoveEvent *e)
     /* The number for what just happened, in the ability's own element. */
     uint32_t rgb = element_color((Element)a->coefs.element);
     if (e->kind == KIND_HEAL && e->amount > 0) {
-        number_show(g, e->target, TextFormat("%d", e->amount), 0x66FF00,
-                    e->pierced);
+        number_show(g, e->target, NULL, e->amount, 0x66FF00, e->pierced);
     } else if (e->kind == KIND_FOCUS && e->amount != 0) {
-        number_show(g, e->target, TextFormat("%d", e->amount), 0x66CCFF, 0);
+        number_show(g, e->target, NULL, e->amount, 0x66CCFF, 0);
     } else if (e->kind == KIND_FULL_DAMAGE) {
         /* A shield that swallowed the blow whole floats the word rather than
            a number; anything else floats what got through it, which is the
            original's DamageOutputKrinFinal and not the damage before the
            shield took its part. */
         if (e->landed < 0)
-            number_show(g, e->target, "shield", rgb, 0);
+            number_show(g, e->target, "shield", 0, rgb, 0);
         else if (e->landed > 0)
-            number_show(g, e->target, TextFormat("%d", e->landed), rgb,
-                        e->pierced);
+            number_show(g, e->target, NULL, e->landed, rgb, e->pierced);
     }
 
     const Unit *target = &b->units[e->target];
