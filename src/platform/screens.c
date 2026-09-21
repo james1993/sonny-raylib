@@ -1451,9 +1451,17 @@ static void draw_element_bars(const char *menu, const char *slot,
 
    The fill is not one of the frame's graphics at all. It is a named slot,
    "bar", which is why draw_clip_parts never had it and the bar came out as
-   an empty recess. It sits at its own depth in the clip's stack, between the
-   recess below it and the track above, so the pieces are walked in depth
-   order and the slot dropped in where it belongs. */
+   an empty recess. So the frame's pieces are walked in the order the table
+   keeps them -- which is the order the clip stacks them, panels over the
+   backdrop and the bar's track over its recess -- and the slot is dropped in
+   just under the track, which is where its depth puts it.
+
+   Choosing the next piece by depth instead does not work: a piece nested
+   inside a container carries that container's inner depth, so the numbers
+   repeat and are only meaningful beside their siblings. Ordering by them
+   dropped the panels and left the screen as bare backdrop. */
+#define INVENTORY_XP_TRACK "@1031"
+
 static void draw_inventory_clip(const Character *who)
 {
     const MenuSlot *bar = menu_slot(MENU_INVENTORY, XP_BAR_SLOT);
@@ -1463,44 +1471,34 @@ static void draw_inventory_clip(const Character *who)
     if (fraction > 1.0f)
         fraction = 1.0f;
 
-    int32_t drawn = -1;             /* the deepest piece put down so far */
-    for (;;) {
-        /* The next piece up, so the slot can be dropped in at its depth
-           without the table having to be in any particular order. */
-        const ClipPart *next = NULL;
-        for (int i = 0; i < SONNY_CLIP_PART_COUNT; i++) {
-            const ClipPart *part = &SONNY_CLIP_PARTS[i];
-            if (strcmp(part->screen, MENU_SCREEN) != 0
-                || strcmp(part->owner, MENU_INVENTORY) != 0
-                || part->width <= 0 || part->depth <= drawn)
-                continue;
-            if (!next || part->depth < next->depth)
-                next = part;
-        }
-        if (bar && (!next || bar->depth < next->depth) && bar->depth > drawn) {
-            Art art;
-            if (fraction > 0.0f && asset_art(XP_BAR_PLAIN, 1, &art)) {
-                Rectangle box = placed_art(&art, bar->x, bar->y, bar->scale,
+    for (int i = 0; i < SONNY_CLIP_PART_COUNT; i++) {
+        const ClipPart *part = &SONNY_CLIP_PARTS[i];
+        if (strcmp(part->screen, MENU_SCREEN) != 0
+            || strcmp(part->owner, MENU_INVENTORY) != 0 || part->width <= 0)
+            continue;
+
+        /* The fill goes under the track, which is the piece above it. */
+        if (bar && fraction > 0.0f
+            && strcmp(part->name, INVENTORY_XP_TRACK) == 0) {
+            Art fill;
+            if (asset_art(XP_BAR_PLAIN, 1, &fill)) {
+                Rectangle box = placed_art(&fill, bar->x, bar->y, bar->scale,
                                            bar->scale, bar->origin_x,
                                            bar->origin_y);
                 /* _width scales the clip from its registration point, which
                    is its left edge, so the whole picture goes into a narrower
                    box rather than being cut off at the fill's end. */
                 box.width = XP_BAR_WIDTH * fraction * bar->scale;
-                DrawTexturePro(*art.texture, art.source, box, (Vector2){0, 0},
-                               0.0f, WHITE);
+                DrawTexturePro(*fill.texture, fill.source, box,
+                               (Vector2){0, 0}, 0.0f, WHITE);
             }
-            drawn = bar->depth;
-            continue;
         }
-        if (!next)
-            break;
-        drawn = next->depth;
+
         Art art;
-        if (!asset_art(TextFormat("#%d", next->character), 1, &art))
+        if (!asset_art(TextFormat("#%d", part->character), 1, &art))
             continue;
-        draw_art_placed(&art, next->x, next->y, next->scale_x, next->scale_y,
-                        next->origin_x, next->origin_y, WHITE);
+        draw_art_placed(&art, part->x, part->y, part->scale_x, part->scale_y,
+                        part->origin_x, part->origin_y, WHITE);
     }
 }
 
