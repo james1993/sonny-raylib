@@ -74,10 +74,6 @@ void screen_talents_open(Game *g)
 
 
 
-/* What a full element bar stands for. A character's piercing and defense
-   start at twenty-five and climb from there, and the band is scaled so the
-   numbers a first zone reaches fill about half of it. */
-#define ELEMENT_BAR_FULL 200.0
 
 /* The root frame the hub is laid out from. */
 #define HUB_SCREEN "Navigation"
@@ -1408,37 +1404,120 @@ void screen_inventory_update(Game *g, Vector2 mouse)
         g->screen = SCREEN_ZONE;
 }
 
-/* One of the two bands of element bars. Each band is eight pieces, one per
-   element, and the game gives each the element's own colour and stands it at
-   a height for the number it shows -- twenty-five being the baseline every
-   character starts at. */
+/* One of the two bands of element bars.
+ *
+ * Each band is four bars per element, stacked at the same place and all
+ * tinted that element's colour. Three of them are driven; the fourth, "ybar",
+ * is never resized and is the dark trough the others stand in. What each one
+ * means comes out of the frame's own script, where the heights are set from
+ * the character's piercing or defense against the baseline every character of
+ * that level starts at:
+ *
+ *     yut_per2[e] = PerSets[e] + ceil(25 + 5 * level);
+ *     bar._height  = saveH * ((1 - (25 - per/base*25)/100 - 0.78125)/0.78125);
+ *     gbar._height = (saveH/100) * (15 * (per/base));
+ *     xbar._height = saveH * ((1 - 25*(1 - 25*(per/base)/200)/100
+ *                              - 0.78125)/0.78125);
+ *
+ * which are the three numbers a hit turns on: what the damage comes to when
+ * it pierces, the chance of piercing, and what it comes to when it does not.
+ * Defense has its own three. They are ratios against the baseline, so a
+ * character with no gear reads the same at every level -- the port had them
+ * scaled against a flat two hundred instead, which climbed with the level
+ * whether or not anything had actually changed.
+ *
+ * The tints are the placements' own colour transforms, except that the
+ * script's setRGB lands on different objects: on the clip itself for gbar,
+ * which replaces its transform, and on the clip's `inner` for the other
+ * three, which leaves theirs in place. */
+#define BAR_TROUGH_MUL (26.0f / 256.0f)    /* ybar */
+#define BAR_PIERCED_MUL (77.0f / 256.0f)   /* bar */
+#define BAR_PLAIN_ADD  100                 /* xbar */
+
+static float bar_fraction(float value)
+{
+    if (!(value > 0.0f))        /* also catches a NaN from a zero baseline */
+        return 0.0f;
+    return value > 1.0f ? 1.0f : value;
+}
+
+static void draw_element_bar(const SlotPiece *piece, Color tint, float fraction)
+{
+    Art art;
+    if (fraction <= 0.0f || !piece
+        || !asset_art(TextFormat("#%d", piece->character), 1, &art))
+        return;
+    Rectangle box = placed_art(&art, piece->x, piece->y, piece->scale_x,
+                               piece->scale_y, piece->origin_x,
+                               piece->origin_y);
+    /* _height is set on a clip whose registration point is its foot, so a
+       bar grows up from the bottom of the trough. */
+    float full = box.height;
+    box.height = full * fraction;
+    /* A bar the formulas leave a fraction of a pixel tall is nothing on the
+       screen in the original, where a defense band at the baseline comes to
+       fifteen thousandths of a pixel. Rounding it up to a lit row put a line
+       under a band that should be empty. */
+    if (box.height < 0.5f)
+        return;
+    box.y += full - box.height;
+    DrawTexturePro(*art.texture, art.source, box, (Vector2){0, 0}, 0.0f, tint);
+}
+
 static void draw_element_bars(const char *menu, const char *slot,
-                              const double *values)
+                              const double *values, double baseline,
+                              int piercing)
 {
     for (int i = 0; i < SONNY_ELEMENT_DEF_COUNT; i++) {
-        /* Each bar is drawn twice: a dim full-height one behind, then the
-           value over it. The pieces come in that order. */
-        const SlotPiece *back = slot_piece(menu, slot, i);
-        const SlotPiece *front = slot_piece(menu, slot,
-                                            SONNY_ELEMENT_DEF_COUNT + i);
-        if (!back || !front)
+        /* The band's pieces come in stacking order, eight of each: the
+           trough, then the three the screen drives. */
+        const SlotPiece *trough = slot_piece(menu, slot, i);
+        const SlotPiece *pierced = slot_piece(menu, slot,
+                                              SONNY_ELEMENT_DEF_COUNT + i);
+        const SlotPiece *chance = slot_piece(menu, slot,
+                                             2 * SONNY_ELEMENT_DEF_COUNT + i);
+        const SlotPiece *plain = slot_piece(menu, slot,
+                                            3 * SONNY_ELEMENT_DEF_COUNT + i);
+        if (!trough || !pierced || !chance || !plain)
             return;
+
         uint32_t rgb = SONNY_ELEMENT_DEFS[i].colour;
         Color colour = {(unsigned char)(rgb >> 16), (unsigned char)(rgb >> 8),
                         (unsigned char)rgb, 255};
-        float fraction = (float)(values[i] / ELEMENT_BAR_FULL);
-        if (fraction < 0) fraction = 0;
-        if (fraction > 1) fraction = 1;
+        double v = values[i];
+        double ratio = baseline > 0 ? v / baseline : 0;
 
-        Rectangle box = placed_rect(back->x, back->y, back->scale_x,
-                                    back->scale_y, back->width, back->height,
-                                    back->origin_x, back->origin_y);
-        DrawRectangleRec(box, (Color){colour.r / 4, colour.g / 4,
-                                      colour.b / 4, 255});
-        Rectangle filled = box;
-        filled.height = box.height * fraction;
-        filled.y = box.y + box.height - filled.height;
-        DrawRectangleRec(filled, colour);
+        double fb, fg, fx;
+        if (piercing) {
+            fb = (1 - (25 - ratio * 25) / 100 - 0.78125) / 0.78125;
+            fg = 15 * ratio / 100;
+            fx = (1 - 25 * (1 - 25 * ratio / 200) / 100 - 0.78125) / 0.78125;
+        } else {
+            fb = (v - baseline) / 100;
+            fg = (ratio * 25 * 0.875 - 21.800000000000008) / 100;
+            fx = v > 0 ? 0.15 - 0.15 / ratio : 0;
+        }
+
+        draw_element_bar(trough, (Color){
+            (unsigned char)(colour.r * BAR_TROUGH_MUL),
+            (unsigned char)(colour.g * BAR_TROUGH_MUL),
+            (unsigned char)(colour.b * BAR_TROUGH_MUL), 255}, 1.0f);
+        draw_element_bar(pierced, (Color){
+            (unsigned char)(colour.r * BAR_PIERCED_MUL),
+            (unsigned char)(colour.g * BAR_PIERCED_MUL),
+            (unsigned char)(colour.b * BAR_PIERCED_MUL), 255},
+            bar_fraction((float)fb));
+        draw_element_bar(chance, colour, bar_fraction((float)fg));
+        /* The one the original does not clamp, so neither does this beyond
+           keeping it off the screen when it comes out negative. */
+        draw_element_bar(plain, (Color){
+            (unsigned char)(colour.r + BAR_PLAIN_ADD > 255 ? 255
+                            : colour.r + BAR_PLAIN_ADD),
+            (unsigned char)(colour.g + BAR_PLAIN_ADD > 255 ? 255
+                            : colour.g + BAR_PLAIN_ADD),
+            (unsigned char)(colour.b + BAR_PLAIN_ADD > 255 ? 255
+                            : colour.b + BAR_PLAIN_ADD), 255},
+            (float)(fx > 0 ? fx : 0));
     }
 }
 
@@ -1617,8 +1696,9 @@ void screen_inventory_draw(Game *g, Vector2 mouse)
     }
     draw_field(inv_field("@893"), NO_OFFSET, lang_text("SYSTEM", 5));
     draw_field(inv_field("@894"), NO_OFFSET, lang_text("SYSTEM", 6));
-    draw_element_bars(MENU_INVENTORY, "perBarShow", stats.per);
-    draw_element_bars(MENU_INVENTORY, "defBarShow", stats.def);
+    double baseline = ceil(25 + 5 * (double)who->level);
+    draw_element_bars(MENU_INVENTORY, "perBarShow", stats.per, baseline, 1);
+    draw_element_bars(MENU_INVENTORY, "defBarShow", stats.def, baseline, 0);
 
     draw_field(inv_field("@1027"), NO_OFFSET, lang_text("MENU", 17));
     draw_field(inv_field("@1032"), NO_OFFSET,

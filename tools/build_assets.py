@@ -378,6 +378,12 @@ def collect_names(data_dir):
         for slot in menu['slots'].values():
             if slot.get('character') and slot.get('width'):
                 want['chrome'].add('#%d' % slot['character'])
+            # A slot made of named pieces -- the two bands of element bars are
+            # four stacked bars per element -- wants each piece's own art, so
+            # the screen can stand each one at its own height.
+            for piece in (slot.get('pieces') or []):
+                if piece.get('character') and piece.get('width'):
+                    want['chrome'].add('#%d' % piece['character'])
                 # A slot the screen points at a frame of by name wants that
                 # frame too, not just the resting one.
                 for frame in (slot.get('labels') or {}).values():
