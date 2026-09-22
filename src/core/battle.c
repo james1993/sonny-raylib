@@ -653,8 +653,17 @@ int battle_resolve_step(Battle *b, MoveEvent *event)
         battle_queue(b, q->target, q->target, 0, 1);
 
     /* The caster ticks its own buffs after acting. What the pass came to is
-       carried out so the fight can float it, the way buffTicker does. */
-    if (caster->active) {
+       carried out so the fight can float it, the way buffTicker does.
+    
+       The original guards its two calls differently: the one that follows a
+       move it actually played is `if(usedBuff == false && mCaster.active ==
+       true)`, while the one on the branch where nothing was played is
+       `if(usedBuff == false)` alone. So a unit that died to its own move does
+       not tick, but a dead unit does -- its move box still holds the pass that
+       was queued when it fell, and that pass comes round every turn. That is
+       how a defeated enemy's status icons count themselves down and go away:
+       nothing clears them at the moment of death. */
+    if (!usable || caster->active) {
         TickResult tick = buff_tick(caster, SONNY_BUFFS, SONNY_BUFF_COUNT);
         event->tick_damage = (int32_t)tick.total_damage;
         event->tick_element = tick.element;

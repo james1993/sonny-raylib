@@ -1882,7 +1882,14 @@ static void present(Game *g, const MoveEvent *e)
        which is the original's tell for a piercing hit. */
     if (e->pierced)
         shake_start(g);
-    if (a->model && a->model[0] && asset_frame_count(a->model) > 0) {
+    /* Only a bolt's impact graphic is ever seen. The original attaches it to
+       the battlefield at depth 400, above the six models; a swing's and a
+       shock's go to depth -9, which is below the battlefield's own backdrop,
+       so the clip plays where nothing can see it. That is why Block raises no
+       shield in the original and a sword blow leaves no burst: the model is
+       named, attached, and buried. */
+    if (a->delivery == DELIVER_MISSILE
+        && a->model && a->model[0] && asset_frame_count(a->model) > 0) {
         g->effect = a->model;
         g->effect_slot = e->target;
         g->effect_tick = 0;

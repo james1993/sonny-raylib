@@ -66,6 +66,11 @@ typedef struct {
        equipment and ignore this; the model's one unnamed slot swaps whole
        effect clips through it, and there this is the only way to tell which. */
     int32_t     character;
+    /* How opaque this one slot is on this frame. The body parts are always
+       solid, but the effect slot is animated entirely through this: the cast
+       orb swells in over three frames, holds, and is faded to nothing over
+       the rest of the animation. */
+    float       alpha;
 } DollPlacement;
 
 typedef struct {
@@ -627,10 +632,12 @@ def main():
         entries = []
         for name, info in sorted(frame.items(), key=lambda kv: kv[1]['depth']):
             m = info['matrix']
-            entries.append('{ %s, %s, %s, %s, %s, %s, %s, %d }'
+            alpha = info.get('alpha')
+            entries.append('{ %s, %s, %s, %s, %s, %s, %s, %d, %s }'
                            % (c_string(name), c_float(m[0]), c_float(m[1]),
                               c_float(m[2]), c_float(m[3]), c_float(m[4]),
-                              c_float(m[5]), info.get('character') or 0))
+                              c_float(m[5]), info.get('character') or 0,
+                              c_float(1.0 if alpha is None else alpha)))
         lines.append('static const DollPlacement DOLL_%d[] = { %s };'
                      % (index, ', '.join(entries)))
     lines.append('')

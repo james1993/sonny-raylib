@@ -419,6 +419,14 @@ static int draw_cast(const DollSpec *spec, const DollPlacement *p,
     if (index >= fx->count)
         index = fx->loops ? index % fx->count : fx->count - 1;
 
+    /* The model's own placement of the slot is what times the glow: it comes
+       up over three frames, holds while the bolt is made, and is faded to
+       nothing over the rest of the animation. Drawing the clip solid for as
+       long as the slot is placed left the glow hanging on well past the point
+       the bolt leaves. */
+    if (p->alpha <= 0.0f)
+        return 0;
+
     const CastFrame *cf = &fx->frames[index];
     const float outer[6] = {p->a, p->b, p->c, p->d, p->tx, p->ty};
     int drawn = 0;
@@ -446,7 +454,7 @@ static int draw_cast(const DollSpec *spec, const DollPlacement *p,
             c.g = spec->cast.g;
             c.b = spec->cast.b;
         }
-        c.a = (unsigned char)(c.a * l->alpha);
+        c.a = (unsigned char)(c.a * l->alpha * p->alpha);
         draw_with_matrix(&art, m, origin, scale, flip, c);
         drawn++;
     }

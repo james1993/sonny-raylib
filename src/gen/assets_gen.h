@@ -51,6 +51,11 @@ typedef struct {
        equipment and ignore this; the model's one unnamed slot swaps whole
        effect clips through it, and there this is the only way to tell which. */
     int32_t     character;
+    /* How opaque this one slot is on this frame. The body parts are always
+       solid, but the effect slot is animated entirely through this: the cast
+       orb swells in over three frames, holds, and is faded to nothing over
+       the rest of the animation. */
+    float       alpha;
 } DollPlacement;
 
 typedef struct {
