@@ -8,9 +8,15 @@ int main(void)
     int fails = 0;
     if (!campaign_has_friend(&c, 0)) { puts("Sonny missing at the start"); fails++; }
     if (campaign_has_friend(&c, 1)) { puts("Veradux there too early"); fails++; }
+    /* The story hands someone over in the marker's own handler, as the fight
+       is started -- not on the way back from the one before it. So getting
+       there is not enough. */
     while (c.progress_battle < 15) campaign_advance(&c);
+    if (campaign_has_friend(&c, 1)) { puts("Veradux joined a fight early"); fails++; }
+    campaign_story_joins(&c);
     if (!campaign_has_friend(&c, 1)) { puts("Veradux never joined at 15"); fails++; }
     while (c.progress_battle < 38) campaign_advance(&c);
+    campaign_story_joins(&c);
     for (int i = 0; i < SONNY_PARTY_SIZE; i++)
         if (!campaign_has_friend(&c, i)) { printf("member %d missing at 38\n", i); fails++; }
     /* The fighting line is friendArrayX, and its members turn out in battle. */

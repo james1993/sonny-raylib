@@ -123,16 +123,27 @@ void battle_place_character(Battle *b, int32_t slot, const Character *c,
     snprintf(u->voice_hit[2], sizeof(u->voice_hit[2]), "SonnyHit3");
     snprintf(u->voice_die, sizeof(u->voice_die), "SonnyDie");
 
-    /* The character's own bar, not the class template's move list. The
-       original only ever drives Sonny from input; giving the AI his bar is a
-       harness convenience for headless simulation, and leaving the defensive
-       list empty makes that AI always attack (an empty defensive list is what
-       skips the retreat check). */
-    br->movesA_count = 0;
-    br->movesD_count = 0;
-    for (int32_t i = 0; i < SONNY_MOVE_SLOTS; i++)
-        if (c->move_matrix[i] != 0 && br->movesA_count < SONNY_AI_MOVES)
-            br->movesA[br->movesA_count++] = c->move_matrix[i];
+    /* Sonny fights from his own bar; an ally fights from its class template's
+       lists, which is what krinAddNewUnit gives it --
+
+           for(e in KNU[ClassStats[member]].movesA)
+              moveArrayA[e] = KNU[ClassStats[member]].movesA[e];
+
+       -- and install_brain has already put those there. Wiping them for
+       everyone left an ally with nothing it could declare, so it stood there
+       through every one of its turns.
+
+       The original only ever drives Sonny from input; giving the AI his bar
+       is a harness convenience for headless simulation, and leaving the
+       defensive list empty makes that AI always attack (an empty defensive
+       list is what skips the retreat check). */
+    if (!ai) {
+        br->movesA_count = 0;
+        br->movesD_count = 0;
+        for (int32_t i = 0; i < SONNY_MOVE_SLOTS; i++)
+            if (c->move_matrix[i] != 0 && br->movesA_count < SONNY_AI_MOVES)
+                br->movesA[br->movesA_count++] = c->move_matrix[i];
+    }
 
     snprintf(u->name, SONNY_NAME_LEN, "%s",
              name ? name : c->class_template->name);

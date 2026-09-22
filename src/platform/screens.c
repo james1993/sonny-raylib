@@ -324,6 +324,17 @@ void screen_zone_update(Game *g, Vector2 mouse)
         }
         case MARKER_PROGRESS:
         default: {
+            /* The story hands someone over here, in the marker's own
+               handler, as the fight is started -- not on the way back from
+               the one before it:
+
+                   on(press) {
+                      if(Krin.progressLevelOn == 15)
+                         Krin.friendArray = [0,1,-1,-1,-1,-1];
+
+               Doing it when progress moved put Veradux on the victory screen
+               and in the bag a whole fight before he turns up. */
+            campaign_story_joins(&g->campaign);
             int boss = 0;
             int32_t pick = progress_pick(&g->campaign, &boss);
             g->boss_fight = boss;

@@ -170,8 +170,9 @@ void screen_slots_update(Game *g, Vector2 mouse)
         }
         /* Loading only happens when the slot has something in it, which is
            what the original checks before it moves. */
+        /* Who has joined is in the save, as friendArray is in the original's,
+           so loading restores it rather than working it out again. */
         if (save_read(&g->campaign, save_slot_path(i + 1)) == 0) {
-            campaign_story_joins(&g->campaign);
             g->campaign.slot = i + 1;
             g->screen = SCREEN_ZONE;
         }
@@ -358,7 +359,6 @@ void screen_gameover_update(Game *g, Vector2 mouse)
         audio_play("Click3pickup");
         /* Reloading the slot the run was in is the only way on. */
         if (save_read(&g->campaign, save_slot_path(g->campaign.slot)) == 0) {
-            campaign_story_joins(&g->campaign);
             g->screen = SCREEN_ZONE;
         } else {
             g->screen = SCREEN_TITLE;

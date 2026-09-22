@@ -90,9 +90,6 @@ int campaign_complete(const Campaign *c)
 void campaign_advance(Campaign *c)
 {
     c->progress_battle++;
-    /* The story hands people over at set points, which the original checks in
-       the marker's own handler and on the map. */
-    campaign_story_joins(c);
 }
 
 int campaign_setup_battle(const Campaign *c, const BattleDef *def, Battle *out,
@@ -132,6 +129,13 @@ int campaign_setup_battle(const Campaign *c, const BattleDef *def, Battle *out,
             campaign_ally(c, member, &ally);
             battle_place_character(out, slot, &ally,
                                    SONNY_PARTY[member].name, 1);
+            /* How hard it pushes is the member's own, not the template's:
+               Aggression = Krin["agArray" + member][0], and so on. */
+            Brain *br = &out->brains[slot];
+            br->Aggression = SONNY_PARTY[member].aggression[0];
+            br->LifeBoundary1 = SONNY_PARTY[member].aggression[1];
+            br->LifeBoundary2 = SONNY_PARTY[member].aggression[2];
+            br->FocusAggression = SONNY_PARTY[member].aggression[3];
         }
     }
 
