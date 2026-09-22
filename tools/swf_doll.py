@@ -138,7 +138,16 @@ def timeline_frames(body, pos, end):
             (depth, character, name, matrix, is_move, clip_depth,
              alpha) = parse_place(body, s2, l2, t2)
             slot = depths.setdefault(depth, {})
-            if character is not None and not is_move:
+            if character is not None and is_move:
+                # A place that carries both the move flag and a character is
+                # a replace: what is at this depth becomes the new character
+                # and keeps everything else it had. The digit clip does this
+                # -- only the tinted glyph is placed afresh on each digit's
+                # frame, and the outline and the gloss behind and over it are
+                # swapped this way -- so ignoring it left every number wearing
+                # the outline of a one.
+                slot['character'] = character
+            elif character is not None:
                 slot.clear()
                 slot['character'] = character
             if name:
