@@ -199,9 +199,7 @@ void screen_class_draw(Game *g, Vector2 mouse)
        CLASSDESCRIPT as the body. */
     for (int i = 0; i < 4; i++) {
         const StageButton *b = stage_button(CLASS_SCREEN, CLASS_BUTTONS[i], 0);
-        if (b && CheckCollisionPointRec(mouse, (Rectangle){b->x, b->y,
-                                                           b->width,
-                                                           b->height}))
+        if (b && CheckCollisionPointRec(mouse, BOX_OF(b)))
             game_tooltip(g, lang_text("CLASS", i),
                          lang_text("CLASSDESCRIPT", i));
     }

@@ -11,6 +11,10 @@ import hashlib
 import json
 import re
 import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from cgen import c_float, c_string                            # noqa: E402
 
 NUMBER_LOOKUP = '\nconst NumberAnim *number_anim(const char *name)\n{\n    if (!name)\n        return NULL;\n    for (int i = 0; i < SONNY_NUMBER_ANIM_COUNT; i++)\n        if (strcmp(SONNY_NUMBER_ANIMS[i].name, name) == 0)\n            return &SONNY_NUMBER_ANIMS[i];\n    return NULL;\n}'
 
@@ -638,53 +642,11 @@ def check_tables(lines, assets):
         raise SystemExit('asset names are not in strcmp order')
 
 
-def c_float(value):
-    """A C float literal that round-trips, whatever Python type it came in as."""
-    return '%.6ff' % float(value)
-
-
-def c_string(text):
-    out = []
-    for ch in str(text):
-        if ch == '\\':
-            out.append('\\\\')
-        elif ch == '"':
-            out.append('\\"')
-        elif ord(ch) < 32 or ord(ch) > 126:
-            out.extend('\\%03o' % b for b in ch.encode('utf-8'))
-        else:
-            out.append(ch)
-    return '"%s"' % ''.join(out)
-
-
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument('-i', '--input', default='assets/art/manifest.json')
-    ap.add_argument('--extra', default='assets/extra/manifest.json')
-    ap.add_argument('-o', '--out', default='src/gen')
-    ap.add_argument('--doll', default='data/extracted/doll_frames.json')
-    ap.add_argument('--doll-parts', default='data/extracted/doll.json')
-    ap.add_argument('--stage', default='data/extracted/stage.json')
-    ap.add_argument('--cast', default='data/extracted/cast_frames.json')
-    args = ap.parse_args()
-
-    with open(args.input, 'rb') as fh:
-        raw = fh.read()
-    manifest = json.loads(raw.decode('utf-8'))
-    assets = manifest['assets']
-    # Art made by hand rather than taken out of the SWF: assets/extra/ has a
-    # manifest of its own in the same form, whose entries are added to the
-    # extracted ones -- or stand in for one of the same name. It is kept apart
-    # because tools/build_assets.py rewrites assets/art/ wholesale.
-    if os.path.exists(args.extra):
-        with open(args.extra, 'rb') as fh:
-            extra_raw = fh.read()
-        assets = dict(assets)
-        assets.update(json.loads(extra_raw.decode('utf-8'))['assets'])
-        raw += extra_raw
-    stamp = hashlib.sha1(raw).hexdigest()[:16]
-    animations = manifest.get('animations') or {}
-
+def emit_assets(src):
+    animations = src.animations
+    args = src.args
+    assets = src.assets
+    stamp = src.stamp
     os.makedirs(args.out, exist_ok=True)
     with open(os.path.join(args.out, 'assets_gen.h'), 'w',
               encoding='utf-8') as fh:
@@ -728,6 +690,12 @@ def main():
     lines.append('};')
     lines.append('const int SONNY_ANIMATION_COUNT = '
                  '(int)(sizeof(SONNY_ANIMATIONS) / sizeof(SONNY_ANIMATIONS[0]));')
+    src.lines = lines
+
+
+def emit_doll_frames(src):
+    args = src.args
+    lines = src.lines
     # The model's per-frame part transforms, and the part table that says
     # which equipment slot each part draws.
     doll_frames = []
@@ -769,6 +737,13 @@ def main():
     lines.append('};')
     lines.append('const int SONNY_DOLL_FRAME_COUNT = '
                  '(int)(sizeof(SONNY_DOLL_FRAMES) / sizeof(SONNY_DOLL_FRAMES[0]));')
+    src.doll_frames = doll_frames
+    src.doll_parts = doll_parts
+
+
+def emit_stage_slots(src):
+    args = src.args
+    lines = src.lines
     stage = {}
     if os.path.exists(args.stage):
         with open(args.stage, encoding='utf-8') as fh:
@@ -792,6 +767,11 @@ const StageSlot *stage_slot(int32_t slot)
             return &SONNY_STAGE_SLOTS[i];
     return NULL;
 }''')
+
+
+def emit_stage_bars(src):
+    args = src.args
+    lines = src.lines
     bars = {}
     if os.path.exists(args.stage):
         with open(args.stage, encoding='utf-8') as fh:
@@ -818,6 +798,11 @@ const StageBar *stage_bar(int32_t slot)
             return &SONNY_STAGE_BARS[i];
     return NULL;
 }''')
+
+
+def emit_chrome(src):
+    args = src.args
+    lines = src.lines
     chrome = []
     layers = {}
     stage_json = {}
@@ -864,6 +849,14 @@ const StageChrome *stage_chrome(const char *screen, const char *name)
             return &SONNY_STAGE_CHROME[i];
     return NULL;
 }""")
+    src.layers = layers
+    src.markers_json = markers_json
+    src.stage_json = stage_json
+
+
+def emit_numbers(src):
+    lines = src.lines
+    stage_json = src.stage_json
     speech = stage_json.get('speech') or {}
     chrome_text = stage_json.get('chrome_text') or []
 
@@ -921,6 +914,12 @@ const StageChrome *stage_chrome(const char *screen, const char *name)
     lines.append('const float SONNY_NUMBER_SPACING = 19.0f;')
 
     lines.append('')
+    src.chrome_text = chrome_text
+
+
+def emit_clip_parts(src):
+    lines = src.lines
+    stage_json = src.stage_json
     lines.append('const ClipPart SONNY_CLIP_PARTS[] = {')
     menu_parts = [dict(part, screen='menu', owner=label)
                   for label, menu in sorted((stage_json.get('menus')
@@ -968,6 +967,12 @@ const ClipPart *clip_part(const char *screen, const char *owner, int32_t index)
     return NULL;
 }''')
     lines.append('')
+
+
+def emit_text_fields(src):
+    chrome_text = src.chrome_text
+    lines = src.lines
+    stage_json = src.stage_json
     lines.append('const TextField SONNY_TEXT_FIELDS[] = {')
     menu_fields = [dict(field, screen='menu', owner=label)
                    for label, menu in sorted((stage_json.get('menus')
@@ -1029,6 +1034,11 @@ const TextField *text_field_named(const char *screen, const char *owner,
     return NULL;
 }''')
 
+
+
+def emit_ring(src):
+    lines = src.lines
+    stage_json = src.stage_json
     ring = stage_json.get('selector') or {}
     lines.append('')
     lines.append('const RingSlot SONNY_RING_SLOTS[] = {')
@@ -1065,6 +1075,11 @@ const OrbPart *orb_part(const char *role)
     return NULL;
 }''')
 
+
+
+def emit_bar(src):
+    lines = src.lines
+    stage_json = src.stage_json
     bar = stage_json.get('bar') or {}
     lines.append('')
     lines.append('const BarPart SONNY_BAR_PARTS[] = {')
@@ -1107,6 +1122,11 @@ const BarField *bar_field(const char *side, const char *role)
             return &SONNY_BAR_FIELDS[i];
     return NULL;
 }''')
+
+
+def emit_life_colours(src):
+    lines = src.lines
+    stage_json = src.stage_json
     ramp = stage_json.get('life_colours') or []
     lines.append('')
     lines.append('const unsigned char SONNY_LIFE_COLOURS[][3] = {')
@@ -1117,6 +1137,11 @@ const BarField *bar_field(const char *side, const char *role)
                  '(int)(sizeof(SONNY_LIFE_COLOURS) / sizeof(SONNY_LIFE_COLOURS[0]));')
 
     lines.append('')
+
+
+def emit_buttons(src):
+    lines = src.lines
+    stage_json = src.stage_json
     lines.append('const StageButton SONNY_BUTTONS[] = {')
     # A zone scene's own buttons, keyed by the zone's frame label: the
     # markers that start a fight, and the one that opens that zone's store.
@@ -1187,6 +1212,11 @@ const ButtonPiece *button_piece(int32_t button, int32_t index)
     return NULL;
 }""")
 
+
+
+def emit_map(src):
+    lines = src.lines
+    stage_json = src.stage_json
     world = stage_json.get('map_screen') or {}
     lines.append('')
     lines.append('const MapMarker SONNY_MAP_MARKERS[] = {')
@@ -1201,6 +1231,13 @@ const ButtonPiece *button_piece(int32_t button, int32_t index)
                  '(int)(sizeof(SONNY_MAP_MARKERS) / '
                  'sizeof(SONNY_MAP_MARKERS[0]));')
 
+
+
+def emit_zone_markers(src):
+    layers = src.layers
+    lines = src.lines
+    markers_json = src.markers_json
+    stage_json = src.stage_json
     zone_clip = stage_json.get('zone_screen') or {}
     lines.append('')
     lines.append('const ZoneMarker SONNY_ZONE_MARKERS[] = {')
@@ -1259,6 +1296,12 @@ const StageLayer *stage_layer(const char *name)
     return NULL;
 }""")
 
+
+
+def emit_menus(src):
+    args = src.args
+    lines = src.lines
+    stage_json = src.stage_json
     talent_slots = {}
     if os.path.exists(args.stage):
         with open(args.stage, encoding='utf-8') as fh:
@@ -1353,6 +1396,11 @@ const TalentSlot *talent_slot(int32_t node)
     return NULL;
 }''')
     lines.append('')
+
+
+def emit_doll_parts(src):
+    doll_parts = src.doll_parts
+    lines = src.lines
     lines.append('const DollPart SONNY_DOLL_PARTS[] = {')
     names = doll_parts.get('dollPartsArray') or []
     cores = doll_parts.get('dollPartsCores') or []
@@ -1376,6 +1424,11 @@ const DollPart *doll_part(const char *name)
     return NULL;
 }''')
 
+
+
+def emit_cast(src):
+    args = src.args
+    lines = src.lines
     cast = {}
     if os.path.exists(args.cast):
         with open(args.cast, encoding='utf-8') as fh:
@@ -1456,6 +1509,16 @@ const AssetAnimation *asset_animation(const char *name)
     return NULL;
 }''')
 
+
+
+def emit_finish(src):
+    animations = src.animations
+    args = src.args
+    assets = src.assets
+    doll_frames = src.doll_frames
+    doll_parts = src.doll_parts
+    lines = src.lines
+    stamp = src.stamp
     check_tables(lines, assets)
     with open(os.path.join(args.out, 'assets_gen.c'), 'w',
               encoding='utf-8') as fh:
@@ -1470,6 +1533,59 @@ const AssetAnimation *asset_animation(const char *name)
     print('%d assets, %d animations, %d doll frames, %d parts -> %s (%s)'
           % (len(assets), len(animations), len(doll_frames),
              len(doll_parts.get('dollPartsArray') or []), args.out, stamp))
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('-i', '--input', default='assets/art/manifest.json')
+    ap.add_argument('--extra', default='assets/extra/manifest.json')
+    ap.add_argument('-o', '--out', default='src/gen')
+    ap.add_argument('--doll', default='data/extracted/doll_frames.json')
+    ap.add_argument('--doll-parts', default='data/extracted/doll.json')
+    ap.add_argument('--stage', default='data/extracted/stage.json')
+    ap.add_argument('--cast', default='data/extracted/cast_frames.json')
+    args = ap.parse_args()
+
+    with open(args.input, 'rb') as fh:
+        raw = fh.read()
+    manifest = json.loads(raw.decode('utf-8'))
+    assets = manifest['assets']
+    # Art made by hand rather than taken out of the SWF: assets/extra/ has a
+    # manifest of its own in the same form, whose entries are added to the
+    # extracted ones -- or stand in for one of the same name. It is kept apart
+    # because tools/build_assets.py rewrites assets/art/ wholesale.
+    if os.path.exists(args.extra):
+        with open(args.extra, 'rb') as fh:
+            extra_raw = fh.read()
+        assets = dict(assets)
+        assets.update(json.loads(extra_raw.decode('utf-8'))['assets'])
+        raw += extra_raw
+    stamp = hashlib.sha1(raw).hexdigest()[:16]
+    animations = manifest.get('animations') or {}
+
+    # Each table is written by an emit_ function of its own, in the order the
+    # C file wants them; what one hands on to the next travels in `src`.
+    src = argparse.Namespace(animations=animations, args=args, assets=assets,
+                             stamp=stamp)
+    for emit in (emit_assets,
+                 emit_doll_frames,
+                 emit_stage_slots,
+                 emit_stage_bars,
+                 emit_chrome,
+                 emit_numbers,
+                 emit_clip_parts,
+                 emit_text_fields,
+                 emit_ring,
+                 emit_bar,
+                 emit_life_colours,
+                 emit_buttons,
+                 emit_map,
+                 emit_zone_markers,
+                 emit_menus,
+                 emit_doll_parts,
+                 emit_cast,
+                 emit_finish):
+        emit(src)
 
 
 if __name__ == '__main__':

@@ -70,12 +70,10 @@ static void game_start(Game *g, uint64_t seed)
     /* The original opens on its title screen, and nothing is loaded until a
        slot is picked. */
     campaign_new(&g->campaign, 1);
-    g->options.sound = 1;
     g->screen = SCREEN_TITLE;
-    g->selected = -1;
     g->hub_note = -1;
-    g->hovered_unit = -1;
-    g->ring_unit = -1;
+    g->bv.hovered_unit = -1;
+    g->bv.ring_unit = -1;
 }
 
 /* The dice the whole game rolls on: every hit, miss, critical and drop, and
@@ -212,49 +210,9 @@ int main(int argc, char **argv)
         campaign_story_joins(&game.campaign);
     }
 
-    if (want_screen) {
-        if (strcmp(want_screen, "battle") == 0)
-            /* SONNY_BATTLE picks which fight, for looking at something the
-               opening one never shows. */
-            battle_screen_start(&game, OPTIONS.battle >= 0
-                                ? OPTIONS.battle
-                                : game.campaign.progress_battle);
-        else if (strcmp(want_screen, "talents") == 0) {
-            screen_talents_open(&game);
-            game.screen = SCREEN_TALENTS;
-        }
-        else if (strcmp(want_screen, "inventory") == 0)
-            game.screen = SCREEN_INVENTORY;
-        else if (strcmp(want_screen, "shop") == 0) {
-            /* The store the first zone's marker opens. */
-            game.shop_button = 1212;
-            game.screen = SCREEN_SHOP;
-        }
-        else if (strcmp(want_screen, "map") == 0)
-            game.screen = SCREEN_MAP;
-        else if (strcmp(want_screen, "victory") == 0)
-            game.screen = SCREEN_VICTORY;
-        else if (strcmp(want_screen, "title") == 0)
-            game.screen = SCREEN_TITLE;
-        else if (strcmp(want_screen, "start") == 0)
-            game.screen = SCREEN_START;
-        else if (strcmp(want_screen, "slots") == 0)
-            game.screen = SCREEN_SLOTS;
-        else if (strcmp(want_screen, "class") == 0)
-            game.screen = SCREEN_CLASS;
-        else if (strcmp(want_screen, "manual") == 0)
-            game.screen = SCREEN_MANUAL;
-        else if (strcmp(want_screen, "ending") == 0)
-            game.screen = SCREEN_ENDING;
-        else if (strcmp(want_screen, "intro") == 0)
-            game_play_cutscene(&game, 0);
-        else if (strcmp(want_screen, "settings") == 0)
-            game.screen = SCREEN_SETTINGS;
-        else if (strcmp(want_screen, "gameover") == 0)
-            game.screen = SCREEN_GAMEOVER;
-        else if (strcmp(want_screen, "hub") == 0)
-            game.screen = SCREEN_ZONE;
-    }
+    if (want_screen && !screen_open_by_name(&game, want_screen))
+        TraceLog(LOG_WARNING, "SONNY_SCREEN: there is no screen called %s",
+                 want_screen);
 
     /* How long each frame's own work took -- everything up to handing the
        frame over, not the wait for the next one -- which is what shows a
@@ -340,76 +298,7 @@ int main(int argc, char **argv)
            original's units however finely they are being drawn. */
         render_stage_projection();
         BeginBlendMode(BLEND_CUSTOM_SEPARATE);
-        switch (game.screen) {
-        case SCREEN_BATTLE:
-            battle_screen_update(&game, mouse, shot != NULL);
-            battle_screen_draw(&game);
-            break;
-        case SCREEN_VICTORY:
-            screen_victory_draw(&game, mouse);
-            screen_victory_update(&game, mouse);
-            break;
-        case SCREEN_TALENTS:
-            screen_talents_draw(&game, mouse);
-            screen_talents_update(&game, mouse);
-            break;
-        case SCREEN_INVENTORY:
-            screen_inventory_draw(&game, mouse);
-            screen_inventory_update(&game, mouse);
-            break;
-        case SCREEN_SHOP:
-            screen_shop_draw(&game, mouse);
-            screen_shop_update(&game, mouse);
-            break;
-        case SCREEN_MAP:
-            screen_map_draw(&game, mouse);
-            screen_map_update(&game, mouse);
-            break;
-        case SCREEN_TITLE:
-            screen_title_draw(&game, mouse);
-            screen_title_update(&game, mouse);
-            break;
-        case SCREEN_START:
-            screen_start_draw(&game, mouse);
-            screen_start_update(&game, mouse);
-            break;
-        case SCREEN_SLOTS:
-            screen_slots_draw(&game, mouse);
-            screen_slots_update(&game, mouse);
-            break;
-        case SCREEN_CLASS:
-            screen_class_draw(&game, mouse);
-            screen_class_update(&game, mouse);
-            break;
-        case SCREEN_MANUAL:
-            screen_manual_draw(&game, mouse);
-            screen_manual_update(&game, mouse);
-            break;
-        case SCREEN_ENDING:
-            screen_ending_draw(&game, mouse);
-            screen_ending_update(&game, mouse);
-            break;
-        case SCREEN_CUTSCENE:
-            screen_cutscene_draw(&game, mouse);
-            screen_cutscene_update(&game, mouse);
-            break;
-        case SCREEN_SETTINGS:
-            screen_settings_draw(&game, mouse);
-            screen_settings_update(&game, mouse);
-            break;
-        case SCREEN_LOST:
-            screen_lost_draw(&game, mouse);
-            screen_lost_update(&game, mouse);
-            break;
-        case SCREEN_GAMEOVER:
-            screen_gameover_draw(&game, mouse);
-            screen_gameover_update(&game, mouse);
-            break;
-        default:
-            screen_zone_draw(&game, mouse);
-            screen_zone_update(&game, mouse);
-            break;
-        }
+        screen_run(&game, mouse);
         /* A message the game wants to show. In a fight the original runs
            these across the top of the battlefield, in KrinCombatText. */
         game_draw_tooltip(&game, mouse);

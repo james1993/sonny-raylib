@@ -9,6 +9,7 @@
 #define SONNY_GAME_H
 
 #include "raylib.h"
+#include "assets.h"
 #include "../gen/assets_gen.h"
 #include "../core/campaign.h"
 #include "../core/save.h"
@@ -21,7 +22,6 @@
 
 #define PLAYER_SLOT   1
 #define ABILITY_SLOTS 8
-#define LOG_LINES     6
 /* How long one move takes to play out, which is the original's
    AttackEndCounterLimit: twenty-five frames, and the model's animation and
    the ability's effect both run inside it. */
@@ -44,7 +44,8 @@ typedef enum {
     SCREEN_TALENTS,
     SCREEN_INVENTORY,
     SCREEN_SHOP,
-    SCREEN_MAP
+    SCREEN_MAP,
+    SCREEN_COUNT
 } Screen;
 
 /* How long the victory screen takes to fill the experience bar, in frames:
@@ -70,12 +71,14 @@ typedef struct {
     int32_t leveled;
 } WinRow;
 
+/* How the fight in progress is being shown: the camera, who is walking where,
+ * what is flying through the air, every model's own playhead, the numbers
+ * floating off the units, the dialogue. None of it is the fight itself --
+ * that is the core's Battle -- and all of it starts from nothing when a fight
+ * does: battle_screen_start clears the whole of this, so a field added here
+ * cannot carry over from the last fight by being forgotten.
+ */
 typedef struct {
-    Screen    screen;
-    Campaign  campaign;
-
-    /* Battle state. */
-    Battle           battle;
     const BattleDef *def;
     int32_t   ability_ids[ABILITY_SLOTS];
     /* Krin.abilityCoolDown: how many of the player's own moves each slot has
@@ -86,7 +89,6 @@ typedef struct {
     /* Which slot the queued move came from, so its cooldown can be set when
        the move resolves. -1 when nothing is waiting. */
     int32_t   cooldown_slot;
-    int32_t   selected;
     int32_t   hovered_unit;
     /* The unit the ability ring is up around. It follows the pointer onto a
        unit and stays while the pointer is anywhere within the ring, which is
@@ -225,8 +227,6 @@ typedef struct {
         Color   color;
     } numbers[12];
     int32_t number_count;
-    char      log[LOG_LINES][128];
-    int32_t   log_count;
 
     /* Battle dialogue. turn_counter is the original's turnTimeKKK (completed
        turns) and speech_seq its within-turn counter; a line holds for its own
@@ -237,6 +237,25 @@ typedef struct {
     int32_t   speech_timer;
     const Speech *speech;
     int32_t   balloon_tick;    /* how far through the speaker's balloon */
+    /* Where the pointer was when the screen last ran. The battle screen
+       draws from it, so a headless capture with the pointer parked sees what
+       a player hovering there would. */
+    Vector2   pointer;
+    /* The reticle does not snap on and off: it comes up over a few frames
+       and goes down the same way, so `ring_fade` is how far in it is and
+       `ring_fade_unit` who it is still fading out from. */
+    float     ring_fade;
+    int32_t   ring_fade_unit;
+} BattleView;
+
+typedef struct {
+    Screen    screen;
+    Campaign  campaign;
+
+    /* Battle state. */
+    Battle           battle;
+    /* How it is being shown, which is reset with every fight. */
+    BattleView       bv;
 
     /* Rewards from the battle just won. */
     BattleRewards rewards;
@@ -250,15 +269,6 @@ typedef struct {
     WinRow    win_ally[2];
     /* The hub's welcome: which of the story's notes is up, or -1, and
        whether this visit has already offered one. */
-    /* The reticle does not snap on and off: it comes up over a few frames
-       and goes down the same way, so `fade` is how far in it is and
-       `fade_unit` who it is still fading out from. */
-    /* Where the pointer was when the screen last ran. The battle screen
-       draws from it, so a headless capture with the pointer parked sees what
-       a player hovering there would. */
-    Vector2   pointer;
-    float     ring_fade;
-    int32_t   ring_fade_unit;
     int32_t   hub_note;
     /* Which pair of text arrays the note is out of: the story's notes are
        NAVTITLE2/NAVTEXT2, a piece of scenery's is NAVTITLE/NAVTEXT. */
@@ -298,14 +308,6 @@ typedef struct {
     /* Which way the slot screen was opened: a new game writes over the slot,
        a load reads it. */
     enum { SLOT_SAVE = 0, SLOT_LOAD } slot_mode;
-    /* What is left of the settings the original asks for once, before the
-       story starts. Effects and Graphics chose between its two qualities and
-       this port only has the good one, so there was nothing for them to
-       choose; Autosave is always on. The sound is the one that remains, and
-       the one that now does something -- see screen_menu.c. */
-    struct {
-        int32_t sound;
-    } options;
     int32_t   lost_timer;
     /* Both sides ran out at once, which the original has its own frame for. */
     int32_t   battle_drawn;
@@ -354,7 +356,6 @@ typedef struct {
     int32_t   notice_timer;
 
     Rng       rng;
-    uint64_t  seed;
     /* Frames since the game started: the clock anything that simply loops
        on the stage is played from. */
     int64_t   frame;
@@ -415,6 +416,10 @@ void draw_button_state(const StageButton *b, int over, Color tint);
    and the art the buttons on it carry. Anything the engine fills itself is
    left to the screen. */
 void draw_screen_chrome(const char *screen);
+/* Whether a piece of a frame's furniture is one the game drives itself --
+   hidden, parked off stage, or drawn by the screen that owns it -- and so is
+   left out of the furniture pass. */
+int chrome_runtime(const char *screen, const char *name);
 void draw_screen_buttons(const char *screen, Vector2 mouse);
 /* The text a frame bakes into its own fields, which the game never sets.
    `owner` narrows it to one clip on that screen; NULL takes them all. */
@@ -471,8 +476,11 @@ void ui_sans_bold_text(const char *text, float x, float y, float size,
                        Color color);
 float ui_sans_bold_width(const char *text, float size);
 
+/* The box of anything laid out with x, y, width and height -- a button, a
+   text field -- in stage units. */
+#define BOX_OF(p) ((Rectangle){(p)->x, (p)->y, (p)->width, (p)->height})
+
 /* Shared helpers. */
-void game_log(Game *g, const char *fmt, ...);
 void game_notice(Game *g, const char *fmt, ...);
 Vector2 stage_mouse(void);
 /* Whether a press happened this frame, counting the ones a headless run
@@ -480,8 +488,6 @@ Vector2 stage_mouse(void);
 void ui_set_synthetic_click(int on);
 int ui_clicked(void);
 int hit(Rectangle r, Vector2 p);
-void draw_panel(Rectangle r, const char *title);
-int draw_button(Rectangle r, const char *label, Vector2 mouse, int enabled);
 /* Screens. */
 void screen_zone_update(Game *g, Vector2 mouse);
 void screen_zone_draw(Game *g, Vector2 mouse);
@@ -534,6 +540,22 @@ void game_prefetch(const Game *g);
 
 /* Leave the settings for the story, which is where a new game begins. */
 void game_begin_story(Game *g);
+
+/* The table of screens: see screen_table.c. */
+typedef struct {
+    const char *name;               /* what SONNY_SCREEN calls it */
+    void      (*draw)(Game *g, Vector2 mouse);
+    void      (*update)(Game *g, Vector2 mouse);
+    /* What opening it from outside needs set up first, or NULL. */
+    void      (*open)(Game *g);
+    int         update_first;       /* runs before it draws */
+} ScreenDef;
+
+const ScreenDef *screen_def(Screen screen);
+/* Run and draw whichever screen is up, for one frame. */
+void screen_run(Game *g, Vector2 mouse);
+/* Open the screen with this name, as SONNY_SCREEN asks; 0 if there is none. */
+int screen_open_by_name(Game *g, const char *name);
 
 void battle_screen_start(Game *g, int32_t battle_id);
 /* Work that has to happen before the frame's own render target is

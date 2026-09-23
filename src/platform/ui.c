@@ -653,22 +653,6 @@ void game_draw_notice(const Game *g)
                  banner->y, size, colour);
 }
 
-void game_log(Game *g, const char *fmt, ...)
-{
-    va_list args;
-    char line[128];
-    va_start(args, fmt);
-    vsnprintf(line, sizeof(line), fmt, args);
-    va_end(args);
-
-    if (g->log_count == LOG_LINES) {
-        for (int i = 0; i < LOG_LINES - 1; i++)
-            memcpy(g->log[i], g->log[i + 1], sizeof(g->log[0]));
-        g->log_count--;
-    }
-    snprintf(g->log[g->log_count++], sizeof(g->log[0]), "%s", line);
-}
-
 void game_notice(Game *g, const char *fmt, ...)
 {
     va_list args;
@@ -710,34 +694,6 @@ int ui_clicked(void)
 int hit(Rectangle r, Vector2 p)
 {
     return CheckCollisionPointRec(p, r);
-}
-
-void draw_panel(Rectangle r, const char *title)
-{
-    DrawRectangleRec(r, (Color){22, 24, 30, 235});
-    DrawRectangleLinesEx(r, 1.0f, (Color){78, 82, 96, 255});
-    if (title && title[0]) {
-        DrawRectangle((int)r.x, (int)r.y, (int)r.width, 18,
-                      (Color){34, 38, 48, 255});
-        DrawText(title, (int)r.x + 8, (int)r.y + 4, 10,
-                 (Color){225, 200, 120, 255});
-    }
-}
-
-
-int draw_button(Rectangle r, const char *label, Vector2 mouse, int enabled)
-{
-    int over = enabled && hit(r, mouse);
-    Color fill = !enabled ? (Color){30, 32, 38, 200}
-               : over ? (Color){58, 64, 78, 255}
-                      : (Color){40, 44, 54, 255};
-    Color edge = over ? (Color){235, 200, 90, 255} : (Color){86, 90, 104, 255};
-    Color text = enabled ? RAYWHITE : (Color){110, 112, 120, 255};
-
-    DrawRectangleRec(r, fill);
-    DrawRectangleLinesEx(r, over ? 2.0f : 1.0f, edge);
-    DrawText(label, (int)r.x + 10, (int)(r.y + r.height / 2 - 5), 10, text);
-    return over && ui_clicked();
 }
 
 /* ------------------------------------------------------------------ orbs */
@@ -906,20 +862,66 @@ void draw_button_state(const StageButton *b, int over, Color tint)
 
 /* --------------------------------------------------------- screen chrome */
 
-/* Pieces of a screen the game drives rather than simply draws: the zone
-   scene, the menu that covers it, the tooltip and the fade, and the progress
-   bar, whose width says how far through the zone the player is. Each is put
-   on the stage by whatever screen owns it, so none of them is furniture. */
-static int chrome_is_runtime(const char *name)
-{
-    static const char *const driven[] = {
+/* Pieces of a screen the game drives rather than simply draws, so the
+   furniture pass leaves them to whatever owns them. A name is only meaningful
+   on its own frame -- "@25" is a mask on the battlefield and something else
+   entirely elsewhere -- so each frame has its own list.
+
+   Off the battlefield: the zone scene, the menu that covers it, the tooltip
+   and the fade, and the progress bar, whose width says how far through the
+   zone the player is. Each is put on the stage by whatever screen owns it. */
+static const char *const HUB_RUNTIME[] = {
         "KrinScreen", "KRINMENU", "KrinToolTipper", "KrinCombatText",
         "krinNavFadeSpeech", "@1242", "krinXbarPro",
     };
-    for (size_t i = 0; i < sizeof(driven) / sizeof(driven[0]); i++)
-        if (strcmp(name, driven[i]) == 0)
+
+/* On the battlefield. The battle screen's furniture is not laid out here: it is the display list
+   the original places on its KRINBATTLESCENE frame, drawn in the same depth
+   order, each piece at the coordinate and scale the SWF gives it. The pieces
+   named below are the ones the game drives at runtime and leaves hidden or
+   parked off stage on a quiet turn, so drawing them from the display list
+   would show furniture the original does not. */
+static const char *const BATTLE_RUNTIME[] = {
+        /* The two backdrop containers; the zone's own art is drawn for them. */
+        "BATTLESCREEN", "@26",
+        /* A mask and an invisible hit area, neither of which is a picture. */
+        "@25", "@262",
+        /* The full-screen fade, transparent except between screens. */
+        "blacker5",
+        /* The tooltip, parked off stage until something is hovered. */
+        "KrinToolTipper", "@537",
+        /* The target reticles, parked off stage until a target is picked. */
+        "KrinSelector1", "KrinSelector2", "KrinSelector3",
+        "KrinSelector4", "KrinSelector5", "KrinSelector6",
+        /* The spinner shown while the other side is deciding. */
+        "selector",
+        /* The floating combat text and the speech box, both empty until
+           something happens. */
+        "KrinCombatText", "combatScript",
+        /* The chosen move's orb, which sits in the turn indicator once the
+           player has picked something and is hidden until then. */
+        "krinToMove",
+        /* The ring that closes over the indicator on a choice. It rests on
+           an empty frame and is played through once, which draw_move_boomer
+           does; left to the furniture pass it loops for ever. */
+        "moveSelectBoomer",
+        /* The turn indicator, which draw_turn_dial puts up itself: its clip
+           holds the clock as well as the ring, and the decompiler renders
+           that clock -- masked away at rest -- as a pair of stray slivers. */
+        "battleClocker",
+    };
+
+int chrome_runtime(const char *screen, const char *name)
+{
+    int battle = strcmp(screen, "KRINBATTLESCENE") == 0;
+    const char *const *list = battle ? BATTLE_RUNTIME : HUB_RUNTIME;
+    size_t n = battle ? sizeof(BATTLE_RUNTIME) / sizeof(BATTLE_RUNTIME[0])
+                      : sizeof(HUB_RUNTIME) / sizeof(HUB_RUNTIME[0]);
+    for (size_t i = 0; i < n; i++)
+        if (strcmp(name, list[i]) == 0)
             return 1;
-    return 0;
+    /* And the six unit bars, p1BAR to p6BAR, which the fight fills itself. */
+    return battle && strncmp(name, "p", 1) == 0 && strstr(name, "BAR") != NULL;
 }
 
 void draw_screen_chrome(const char *screen)
@@ -929,7 +931,7 @@ void draw_screen_chrome(const char *screen)
         const StageChrome *c = &SONNY_STAGE_CHROME[i];
         if (strcmp(c->screen, screen) != 0 || c->width <= 0)
             continue;
-        if (chrome_is_runtime(c->name))
+        if (chrome_runtime(screen, c->name))
             continue;
         Art art;
         if (!asset_art(TextFormat("#%d", c->character), 1, &art))
@@ -949,12 +951,12 @@ void draw_screen_buttons(const char *screen, Vector2 mouse)
         /* A button inside a clip the engine drives belongs to that clip, not
            to the screen: the menu's bag squares are on the hub's frame too,
            and they are only there when the menu is open. */
-        if (chrome_is_runtime(b->owner))
+        if (chrome_runtime(screen, b->owner))
             continue;
         /* A button shows one set of pieces at rest and another under the
            pointer, which is the only thing most of them do to say they can
            be pressed. */
-        Rectangle box = {b->x, b->y, b->width, b->height};
+        Rectangle box = BOX_OF(b);
         draw_button_state(b, CheckCollisionPointRec(mouse, box), WHITE);
     }
 }
@@ -969,8 +971,7 @@ int screen_button_pressed(const char *screen, int32_t character,
 {
     const StageButton *b = stage_button(screen, character, 0);
     return b && ui_clicked()
-        && CheckCollisionPointRec(mouse, (Rectangle){b->x, b->y, b->width,
-                                                     b->height});
+        && CheckCollisionPointRec(mouse, BOX_OF(b));
 }
 
 /* The text a frame bakes into a field rather than setting at run time: the

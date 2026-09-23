@@ -95,15 +95,6 @@ void assets_check_stamp(void)
     UnloadFileText(on_disk);
 }
 
-int32_t assets_loaded_count(void)
-{
-    int32_t n = 0;
-    for (int32_t i = 0; i < cache_count; i++)
-        if (cache[i].ok)
-            n++;
-    return n;
-}
-
 int32_t asset_frame_count(const char *name)
 {
     const AssetEntry *entry = asset_find(name);
@@ -402,54 +393,6 @@ int asset_art(const char *name, int32_t frame, Art *out)
     }
     out->source = (Rectangle){0, 0, (float)tex->width, (float)tex->height};
     return 1;
-}
-
-static int draw_scaled(const char *name, int32_t frame, Rectangle area,
-                       Color tint, int cover)
-{
-    Art art;
-    if (!asset_art(name, frame, &art))
-        return 0;
-
-    float sx = area.width / art.size.x;
-    float sy = area.height / art.size.y;
-    /* Fit stays inside the box; cover fills it and crops. */
-    float scale = cover ? (sx > sy ? sx : sy) : (sx < sy ? sx : sy);
-    if (!cover && scale > 1.0f)
-        scale = 1.0f;
-
-    float w = art.size.x * scale;
-    float h = art.size.y * scale;
-    Rectangle dest = {area.x + (area.width - w) / 2,
-                      area.y + (area.height - h) / 2, w, h};
-    Rectangle src = art.source;
-
-    if (cover) {
-        /* Crop the source instead of spilling outside the box. The crop is
-           in the image's own pixels, so the box goes back through the art's
-           own scale to get there. */
-        float texels = art.source.width / art.size.x;
-        float visible_w = area.width / scale * texels;
-        float visible_h = area.height / scale * texels;
-        src.x = (art.source.width - visible_w) / 2;
-        src.y = (art.source.height - visible_h) / 2;
-        src.width = visible_w;
-        src.height = visible_h;
-        dest = area;
-    }
-    DrawTexturePro(*art.texture, src, dest, (Vector2){0, 0}, 0.0f, tint);
-    return 1;
-}
-
-int asset_draw_fit(const char *name, int32_t frame, Rectangle area, Color tint)
-{
-    return draw_scaled(name, frame, area, tint, 0);
-}
-
-int asset_draw_cover(const char *name, int32_t frame, Rectangle area,
-                     Color tint)
-{
-    return draw_scaled(name, frame, area, tint, 1);
 }
 
 int asset_draw_placed(const char *name, int32_t frame, Vector2 parent,

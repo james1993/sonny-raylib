@@ -30,7 +30,6 @@ static char music_name[64];
 /* The cutscene narration, a second stream so it does not fight the music. */
 static Music narration;
 static int32_t narration_playing;
-static int32_t muted;
 
 /* Frames per audio buffer. raylib keeps two of these per stream, so this is
    about three quarters of a second of slack at 44.1 kHz. */
@@ -49,22 +48,11 @@ void audio_init(void)
     SetAudioStreamBufferSizeDefault(MUSIC_BUFFER_FRAMES);
     InitAudioDevice();
     ready = IsAudioDeviceReady();
-    if (ready)
-        SetMasterVolume(muted ? 0.0f : 1.0f);
 }
 
 int audio_ready(void)
 {
     return ready;
-}
-
-int32_t audio_loaded_count(void)
-{
-    int32_t n = 0;
-    for (int32_t i = 0; i < cache_count; i++)
-        if (cache[i].ok)
-            n++;
-    return n;
 }
 
 static const Sound *load_sound(const char *name)
@@ -91,18 +79,6 @@ static const Sound *load_sound(const char *name)
         slot->ok = (slot->sound.frameCount > 0);
     }
     return slot->ok ? &slot->sound : NULL;
-}
-
-void audio_set_muted(int on)
-{
-    muted = on ? 1 : 0;
-    if (ready)
-        SetMasterVolume(muted ? 0.0f : 1.0f);
-}
-
-int audio_muted(void)
-{
-    return muted;
 }
 
 void audio_play(const char *name)

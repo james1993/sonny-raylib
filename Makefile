@@ -1,5 +1,5 @@
 CC      ?= gcc
-CFLAGS  ?= -std=c99 -Wall -Wextra -O2
+CFLAGS  ?= -std=c99 -Wall -Wextra -Wshadow -O2
 RAYLIB_LIBS = -lraylib -lm -lpthread -ldl -lrt -lX11
 
 CORE_SRC = src/core/formula.c src/core/rng.c src/core/unit.c \
@@ -18,10 +18,14 @@ $(BUILD):
 game: $(BUILD)
 	$(CC) $(CFLAGS) -o $(BUILD)/sonny src/platform/main.c \
 	    src/platform/assets.c src/platform/audio.c src/platform/ui.c \
-	    src/platform/screens.c src/platform/screen_battle.c \
+	    src/platform/screen_battle.c src/platform/menu.c \
+	    src/platform/screen_hub.c src/platform/screen_map.c \
+	    src/platform/screen_talents.c src/platform/screen_inventory.c \
+	    src/platform/screen_shop.c src/platform/screen_victory.c \
 	    src/platform/screen_menu.c src/platform/glow.c \
 	    src/platform/render.c src/platform/options.c \
 	    src/platform/loader.c src/platform/prefetch.c \
+	    src/platform/screen_table.c \
 	    src/gen/assets_gen.c \
 	    $(CORE_SRC) $(RAYLIB_LIBS)
 

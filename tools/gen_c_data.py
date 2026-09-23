@@ -14,37 +14,10 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import content                                                # noqa: E402
+from cgen import c_double, c_float, c_string                  # noqa: E402
 
 ELEMENTS = ["Physical", "Magic", "Ice", "Fire", "Lightning", "Earth",
             "Shadow", "Poison"]
-
-
-def c_float(value):
-    """A C float literal that round-trips."""
-    return '%.6ff' % float(value)
-
-
-def c_string(value):
-    if value is None:
-        return '""'
-    text = str(value)
-    out = []
-    for ch in text:
-        if ch == '\\':
-            out.append('\\\\')
-        elif ch == '"':
-            out.append('\\"')
-        elif ch == '\n':
-            out.append('\\n')
-        elif ch == '\t':
-            out.append('\\t')
-        elif ord(ch) < 32:
-            out.append('\\%03o' % ord(ch))
-        elif ord(ch) > 126:
-            out.extend('\\%03o' % b for b in ch.encode('utf-8'))
-        else:
-            out.append(ch)
-    return '"%s"' % ''.join(out)
 
 
 def num(value, default=0):
@@ -59,12 +32,8 @@ def element_index(name):
     return ELEMENTS.index(name) if name in ELEMENTS else 0
 
 
-def fmt(value):
-    """Emit a double that round-trips."""
-    v = float(value)
-    if v == int(v) and abs(v) < 1e15:
-        return '%d' % int(v)
-    return repr(v)
+fmt = c_double
+
 
 
 def gen_abilities(abilities):

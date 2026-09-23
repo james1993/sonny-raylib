@@ -75,7 +75,7 @@ static void warm_fight(const Game *g)
         }
     }
     for (int32_t i = 0; i < ABILITY_SLOTS; i++) {
-        const AbilityDef *a = ability_by_id(g->ability_ids[i]);
+        const AbilityDef *a = ability_by_id(g->bv.ability_ids[i]);
         if (!a)
             continue;
         if (a->model && a->model[0])

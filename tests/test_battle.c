@@ -283,13 +283,13 @@ int main(void)
         double speed_before = t->SPEEDU;
         const BuffDef *harm = NULL, *help = NULL;
         for (int32_t i = 0; i < SONNY_BUFF_COUNT; i++) {
-            const BuffDef *x = &SONNY_BUFFS[i];
-            if (x->duration <= 0 || x->unique)
+            const BuffDef *buff = &SONNY_BUFFS[i];
+            if (buff->duration <= 0 || buff->unique)
                 continue;
-            if (!harm && x->nature == -1)
-                harm = x;
-            if (!help && x->nature == 1)
-                help = x;
+            if (!harm && buff->nature == -1)
+                harm = buff;
+            if (!help && buff->nature == 1)
+                help = buff;
         }
         assert(harm && help);
         buff_land(t, harm, &d.units[2]);

@@ -297,7 +297,10 @@ has, which is the quickest way to find out what is actually on screen.
 
 - `src/core/` is pure C and links nothing but libc, so battles can be simulated
   headlessly and replayed from a seed.
-- `src/platform/` is raylib: screens, assets, audio.
+- `src/platform/` is raylib: screens, assets, audio. Each screen is a file
+  (`screen_*.c`) and a row in `screen_table.c`; the menus share `menu.h`.
+  How a fight is shown lives in `Game.bv`, which is cleared when one starts.
+  The test hooks are all in `options.h`, read once at start-up.
 - `src/gen/` is generated. Do not edit it; change the generator.
 - Text is drawn with `ui_text`, never raylib's `DrawText`, so it uses the
   game's own font.
@@ -328,27 +331,15 @@ its own panel. Three of the four are gone outright:
   only implements the good one, and read neither value anywhere, so the
   question had no answer to give.
 * Autosave is always on. A run lost to a setting is the setting's fault.
-* What is left is the sound, and one switch does not need a screen, a row or
-  a word: it is a quaver on the bar along the bottom of the game, with a line
-  through it when the sound is off (`draw_music_note`, drawn rather than taken
-  from the SWF because the original has no such button, which also makes it
-  vector at any size). Both bars leave the same gap -- the middle panel holds
-  one button, the menu on the hub and the turn dial in a fight, with its
-  corner badge above and nothing below -- so the quaver sits in that corner on
-  both and does not move when a fight starts. `hud_sound` draws it and takes
-  its click; every screen that shows the bar calls it.
+* That left the sound, which was for a while a quaver on the bar along the
+  bottom of the game. It was taken out on request, so there is no way to turn
+  the sound off from inside the game.
 
-Removing them took `options.graphics`, `options.quality` and
-`options.autosave` out of the `Game` with them, rather than leaving state
-nothing reads. It also took a bug with it: the original's own frame has the
-Autosave row's button wired to the Graphics value and the Graphics row's to
-Autosave, and the port reproduced that faithfully -- clicking one moved the
-other.
-
-`options.sound` now does something. The original's switch was wired to nothing
-here: the port set the value and read it nowhere, so turning the sound off
-left it playing. It goes through `audio_set_muted`, which is the one master
-volume, so it silences effects, music and narration alike.
+Removing them took `options` out of the `Game` altogether, rather than
+leaving state nothing reads. It also took a bug with it: the original's own
+frame has the Autosave row's button wired to the Graphics value and the
+Graphics row's to Autosave, and the port reproduced that faithfully --
+clicking one moved the other.
 
 **The level-up screen.** The tip in the middle panel has a frame round it --
 amber over a wash of black, the colour this game highlights in -- where the

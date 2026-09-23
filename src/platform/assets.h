@@ -58,12 +58,6 @@ typedef struct {
 /* Returns 0 with everything zeroed when there is nothing to draw. */
 int asset_art(const char *name, int32_t frame, Art *out);
 
-/* Draw an asset centred in `area`, scaled down to fit if needed. Returns 0 if
-   there was nothing to draw. */
-int asset_draw_fit(const char *name, int32_t frame, Rectangle area, Color tint);
-/* Draw covering `area`, cropping the overflow. */
-int asset_draw_cover(const char *name, int32_t frame, Rectangle area,
-                     Color tint);
 
 /* Draw art where the original places it: centred on its recorded bounds,
    offset from `parent` (the stage position of whatever contains it). Assets
@@ -88,7 +82,6 @@ void assets_pump(double budget);
 void assets_trace_loads(int on);
 
 void assets_unload_all(void);
-int32_t assets_loaded_count(void);
 
 /* ------------------------------------------------------------------- doll */
 
