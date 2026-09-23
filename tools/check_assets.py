@@ -22,6 +22,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import content                                                # noqa: E402
+from build_assets import ZONE_PREFIX                           # noqa: E402
 
 MANIFESTS = ('assets/art/manifest.json', 'assets/extra/manifest.json')
 
@@ -56,13 +57,22 @@ BY_HAND = {
 }
 
 
+# What kind of art a name has to turn out to be, where the engine knows. The
+# manifest has one entry per name, so a name two kinds of art share resolves to
+# whichever the build wrote last: a Plains fight was fought on the hub's valley
+# that way, with the name present and nothing missing.
+KINDS = {}
+
+
 def wanted():
     """-> {name: [what asks for it]}"""
     want = {}
 
-    def ask(name, who):
+    def ask(name, who, kind=None):
         if isinstance(name, str) and name:
             want.setdefault(name, []).append(who)
+            if kind:
+                KINDS.setdefault(name, set()).add(kind)
 
     for a in rows(load('abilities')):
         ask(a.get('sound'), 'an ability\'s sound')
@@ -75,9 +85,11 @@ def wanted():
         for speech in (b.get('speeches') or []):
             ask(speech.get('voiceOver'), 'a line of battle speech')
         for key in ('ZoneBG', 'SkyBG'):
-            ask(b.get(key), 'a battle backdrop')
+            ask(b.get(key), 'a battle backdrop', 'background')
     for i in rows(load('items')):
-        ask(i.get('name'), 'an item\'s picture')
+        ask(i.get('name'), 'an item\'s picture', 'item')
+    for label in (load('stage').get('zone_screen') or {}).get('labels') or {}:
+        ask(ZONE_PREFIX + label, 'the hub\'s scene', 'zone')
     for names in BY_HAND.values():
         for name in names:
             ask(name, 'the engine by name')
@@ -105,7 +117,8 @@ def source_names():
 
 
 def main():
-    have = set(manifest_assets())
+    assets = manifest_assets()
+    have = set(assets)
 
     want = wanted()
     missing = sorted(n for n in want if n not in have)
@@ -116,6 +129,15 @@ def main():
         print('\nnot shipped:')
         for name in missing:
             print('  %-28s %s' % (name, ', '.join(sorted(set(want[name])))))
+        failed = 1
+    wrong = sorted('%-28s is %s art, wanted as %s'
+                   % (name, assets[name].get('category'), ' or '.join(sorted(kinds)))
+                   for name, kinds in KINDS.items()
+                   if name in assets and assets[name].get('category') not in kinds)
+    if wrong:
+        print('\nthe wrong kind of art:')
+        for line in wrong:
+            print('  ' + line)
         failed = 1
 
     # And the other way: every file the manifest names is on the disk, and

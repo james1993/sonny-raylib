@@ -38,6 +38,11 @@ SVG_ROOT_TRANSFORM = re.compile(
 # The ring's own copy of an ability icon, which is a different shape to the
 # one the menus use under the same label.
 ORB_PREFIX = 'ORB '
+# The hub's scene, a frame per zone. Its labels are the zones' own names, and
+# the battle's ground clip labels its frames with some of the same names --
+# "PLAINS" is both the valley the hub stands in and the ground a Plains fight
+# is fought on -- so the scene's frames are asked for under their own names.
+ZONE_PREFIX = 'ZONE '
 # A chrome asset is asked for by character id, optionally with the one frame
 # of it that is wanted: "#1444" or "#1444@8".
 CHROME_ID = re.compile(r'^[0-9]+(@[0-9]+)?$')
@@ -150,6 +155,34 @@ def frame_files(raw, sprite_id):
     return sorted(files)
 
 
+def one_name_one_picture(want):
+    """The manifest has one entry per name, so a name two categories ask for
+    would be written twice and the second would quietly replace the first.
+    That is how a Plains fight came to be fought on the hub's valley.
+
+    Two overlaps are the same picture and are settled here. A character asked
+    for by id as furniture and as something played through -- a cutscene or
+    an effect -- is one clip, and the played-through copy keeps every frame.
+    The placeholder move's menu icon, "None", is never on a menu: the talent
+    tree is the only one that shows a move's own icon, no talent grants the
+    placeholder, and the ring has its own orb for it. The empty item's
+    picture keeps the name. Anything else is a build error."""
+    played = want['cutscene'] | want['effect']
+    want['chrome'] -= {name for name in played if name.startswith('#')}
+    want['icon'].discard('None')
+
+    owners = {}
+    for category, names in want.items():
+        for name in names:
+            owners.setdefault(name, []).append(category)
+    clashes = sorted('%s: %s' % (name, ', '.join(sorted(cats)))
+                     for name, cats in owners.items() if len(cats) > 1)
+    if clashes:
+        raise SystemExit('names asked for by more than one category, which '
+                         'the manifest cannot tell apart:\n  '
+                         + '\n  '.join(clashes))
+
+
 def collect_names(data_dir):
     """Every art name the engine can ask for, by category."""
     abilities = load('abilities', data_dir)
@@ -244,9 +277,10 @@ def collect_names(data_dir):
     # one-pixel slivers, so the ring is taken on its own and the lit clock
     # comes from tools/extract_glows.py.
     want['chrome'].update(['#1591'])
-    # The widget that shows one buff on a unit's bar: its coloured backing,
-    # its frame, and the backing behind the turns left on it.
-    want['chrome'].update(['#780', '#781', '#800'])
+    # The widget that shows one buff on a unit's bar: its coloured backing
+    # and its frame. The turns left on it (#800) are a text field, which the
+    # engine sets itself, and the icon is the buff's own art.
+    want['chrome'].update(['#780', '#781'])
     # The experience bar's fill on the victory screen, which has a second
     # frame it switches to on a level.
     want['chrome'].update(['#1344@1', '#1344@2'])
@@ -373,7 +407,8 @@ def collect_names(data_dir):
             speculative.add(it['name'])
 
     # The hub's scene, one labelled frame per zone.
-    want['zone'].update(((stage.get('zone_screen') or {}).get('labels')) or {})
+    want['zone'].update(ZONE_PREFIX + label for label in
+                        ((stage.get('zone_screen') or {}).get('labels')) or {})
 
     # A menu's slots are clips the engine fills, but their empty square is
     # still drawn, so their resting frame is wanted too.
@@ -611,6 +646,8 @@ def main():
         if part.get('character'):
             want['chrome'].add('#%d' % part['character'])
 
+    one_name_one_picture(want)
+
     os.makedirs(args.out, exist_ok=True)
     manifest = {}
     stats = {'copied': 0, 'bytes': 0, 'missing': [], 'flat': [],
@@ -634,7 +671,7 @@ def main():
                             entries = [(1, path)]
                             break
             elif category == 'zone':
-                frame = zone_labels.get(name)
+                frame = zone_labels.get(name[len(ZONE_PREFIX):])
                 if frame:
                     for index, path in frame_files(args.zone_raw or args.raw,
                                                    zone_character):

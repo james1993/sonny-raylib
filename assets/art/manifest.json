@@ -46,15 +46,21 @@
    ]
   },
   "PLAINS": {
-   "category": "zone",
+   "category": "background",
    "frames": [
-    "assets/art/zone/PLAINS.png"
+    "assets/art/background/PLAINS.png"
    ],
    "scale": 2,
+   "bounds": [
+    -570.45,
+    -136.45,
+    535.7,
+    256.95
+   ],
    "offsets": [
     [
-     476.3,
-     260.95
+     570.45,
+     136.45
     ]
    ]
   },
@@ -2917,253 +2923,6 @@
     ]
    ]
   },
-  "#1536": {
-   "category": "effect",
-   "frames": [
-    "assets/art/effect/#1536_1.png",
-    "assets/art/effect/#1536_2.png",
-    "assets/art/effect/#1536_3.png",
-    "assets/art/effect/#1536_4.png",
-    "assets/art/effect/#1536_5.png",
-    "assets/art/effect/#1536_6.png",
-    "assets/art/effect/#1536_7.png",
-    "assets/art/effect/#1536_8.png",
-    "assets/art/effect/#1536_9.png",
-    "assets/art/effect/#1536_10.png",
-    "assets/art/effect/#1536_11.png",
-    "assets/art/effect/#1536_12.png",
-    "assets/art/effect/#1536_13.png",
-    "assets/art/effect/#1536_14.png",
-    "assets/art/effect/#1536_15.png",
-    "assets/art/effect/#1536_16.png",
-    "assets/art/effect/#1536_17.png",
-    "assets/art/effect/#1536_18.png",
-    "assets/art/effect/#1536_19.png",
-    "assets/art/effect/#1536_20.png",
-    "assets/art/effect/#1536_21.png",
-    "assets/art/effect/#1536_22.png",
-    "assets/art/effect/#1536_23.png",
-    "assets/art/effect/#1536_24.png",
-    "assets/art/effect/#1536_25.png",
-    "assets/art/effect/#1536_26.png",
-    "assets/art/effect/#1536_27.png",
-    "assets/art/effect/#1536_28.png",
-    "assets/art/effect/#1536_29.png",
-    "assets/art/effect/#1536_30.png",
-    "assets/art/effect/#1536_31.png",
-    "assets/art/effect/#1536_32.png",
-    "assets/art/effect/#1536_33.png",
-    "assets/art/effect/#1536_34.png",
-    "assets/art/effect/#1536_35.png",
-    "assets/art/effect/#1536_36.png",
-    "assets/art/effect/#1536_37.png",
-    "assets/art/effect/#1536_38.png",
-    "assets/art/effect/#1536_39.png",
-    "assets/art/effect/#1536_40.png",
-    "assets/art/effect/#1536_41.png",
-    "assets/art/effect/#1536_42.png",
-    "assets/art/effect/#1536_43.png",
-    "assets/art/effect/#1536_44.png",
-    "assets/art/effect/#1536_45.png",
-    "assets/art/effect/#1536_46.png",
-    "assets/art/effect/#1536_47.png",
-    "assets/art/effect/#1536_1.png"
-   ],
-   "offsets": [
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ],
-    [
-     15.0,
-     15.0
-    ]
-   ]
-  },
   "#1537": {
    "category": "chrome",
    "frames": [
@@ -3409,135 +3168,6 @@
     ]
    ]
   },
-  "#1610": {
-   "category": "effect",
-   "frames": [
-    "assets/art/effect/#1610_1.png",
-    "assets/art/effect/#1610_2.png",
-    "assets/art/effect/#1610_3.png",
-    "assets/art/effect/#1610_4.png",
-    "assets/art/effect/#1610_5.png",
-    "assets/art/effect/#1610_6.png",
-    "assets/art/effect/#1610_7.png",
-    "assets/art/effect/#1610_8.png",
-    "assets/art/effect/#1610_9.png",
-    "assets/art/effect/#1610_10.png",
-    "assets/art/effect/#1610_11.png",
-    "assets/art/effect/#1610_12.png",
-    "assets/art/effect/#1610_13.png",
-    "assets/art/effect/#1610_14.png",
-    "assets/art/effect/#1610_15.png",
-    "assets/art/effect/#1610_16.png",
-    "assets/art/effect/#1610_17.png",
-    "assets/art/effect/#1610_18.png",
-    "assets/art/effect/#1610_19.png",
-    "assets/art/effect/#1610_20.png",
-    "assets/art/effect/#1610_1.png",
-    "assets/art/effect/#1610_1.png"
-   ],
-   "offsets": [
-    [
-     62.85,
-     62.85
-    ],
-    [
-     62.85,
-     62.85
-    ],
-    [
-     62.85,
-     62.85
-    ],
-    [
-     62.85,
-     62.85
-    ],
-    [
-     62.85,
-     62.85
-    ],
-    [
-     62.85,
-     62.85
-    ],
-    [
-     62.85,
-     62.85
-    ],
-    [
-     62.85,
-     62.85
-    ],
-    [
-     62.85,
-     62.85
-    ],
-    [
-     62.85,
-     62.85
-    ],
-    [
-     62.85,
-     62.85
-    ],
-    [
-     62.85,
-     62.85
-    ],
-    [
-     62.85,
-     62.85
-    ],
-    [
-     62.85,
-     62.85
-    ],
-    [
-     62.85,
-     62.85
-    ],
-    [
-     62.85,
-     62.85
-    ],
-    [
-     62.85,
-     62.85
-    ],
-    [
-     62.85,
-     62.85
-    ],
-    [
-     62.85,
-     62.85
-    ],
-    [
-     62.85,
-     62.85
-    ],
-    [
-     62.85,
-     62.85
-    ],
-    [
-     62.85,
-     62.85
-    ],
-    [
-     62.85,
-     62.85
-    ],
-    [
-     62.85,
-     62.85
-    ],
-    [
-     62.85,
-     62.85
-    ]
-   ]
-  },
   "#1613": {
    "category": "chrome",
    "frames": [
@@ -3610,6 +3240,620 @@
     [
      404.1,
      291.05
+    ]
+   ]
+  },
+  "#1720": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1720.png"
+   ],
+   "scale": 2,
+   "bounds": [
+    -31.25,
+    -20.0,
+    733.6,
+    487.5
+   ],
+   "offsets": [
+    [
+     31.25,
+     20.0
+    ]
+   ]
+  },
+  "#1722": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1722.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     0.0,
+     0.0
+    ]
+   ]
+  },
+  "#1725": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1725.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     15.5,
+     15.5
+    ]
+   ]
+  },
+  "#1726": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1726.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     31.25,
+     20.0
+    ]
+   ]
+  },
+  "#368": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#368.png"
+   ],
+   "scale": 2,
+   "bounds": [
+    -32.5,
+    -9.95,
+    32.55,
+    10.0
+   ],
+   "offsets": [
+    [
+     32.5,
+     9.95
+    ]
+   ]
+  },
+  "#780": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#780.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     7.4,
+     12.55
+    ]
+   ]
+  },
+  "#781": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#781.png"
+   ],
+   "scale": 2,
+   "bounds": [
+    -8.0,
+    -13.25,
+    7.75,
+    13.1
+   ],
+   "offsets": [
+    [
+     8.0,
+     13.25
+    ]
+   ]
+  },
+  "#821": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#821.png"
+   ],
+   "scale": 2,
+   "bounds": [
+    -92.4,
+    -16.0,
+    -28.5,
+    16.0
+   ],
+   "offsets": [
+    [
+     92.4,
+     16.0
+    ]
+   ]
+  },
+  "#823": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#823.png"
+   ],
+   "scale": 2,
+   "bounds": [
+    13.9,
+    -14.95,
+    75.85,
+    15.05
+   ],
+   "offsets": [
+    [
+     -13.9,
+     14.95
+    ]
+   ]
+  },
+  "#824": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#824.png"
+   ],
+   "scale": 2,
+   "bounds": [
+    -11.5,
+    -11.5,
+    11.5,
+    11.5
+   ],
+   "offsets": [
+    [
+     11.5,
+     11.5
+    ]
+   ]
+  },
+  "#826": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#826.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     11.5,
+     11.5
+    ]
+   ]
+  },
+  "#828": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#828.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     11.5,
+     11.5
+    ]
+   ]
+  },
+  "#830": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#830.png"
+   ],
+   "scale": 2,
+   "bounds": [
+    -11.65,
+    -11.75,
+    12.1,
+    12.0
+   ],
+   "offsets": [
+    [
+     11.65,
+     11.75
+    ]
+   ]
+  },
+  "#866": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#866.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     32.5,
+     28.7
+    ]
+   ]
+  },
+  "#867": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#867.png"
+   ],
+   "scale": 2,
+   "bounds": [
+    -10.5,
+    -10.5,
+    10.5,
+    10.5
+   ],
+   "offsets": [
+    [
+     10.5,
+     10.5
+    ]
+   ]
+  },
+  "#868": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#868.png"
+   ],
+   "scale": 2,
+   "bounds": [
+    -11.25,
+    -11.25,
+    11.25,
+    11.25
+   ],
+   "offsets": [
+    [
+     11.25,
+     11.25
+    ]
+   ]
+  },
+  "#903": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#903.png"
+   ],
+   "scale": 2,
+   "bounds": [
+    -4.0,
+    -4.25,
+    4.0,
+    4.2
+   ],
+   "offsets": [
+    [
+     4.0,
+     4.25
+    ]
+   ]
+  },
+  "#905": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#905.png"
+   ],
+   "scale": 2,
+   "bounds": [
+    -2.55,
+    -6.7,
+    5.35,
+    4.65
+   ],
+   "offsets": [
+    [
+     2.55,
+     6.7
+    ]
+   ]
+  },
+  "#907": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#907.png"
+   ],
+   "scale": 2,
+   "bounds": [
+    -9.9,
+    -16.4,
+    9.95,
+    16.45
+   ],
+   "offsets": [
+    [
+     9.9,
+     16.4
+    ]
+   ]
+  },
+  "#909": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#909.png"
+   ],
+   "scale": 2,
+   "bounds": [
+    -4.6,
+    -15.2,
+    4.65,
+    15.2
+   ],
+   "offsets": [
+    [
+     4.6,
+     15.2
+    ]
+   ]
+  },
+  "#911": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#911.png"
+   ],
+   "scale": 2,
+   "bounds": [
+    -5.85,
+    -2.65,
+    5.9,
+    2.65
+   ],
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
+   ]
+  },
+  "#913": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#913.png"
+   ],
+   "scale": 2,
+   "bounds": [
+    -3.75,
+    -41.15,
+    2.25,
+    27.8
+   ],
+   "offsets": [
+    [
+     3.75,
+     41.15
+    ]
+   ]
+  },
+  "#915": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#915.png"
+   ],
+   "scale": 2,
+   "bounds": [
+    -3.55,
+    -9.15,
+    3.5,
+    9.2
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.15
+    ]
+   ]
+  },
+  "#917": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#917.png"
+   ],
+   "scale": 2,
+   "bounds": [
+    -3.55,
+    -9.8,
+    3.55,
+    9.85
+   ],
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
+   ]
+  },
+  "#919": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#919.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     3.55,
+     9.8
+    ]
+   ]
+  },
+  "#920": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#920.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     3.55,
+     9.15
+    ]
+   ]
+  },
+  "#921": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#921.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     5.2,
+     36.9
+    ]
+   ]
+  },
+  "#922": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#922.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     5.85,
+     2.65
+    ]
+   ]
+  },
+  "#923": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#923.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     4.6,
+     15.2
+    ]
+   ]
+  },
+  "#924": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#924.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     9.9,
+     16.4
+    ]
+   ]
+  },
+  "#925": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#925.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     2.55,
+     6.7
+    ]
+   ]
+  },
+  "#926": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#926.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     4.0,
+     4.25
+    ]
+   ]
+  },
+  "#944": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#944.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     103.15,
+     24.1
+    ]
+   ]
+  },
+  "#95": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#95.png"
+   ],
+   "scale": 2,
+   "bounds": [
+    -15.35,
+    -5.65,
+    15.85,
+    5.05
+   ],
+   "offsets": [
+    [
+     15.35,
+     5.65
+    ]
+   ]
+  },
+  "#951": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#951.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     274.85,
+     41.1
+    ]
+   ]
+  },
+  "#963": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#963.png"
+   ],
+   "scale": 2,
+   "bounds": [
+    0.45,
+    0.5,
+    720.15,
+    457.5
+   ],
+   "offsets": [
+    [
+     -0.45,
+     -0.5
+    ]
+   ]
+  },
+  "#97": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#97.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     31.4,
+     10.0
+    ]
+   ]
+  },
+  "#98": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#98.png"
+   ],
+   "scale": 2,
+   "bounds": [
+    -14.85,
+    -5.2,
+    14.75,
+    4.25
+   ],
+   "offsets": [
+    [
+     14.85,
+     5.2
     ]
    ]
   },
@@ -19277,620 +19521,6 @@
     ]
    ]
   },
-  "#1720": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#1720.png"
-   ],
-   "scale": 2,
-   "bounds": [
-    -31.25,
-    -20.0,
-    733.6,
-    487.5
-   ],
-   "offsets": [
-    [
-     31.25,
-     20.0
-    ]
-   ]
-  },
-  "#1722": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#1722.png"
-   ],
-   "scale": 2,
-   "offsets": [
-    [
-     0.0,
-     0.0
-    ]
-   ]
-  },
-  "#1725": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#1725.png"
-   ],
-   "scale": 2,
-   "offsets": [
-    [
-     15.5,
-     15.5
-    ]
-   ]
-  },
-  "#1726": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#1726.png"
-   ],
-   "scale": 2,
-   "offsets": [
-    [
-     31.25,
-     20.0
-    ]
-   ]
-  },
-  "#368": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#368.png"
-   ],
-   "scale": 2,
-   "bounds": [
-    -32.5,
-    -9.95,
-    32.55,
-    10.0
-   ],
-   "offsets": [
-    [
-     32.5,
-     9.95
-    ]
-   ]
-  },
-  "#780": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#780.png"
-   ],
-   "scale": 2,
-   "offsets": [
-    [
-     7.4,
-     12.55
-    ]
-   ]
-  },
-  "#781": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#781.png"
-   ],
-   "scale": 2,
-   "bounds": [
-    -8.0,
-    -13.25,
-    7.75,
-    13.1
-   ],
-   "offsets": [
-    [
-     8.0,
-     13.25
-    ]
-   ]
-  },
-  "#821": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#821.png"
-   ],
-   "scale": 2,
-   "bounds": [
-    -92.4,
-    -16.0,
-    -28.5,
-    16.0
-   ],
-   "offsets": [
-    [
-     92.4,
-     16.0
-    ]
-   ]
-  },
-  "#823": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#823.png"
-   ],
-   "scale": 2,
-   "bounds": [
-    13.9,
-    -14.95,
-    75.85,
-    15.05
-   ],
-   "offsets": [
-    [
-     -13.9,
-     14.95
-    ]
-   ]
-  },
-  "#824": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#824.png"
-   ],
-   "scale": 2,
-   "bounds": [
-    -11.5,
-    -11.5,
-    11.5,
-    11.5
-   ],
-   "offsets": [
-    [
-     11.5,
-     11.5
-    ]
-   ]
-  },
-  "#826": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#826.png"
-   ],
-   "scale": 2,
-   "offsets": [
-    [
-     11.5,
-     11.5
-    ]
-   ]
-  },
-  "#828": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#828.png"
-   ],
-   "scale": 2,
-   "offsets": [
-    [
-     11.5,
-     11.5
-    ]
-   ]
-  },
-  "#830": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#830.png"
-   ],
-   "scale": 2,
-   "bounds": [
-    -11.65,
-    -11.75,
-    12.1,
-    12.0
-   ],
-   "offsets": [
-    [
-     11.65,
-     11.75
-    ]
-   ]
-  },
-  "#866": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#866.png"
-   ],
-   "scale": 2,
-   "offsets": [
-    [
-     32.5,
-     28.7
-    ]
-   ]
-  },
-  "#867": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#867.png"
-   ],
-   "scale": 2,
-   "bounds": [
-    -10.5,
-    -10.5,
-    10.5,
-    10.5
-   ],
-   "offsets": [
-    [
-     10.5,
-     10.5
-    ]
-   ]
-  },
-  "#868": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#868.png"
-   ],
-   "scale": 2,
-   "bounds": [
-    -11.25,
-    -11.25,
-    11.25,
-    11.25
-   ],
-   "offsets": [
-    [
-     11.25,
-     11.25
-    ]
-   ]
-  },
-  "#903": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#903.png"
-   ],
-   "scale": 2,
-   "bounds": [
-    -4.0,
-    -4.25,
-    4.0,
-    4.2
-   ],
-   "offsets": [
-    [
-     4.0,
-     4.25
-    ]
-   ]
-  },
-  "#905": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#905.png"
-   ],
-   "scale": 2,
-   "bounds": [
-    -2.55,
-    -6.7,
-    5.35,
-    4.65
-   ],
-   "offsets": [
-    [
-     2.55,
-     6.7
-    ]
-   ]
-  },
-  "#907": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#907.png"
-   ],
-   "scale": 2,
-   "bounds": [
-    -9.9,
-    -16.4,
-    9.95,
-    16.45
-   ],
-   "offsets": [
-    [
-     9.9,
-     16.4
-    ]
-   ]
-  },
-  "#909": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#909.png"
-   ],
-   "scale": 2,
-   "bounds": [
-    -4.6,
-    -15.2,
-    4.65,
-    15.2
-   ],
-   "offsets": [
-    [
-     4.6,
-     15.2
-    ]
-   ]
-  },
-  "#911": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#911.png"
-   ],
-   "scale": 2,
-   "bounds": [
-    -5.85,
-    -2.65,
-    5.9,
-    2.65
-   ],
-   "offsets": [
-    [
-     5.85,
-     2.65
-    ]
-   ]
-  },
-  "#913": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#913.png"
-   ],
-   "scale": 2,
-   "bounds": [
-    -3.75,
-    -41.15,
-    2.25,
-    27.8
-   ],
-   "offsets": [
-    [
-     3.75,
-     41.15
-    ]
-   ]
-  },
-  "#915": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#915.png"
-   ],
-   "scale": 2,
-   "bounds": [
-    -3.55,
-    -9.15,
-    3.5,
-    9.2
-   ],
-   "offsets": [
-    [
-     3.55,
-     9.15
-    ]
-   ]
-  },
-  "#917": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#917.png"
-   ],
-   "scale": 2,
-   "bounds": [
-    -3.55,
-    -9.8,
-    3.55,
-    9.85
-   ],
-   "offsets": [
-    [
-     3.55,
-     9.8
-    ]
-   ]
-  },
-  "#919": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#919.png"
-   ],
-   "scale": 2,
-   "offsets": [
-    [
-     3.55,
-     9.8
-    ]
-   ]
-  },
-  "#920": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#920.png"
-   ],
-   "scale": 2,
-   "offsets": [
-    [
-     3.55,
-     9.15
-    ]
-   ]
-  },
-  "#921": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#921.png"
-   ],
-   "scale": 2,
-   "offsets": [
-    [
-     5.2,
-     36.9
-    ]
-   ]
-  },
-  "#922": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#922.png"
-   ],
-   "scale": 2,
-   "offsets": [
-    [
-     5.85,
-     2.65
-    ]
-   ]
-  },
-  "#923": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#923.png"
-   ],
-   "scale": 2,
-   "offsets": [
-    [
-     4.6,
-     15.2
-    ]
-   ]
-  },
-  "#924": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#924.png"
-   ],
-   "scale": 2,
-   "offsets": [
-    [
-     9.9,
-     16.4
-    ]
-   ]
-  },
-  "#925": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#925.png"
-   ],
-   "scale": 2,
-   "offsets": [
-    [
-     2.55,
-     6.7
-    ]
-   ]
-  },
-  "#926": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#926.png"
-   ],
-   "scale": 2,
-   "offsets": [
-    [
-     4.0,
-     4.25
-    ]
-   ]
-  },
-  "#944": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#944.png"
-   ],
-   "scale": 2,
-   "offsets": [
-    [
-     103.15,
-     24.1
-    ]
-   ]
-  },
-  "#95": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#95.png"
-   ],
-   "scale": 2,
-   "bounds": [
-    -15.35,
-    -5.65,
-    15.85,
-    5.05
-   ],
-   "offsets": [
-    [
-     15.35,
-     5.65
-    ]
-   ]
-  },
-  "#951": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#951.png"
-   ],
-   "scale": 2,
-   "offsets": [
-    [
-     274.85,
-     41.1
-    ]
-   ]
-  },
-  "#963": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#963.png"
-   ],
-   "scale": 2,
-   "bounds": [
-    0.45,
-    0.5,
-    720.15,
-    457.5
-   ],
-   "offsets": [
-    [
-     -0.45,
-     -0.5
-    ]
-   ]
-  },
-  "#97": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#97.png"
-   ],
-   "scale": 2,
-   "offsets": [
-    [
-     31.4,
-     10.0
-    ]
-   ]
-  },
-  "#98": {
-   "category": "chrome",
-   "frames": [
-    "assets/art/chrome/#98.png"
-   ],
-   "scale": 2,
-   "bounds": [
-    -14.85,
-    -5.2,
-    14.75,
-    4.25
-   ],
-   "offsets": [
-    [
-     14.85,
-     5.2
-    ]
-   ]
-  },
   "F_SARM_SIX": {
    "category": "doll",
    "frames": [
@@ -23676,6 +23306,382 @@
     ]
    ]
   },
+  "#1536": {
+   "category": "effect",
+   "frames": [
+    "assets/art/effect/#1536_1.png",
+    "assets/art/effect/#1536_2.png",
+    "assets/art/effect/#1536_3.png",
+    "assets/art/effect/#1536_4.png",
+    "assets/art/effect/#1536_5.png",
+    "assets/art/effect/#1536_6.png",
+    "assets/art/effect/#1536_7.png",
+    "assets/art/effect/#1536_8.png",
+    "assets/art/effect/#1536_9.png",
+    "assets/art/effect/#1536_10.png",
+    "assets/art/effect/#1536_11.png",
+    "assets/art/effect/#1536_12.png",
+    "assets/art/effect/#1536_13.png",
+    "assets/art/effect/#1536_14.png",
+    "assets/art/effect/#1536_15.png",
+    "assets/art/effect/#1536_16.png",
+    "assets/art/effect/#1536_17.png",
+    "assets/art/effect/#1536_18.png",
+    "assets/art/effect/#1536_19.png",
+    "assets/art/effect/#1536_20.png",
+    "assets/art/effect/#1536_21.png",
+    "assets/art/effect/#1536_22.png",
+    "assets/art/effect/#1536_23.png",
+    "assets/art/effect/#1536_24.png",
+    "assets/art/effect/#1536_25.png",
+    "assets/art/effect/#1536_26.png",
+    "assets/art/effect/#1536_27.png",
+    "assets/art/effect/#1536_28.png",
+    "assets/art/effect/#1536_29.png",
+    "assets/art/effect/#1536_30.png",
+    "assets/art/effect/#1536_31.png",
+    "assets/art/effect/#1536_32.png",
+    "assets/art/effect/#1536_33.png",
+    "assets/art/effect/#1536_34.png",
+    "assets/art/effect/#1536_35.png",
+    "assets/art/effect/#1536_36.png",
+    "assets/art/effect/#1536_37.png",
+    "assets/art/effect/#1536_38.png",
+    "assets/art/effect/#1536_39.png",
+    "assets/art/effect/#1536_40.png",
+    "assets/art/effect/#1536_41.png",
+    "assets/art/effect/#1536_42.png",
+    "assets/art/effect/#1536_43.png",
+    "assets/art/effect/#1536_44.png",
+    "assets/art/effect/#1536_45.png",
+    "assets/art/effect/#1536_46.png",
+    "assets/art/effect/#1536_47.png",
+    "assets/art/effect/#1536_1.png"
+   ],
+   "offsets": [
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ],
+    [
+     15.0,
+     15.0
+    ]
+   ]
+  },
+  "#1610": {
+   "category": "effect",
+   "frames": [
+    "assets/art/effect/#1610_1.png",
+    "assets/art/effect/#1610_2.png",
+    "assets/art/effect/#1610_3.png",
+    "assets/art/effect/#1610_4.png",
+    "assets/art/effect/#1610_5.png",
+    "assets/art/effect/#1610_6.png",
+    "assets/art/effect/#1610_7.png",
+    "assets/art/effect/#1610_8.png",
+    "assets/art/effect/#1610_9.png",
+    "assets/art/effect/#1610_10.png",
+    "assets/art/effect/#1610_11.png",
+    "assets/art/effect/#1610_12.png",
+    "assets/art/effect/#1610_13.png",
+    "assets/art/effect/#1610_14.png",
+    "assets/art/effect/#1610_15.png",
+    "assets/art/effect/#1610_16.png",
+    "assets/art/effect/#1610_17.png",
+    "assets/art/effect/#1610_18.png",
+    "assets/art/effect/#1610_19.png",
+    "assets/art/effect/#1610_20.png",
+    "assets/art/effect/#1610_1.png",
+    "assets/art/effect/#1610_1.png"
+   ],
+   "offsets": [
+    [
+     62.85,
+     62.85
+    ],
+    [
+     62.85,
+     62.85
+    ],
+    [
+     62.85,
+     62.85
+    ],
+    [
+     62.85,
+     62.85
+    ],
+    [
+     62.85,
+     62.85
+    ],
+    [
+     62.85,
+     62.85
+    ],
+    [
+     62.85,
+     62.85
+    ],
+    [
+     62.85,
+     62.85
+    ],
+    [
+     62.85,
+     62.85
+    ],
+    [
+     62.85,
+     62.85
+    ],
+    [
+     62.85,
+     62.85
+    ],
+    [
+     62.85,
+     62.85
+    ],
+    [
+     62.85,
+     62.85
+    ],
+    [
+     62.85,
+     62.85
+    ],
+    [
+     62.85,
+     62.85
+    ],
+    [
+     62.85,
+     62.85
+    ],
+    [
+     62.85,
+     62.85
+    ],
+    [
+     62.85,
+     62.85
+    ],
+    [
+     62.85,
+     62.85
+    ],
+    [
+     62.85,
+     62.85
+    ],
+    [
+     62.85,
+     62.85
+    ],
+    [
+     62.85,
+     62.85
+    ],
+    [
+     62.85,
+     62.85
+    ],
+    [
+     62.85,
+     62.85
+    ],
+    [
+     62.85,
+     62.85
+    ]
+   ]
+  },
   "#1639": {
    "category": "effect",
    "frames": [
@@ -27180,19 +27186,6 @@
     ]
    ]
   },
-  "None": {
-   "category": "item",
-   "frames": [
-    "assets/art/item/None.png"
-   ],
-   "scale": 2,
-   "offsets": [
-    [
-     49.0,
-     68.7
-    ]
-   ]
-  },
   "Quick Strike": {
    "category": "icon",
    "frames": [
@@ -28511,6 +28504,19 @@
    "category": "item",
    "frames": [
     "assets/art/item/Nike_Head_Wear.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     49.0,
+     68.7
+    ]
+   ]
+  },
+  "None": {
+   "category": "item",
+   "frames": [
+    "assets/art/item/None.png"
    ],
    "scale": 2,
    "offsets": [
@@ -30862,10 +30868,10 @@
     ]
    ]
   },
-  "HEW": {
+  "ZONE HEW": {
    "category": "zone",
    "frames": [
-    "assets/art/zone/HEW.png"
+    "assets/art/zone/ZONE_HEW.png"
    ],
    "scale": 2,
    "offsets": [
@@ -30875,10 +30881,10 @@
     ]
    ]
   },
-  "KOJIS_REST": {
+  "ZONE KOJIS_REST": {
    "category": "zone",
    "frames": [
-    "assets/art/zone/KOJIS_REST.png"
+    "assets/art/zone/ZONE_KOJIS_REST.png"
    ],
    "scale": 2,
    "offsets": [
@@ -30888,10 +30894,23 @@
     ]
    ]
   },
-  "WHITE_NOVEMBER": {
+  "ZONE PLAINS": {
    "category": "zone",
    "frames": [
-    "assets/art/zone/WHITE_NOVEMBER.png"
+    "assets/art/zone/ZONE_PLAINS.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     476.3,
+     260.95
+    ]
+   ]
+  },
+  "ZONE WHITE_NOVEMBER": {
+   "category": "zone",
+   "frames": [
+    "assets/art/zone/ZONE_WHITE_NOVEMBER.png"
    ],
    "scale": 2,
    "offsets": [

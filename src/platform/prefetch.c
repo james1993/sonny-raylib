@@ -38,7 +38,7 @@ static void warm_zone(const Game *g)
 {
     const ZoneDef *zone = campaign_zone(&g->campaign);
     if (zone && zone->zone < SONNY_ZONE_LABEL_COUNT)
-        assets_prefetch(SONNY_ZONE_LABELS[zone->zone], 1);
+        assets_prefetch(SONNY_ZONE_SCENES[zone->zone], 1);
 }
 
 /* The two backdrops of the fight the story marker would start. */

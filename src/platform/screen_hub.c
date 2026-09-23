@@ -370,7 +370,8 @@ void screen_zone_draw(Game *g, Vector2 mouse)
                       ? SONNY_ZONE_LABELS[zone->zone] : NULL;
     Vector2 scene = {SONNY_ZONE_SCREEN.x, SONNY_ZONE_SCREEN.y};
     if (label)
-        asset_draw_placed(label, 1, scene, 1.0f, WHITE);
+        asset_draw_placed(SONNY_ZONE_SCENES[zone->zone], 1, scene, 1.0f,
+                          WHITE);
 
     /* The markers, turning. The clip is its own loop at the SWF's frame rate,
        and every marker on a scene is the same clip, so they turn together. */

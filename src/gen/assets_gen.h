@@ -336,8 +336,8 @@ const StageButton *stage_button(const char *screen, int32_t character,
                                 int32_t index);
 
 /* The scene the hub is built around: one clip with a frame per zone, drawn as
-   asset "<label>" in the zone category, and the markers on it the player
-   clicks to pick a fight. */
+   the asset SONNY_ZONE_SCENES names, and the markers on it the player clicks
+   to pick a fight. */
 typedef struct {
     const char *zone;      /* the frame's label, which is the art's name */
     const char *style;     /* the art, one per colour the scenes ask for */
@@ -366,9 +366,13 @@ typedef struct {
 extern const MapMarker SONNY_MAP_MARKERS[];
 extern const int SONNY_MAP_MARKER_COUNT;
 
-/* Where the scene is placed, and which frame label each zone uses. */
+/* Where the scene is placed, which frame label each zone uses, and the name
+   that frame's art goes by. They differ because the battle's ground labels
+   its frames with some of the same names -- "PLAINS" is both the hub's
+   valley and the ground a Plains fight is fought on. */
 extern const StageLayer SONNY_ZONE_SCREEN;
 extern const char *const SONNY_ZONE_LABELS[];
+extern const char *const SONNY_ZONE_SCENES[];
 extern const int SONNY_ZONE_LABEL_COUNT;
 
 /* Where a talent tree node sits on the stage. */
