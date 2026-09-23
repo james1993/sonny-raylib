@@ -1,0 +1,76 @@
+# Build, test and smoke-test on every push and pull request.
+#
+#   test     the core's differential and property tests, the asset and
+#            content checks, the same tests again under ASan and UBSan, and
+#            the game built with warnings as errors
+#   smoke    every screen opened headless in a sanitized build, under Xvfb
+#   compat   the platform layer against raylib 4.5, 5.0 and 5.5 headers,
+#            which is what players building with their distribution have
+name: ci
+
+on:
+  push:
+  pull_request:
+
+env:
+  RAYLIB_VERSION: "6.0"
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential cmake xvfb \
+            libx11-dev libxrandr-dev libxinerama-dev libxcursor-dev \
+            libxi-dev libgl1-mesa-dev libgl1-mesa-dri
+      - name: raylib cache
+        id: raylib
+        uses: actions/cache@v4
+        with:
+          path: ~/raylib
+          key: raylib-${{ env.RAYLIB_VERSION }}-ubuntu-24.04
+      - name: raylib
+        if: steps.raylib.outputs.cache-hit != 'true'
+        run: |
+          git clone --depth 1 --branch "$RAYLIB_VERSION" \
+            https://github.com/raysan5/raylib /tmp/raylib-src
+          cmake -S /tmp/raylib-src -B /tmp/raylib-build \
+            -DBUILD_EXAMPLES=OFF -DCMAKE_BUILD_TYPE=Release \
+            -DCMAKE_INSTALL_PREFIX="$HOME/raylib"
+          cmake --build /tmp/raylib-build -j"$(nproc)"
+          cmake --install /tmp/raylib-build
+      - name: Point the compiler at raylib
+        run: |
+          echo "CPATH=$HOME/raylib/include" >> "$GITHUB_ENV"
+          echo "LIBRARY_PATH=$HOME/raylib/lib" >> "$GITHUB_ENV"
+      - name: Tests
+        run: make test
+      - name: Tests under the sanitizers
+        run: make sanitize
+      - name: Game, warnings as errors
+        run: make game CFLAGS="-std=c99 -Wall -Wextra -Wshadow -Werror -O2"
+      - name: Smoke
+        run: xvfb-run -a -s "-screen 0 1280x1024x24" make smoke
+      - name: Smoke logs
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: smoke
+          path: build/smoke
+
+  compat:
+    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        raylib: ["4.5.0", "5.0", "5.5"]
+    steps:
+      - uses: actions/checkout@v4
+      - name: raylib ${{ matrix.raylib }} headers
+        run: |
+          git clone --depth 1 --branch "${{ matrix.raylib }}" \
+            https://github.com/raysan5/raylib /tmp/raylib
+      - name: Syntax check
+        run: make compat RAYLIB=/tmp/raylib/src

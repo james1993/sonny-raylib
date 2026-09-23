@@ -95,9 +95,18 @@ void audio_play(const char *name)
 
     if (channel_used[channel]) {
         StopSound(channels[channel]);
+#if RAYLIB_VERSION_MAJOR >= 5
         UnloadSoundAlias(channels[channel]);
+#endif
     }
+#if RAYLIB_VERSION_MAJOR >= 5
     channels[channel] = LoadSoundAlias(*sound);
+#else
+    /* Before raylib 5 there are no aliases: the channel plays the cached
+       sound itself, so the same sound on two channels restarts rather than
+       overlapping. */
+    channels[channel] = *sound;
+#endif
     channel_used[channel] = 1;
     PlaySound(channels[channel]);
 }
@@ -208,7 +217,9 @@ void audio_shutdown(void)
     for (int32_t i = 0; i < EFFECT_CHANNELS; i++)
         if (channel_used[i]) {
             StopSound(channels[i]);
+#if RAYLIB_VERSION_MAJOR >= 5
             UnloadSoundAlias(channels[i]);
+#endif
             channel_used[i] = 0;
         }
     if (music_playing) {

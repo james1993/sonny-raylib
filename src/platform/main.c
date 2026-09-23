@@ -225,7 +225,11 @@ int main(int argc, char **argv)
         if (IsKeyPressed(KEY_F11)
             || ((IsKeyDown(KEY_LEFT_ALT) || IsKeyDown(KEY_RIGHT_ALT))
                 && IsKeyPressed(KEY_ENTER)))
+#if RAYLIB_VERSION_MAJOR >= 5
             ToggleBorderlessWindowed();
+#else
+            ToggleFullscreen();     /* raylib 4.5 has no borderless mode */
+#endif
 
         /* A window that is not in front may have its buffer swaps throttled
            or stopped altogether by the compositor, and the music is refilled

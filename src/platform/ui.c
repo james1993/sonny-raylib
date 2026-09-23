@@ -77,8 +77,14 @@ typedef struct {
    would on its own. */
 static float font_em_to_box(const char *path)
 {
-    int size = 0;
-    unsigned char *data = LoadFileData(path, &size);
+    /* raylib 4.5 hands the size back unsigned, 5.0 on signed. */
+#if RAYLIB_VERSION_MAJOR >= 5
+    int bytes = 0;
+#else
+    unsigned int bytes = 0;
+#endif
+    unsigned char *data = LoadFileData(path, &bytes);
+    int size = (int)bytes;
     if (!data)
         return 0.0f;
 

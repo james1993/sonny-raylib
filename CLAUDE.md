@@ -48,6 +48,13 @@ checked by properties instead. `make test` runs all of it.
 
 `build/simulate` prints a battle move by move.
 
+`make sanitize` runs the same tests under AddressSanitizer and
+UndefinedBehaviorSanitizer; `make smoke` opens every screen headless in a
+sanitized build of the game (it needs a display -- `xvfb-run make smoke`);
+`make compat RAYLIB=path/to/raylib/src` checks the platform layer against an
+older raylib's headers. CI (`.github/workflows/ci.yml`) runs all of them, the
+last against raylib 4.5, 5.0 and 5.5.
+
 `tools/playtest.py` is how differences are found now, instead of by eye. One
 script drives both games -- the real SWF under Ruffle and `build/sonny` --
 through the same clicks at the same moments on the same 800x575 virtual

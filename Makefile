@@ -8,15 +8,14 @@ CORE_SRC = src/core/formula.c src/core/rng.c src/core/unit.c \
            src/gen/gamedata.c
 BUILD    = build
 
-.PHONY: all game dist test simulate vectors data extract clean playtest
+.PHONY: all game dist test sanitize smoke compat simulate vectors data extract clean playtest
 
 all: game test
 
 $(BUILD):
 	@mkdir -p $(BUILD)
 
-game: $(BUILD)
-	$(CC) $(CFLAGS) -o $(BUILD)/sonny src/platform/main.c \
+GAME_SRC = src/platform/main.c \
 	    src/platform/assets.c src/platform/audio.c src/platform/ui.c \
 	    src/platform/screen_battle.c src/platform/menu.c \
 	    src/platform/screen_hub.c src/platform/screen_map.c \
@@ -26,8 +25,10 @@ game: $(BUILD)
 	    src/platform/render.c src/platform/options.c \
 	    src/platform/loader.c src/platform/prefetch.c \
 	    src/platform/screen_table.c \
-	    src/gen/assets_gen.c \
-	    $(CORE_SRC) $(RAYLIB_LIBS)
+	    src/gen/assets_gen.c
+
+game: $(BUILD)
+	$(CC) $(CFLAGS) -o $(BUILD)/sonny $(GAME_SRC) $(CORE_SRC) $(RAYLIB_LIBS)
 
 # The binary the repository ships, for people who would rather not build it.
 # It is committed, so it goes stale the moment the game or the art changes --
@@ -66,6 +67,35 @@ test: $(BUILD)
 	$(BUILD)/test_save
 	python3 tools/check_assets.py
 	python3 tools/check_content.py
+
+# The tests again, and the game, under AddressSanitizer and
+# UndefinedBehaviorSanitizer: anything out of bounds, overflowing or
+# undefined stops the run where it happens.
+SAN = -fsanitize=address,undefined -fno-sanitize-recover=undefined -g -O1
+TESTS = formula:tests/vectors_formula.txt rng: buffs:tests/vectors_buffs.txt \
+        heal:tests/vectors_heal.txt battle: \
+        character:tests/vectors_character.txt talents: campaign: party: \
+        window: save:
+sanitize: $(BUILD)
+	@set -e; for t in $(TESTS); do \
+	    name=$${t%%:*}; vectors=$${t#*:}; \
+	    $(CC) -std=c99 $(SAN) -o $(BUILD)/san_$$name tests/test_$$name.c \
+	        $(CORE_SRC) -lm; \
+	    ASAN_OPTIONS=detect_leaks=0 $(BUILD)/san_$$name $$vectors; \
+	done
+
+# Every screen opened headless in a sanitized build of the game; needs a
+# display, which CI provides with xvfb-run.
+smoke: $(BUILD)
+	$(CC) -std=c99 $(SAN) -o $(BUILD)/sonny_san $(GAME_SRC) $(CORE_SRC) \
+	    $(RAYLIB_LIBS)
+	tools/smoke.sh $(BUILD)/sonny_san
+
+# The platform layer against older raylib headers, which is what a player
+# building with their distribution's raylib has: RAYLIB=path/to/raylib/src.
+compat:
+	$(CC) -std=c99 -Wall -Wextra -Wshadow -Werror -fsyntax-only \
+	    -I$(RAYLIB) src/platform/*.c
 
 # Regenerate the C data tables from the extracted JSON, with anything in
 # data/content/ laid over it -- which is checked for references that land
