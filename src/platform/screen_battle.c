@@ -801,7 +801,8 @@ static void draw_chrome_art(const StageChrome *c, int32_t tick)
 /* Draw every piece of the battle screen whose depth falls in [from, to). */
 static void draw_chrome(int32_t from, int32_t to, int32_t tick)
 {
-    for (int i = 0; i < SONNY_STAGE_CHROME_COUNT; i++) {
+    int32_t row0, rows = stage_chrome_rows(BATTLE_SCREEN_NAME, &row0);
+    for (int32_t i = row0; i < row0 + rows; i++) {
         const StageChrome *c = &SONNY_STAGE_CHROME[i];
         if (strcmp(c->screen, BATTLE_SCREEN_NAME) != 0)
             continue;
@@ -825,7 +826,8 @@ static void draw_chrome(int32_t from, int32_t to, int32_t tick)
    screen, and draw_ring puts those up. */
 static void draw_chrome_buttons(Vector2 mouse)
 {
-    for (int i = 0; i < SONNY_BUTTON_COUNT; i++) {
+    int32_t row0, rows = button_rows(BATTLE_SCREEN_NAME, &row0);
+    for (int32_t i = row0; i < row0 + rows; i++) {
         const StageButton *b = &SONNY_BUTTONS[i];
         if (strcmp(b->screen, BATTLE_SCREEN_NAME) != 0)
             continue;
@@ -841,7 +843,8 @@ static void draw_chrome_buttons(Vector2 mouse)
    edges of the stage. */
 static const StageChrome *battlefield_mask(void)
 {
-    for (int i = 0; i < SONNY_STAGE_CHROME_COUNT; i++)
+    int32_t row0, rows = stage_chrome_rows(BATTLE_SCREEN_NAME, &row0);
+    for (int32_t i = row0; i < row0 + rows; i++)
         if (SONNY_STAGE_CHROME[i].clip_depth > 0
             && strcmp(SONNY_STAGE_CHROME[i].screen, BATTLE_SCREEN_NAME) == 0)
             return &SONNY_STAGE_CHROME[i];
@@ -1658,7 +1661,8 @@ static void draw_speech(const Game *g)
     /* The prompt beside it runs through its own frames while the line is up.
        It is a piece of the box, so it moves with it. */
     const ClipPart *prompt = NULL;
-    for (int i = 0; i < SONNY_CLIP_PART_COUNT; i++) {
+    int32_t row0, rows = clip_part_rows(BATTLE_SCREEN_NAME, &row0);
+    for (int32_t i = row0; i < row0 + rows; i++) {
         const ClipPart *part = &SONNY_CLIP_PARTS[i];
         if (strcmp(part->screen, BATTLE_SCREEN_NAME) == 0
             && strcmp(part->owner, "combatScript") == 0

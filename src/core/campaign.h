@@ -120,6 +120,11 @@ void campaign_set_ai_mode(Campaign *c, int32_t member, int32_t mode);
 double campaign_ally_xp_gain(const Campaign *c, const BattleRewards *r,
                              int32_t member);
 
+/* Which battle the story marker starts. The original clamps to the zone's
+   last fight once progress has passed it, and calls that fight -- and the
+   fight that ends the zone -- a boss fight. `boss` may be NULL. */
+int32_t campaign_story_battle(const Campaign *c, int *boss);
+
 /* Advance past the battle just won (frame 213 increments progressLevelOn). */
 void campaign_advance(Campaign *c);
 

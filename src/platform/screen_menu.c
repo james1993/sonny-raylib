@@ -51,7 +51,8 @@ static const Vector2 NOWHERE = {0, 0};
    list has them. */
 static void say(const char *screen, const char *variable, const char *text)
 {
-    for (int32_t i = 0; i < SONNY_TEXT_FIELD_COUNT; i++) {
+    int32_t row0, rows = text_field_rows(screen, &row0);
+    for (int32_t i = row0; i < row0 + rows; i++) {
         const TextField *f = &SONNY_TEXT_FIELDS[i];
         if (strcmp(f->screen, screen) == 0
             && strcmp(f->variable, variable) == 0)
@@ -144,7 +145,8 @@ void screen_slots_draw(Game *g, Vector2 mouse)
     draw_frame(SLOTS_SCREEN, mouse);
     /* Every row's word is the same one -- the number beside it is authored
        into the frame -- and each row's name is its own variable. */
-    for (int32_t i = 0; i < SONNY_TEXT_FIELD_COUNT; i++) {
+    int32_t row0, rows = text_field_rows(SLOTS_SCREEN, &row0);
+    for (int32_t i = row0; i < row0 + rows; i++) {
         const TextField *f = &SONNY_TEXT_FIELDS[i];
         if (strcmp(f->screen, SLOTS_SCREEN) == 0
             && strcmp(f->variable, "slotNamerText") == 0)
@@ -423,6 +425,14 @@ static const struct {
     {"CS_OUTRO", 1719, "CutsceneVoiceOutro", SCREEN_ENDING},
 };
 
+int32_t cutscene_clip(int32_t which)
+{
+    if (which < 0 || which >= (int32_t)(sizeof(CUTSCENES)
+                                        / sizeof(CUTSCENES[0])))
+        return 0;
+    return CUTSCENES[which].clip;
+}
+
 void game_play_cutscene(Game *g, int32_t which)
 {
     if (which < 0 || which >= (int32_t)(sizeof(CUTSCENES)
@@ -485,7 +495,8 @@ void screen_cutscene_draw(Game *g, Vector2 mouse)
     draw_frame(screen, mouse);
     /* The comic itself, which the frame places over the backing. */
     const StageChrome *panel = NULL;
-    for (int i = 0; i < SONNY_STAGE_CHROME_COUNT; i++) {
+    int32_t row0, rows = stage_chrome_rows(screen, &row0);
+    for (int32_t i = row0; i < row0 + rows; i++) {
         const StageChrome *c = &SONNY_STAGE_CHROME[i];
         if (strcmp(c->screen, screen) == 0
             && c->character == CUTSCENES[g->cutscene].clip)
@@ -527,7 +538,7 @@ void screen_cutscene_update(Game *g, Vector2 mouse)
        its own and the narration pulls it into step whenever it advances.
        (Ruffle, which has no fallback, is why the original stands still in a
        capture with no sound device.) */
-    g->cutscene_clock += GetFrameTime();
+    g->cutscene_clock += 1.0f / STAGE_FPS;
     if (g->cutscene_voiced && audio_narration_playing()) {
         float played = audio_narration_time();
         if (played > g->cutscene_playhead) {

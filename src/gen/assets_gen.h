@@ -476,6 +476,17 @@ extern const StageChrome SONNY_STAGE_CHROME[];
 extern const int SONNY_STAGE_CHROME_COUNT;
 const StageChrome *stage_chrome(const char *screen, const char *name);
 
+/* The rows of a layout table that belong to one screen -- or one menu frame
+   -- as a run: how many, and where they start. Every table keeps a screen's
+   rows together (the generator checks it), so a lookup or a draw loop walks
+   that screen's rows rather than the whole table. */
+int32_t stage_chrome_rows(const char *screen, int32_t *first);
+int32_t clip_part_rows(const char *screen, int32_t *first);
+int32_t text_field_rows(const char *screen, int32_t *first);
+int32_t button_rows(const char *screen, int32_t *first);
+int32_t slot_piece_rows(const char *menu, int32_t *first);
+int32_t menu_slot_rows(const char *menu, int32_t *first);
+
 extern const StageLayer SONNY_STAGE_LAYERS[];
 extern const int SONNY_STAGE_LAYER_COUNT;
 const StageLayer *stage_layer(const char *name);

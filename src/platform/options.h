@@ -12,6 +12,7 @@
  *   SONNY_SILENT=1        open no audio device
  *   SONNY_INFO=1          print what the window and monitor came to
  *   SONNY_TRACE=1         print which effect clip each move plays
+ *   SONNY_FRAMES=path     write how long each frame's own work took, in ms
  *
  * and for a headless capture:
  *
@@ -40,6 +41,7 @@ typedef struct {
     int         silent;
     int         info;
     int         trace;
+    const char *frame_log;
 
     const char *shot;
     int         steps;

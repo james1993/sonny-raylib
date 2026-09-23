@@ -34,6 +34,7 @@ void options_load(int argc, char **argv)
     OPTIONS.silent = env("SONNY_SILENT") != NULL;
     OPTIONS.info = env("SONNY_INFO") != NULL;
     OPTIONS.trace = env("SONNY_TRACE") != NULL;
+    OPTIONS.frame_log = env("SONNY_FRAMES");
 
     OPTIONS.shot = env("SONNY_SHOT");
     OPTIONS.steps = env_int("SONNY_STEPS", 0);

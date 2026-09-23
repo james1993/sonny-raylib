@@ -116,6 +116,24 @@ const ZoneDef *campaign_zone(const Campaign *c)
     return &SONNY_ZONES[0];
 }
 
+int32_t campaign_story_battle(const Campaign *c, int *boss)
+{
+    const ZoneDef *zone = campaign_zone(c);
+    int32_t pick = c->progress_battle;
+    int is_boss = 0;
+    if (zone) {
+        if (c->progress_battle > zone->last_battle - 1) {
+            pick = zone->last_battle - 1;
+            is_boss = 1;
+        } else if (c->progress_battle == zone->last_battle - 1) {
+            is_boss = 1;
+        }
+    }
+    if (boss)
+        *boss = is_boss;
+    return pick;
+}
+
 int campaign_complete(const Campaign *c)
 {
     return c->progress_battle >= 38;

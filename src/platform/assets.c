@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "assets.h"
+#include "loader.h"
 #include "rlgl.h"
 
 #define ASSET_CACHE_MAX 512
@@ -15,6 +16,7 @@
 typedef struct {
     const char *name;          /* NULL for a slot nothing is in */
     int32_t     frame;
+    int32_t     key;           /* which of every asset's frames this is */
     Texture2D   texture;
     int32_t     ok;
     int64_t     used;          /* when this was last asked for */
@@ -23,9 +25,34 @@ typedef struct {
 
 static CachedTexture cache[ASSET_CACHE_MAX];
 static int32_t cache_count;
+/* Where each frame of each asset sits in the cache, so asking for a texture
+   is an index rather than a walk over five hundred slots: every asset's
+   frames numbered end to end (frame_base[asset] + frame - 1), and for each
+   the slot it is in plus one, or nothing. */
+static int32_t *frame_base;
+static int32_t *frame_slot;
+
+static int32_t frame_key(const AssetEntry *entry, int32_t frame)
+{
+    if (!frame_base) {
+        frame_base = MemAlloc((unsigned)(SONNY_ASSET_COUNT + 1)
+                              * sizeof(int32_t));
+        for (int32_t i = 0; i < SONNY_ASSET_COUNT; i++)
+            frame_base[i + 1] = frame_base[i] + SONNY_ASSETS[i].frame_count;
+        frame_slot = MemAlloc((unsigned)(frame_base[SONNY_ASSET_COUNT] + 1)
+                              * sizeof(int32_t));
+    }
+    return frame_base[entry - SONNY_ASSETS] + frame - 1;
+}
 static int64_t cache_clock;
 static int64_t cache_bytes;
 static char asset_root[512] = ".";
+static int trace_loads;
+
+void assets_trace_loads(int on)
+{
+    trace_loads = on;
+}
 
 void assets_set_root(const char *root)
 {
@@ -94,6 +121,8 @@ static CachedTexture *oldest_slot(void)
 
 static void release(CachedTexture *slot)
 {
+    if (slot->name)
+        frame_slot[slot->key] = 0;
     if (slot->ok)
         UnloadTexture(slot->texture);
     cache_bytes -= slot->bytes;
@@ -115,37 +144,29 @@ static int evict_oldest(void)
     return 1;
 }
 
-const Texture2D *asset_texture(const char *name, int32_t frame)
+/* Which frame of an asset a caller means: 1-based, and past the end it
+   wraps round. */
+static int32_t clamp_frame(const AssetEntry *entry, int32_t frame)
 {
-    const AssetEntry *entry = asset_find(name);
-    if (!entry || entry->frame_count == 0)
-        return NULL;
-
     if (frame < 1)
         frame = 1;
     if (frame > entry->frame_count)
         frame = ((frame - 1) % entry->frame_count) + 1;
+    return frame;
+}
 
-    for (int32_t i = 0; i < cache_count; i++) {
-        if (cache[i].name == entry->name && cache[i].frame == frame) {
-            cache[i].used = ++cache_clock;
-            return cache[i].ok ? &cache[i].texture : NULL;
-        }
-    }
-    /* Room for one more. The one that has gone longest without being asked
-       for makes way -- never the one just handed out, which is what lets a
-       caller hold a texture while it fetches another. */
+/* A slot for another texture. The one that has gone longest without being
+   asked for makes way -- never the one just handed out, which is what lets a
+   caller hold a texture while it fetches another.
+
+   A comic is a thousand pictures of its own, so a cache that only filled up
+   would leave the game with nothing to draw once one had played. */
+static CachedTexture *take_slot(const AssetEntry *entry, int32_t frame,
+                                int32_t key)
+{
     while (cache_bytes > ASSET_CACHE_BYTES)
         if (!evict_oldest())
             break;
-
-    const char *path = assets_path(entry->frames[frame - 1]);
-
-    /* A comic is a thousand pictures of its own, so a cache that only filled
-       up would leave the game with nothing to draw once one had played.
-       Asking for a texture puts it at the head of the order, so a pointer
-       handed back by this function is never what the next call throws out.
-       */
     CachedTexture *slot = NULL;
     for (int32_t i = 0; i < cache_count && !slot; i++)
         if (!cache[i].name)
@@ -159,28 +180,129 @@ const Texture2D *asset_texture(const char *name, int32_t frame)
     slot->used = ++cache_clock;
     slot->name = entry->name;
     slot->frame = frame;
+    slot->key = key;
+    frame_slot[key] = (int32_t)(slot - cache) + 1;
     slot->ok = 0;
     slot->bytes = 0;
-    if (FileExists(path)) {
-        slot->texture = LoadTexture(path);
-        if (slot->texture.id != 0) {
-            /* Some art is drawn a long way below its exported size -- the
-               quit button is a 60px square shown at 18 -- and sampling four
-               texels of it picks out whichever ones happen to land under the
-               pointer, which turns a dark glossy square into a flat bright
-               one. Mipmaps give those draws a properly reduced copy to read;
-               at or near full size trilinear still reads the full one. */
-            GenTextureMipmaps(&slot->texture);
-            SetTextureFilter(slot->texture, TEXTURE_FILTER_TRILINEAR);
-            slot->ok = 1;
-            /* Four bytes a pixel, and a third as much again for the chain of
-               reduced copies. */
-            slot->bytes = (int64_t)slot->texture.width
-                        * slot->texture.height * 4 * 4 / 3;
-            cache_bytes += slot->bytes;
-        }
+    return slot;
+}
+
+/* Put a decoded picture on the card, and give it the chain of reduced copies
+   every draw below full size samples from. */
+static void upload(CachedTexture *slot, Image image)
+{
+    slot->texture = LoadTextureFromImage(image);
+    if (slot->texture.id == 0)
+        return;
+    /* Some art is drawn a long way below its exported size -- the quit button
+       is a 60px square shown at 18 -- and sampling four texels of it picks out
+       whichever ones happen to land under the pointer, which turns a dark
+       glossy square into a flat bright one. Mipmaps give those draws a
+       properly reduced copy to read; at or near full size trilinear still
+       reads the full one. */
+    GenTextureMipmaps(&slot->texture);
+    SetTextureFilter(slot->texture, TEXTURE_FILTER_TRILINEAR);
+    slot->ok = 1;
+    /* Four bytes a pixel, and a third as much again for the reduced copies. */
+    slot->bytes = (int64_t)slot->texture.width * slot->texture.height * 4 * 4
+                / 3;
+    cache_bytes += slot->bytes;
+}
+
+static const Texture2D *entry_texture(const AssetEntry *entry, int32_t frame)
+{
+    if (!entry || entry->frame_count == 0)
+        return NULL;
+    frame = clamp_frame(entry, frame);
+    int32_t key = frame_key(entry, frame);
+    if (frame_slot[key]) {
+        CachedTexture *hit = &cache[frame_slot[key] - 1];
+        hit->used = ++cache_clock;
+        return hit->ok ? &hit->texture : NULL;
+    }
+
+    CachedTexture *slot = take_slot(entry, frame, key);
+    /* Decoded ahead, or being decoded now: take the worker's copy. Anything
+       else is read here and now, which is how everything used to be. */
+    Image image = {0};
+    if (!loader_pending(key) || !loader_wait(key, &image)) {
+        const char *path = assets_path(entry->frames[frame - 1]);
+        double began = GetTime();
+        if (FileExists(path))
+            image = LoadImage(path);
+        /* SONNY_TRACE: what had to be read in the middle of a frame, which is
+           what a prefetch list is missing. */
+        if (trace_loads)
+            printf("TRACE read %s frame %d on the spot, %.1f ms\n",
+                   entry->name, (int)frame, (GetTime() - began) * 1000.0);
+    }
+    if (image.data) {
+        upload(slot, image);
+        UnloadImage(image);
     }
     return slot->ok ? &slot->texture : NULL;
+}
+
+/* Which asset and frame a key numbers, the other way round from frame_key. */
+static const AssetEntry *key_entry(int32_t key, int32_t *frame)
+{
+    int32_t lo = 0, hi = SONNY_ASSET_COUNT - 1;
+    while (lo < hi) {
+        int32_t mid = lo + (hi - lo + 1) / 2;
+        if (frame_base[mid] <= key)
+            lo = mid;
+        else
+            hi = mid - 1;
+    }
+    /* Assets with no frames share a base with the next one; skip to the one
+       that actually owns the key. */
+    while (lo < SONNY_ASSET_COUNT - 1 && frame_base[lo + 1] <= key)
+        lo++;
+    *frame = key - frame_base[lo] + 1;
+    return &SONNY_ASSETS[lo];
+}
+
+void assets_prefetch(const char *name, int32_t frame)
+{
+    const AssetEntry *entry = asset_find(name);
+    if (!entry || entry->frame_count == 0)
+        return;
+    frame = clamp_frame(entry, frame);
+    int32_t key = frame_key(entry, frame);
+    if (frame_slot[key])
+        return;
+    loader_request(key, assets_path(entry->frames[frame - 1]));
+}
+
+void assets_prefetch_all(const char *name)
+{
+    const AssetEntry *entry = asset_find(name);
+    for (int32_t f = 1; entry && f <= entry->frame_count; f++)
+        assets_prefetch(name, f);
+}
+
+void assets_pump(double budget)
+{
+    double until = GetTime() + budget;
+    int32_t key;
+    Image image;
+    while (GetTime() < until && loader_collect(&key, &image)) {
+        if (!frame_base || frame_slot[key] || !image.data) {
+            /* Read on the spot while it was on its way, or unreadable. */
+            UnloadImage(image);
+            continue;
+        }
+        int32_t frame = 0;
+        const AssetEntry *entry = key_entry(key, &frame);
+        CachedTexture *slot = take_slot(entry, frame, key);
+        upload(slot, image);
+        UnloadImage(image);
+    }
+}
+
+const Texture2D *asset_texture(const char *name, int32_t frame)
+{
+    return entry_texture(asset_find(name), frame);
 }
 
 /* A copy of an exported image with its colour taken out, so drawing it with a
@@ -264,14 +386,20 @@ Vector2 asset_frame_offset(const char *name, int32_t frame)
 int asset_art(const char *name, int32_t frame, Art *out)
 {
     *out = (Art){0};
-    const Texture2D *tex = asset_texture(name, frame);
+    /* One lookup of the name for everything below: this runs for every
+       picture on every frame. */
+    const AssetEntry *entry = asset_find(name);
+    const Texture2D *tex = entry_texture(entry, frame);
     if (!tex)
         return 0;
-    const AssetEntry *entry = asset_find(name);
-    float scale = (entry && entry->scale > 0.0f) ? entry->scale : 1.0f;
+    float scale = entry->scale > 0.0f ? entry->scale : 1.0f;
     out->texture = tex;
     out->size = (Vector2){tex->width / scale, tex->height / scale};
-    out->offset = asset_frame_offset(name, frame);
+    if (entry->offsets) {
+        int32_t f = clamp_frame(entry, frame);
+        out->offset = (Vector2){entry->offsets[f - 1].x,
+                                entry->offsets[f - 1].y};
+    }
     out->source = (Rectangle){0, 0, (float)tex->width, (float)tex->height};
     return 1;
 }
@@ -348,6 +476,9 @@ void assets_unload_all(void)
     cache_count = 0;
     cache_bytes = 0;
     memset(cache, 0, sizeof(cache));
+    MemFree(frame_base);
+    MemFree(frame_slot);
+    frame_base = frame_slot = NULL;
     for (int32_t i = 0; i < white_count; i++)
         if (white_cache[i].ok)
             UnloadTexture(white_cache[i].texture);

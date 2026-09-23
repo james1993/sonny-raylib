@@ -75,6 +75,18 @@ const Texture2D *asset_texture_recolored(const char *name, int32_t frame);
 int asset_draw_placed(const char *name, int32_t frame, Vector2 parent,
                       float scale, Color tint);
 
+/* Ask for a picture ahead of drawing it, so it is decoded off the main
+   thread in the meantime. Asking changes nothing about what is drawn: a
+   picture that is not ready when it is wanted is read there and then, the
+   way everything always was. `_all` asks for every frame of an animation. */
+void assets_prefetch(const char *name, int32_t frame);
+void assets_prefetch_all(const char *name);
+/* Put on the card whatever the decoder has finished, for no longer than
+   `budget` seconds. Once a frame, before anything is drawn. */
+void assets_pump(double budget);
+/* Say on stdout whenever a picture has to be read mid-frame. */
+void assets_trace_loads(int on);
+
 void assets_unload_all(void);
 int32_t assets_loaded_count(void);
 

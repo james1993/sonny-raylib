@@ -145,7 +145,8 @@ static const StageButton *zone_marker_button(const Campaign *c, int32_t index)
     if (!zone || zone->zone >= SONNY_ZONE_LABEL_COUNT)
         return NULL;
     const char *label = SONNY_ZONE_LABELS[zone->zone];
-    for (int i = 0; i < SONNY_BUTTON_COUNT; i++) {
+    int32_t row0, rows = button_rows(label, &row0);
+    for (int32_t i = row0; i < row0 + rows; i++) {
         const StageButton *b = &SONNY_BUTTONS[i];
         if (strcmp(b->screen, label) != 0 || !zone_button(b->character))
             continue;
@@ -153,25 +154,6 @@ static const StageButton *zone_marker_button(const Campaign *c, int32_t index)
             return b;
     }
     return NULL;
-}
-
-/* Which battle the story marker starts. The original clamps to the zone's
-   last fight once progress has passed it, and calls that fight -- and the
-   fight that ends the zone -- a boss fight. */
-static int32_t progress_pick(const Campaign *c, int *boss)
-{
-    const ZoneDef *zone = campaign_zone(c);
-    int32_t pick = c->progress_battle;
-    *boss = 0;
-    if (!zone)
-        return pick;
-    if (c->progress_battle > zone->last_battle - 1) {
-        pick = zone->last_battle - 1;
-        *boss = 1;
-    } else if (c->progress_battle == zone->last_battle - 1) {
-        *boss = 1;
-    }
-    return pick;
 }
 
 /* Which battle a practice marker rolls. The marker's own number is what it
@@ -339,7 +321,7 @@ void screen_zone_update(Game *g, Vector2 mouse)
                and in the bag a whole fight before he turns up. */
             campaign_story_joins(&g->campaign);
             int boss = 0;
-            int32_t pick = progress_pick(&g->campaign, &boss);
+            int32_t pick = campaign_story_battle(&g->campaign, &boss);
             g->boss_fight = boss;
             /* Clamping past the zone's last fight makes it a boss fight that
                no longer carries progress. */
@@ -724,7 +706,8 @@ static Rectangle talent_rect(int32_t node)
    rather than the nodes' own, so a node takes the set laid nearest to it. */
 #define TREE_RANK_FIELDS 4
 
-static const TextField *node_field(const TalentSlot *slot, int32_t which)
+static const TextField *nearest_node_field(const TalentSlot *slot,
+                                           int32_t which)
 {
     int32_t best = -1;
     float nearest = 0;
@@ -744,6 +727,24 @@ static const TextField *node_field(const TalentSlot *slot, int32_t which)
         return NULL;
     return text_field(MENU_SCREEN, MENU_SKILLS,
                       best * TREE_RANK_FIELDS + which);
+}
+
+/* The same, worked out once per node: the layout never moves, and the search
+   is every set against every node. */
+static const TextField *node_field(const TalentSlot *slot, int32_t which)
+{
+    static const TextField *found[SONNY_TALENT_MAX][TREE_RANK_FIELDS];
+    static char looked[SONNY_TALENT_MAX];
+    int32_t node = (int32_t)(slot - SONNY_TALENT_SLOTS);
+    if (node < 0 || node >= SONNY_TALENT_MAX || which < 0
+        || which >= TREE_RANK_FIELDS)
+        return nearest_node_field(slot, which);
+    if (!looked[node]) {
+        for (int32_t w = 0; w < TREE_RANK_FIELDS; w++)
+            found[node][w] = nearest_node_field(slot, w);
+        looked[node] = 1;
+    }
+    return found[node][which];
 }
 
 /* What a node's orb shows. A node that grants a move shows that move's icon,
@@ -1604,7 +1605,8 @@ static void draw_inventory_clip(const Game *g, const Character *who)
     if (fraction > 1.0f)
         fraction = 1.0f;
 
-    for (int i = 0; i < SONNY_CLIP_PART_COUNT; i++) {
+    int32_t row0, rows = clip_part_rows(MENU_SCREEN, &row0);
+    for (int32_t i = row0; i < row0 + rows; i++) {
         const ClipPart *part = &SONNY_CLIP_PARTS[i];
         if (strcmp(part->screen, MENU_SCREEN) != 0
             || strcmp(part->owner, MENU_INVENTORY) != 0 || part->width <= 0)
@@ -1897,7 +1899,8 @@ void screen_shop_draw(Game *g, Vector2 mouse)
     draw_clip_parts(MENU_SCREEN, MENU_SHOP, NO_OFFSET, NULL, NULL, WHITE);
     /* The two buttons in the purse strip -- the store's own euro sign and the
        recycler -- are art the frame keeps inside the buttons themselves. */
-    for (int32_t i = 0; i < SONNY_BUTTON_COUNT; i++)
+    int32_t row0, rows = button_rows(MENU_SHOP, &row0);
+    for (int32_t i = row0; i < row0 + rows; i++)
         if (strcmp(SONNY_BUTTONS[i].screen, MENU_SHOP) == 0)
             draw_button_art(&SONNY_BUTTONS[i], WHITE);
 
@@ -2273,7 +2276,8 @@ static const char *win_row_portrait(const Game *g, int32_t row)
    player's bar cut to how far the fill has got. */
 static void draw_win_parts(Game *g)
 {
-    for (int i = 0; i < SONNY_CLIP_PART_COUNT; i++) {
+    int32_t row0, rows = clip_part_rows(MENU_SCREEN, &row0);
+    for (int32_t i = row0; i < row0 + rows; i++) {
         const ClipPart *part = &SONNY_CLIP_PARTS[i];
         if (strcmp(part->screen, MENU_SCREEN) != 0
             || strcmp(part->owner, MENU_WIN) != 0 || part->width <= 0)

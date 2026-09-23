@@ -9,6 +9,7 @@ runtime and makes the asset set visible in a diff.
 import argparse
 import hashlib
 import json
+import re
 import os
 
 NUMBER_LOOKUP = '\nconst NumberAnim *number_anim(const char *name)\n{\n    if (!name)\n        return NULL;\n    for (int i = 0; i < SONNY_NUMBER_ANIM_COUNT; i++)\n        if (strcmp(SONNY_NUMBER_ANIMS[i].name, name) == 0)\n            return &SONNY_NUMBER_ANIMS[i];\n    return NULL;\n}'
@@ -491,6 +492,17 @@ extern const StageChrome SONNY_STAGE_CHROME[];
 extern const int SONNY_STAGE_CHROME_COUNT;
 const StageChrome *stage_chrome(const char *screen, const char *name);
 
+/* The rows of a layout table that belong to one screen -- or one menu frame
+   -- as a run: how many, and where they start. Every table keeps a screen's
+   rows together (the generator checks it), so a lookup or a draw loop walks
+   that screen's rows rather than the whole table. */
+int32_t stage_chrome_rows(const char *screen, int32_t *first);
+int32_t clip_part_rows(const char *screen, int32_t *first);
+int32_t text_field_rows(const char *screen, int32_t *first);
+int32_t button_rows(const char *screen, int32_t *first);
+int32_t slot_piece_rows(const char *menu, int32_t *first);
+int32_t menu_slot_rows(const char *menu, int32_t *first);
+
 extern const StageLayer SONNY_STAGE_LAYERS[];
 extern const int SONNY_STAGE_LAYER_COUNT;
 const StageLayer *stage_layer(const char *name);
@@ -535,6 +547,97 @@ const AssetAnimation *asset_animation(const char *name);
 '''
 
 
+# The runs a table's rows make by their first key, worked out the first time
+# a screen is asked for. The tables are laid out with each screen's rows
+# together, which assert_runs checks here, at generation time.
+ROWS_HELPER = r"""/* One screen's run of rows in a table. */
+typedef struct {
+    const char *key;
+    int32_t     first;
+    int32_t     count;
+} RowRun;
+
+typedef struct {
+    RowRun  *runs;
+    int32_t  count;
+} RowIndex;
+
+static int32_t rows_of(RowIndex *index, const void *rows, size_t stride,
+                       int32_t count, size_t key_at, const char *key,
+                       int32_t *first)
+{
+    *first = 0;
+    if (!key)
+        return 0;
+    if (!index->runs && count > 0) {
+        index->runs = malloc((size_t)count * sizeof(RowRun));
+        if (!index->runs)
+            return 0;
+        for (int32_t i = 0; i < count; i++) {
+            const char *k = *(const char *const *)((const char *)rows
+                                                   + (size_t)i * stride
+                                                   + key_at);
+            RowRun *last = index->count ? &index->runs[index->count - 1]
+                                        : NULL;
+            if (last && strcmp(last->key, k) == 0) {
+                last->count++;
+            } else {
+                index->runs[index->count].key = k;
+                index->runs[index->count].first = i;
+                index->runs[index->count].count = 1;
+                index->count++;
+            }
+        }
+    }
+    for (int32_t i = 0; i < index->count; i++)
+        if (strcmp(index->runs[i].key, key) == 0) {
+            *first = index->runs[i].first;
+            return index->runs[i].count;
+        }
+    return 0;
+}
+
+#define ROWS_OF(table, type, field, count, key, first)                      \
+    rows_of(&table##_INDEX, table, sizeof(type), count,                       \
+            offsetof(type, field), key, first)
+"""
+
+
+def assert_runs(table, keys):
+    """Each key's rows together, which is what lets a lookup take a run."""
+    seen = set()
+    previous = None
+    for key in keys:
+        if key != previous and key in seen:
+            raise SystemExit('%s: rows for %r are not together' % (table, key))
+        seen.add(key)
+        previous = key
+
+
+FIRST_STRING = re.compile(r'\{ "((?:[^"\\]|\\.)*)"')
+
+
+def check_tables(lines, assets):
+    """What the lookups count on: each layout table keeps a screen's rows
+    together, and the assets are in the byte order strcmp compares in."""
+    for table in ('SONNY_STAGE_CHROME', 'SONNY_CLIP_PARTS',
+                  'SONNY_TEXT_FIELDS', 'SONNY_BUTTONS', 'SONNY_SLOT_PIECES',
+                  'SONNY_MENU_SLOTS'):
+        start = next(i for i, line in enumerate(lines)
+                     if line.endswith(' %s[] = {' % table))
+        keys = []
+        for line in lines[start + 1:]:
+            if line.startswith('};'):
+                break
+            m = FIRST_STRING.search(line)
+            if m:
+                keys.append(m.group(1))
+        assert_runs(table, keys)
+    names = [name.encode('utf-8') for name in sorted(assets)]
+    if names != sorted(names):
+        raise SystemExit('asset names are not in strcmp order')
+
+
 def c_float(value):
     """A C float literal that round-trips, whatever Python type it came in as."""
     return '%.6ff' % float(value)
@@ -577,8 +680,8 @@ def main():
         fh.write(HEADER)
 
     lines = ['/* GENERATED by tools/gen_asset_manifest.py -- do not edit. */',
-             '#include <stddef.h>', '#include <string.h>',
-             '#include "assets_gen.h"', '']
+             '#include <stddef.h>', '#include <stdlib.h>', '#include <string.h>',
+             '#include "assets_gen.h"', '', ROWS_HELPER, '']
 
     for index, (name, entry) in enumerate(sorted(assets.items())):
         lines.append('static const char *const FRAMES_%d[] = { %s };'
@@ -734,11 +837,19 @@ const StageBar *stage_bar(int32_t slot)
     lines.append('const int SONNY_STAGE_CHROME_COUNT = '
                  '(int)(sizeof(SONNY_STAGE_CHROME) / sizeof(SONNY_STAGE_CHROME[0]));')
     lines.append("""
+static RowIndex SONNY_STAGE_CHROME_INDEX;
+
+int32_t stage_chrome_rows(const char *screen, int32_t *first)
+{
+    return ROWS_OF(SONNY_STAGE_CHROME, StageChrome, screen,
+                   SONNY_STAGE_CHROME_COUNT, screen, first);
+}
+
 const StageChrome *stage_chrome(const char *screen, const char *name)
 {
-    for (int i = 0; i < SONNY_STAGE_CHROME_COUNT; i++)
-        if (strcmp(SONNY_STAGE_CHROME[i].screen, screen) == 0
-            && strcmp(SONNY_STAGE_CHROME[i].name, name) == 0)
+    int32_t first, n = stage_chrome_rows(screen, &first);
+    for (int32_t i = first; i < first + n; i++)
+        if (strcmp(SONNY_STAGE_CHROME[i].name, name) == 0)
             return &SONNY_STAGE_CHROME[i];
     return NULL;
 }""")
@@ -829,11 +940,19 @@ const StageChrome *stage_chrome(const char *screen, const char *name)
     lines.append('const int SONNY_CLIP_PART_COUNT = '
                  '(int)(sizeof(SONNY_CLIP_PARTS) / sizeof(SONNY_CLIP_PARTS[0]));')
     lines.append('''
+static RowIndex SONNY_CLIP_PARTS_INDEX;
+
+int32_t clip_part_rows(const char *screen, int32_t *first)
+{
+    return ROWS_OF(SONNY_CLIP_PARTS, ClipPart, screen, SONNY_CLIP_PART_COUNT,
+                   screen, first);
+}
+
 const ClipPart *clip_part(const char *screen, const char *owner, int32_t index)
 {
-    for (int i = 0; i < SONNY_CLIP_PART_COUNT; i++)
-        if (strcmp(SONNY_CLIP_PARTS[i].screen, screen) == 0
-            && strcmp(SONNY_CLIP_PARTS[i].owner, owner) == 0 && index-- == 0)
+    int32_t first, n = clip_part_rows(screen, &first);
+    for (int32_t i = first; i < first + n; i++)
+        if (strcmp(SONNY_CLIP_PARTS[i].owner, owner) == 0 && index-- == 0)
             return &SONNY_CLIP_PARTS[i];
     return NULL;
 }''')
@@ -860,21 +979,29 @@ const ClipPart *clip_part(const char *screen, const char *owner, int32_t index)
     lines.append('const int SONNY_TEXT_FIELD_COUNT = '
                  '(int)(sizeof(SONNY_TEXT_FIELDS) / sizeof(SONNY_TEXT_FIELDS[0]));')
     lines.append('''
+static RowIndex SONNY_TEXT_FIELDS_INDEX;
+
+int32_t text_field_rows(const char *screen, int32_t *first)
+{
+    return ROWS_OF(SONNY_TEXT_FIELDS, TextField, screen,
+                   SONNY_TEXT_FIELD_COUNT, screen, first);
+}
+
 const TextField *text_field(const char *screen, const char *owner,
                             int32_t index)
 {
-    for (int i = 0; i < SONNY_TEXT_FIELD_COUNT; i++)
-        if (strcmp(SONNY_TEXT_FIELDS[i].screen, screen) == 0
-            && strcmp(SONNY_TEXT_FIELDS[i].owner, owner) == 0 && index-- == 0)
+    int32_t first, n = text_field_rows(screen, &first);
+    for (int32_t i = first; i < first + n; i++)
+        if (strcmp(SONNY_TEXT_FIELDS[i].owner, owner) == 0 && index-- == 0)
             return &SONNY_TEXT_FIELDS[i];
     return NULL;
 }
 
 const TextField *text_field_var(const char *screen, const char *variable)
 {
-    for (int i = 0; i < SONNY_TEXT_FIELD_COUNT; i++)
-        if (strcmp(SONNY_TEXT_FIELDS[i].screen, screen) == 0
-            && strcmp(SONNY_TEXT_FIELDS[i].variable, variable) == 0)
+    int32_t first, n = text_field_rows(screen, &first);
+    for (int32_t i = first; i < first + n; i++)
+        if (strcmp(SONNY_TEXT_FIELDS[i].variable, variable) == 0)
             return &SONNY_TEXT_FIELDS[i];
     return NULL;
 }
@@ -882,9 +1009,9 @@ const TextField *text_field_var(const char *screen, const char *variable)
 const TextField *text_field_named(const char *screen, const char *owner,
                                   const char *name, int32_t occurrence)
 {
-    for (int i = 0; i < SONNY_TEXT_FIELD_COUNT; i++)
-        if (strcmp(SONNY_TEXT_FIELDS[i].screen, screen) == 0
-            && strcmp(SONNY_TEXT_FIELDS[i].owner, owner) == 0
+    int32_t first, n = text_field_rows(screen, &first);
+    for (int32_t i = first; i < first + n; i++)
+        if (strcmp(SONNY_TEXT_FIELDS[i].owner, owner) == 0
             && strcmp(SONNY_TEXT_FIELDS[i].name, name) == 0
             && occurrence-- == 0)
             return &SONNY_TEXT_FIELDS[i];
@@ -1004,12 +1131,20 @@ const BarField *bar_field(const char *side, const char *role)
     lines.append('const int SONNY_BUTTON_COUNT = '
                  '(int)(sizeof(SONNY_BUTTONS) / sizeof(SONNY_BUTTONS[0]));')
     lines.append('''
+static RowIndex SONNY_BUTTONS_INDEX;
+
+int32_t button_rows(const char *screen, int32_t *first)
+{
+    return ROWS_OF(SONNY_BUTTONS, StageButton, screen, SONNY_BUTTON_COUNT,
+                   screen, first);
+}
+
 const StageButton *stage_button(const char *screen, int32_t character,
                                 int32_t index)
 {
-    for (int i = 0; i < SONNY_BUTTON_COUNT; i++)
-        if (strcmp(SONNY_BUTTONS[i].screen, screen) == 0
-            && SONNY_BUTTONS[i].character == character && index-- == 0)
+    int32_t first, n = button_rows(screen, &first);
+    for (int32_t i = first; i < first + n; i++)
+        if (SONNY_BUTTONS[i].character == character && index-- == 0)
             return &SONNY_BUTTONS[i];
     return NULL;
 }''')
@@ -1154,11 +1289,26 @@ const StageLayer *stage_layer(const char *name)
     lines.append('const int SONNY_SLOT_PIECE_COUNT = '
                  '(int)(sizeof(SONNY_SLOT_PIECES) / sizeof(SONNY_SLOT_PIECES[0]));')
     lines.append('''
+static RowIndex SONNY_SLOT_PIECES_INDEX;
+static RowIndex SONNY_MENU_SLOTS_INDEX;
+
+int32_t slot_piece_rows(const char *menu, int32_t *first)
+{
+    return ROWS_OF(SONNY_SLOT_PIECES, SlotPiece, menu, SONNY_SLOT_PIECE_COUNT,
+                   menu, first);
+}
+
+int32_t menu_slot_rows(const char *menu, int32_t *first)
+{
+    return ROWS_OF(SONNY_MENU_SLOTS, MenuSlot, menu, SONNY_MENU_SLOT_COUNT,
+                   menu, first);
+}
+
 const SlotPiece *slot_piece(const char *menu, const char *slot, int32_t index)
 {
-    for (int i = 0; i < SONNY_SLOT_PIECE_COUNT; i++)
-        if (strcmp(SONNY_SLOT_PIECES[i].menu, menu) == 0
-            && strcmp(SONNY_SLOT_PIECES[i].slot, slot) == 0 && index-- == 0)
+    int32_t first, n = slot_piece_rows(menu, &first);
+    for (int32_t i = first; i < first + n; i++)
+        if (strcmp(SONNY_SLOT_PIECES[i].slot, slot) == 0 && index-- == 0)
             return &SONNY_SLOT_PIECES[i];
     return NULL;
 }
@@ -1167,9 +1317,9 @@ const MenuSlot *menu_slot(const char *menu, const char *name)
 {
     if (!menu || !name)
         return NULL;
-    for (int i = 0; i < SONNY_MENU_SLOT_COUNT; i++)
-        if (strcmp(SONNY_MENU_SLOTS[i].menu, menu) == 0
-            && strcmp(SONNY_MENU_SLOTS[i].name, name) == 0)
+    int32_t first, n = menu_slot_rows(menu, &first);
+    for (int32_t i = first; i < first + n; i++)
+        if (strcmp(SONNY_MENU_SLOTS[i].name, name) == 0)
             return &SONNY_MENU_SLOTS[i];
     return NULL;
 }''')
@@ -1265,13 +1415,23 @@ const CastEffect *cast_effect(const char *animation)
     return NULL;
 }
 
+/* The assets are written out in strcmp order, so a name is a binary search
+   away -- it is asked for once for every picture on every frame. */
 const AssetEntry *asset_find(const char *name)
 {
     if (!name)
         return NULL;
-    for (int i = 0; i < SONNY_ASSET_COUNT; i++)
-        if (strcmp(SONNY_ASSETS[i].name, name) == 0)
-            return &SONNY_ASSETS[i];
+    int lo = 0, hi = SONNY_ASSET_COUNT - 1;
+    while (lo <= hi) {
+        int mid = lo + (hi - lo) / 2;
+        int order = strcmp(SONNY_ASSETS[mid].name, name);
+        if (order == 0)
+            return &SONNY_ASSETS[mid];
+        if (order < 0)
+            lo = mid + 1;
+        else
+            hi = mid - 1;
+    }
     return NULL;
 }
 
@@ -1285,6 +1445,7 @@ const AssetAnimation *asset_animation(const char *name)
     return NULL;
 }''')
 
+    check_tables(lines, assets)
     with open(os.path.join(args.out, 'assets_gen.c'), 'w',
               encoding='utf-8') as fh:
         fh.write('\n'.join(lines) + '\n')

@@ -522,6 +522,13 @@ void screen_ending_update(Game *g, Vector2 mouse);
 void screen_ending_draw(Game *g, Vector2 mouse);
 /* Play one of the three comics: 0 the opening, 1 the bridge, 2 the ending. */
 void game_play_cutscene(Game *g, int32_t which);
+/* The animation a comic is, by the same number. */
+int32_t cutscene_clip(int32_t which);
+
+/* Ask for the art the game is about to need, so it is decoded off the main
+   thread rather than in the middle of a frame. Once a frame; see
+   prefetch.c. */
+void game_prefetch(const Game *g);
 
 /* Leave the settings for the story, which is where a new game begins. */
 void game_begin_story(Game *g);

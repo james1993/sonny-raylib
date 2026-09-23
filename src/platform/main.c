@@ -15,6 +15,7 @@
 #include "audio.h"
 #include "game.h"
 #include "glow.h"
+#include "loader.h"
 #include "options.h"
 #include "render.h"
 #include "rlgl.h"
@@ -48,6 +49,10 @@ static void print_window_info(void)
 /* The window's current frame, written where it was asked for. raylib's own
    TakeScreenshot puts the working directory in front of whatever it is
    given, so an absolute path came out as a path that does not exist. */
+/* How long a frame may spend putting decoded art on the card: a tenth of the
+   frame, so a head start never costs the frame it was meant to save. */
+#define ASSET_PUMP_SECONDS 0.003
+
 static void save_screenshot(const char *path)
 {
     Image frame = LoadImageFromScreen();
@@ -170,6 +175,8 @@ int main(int argc, char **argv)
     if (!OPTIONS.silent)
         audio_init();
     ui_font_load();
+    loader_start();
+    assets_trace_loads(OPTIONS.trace);
 
     Game game;
     game_start(&game, seed);
@@ -249,7 +256,13 @@ int main(int argc, char **argv)
             game.screen = SCREEN_ZONE;
     }
 
+    /* How long each frame's own work took -- everything up to handing the
+       frame over, not the wait for the next one -- which is what shows a
+       frame that stalled on a file. */
+    FILE *frame_log = OPTIONS.frame_log ? fopen(OPTIONS.frame_log, "w") : NULL;
+
     while (!WindowShouldClose()) {
+        double frame_began = GetTime();
         /* Full screen, the way anything else does it. */
         if (IsKeyPressed(KEY_F11)
             || ((IsKeyDown(KEY_LEFT_ALT) || IsKeyDown(KEY_RIGHT_ALT))
@@ -300,6 +313,11 @@ int main(int argc, char **argv)
         int synthetic = options_click(frames, &mouse);
         ui_set_synthetic_click(synthetic);
         audio_update();
+        /* Whatever the decoder has finished goes on the card first, a few
+           milliseconds' worth at most, and the screen then says what it
+           will want next. */
+        assets_pump(ASSET_PUMP_SECONDS);
+        game_prefetch(&game);
         if (game.notice_timer > 0)
             game.notice_timer--;
 
@@ -404,6 +422,9 @@ int main(int argc, char **argv)
            The texture is already the size it is shown at, so this is one
            texel to one pixel at a whole offset -- nothing is resampled, and
            what was drawn is what appears. */
+        if (frame_log)
+            fprintf(frame_log, "%d %.3f %d\n", frames,
+                    (GetTime() - frame_began) * 1000.0, (int)game.screen);
         BeginDrawing();
         ClearBackground(BLACK);
         DrawTexturePro(stage.texture,
@@ -428,8 +449,11 @@ int main(int argc, char **argv)
         }
     }
 
+    if (frame_log)
+        fclose(frame_log);
     audio_shutdown();
     ui_font_unload();
+    loader_stop();
     assets_unload_all();
     glow_unload();
     if (stage.id != 0)

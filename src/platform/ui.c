@@ -608,7 +608,8 @@ void draw_clip_parts(const char *screen, const char *owner,
                             Vector2 moved, const char *framed,
                             const char *chosen, Color tint)
 {
-    for (int i = 0; i < SONNY_CLIP_PART_COUNT; i++) {
+    int32_t row0, rows = clip_part_rows(screen, &row0);
+    for (int32_t i = row0; i < row0 + rows; i++) {
         const ClipPart *part = &SONNY_CLIP_PARTS[i];
         if (strcmp(part->screen, screen) != 0
             || strcmp(part->owner, owner) != 0 || part->width <= 0)
@@ -923,7 +924,8 @@ static int chrome_is_runtime(const char *name)
 
 void draw_screen_chrome(const char *screen)
 {
-    for (int i = 0; i < SONNY_STAGE_CHROME_COUNT; i++) {
+    int32_t row0, rows = stage_chrome_rows(screen, &row0);
+    for (int32_t i = row0; i < row0 + rows; i++) {
         const StageChrome *c = &SONNY_STAGE_CHROME[i];
         if (strcmp(c->screen, screen) != 0 || c->width <= 0)
             continue;
@@ -939,7 +941,8 @@ void draw_screen_chrome(const char *screen)
 
 void draw_screen_buttons(const char *screen, Vector2 mouse)
 {
-    for (int i = 0; i < SONNY_BUTTON_COUNT; i++) {
+    int32_t row0, rows = button_rows(screen, &row0);
+    for (int32_t i = row0; i < row0 + rows; i++) {
         const StageButton *b = &SONNY_BUTTONS[i];
         if (strcmp(b->screen, screen) != 0)
             continue;
@@ -1015,7 +1018,8 @@ static const char *strip_markup(const char *html, char *out, size_t max)
 void draw_static_text_except(const char *screen, const char *owner,
                              const Rectangle *skip, int skips, Vector2 shift)
 {
-    for (int i = 0; i < SONNY_TEXT_FIELD_COUNT; i++) {
+    int32_t row0, rows = text_field_rows(screen, &row0);
+    for (int32_t i = row0; i < row0 + rows; i++) {
         const TextField *f = &SONNY_TEXT_FIELDS[i];
         if (strcmp(f->screen, screen) != 0)
             continue;
