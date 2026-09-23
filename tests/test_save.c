@@ -33,6 +33,16 @@ int main(void)
     for (int32_t i = 0; i < SONNY_MOVE_SLOTS && i < n; i++)
         c.player.move_matrix[i] = known[i];
 
+    /* The party's own state: gear changed on the character screen, a level
+       and a bar of their own, and an AI mode. */
+    c.ally_equip[1][2] = 36;
+    c.ally_stat_sets[1][0] = 11.5;
+    c.ally_per_sets[1][3] = 7;
+    c.ally_def_sets[2][5] = 9;
+    c.ally_level[1] = 9;
+    c.ally_xp[1] = 63.25;
+    campaign_set_ai_mode(&c, 2, 3);
+
     DerivedStats before = character_derive(&c.player);
 
     const char *path = "build/test_save.txt";
@@ -63,6 +73,23 @@ int main(void)
                       c.player.buff_adder[i]) == 0);
     }
 
+    for (int32_t m = 1; m < SONNY_PARTY_SIZE; m++) {
+        assert(back.ally_level[m] == c.ally_level[m]);
+        assert(back.ally_xp[m] == c.ally_xp[m]);
+        assert(back.ally_ai_mode[m] == c.ally_ai_mode[m]);
+        for (int32_t i = 0; i < 4; i++)
+            assert(back.ally_aggression[m][i] == c.ally_aggression[m][i]);
+        for (int32_t i = 0; i < SONNY_EQUIP_SLOTS; i++)
+            assert(back.ally_equip[m][i] == c.ally_equip[m][i]);
+        for (int32_t i = 0; i < SONNY_STATS; i++)
+            assert(back.ally_stat_sets[m][i] == c.ally_stat_sets[m][i]);
+        for (int32_t e = 0; e < SONNY_ELEMENTS; e++) {
+            assert(back.ally_per_sets[m][e] == c.ally_per_sets[m][e]);
+            assert(back.ally_def_sets[m][e] == c.ally_def_sets[m][e]);
+        }
+    }
+    assert(back.ally_aggression[2][0] == 50);
+
     /* The derived stats -- what actually reaches a battle -- must match. */
     DerivedStats after = character_derive(&back.player);
     assert(before.life == after.life);
@@ -75,6 +102,6 @@ int main(void)
     Campaign junk;
     assert(save_read(&junk, "build/does-not-exist.txt") != 0);
 
-    printf("save: round-trips character, talents, progress and purse\n");
+    printf("save: round-trips character, talents, progress, purse and party\n");
     return 0;
 }

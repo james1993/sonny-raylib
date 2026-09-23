@@ -4,6 +4,8 @@
 #include "assets.h"
 #include "raylib.h"
 
+/* The game has eighty-eight sounds, so this is room for all of them; running
+   out is reported rather than going quiet. */
 #define AUDIO_CACHE_MAX 128
 /* my_sound1..my_sound3 in the original. */
 #define EFFECT_CHANNELS 3
@@ -74,15 +76,16 @@ static const Sound *load_sound(const char *name)
     for (int32_t i = 0; i < cache_count; i++)
         if (cache[i].name == entry->name)
             return cache[i].ok ? &cache[i].sound : NULL;
-    if (cache_count >= AUDIO_CACHE_MAX)
+    if (cache_count >= AUDIO_CACHE_MAX) {
+        TraceLog(LOG_WARNING, "AUDIO: no room to load %s", name);
         return NULL;
+    }
 
     CachedSound *slot = &cache[cache_count++];
     slot->name = entry->name;
     slot->ok = 0;
 
-    char path[1024];
-    snprintf(path, sizeof(path), "%s", entry->frames[0]);
+    const char *path = assets_path(entry->frames[0]);
     if (FileExists(path)) {
         slot->sound = LoadSound(path);
         slot->ok = (slot->sound.frameCount > 0);
@@ -154,7 +157,8 @@ void audio_music(const char *name)
     const AssetEntry *entry = asset_find(name);
     if (!entry || entry->frame_count == 0)
         return;
-    if (!FileExists(entry->frames[0]))
+    const char *path = assets_path(entry->frames[0]);
+    if (!FileExists(path))
         return;
 
     if (music_playing) {
@@ -162,7 +166,7 @@ void audio_music(const char *name)
         UnloadMusicStream(music);
         music_playing = 0;
     }
-    music = LoadMusicStream(entry->frames[0]);
+    music = LoadMusicStream(path);
     if (music.frameCount == 0)
         return;
     music.looping = true;
@@ -178,9 +182,12 @@ int audio_narration(const char *name)
     if (!ready || !name || !name[0])
         return 0;
     const AssetEntry *entry = asset_find(name);
-    if (!entry || entry->frame_count == 0 || !FileExists(entry->frames[0]))
+    if (!entry || entry->frame_count == 0)
         return 0;
-    narration = LoadMusicStream(entry->frames[0]);
+    const char *path = assets_path(entry->frames[0]);
+    if (!FileExists(path))
+        return 0;
+    narration = LoadMusicStream(path);
     if (narration.frameCount == 0)
         return 0;
     narration.looping = false;

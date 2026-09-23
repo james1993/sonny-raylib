@@ -35,6 +35,19 @@ typedef struct {
        can be changed there, so it cannot live in the table. */
     int32_t    ally_equip[SONNY_PARTY_SIZE][SONNY_EQUIP_SLOTS];
     double     ally_stat_sets[SONNY_PARTY_SIZE][SONNY_STATS];
+    /* Krin.PerSetsN and DefSetsN: what their gear adds to their piercing and
+       defense, moved by the same equip handler that moves StatSetsN. */
+    double     ally_per_sets[SONNY_PARTY_SIZE][SONNY_ELEMENTS];
+    double     ally_def_sets[SONNY_PARTY_SIZE][SONNY_ELEMENTS];
+    /* Krin.LevelStats and ExpSets. The party are not pinned to the player:
+       each has a level and an experience bar of their own, and the victory
+       screen fills theirs from the same fight by their own level. */
+    int32_t    ally_level[SONNY_PARTY_SIZE];
+    double     ally_xp[SONNY_PARTY_SIZE];
+    /* Krin.agArrayN and agMode: how hard each of them pushes in a fight,
+       which the character screen's three AI Mode buttons choose between. */
+    int32_t    ally_aggression[SONNY_PARTY_SIZE][4];
+    int32_t    ally_ai_mode[SONNY_PARTY_SIZE];
     int32_t    progress_battle;   /* Krin.progressLevelOn */
     int32_t    zone;              /* Krin.sectionIn */
     int32_t    euros;
@@ -96,6 +109,16 @@ BattleRewards campaign_award(Campaign *c, const Battle *b, Rng *rng,
                              int apply);
 /* Award experience; a level brings a point in each pool with it. */
 int32_t campaign_apply_xp(Campaign *c, double amount);
+
+/* The three AI modes the character screen offers, 1..3, and the aggression
+   each one sets: the buttons' own on(release) handlers. */
+#define SONNY_AI_MODES 3
+void campaign_set_ai_mode(Campaign *c, int32_t member, int32_t mode);
+
+/* What one of the party earns from the fight just won, by their own level:
+   expWorkOut(EnemyXPFinal, LevelStats[member]). */
+double campaign_ally_xp_gain(const Campaign *c, const BattleRewards *r,
+                             int32_t member);
 
 /* Advance past the battle just won (frame 213 increments progressLevelOn). */
 void campaign_advance(Campaign *c);

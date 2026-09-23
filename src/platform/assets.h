@@ -16,6 +16,11 @@
 /* Where the asset files live, relative to the working directory. Set once at
    startup; defaults to "." so running from the repository root just works. */
 void assets_set_root(const char *root);
+/* A file under that root, for anything that loads from it by its own path --
+   sounds, the font -- rather than through asset_texture. The string is
+   rotated through a small pool, so it outlives a few more calls but should
+   not be kept. */
+const char *assets_path(const char *relative);
 
 /* Shout if the art on the disk is not the art this build was made against.
  *

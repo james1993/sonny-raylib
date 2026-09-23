@@ -14,6 +14,8 @@
 /* The four slots the original keeps, and where each one lives. */
 #define SONNY_SAVE_SLOTS 4
 const char *save_slot_path(int32_t slot);
+/* Where the slots are kept; the working directory until this is called. */
+void save_set_dir(const char *dir);
 
 int save_write(const Campaign *c, const char *path);
 int save_read(Campaign *c, const char *path);

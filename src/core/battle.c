@@ -13,6 +13,8 @@ void battle_init(Battle *b, uint64_t seed, int32_t playerNumber)
         b->units[i].active = 0;
     }
     b->playerNumber = playerNumber;
+    for (int32_t i = 0; i < SONNY_SLOTS; i++)
+        b->member[i] = -1;
     b->winCondition = -1;
     b->round = 1;
     b->phase = PHASE_DECLARE;
@@ -654,18 +656,17 @@ int battle_resolve_step(Battle *b, MoveEvent *event)
 
     /* The caster ticks its own buffs after acting. What the pass came to is
        carried out so the fight can float it, the way buffTicker does.
-    
-       The original guards its two calls differently: the one that follows a
-       move it actually played is `if(usedBuff == false && mCaster.active ==
-       true)`, while the one on the branch where nothing was played is
-       `if(usedBuff == false)` alone. So a unit that died to its own move does
-       not tick, but a dead unit does -- its move box still holds the pass that
-       was queued when it fell, and that pass comes round every turn. That is
-       how a defeated enemy's status icons count themselves down and go away:
-       nothing clears them at the moment of death. */
-    if (!usable || caster->active) {
+
+       Only a living caster does. The driver decides it as the slot comes up
+       -- `if(mCaster.active) usedBuff = false; else usedBuff = true;` -- and
+       both calls to buffTicker are behind usedBuff == false, the one after a
+       move that fired also behind the caster still standing. So a unit that
+       died to its own move does not tick, and a dead one never does again:
+       its status icons stay beside its bar as they were when it fell, because
+       nothing ever clears or counts them down. */
+    if (caster->active) {
         TickResult tick = buff_tick(caster, SONNY_BUFFS, SONNY_BUFF_COUNT);
-        event->tick_damage = (int32_t)tick.total_damage;
+        event->tick_damage = unit_int(tick.total_damage);
         event->tick_element = tick.element;
         event->tick_shielded = tick.shielded;
         if (tick.died)

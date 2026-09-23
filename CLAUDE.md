@@ -230,6 +230,16 @@ the hub, and the reticle's name sitting eighteen pixels right of its ring.
   of the four tracks is misleading: it belongs to whoever calls for a roaming
   track first, which on a new game is the opening cutscene.
 
+- **A dead unit's buffs never tick again.** The driver sets `usedBuff = true`
+  for an inactive caster the moment its slot comes up, and both calls to
+  buffTicker sit behind `usedBuff == false`. So a fallen enemy's status icons
+  stay beside its bar exactly as they were -- and an empty slot, whose DEFU
+  is an empty object, never reaches the NaN that ticking it would make.
+- **The party are not pinned to the player.** Each has their own LevelStats,
+  ExpSets, PerSets/DefSets, equipArray and agArray, all saved. The victory
+  screen fills each ally's bar from the fight at their own level
+  (friendlySlotsFFTT, in slot order), and the character screen's AI Mode
+  buttons rewrite agArray.
 - **Enemies and the player use different stat formulas.** `krinAddNewUnit`
   scales linearly with no rounding; the player's path rounds up over a
   level-scaled baseline. One formula for both is wrong in both directions.

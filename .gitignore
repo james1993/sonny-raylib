@@ -8,3 +8,7 @@ build/
 
 # A crash dump, if one is ever written here.
 /core
+
+# Saves, which belong to whoever is playing, and a save caught mid-write.
+sonny_slot*.txt
+sonny_slot*.txt.tmp

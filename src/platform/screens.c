@@ -69,7 +69,10 @@ void screen_talents_open(Game *g)
     int32_t points = character_unspent_skill_points(c)
                    + character_unspent_stat_points(c);
     g->skill_step = points > 0 ? 0 : -1;
-    g->skill_tip = (int32_t)GetRandomValue(0, SKILL_TIP_COUNT - 1);
+    /* random(4), on the same dice as everything else -- raylib's own
+       generator is seeded from the clock, which made the screen differ
+       between two runs of the same seed. */
+    g->skill_tip = (int32_t)rng_below(&g->rng, SKILL_TIP_COUNT);
 }
 
 
@@ -506,7 +509,10 @@ void screen_zone_draw(Game *g, Vector2 mouse)
     if (label) {
         int32_t frame = 1;
         if (SONNY_MARKER_FRAMES > 0)
-            frame = 1 + (int32_t)(GetTime() * SONNY_MARKER_FPS)
+            /* Flash steps a clip once per stage frame, so the markers are
+               clocked off frames rather than off the wall clock -- which
+               also keeps two captures of the same frame the same. */
+            frame = 1 + (int32_t)(g->frame * SONNY_MARKER_FPS / STAGE_FPS)
                         % SONNY_MARKER_FRAMES;
         for (int32_t i = 0; ; i++) {
             const ZoneMarker *m = zone_marker(label, i);
@@ -1252,16 +1258,18 @@ static void swap_equipped(Game *g, int32_t row)
         if (on)
             sets[i] += on->stat[i];
     }
-    if (member <= 0) {
-        for (int32_t e = 0; e < SONNY_ELEMENTS; e++) {
-            if (off) {
-                c->player.per_sets[e] -= off->per[e];
-                c->player.def_sets[e] -= off->def[e];
-            }
-            if (on) {
-                c->player.per_sets[e] += on->per[e];
-                c->player.def_sets[e] += on->def[e];
-            }
+    /* The same handler moves PerSetsN and DefSetsN for whoever the sheet is
+       turned to, the party as much as the player. */
+    double *per = (member <= 0) ? c->player.per_sets : c->ally_per_sets[member];
+    double *def = (member <= 0) ? c->player.def_sets : c->ally_def_sets[member];
+    for (int32_t e = 0; e < SONNY_ELEMENTS; e++) {
+        if (off) {
+            per[e] -= off->per[e];
+            def[e] -= off->def[e];
+        }
+        if (on) {
+            per[e] += on->per[e];
+            def[e] += on->def[e];
         }
     }
 }
@@ -1378,6 +1386,17 @@ static void draw_item_icon(const ItemDef *item, Rectangle r, Color tint)
 }
 
 
+/* The AI Mode selector under an ally's gear: sprite 1355, a frame per mode
+   with that mode's bar lit, over three invisible buttons -- 1350 for the
+   first mode, 1352 for the second and 1351 for the third, left to right. Its
+   clip hides itself while the sheet is turned to the player and says
+   "AI Mode: " and the mode's name out of MENU[39..41]. */
+#define AI_MODE_PART  "@1033"
+#define AI_MODE_ART   "#1355@%d"
+#define AI_MODE_FIELD "worder"
+#define AI_MODE_WORDS 39
+static const int32_t AI_MODE_BUTTONS[SONNY_AI_MODES] = {1350, 1352, 1351};
+
 void screen_inventory_update(Game *g, Vector2 mouse)
 {
     hud_buttons(g, mouse);
@@ -1405,6 +1424,14 @@ void screen_inventory_update(Game *g, Vector2 mouse)
         if (ui_clicked() && item_fits(who, g->carried_item, i))
             swap_equipped(g, i);
         break;
+    }
+
+    /* The AI Mode buttons, which only an ally's sheet shows. */
+    for (int32_t m = 0; g->menu_member > 0 && m < SONNY_AI_MODES; m++) {
+        if (screen_button_pressed(MENU_INVENTORY, AI_MODE_BUTTONS[m], mouse)) {
+            campaign_set_ai_mode(&g->campaign, g->menu_member, m + 1);
+            break;
+        }
     }
 
     if (menu_close_pressed(mouse))
@@ -1548,7 +1575,27 @@ static void draw_element_bars(const char *menu, const char *slot,
    dropped the panels and left the screen as bare backdrop. */
 #define INVENTORY_XP_TRACK "@1031"
 
-static void draw_inventory_clip(const Character *who)
+/* The selector's lit bars. The export carries the frame's own text field
+   baked in -- the design-time "Agressive" -- so only the part of the picture
+   above the field is drawn, and the words go on as text. */
+static void draw_ai_mode(const ClipPart *part, int32_t mode)
+{
+    Art art;
+    if (!asset_art(TextFormat(AI_MODE_ART, (int)mode), 1, &art))
+        return;
+    Rectangle box = placed_art(&art, part->x, part->y, part->scale_x,
+                               part->scale_y, part->origin_x, part->origin_y);
+    const TextField *words = text_field_var(MENU_SCREEN, AI_MODE_FIELD);
+    float keep = words ? words->y - box.y : box.height;
+    if (keep <= 0 || keep > box.height)
+        keep = box.height;
+    Rectangle src = art.source;
+    src.height *= keep / box.height;
+    box.height = keep;
+    DrawTexturePro(*art.texture, src, box, (Vector2){0, 0}, 0.0f, WHITE);
+}
+
+static void draw_inventory_clip(const Game *g, const Character *who)
 {
     const MenuSlot *bar = menu_slot(MENU_INVENTORY, XP_BAR_SLOT);
     float fraction = who->xp / 100.0f;
@@ -1578,6 +1625,13 @@ static void draw_inventory_clip(const Character *who)
                 DrawTexturePro(*fill.texture, fill.source, box,
                                (Vector2){0, 0}, 0.0f, WHITE);
             }
+        }
+
+        if (strcmp(part->name, AI_MODE_PART) == 0) {
+            if (g->menu_member > 0)
+                draw_ai_mode(part,
+                             g->campaign.ally_ai_mode[g->menu_member]);
+            continue;
         }
 
         Art art;
@@ -1674,7 +1728,15 @@ void screen_inventory_draw(Game *g, Vector2 mouse)
     /* The hub's own furniture stays behind the menu, as it does in the
        original: the row of buttons and the zone's progress are still there. */
     draw_hub_panel(g, mouse);
-    draw_inventory_clip(who);
+    draw_inventory_clip(g, who);
+    if (g->menu_member > 0) {
+        int32_t mode = g->campaign.ally_ai_mode[g->menu_member];
+        if (mode >= 1 && mode <= SONNY_AI_MODES)
+            draw_field(text_field_var(MENU_SCREEN, AI_MODE_FIELD), NO_OFFSET,
+                       TextFormat("AI Mode: %s",
+                                  lang_text("MENU",
+                                            AI_MODE_WORDS + mode - 1)));
+    }
 
     draw_field(inv_field("@881"), NO_OFFSET,
                g->menu_member > 0 ? SONNY_PARTY[g->menu_member].name
@@ -2037,6 +2099,26 @@ void screen_victory_update(Game *g, Vector2 mouse)
             g->campaign.player.xp = g->win_xp;
         }
     }
+    /* The ally rows run the same fill, and a level there is only the level:
+       LevelStats[prx]++, the bar to full on its "level" frame, and the
+       overflow thrown away. What the bar has reached is written back once the
+       fill is over, so leaving before then leaves them where they were. */
+    for (int32_t row = 0; row < 2; row++) {
+        WinRow *a = &g->win_ally[row];
+        if (a->member <= 0 || a->fill <= 0)
+            continue;
+        a->fill--;
+        a->xp += a->step;
+        if (a->xp >= 100.0f) {
+            a->xp = 100.0f;
+            a->fill = 0;
+            a->leveled = 1;
+            g->campaign.ally_level[a->member]++;
+            g->campaign.ally_xp[a->member] = 0;
+        } else if (a->fill == 0) {
+            g->campaign.ally_xp[a->member] = a->xp;
+        }
+    }
 
     /* What is under the pointer says what it is, the same way it does in the
        bag: a drop names itself, and the bag's own squares do too. */
@@ -2140,10 +2222,9 @@ static int32_t win_part_row(float y)
    a row is empty exactly when nobody fought in it. */
 static int32_t win_row_ally(const Game *g, int32_t row)
 {
-    if (row == WIN_PLAYER_ROW || row >= SONNY_MAX_ALLIES)
+    if (row == WIN_PLAYER_ROW || row < 0 || row >= 2)
         return -1;
-    int32_t member = g->campaign.line[row];
-    return campaign_has_friend(&g->campaign, member) ? member : -1;
+    return g->win_ally[row].member;
 }
 
 static int win_row_shown(const Game *g, int32_t row)
@@ -2161,12 +2242,25 @@ static const char *win_row_name(const Game *g, int32_t row)
          ? SONNY_PARTY[member].name : "";
 }
 
-/* An ally levels with the player -- the original scales them off the player's
-   own level rather than keeping one of their own. */
+/* Everyone's own level: LevelStats[prx], which for an ally is theirs and
+   goes up on this screen when their bar fills. */
 static int32_t win_row_level(const Game *g, int32_t row)
 {
-    (void)row;
+    int32_t member = win_row_ally(g, row);
+    if (member > 0 && member < SONNY_PARTY_SIZE)
+        return g->campaign.ally_level[member];
     return g->campaign.player.level;
+}
+
+/* How far a row's bar has got, and whether it filled. */
+static float win_row_xp(const Game *g, int32_t row)
+{
+    return row == WIN_PLAYER_ROW ? g->win_xp : g->win_ally[row].xp;
+}
+
+static int win_row_leveled(const Game *g, int32_t row)
+{
+    return row == WIN_PLAYER_ROW ? g->win_leveled : g->win_ally[row].leveled;
 }
 
 /* The frame the portrait clip shows for a row. */
@@ -2203,8 +2297,8 @@ static void draw_win_parts(Game *g)
             if (strcmp(part->name, "avIn") == 0)
                 chosen = win_row_portrait(g, row);
             else if (strcmp(part->name, "bar") == 0)
-                chosen = (row == WIN_PLAYER_ROW && g->win_leveled)
-                       ? WIN_BAR_LEVEL : WIN_BAR_PLAIN;
+                chosen = win_row_leveled(g, row) ? WIN_BAR_LEVEL
+                                                 : WIN_BAR_PLAIN;
             else
                 continue;
         }
@@ -2216,9 +2310,7 @@ static void draw_win_parts(Game *g)
         /* The fill is the one piece the screen drives: its width is the
            percentage, out of the 95.1 the frame gives it. */
         if (strcmp(part->name, "bar") == 0) {
-            float shown = row == WIN_PLAYER_ROW ? g->win_xp
-                                                : (float)g->campaign.player.xp;
-            float fraction = shown / 100.0f;
+            float fraction = win_row_xp(g, row) / 100.0f;
             if (fraction < 0)
                 fraction = 0;
             if (fraction > 1)
@@ -2278,7 +2370,6 @@ void screen_victory_draw(Game *g, Vector2 mouse)
        allies standing in the line and one, the top, hardwired to the player.
        A clip whose member is not there sets itself invisible, which is why a
        lone Sonny gets one row and not three. */
-    const Character *p = &g->campaign.player;
     for (int32_t row = 0; row < WIN_XP_ROWS; row++) {
         if (!win_row_shown(g, row))
             continue;
@@ -2287,11 +2378,10 @@ void screen_victory_draw(Game *g, Vector2 mouse)
         draw_field(text_field_named(MENU_SCREEN, MENU_WIN, "@13", row),
                    NO_OFFSET, TextFormat("%s%d", lang_text("MENU", 0),
                                          win_row_level(g, row)));
-        /* Only the player's bar moves; an ally's shows what it already had. */
-        float shown = row == WIN_PLAYER_ROW ? g->win_xp : (float)p->xp;
         draw_field(text_field_named(MENU_SCREEN, MENU_WIN, "@17", row),
                    NO_OFFSET,
-                   TextFormat("%d%%", (int32_t)floor(shown + 0.5)));
+                   TextFormat("%d%%",
+                              (int32_t)floor(win_row_xp(g, row) + 0.5)));
     }
 
     /* A drop that has been taken is zeroed, and the square it was in stays:

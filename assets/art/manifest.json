@@ -2316,6 +2316,45 @@
     ]
    ]
   },
+  "#1355@1": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1355@1.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     99.55,
+     15.95
+    ]
+   ]
+  },
+  "#1355@2": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1355@2.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     99.55,
+     15.95
+    ]
+   ]
+  },
+  "#1355@3": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1355@3.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     99.55,
+     15.95
+    ]
+   ]
+  },
   "#1358": {
    "category": "chrome",
    "frames": [
@@ -2717,6 +2756,19 @@
    "category": "chrome",
    "frames": [
     "assets/art/chrome/#1444.png"
+   ],
+   "scale": 2,
+   "offsets": [
+    [
+     22.05,
+     35.2
+    ]
+   ]
+  },
+  "#1444@8": {
+   "category": "chrome",
+   "frames": [
+    "assets/art/chrome/#1444@8.png"
    ],
    "scale": 2,
    "offsets": [

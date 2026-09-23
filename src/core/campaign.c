@@ -19,7 +19,40 @@ void campaign_new(Campaign *c, int32_t class_id)
             c->ally_equip[m][i] = SONNY_PARTY[m].equip[i];
         for (int32_t i = 0; i < SONNY_STATS; i++)
             c->ally_stat_sets[m][i] = SONNY_PARTY[m].stat[i];
+        for (int32_t e = 0; e < SONNY_ELEMENTS; e++) {
+            c->ally_per_sets[m][e] = SONNY_PARTY[m].per[e];
+            c->ally_def_sets[m][e] = SONNY_PARTY[m].def_[e];
+        }
+        c->ally_level[m] = SONNY_PARTY[m].level;
+        c->ally_xp[m] = 0;
+        for (int32_t i = 0; i < 4; i++)
+            c->ally_aggression[m][i] = SONNY_PARTY[m].aggression[i];
+        /* Krin.agMode[i] = 2 for everyone, which is the middle button. */
+        c->ally_ai_mode[m] = 2;
     }
+}
+
+void campaign_set_ai_mode(Campaign *c, int32_t member, int32_t mode)
+{
+    /* DefineButton2_1350/1352/1351, in that order: each writes agMode and
+       the four numbers agArrayN is read into the brain from. */
+    static const int32_t AGGRESSION[SONNY_AI_MODES][4] = {
+        {25, 95, 90, 10}, {25, 88, 78, 55}, {50, 30, 20, 85},
+    };
+    if (member <= 0 || member >= SONNY_PARTY_SIZE || mode < 1
+        || mode > SONNY_AI_MODES)
+        return;
+    c->ally_ai_mode[member] = mode;
+    for (int32_t i = 0; i < 4; i++)
+        c->ally_aggression[member][i] = AGGRESSION[mode - 1][i];
+}
+
+double campaign_ally_xp_gain(const Campaign *c, const BattleRewards *r,
+                             int32_t member)
+{
+    int32_t level = member <= 0 ? c->player.level
+                  : (member < SONNY_PARTY_SIZE ? c->ally_level[member] : 1);
+    return character_xp_gain(r->enemy_rating, level);
 }
 
 int campaign_has_friend(const Campaign *c, int32_t member)
@@ -41,14 +74,15 @@ void campaign_ally(const Campaign *c, int32_t member, Character *out)
     /* ClassStats is the class id plus one, the way the class menu numbers
        them, so the template is the one before it. */
     out->class_template = unit_template_by_id(m->class_id);
-    out->level = m->level;
+    out->level = member < SONNY_PARTY_SIZE ? c->ally_level[member] : m->level;
+    out->xp = member < SONNY_PARTY_SIZE ? c->ally_xp[member] : 0;
     for (int32_t i = 0; i < SONNY_EQUIP_SLOTS; i++)
         out->equip[i] = c->ally_equip[member][i];
     for (int32_t i = 0; i < SONNY_STATS; i++)
         out->spent[i] = m->stat[i];
     for (int32_t e = 0; e < SONNY_ELEMENTS; e++) {
-        out->per_sets[e] = m->per[e];
-        out->def_sets[e] = m->def_[e];
+        out->per_sets[e] = c->ally_per_sets[member][e];
+        out->def_sets[e] = c->ally_def_sets[member][e];
     }
     /* Their running total is theirs, and it moves as their gear does. */
     for (int32_t i = 0; i < SONNY_STATS; i++)
@@ -99,7 +133,8 @@ int campaign_setup_battle(const Campaign *c, const BattleDef *def, Battle *out,
         return 0;
 
     battle_init(out, seed, 1);
-    battle_place_character(out, 1, &c->player, "Sonny", 0);
+    battle_place_character(out, 1, &c->player, SONNY_PARTY[0].name, 0);
+    out->member[1] = 0;
 
     for (int32_t i = 0; i < SONNY_BATTLE_SLOTS; i++) {
         int32_t entry = def->players[i];
@@ -129,13 +164,15 @@ int campaign_setup_battle(const Campaign *c, const BattleDef *def, Battle *out,
             campaign_ally(c, member, &ally);
             battle_place_character(out, slot, &ally,
                                    SONNY_PARTY[member].name, 1);
+            out->member[slot] = member;
             /* How hard it pushes is the member's own, not the template's:
-               Aggression = Krin["agArray" + member][0], and so on. */
+               Aggression = Krin["agArray" + member][0], and so on -- which
+               the character screen's AI Mode buttons rewrite. */
             Brain *br = &out->brains[slot];
-            br->Aggression = SONNY_PARTY[member].aggression[0];
-            br->LifeBoundary1 = SONNY_PARTY[member].aggression[1];
-            br->LifeBoundary2 = SONNY_PARTY[member].aggression[2];
-            br->FocusAggression = SONNY_PARTY[member].aggression[3];
+            br->Aggression = c->ally_aggression[member][0];
+            br->LifeBoundary1 = c->ally_aggression[member][1];
+            br->LifeBoundary2 = c->ally_aggression[member][2];
+            br->FocusAggression = c->ally_aggression[member][3];
         }
     }
 

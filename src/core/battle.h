@@ -84,6 +84,11 @@ typedef struct {
     int32_t     round;
     int32_t     winCondition;   /* -1 running, 0 lost, 1 won, 2 draw */
     int32_t     playerNumber;   /* the human's slot */
+    /* Which of the party stands in each slot, or -1: the player is member
+       0 and an ally is their place in the party table. The order the allies
+       come in is Krin.friendlySlotsFFTT, which the victory screen's rows
+       are bound to. */
+    int32_t     member[SONNY_SLOTS];
 
     Rng         rng;
 } Battle;

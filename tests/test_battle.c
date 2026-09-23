@@ -216,6 +216,39 @@ int main(void)
         assert(missed > 0);
     }
 
+    /* A unit that has fallen keeps its buffs exactly as they were: the
+       driver never ticks an inactive caster, so its icons neither count down
+       nor go away. And an empty slot, which is never active, never ticks
+       either -- nor floats a number. */
+    {
+        Battle d;
+        setup(&d, 99, 5);
+        const BuffDef *poison = NULL;
+        for (int32_t i = 0; i < SONNY_BUFF_COUNT && !poison; i++)
+            if (SONNY_BUFFS[i].duration > 1)
+                poison = &SONNY_BUFFS[i];
+        assert(poison);
+        buff_apply(&d.units[2], poison, 1, &d.units[1], 0);
+        int32_t held = -1;
+        for (int32_t i = 0; i < SONNY_MAX_BUFFS; i++)
+            if (d.units[2].BUFFARRAYK[i].CD > 0)
+                held = i;
+        assert(held >= 0);
+        int32_t cd = d.units[2].BUFFARRAYK[held].CD;
+        d.units[2].LIFEN = 0;
+        d.units[2].active = 0;
+        for (int32_t phase = 0; phase < 6 && d.phase != PHASE_OVER; phase++) {
+            battle_declare_phase(&d);
+            MoveEvent e;
+            while (battle_resolve_step(&d, &e)) {
+                if (e.caster == 2 || d.units[e.caster].LIFEU == 0)
+                    assert(e.tick_damage == 0 && !e.tick_shielded);
+            }
+            battle_end_phase(&d);
+        }
+        assert(d.units[2].BUFFARRAYK[held].CD == cd);
+    }
+
     printf("battle: determinism and invariants hold\n");
     return 0;
 }

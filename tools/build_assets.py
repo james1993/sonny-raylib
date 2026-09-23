@@ -250,6 +250,13 @@ def collect_names(data_dir):
     # The experience bar's fill on the victory screen, which has a second
     # frame it switches to on a level.
     want['chrome'].update(['#1344@1', '#1344@2'])
+    # The AI Mode selector under an ally's gear on the character screen: one
+    # frame per mode, the chosen one lit. Its text field is baked into the
+    # export, so the screen draws the bars and sets the words itself.
+    want['chrome'].update(['#1355@1', '#1355@2', '#1355@3'])
+    # The swatches beside the attributes on the ability screen, on the grey
+    # frame they go to once the last point is spent.
+    want['chrome'].update(['#1444@8'])
     # The balloon over a speaker's head. Each unit's container carries one
     # (character 974, placed as "speech") and the speech driver plays it
     # through when that unit says something.

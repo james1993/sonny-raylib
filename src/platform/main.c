@@ -15,6 +15,7 @@
 #include "audio.h"
 #include "game.h"
 #include "glow.h"
+#include "options.h"
 #include "render.h"
 #include "rlgl.h"
 
@@ -44,6 +45,17 @@ static void print_window_info(void)
     fflush(stdout);
 }
 
+/* The window's current frame, written where it was asked for. raylib's own
+   TakeScreenshot puts the working directory in front of whatever it is
+   given, so an absolute path came out as a path that does not exist. */
+static void save_screenshot(const char *path)
+{
+    Image frame = LoadImageFromScreen();
+    if (!ExportImage(frame, path))
+        TraceLog(LOG_WARNING, "could not write the capture to %s", path);
+    UnloadImage(frame);
+}
+
 static void game_start(Game *g, uint64_t seed)
 {
     memset(g, 0, sizeof(*g));
@@ -68,19 +80,17 @@ static void game_start(Game *g, uint64_t seed)
    identical down to the euro. The clock stands in for Flash's entropy; a seed
    given on the command line or in SONNY_SEED still pins it, which is what the
    playtest and the headless captures want. */
-static uint64_t chosen_seed(int argc, char **argv)
+static uint64_t chosen_seed(void)
 {
-    if (argc > 1)
-        return strtoull(argv[1], NULL, 10);
-    const char *fixed = getenv("SONNY_SEED");
-    if (fixed && fixed[0])
-        return strtoull(fixed, NULL, 10);
+    if (OPTIONS.seeded)
+        return OPTIONS.seed;
     return (uint64_t)time(NULL) * 1000003u + (uint64_t)clock();
 }
 
 int main(int argc, char **argv)
 {
-    uint64_t seed = chosen_seed(argc, argv);
+    options_load(argc, argv);
+    uint64_t seed = chosen_seed();
 
     SetTraceLogLevel(LOG_WARNING);
     /* The stage is the original's own 800 by 575 and every coordinate in the
@@ -100,12 +110,8 @@ int main(int argc, char **argv)
     SetWindowMinSize(STAGE_W / 2, STAGE_H / 2);
     /* SONNY_WINDOW=WxH opens at exactly that size, which is how a capture is
        taken at something other than the stage's own. */
-    const char *want_window = getenv("SONNY_WINDOW");
-    if (want_window && strchr(want_window, 'x')) {
-        int w = atoi(want_window);
-        int h = atoi(strchr(want_window, 'x') + 1);
-        if (w > 0 && h > 0)
-            SetWindowSize(w, h);
+    if (OPTIONS.window_w > 0 && OPTIONS.window_h > 0) {
+        SetWindowSize(OPTIONS.window_w, OPTIONS.window_h);
     } else {
         /* As much of the monitor as the stage's shape will take.
          *
@@ -154,10 +160,14 @@ int main(int argc, char **argv)
        us the mirrored half of the screen. */
     rlDisableBackfaceCulling();
     SetTargetFPS(STAGE_FPS);
-    assets_set_root(getenv("SONNY_ASSETS") ? getenv("SONNY_ASSETS") : ".");
+    assets_set_root(OPTIONS.assets);
+    /* The saves live with the game, wherever it is run from. SONNY_SAVES
+       puts them somewhere else -- a test run, say, that should not touch
+       the player's own. */
+    save_set_dir(OPTIONS.saves);
     assets_check_stamp();
     /* SONNY_SILENT keeps headless runs from opening an audio device. */
-    if (!getenv("SONNY_SILENT"))
+    if (!OPTIONS.silent)
         audio_init();
     ui_font_load();
 
@@ -180,28 +190,27 @@ int main(int argc, char **argv)
                               RL_ONE, RL_ONE_MINUS_SRC_ALPHA,
                               RL_FUNC_ADD, RL_FUNC_ADD);
 
-    /* Headless capture: SONNY_SHOT=path, SONNY_STEPS=frames, and
-       SONNY_SCREEN picks which screen to open first. */
-    const char *shot = getenv("SONNY_SHOT");
-    /* SONNY_CLICKS drives the game without a pointer: "frame:x:y" triples,
-       so a whole run through the menus can be checked from a script. */
-    const char *clicks = getenv("SONNY_CLICKS");
-    /* SONNY_MOUSE=x:y parks the pointer there for the whole run, so what a
-       screen does on hover can be photographed. */
-    const char *parked = getenv("SONNY_MOUSE");
-    int steps = getenv("SONNY_STEPS") ? atoi(getenv("SONNY_STEPS")) : 0;
-    int every = getenv("SONNY_SHOT_EVERY")
-              ? atoi(getenv("SONNY_SHOT_EVERY")) : 0;
-    const char *want_screen = getenv("SONNY_SCREEN");
+    const char *shot = OPTIONS.shot;
+    int steps = OPTIONS.steps;
+    int every = OPTIONS.every;
+    const char *want_screen = OPTIONS.screen;
     int frames = 0;
     int was_focused = 1;
+
+    /* Start the run that far into the story, with whoever the story has
+       handed over by then, so a screen that depends on it can be
+       photographed without playing there. */
+    if (OPTIONS.progress >= 0) {
+        game.campaign.progress_battle = OPTIONS.progress;
+        campaign_story_joins(&game.campaign);
+    }
 
     if (want_screen) {
         if (strcmp(want_screen, "battle") == 0)
             /* SONNY_BATTLE picks which fight, for looking at something the
                opening one never shows. */
-            battle_screen_start(&game, getenv("SONNY_BATTLE")
-                                ? atoi(getenv("SONNY_BATTLE"))
+            battle_screen_start(&game, OPTIONS.battle >= 0
+                                ? OPTIONS.battle
                                 : game.campaign.progress_battle);
         else if (strcmp(want_screen, "talents") == 0) {
             screen_talents_open(&game);
@@ -278,8 +287,7 @@ int main(int argc, char **argv)
         StageFit fit = stage_fit(GetRenderWidth(), GetRenderHeight());
         if (fit.w != stage_w || fit.h != stage_h) {
             if (stage.id != 0)
-                if (stage.id != 0)
-        UnloadRenderTexture(stage);
+                UnloadRenderTexture(stage);
             stage = LoadRenderTexture(fit.w, fit.h);
             SetTextureFilter(stage.texture, TEXTURE_FILTER_POINT);
             stage_w = fit.w;
@@ -288,32 +296,8 @@ int main(int argc, char **argv)
             glow_unload();
         }
 
-        Vector2 mouse = stage_mouse();
-        if (parked) {
-            const char *y = strchr(parked, ':');
-            if (y)
-                mouse = (Vector2){(float)atof(parked), (float)atof(y + 1)};
-        }
-        int synthetic = 0;
-        if (clicks) {
-            /* Each triple fires on its own frame. */
-            const char *p = clicks;
-            while (*p) {
-                int at = atoi(p);
-                const char *x = strchr(p, ':');
-                const char *y = x ? strchr(x + 1, ':') : NULL;
-                if (!x || !y)
-                    break;
-                if (at == frames) {
-                    mouse = (Vector2){(float)atof(x + 1), (float)atof(y + 1)};
-                    synthetic = 1;
-                }
-                const char *next = strchr(y + 1, ',');
-                if (!next)
-                    break;
-                p = next + 1;
-            }
-        }
+        Vector2 mouse = OPTIONS.parked ? OPTIONS.mouse : stage_mouse();
+        int synthetic = options_click(frames, &mouse);
         ui_set_synthetic_click(synthetic);
         audio_update();
         if (game.notice_timer > 0)
@@ -432,13 +416,14 @@ int main(int argc, char **argv)
            last, which is how an animation is looked at: one run, a strip of
            frames, rather than one run per frame. */
         frames++;
-        if (frames == 3 && getenv("SONNY_INFO"))
+        game.frame++;
+        if (frames == 3 && OPTIONS.info)
             print_window_info();
         if (shot && every > 0 && frames % every == 0)
-            TakeScreenshot(TextFormat("%s_%04d.png", shot, frames));
+            save_screenshot(TextFormat("%s_%04d.png", shot, frames));
         if (shot && frames >= (steps > 0 ? steps : 2)) {
             if (every <= 0)
-                TakeScreenshot(shot);
+                save_screenshot(shot);
             break;
         }
     }

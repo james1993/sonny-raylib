@@ -59,6 +59,17 @@ typedef enum {
    ASCII and nothing else, so this one is asked for by codepoint. */
 #define EURO "\u20ac"
 
+/* One ally's row on the victory screen: who it is (Krin.friendlySlotsFFTT,
+   -1 for a row nobody fought in), how far their bar has got, what a frame
+   adds, how many frames are left, and whether it reached the end. */
+typedef struct {
+    int32_t member;
+    float   xp;
+    float   step;
+    int32_t fill;
+    int32_t leveled;
+} WinRow;
+
 typedef struct {
     Screen    screen;
     Campaign  campaign;
@@ -235,6 +246,8 @@ typedef struct {
     float     win_xp;          /* exp, the running percentage */
     float     win_step;        /* adderPer */
     int32_t   win_leveled;     /* playerLeveled */
+    /* The two ally rows, which fill the same way from their own level. */
+    WinRow    win_ally[2];
     /* The hub's welcome: which of the story's notes is up, or -1, and
        whether this visit has already offered one. */
     /* The reticle does not snap on and off: it comes up over a few frames
@@ -342,6 +355,9 @@ typedef struct {
 
     Rng       rng;
     uint64_t  seed;
+    /* Frames since the game started: the clock anything that simply loops
+       on the stage is played from. */
+    int64_t   frame;
 } Game;
 
 /* Text, drawn in the game's own font.

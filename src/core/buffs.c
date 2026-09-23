@@ -177,7 +177,7 @@ TickResult buff_tick(Unit *u, const BuffDef *lib, int32_t lib_count)
         differenceForSH = u->SHIELD - totalDmg;
 
     if (differenceForSH > 0) {
-        u->SHIELD -= (int32_t)totalDmg;
+        u->SHIELD -= unit_int(totalDmg);
         out.shielded = 1;
     } else {
         /* Note: the shield is destroyed without reducing the damage. The
@@ -185,10 +185,10 @@ TickResult buff_tick(Unit *u, const BuffDef *lib, int32_t lib_count)
            from totalDmgCalcZ, so the full amount still lands. */
         if (totalDmg > 0)
             u->SHIELD = 0;
-        u->LIFEN -= (int32_t)totalDmg;
+        u->LIFEN -= unit_int(totalDmg);
     }
 
-    u->FOCUSN -= (int32_t)totalFocus;
+    u->FOCUSN -= unit_int(totalFocus);
     if (u->FOCUSN > u->FOCUSU)
         u->FOCUSN = u->FOCUSU;
     if (u->FOCUSN < 0)

@@ -32,10 +32,22 @@ void assets_set_root(const char *root)
     snprintf(asset_root, sizeof(asset_root), "%s", root ? root : ".");
 }
 
+const char *assets_path(const char *relative)
+{
+    static char pool[4][1024];
+    static int next;
+    char *out = pool[next];
+    next = (next + 1) % 4;
+    if (!relative || relative[0] == '/')
+        snprintf(out, sizeof(pool[0]), "%s", relative ? relative : "");
+    else
+        snprintf(out, sizeof(pool[0]), "%s/%s", asset_root, relative);
+    return out;
+}
+
 void assets_check_stamp(void)
 {
-    char path[1024];
-    snprintf(path, sizeof(path), "%s/assets/art/stamp.txt", asset_root);
+    const char *path = assets_path("assets/art/stamp.txt");
     char *on_disk = LoadFileText(path);
     if (!on_disk) {
         TraceLog(LOG_WARNING, "ASSETS: no %s -- cannot tell whether the art "
@@ -127,8 +139,7 @@ const Texture2D *asset_texture(const char *name, int32_t frame)
         if (!evict_oldest())
             break;
 
-    char path[1024];
-    snprintf(path, sizeof(path), "%s/%s", asset_root, entry->frames[frame - 1]);
+    const char *path = assets_path(entry->frames[frame - 1]);
 
     /* A comic is a thousand pictures of its own, so a cache that only filled
        up would leave the game with nothing to draw once one had played.
@@ -180,14 +191,18 @@ const Texture2D *asset_texture(const char *name, int32_t frame)
  * multiplies. The two agree only when the art is white, and the pieces the
  * game recolours this way are not: the disc behind a buff's icon is authored
  * flat green, and multiplying green by a red element gives black. */
-#define WHITE_CACHE_MAX 16
-
-static struct {
+/* As many as the game asks for -- a fixed sixteen ran out and handed back
+   the untouched art instead, which lands on the wrong colour -- keyed by the
+   frame as well as the name. */
+typedef struct {
     const char *name;
+    int32_t     frame;
     Texture2D   texture;
     int32_t     ok;
-} white_cache[WHITE_CACHE_MAX];
-static int32_t white_count;
+} WhiteTexture;
+
+static WhiteTexture *white_cache;
+static int32_t white_count, white_room;
 
 const Texture2D *asset_texture_recolored(const char *name, int32_t frame)
 {
@@ -195,14 +210,21 @@ const Texture2D *asset_texture_recolored(const char *name, int32_t frame)
     if (!entry)
         return NULL;
     for (int32_t i = 0; i < white_count; i++)
-        if (white_cache[i].name == entry->name)
+        if (white_cache[i].name == entry->name && white_cache[i].frame == frame)
             return white_cache[i].ok ? &white_cache[i].texture : NULL;
-    if (white_count >= WHITE_CACHE_MAX)
-        return asset_texture(name, frame);
 
     const Texture2D *source = asset_texture(name, frame);
     if (!source)
         return NULL;
+    if (white_count == white_room) {
+        int32_t room = white_room ? white_room * 2 : 16;
+        WhiteTexture *grown = MemRealloc(white_cache,
+                                         (unsigned)room * sizeof(*grown));
+        if (!grown)
+            return NULL;
+        white_cache = grown;
+        white_room = room;
+    }
     Image image = LoadImageFromTexture(*source);
     Color *pixels = LoadImageColors(image);
     for (int i = 0; i < image.width * image.height; i++) {
@@ -212,15 +234,16 @@ const Texture2D *asset_texture_recolored(const char *name, int32_t frame)
     }
     Image plain = {pixels, image.width, image.height, 1,
                    PIXELFORMAT_UNCOMPRESSED_R8G8B8A8};
-    int32_t slot = white_count++;
-    white_cache[slot].name = entry->name;
-    white_cache[slot].texture = LoadTextureFromImage(plain);
-    white_cache[slot].ok = white_cache[slot].texture.id != 0;
-    if (white_cache[slot].ok)
-        SetTextureFilter(white_cache[slot].texture, TEXTURE_FILTER_BILINEAR);
+    WhiteTexture *slot = &white_cache[white_count++];
+    slot->name = entry->name;
+    slot->frame = frame;
+    slot->texture = LoadTextureFromImage(plain);
+    slot->ok = slot->texture.id != 0;
+    if (slot->ok)
+        SetTextureFilter(slot->texture, TEXTURE_FILTER_BILINEAR);
     UnloadImageColors(pixels);
     UnloadImage(image);
-    return white_cache[slot].ok ? &white_cache[slot].texture : NULL;
+    return slot->ok ? &slot->texture : NULL;
 }
 
 /* Where a frame's own origin sits inside its exported image. The offsets are
@@ -328,7 +351,9 @@ void assets_unload_all(void)
     for (int32_t i = 0; i < white_count; i++)
         if (white_cache[i].ok)
             UnloadTexture(white_cache[i].texture);
-    white_count = 0;
+    MemFree(white_cache);
+    white_cache = NULL;
+    white_count = white_room = 0;
 }
 
 /* ----------------------------------------------------------------- doll */

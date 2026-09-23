@@ -11,8 +11,10 @@ the engine can reach and checks the manifest has it.
 
 Exits non-zero if anything the engine can ask for is not there.
 """
+import glob
 import json
 import os
+import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -64,7 +66,27 @@ def wanted():
     for names in BY_HAND.values():
         for name in names:
             ask(name, 'the engine by name')
+    for name, where in source_names():
+        ask(name, where)
     return want
+
+
+# Art the engine names in its own source rather than through a table: a piece
+# of furniture by character id ("#1259", or one frame of it, "#1444@8"), and a
+# sound it plays by hand. The grey stat swatch was asked for this way and never
+# shipped, and nothing noticed until this looked.
+SOURCE_ART = re.compile(r'"(#[0-9]+(?:@[0-9]+)?)"')
+SOURCE_SOUND = re.compile(r'audio_(?:play|music|narration)\(\s*"([^"]+)"')
+
+
+def source_names():
+    for path in sorted(glob.glob(os.path.join(ROOT, 'src/platform/*.c'))):
+        with open(path, encoding='utf-8') as fh:
+            text = fh.read()
+        where = os.path.relpath(path, ROOT)
+        for pattern in (SOURCE_ART, SOURCE_SOUND):
+            for m in pattern.finditer(text):
+                yield m.group(1), where
 
 
 def main():
@@ -76,12 +98,39 @@ def main():
     missing = sorted(n for n in want if n not in have)
     print('%d names the engine can ask for, %d shipped'
           % (len(want), len(want) - len(missing)))
-    if not missing:
-        return 0
-    print('\nnot shipped:')
-    for name in missing:
-        print('  %-28s %s' % (name, ', '.join(sorted(set(want[name])))))
-    return 1
+    failed = 0
+    if missing:
+        print('\nnot shipped:')
+        for name in missing:
+            print('  %-28s %s' % (name, ', '.join(sorted(set(want[name])))))
+        failed = 1
+
+    # And the other way: every file the manifest names is on the disk, and
+    # nothing is on the disk that the manifest does not name -- a picture left
+    # behind by an older build is weight in every clone and nothing on screen.
+    with open(os.path.join(ROOT, 'assets/art/manifest.json'),
+              encoding='utf-8') as fh:
+        assets = json.load(fh)['assets']
+    named = {os.path.normpath(f) for entry in assets.values()
+             for f in entry['frames']}
+    gone = sorted(f for f in named if not os.path.exists(os.path.join(ROOT, f)))
+    on_disk = {os.path.normpath(os.path.relpath(os.path.join(d, f), ROOT))
+               for d, _, files in os.walk(os.path.join(ROOT, 'assets/art'))
+               for f in files if not f.endswith(('.json', '.txt'))}
+    stray = sorted(on_disk - named)
+    if gone:
+        print('\nnamed by the manifest but not on the disk:')
+        for f in gone:
+            print('  ' + f)
+        failed = 1
+    if stray:
+        print('\non the disk but named by nothing:')
+        for f in stray[:20]:
+            print('  ' + f)
+        if len(stray) > 20:
+            print('  ... and %d more' % (len(stray) - 20))
+        failed = 1
+    return failed
 
 
 if __name__ == '__main__':

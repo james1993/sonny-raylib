@@ -52,7 +52,9 @@ static const char *const DEVICE_SANS_BOLD[] = {
 #define UI_FACE_SANS   1
 #define UI_FACE_BOLD   2
 #define UI_FACES       3
-#define UI_SIZE_CACHE  32
+/* More sizes than the game asks for. A bake is pointed at while text is laid
+   out, so the table is not grown under it; running out is reported instead. */
+#define UI_SIZE_CACHE  64
 /* How much bigger the measuring bake is than the one drawn from. */
 #define UI_METRIC_SCALE 8
 
@@ -108,6 +110,16 @@ static float font_em_to_box(const char *path)
 }
 
 static UiFace ui_faces[UI_FACES];
+
+/* The orb icons cut to the ball, which ui_font_unload lets go of too. */
+typedef struct {
+    char      name[48];
+    Texture2D texture;
+    int       ok;
+} OrbCut;
+
+static OrbCut *orb_cut;
+static int32_t orb_cut_count, orb_cut_room;
 
 /* The SWF embeds each font as a subset of the glyphs it happens to use, and
    three of its four hold only a handful. Anything that thin would render most
@@ -173,8 +185,13 @@ static int face_size(int face, float size)
         }
         return i;
     }
-    if (f->cached == UI_SIZE_CACHE)
+    if (f->cached == UI_SIZE_CACHE) {
+        static int warned;
+        if (!warned++)
+            TraceLog(LOG_WARNING, "UI: more than %d text sizes; %d is drawn "
+                     "at the last size baked", UI_SIZE_CACHE, px);
         return f->cached - 1;
+    }
 
     Font font = LoadFontEx(f->path, draw_px, UI_CODEPOINTS,
                            UI_CODEPOINT_COUNT);
@@ -217,9 +234,12 @@ void ui_font_load(void)
     codepoints_init();
     if (ui_faces[UI_FACE_GAME].ready)
         return;
-    if (!FileExists(UI_FONT_PATH) || !face_open(UI_FACE_GAME, UI_FONT_PATH))
+    /* face_open keeps the path, so it has to be one that lasts. */
+    static char font_path[1024];
+    snprintf(font_path, sizeof(font_path), "%s", assets_path(UI_FONT_PATH));
+    if (!FileExists(font_path) || !face_open(UI_FACE_GAME, font_path))
         TraceLog(LOG_WARNING, "UI font %s unusable; using the default",
-                 UI_FONT_PATH);
+                 font_path);
 
     for (size_t i = 0; i < sizeof(DEVICE_SANS_BOLD)
                            / sizeof(DEVICE_SANS_BOLD[0]); i++)
@@ -244,6 +264,14 @@ void ui_font_unload(void)
         ui_faces[face].cached = 0;
         ui_faces[face].ready = 0;
     }
+    /* The orbs' cut icons are made from the same bakes' neighbours and go
+       with them. */
+    for (int32_t i = 0; i < orb_cut_count; i++)
+        if (orb_cut[i].ok)
+            UnloadTexture(orb_cut[i].texture);
+    MemFree(orb_cut);
+    orb_cut = NULL;
+    orb_cut_count = orb_cut_room = 0;
 }
 
 /* A little negative tracking keeps the game's own face close to the
@@ -337,6 +365,78 @@ static float face_width(int face, const char *text, float size)
     return (float)MeasureText(text, (int)size);
 }
 
+/* Measuring a line a glyph at a time. face_run adds each glyph's advance
+   to a pen that starts at nothing, so adding them up the same way here gives
+   exactly the widths it would -- without measuring the whole prefix again
+   every time a letter is added, which is what wrapping used to do. A face
+   with nothing baked falls back the way face_width does, and past all of
+   them to raylib's own font, which is not additive and is measured whole. */
+typedef struct {
+    int         face;       /* -1: raylib's own font */
+    const Font *metrics;
+    float       scale;
+    float       size;
+} TextMeasure;
+
+static TextMeasure measure_begin(int face, float size)
+{
+    TextMeasure m = {-1, NULL, 0.0f, size};
+    for (;;) {
+        int slot = face_size(face, size);
+        if (slot >= 0) {
+            m.face = face;
+            m.metrics = &ui_faces[face].cache[slot].metrics;
+            m.scale = size / ui_faces[face].cache[slot].em;
+            return m;
+        }
+        if (face == UI_FACE_BOLD)
+            face = UI_FACE_SANS;
+        else if (face == UI_FACE_SANS)
+            face = UI_FACE_GAME;
+        else
+            return m;
+    }
+}
+
+/* One codepoint's advance, in the caller's units. */
+static float measure_glyph(const TextMeasure *m, int codepoint)
+{
+    int index = GetGlyphIndex(*m->metrics, codepoint);
+    int advance = m->metrics->glyphs[index].advanceX;
+    if (advance == 0)
+        advance = (int)m->metrics->recs[index].width
+                + m->metrics->glyphs[index].offsetX;
+    return advance * m->scale + face_spacing(m->face, m->size);
+}
+
+/* The width of text[from, to), for the fallback that cannot add up. */
+static float measure_span(const TextMeasure *m, const char *text, int from,
+                          int to)
+{
+    char buf[512];
+    int n = to - from;
+    if (n > (int)sizeof(buf) - 1)
+        n = (int)sizeof(buf) - 1;
+    memcpy(buf, text + from, (size_t)n);
+    buf[n] = 0;
+    return (float)MeasureText(buf, (int)m->size);
+}
+
+/* Draw text[from, to) -- a line cut out of something longer. */
+static void draw_span(int face, const char *text, int from, int to, float x,
+                      float y, float size, Color color)
+{
+    char buf[512];
+    int n = to - from;
+    if (n <= 0)
+        return;
+    if (n > (int)sizeof(buf) - 1)
+        n = (int)sizeof(buf) - 1;
+    memcpy(buf, text + from, (size_t)n);
+    buf[n] = 0;
+    face_draw(face, buf, x, y, size, color);
+}
+
 void ui_text(const char *text, float x, float y, float size, Color color)
 {
     face_draw(UI_FACE_GAME, text, x, y, size, color);
@@ -425,46 +525,73 @@ void draw_field(const TextField *f, Vector2 clip, const char *text)
         draw_field_tinted(f, clip, text, (Color){f->r, f->g, f->b, 255});
 }
 
-/* The same, wrapped to the field's width and stacked by its own line box. */
+/* The same, wrapped to the field's width and stacked by its own line box.
+
+   A line takes letters until the next one would carry it past the field's
+   width, then goes back to the last space -- or breaks mid-word when there
+   was none. It is measured in the face it is drawn in: a Tahoma field
+   measured as _sans wrapped in the wrong place. */
 void draw_field_wrapped(const TextField *f, Vector2 clip, const char *text)
 {
     if (!f || !text || !text[0])
         return;
+    int face = f->device ? UI_FACE_SANS : UI_FACE_GAME;
+    TextMeasure m = measure_begin(face, f->size);
     /* Flash stacks lines a full line box apart, not a font size apart. */
     float line_height = f->size * TEXT_LINE_FACTOR + f->leading;
     int rows = (int)(f->height / line_height);
-    char line[160];
+    Color ink = {f->r, f->g, f->b, 255};
     int start = 0, row = 0;
     while (text[start] && row < rows) {
-        int fit = 0, space = -1, hard = 0;
-        for (int i = 0; text[start + i]; i++) {
+        int fit = start, space = -1, hard = 0;
+        float pen = 0.0f;
+        for (int i = start; text[i];) {
             /* A line break in the text is a line break on the screen: Flash
                fields honour them, and running one through the wrapper as an
                ordinary character drew it as a glyph. */
-            if (text[start + i] == '\n') {
+            if (text[i] == '\n') {
                 fit = i;
                 hard = 1;
                 break;
             }
-            if (text[start + i] == ' ')
+            if (text[i] == ' ')
                 space = i;
-            line[i] = text[start + i];
-            line[i + 1] = 0;
-            if (ui_sans_text_width(line, f->size) > f->width) {
-                fit = (space > 0) ? space : i;
+            int step = 0;
+            int codepoint = GetCodepointNext(text + i, &step);
+            float width = m.metrics ? (pen += measure_glyph(&m, codepoint))
+                                    : measure_span(&m, text, start, i + step);
+            if (width > f->width) {
+                fit = (space > start) ? space : i;
                 break;
             }
-            fit = i + 1;
+            i += step;
+            fit = i;
         }
-        int count = fit;
-        if (count > (int)sizeof(line) - 1)
-            count = (int)sizeof(line) - 1;
-        memcpy(line, text + start, count);
-        line[count] = 0;
-        TextField row_field = *f;
-        row_field.y = f->y + row * line_height;
-        draw_field(&row_field, clip, line);
-        start += count;
+        /* A field too narrow for even one letter still shows it, rather than
+           standing still on it for ever. */
+        if (fit == start && !hard && text[start]) {
+            int step = 0;
+            GetCodepointNext(text + start, &step);
+            fit = start + step;
+        }
+
+        float width = 0.0f;
+        for (int i = start; m.metrics && i < fit;) {
+            int step = 0;
+            width += measure_glyph(&m, GetCodepointNext(text + i, &step));
+            i += step;
+        }
+        if (!m.metrics)
+            width = measure_span(&m, text, start, fit);
+        float x = clip.x + f->x;
+        if (f->align == 1)
+            x += f->width - width;
+        else if (f->align == 2)
+            x += (f->width - width) / 2.0f;
+        float y = clip.y + f->y + row * line_height + TEXT_GUTTER + f->leading;
+        draw_span(face, text, start, fit, x, y, f->size, ink);
+
+        start = fit;
         if (hard)
             start++;            /* step over the break itself */
         while (text[start] == ' ')
@@ -643,22 +770,21 @@ static void draw_orb_part(const OrbPart *part, Vector2 centre, float scale,
    are drawn larger than the ball -- without the cut they show their corners.
    raylib has no masking, so an icon is combined with the mask the first time
    it is drawn and the cut copy is what every orb shows afterwards. */
-#define ORB_ICON_CACHE 64
-
-static struct {
-    char      name[48];
-    Texture2D texture;
-    int       ok;
-} orb_cut[ORB_ICON_CACHE];
-static int32_t orb_cut_count;
-
+/* The cut copies are kept in orb_cut, grown as icons are asked for: a fixed
+   sixty-four stopped cutting new ones and the orbs past it came up empty. */
 static const Texture2D *orb_icon_cut(const char *icon)
 {
     for (int32_t i = 0; i < orb_cut_count; i++)
         if (strcmp(orb_cut[i].name, icon) == 0)
             return orb_cut[i].ok ? &orb_cut[i].texture : NULL;
-    if (orb_cut_count >= ORB_ICON_CACHE)
-        return NULL;
+    if (orb_cut_count == orb_cut_room) {
+        int32_t room = orb_cut_room ? orb_cut_room * 2 : 32;
+        OrbCut *grown = MemRealloc(orb_cut, (unsigned)room * sizeof(*grown));
+        if (!grown)
+            return NULL;
+        orb_cut = grown;
+        orb_cut_room = room;
+    }
 
     int32_t slot = orb_cut_count++;
     snprintf(orb_cut[slot].name, sizeof(orb_cut[slot].name), "%s", icon);
@@ -1065,75 +1191,68 @@ void game_tooltip_item(Game *g, const ItemDef *item, int32_t price)
 }
 
 /* One of the tooltip's two blocks: the text wrapped to the box's width on its
-   own backing, which is only as big as the text turned out to be. */
+   own backing, which is only as big as the text turned out to be. A line
+   takes whole words while they fit, and always takes at least one. */
 static float tip_block(const char *text, float x, float y, float width,
                        Color backing, Color ink, int bold)
 {
-    char line[256];
-    float height = 0;
-    /* Measure first: the backing is stretched to the text, not the other way
-       round. */
-    for (int pass = 0; pass < 2; pass++) {
-        float at = y;
-        int start = 0;
-        while (text[start]) {
-            int take = 0, last_fit = 0;
-            for (int i = start; ; i++) {
-                if (text[i] == ' ' || text[i] == 0) {
-                    int count = i - start;
-                    if (count > (int)sizeof(line) - 1)
-                        count = (int)sizeof(line) - 1;
-                    memcpy(line, text + start, count);
-                    line[count] = 0;
-                    float measured = bold
-                    ? ui_sans_bold_width(line, TOOLTIP_SIZE)
-                    : ui_sans_text_width(line, TOOLTIP_SIZE);
-                if (measured <= width - TOOLTIP_INDENT * 2
-                        || !last_fit)
-                        last_fit = i;
-                    else
-                        break;
-                    take = i;
-                    if (text[i] == 0)
-                        break;
-                }
-            }
-            take = last_fit;
-            int count = take - start;
-            if (count > (int)sizeof(line) - 1)
-                count = (int)sizeof(line) - 1;
-            memcpy(line, text + start, count);
-            line[count] = 0;
-            if (pass == 1) {
-                if (bold)
-                    ui_sans_bold_text(line, x + TOOLTIP_INDENT,
-                                      at + TOOLTIP_GUTTER / 2.0f,
-                                      TOOLTIP_SIZE, ink);
+    int face = bold ? UI_FACE_BOLD : UI_FACE_SANS;
+    TextMeasure m = measure_begin(face, TOOLTIP_SIZE);
+    float room = width - TOOLTIP_INDENT * 2;
+    /* Where each line starts and stops, worked out once: the backing is
+       stretched to the text, not the other way round, so the text has to be
+       laid out before anything is drawn. */
+    enum { MAX_LINES = 32 };
+    int from[MAX_LINES], to[MAX_LINES];
+    int lines = 0;
+    int start = 0;
+    while (text[start] && lines < MAX_LINES) {
+        int last_fit = 0;
+        float pen = 0.0f;
+        for (int i = start; ; ) {
+            if (text[i] == ' ' || text[i] == 0) {
+                float measured = m.metrics ? pen
+                                           : measure_span(&m, text, start, i);
+                if (measured <= room || !last_fit)
+                    last_fit = i;
                 else
-                    ui_sans_text(line, x + TOOLTIP_INDENT,
-                                 at + TOOLTIP_GUTTER / 2.0f, TOOLTIP_SIZE,
-                                 ink);
+                    break;
+                if (text[i] == 0)
+                    break;
             }
-            at += TOOLTIP_SIZE + 4.0f;
-            start = text[take] ? take + 1 : take;
+            int step = 0;
+            int codepoint = GetCodepointNext(text + i, &step);
+            if (m.metrics)
+                pen += measure_glyph(&m, codepoint);
+            i += step;
         }
-        /* A Flash text field keeps a gutter inside its border, which is what
-           makes a single line of twelve-point _sans twenty-one pixels tall
-           against a sixteen-pixel line -- and twenty-one is exactly where the
-           clip puts the body, so the two backings meet. Leaving the gutter
-           off left a gap between the title and the body with the screen
-           showing through it. */
-        height = at - y + TOOLTIP_GUTTER;
-        if (pass == 0 && backing.a) {
-            /* The width is the one the field was created at. autoSize only
-               grows a field downwards once wordWrap is on -- it does not pull
-               the sides in -- so both blocks stay as wide as each other, which
-               is how the original looks. */
-            DrawRectangleRec((Rectangle){x, y, width, height}, backing);
-            DrawRectangleLinesEx((Rectangle){x, y, width, height}, 1.0f,
-                                 (Color){0, 0, 0, 255});
-        }
+        from[lines] = start;
+        to[lines] = last_fit;
+        lines++;
+        start = text[last_fit] ? last_fit + 1 : last_fit;
     }
+
+    /* A Flash text field keeps a gutter inside its border, which is what
+       makes a single line of twelve-point _sans twenty-one pixels tall
+       against a sixteen-pixel line -- and twenty-one is exactly where the
+       clip puts the body, so the two backings meet. Leaving the gutter off
+       left a gap between the title and the body with the screen showing
+       through it. */
+    float height = lines * (TOOLTIP_SIZE + 4.0f) + TOOLTIP_GUTTER;
+    if (backing.a) {
+        /* The width is the one the field was created at. autoSize only grows
+           a field downwards once wordWrap is on -- it does not pull the sides
+           in -- so both blocks stay as wide as each other, which is how the
+           original looks. */
+        DrawRectangleRec((Rectangle){x, y, width, height}, backing);
+        DrawRectangleLinesEx((Rectangle){x, y, width, height}, 1.0f,
+                             (Color){0, 0, 0, 255});
+    }
+    if (ink.a)
+        for (int i = 0; i < lines; i++)
+            draw_span(face, text, from[i], to[i], x + TOOLTIP_INDENT,
+                      y + i * (TOOLTIP_SIZE + 4.0f) + TOOLTIP_GUTTER / 2.0f,
+                      TOOLTIP_SIZE, ink);
     return height;
 }
 
@@ -1196,7 +1315,7 @@ void game_draw_tooltip(const Game *g, Vector2 mouse)
         body += TOOLTIP_SIZE + 4.0f + 2.0f;
     float say = g->tip_body[0]
               ? tip_block(g->tip_body, x, at + body, TOOLTIP_ITEM_WIDTH,
-                          BLANK, TOOLTIP_SAY_INK, 0) : 0;
+                          BLANK, BLANK, 0) : 0;
     DrawRectangleRec((Rectangle){x, at, TOOLTIP_ITEM_WIDTH, body + say},
                      (Color){0, 0, 0, 230});
     DrawRectangleLinesEx((Rectangle){x, at, TOOLTIP_ITEM_WIDTH, body + say},

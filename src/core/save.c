@@ -14,20 +14,31 @@ static void write_int_array(FILE *fh, const char *key, const int32_t *values,
     fprintf(fh, "\n");
 }
 
+static char save_dir[1000] = ".";
+
+void save_set_dir(const char *dir)
+{
+    snprintf(save_dir, sizeof(save_dir), "%s", (dir && dir[0]) ? dir : ".");
+}
+
 const char *save_slot_path(int32_t slot)
 {
     /* The original keeps each run in its own SharedObject, "sonny_slot1"
        upward, beside where the game is played. */
-    static char path[32];
+    static char path[1040];
     if (slot < 1 || slot > SONNY_SAVE_SLOTS)
         slot = 1;
-    snprintf(path, sizeof(path), "sonny_slot%d.txt", (int)slot);
+    snprintf(path, sizeof(path), "%s/sonny_slot%d.txt", save_dir, (int)slot);
     return path;
 }
 
 int save_write(const Campaign *c, const char *path)
 {
-    FILE *fh = fopen(path, "w");
+    /* Written beside the save and then moved over it, so a run is never left
+       half-written: the rename either happens or it does not. */
+    char temp[1100];
+    snprintf(temp, sizeof(temp), "%s.tmp", path);
+    FILE *fh = fopen(temp, "w");
     if (!fh)
         return -1;
 
@@ -79,13 +90,70 @@ int save_write(const Campaign *c, const char *path)
        first squares and leaves the rest empty: the same bag. */
     write_int_array(fh, "inventory", c->inventory, SONNY_BAG_SLOTS);
 
+    /* The party, everyone but the player, who keeps his own lines above.
+       The original saves all of these per member -- equipArrayN, StatSetsN,
+       PerSetsN, DefSetsN, LevelStats, ExpSets, agArrayN and agMode -- so
+       what an ally is wearing and how far they have come survives a load. */
+    for (int32_t m = 1; m < SONNY_PARTY_SIZE; m++) {
+        fprintf(fh, "ally %d %d %.10g %d", m, c->ally_level[m], c->ally_xp[m],
+                c->ally_ai_mode[m]);
+        for (int32_t i = 0; i < 4; i++)
+            fprintf(fh, " %d", c->ally_aggression[m][i]);
+        fprintf(fh, "\n");
+        fprintf(fh, "ally_equip %d", m);
+        for (int32_t i = 0; i < SONNY_EQUIP_SLOTS; i++)
+            fprintf(fh, " %d", c->ally_equip[m][i]);
+        fprintf(fh, "\nally_sets %d", m);
+        for (int32_t i = 0; i < SONNY_STATS; i++)
+            fprintf(fh, " %.10g", c->ally_stat_sets[m][i]);
+        fprintf(fh, "\nally_per %d", m);
+        for (int32_t e = 0; e < SONNY_ELEMENTS; e++)
+            fprintf(fh, " %.10g", c->ally_per_sets[m][e]);
+        fprintf(fh, "\nally_def %d", m);
+        for (int32_t e = 0; e < SONNY_ELEMENTS; e++)
+            fprintf(fh, " %.10g", c->ally_def_sets[m][e]);
+        fprintf(fh, "\n");
+    }
+
     /* Passive talent buff keys, which carry their rank in the name. */
     for (int32_t i = 0; i < SONNY_TALENT_MAX; i++)
         if (c->player.buff_adder[i][0])
             fprintf(fh, "passive %d %s\n", i, c->player.buff_adder[i]);
 
-    fclose(fh);
+    int failed = ferror(fh);
+    if (fclose(fh) != 0 || failed || rename(temp, path) != 0) {
+        remove(temp);
+        return -1;
+    }
     return 0;
+}
+
+/* A line of doubles, as many as there are and no more than `max`. */
+static int32_t read_double_array(const char *line, double *out, int32_t max)
+{
+    int32_t n = 0;
+    const char *p = line;
+    while (n < max) {
+        char *end;
+        double value = strtod(p, &end);
+        if (end == p)
+            break;
+        out[n++] = value;
+        p = end;
+    }
+    return n;
+}
+
+/* The member a line of party state belongs to, and where the rest starts;
+   -1 for a line that names nobody in the party. */
+static int32_t ally_line(const char *rest, const char **after)
+{
+    char *end;
+    long m = strtol(rest, &end, 10);
+    if (end == rest || m < 1 || m >= SONNY_PARTY_SIZE)
+        return -1;
+    *after = end;
+    return (int32_t)m;
 }
 
 static int32_t read_int_array(const char *line, int32_t *out, int32_t max)
@@ -153,38 +221,42 @@ int save_read(Campaign *c, const char *path)
         } else if (strcmp(key, "spent_stat") == 0) {
             sscanf(rest, "%d", &c->player.spent_stat_points);
         } else if (strcmp(key, "sets") == 0) {
-            const char *p = rest;
-            for (int32_t i = 0; i < SONNY_STATS; i++) {
-                char *end;
-                c->player.stat_sets[i] = strtod(p, &end);
-                if (end == p)
-                    break;
-                p = end;
-            }
-        } else if (strcmp(key, "per") == 0 || strcmp(key, "def") == 0) {
-            double *into = (key[0] == 'p') ? c->player.per_sets
-                                           : c->player.def_sets;
-            const char *p = rest;
-            for (int32_t e = 0; e < SONNY_ELEMENTS; e++) {
-                char *end;
-                into[e] = strtod(p, &end);
-                if (end == p)
-                    break;
-                p = end;
+            read_double_array(rest, c->player.stat_sets, SONNY_STATS);
+        } else if (strcmp(key, "per") == 0) {
+            read_double_array(rest, c->player.per_sets, SONNY_ELEMENTS);
+        } else if (strcmp(key, "def") == 0) {
+            read_double_array(rest, c->player.def_sets, SONNY_ELEMENTS);
+        } else if (strncmp(key, "ally", 4) == 0) {
+            const char *p = NULL;
+            int32_t m = ally_line(rest, &p);
+            if (m < 0)
+                continue;
+            if (strcmp(key, "ally") == 0) {
+                double v[7];
+                int32_t n = read_double_array(p, v, 7);
+                if (n >= 1)
+                    c->ally_level[m] = (int32_t)v[0];
+                if (n >= 2)
+                    c->ally_xp[m] = v[1];
+                if (n >= 3)
+                    c->ally_ai_mode[m] = (int32_t)v[2];
+                for (int32_t i = 0; i < 4 && 3 + i < n; i++)
+                    c->ally_aggression[m][i] = (int32_t)v[3 + i];
+            } else if (strcmp(key, "ally_equip") == 0) {
+                read_int_array(p, c->ally_equip[m], SONNY_EQUIP_SLOTS);
+            } else if (strcmp(key, "ally_sets") == 0) {
+                read_double_array(p, c->ally_stat_sets[m], SONNY_STATS);
+            } else if (strcmp(key, "ally_per") == 0) {
+                read_double_array(p, c->ally_per_sets[m], SONNY_ELEMENTS);
+            } else if (strcmp(key, "ally_def") == 0) {
+                read_double_array(p, c->ally_def_sets[m], SONNY_ELEMENTS);
             }
         } else if (strcmp(key, "friends") == 0) {
             read_int_array(rest, c->friends, SONNY_PARTY_SIZE);
         } else if (strcmp(key, "line") == 0) {
             read_int_array(rest, c->line, SONNY_MAX_ALLIES);
         } else if (strcmp(key, "stats") == 0) {
-            const char *p = rest;
-            for (int32_t i = 0; i < SONNY_STATS; i++) {
-                char *end;
-                c->player.spent[i] = strtod(p, &end);
-                if (end == p)
-                    break;
-                p = end;
-            }
+            read_double_array(rest, c->player.spent, SONNY_STATS);
         } else if (strcmp(key, "tally") == 0) {
             int32_t t[5] = {0, 0, 0, 0, 0};
             read_int_array(rest, t, 5);

@@ -12,6 +12,7 @@
 #include "game.h"
 #include "render.h"
 #include "glow.h"
+#include "options.h"
 
 static int player_turn(const Game *g)
 {
@@ -1231,8 +1232,10 @@ static void draw_reticle(const Game *g)
 static void draw_frame_rate(void)
 {
     draw_field(text_field(BATTLE_SCREEN_NAME, "@535", 0), (Vector2){0, 0}, "FPS:");
+    /* A capture shows the rate the game runs at rather than whatever the
+       machine taking it managed, so two captures of the same frame agree. */
     draw_field(text_field(BATTLE_SCREEN_NAME, "@536", 0), (Vector2){0, 0},
-               TextFormat("%d", GetFPS()));
+               TextFormat("%d", OPTIONS.shot ? STAGE_FPS : GetFPS()));
 }
 
 static Color color_from_rgb(uint32_t rgb)
@@ -1893,7 +1896,7 @@ static void present(Game *g, const MoveEvent *e)
         g->effect = a->model;
         g->effect_slot = e->target;
         g->effect_tick = 0;
-        if (getenv("SONNY_TRACE"))
+        if (OPTIONS.trace)
             printf("TRACE effect %s (%d frames) on slot %d, ability %s\n",
                    a->model, asset_frame_count(a->model), (int)e->target,
                    a->name ? a->name : "?");
@@ -2000,8 +2003,8 @@ static void handle_input(Game *g)
     g->hovered_unit = unit_at(g, stage);
     /* SONNY_HOVER pins a slot for a headless capture, so the ring can be
        photographed without a pointer to move. */
-    if (getenv("SONNY_HOVER"))
-        g->hovered_unit = atoi(getenv("SONNY_HOVER"));
+    if (OPTIONS.hover >= 0)
+        g->hovered_unit = OPTIONS.hover;
 
     /* The ring follows the pointer onto a unit, and stays up while the
        pointer is anywhere within it -- which is what lets it be moved off the
@@ -2326,7 +2329,7 @@ void battle_screen_update(Game *g, Vector2 mouse, int headless)
     /* A headless capture passes the turn so the fight keeps moving, unless
        SONNY_HOVER asked for a unit to be held under the pointer -- which is
        how the ability ring gets photographed. */
-    if (headless && !getenv("SONNY_HOVER") && player_turn(g) && !g->queued) {
+    if (headless && OPTIONS.hover < 0 && player_turn(g) && !g->queued) {
         battle_queue(&g->battle, PLAYER_SLOT, PLAYER_SLOT, 0, 0);
         g->queued = 1;
         g->boomer_tick = 0;
@@ -2422,6 +2425,24 @@ void battle_screen_update(Game *g, Vector2 mouse, int headless)
             g->win_xp = (float)g->campaign.player.xp;
             g->win_step = (float)g->rewards.xp_percent / WIN_FILL_FRAMES;
             g->win_leveled = 0;
+            /* And a row for each of the party who fought, in the order they
+               were placed -- friendlySlotsFFTT -- each filling towards what
+               the fight is worth at their own level. */
+            int32_t rows = 0;
+            for (int32_t i = 0; i < 2; i++)
+                g->win_ally[i].member = -1;
+            for (int32_t slot = 2; slot < SONNY_SLOTS && rows < 2; slot++) {
+                int32_t member = g->battle.member[slot];
+                if (member <= 0)
+                    continue;
+                g->win_ally[rows].member = member;
+                g->win_ally[rows].xp = (float)g->campaign.ally_xp[member];
+                g->win_ally[rows].step = (float)campaign_ally_xp_gain(
+                    &g->campaign, &g->rewards, member) / WIN_FILL_FRAMES;
+                g->win_ally[rows].fill = WIN_FILL_FRAMES;
+                g->win_ally[rows].leveled = 0;
+                rows++;
+            }
             /* Winning re-arms the story's note, as frame 213 clears
                Krin.tutSpeecher. */
             g->hub_note_done = 0;

@@ -51,7 +51,7 @@ DamageResult formula_full_damage(Rng *rng, const Unit *caster, const Unit *targe
                         * (1 + caster->DMG2) * (1 + target->IDMG2));
     if (final <= 0)
         final = 1;
-    r.damage = (int32_t)final;
+    r.damage = unit_int(final);
     return r;
 }
 
@@ -79,7 +79,7 @@ DamageResult formula_heal(Rng *rng, const Unit *caster, const Unit *target,
     /* Unlike damage, a heal has no floor of 1. */
     if (final <= 0)
         final = 0;
-    r.damage = (int32_t)final;
+    r.damage = unit_int(final);
     return r;
 }
 

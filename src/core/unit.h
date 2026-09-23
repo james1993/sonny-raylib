@@ -102,6 +102,28 @@ typedef struct {
     BuffSlot BUFFARRAYK[SONNY_MAX_BUFFS];
 } Unit;
 
+/* A Number the original would carry on with, as a whole number here.
+
+   ActionScript keeps health as a double, so a defense driven to nothing
+   divides into Infinity and the unit simply goes to -Infinity and dies, and
+   a 0 * Infinity is NaN and changes nothing it touches into a number. C has
+   no such values in an int: converting either is undefined, and in practice
+   came out as INT32_MIN, which then overflowed the subtraction it went into.
+   So they are pinned to something no fight reaches -- a billion either way,
+   which kills or heals outright without overflowing -- and NaN to nothing. */
+#define SONNY_NUMBER_LIMIT 1000000000.0
+
+static inline int32_t unit_int(double v)
+{
+    if (v != v)
+        return 0;
+    if (v > SONNY_NUMBER_LIMIT)
+        return (int32_t)SONNY_NUMBER_LIMIT;
+    if (v < -SONNY_NUMBER_LIMIT)
+        return -(int32_t)SONNY_NUMBER_LIMIT;
+    return (int32_t)v;
+}
+
 /* Zero a unit and put its arrays in the state frame 196 leaves them in. */
 void unit_init(Unit *u, int32_t playerID);
 
