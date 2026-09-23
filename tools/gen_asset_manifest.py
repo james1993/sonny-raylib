@@ -660,6 +660,7 @@ def c_string(text):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('-i', '--input', default='assets/art/manifest.json')
+    ap.add_argument('--extra', default='assets/extra/manifest.json')
     ap.add_argument('-o', '--out', default='src/gen')
     ap.add_argument('--doll', default='data/extracted/doll_frames.json')
     ap.add_argument('--doll-parts', default='data/extracted/doll.json')
@@ -671,6 +672,16 @@ def main():
         raw = fh.read()
     manifest = json.loads(raw.decode('utf-8'))
     assets = manifest['assets']
+    # Art made by hand rather than taken out of the SWF: assets/extra/ has a
+    # manifest of its own in the same form, whose entries are added to the
+    # extracted ones -- or stand in for one of the same name. It is kept apart
+    # because tools/build_assets.py rewrites assets/art/ wholesale.
+    if os.path.exists(args.extra):
+        with open(args.extra, 'rb') as fh:
+            extra_raw = fh.read()
+        assets = dict(assets)
+        assets.update(json.loads(extra_raw.decode('utf-8'))['assets'])
+        raw += extra_raw
     stamp = hashlib.sha1(raw).hexdigest()[:16]
     animations = manifest.get('animations') or {}
 

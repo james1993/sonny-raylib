@@ -412,7 +412,6 @@ void screen_ending_update(Game *g, Vector2 mouse)
    button set to "IntroSeq" -- fifteen frames that end by setting BattlePick to
    2 and progressFight, and going to LOADBATTLESCENE. So the opening comic
    leads straight into the first fight. */
-#define INTRO_BATTLE 2
 
 static const struct {
     const char *screen;
@@ -424,6 +423,15 @@ static const struct {
     {"CS_BRIDGE", 1710, "CutsceneVoiceBridge", SCREEN_MAP},
     {"CS_OUTRO", 1719, "CutsceneVoiceOutro", SCREEN_ENDING},
 };
+
+int32_t cutscene_by_label(const char *label)
+{
+    for (int32_t i = 0; i < (int32_t)(sizeof(CUTSCENES) / sizeof(CUTSCENES[0]));
+         i++)
+        if (label && strcmp(CUTSCENES[i].screen, label) == 0)
+            return i;
+    return -1;
+}
 
 int32_t cutscene_clip(int32_t which)
 {
@@ -464,7 +472,7 @@ static void cutscene_over(Game *g)
     g->boss_fight = 0;
     g->progress_fight = 1;
     g->music_next = 1;
-    battle_screen_start(g, INTRO_BATTLE);
+    battle_screen_start(g, SONNY_OPENING_BATTLE);
 }
 
 /* The caption as the animation has reached it: every cue up to this frame,

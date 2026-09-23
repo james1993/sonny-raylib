@@ -249,6 +249,81 @@ int main(void)
         assert(d.units[2].BUFFARRAYK[held].CD == cd);
     }
 
+    /* A unique buff put on twice is one buff with its time put back; an
+       ordinary one stacks. */
+    {
+        Battle u;
+        setup(&u, 5, 5);
+        const BuffDef *once = buff_find(SONNY_BUFFS, SONNY_BUFF_COUNT, "BURNING");
+        assert(once && once->unique);
+        buff_land(&u.units[2], once, &u.units[1]);
+        int32_t first = -1, held = 0;
+        for (int32_t i = 0; i < SONNY_MAX_BUFFS; i++)
+            if (u.units[2].BUFFARRAYK[i].CD > 0) {
+                first = i;
+                held++;
+            }
+        assert(held == 1);
+        u.units[2].BUFFARRAYK[first].CD = 1;
+        buff_land(&u.units[2], once, &u.units[1]);
+        held = 0;
+        for (int32_t i = 0; i < SONNY_MAX_BUFFS; i++)
+            if (u.units[2].BUFFARRAYK[i].CD > 0)
+                held++;
+        assert(held == 1 && u.units[2].BUFFARRAYK[first].CD == once->duration);
+    }
+
+    /* The dispel takes off only what matches, and no more than it may:
+       Heroic Motivation's first rank lifts one harmful buff and leaves a
+       helpful one alone. */
+    {
+        Battle d;
+        setup(&d, 6, 5);
+        Unit *t = &d.units[1];
+        double speed_before = t->SPEEDU;
+        const BuffDef *harm = NULL, *help = NULL;
+        for (int32_t i = 0; i < SONNY_BUFF_COUNT; i++) {
+            const BuffDef *x = &SONNY_BUFFS[i];
+            if (x->duration <= 0 || x->unique)
+                continue;
+            if (!harm && x->nature == -1)
+                harm = x;
+            if (!help && x->nature == 1)
+                help = x;
+        }
+        assert(harm && help);
+        buff_land(t, harm, &d.units[2]);
+        buff_land(t, harm, &d.units[2]);
+        buff_land(t, help, &d.units[2]);
+        unit_apply_changes(t);
+        const AbilityDef *motivation = NULL;
+        for (int32_t i = 0; i < SONNY_ABILITY_COUNT && !motivation; i++)
+            if (SONNY_ABILITIES[i].dispel_count == 1
+                && SONNY_ABILITIES[i].dispel_nature == -1)
+                motivation = &SONNY_ABILITIES[i];
+        assert(motivation);
+        int32_t gone = buff_dispel(t, motivation->dispel_count,
+                                   motivation->dispel_elements,
+                                   motivation->dispel_nature, SONNY_BUFFS,
+                                   SONNY_BUFF_COUNT);
+        assert(gone == 1);
+        int32_t harmful = 0, helpful = 0;
+        for (int32_t i = 0; i < SONNY_MAX_BUFFS; i++) {
+            if (t->BUFFARRAYK[i].CD <= 0)
+                continue;
+            if (strcmp(t->BUFFARRAYK[i].buffId, harm->key) == 0)
+                harmful++;
+            if (strcmp(t->BUFFARRAYK[i].buffId, help->key) == 0)
+                helpful++;
+        }
+        assert(harmful == 1 && helpful == 1);
+        /* And what is left unwinds cleanly: nothing lingers in the stats. */
+        buff_dispel(t, 10, 0xFF, -1, SONNY_BUFFS, SONNY_BUFF_COUNT);
+        buff_dispel(t, 10, 0xFF, 1, SONNY_BUFFS, SONNY_BUFF_COUNT);
+        unit_apply_changes(t);
+        assert(t->SPEEDU == speed_before);
+    }
+
     printf("battle: determinism and invariants hold\n");
     return 0;
 }

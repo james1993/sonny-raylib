@@ -10,6 +10,10 @@ and makes every value visible in a diff when the extractor changes.
 import argparse
 import json
 import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import content                                                # noqa: E402
 
 ELEMENTS = ["Physical", "Magic", "Ice", "Fire", "Lightning", "Earth",
             "Shadow", "Poison"]
@@ -83,7 +87,7 @@ def gen_abilities(abilities):
                      % (num(a.get('focus_cost')), num(a.get('health_cost')),
                         num(a.get('cooldown'))))
         lines.append('        .bar_copies = %d,'
-                     % int(num(a.get('a8')) or 0))
+                     % int(num(a.get('bar_copies')) or 0))
         lines.append('        .health_cost_pct = %s, .anim_speed = %s,'
                      % (fmt(num(a.get('health_cost_pct'))),
                         fmt(num(a.get('anim_speed')))))
@@ -133,6 +137,15 @@ def gen_abilities(abilities):
                         fmt(num(c.get('flat_damage')))))
         lines.append('            .damage_coef = %s, .focus_coef = %s },'
                      % (fmt(num(c.get('damage_coef'))), fmt(num(c.get('focus_coef')))))
+        mask = 0
+        for name in (c.get('dispel_elements') or []):
+            if name in ELEMENTS:
+                mask |= 1 << ELEMENTS.index(name)
+        lines.append('        .dispel_count = %d, .dispel_elements = 0x%02X, '
+                     '.dispel_nature = %d, .hits_team = %d,'
+                     % (int(num(c.get('dispel_count'))), mask,
+                        int(num(c.get('dispel_nature'), 1)),
+                        1 if c.get('hits_team') else 0))
         lines.append('    },')
     lines.append('};')
     lines.append('const int SONNY_ABILITY_COUNT = '
@@ -143,32 +156,42 @@ def gen_abilities(abilities):
 
 def gen_buffs(buffs):
     lines = ['const BuffDef SONNY_BUFFS[] = {']
+    changes = ['strength_add', 'strength_pct', 'magic_add', 'magic_pct',
+               'speed_add', 'speed_pct', 'life_add', 'life_pct',
+               'damage_add', 'damage_pct', 'damage_taken_add',
+               'damage_taken_pct']
     for b in buffs:
         f = b['fields']
 
-        def g(i):
-            return num(f.get(str(i)))
+        def g(name):
+            return num(f.get(name))
 
         lines.append('    { /* %s */' % b['key'])
         lines.append('        .key = %s, .name = %s, .element = %d,'
                      % (c_string(b['key']), c_string(b.get('name') or ''),
                         element_index(b.get('element'))))
         lines.append('        .change = { %s },'
-                     % ', '.join(fmt(g(i)) for i in range(2, 14)))
+                     % ', '.join(fmt(g(name)) for name in changes))
         lines.append('        .dot_flat = %s, .focus_drain = %s, .duration = %d,'
-                     % (fmt(g(14)), fmt(g(15)), int(num(g(16)))))
+                     % (fmt(g('dot_flat')), fmt(g('focus_drain')),
+                        int(num(g('duration')))))
         lines.append('        .stun = %d, .reflect = %d, .shield = %d,'
-                     % (int(num(g(17))), int(num(g(18))), int(num(g(19)))))
+                     % (int(num(g('stun'))), int(num(g('reflect'))),
+                        int(num(g('shield')))))
         lines.append('        .per_flat = %s, .def_flat = %s, .per_pct = %s, '
                      '.def_pct = %s,'
-                     % (fmt(g(21)), fmt(g(22)), fmt(g(23)), fmt(g(24))))
+                     % (fmt(g('per_flat')), fmt(g('def_flat')),
+                        fmt(g('per_pct')), fmt(g('def_pct'))))
         lines.append('        .sswitch = %d, .dot_strength = %s, .dot_magic = %s,'
-                     % (int(num(g(26))), fmt(g(28)), fmt(g(29))))
+                     % (int(num(g('sswitch'))), fmt(g('dot_strength')),
+                        fmt(g('dot_magic'))))
         lines.append('        .dot_speed = %s, .filter = %d,'
-                     % (fmt(g(30)), int(num(g(31)))))
-        # [25] is the line the interface shows for the buff: on the widget
-        # over a unit's bar, and on a passive node in the talent tree.
-        say = f.get('25')
+                     % (fmt(g('dot_speed')), int(num(g('filter')))))
+        lines.append('        .nature = %d, .unique = %d,'
+                     % (int(num(g('nature'))), 1 if g('unique') else 0))
+        # The line the interface shows for the buff: on the widget over a
+        # unit's bar, and on a passive node in the talent tree.
+        say = f.get('tooltip')
         lines.append('        .tooltip = %s,'
                      % c_string(say if isinstance(say, str) else ''))
         lines.append('    },')
@@ -478,6 +501,28 @@ MARKER_KINDS = {'progress': 'MARKER_PROGRESS', 'training': 'MARKER_TRAINING',
                 'shop': 'MARKER_SHOP', 'scenery': 'MARKER_SCENERY'}
 
 
+def gen_story(story):
+    lines = ['const HubNote SONNY_HUB_NOTES[] = {']
+    for note in story.get('hub_notes') or []:
+        lines.append('    { %d, %d },' % (note['at'], note['say']))
+    lines.append('};')
+    lines.append('const int SONNY_HUB_NOTE_COUNT = '
+                 '(int)(sizeof(SONNY_HUB_NOTES) / sizeof(SONNY_HUB_NOTES[0]));')
+    music = story.get('boss_music') or []
+    lines.append('const int32_t SONNY_BOSS_MUSIC[] = { %s };'
+                 % ', '.join(str(at) for at in music))
+    lines.append('const int SONNY_BOSS_MUSIC_COUNT = %d;' % len(music))
+    lines.append('const BossComic SONNY_BOSS_COMICS[] = {')
+    for comic in story.get('boss_comics') or []:
+        lines.append('    { %d, %s },' % (comic['at'], c_string(comic['comic'])))
+    lines.append('};')
+    lines.append('const int SONNY_BOSS_COMIC_COUNT = '
+                 '(int)(sizeof(SONNY_BOSS_COMICS) / sizeof(SONNY_BOSS_COMICS[0]));')
+    lines.append('const int32_t SONNY_OPENING_BATTLE = %d;'
+                 % int(story.get('opening_battle') or 1))
+    return '\n'.join(lines)
+
+
 def gen_zone_buttons(buttons):
     """What each marker on a zone's scene does, by its button's own id."""
     lines = ['const ZoneButton SONNY_ZONE_BUTTONS[] = {']
@@ -627,6 +672,16 @@ typedef struct {
        third line of a move's tip. */
     const char  *cost_text;
     AbilityCoefs coefs;
+    /* The dispel the move runs as it lands, before anything else it does:
+       up to dispel_count of the target's buffs whose element is one of the
+       dispel_elements bits (1 << Element) and whose nature is dispel_nature
+       -- 1 to take helpful buffs off, -1 to take harmful ones. */
+    int32_t      dispel_count;
+    uint32_t     dispel_elements;
+    int32_t      dispel_nature;
+    /* Set: the move lands on every living member of the other team. No move
+       in the game sets it, but the engine honours it as the original does. */
+    int32_t      hits_team;
 } AbilityDef;
 
 /* One of the game's named text arrays (SYSTEM, MENU, VICTORY, ZONES, ...).
@@ -896,6 +951,32 @@ typedef struct {
     int32_t clear;        /* clears the caption rather than advancing it */
 } CutsceneCue;
 
+/* The points in the story the engine reacts to, from data/extracted/story.json.
+
+   The note the hub puts up once progress reaches `at`: NAVTITLE2/NAVTEXT2
+   entry `say` (Krin.progressSpeech). */
+typedef struct {
+    int32_t at;
+    int32_t say;
+} HubNote;
+
+extern const HubNote SONNY_HUB_NOTES[];
+extern const int SONNY_HUB_NOTE_COUNT;
+/* The fights the boss theme plays for whatever marker started them. */
+extern const int32_t SONNY_BOSS_MUSIC[];
+extern const int SONNY_BOSS_MUSIC_COUNT;
+/* The comic Proceed! plays after the zone's last fight, by progress; `comic`
+   is its frame label on the root (CS_BRIDGE, CS_OUTRO). */
+typedef struct {
+    int32_t     at;
+    const char *comic;
+} BossComic;
+
+extern const BossComic SONNY_BOSS_COMICS[];
+extern const int SONNY_BOSS_COMIC_COUNT;
+/* The fight the opening comic hands over to (Krin.BattlePick in IntroSeq). */
+extern const int32_t SONNY_OPENING_BATTLE;
+
 extern const CutsceneDef SONNY_CUTSCENES[];
 extern const int SONNY_CUTSCENE_COUNT;
 extern const CutsceneCue SONNY_CUTSCENE_CUES[];
@@ -962,17 +1043,31 @@ const ShopDef *shop_for_button(int32_t button)
 
 const AbilityDef *ability_by_id(int32_t id)
 {
-    for (int i = 0; i < SONNY_ABILITY_COUNT; i++)
-        if (SONNY_ABILITIES[i].id == id)
-            return &SONNY_ABILITIES[i];
+    int lo = 0, hi = SONNY_ABILITY_COUNT - 1;
+    while (lo <= hi) {
+        int mid = lo + (hi - lo) / 2;
+        if (SONNY_ABILITIES[mid].id == id)
+            return &SONNY_ABILITIES[mid];
+        if (SONNY_ABILITIES[mid].id < id)
+            lo = mid + 1;
+        else
+            hi = mid - 1;
+    }
     return NULL;
 }
 
 const UnitTemplate *unit_template_by_id(int32_t id)
 {
-    for (int i = 0; i < SONNY_UNIT_COUNT; i++)
-        if (SONNY_UNITS[i].id == id)
-            return &SONNY_UNITS[i];
+    int lo = 0, hi = SONNY_UNIT_COUNT - 1;
+    while (lo <= hi) {
+        int mid = lo + (hi - lo) / 2;
+        if (SONNY_UNITS[mid].id == id)
+            return &SONNY_UNITS[mid];
+        if (SONNY_UNITS[mid].id < id)
+            lo = mid + 1;
+        else
+            hi = mid - 1;
+    }
     return NULL;
 }
 
@@ -988,17 +1083,31 @@ const UnitTemplate *unit_template_by_name(const char *name)
 
 const ItemDef *item_by_id(int32_t id)
 {
-    for (int i = 0; i < SONNY_ITEM_COUNT; i++)
-        if (SONNY_ITEMS[i].id == id)
-            return &SONNY_ITEMS[i];
+    int lo = 0, hi = SONNY_ITEM_COUNT - 1;
+    while (lo <= hi) {
+        int mid = lo + (hi - lo) / 2;
+        if (SONNY_ITEMS[mid].id == id)
+            return &SONNY_ITEMS[mid];
+        if (SONNY_ITEMS[mid].id < id)
+            lo = mid + 1;
+        else
+            hi = mid - 1;
+    }
     return NULL;
 }
 
 const BattleDef *battle_def_by_id(int32_t id)
 {
-    for (int i = 0; i < SONNY_BATTLE_COUNT; i++)
-        if (SONNY_BATTLES[i].id == id)
-            return &SONNY_BATTLES[i];
+    int lo = 0, hi = SONNY_BATTLE_COUNT - 1;
+    while (lo <= hi) {
+        int mid = lo + (hi - lo) / 2;
+        if (SONNY_BATTLES[mid].id == id)
+            return &SONNY_BATTLES[mid];
+        if (SONNY_BATTLES[mid].id < id)
+            lo = mid + 1;
+        else
+            hi = mid - 1;
+    }
     return NULL;
 }
 
@@ -1040,13 +1149,20 @@ const ZoneDef *zone_of_battle(int32_t battle_id)
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('-i', '--input', default='data/extracted')
     ap.add_argument('-o', '--out', default='src/gen')
     args = ap.parse_args()
 
+    # The extracted tables with data/content/ laid over them; see content.py.
     def load(name):
-        with open(os.path.join(args.input, name + '.json'), encoding='utf-8') as fh:
-            return json.load(fh)
+        table = content.load(name)
+        if isinstance(table, list) and table and isinstance(table[0], dict) \
+                and 'id' in table[0]:
+            ids = [r['id'] for r in table]
+            if len(ids) != len(set(ids)):
+                raise SystemExit('%s: an id is used twice' % name)
+            # The engine finds a record by binary search on its id.
+            table = sorted(table, key=lambda r: r['id'])
+        return table
 
     abilities, buffs, units = load('abilities'), load('buffs'), load('units')
 
@@ -1072,6 +1188,7 @@ def main():
         fh.write(gen_party(load('party')) + '\n\n')
         fh.write(gen_cutscenes(load('cutscenes')) + '\n\n')
         fh.write(gen_elements(load('elements')) + '\n\n')
+        fh.write(gen_story(load('story')) + '\n\n')
         fh.write(gen_lang(load('lang')) + '\n')
         fh.write(LOOKUPS)
 

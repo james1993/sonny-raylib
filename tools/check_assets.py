@@ -20,10 +20,25 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import content                                                # noqa: E402
+
+MANIFESTS = ('assets/art/manifest.json', 'assets/extra/manifest.json')
+
+
 def load(name):
-    with open(os.path.join(ROOT, 'data/extracted/%s.json' % name),
-              encoding='utf-8') as fh:
-        return json.load(fh)
+    # The tables as the engine is built from them, overlays and all.
+    return content.load(name)
+
+
+def manifest_assets():
+    assets = {}
+    for path in MANIFESTS:
+        full = os.path.join(ROOT, path)
+        if os.path.exists(full):
+            with open(full, encoding='utf-8') as fh:
+                assets.update(json.load(fh)['assets'])
+    return assets
 
 
 def rows(table):
@@ -90,9 +105,7 @@ def source_names():
 
 
 def main():
-    with open(os.path.join(ROOT, 'assets/art/manifest.json'),
-              encoding='utf-8') as fh:
-        have = set(json.load(fh)['assets'])
+    have = set(manifest_assets())
 
     want = wanted()
     missing = sorted(n for n in want if n not in have)
@@ -108,15 +121,22 @@ def main():
     # And the other way: every file the manifest names is on the disk, and
     # nothing is on the disk that the manifest does not name -- a picture left
     # behind by an older build is weight in every clone and nothing on screen.
-    with open(os.path.join(ROOT, 'assets/art/manifest.json'),
-              encoding='utf-8') as fh:
-        assets = json.load(fh)['assets']
-    named = {os.path.normpath(f) for entry in assets.values()
-             for f in entry['frames']}
+    # Everything any manifest names, including what the extra manifest
+    # stands in for -- an extracted picture replaced by a hand-made one is
+    # still the extracted build's to keep.
+    named = set()
+    for path in MANIFESTS:
+        full = os.path.join(ROOT, path)
+        if os.path.exists(full):
+            with open(full, encoding='utf-8') as fh:
+                named |= {os.path.normpath(f)
+                          for entry in json.load(fh)['assets'].values()
+                          for f in entry['frames']}
     gone = sorted(f for f in named if not os.path.exists(os.path.join(ROOT, f)))
     on_disk = {os.path.normpath(os.path.relpath(os.path.join(d, f), ROOT))
-               for d, _, files in os.walk(os.path.join(ROOT, 'assets/art'))
-               for f in files if not f.endswith(('.json', '.txt'))}
+               for top in ('assets/art', 'assets/extra')
+               for d, _, files in os.walk(os.path.join(ROOT, top))
+               for f in files if not f.endswith(('.json', '.txt', '.md'))}
     stray = sorted(on_disk - named)
     if gone:
         print('\nnamed by the manifest but not on the disk:')

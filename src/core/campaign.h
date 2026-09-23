@@ -130,7 +130,5 @@ void campaign_advance(Campaign *c);
 
 /* Where the player is in the campaign. */
 const ZoneDef *campaign_zone(const Campaign *c);
-/* Is the campaign finished? The original's ending triggers past battle 38. */
-int campaign_complete(const Campaign *c);
 
 #endif

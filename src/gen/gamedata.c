@@ -20,6 +20,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 1 Smash */
         .id = 1, .name = "Smash", .icon = "Smash",
@@ -38,6 +39,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 5,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 2 Smash */
         .id = 2, .name = "Smash", .icon = "Smash",
@@ -56,6 +58,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 8,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 3 Smash */
         .id = 3, .name = "Smash", .icon = "Smash",
@@ -74,6 +77,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 15,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 4 Smash */
         .id = 4, .name = "Smash", .icon = "Smash",
@@ -92,6 +96,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 20,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 5 Smash */
         .id = 5, .name = "Smash", .icon = "Smash",
@@ -110,6 +115,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 30,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 6 Wound */
         .id = 6, .name = "Wound", .icon = "Wound",
@@ -128,6 +134,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 7 Wound */
         .id = 7, .name = "Wound", .icon = "Wound",
@@ -146,6 +153,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 8 Wound */
         .id = 8, .name = "Wound", .icon = "Wound",
@@ -164,6 +172,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 9 Break */
         .id = 9, .name = "Break", .icon = "Break",
@@ -182,6 +191,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 10 Aggression */
         .id = 10, .name = "Aggression", .icon = "Rage",
@@ -200,6 +210,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 11 Aggression */
         .id = 11, .name = "Aggression", .icon = "Rage",
@@ -218,6 +229,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 12 Aggression */
         .id = 12, .name = "Aggression", .icon = "Rage",
@@ -236,6 +248,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 13 Iron Skin */
         .id = 13, .name = "Iron Skin", .icon = "Ironskin",
@@ -254,6 +267,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 14 Iron Skin */
         .id = 14, .name = "Iron Skin", .icon = "Ironskin",
@@ -272,6 +286,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 15 Iron Skin */
         .id = 15, .name = "Iron Skin", .icon = "Ironskin",
@@ -290,6 +305,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 16 Iron Skin */
         .id = 16, .name = "Iron Skin", .icon = "Ironskin",
@@ -308,6 +324,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 17 Iron Skin */
         .id = 17, .name = "Iron Skin", .icon = "Ironskin",
@@ -326,6 +343,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 18 Disruption */
         .id = 18, .name = "Disruption", .icon = "Disrupt",
@@ -344,6 +362,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = -15,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 19 Disruption */
         .id = 19, .name = "Disruption", .icon = "Disrupt",
@@ -362,6 +381,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = -17,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 20 Disruption */
         .id = 20, .name = "Disruption", .icon = "Disrupt",
@@ -380,6 +400,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = -19,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 21 Disruption */
         .id = 21, .name = "Disruption", .icon = "Disrupt",
@@ -398,6 +419,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = -21,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 22 Disruption */
         .id = 22, .name = "Disruption", .icon = "Disrupt",
@@ -416,6 +438,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = -23,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 26 Reform */
         .id = 26, .name = "Reform", .icon = "Cell Reformation",
@@ -434,6 +457,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 60,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 27 Reform */
         .id = 27, .name = "Reform", .icon = "Cell Reformation",
@@ -452,6 +476,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 80,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 28 Reform */
         .id = 28, .name = "Reform", .icon = "Cell Reformation",
@@ -470,6 +495,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 100,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 29 Reform */
         .id = 29, .name = "Reform", .icon = "Cell Reformation",
@@ -488,6 +514,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 120,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 30 Reform */
         .id = 30, .name = "Reform", .icon = "Cell Reformation",
@@ -506,6 +533,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 140,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 31 Heroic Motivation */
         .id = 31, .name = "Heroic Motivation", .icon = "Heroic Motivation",
@@ -524,6 +552,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 1.7, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 1, .dispel_elements = 0xFF, .dispel_nature = -1, .hits_team = 0,
     },
     { /* 32 Heroic Motivation */
         .id = 32, .name = "Heroic Motivation", .icon = "Heroic Motivation",
@@ -542,6 +571,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 2.3000000000000003, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 2, .dispel_elements = 0xFF, .dispel_nature = -1, .hits_team = 0,
     },
     { /* 33 Heroic Motivation */
         .id = 33, .name = "Heroic Motivation", .icon = "Heroic Motivation",
@@ -560,6 +590,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 2.9, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 3, .dispel_elements = 0xFF, .dispel_nature = -1, .hits_team = 0,
     },
     { /* 34 Blood Focus */
         .id = 34, .name = "Blood Focus", .icon = "Blood Focus",
@@ -578,6 +609,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 40,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 35 Blood Focus */
         .id = 35, .name = "Blood Focus", .icon = "Blood Focus",
@@ -596,6 +628,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 50,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 36 Blood Focus */
         .id = 36, .name = "Blood Focus", .icon = "Blood Focus",
@@ -614,6 +647,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 60,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 37 Blood Focus */
         .id = 37, .name = "Blood Focus", .icon = "Blood Focus",
@@ -632,6 +666,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 70,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 38 Blood Focus */
         .id = 38, .name = "Blood Focus", .icon = "Blood Focus",
@@ -650,6 +685,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 80,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 39 Blood Strike */
         .id = 39, .name = "Blood Strike", .icon = "Blood Strike",
@@ -668,6 +704,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 60,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 40 Blood Strike */
         .id = 40, .name = "Blood Strike", .icon = "Blood Strike",
@@ -686,6 +723,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 75,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 41 Blood Strike */
         .id = 41, .name = "Blood Strike", .icon = "Blood Strike",
@@ -704,6 +742,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 90,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 42 Blood Strike */
         .id = 42, .name = "Blood Strike", .icon = "Blood Strike",
@@ -722,6 +761,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 110,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 43 Blood Strike */
         .id = 43, .name = "Blood Strike", .icon = "Blood Strike",
@@ -740,6 +780,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 140,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 44 Blood Strike */
         .id = 44, .name = "Blood Strike", .icon = "Blood Strike",
@@ -758,6 +799,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 160,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 45 Blood Strike */
         .id = 45, .name = "Blood Strike", .icon = "Blood Strike",
@@ -776,6 +818,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 180,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 46 Blood Strike */
         .id = 46, .name = "Blood Strike", .icon = "Blood Strike",
@@ -794,6 +837,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 200,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 47 Blood Strike */
         .id = 47, .name = "Blood Strike", .icon = "Blood Strike",
@@ -812,6 +856,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 220,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 48 Blood Strike */
         .id = 48, .name = "Blood Strike", .icon = "Blood Strike",
@@ -830,6 +875,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 240,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 49 Block */
         .id = 49, .name = "Block", .icon = "Block",
@@ -848,6 +894,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 50 Block */
         .id = 50, .name = "Block", .icon = "Block",
@@ -866,6 +913,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 51 Block */
         .id = 51, .name = "Block", .icon = "Block",
@@ -884,6 +932,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 52 Master Strike */
         .id = 52, .name = "Master Strike", .icon = "Master Strike",
@@ -902,6 +951,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0.8,
             .hit_add = 30, .hit_coef = 1.2, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 53 Master Strike */
         .id = 53, .name = "Master Strike", .icon = "Master Strike",
@@ -920,6 +970,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0.9000000000000002,
             .hit_add = 35, .hit_coef = 1.2, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 54 Master Strike */
         .id = 54, .name = "Master Strike", .icon = "Master Strike",
@@ -938,6 +989,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 1,
             .hit_add = 40, .hit_coef = 1.2, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 55 Master Strike */
         .id = 55, .name = "Master Strike", .icon = "Master Strike",
@@ -956,6 +1008,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 1.1,
             .hit_add = 45, .hit_coef = 1.2, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 56 Master Strike */
         .id = 56, .name = "Master Strike", .icon = "Master Strike",
@@ -974,6 +1027,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 1.2,
             .hit_add = 50, .hit_coef = 1.2, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 57 Flame Strike */
         .id = 57, .name = "Flame Strike", .icon = "Flame Strike",
@@ -992,6 +1046,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 1, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 75,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 58 Sunder */
         .id = 58, .name = "Sunder", .icon = "Sunder",
@@ -1010,6 +1065,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 59 Sunder */
         .id = 59, .name = "Sunder", .icon = "Sunder",
@@ -1028,6 +1084,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 60 Sunder */
         .id = 60, .name = "Sunder", .icon = "Sunder",
@@ -1046,6 +1103,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 61 Sunder */
         .id = 61, .name = "Sunder", .icon = "Sunder",
@@ -1064,6 +1122,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 62 Sunder */
         .id = 62, .name = "Sunder", .icon = "Sunder",
@@ -1082,6 +1141,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 63 Coup De Grace */
         .id = 63, .name = "Coup De Grace", .icon = "Coup De Grace",
@@ -1100,6 +1160,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 25, .hit_coef = 1.5, .flat_damage = 240,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 64 Coup De Grace */
         .id = 64, .name = "Coup De Grace", .icon = "Coup De Grace",
@@ -1118,6 +1179,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 25, .hit_coef = 1.5, .flat_damage = 290,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 65 Coup De Grace */
         .id = 65, .name = "Coup De Grace", .icon = "Coup De Grace",
@@ -1136,6 +1198,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 25, .hit_coef = 1.5, .flat_damage = 340,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 66 Cripple */
         .id = 66, .name = "Cripple", .icon = "Cripple",
@@ -1154,6 +1217,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 67 Cripple */
         .id = 67, .name = "Cripple", .icon = "Cripple",
@@ -1172,6 +1236,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 68 Cripple */
         .id = 68, .name = "Cripple", .icon = "Cripple",
@@ -1190,6 +1255,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 69 Quick Strike */
         .id = 69, .name = "Quick Strike", .icon = "Quick Strike",
@@ -1208,6 +1274,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0.5, .speed_add = 0, .speed_coef = 0.5,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 70 Supression */
         .id = 70, .name = "Supression", .icon = "Suppression",
@@ -1226,6 +1293,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 71 Magic Bolt */
         .id = 71, .name = "Magic Bolt", .icon = "Magic Bolt",
@@ -1244,6 +1312,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 1.2, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 10,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 72 Magic Bolt */
         .id = 72, .name = "Magic Bolt", .icon = "Magic Bolt",
@@ -1262,6 +1331,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 1.2, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 20,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 73 Magic Bolt */
         .id = 73, .name = "Magic Bolt", .icon = "Magic Bolt",
@@ -1280,6 +1350,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 1.2, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 30,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 74 Magic Bolt */
         .id = 74, .name = "Magic Bolt", .icon = "Magic Bolt",
@@ -1298,6 +1369,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 1.2, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 40,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 75 Magic Bolt */
         .id = 75, .name = "Magic Bolt", .icon = "Magic Bolt",
@@ -1316,6 +1388,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 1.2, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 50,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 76 Magic Bolt */
         .id = 76, .name = "Magic Bolt", .icon = "Magic Bolt",
@@ -1334,6 +1407,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 1.2, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 60,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 77 Magic Bolt */
         .id = 77, .name = "Magic Bolt", .icon = "Magic Bolt",
@@ -1352,6 +1426,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 1.2, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 70,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 78 Magic Bolt */
         .id = 78, .name = "Magic Bolt", .icon = "Magic Bolt",
@@ -1370,6 +1445,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 1.2, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 80,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 79 Magic Bolt */
         .id = 79, .name = "Magic Bolt", .icon = "Magic Bolt",
@@ -1388,6 +1464,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 1.2, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 90,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 80 Magic Bolt */
         .id = 80, .name = "Magic Bolt", .icon = "Magic Bolt",
@@ -1406,6 +1483,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 1.2, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 100,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 81 Electro Bolt */
         .id = 81, .name = "Electro Bolt", .icon = "Electro Bolt",
@@ -1424,6 +1502,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 1.2, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 1, .dispel_elements = 0xFF, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 82 Electro Bolt */
         .id = 82, .name = "Electro Bolt", .icon = "Electro Bolt",
@@ -1442,6 +1521,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 1.7, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 2, .dispel_elements = 0xFF, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 83 Electro Bolt */
         .id = 83, .name = "Electro Bolt", .icon = "Electro Bolt",
@@ -1460,6 +1540,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 2.2, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 3, .dispel_elements = 0xFF, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 84 Intervention */
         .id = 84, .name = "Intervention", .icon = "Intervention",
@@ -1478,6 +1559,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 85 Intervention */
         .id = 85, .name = "Intervention", .icon = "Intervention",
@@ -1496,6 +1578,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 86 Intervention */
         .id = 86, .name = "Intervention", .icon = "Intervention",
@@ -1514,6 +1597,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 87 Intervention */
         .id = 87, .name = "Intervention", .icon = "Intervention",
@@ -1532,6 +1616,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 88 Intervention */
         .id = 88, .name = "Intervention", .icon = "Intervention",
@@ -1550,6 +1635,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 89 Intervention */
         .id = 89, .name = "Intervention", .icon = "Intervention",
@@ -1568,6 +1654,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 90 Intervention */
         .id = 90, .name = "Intervention", .icon = "Intervention",
@@ -1586,6 +1673,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 91 Intervention */
         .id = 91, .name = "Intervention", .icon = "Intervention",
@@ -1604,6 +1692,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 92 Intervention */
         .id = 92, .name = "Intervention", .icon = "Intervention",
@@ -1622,6 +1711,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 93 Intervention */
         .id = 93, .name = "Intervention", .icon = "Intervention",
@@ -1640,6 +1730,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 94 Flame Blast */
         .id = 94, .name = "Flame Blast", .icon = "Flame Blast",
@@ -1658,6 +1749,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 1, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 95 Flame Blast */
         .id = 95, .name = "Flame Blast", .icon = "Flame Blast",
@@ -1676,6 +1768,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 1, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 96 Flame Blast */
         .id = 96, .name = "Flame Blast", .icon = "Flame Blast",
@@ -1694,6 +1787,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 1, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 97 Shatter Bolt */
         .id = 97, .name = "Shatter Bolt", .icon = "Shatter Bolt",
@@ -1712,6 +1806,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0.3, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1.5, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 98 Shatter Bolt */
         .id = 98, .name = "Shatter Bolt", .icon = "Shatter Bolt",
@@ -1730,6 +1825,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0.3, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1.7, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 99 Shatter Bolt */
         .id = 99, .name = "Shatter Bolt", .icon = "Shatter Bolt",
@@ -1748,6 +1844,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0.3, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1.9000000000000001, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 100 Void */
         .id = 100, .name = "Void", .icon = "Void",
@@ -1766,6 +1863,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0.2, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 101 Void */
         .id = 101, .name = "Void", .icon = "Void",
@@ -1784,6 +1882,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0.2, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 102 Void */
         .id = 102, .name = "Void", .icon = "Void",
@@ -1802,6 +1901,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0.2, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 103 Void */
         .id = 103, .name = "Void", .icon = "Void",
@@ -1820,6 +1920,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0.2, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 104 Void */
         .id = 104, .name = "Void", .icon = "Void",
@@ -1838,6 +1939,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0.2, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 105 Re-Energize */
         .id = 105, .name = "Re-Energize", .icon = "Re-Energize",
@@ -1856,6 +1958,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 40,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 106 Subversion */
         .id = 106, .name = "Subversion", .icon = "Subversion",
@@ -1874,6 +1977,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 500 Smash */
         .id = 500, .name = "Smash", .icon = "Strike",
@@ -1892,6 +1996,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 501 Smash */
         .id = 501, .name = "Smash", .icon = "Power Up",
@@ -1910,6 +2015,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 502 Smash */
         .id = 502, .name = "Smash", .icon = "Zombie Poison",
@@ -1928,6 +2034,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 503 Smash */
         .id = 503, .name = "Smash", .icon = "SWAT Fire",
@@ -1946,6 +2053,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 1, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 504 Smash */
         .id = 504, .name = "Smash", .icon = "SWAT Heal",
@@ -1964,6 +2072,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 3, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 505 Smash */
         .id = 505, .name = "Smash", .icon = "SWAT Ray",
@@ -1982,6 +2091,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 2, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 506 Smash */
         .id = 506, .name = "Smash", .icon = "Ice Strike",
@@ -2000,6 +2110,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 1.5, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 507 Smash */
         .id = 507, .name = "Smash", .icon = "Shadow Blend",
@@ -2018,6 +2129,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 508 Re-Energize */
         .id = 508, .name = "Re-Energize", .icon = "Re-Energize",
@@ -2036,6 +2148,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 509 Re-Energize */
         .id = 509, .name = "Re-Energize", .icon = "Re-Energize",
@@ -2054,6 +2167,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 510 Smash */
         .id = 510, .name = "Smash", .icon = "(Mana) Strike",
@@ -2072,6 +2186,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 511 Smash */
         .id = 511, .name = "Smash", .icon = "Emergency Heal",
@@ -2090,6 +2205,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 3, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 512 Heroic Motivation */
         .id = 512, .name = "Heroic Motivation", .icon = "Medic Heal",
@@ -2108,6 +2224,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 2.5, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 1, .dispel_elements = 0xFF, .dispel_nature = -1, .hits_team = 0,
     },
     { /* 513 Smash */
         .id = 513, .name = "Smash", .icon = "Water Bolt",
@@ -2126,6 +2243,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0.8, .speed_add = 0, .speed_coef = 0,
             .hit_add = 1.7, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 514 Smash */
         .id = 514, .name = "Smash", .icon = "Water Regen",
@@ -2144,6 +2262,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0.2, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 515 Smash */
         .id = 515, .name = "Smash", .icon = "Water Heal",
@@ -2162,6 +2281,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0.5, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 516 Smash */
         .id = 516, .name = "Smash", .icon = "Earth Smash",
@@ -2180,6 +2300,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 5,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 517 Void */
         .id = 517, .name = "Void", .icon = "Decay",
@@ -2198,6 +2319,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 1.2, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 518 Void */
         .id = 518, .name = "Void", .icon = "BlackOut",
@@ -2216,6 +2338,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 1.2, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 519 Subversion */
         .id = 519, .name = "Subversion", .icon = "Subversion",
@@ -2234,6 +2357,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 520 Smash */
         .id = 520, .name = "Smash", .icon = "Paladin Heal",
@@ -2252,6 +2376,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 20, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 521 Intervention */
         .id = 521, .name = "Intervention", .icon = "Pally Intervention",
@@ -2270,6 +2395,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 522 Shatter Bolt */
         .id = 522, .name = "Shatter Bolt", .icon = "Shatter Bolt2",
@@ -2288,6 +2414,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 1, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1.7, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 523 Electro Bolt */
         .id = 523, .name = "Electro Bolt", .icon = "Electro Bolt Med",
@@ -2306,6 +2433,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0.8, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 1, .dispel_elements = 0xFF, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 524 Void */
         .id = 524, .name = "Void", .icon = "Void Mob",
@@ -2324,6 +2452,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0.7000000000000001, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 525 Void */
         .id = 525, .name = "Void", .icon = "Ignite",
@@ -2342,6 +2471,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0.5, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 526 Void */
         .id = 526, .name = "Void", .icon = "Fate",
@@ -2360,6 +2490,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0.5, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 527 Void */
         .id = 527, .name = "Void", .icon = "Dark Regen",
@@ -2378,6 +2509,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 528 Void */
         .id = 528, .name = "Void", .icon = "Doctor's Fury",
@@ -2396,6 +2528,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 1.7, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 10, .dispel_elements = 0xFF, .dispel_nature = -1, .hits_team = 0,
     },
     { /* 529 Aggression */
         .id = 529, .name = "Aggression", .icon = "Rage",
@@ -2414,6 +2547,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 530 Void */
         .id = 530, .name = "Void", .icon = "Super Heal",
@@ -2432,6 +2566,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 2000000,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 531 Void */
         .id = 531, .name = "Void", .icon = "Mana Bomb",
@@ -2450,6 +2585,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 5000,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 532 Re-Energize */
         .id = 532, .name = "Re-Energize", .icon = "Re-Energize",
@@ -2468,6 +2604,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 100,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 533 Reform */
         .id = 533, .name = "Reform", .icon = "Cell Reformation Shaman",
@@ -2486,6 +2623,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 60,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 534 Wound */
         .id = 534, .name = "Wound", .icon = "Fireball",
@@ -2504,6 +2642,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0.85, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 535 Break */
         .id = 535, .name = "Break", .icon = "Healing Light",
@@ -2522,6 +2661,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 3, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 536 Aggression */
         .id = 536, .name = "Aggression", .icon = "Frost Bolt",
@@ -2540,6 +2680,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 2.100000000000001, .speed_add = 0, .speed_coef = 0,
             .hit_add = 25, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 0, .dispel_elements = 0x00, .dispel_nature = 1, .hits_team = 0,
     },
     { /* 537 Iron Skin */
         .id = 537, .name = "Iron Skin", .icon = "Blessing of Light",
@@ -2558,6 +2699,7 @@ const AbilityDef SONNY_ABILITIES[] = {
             .magic_add = 0, .magic_coef = 0.5, .speed_add = 0, .speed_coef = 0,
             .hit_add = 0, .hit_coef = 1, .flat_damage = 0,
             .damage_coef = 1, .focus_coef = 0 },
+        .dispel_count = 2, .dispel_elements = 0x0C, .dispel_nature = -1, .hits_team = 0,
     },
 };
 const int SONNY_ABILITY_COUNT = (int)(sizeof(SONNY_ABILITIES) / sizeof(SONNY_ABILITIES[0]));
@@ -2572,6 +2714,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 0,
         .tooltip = "Strength, Magic and Speed reduced by 15%.",
     },
     { /* DARKREGEN */
@@ -2582,6 +2725,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "Recovering 1000 Health every turn.",
     },
     { /* DOCTOR */
@@ -2592,6 +2736,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 0, .unique = 0,
         .tooltip = "This unit's next attack will be extra powerful, but this unit is also taking extra damage from all attacks. This cannot be dispeled.",
     },
     { /* FATE */
@@ -2602,6 +2747,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 0,
         .tooltip = "This unit is going to die.",
     },
     { /* IGNITE */
@@ -2612,6 +2758,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 0,
         .tooltip = "This unit is suffering Fire damage every round.",
     },
     { /* BLACKOUT */
@@ -2622,6 +2769,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 0,
         .tooltip = "This unit is totally trippin' dawg!",
     },
     { /* DECAY */
@@ -2632,6 +2780,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 0,
         .tooltip = "Deals 80 Shadow damage to this unit every turn.",
     },
     { /* REGENSHAMAN */
@@ -2642,6 +2791,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = -0.25,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "This unit is recovering Health.",
     },
     { /* WASHED */
@@ -2652,6 +2802,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 0,
         .tooltip = "This unit deals 20% less damage.",
     },
     { /* REGENFOC */
@@ -2662,6 +2813,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "This unit is recovering Focus.",
     },
     { /* SPEEDUP */
@@ -2672,6 +2824,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "This unit's speed is increased by 500%.",
     },
     { /* COLDSOUL */
@@ -2682,6 +2835,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 0,
         .tooltip = "This unit's speed is lowered by 15%.",
     },
     { /* FIRESHOCK */
@@ -2692,6 +2846,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 0,
         .tooltip = "This unit is stunned.",
     },
     { /* SUBVERSION */
@@ -2702,6 +2857,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 1, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 0,
         .tooltip = "Damage and healing are reversed for this unit.",
     },
     { /* SHATTER */
@@ -2712,6 +2868,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = -12, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 0,
         .tooltip = "This unit is stunned.",
     },
     { /* SHATTER2 */
@@ -2722,6 +2879,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = -12, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 0,
         .tooltip = "This unit is stunned.",
     },
     { /* BURNING */
@@ -2732,6 +2890,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0.3,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 1,
         .tooltip = "This unit suffers Fire damage equal to 30% of the caster's magic every turn.",
     },
     { /* VOID1 */
@@ -2742,6 +2901,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0.1,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 0,
         .tooltip = "This unit is suffers Shadow damage every turn. In addition, this unit receives extra damage from all sources.",
     },
     { /* VOID2 */
@@ -2752,6 +2912,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0.1,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 0,
         .tooltip = "This unit is suffers Shadow damage every turn. In addition, this unit receives extra damage from all sources.",
     },
     { /* VOID3 */
@@ -2762,6 +2923,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0.1,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 0,
         .tooltip = "This unit is suffers Shadow damage every turn. In addition, this unit receives extra damage from all sources.",
     },
     { /* VOID4 */
@@ -2772,6 +2934,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0.1,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 0,
         .tooltip = "This unit is suffers Shadow damage every turn. In addition, this unit receives extra damage from all sources.",
     },
     { /* VOID5 */
@@ -2782,6 +2945,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0.1,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 0,
         .tooltip = "This unit is suffers Shadow damage every turn. In addition, this unit receives extra damage from all sources.",
     },
     { /* VOIDMOB */
@@ -2792,6 +2956,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0.3,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 0,
         .tooltip = "This unit is suffers Shadow damage every turn. In addition, this unit receives extra damage from all sources.",
     },
     { /* MAGICWOUND */
@@ -2802,6 +2967,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = -7, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 0,
         .tooltip = "This unit receives 17% extra damage from all sources, and has weaker Magical Defense.",
     },
     { /* INTERVENTION1 */
@@ -2812,6 +2978,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = -0.17, .dot_magic = -0.17,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "This unit is shielded, and is recovering Health.",
     },
     { /* INTERVENTION2 */
@@ -2822,6 +2989,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = -0.17, .dot_magic = -0.17,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "This unit is shielded, and is recovering Health.",
     },
     { /* INTERVENTION3 */
@@ -2832,6 +3000,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = -0.18, .dot_magic = -0.18,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "This unit is shielded, and is recovering Health.",
     },
     { /* INTERVENTION4 */
@@ -2842,6 +3011,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = -0.18, .dot_magic = -0.18,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "This unit is shielded, and is recovering Health.",
     },
     { /* INTERVENTION5 */
@@ -2852,6 +3022,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = -0.19, .dot_magic = -0.19,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "This unit is shielded, and is recovering Health.",
     },
     { /* INTERVENTION6 */
@@ -2862,6 +3033,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = -0.19, .dot_magic = -0.19,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "This unit is shielded, and is recovering Health.",
     },
     { /* INTERVENTION7 */
@@ -2872,6 +3044,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = -0.2, .dot_magic = -0.2,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "This unit is shielded, and is recovering Health.",
     },
     { /* INTERVENTION8 */
@@ -2882,6 +3055,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = -0.2, .dot_magic = -0.2,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "This unit is shielded, and is recovering Health.",
     },
     { /* INTERVENTION9 */
@@ -2892,6 +3066,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = -0.21, .dot_magic = -0.21,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "This unit is shielded, and is recovering Health.",
     },
     { /* INTERVENTION10 */
@@ -2902,6 +3077,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = -0.21, .dot_magic = -0.21,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "This unit is shielded, and is recovering Health.",
     },
     { /* POISONZOMBIE */
@@ -2912,6 +3088,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0.33000000000000007, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 1,
         .tooltip = "This unit suffers Acid damage every turn, equal to 33% of the caster's Strength.",
     },
     { /* POWERUP */
@@ -2922,6 +3099,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "Increases damage of this unit's next attack by 400%.",
     },
     { /* SUPRESSION */
@@ -2932,6 +3110,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "Reduces damage taken from all sources by 70%",
     },
     { /* WOUND1 */
@@ -2942,6 +3121,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0.12, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 0,
         .tooltip = "Target is bleeding, and takes additional damage from all attacks.",
     },
     { /* WOUND2 */
@@ -2952,6 +3132,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0.12, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 0,
         .tooltip = "Target is bleeding, and takes additional damage from all attacks.",
     },
     { /* WOUND3 */
@@ -2962,6 +3143,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0.12, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 0,
         .tooltip = "Target is bleeding, and takes additional damage from all attacks.",
     },
     { /* STUN1 */
@@ -2972,6 +3154,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 0,
         .tooltip = "Target is stunned.",
     },
     { /* RAGE1 */
@@ -2982,6 +3165,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "This unit's Strength and Magic is increased.",
     },
     { /* RAGE2 */
@@ -2992,6 +3176,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "This unit's Strength and Magic is increased.",
     },
     { /* RAGE3 */
@@ -3002,6 +3187,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "This unit's Strength and Magic is increased.",
     },
     { /* IRONSKIN1 */
@@ -3012,6 +3198,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 1,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "This unit's Health and Physical Defence is increased.",
     },
     { /* IRONSKIN2 */
@@ -3022,6 +3209,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 1,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "This unit's Health and Physical Defence is increased.",
     },
     { /* IRONSKIN3 */
@@ -3032,6 +3220,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 1,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "This unit's Health and Physical Defence is increased.",
     },
     { /* IRONSKIN4 */
@@ -3042,6 +3231,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 1,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "This unit's Health and Physical Defence is increased.",
     },
     { /* IRONSKIN5 */
@@ -3052,6 +3242,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 1,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "This unit's Health and Physical Defence is increased.",
     },
     { /* REGEN1 */
@@ -3062,6 +3253,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = -0.25, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "Recovering Health and Focus.",
     },
     { /* BLOCK1 */
@@ -3072,6 +3264,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "Shielded from damage.",
     },
     { /* SOLIDITY1 */
@@ -3082,6 +3275,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "Recovering Health and Focus.",
     },
     { /* SOLIDITY2 */
@@ -3092,6 +3286,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "Recovering Health and Focus.",
     },
     { /* SOLIDITY3 */
@@ -3102,6 +3297,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "Recovering Health and Focus.",
     },
     { /* SOLIDITY4 */
@@ -3112,6 +3308,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "Recovering Health and Focus.",
     },
     { /* SOLIDITY5 */
@@ -3122,6 +3319,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "Recovering Health and Focus.",
     },
     { /* BRUTALITY1 */
@@ -3132,6 +3330,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "Recovering Health and Focus.",
     },
     { /* BRUTALITY2 */
@@ -3142,6 +3341,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "Recovering Health and Focus.",
     },
     { /* BRUTALITY3 */
@@ -3152,6 +3352,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "Recovering Health and Focus.",
     },
     { /* BRUTALITY4 */
@@ -3162,6 +3363,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "Recovering Health and Focus.",
     },
     { /* BRUTALITY5 */
@@ -3172,6 +3374,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "Recovering Health and Focus.",
     },
     { /* REGENERATION1 */
@@ -3182,6 +3385,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "Recovering Health and Focus.",
     },
     { /* REGENERATION2 */
@@ -3192,6 +3396,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "Recovering Health and Focus.",
     },
     { /* REGENERATION3 */
@@ -3202,6 +3407,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "Recovering Health and Focus.",
     },
     { /* REGENERATION4 */
@@ -3212,6 +3418,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "Recovering Health and Focus.",
     },
     { /* REGENERATION5 */
@@ -3222,6 +3429,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "Recovering Health and Focus.",
     },
     { /* REGENERATION6 */
@@ -3232,6 +3440,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "Recovering Health and Focus.",
     },
     { /* REGENERATION7 */
@@ -3242,6 +3451,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "Recovering Health and Focus.",
     },
     { /* REGENERATION8 */
@@ -3252,6 +3462,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "Recovering Health and Focus.",
     },
     { /* REGENERATION9 */
@@ -3262,6 +3473,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "Recovering Health and Focus.",
     },
     { /* REGENERATION10 */
@@ -3272,6 +3484,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "Recovering Health and Focus.",
     },
     { /* ENDURANCE1 */
@@ -3282,6 +3495,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "Recovering Health and Focus.",
     },
     { /* ENDURANCE2 */
@@ -3292,6 +3506,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "Recovering Health and Focus.",
     },
     { /* ENDURANCE3 */
@@ -3302,6 +3517,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "Recovering Health and Focus.",
     },
     { /* ENDURANCE4 */
@@ -3312,6 +3528,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "Recovering Health and Focus.",
     },
     { /* ENDURANCE5 */
@@ -3322,6 +3539,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "Recovering Health and Focus.",
     },
     { /* CRIPPLE1 */
@@ -3332,6 +3550,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 1,
         .tooltip = "This unit's speed is reduced.",
     },
     { /* CRIPPLE2 */
@@ -3342,6 +3561,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 1,
         .tooltip = "This unit's speed is reduced.",
     },
     { /* CRIPPLE3 */
@@ -3352,6 +3572,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 1,
         .tooltip = "This unit's speed is reduced.",
     },
     { /* SUNDER1 */
@@ -3362,6 +3583,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 1,
         .tooltip = "This unit's Strength is decreased, and it is taking extra damage from attacks.",
     },
     { /* SUNDER2 */
@@ -3372,6 +3594,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 1,
         .tooltip = "This unit's Strength is decreased, and it is taking extra damage from attacks.",
     },
     { /* SUNDER3 */
@@ -3382,6 +3605,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 1,
         .tooltip = "This unit's Strength is decreased, and it is taking extra damage from attacks.",
     },
     { /* SUNDER4 */
@@ -3392,6 +3616,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 1,
         .tooltip = "This unit's Strength is decreased, and it is taking extra damage from attacks.",
     },
     { /* SUNDER5 */
@@ -3402,6 +3627,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 1,
         .tooltip = "This unit's Strength is decreased, and it is taking extra damage from attacks.",
     },
     { /* POISON */
@@ -3412,6 +3638,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 0,
         .tooltip = "Target is stunned.",
     },
     { /* BURNS */
@@ -3422,6 +3649,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = -1, .unique = 0,
         .tooltip = "Target is burning for \" + _root.hackMove2[14] + \" damage every turn.",
     },
     { /* REGEN */
@@ -3432,6 +3660,7 @@ const BuffDef SONNY_BUFFS[] = {
         .per_flat = 0, .def_flat = 0, .per_pct = 0, .def_pct = 0,
         .sswitch = 0, .dot_strength = 0, .dot_magic = 0,
         .dot_speed = 0, .filter = 0,
+        .nature = 1, .unique = 0,
         .tooltip = "Target is being healed every turn.",
     },
 };
@@ -6417,6 +6646,25 @@ const ElementDef SONNY_ELEMENT_DEFS[] = {
 };
 const int SONNY_ELEMENT_DEF_COUNT = (int)(sizeof(SONNY_ELEMENT_DEFS) / sizeof(SONNY_ELEMENT_DEFS[0]));
 
+const HubNote SONNY_HUB_NOTES[] = {
+    { 3, 0 },
+    { 4, 1 },
+    { 5, 2 },
+    { 10, 3 },
+    { 16, 4 },
+    { 20, 5 },
+    { 33, 6 },
+};
+const int SONNY_HUB_NOTE_COUNT = (int)(sizeof(SONNY_HUB_NOTES) / sizeof(SONNY_HUB_NOTES[0]));
+const int32_t SONNY_BOSS_MUSIC[] = { 24, 30, 36 };
+const int SONNY_BOSS_MUSIC_COUNT = 3;
+const BossComic SONNY_BOSS_COMICS[] = {
+    { 9, "CS_BRIDGE" },
+    { 38, "CS_OUTRO" },
+};
+const int SONNY_BOSS_COMIC_COUNT = (int)(sizeof(SONNY_BOSS_COMICS) / sizeof(SONNY_BOSS_COMICS[0]));
+const int32_t SONNY_OPENING_BATTLE = 2;
+
 static const char *const LANG_AU[] = { "Wounded", "Broken", "Raging!", "Iron Skin", "Zombie Regeneration", "Block", "Zombie Regeneration", "Crippled", "Sundered", "Supression", "Enraged", "Poison", "Magical Rift", "Intervention", "Burning", "Shattered", "Void", "Subversion", "Shocked", "Cold Soul", "Shadow Blend", "Re-Energize", "Slugged", "Water Mend", "Decay", "Lost", "Ignited", "Dark Omen", "Fate", "Dark Regeneration", "Fatal Flaw" };
 static const char *const LANG_AUX[] = { "Target is bleeding, and takes additional damage from all attacks.", "Target is stunned.", "This unit's Strength and Magic is increased.", "This unit's Health and Physical Defence is increased.", "Recovering Health and Focus.", "Shielded from damage.", "Recovering Health and Focus.", "This unit's speed is reduced.", "This unit's Strength is decreased, and it is taking extra damage from attacks.", "Reduces damage taken from all sources by 70%", "Increases damage of this unit's next attack by 400%.", "This unit suffers Acid damage every turn, equal to 33% of the caster's Strength.", "This unit receives 17% extra damage from all sources, and has weaker Magical Defense.", "This unit is shielded, and is recovering Health.", "This unit suffers Fire damage equal to 30% of the caster's magic every turn.", "This unit is stunned.", "This unit is suffers Shadow damage every turn. In addition, this unit receives extra damage from all sources.", "Damage and healing are reversed for this unit.", "This unit is stunned.", "This unit's speed is lowered by 15%.", "This unit's speed is increased by 500%.", "This unit is recovering Focus.", "This unit deals 20% less damage.", "This unit is recovering Health.", "Deals 80 Shadow damage to this unit every turn.", "This unit is totally trippin' dawg!", "This unit is suffering Fire damage every round.", "This unit's next attack will be extra powerful, but this unit is also taking extra damage from all attacks. This cannot be dispeled.", "This unit is going to die.", "Recovering 1000 Health every turn.", "Strength, Magic and Speed reduced by 15%." };
 static const char *const LANG_BATTLESPEECH[] = { "I may be blind, but there's no mistaking that smell. Can you take him out?", "Yes, I...I suppose I can. Ugh...I don't feel too well.", "It will wear off eventually. You need to focus!", "Notice the grey 'ring' in the lower middle panel, around the exclamation mark. Wait until it turns blue.", "Once the ring is blue, click on the enemy to target him. Your abilities will appear around him.", "He doesn't look too happy.", "He's enraged! You'll have to defend yourself! Get ready!", "Target yourself instead of the enemy this turn, so you can use your defensive ability.", "To find out more about an ability, hold your mouse over its icon for a couple of seconds.", "Good job, Sonny. Keep going, and stay alert. There will be more of them ahead.", "What are these things, anyway? They look horrid, decayed - and the smell is nauseating!", "I reckon they used to be the ship's crew...but, not anymore.", "What's happened to them?", "It's complicated and we're running out of time! I'll tell you everything when we're off this ship!", "You're outnumbered. Don't worry, though! You have the strongest weapon.", "This pipe?", "No, I'm talking about your brain! Think! Attack the weakest one first, and defend yourself when you can!", "That green one in front of us is toxic. Watch out for its poison.", "But, you're blind, how do you even know...?", "Don't get all technical on me, Sonny. Just be glad I told you.", "", "Hey, I can see the speed boat hangar. It's right up ahead!", "I think I can hear helicopters, Sonny.. it must be the rescue team!", "Finally! You're here! I thought we would die on this forsaken ship!", "Take them out, boys. We don't need any witnesses.", "What...?", "Louis! This is NOT a good day to be shooting my friends!", "Hey, look at that! That one just talked!", "So what? That 'thing' is no different from the rest of them. Just do your job, soldier!", "Hey Uh... do you know where I can find the nearest pay phone?", "Uruhugh!", "Whoa, take it easy!", "", "What did I do to deserve this?", "", "Leave...horrors...ahead...", "", "You are not welcome here!", "There's another! Shoot him down.", "By all means, try!", "Es spricht?", "Uruhugh!", "There he is! He's wearing the stolen combat suit!", "HEY! Hey, you! I don't know if you noticed, but I'm slightly outnumbered here! Could you help me out? ", "Can't say I'm too fond of these bastards myself.", "Focus fire! Everyone take the same target!", "Shoot to kill!", "Thanks for helping me back there, bud. I'm Veradux.", "They call me Sonny. I can't remember my real name.", "The Sensei does not approve of your presence here! We've been sent to kill you!", "I got your back, Sonny! Rip them open! ", "No...further...", "You tread our sacred grounds. You refuse to leave. For that, I shall break you.", "", "", "You're kickin' ass! We make a heck of a team.", "So. How long do you plan to stick around?", "Uh... Until death do us part!", "You're hilarious.", "This is Shaman land! I'll cut you down in the name of my tribe!", "Argh! Something is wrong... My head!", "You alright Sonny?", "Yeah I'll be alright.", "Sonny... I'm starting to feel it too...", "What's happening? Are we dying?", "Not physically... But our minds are decaying.", "Oh, brilliant. That doesn't sound painful at all.", "The 'Council' hunts you, infidels! Back away!", "That's about as far as you'll go!", "Ha ha! Nice outfit.", "It sure looks better than yours!", "Hey! Who's side are you on?", "No not these guys again... I can't ... I... Argh!", "Someone is playing with our minds... Stay focused!", "How did I know we'd find them here as well?", "Hey, go for the weaker one first, or we'll never get them down.", "We, the council, deem you dead!", "You have trespassed here, and killed our brethren!", "Your blood will pay for your misdeeds!", "Haha... Who, us? We wouldn't hurt a fly!", "Well, would you look at that! The last Shaman. How sad. Let's kill it!", "The Baron awaits you, children.", "More Zombies! Let's fry them! We'll meet with the Paladin later.", "We're wasting time, the Paladin needs our help to take down the Baron!", "Welcome to the darkness, my children...become one with me and all beings.", "Finally, my reinforcements! It's good to see you're alive and well!", "Wait, wasn't there supposed to be three of you?", "The Baron is gone. Let's kill this whoopy superhero and leave!", "But... why? He helped us-", "Sonny. To them, we're vermin...we're monsters.", "What is this...? You would turn on me?!", "You shall pay for this deception!", "Now we can either be alive monsters, or dead monsters. You choose.", "Just shut up and nod, Sonny. Shut up and nod.", "Reinforcements? That Baron must be one mean zombie.", "", "", "", "", "", "", "Is he the one behind these mind games?", "He is your new master. You shall obey.", "Obey THIS, you twat!" };
@@ -6585,17 +6833,31 @@ const ShopDef *shop_for_button(int32_t button)
 
 const AbilityDef *ability_by_id(int32_t id)
 {
-    for (int i = 0; i < SONNY_ABILITY_COUNT; i++)
-        if (SONNY_ABILITIES[i].id == id)
-            return &SONNY_ABILITIES[i];
+    int lo = 0, hi = SONNY_ABILITY_COUNT - 1;
+    while (lo <= hi) {
+        int mid = lo + (hi - lo) / 2;
+        if (SONNY_ABILITIES[mid].id == id)
+            return &SONNY_ABILITIES[mid];
+        if (SONNY_ABILITIES[mid].id < id)
+            lo = mid + 1;
+        else
+            hi = mid - 1;
+    }
     return NULL;
 }
 
 const UnitTemplate *unit_template_by_id(int32_t id)
 {
-    for (int i = 0; i < SONNY_UNIT_COUNT; i++)
-        if (SONNY_UNITS[i].id == id)
-            return &SONNY_UNITS[i];
+    int lo = 0, hi = SONNY_UNIT_COUNT - 1;
+    while (lo <= hi) {
+        int mid = lo + (hi - lo) / 2;
+        if (SONNY_UNITS[mid].id == id)
+            return &SONNY_UNITS[mid];
+        if (SONNY_UNITS[mid].id < id)
+            lo = mid + 1;
+        else
+            hi = mid - 1;
+    }
     return NULL;
 }
 
@@ -6611,17 +6873,31 @@ const UnitTemplate *unit_template_by_name(const char *name)
 
 const ItemDef *item_by_id(int32_t id)
 {
-    for (int i = 0; i < SONNY_ITEM_COUNT; i++)
-        if (SONNY_ITEMS[i].id == id)
-            return &SONNY_ITEMS[i];
+    int lo = 0, hi = SONNY_ITEM_COUNT - 1;
+    while (lo <= hi) {
+        int mid = lo + (hi - lo) / 2;
+        if (SONNY_ITEMS[mid].id == id)
+            return &SONNY_ITEMS[mid];
+        if (SONNY_ITEMS[mid].id < id)
+            lo = mid + 1;
+        else
+            hi = mid - 1;
+    }
     return NULL;
 }
 
 const BattleDef *battle_def_by_id(int32_t id)
 {
-    for (int i = 0; i < SONNY_BATTLE_COUNT; i++)
-        if (SONNY_BATTLES[i].id == id)
-            return &SONNY_BATTLES[i];
+    int lo = 0, hi = SONNY_BATTLE_COUNT - 1;
+    while (lo <= hi) {
+        int mid = lo + (hi - lo) / 2;
+        if (SONNY_BATTLES[mid].id == id)
+            return &SONNY_BATTLES[mid];
+        if (SONNY_BATTLES[mid].id < id)
+            lo = mid + 1;
+        else
+            hi = mid - 1;
+    }
     return NULL;
 }
 

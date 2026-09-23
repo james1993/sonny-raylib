@@ -544,6 +544,41 @@ static void pay_costs(Unit *u, const AbilityDef *a)
         u->FOCUSN = 0;
 }
 
+/* executeMove: what the move does to one target -- the damage, the heal or
+   the focus -- written into the event. */
+static void execute_move(Battle *b, const AbilityDef *a, Unit *caster,
+                         Unit *target, MoveEvent *event)
+{
+    if (a->kind == KIND_FULL_DAMAGE) {
+        DamageResult d = formula_full_damage(&b->rng, caster, target,
+                                            &a->coefs);
+        int32_t absorbed = 0;
+        int32_t landed = -1;
+        formula_apply_damage(target, d.damage, &absorbed, &landed);
+        /* The original's condition for reading a hit off into the gameplay
+           tally: it has to have taken life off, the move has to be the
+           human's own, and the target must not be one of the few whose
+           incoming-damage modifier is enormous.
+
+               if(IDKT.SSWITCH == 0)
+                  if(IDKC.playerID == Krin.playerNumber)
+                     if(IDKT.IDMG < 500) ... */
+        event->tally = (landed >= 0 && target->SSWITCH == 0
+                        && caster->playerID == b->playerNumber
+                        && target->IDMG < 500);
+        event->pierced = d.pierced;
+        event->amount = d.damage;
+        event->absorbed = absorbed;
+        event->landed = landed;
+    } else if (a->kind == KIND_HEAL) {
+        DamageResult h = formula_heal(&b->rng, caster, target, &a->coefs);
+        event->pierced = h.pierced;
+        event->amount = formula_apply_heal(target, h.damage);
+    } else if (a->kind == KIND_FOCUS) {
+        event->amount = formula_apply_focus(target, &a->coefs);
+    }
+}
+
 int battle_resolve_step(Battle *b, MoveEvent *event)
 {
     if (b->Cycler <= 0)
@@ -608,42 +643,36 @@ int battle_resolve_step(Battle *b, MoveEvent *event)
     }
 
     if (usable && !event->missed) {
-
-        if (a->kind == KIND_FULL_DAMAGE) {
-            DamageResult d = formula_full_damage(&b->rng, caster, target,
-                                                &a->coefs);
-            int32_t absorbed = 0;
-            int32_t landed = -1;
-            formula_apply_damage(target, d.damage, &absorbed, &landed);
-            /* The original's condition for reading a hit off into the
-               gameplay tally: it has to have taken life off, the move has to
-               be the human's own, and the target must not be one of the few
-               whose incoming-damage modifier is enormous.
-
-                   if(IDKT.SSWITCH == 0)
-                      if(IDKC.playerID == Krin.playerNumber)
-                         if(IDKT.IDMG < 500) ... */
-            event->tally = (landed >= 0 && target->SSWITCH == 0
-                            && caster->playerID == b->playerNumber
-                            && target->IDMG < 500);
-            event->pierced = d.pierced;
-            event->amount = d.damage;
-            event->absorbed = absorbed;
-            event->landed = landed;
-        } else if (a->kind == KIND_HEAL) {
-            DamageResult h = formula_heal(&b->rng, caster, target, &a->coefs);
-            event->pierced = h.pierced;
-            event->amount = formula_apply_heal(target, h.damage);
-        } else if (a->kind == KIND_FOCUS) {
-            event->amount = formula_apply_focus(target, &a->coefs);
-        }
-
+        /* The blow has landed, and the original does three things before it
+           works out what the move does, in this order: the dispel, the
+           move's own buff, and applyChangesKrin -- so a buff the move puts on
+           is already counting when its own damage is worked out. */
+        if (a->dispel_count > 0)
+            buff_dispel(target, a->dispel_count, a->dispel_elements,
+                        a->dispel_nature, SONNY_BUFFS, SONNY_BUFF_COUNT);
         if (a->buff && a->buff[0]) {
             const BuffDef *def = buff_find(SONNY_BUFFS, SONNY_BUFF_COUNT,
                                            a->buff);
-            if (def) {
-                buff_apply(target, def, 1, caster, 0);
-                unit_apply_changes(target);
+            if (def)
+                buff_land(target, def, caster);
+        }
+        unit_apply_changes(target);
+
+        /* executeMove, on the target -- or on every living member of the
+           other team, for a move that says so. The event reports the target
+           it was aimed at. */
+        if (!a->hits_team) {
+            execute_move(b, a, caster, target, event);
+        } else {
+            for (int32_t k = 0; k < 3; k++) {
+                int32_t slot = 7 - (caster->teamSide + k * 2);
+                if (slot < 1 || slot >= SONNY_SLOTS || !b->units[slot].active)
+                    continue;
+                MoveEvent other;
+                memset(&other, 0, sizeof(other));
+                other.landed = -1;
+                execute_move(b, a, caster, &b->units[slot],
+                             &b->units[slot] == target ? event : &other);
             }
         }
         if (!target->active)

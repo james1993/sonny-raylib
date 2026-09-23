@@ -33,6 +33,8 @@ typedef struct {
     double  dot_magic;              /* [29] ... from caster MAGIC */
     double  dot_speed;              /* [30] ... from caster SPEED */
     int32_t filter;                 /* [31] visual filter slot */
+    int32_t nature;                 /* [20] 1 helpful, -1 harmful, 0 neither */
+    int32_t unique;                 /* [27] refreshes rather than stacks */
     const char *tooltip;            /* [25] what it says it does */
 } BuffDef;
 
@@ -42,6 +44,20 @@ typedef struct {
  * instance originally rolled. */
 void buff_apply(Unit *target, const BuffDef *b, int32_t iftbc,
                 const Unit *caster, double debuffValue);
+
+/* What a move does to the target's buffs as it lands, in the original's
+ * order: the dispel, then the move's own buff.
+ *
+ * The dispel takes off up to `count` of the target's buffs, walking its slots
+ * in order, whose element is one of the `elements` bits (1 << Element) and
+ * whose nature matches -- each one unwound as it goes. Returns how many went.
+ *
+ * buff_land puts the move's buff on. A buff marked unique that the target
+ * already carries is not stacked: every slot holding it has its time put
+ * back to the full duration, and nothing else happens. */
+int32_t buff_dispel(Unit *target, int32_t count, uint32_t elements,
+                    int32_t nature, const BuffDef *lib, int32_t lib_count);
+void buff_land(Unit *target, const BuffDef *b, const Unit *caster);
 
 /* applyChangesKrin: recompute the buffed stats from base + accumulated changes.
  * Also mirrors the original's max-health handling, which preserves the health

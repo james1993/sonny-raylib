@@ -1,0 +1,48 @@
+{
+ "hub_notes": [
+  {
+   "at": 3,
+   "say": 0
+  },
+  {
+   "at": 4,
+   "say": 1
+  },
+  {
+   "at": 5,
+   "say": 2
+  },
+  {
+   "at": 10,
+   "say": 3
+  },
+  {
+   "at": 16,
+   "say": 4
+  },
+  {
+   "at": 20,
+   "say": 5
+  },
+  {
+   "at": 33,
+   "say": 6
+  }
+ ],
+ "boss_music": [
+  24,
+  30,
+  36
+ ],
+ "boss_comics": [
+  {
+   "at": 9,
+   "comic": "CS_BRIDGE"
+  },
+  {
+   "at": 38,
+   "comic": "CS_OUTRO"
+  }
+ ],
+ "opening_battle": 2
+}

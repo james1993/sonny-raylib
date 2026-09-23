@@ -2236,15 +2236,17 @@ void game_music_roaming(Game *g)
 /* addSound("Music", 2): a fight. It takes the next track off the same
    counter the hub walks -- so which track a fight gets depends on how many
    times the hub has been through since -- and the boss theme stands in for a
-   boss marker or for the three fights the game names outright. The counter
-   moves either way. */
+   boss marker or for the fights the game names outright (SONNY_BOSS_MUSIC).
+   The counter moves either way. */
 void game_music_battle(Game *g)
 {
     if (!audio_ready() || g->music_mode == 2)
         return;
     g->music_mode = 2;
-    int32_t at = g->campaign.progress_battle;
-    int boss = g->boss_fight || at == 24 || at == 30 || at == 36;
+    int boss = g->boss_fight;
+    for (int i = 0; i < SONNY_BOSS_MUSIC_COUNT; i++)
+        if (SONNY_BOSS_MUSIC[i] == g->campaign.progress_battle)
+            boss = 1;
     audio_music(boss ? "BossBattleloopable"
                      : MUSIC_TRACKS[g->music_next % 4]);
     g->music_next = (g->music_next + 1) % 4;

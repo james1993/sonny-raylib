@@ -8,7 +8,7 @@ CORE_SRC = src/core/formula.c src/core/rng.c src/core/unit.c \
            src/gen/gamedata.c
 BUILD    = build
 
-.PHONY: all game dist test simulate vectors data clean playtest
+.PHONY: all game dist test simulate vectors data extract clean playtest
 
 all: game test
 
@@ -61,11 +61,40 @@ test: $(BUILD)
 	$(BUILD)/test_window
 	$(BUILD)/test_save
 	python3 tools/check_assets.py
+	python3 tools/check_content.py
 
-# Regenerate the C data tables from the extracted JSON.
+# Regenerate the C data tables from the extracted JSON, with anything in
+# data/content/ laid over it -- which is checked for references that land
+# nowhere before anything is written.
 data:
+	python3 tools/check_content.py
 	python3 tools/gen_c_data.py
 	python3 tools/gen_asset_manifest.py
+
+# Everything data/extracted/ and assets/art/ are made of, from the original,
+# in the order each step needs the last. Needs the game's SONNY1.swf and JPEXS
+# FFDec; the decompiler dumps land in assets/raw/, which is gitignored.
+#   make extract SWF=path/to/SONNY1.swf FFDEC=path/to/ffdec-cli.jar
+RAW = assets/raw
+extract:
+	@test -n "$(SWF)" -a -n "$(FFDEC)" || \
+	    { echo "make extract SWF=SONNY1.swf FFDEC=ffdec-cli.jar"; exit 2; }
+	tools/extract_assets.sh "$(SWF)" "$(FFDEC)" $(RAW)
+	java -Xmx3g -jar "$(FFDEC)" -format script:as -export script $(RAW)/as "$(SWF)"
+	python3 tools/swf_exports.py "$(SWF)" > data/extracted/exports.json
+	python3 tools/extract_data.py $(RAW)/as/scripts -o data/extracted
+	python3 tools/extract_stage.py "$(SWF)" $(RAW) > data/extracted/stage.json
+	python3 tools/extract_cast.py "$(SWF)" > data/extracted/cast_frames.json
+	python3 tools/swf_doll.py "$(SWF)" MODEL1 > data/extracted/doll_frames.json
+	python3 tools/extract_clip_lengths.py "$(SWF)" --scripts $(RAW)/as
+	python3 tools/extract_markers.py "$(SWF)" --raw $(RAW) \
+	    --stripped $(RAW)/nomarkers.swf
+	tools/extract_assets.sh $(RAW)/nomarkers.swf "$(FFDEC)" $(RAW)/nomarkers
+	python3 tools/extract_glows.py --raw $(RAW)
+	python3 tools/extract_streams.py "$(SWF)"
+	python3 tools/build_assets.py --raw $(RAW) --zone-raw $(RAW)/nomarkers \
+	    --out assets/art
+	$(MAKE) data
 
 # Play both games through the same script and report where they differ.
 # Needs Ruffle and a debug-patched copy of the SWF; see tools/refcap.py.

@@ -524,6 +524,8 @@ void screen_ending_draw(Game *g, Vector2 mouse);
 void game_play_cutscene(Game *g, int32_t which);
 /* The animation a comic is, by the same number. */
 int32_t cutscene_clip(int32_t which);
+/* Which comic a root frame label (CS_BRIDGE) is, or -1. */
+int32_t cutscene_by_label(const char *label);
 
 /* Ask for the art the game is about to need, so it is decoded off the main
    thread rather than in the middle of a frame. Once a frame; see

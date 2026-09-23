@@ -134,11 +134,6 @@ int32_t campaign_story_battle(const Campaign *c, int *boss)
     return pick;
 }
 
-int campaign_complete(const Campaign *c)
-{
-    return c->progress_battle >= 38;
-}
-
 void campaign_advance(Campaign *c)
 {
     c->progress_battle++;

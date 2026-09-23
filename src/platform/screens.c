@@ -342,13 +342,10 @@ void screen_zone_update(Game *g, Vector2 mouse)
 
 /* The story stops the player on the hub at seven points to explain something.
    Krin.progressSpeech is keyed by how far the story has got, and each entry
-   is a title and a body out of NAVTITLE2 and NAVTEXT2; the fade behind it
-   holds the hub still until it is clicked away. Proceed! on the victory
-   screen is what offers one, and winning a fight re-arms the offer. */
-static const struct { int32_t at; int32_t say; } HUB_NOTES[] = {
-    {3, 0}, {4, 1}, {5, 2}, {10, 3}, {16, 4}, {20, 5}, {33, 6},
-};
-
+   is a title and a body out of NAVTITLE2 and NAVTEXT2 (SONNY_HUB_NOTES); the
+   fade behind it holds the hub still until it is clicked away. Proceed! on
+   the victory screen is what offers one, and winning a fight re-arms the
+   offer. */
 void game_hub_note(Game *g)
 {
     if (g->hub_note_done)
@@ -356,9 +353,9 @@ void game_hub_note(Game *g)
     g->hub_note_done = 1;
     g->hub_note = -1;
     g->hub_note_nav = 0;
-    for (size_t i = 0; i < sizeof(HUB_NOTES) / sizeof(HUB_NOTES[0]); i++)
-        if (HUB_NOTES[i].at == g->campaign.progress_battle)
-            g->hub_note = HUB_NOTES[i].say;
+    for (int i = 0; i < SONNY_HUB_NOTE_COUNT; i++)
+        if (SONNY_HUB_NOTES[i].at == g->campaign.progress_battle)
+            g->hub_note = SONNY_HUB_NOTES[i].say;
 }
 
 int game_hub_note_up(const Game *g)
@@ -2178,12 +2175,15 @@ void screen_victory_update(Game *g, Vector2 mouse)
     save_write(&g->campaign, save_slot_path(g->campaign.slot));
     if (g->boss_beaten) {
         g->boss_beaten = 0;
-        if (g->campaign.progress_battle == 9)
-            game_play_cutscene(g, 1);
-        else if (g->campaign.progress_battle == 38)
-            game_play_cutscene(g, 2);
-        else
-            g->screen = SCREEN_MAP;
+        /* A comic at the points the story has one (SONNY_BOSS_COMICS), and
+           otherwise out to the map. */
+        for (int i = 0; i < SONNY_BOSS_COMIC_COUNT; i++)
+            if (SONNY_BOSS_COMICS[i].at == g->campaign.progress_battle) {
+                game_play_cutscene(g, cutscene_by_label(
+                                          SONNY_BOSS_COMICS[i].comic));
+                return;
+            }
+        g->screen = SCREEN_MAP;
         return;
     }
     if (g->rewards.leveled) {

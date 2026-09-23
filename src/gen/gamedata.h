@@ -62,6 +62,16 @@ typedef struct {
        third line of a move's tip. */
     const char  *cost_text;
     AbilityCoefs coefs;
+    /* The dispel the move runs as it lands, before anything else it does:
+       up to dispel_count of the target's buffs whose element is one of the
+       dispel_elements bits (1 << Element) and whose nature is dispel_nature
+       -- 1 to take helpful buffs off, -1 to take harmful ones. */
+    int32_t      dispel_count;
+    uint32_t     dispel_elements;
+    int32_t      dispel_nature;
+    /* Set: the move lands on every living member of the other team. No move
+       in the game sets it, but the engine honours it as the original does. */
+    int32_t      hits_team;
 } AbilityDef;
 
 /* One of the game's named text arrays (SYSTEM, MENU, VICTORY, ZONES, ...).
@@ -330,6 +340,32 @@ typedef struct {
     int32_t frame;
     int32_t clear;        /* clears the caption rather than advancing it */
 } CutsceneCue;
+
+/* The points in the story the engine reacts to, from data/extracted/story.json.
+
+   The note the hub puts up once progress reaches `at`: NAVTITLE2/NAVTEXT2
+   entry `say` (Krin.progressSpeech). */
+typedef struct {
+    int32_t at;
+    int32_t say;
+} HubNote;
+
+extern const HubNote SONNY_HUB_NOTES[];
+extern const int SONNY_HUB_NOTE_COUNT;
+/* The fights the boss theme plays for whatever marker started them. */
+extern const int32_t SONNY_BOSS_MUSIC[];
+extern const int SONNY_BOSS_MUSIC_COUNT;
+/* The comic Proceed! plays after the zone's last fight, by progress; `comic`
+   is its frame label on the root (CS_BRIDGE, CS_OUTRO). */
+typedef struct {
+    int32_t     at;
+    const char *comic;
+} BossComic;
+
+extern const BossComic SONNY_BOSS_COMICS[];
+extern const int SONNY_BOSS_COMIC_COUNT;
+/* The fight the opening comic hands over to (Krin.BattlePick in IntroSeq). */
+extern const int32_t SONNY_OPENING_BATTLE;
 
 extern const CutsceneDef SONNY_CUTSCENES[];
 extern const int SONNY_CUTSCENE_COUNT;

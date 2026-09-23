@@ -6,7 +6,10 @@ it, six named player containers. Combining the two gives the stage coordinate
 of every slot -- and the containers for the right-hand team carry a negative
 horizontal scale, which is how the game mirrors them to face left.
 
-    python3 tools/extract_stage.py SONNY1.swf > data/extracted/stage.json
+    python3 tools/extract_stage.py SONNY1.swf assets/raw > data/extracted/stage.json
+
+The second argument is the decompiler dump, which is where each piece's size
+and origin come from; without it those are left out.
 """
 import json
 import os

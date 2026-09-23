@@ -127,6 +127,42 @@ void unit_apply_changes(Unit *u)
     }
 }
 
+int32_t buff_dispel(Unit *target, int32_t count, uint32_t elements,
+                    int32_t nature, const BuffDef *lib, int32_t lib_count)
+{
+    int32_t gone = 0;
+    for (int32_t i = 0; i < SONNY_MAX_BUFFS && count > 0; i++) {
+        BuffSlot *slot = &target->BUFFARRAYK[i];
+        if (slot->CD <= 0)
+            continue;
+        const BuffDef *def = buff_find(lib, lib_count, slot->buffId);
+        if (!def || !(elements & (1u << def->element))
+            || def->nature != nature)
+            continue;
+        count--;
+        gone++;
+        slot->CD = 0;
+        buff_apply(target, def, -1, NULL, slot->buffValue);
+    }
+    return gone;
+}
+
+void buff_land(Unit *target, const BuffDef *b, const Unit *caster)
+{
+    int already = 0;
+    if (b->unique) {
+        for (int32_t i = 0; i < SONNY_MAX_BUFFS; i++) {
+            BuffSlot *slot = &target->BUFFARRAYK[i];
+            if (slot->CD != 0 && strcmp(slot->buffId, b->key) == 0) {
+                slot->CD = b->duration;
+                already = 1;
+            }
+        }
+    }
+    if (!already)
+        buff_apply(target, b, 1, caster, 0);
+}
+
 TickResult buff_tick(Unit *u, const BuffDef *lib, int32_t lib_count)
 {
     TickResult out;

@@ -25,9 +25,19 @@ Collection, and every number, string and pixel is extracted from it:
     tools/build_assets.py        selects the art the engine names
     tools/gen_c_data.py          data tables -> src/gen/gamedata.c
     tools/gen_asset_manifest.py  assets, doll frames, layout -> src/gen
+    tools/content.py             the tables as built: extracted + data/content
+    tools/check_content.py       every reference between the tables
 
 `make data` regenerates the C tables; `make vectors` regenerates the test
-vectors. Both need `data/extracted/`, which comes from the SWF.
+vectors. Both need `data/extracted/`, which comes from the SWF; `make extract
+SWF=... FFDEC=...` runs every extractor above in the order each needs.
+
+Anything made by hand -- a new item, a changed number, a line of text, a
+picture -- does not go in `data/extracted/` or `assets/art/`, which the
+extractors rewrite. It goes in `data/content/` and `assets/extra/`, which are
+laid over them (see the README in each). `tools/check_content.py` follows
+every reference between the tables and `tools/check_assets.py` every name the
+engine can ask for; `make test` runs both.
 
 ## How the port is checked
 

@@ -259,7 +259,7 @@ def move_cost_text(args):
     cost but prints the argument beside it."""
     focus = as_number(args.get('focus_cost')) or 0
     health = as_number(args.get('health_cost')) or 0
-    other = as_number(args.get('a15')) or 0
+    other = as_number(args.get('health_cost_shown')) or 0
     pct = as_number(args.get('health_cost_pct')) or 0
     cooldown = as_number(args.get('cooldown')) or 0
 
@@ -361,17 +361,52 @@ def resolve(value, lang):
 # Names below are the ones confirmed by how the engine reads each slot
 # (frame_62 executeMove/AImoveAdder and the frame_212 combat driver);
 # unconfirmed slots keep their raw index so nothing is mislabelled.
+#
+# bar_copies (slot 8) is how many places on the action bar the move may take
+# at once, which the pool's tooltip quotes. health_cost_shown (slot 15) is
+# read by nothing but the cost line addNewMove writes, which prints it as the
+# health a move costs -- though it tests slot 6 to decide whether to.
 MOVE_PARAMS = ['icon', 'target_self', 'target_enemy', 'target_ally',
-               'focus_cost', 'health_cost', 'cooldown', 'a8', 'anim_speed',
-               'delivery', 'color', 'anim', 'model', 'damage_kind', 'a15',
-               'health_cost_pct', 'name_id', 'sound']
+               'focus_cost', 'health_cost', 'cooldown', 'bar_copies',
+               'anim_speed', 'delivery', 'color', 'anim', 'model',
+               'damage_kind', 'health_cost_shown', 'health_cost_pct',
+               'name_id', 'sound']
 
 # Verified against executeMove()/perScript() in frame_62.
 MOVEB_FIELDS = {
     0: 'element', 1: 'strength_add', 2: 'strength_coef', 3: 'magic_add',
     4: 'magic_coef', 5: 'speed_add', 6: 'speed_coef', 7: 'hit_add',
     8: 'hit_coef', 9: 'flat_damage', 10: 'damage_coef', 11: 'focus_coef',
-    13: 'buff', 15: 'element_list', 17: 'tooltip', 18: 'cost_text',
+    13: 'buff', 17: 'tooltip', 18: 'cost_text',
+    # Set by the move tables and read by nothing in the engine.
+    12: 'unused_12', 14: 'unused_14',
+    # The dispel, run as the move lands and before anything else it does:
+    # up to dispel_count of the target's buffs go, those whose element is in
+    # dispel_elements and whose nature (buff field 20) is dispel_nature.
+    15: 'dispel_elements', 16: 'dispel_count', 19: 'dispel_nature',
+    # Non-zero: executeMove runs against every living member of the other
+    # team rather than the one target. No move in the game sets it.
+    20: 'hits_team',
+}
+
+# addNewBuffKrin's slots, 2..31, as applyBuffKrin and buffTicker read them.
+# changeArray is [str+, str%, mag+, mag%, spd+, spd%, life+, life%, DMG, DMG2,
+# IDMG, IDMG2] and slots 2..13 add to it in that order.
+BUFF_FIELDS = {
+    2: 'strength_add', 3: 'strength_pct', 4: 'magic_add', 5: 'magic_pct',
+    6: 'speed_add', 7: 'speed_pct', 8: 'life_add', 9: 'life_pct',
+    10: 'damage_add', 11: 'damage_pct', 12: 'damage_taken_add',
+    13: 'damage_taken_pct',
+    14: 'dot_flat', 15: 'focus_drain', 16: 'duration', 17: 'stun',
+    18: 'reflect', 19: 'shield',
+    # 1 helpful, -1 harmful, 0 neither: what a dispel matches against.
+    20: 'nature',
+    21: 'per_flat', 22: 'def_flat', 23: 'per_pct', 24: 'def_pct',
+    25: 'tooltip', 26: 'sswitch',
+    # Set: a second application refreshes the one already there rather than
+    # stacking another.
+    27: 'unique',
+    28: 'dot_strength', 29: 'dot_magic', 30: 'dot_speed', 31: 'filter',
 }
 
 # createNewUnitKrin(a..j): name then (base, per-level) pairs per stat.
@@ -813,6 +848,47 @@ def extract_cutscenes(scripts_dir, characters):
     return out
 
 
+def extract_story(text, scripts_dir):
+    """The points in the story the engine reacts to, each where the original
+    keeps it:
+
+      hub_notes      Krin.progressSpeech, filled in frame 62 by a run of
+                     `Krin.bEr = N;` blocks that each take the next NAVTITLE2 /
+                     NAVTEXT2 pair: the note the hub puts up at progress N.
+      boss_music     the fights addSound("Music", 2) gives the boss theme to
+                     outright, whatever the marker says.
+      boss_comics    what Proceed! plays after a zone's last fight, by
+                     progress: the comic's own frame label on the root.
+      opening_battle Krin.BattlePick as IntroSeq ends (frame 174).
+    """
+    story = {'hub_notes': [], 'boss_music': [], 'boss_comics': [],
+             'opening_battle': None}
+    say = 0
+    for m in re.finditer(r'^Krin\.bEr = (\d+);$', text, re.M):
+        story['hub_notes'].append({'at': int(m.group(1)), 'say': say})
+        say += 1
+    for m in re.finditer(r'if\(_root\.Krin\.progressLevelOn == (\d+)\)\s*\{'
+                         r'\s*bossMusicYesNo = true;', text):
+        story['boss_music'].append(int(m.group(1)))
+
+    proceed = os.path.join(scripts_dir, 'DefineButton2_1375',
+                           'BUTTONCONDACTION on(release).as')
+    if os.path.exists(proceed):
+        body = open(proceed, encoding='utf-8', errors='replace').read()
+        for m in re.finditer(r'progressLevelOn == (\d+)\)\s*\{[^}]*?'
+                             r'gotoAndStop\("(CS_[A-Z]+)"\)', body, re.S):
+            story['boss_comics'].append({'at': int(m.group(1)),
+                                         'comic': m.group(2)})
+    opening = os.path.join(scripts_dir, 'frame_174', 'DoAction.as')
+    if os.path.exists(opening):
+        m = re.search(r'^Krin\.BattlePick = (\d+);$',
+                      open(opening, encoding='utf-8',
+                           errors='replace').read(), re.M)
+        if m:
+            story['opening_battle'] = int(m.group(1))
+    return story
+
+
 def extract_zone_buttons(scripts_dir):
     """What each marker on a zone's scene does, by the button's own id.
 
@@ -910,6 +986,8 @@ def main():
     shops = {'stock': extract_shops(text),
              'buttons': extract_shop_buttons(args.scripts_dir)}
     zone_buttons = extract_zone_buttons(args.scripts_dir)
+    story = extract_story(open(data_as, encoding='utf-8',
+                               errors='replace').read(), args.scripts_dir)
     party = extract_party(text, args.scripts_dir)
     cutscenes = extract_cutscenes(args.scripts_dir, (1695, 1710, 1719))
     moves, units, items, buffs = extract_tables(text, lang)
@@ -950,7 +1028,8 @@ def main():
             'key': key,
             'name': resolve(b['name'], lang),
             'element': b['element'],
-            'fields': {str(i): resolve(v, lang) for i, v in sorted(b['fields'].items())},
+            'fields': {BUFF_FIELDS.get(i, 'f%d' % i): resolve(v, lang)
+                       for i, v in sorted(b['fields'].items())},
         })
 
     itemname = lang.get('ITEMNAME') or []
@@ -1000,7 +1079,8 @@ def main():
                           ('elements', elements), ('doll', doll),
                           ('shops', shops),
                           ('zone_buttons', zone_buttons),
-                          ('party', party), ('cutscenes', cutscenes)):
+                          ('party', party), ('cutscenes', cutscenes),
+                          ('story', story)):
         path = os.path.join(args.out, name + '.json')
         with open(path, 'w', encoding='utf-8') as fh:
             json.dump(payload, fh, indent=1, ensure_ascii=False)

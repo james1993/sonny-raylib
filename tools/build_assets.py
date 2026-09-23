@@ -207,7 +207,7 @@ def collect_names(data_dir):
         # sprite has no frame for them, so the original's
         # gotoAndStop("REGENERATION1") silently leaves the icon on whatever
         # frame it was already showing. There is no art to take.
-        if str(b['fields'].get('16')) == '-1':
+        if str(b['fields'].get('duration')) == '-1':
             speculative.add(b['key'])
     for b in battles:
         for key in ('ZoneBG', 'SkyBG'):
